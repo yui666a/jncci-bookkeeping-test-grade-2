@@ -4,6 +4,7 @@
 // 正規表現では到達できないため。
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const failures = [];
@@ -50,6 +51,57 @@ function unquote(v) {
     return s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
   }
   return s;
+}
+
+// 計算式の評価。eval / new Function は使わない。
+// 教材のJSは自前で書くものであり、任意コード実行を許す理由がない。
+export function evalFormula(src) {
+  // 認識できない文字を捨てて残りを読むと、'alert(1)' が '(1)' として
+  // 素通りする。式全体が数値・演算子・括弧・空白だけであることを先に確かめる。
+  if (!/^[\d\s.()+\-*/]+$/.test(String(src))) {
+    throw new Error('式に使えない文字がある: ' + src);
+  }
+  const tokens = String(src).match(/\d+(?:\.\d+)?|[()+\-*/]/g);
+  if (!tokens) throw new Error('式が空: ' + src);
+  let i = 0;
+  const peek = () => tokens[i];
+  const eat = (t) => {
+    if (tokens[i] !== t) throw new Error('想定外: ' + tokens[i]);
+    i++;
+  };
+
+  function expr() {
+    let v = term();
+    while (peek() === '+' || peek() === '-') {
+      const op = tokens[i++];
+      v = op === '+' ? v + term() : v - term();
+    }
+    return v;
+  }
+  function term() {
+    let v = unary();
+    while (peek() === '*' || peek() === '/') {
+      const op = tokens[i++];
+      const r = unary();
+      if (op === '/' && r === 0) throw new Error('ゼロ除算: ' + src);
+      v = op === '*' ? v * r : v / r;
+    }
+    return v;
+  }
+  function unary() {
+    if (peek() === '-') { i++; return -unary(); }
+    return atom();
+  }
+  function atom() {
+    if (peek() === '(') { eat('('); const v = expr(); eat(')'); return v; }
+    const t = tokens[i++];
+    if (!/^\d/.test(t || '')) throw new Error('数値でない: ' + t);
+    return Number(t);
+  }
+
+  const value = expr();
+  if (i !== tokens.length) throw new Error('末尾に余り: ' + src);
+  return value;
 }
 
 // mount() に渡された設定を捕捉する。app.js は末尾で window に代入するため、
@@ -188,6 +240,90 @@ CHECKS.push(async function checkAccounts(page, file) {
   }
 });
 
+// ゲート3：BokiNum の解答を計算式から再計算する。
+// answer は数値または配列（複数欄）。formula も同じ形で持たせる。
+CHECKS.push(async function checkNum(page, file) {
+  const items = await page.evaluate(() => {
+    const out = [];
+    for (const { sel, cfg } of (window.__captured?.num || [])) {
+      (cfg.questions || []).forEach((q, i) => {
+        const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+        const formulas = Array.isArray(q.formula) ? q.formula
+          : (q.formula === undefined ? [] : [q.formula]);
+        answers.forEach((a, j) => {
+          out.push({
+            id: sel + '#q' + (i + 1) + (answers.length > 1 ? '.' + (j + 1) : ''),
+            answer: a,
+            formula: formulas[j],
+            count: answers.length,
+            given: formulas.length,
+          });
+        });
+      });
+    }
+    return out;
+  });
+
+  for (const it of items) {
+    if (it.formula === undefined) {
+      report(file, it.id, 'formula あり',
+        it.given ? '欄' + it.count + '個に対し式' + it.given + '個' : 'なし',
+        'BokiNum の設問に計算式がない（再計算できない）');
+      continue;
+    }
+    let got;
+    try {
+      got = evalFormula(it.formula);
+    } catch (e) {
+      report(file, it.id, '評価できる式', it.formula, '式を評価できない: ' + e.message);
+      continue;
+    }
+    if (Math.abs(got - Number(it.answer)) > 1e-9) {
+      report(file, it.id, got, it.answer, '計算式の値と answer が一致しない');
+    }
+  }
+});
+
+// ゲート4：BokiQuiz の answer が範囲内で、解説の言及と整合するか。
+CHECKS.push(async function checkQuiz(page, file) {
+  const items = await page.evaluate(() => {
+    const out = [];
+    for (const { sel, cfg } of (window.__captured?.quiz || [])) {
+      (cfg.questions || []).forEach((q, i) => {
+        out.push({
+          id: sel + '#q' + (i + 1),
+          answer: q.answer,
+          count: (q.choices || []).length,
+          explain: String(q.explain || ''),
+        });
+      });
+    }
+    return out;
+  });
+
+  for (const it of items) {
+    if (!Number.isInteger(it.answer) || it.answer < 0 || it.answer >= it.count) {
+      report(file, it.id, '0以上' + it.count + '未満の整数', it.answer,
+        'answer が選択肢の範囲外');
+      continue;
+    }
+    // 解説が「選択肢Nが正しい」の形で正解を名指ししていれば answer と
+    // 突き合わせる。単なる「選択肢N」への言及は誤答の解説であることが多く、
+    // それを正解と見なすと正しい教材に誤った指摘が出る。
+    // 選択肢は表示上1始まりで数えるため answer+1 と比較する。
+    const m = it.explain.match(
+      /選択肢\s*([０-９0-9]+)\s*(?:が|は)\s*(?:正解|正しい|適切)/);
+    if (m) {
+      const n = Number(m[1].replace(/[０-９]/g, (c) =>
+        String.fromCharCode(c.charCodeAt(0) - 0xFEE0)));
+      if (n !== it.answer + 1) {
+        report(file, it.id, '選択肢' + (it.answer + 1), '選択肢' + n,
+          '解説が指す選択肢と answer が食い違う');
+      }
+    }
+  }
+});
+
 async function main() {
   const files = targets(process.argv.slice(2));
   if (!files.length) {
@@ -218,4 +354,8 @@ async function main() {
   process.exit(1);
 }
 
-main();
+// 直接実行されたときだけ検査を走らせる。テストから evalFormula を
+// import しても、ブラウザが起動しないようにする。
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main();
+}
