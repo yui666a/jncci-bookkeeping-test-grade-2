@@ -446,7 +446,17 @@ CHECKS.push(async function checkTopicsMeta(page, file) {
       'カバー論点のメタがない（カバレッジ検証で未カバー扱いになる）');
     return;
   }
-  for (const id of meta.split(',').map((s) => s.trim()).filter(Boolean)) {
+  // 空のメタは「存在する」ため素通りするが、カバレッジ上は未宣言と同じで、
+  // 本文が扱っている論点が黙って未カバーに落ちる。2級論点を扱わない単元も
+  // 実在するため、扱わないことを 'なし' と明示させ、書き忘れと区別する。
+  if (meta.trim() === '') {
+    report(file, '(head)', '論点ID、または扱わないなら なし', '空',
+      'boki-topics が空（宣言漏れか、2級論点を扱わないのかを区別できない）');
+    return;
+  }
+  if (meta.trim() === 'なし') return;
+  const ids = meta.split(',').map((s) => s.trim()).filter(Boolean);
+  for (const id of ids) {
     if (!TOPIC_IDS.has(id)) {
       report(file, id, 'syllabus.yml に実在', 'なし', '存在しない論点ID');
     }
