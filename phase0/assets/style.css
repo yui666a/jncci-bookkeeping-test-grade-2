@@ -19,6 +19,8 @@
   --credit-bg: #fbeee4;
   --ok:        #1e7a52;
   --ok-bg:     #e6f4ec;
+  --mine:      #6b4bab;
+  --mine-bg:   #f0ecfa;
   --warn:      #9a6b12;
   --warn-bg:   #fbf2df;
   --danger:    #a32c2c;
@@ -48,6 +50,8 @@
     --credit-bg: #33261d;
     --ok:        #6cc79a;
     --ok-bg:     #172a21;
+    --mine:      #b39ae8;
+    --mine-bg:   #241c33;
     --warn:      #d9b060;
     --warn-bg:   #2c2618;
     --danger:    #e08585;
@@ -60,6 +64,7 @@
   --text:#e4e8ed; --muted:#9aa7b4; --accent:#6fb8ce; --accent-2:#1e2c33; --accent-br:#35606f;
   --debit:#6fb8ce; --debit-bg:#1e2c33; --credit:#dd9d6e; --credit-bg:#33261d;
   --ok:#6cc79a; --ok-bg:#172a21; --warn:#d9b060; --warn-bg:#2c2618;
+  --mine:#b39ae8; --mine-bg:#241c33;
   --danger:#e08585; --danger-bg:#2e1c1c;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.25);
 }
@@ -190,6 +195,9 @@ code {
 .callout--trap .callout__t { color: var(--danger); }
 .callout--ok   { border-color: var(--ok); background: var(--ok-bg); }
 .callout--ok   .callout__t { color: var(--ok); }
+/* 学習者個人の環境に合わせた追記。一般公開時はこの variant ごと取り外せる */
+.callout--mine { border-color: var(--mine); background: var(--mine-bg); border-left-style: double; border-left-width: 6px; }
+.callout--mine .callout__t { color: var(--mine); }
 
 /* ---------- 用語ボックス ---------- */
 .term {

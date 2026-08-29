@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="boki-topics" content="工-第一-3-0,工-第一-4-0,工-第二-1-0,工-第二-1-ア,工-第二-2-0,工-第二-2-ア,工-第二-2-イ,工-第二-2-ウ,工-第二-3-0,工-第四-1-0">
+  <meta name="boki-topics" content="工-第一-3-0,工-第一-4-0,工-第二-1-0,工-第二-1-ア,工-第二-2-0,工-第二-2-ア,工-第二-2-イ,工-第二-2-ウ,工-第二-3-0,工-第四-1-0,工-第十六-1-0,工-第十六-2-0">
 <title>勘定連絡図を描けるようにする — 日商簿記2級 Phase 0</title>
 <link rel="stylesheet" href="assets/style.css">
 <style>
@@ -416,7 +416,19 @@
 
   <div class="callout callout--ok">
     <span class="callout__t">「入って、出て、残る」がすべての箱で同じ</span>
-    <p>材料・仕掛品・製品の3つは、構造がまったく同じです。<strong>借方＝月初有高＋当月の増加／貸方＝当月の減少＋月末有高。</strong>そして「当月の減少」は、借方合計から月末有高を引けば求まります。この形は3級の商品有高帳とまったく同じ考え方です。新しいことは何も起きていません。</p>
+    <p>材料・仕掛品・製品の3つは、構造がまったく同じです。<strong>借方＝月初有高＋当月の増加／貸方＝当月の減少＋月末有高。</strong>そして「当月の減少」は、借方合計から月末有高を引けば求まります。この形は3級の商品有高帳とまったく同じ考え方です（帳簿の書き方を思い出せなくても構いません。<strong>「月初にあった分＋入ってきた分−残っている分＝出ていった分」</strong>という引き算の形だけが要ります）。新しいことは何も起きていません。</p>
+    <p>なお、材料を払い出すときの単価をどう決めるか（先入先出法・移動平均法）は、W1の材料費で改めて扱います。ここでは<strong>金額の出入りの形</strong>だけを押さえてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">賃金・給料だけは、月初と月末が左右逆に入る</span>
+    <p>この「月初は借方、月末は貸方」という形を覚えた直後に、必ずつまずく箱があります。<strong>賃金・給料</strong>です。ここだけは<mark>月初未払が貸方、月末未払が借方</mark>と、材料・製品とちょうど逆になります。</p>
+    <p>理由は、<strong>そこに乗っているものが「モノ」ではなく「負債」だから</strong>です。材料勘定の月初有高は、月初に手元にある材料という<strong>資産</strong>なので借方に置きます。ところが賃金勘定の月初未払は、前月働いてもらったのにまだ払っていない<strong>負債</strong>です。負債のホームポジションは貸方ですから、月初の残高も貸方から始まります。</p>
+    <p>もう一つの見方もあります。賃金勘定の借方に来るのは<strong>「当月に支払った金額」</strong>です。その支払額には、前月ぶんの未払を精算した分が混ざっています。だから<strong>月初未払は借方から差し引く＝貸方に置く</strong>ことになります。逆に当月働いてもらったのにまだ払っていない月末未払は、支払額に含まれていないので借方に足します。</p>
+    <div class="keyflow">
+      <kbd>消費額</kbd><span class="arrow">＝</span><kbd>当月支払高</kbd><span class="arrow">−</span><kbd>月初未払</kbd><span class="arrow">＋</span><kbd>月末未払</kbd>
+    </div>
+    <p><strong>「箱の中身が資産なら月初は借方、負債なら月初は貸方」</strong>——この1行で判断できます。式を丸暗記すると符号を逆に覚えて必ず崩れるので、どちらなのかを毎回考えてください。</p>
   </div>
 
   <h2 id="s4"><span class="num">4</span>1本の流れを、数字と仕訳で追う</h2>
@@ -468,7 +480,7 @@
 
   <h3>ステップ② 賃金・給料の消費</h3>
 
-  <p>賃金も「払った金額」ではなく「働いてもらった金額」が原価です。当月に払った 150,000円 のうち 20,000円 は<em>先月ぶん</em>の未払を精算したもの。逆に、当月働いてもらったのにまだ払っていない分が 30,000円 あります。</p>
+  <p>賃金も「払った金額」ではなく「働いてもらった金額」が原価です。当月に払った 150,000円 のうち 20,000円 は<em>先月ぶん</em>の未払を精算したもの。逆に、当月働いてもらったのにまだ払っていない分が 30,000円 あります。前者は当月の原価ではないので引き、後者は当月の原価なので足します。§3で見たとおり、<strong>未払は負債なので月初が貸方・月末が借方</strong>と、材料や製品とは左右が逆になる箱です。</p>
 
   <div class="keyflow">
     <kbd>支払 150,000</kbd><span class="arrow">−</span><kbd>月初未払 20,000</kbd><span class="arrow">＋</span><kbd>月末未払 30,000</kbd><span class="arrow">＝</span><kbd>消費額 160,000</kbd>
@@ -841,7 +853,7 @@
   <div id="logchk">
   <ul class="checklist">
     <li><input type="checkbox" id="lg1" data-key="u2log-1"><label for="lg1"><span class="cl__t">1回目 — 上の図を見ながら、そっくり写す</span><span class="cl__d">まずは形を手に通す。この回は見てよい</span></label></li>
-    <li><input type="checkbox" id="lg2" data-key="u2log-2"><label for="lg2"><span class="cl__t">2回目 — 穴埋めモードで、勘定名だけ自分で埋める</span><span class="cl__d">上のボタンで勘定名を隠し、7つの勘定名を言えるか確認する</span></label></li>
+    <li><input type="checkbox" id="lg2" data-key="u2log-2"><label for="lg2"><span class="cl__t">2回目 — 穴埋めモードで、勘定名だけ自分で埋める</span><span class="cl__d">上のボタンで勘定名を隠し、8つの勘定名を言えるか確認する</span></label></li>
     <li><input type="checkbox" id="lg3" data-key="u2log-3"><label for="lg3"><span class="cl__t">3回目 — 何も見ずに描く（詰まったら見てよい）</span><span class="cl__d">どこで手が止まったかを覚えておく。止まった場所が弱点</span></label></li>
     <li><input type="checkbox" id="lg4" data-key="u2log-4"><label for="lg4"><span class="cl__t">4回目 — 何も見ずに、最後まで一度も見ずに描き切る</span><span class="cl__d">矢印のラベル（直接材料費・配賦など）まで書く</span></label></li>
     <li><input type="checkbox" id="lg5" data-key="u2log-5"><label for="lg5"><span class="cl__t">5回目 — 90秒以内に描き切る</span><span class="cl__d">時間を計る。本番の余白で使える速度にする</span></label></li>
@@ -875,7 +887,7 @@
     <li><input type="checkbox" id="k3" data-key="u2k-3"><label for="k3"><span class="cl__t">製造原価と販売費及び一般管理費の境目を説明できる</span><span class="cl__d">工場で発生したかどうか。工場の事務員の給料は製造原価、本社の事務員の給料は販管費</span></label></li>
     <li><input type="checkbox" id="k4" data-key="u2k-4"><label for="k4"><span class="cl__t">材料・仕掛品・製品の3つで「消費額（減少額）」の求め方が同じだと分かった</span><span class="cl__d">月初＋当月増加−月末。3級の商品有高帳と同じ構造</span></label></li>
     <li><input type="checkbox" id="k5" data-key="u2k-5"><label for="k5"><span class="cl__t">設例の数字を、材料から売上原価まで一気通貫で追えた</span><span class="cl__d">材料170,000 → 仕掛品460,000 → 完成400,000 → 売上原価380,000</span></label></li>
-    <li><input type="checkbox" id="k6" data-key="u2k-6"><label for="k6"><span class="cl__t">7つの勘定それぞれで、代表的な仕訳を1本書ける</span><span class="cl__d">消費・配賦・完成・販売・振替</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="u2k-6"><label for="k6"><span class="cl__t">8つの勘定それぞれで、代表的な仕訳を1本書ける</span><span class="cl__d">消費・配賦・完成・販売・振替</span></label></li>
     <li><input type="checkbox" id="k7" data-key="u2k-7"><label for="k7"><span class="cl__t">これから学ぶ論点が、図のどこに乗るかの対応表を一度通読した</span><span class="cl__d">W1以降、新しい論点に入るたびにここへ戻る</span></label></li>
     <li><input type="checkbox" id="k8" data-key="u2k-8"><label for="k8"><span class="cl__t">白紙に、何も見ずに勘定連絡図を描き切れた</span><span class="cl__d">このユニットのゴール。矢印のラベルまで書けること</span></label></li>
     <li><input type="checkbox" id="k9" data-key="u2k-9"><label for="k9"><span class="cl__t">翌日にもう一度、何も見ずに描いた</span><span class="cl__d">一晩挟んで描けて初めて定着。ここまでやって完了</span></label></li>

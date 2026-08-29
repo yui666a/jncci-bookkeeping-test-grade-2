@@ -3,6 +3,9 @@
 pdftotext -layout の出力は級ごとに表示桁の帯へ分かれる。日本語は全角のため、
 桁は文字数ではなく東アジア文字幅で数える。1行に複数の級が同居するので、
 判定は行単位ではなくセグメント単位で行う。
+
+項目名は桁幅に収まらないと次行へ折り返す。折り返しの断片は title へ連結し、
+括弧書きの限定文言はその項目の限定として、書かれていた桁帯の級とともに持つ。
 """
 import re
 import subprocess
@@ -22,9 +25,13 @@ TITLE = re.compile(r'^\s*「.+」')
 # これより前には表題・改定日の自由文があり項目名と誤認されるため、
 # ページごとにこの行までを読み飛ばす。
 GRADE_HEADER = re.compile(r'^\s*２級\s+１級\s+２級\s+１級\s*$')
-# ページヘッダー・注記・カッコ書きの補足・ページ番号など、項目名ではない
-# ものを無記号セグメントの中から除外する。
-FURNITURE = re.compile(r'^[（(]|^[0-9０-９]+$|^[３２１]級?$|^級$|^商工会議所|^「.+」$|^\(注')
+# ページヘッダー・ページ番号など、項目名でも項目の続きでもないものを
+# 無記号セグメントの中から除外する。
+# Why not: 括弧で始まるセグメントをここで捨てない。「(利息法、級数法)」の
+# ような級ごとの限定は原本が持つ級判定の根拠であり、捨てると復元できない。
+FURNITURE = re.compile(r'^[0-9０-９]+$|^[３２１]級?$|^級$|^商工会議所|^「.+」$|^\(注')
+# 括弧書きの限定文言の始まり。全角・半角どちらの括弧でも始まりうる。
+QUALIFIER = re.compile(r'^[（(]')
 
 GROUP_NO = re.compile(r'^[（(]?([０-９0-9]{1,2})')
 ITEM_NO = re.compile(r'^([ア-ン])[．.]')
@@ -32,7 +39,11 @@ SUBITEM_NO = re.compile(r'^[（(]([a-zａ-ｚ])[）)]')
 ZEN2HAN = str.maketrans('０１２３４５６７８９', '0123456789')
 
 _state = {'section': None, 'group': None, 'section_heading': None,
-          'section_grade': None, 'section_subject': None, 'section_children': 0}
+          'section_grade': None, 'section_subject': None, 'section_children': 0,
+          # 折り返しの続きの受け皿。last は直前に確定した項目。
+          # open は桁帯ごとに「書きかけの文字列」の置き場を持つ。1行に
+          # 級の違う限定文言が並び、それぞれが独立に折り返すため、帯で分ける。
+          'last': None, 'open': {}}
 
 
 def width(s):
@@ -40,24 +51,79 @@ def width(s):
 
 
 def segments(line):
-    """(表示開始桁, 文字列) を返す。"""
+    """(表示開始桁, 表示幅, 文字列) を返す。"""
     out = []
     for m in SEGMENT.finditer(line):
         text = m.group(1).strip()
         if text:
-            out.append((width(line[:m.start(1)]), text))
+            col = width(line[:m.start(1)])
+            out.append((col, width(line[:m.end(1)]) - col, text))
     return out
 
 
-def make(section, group, title, grade, subject):
+def make(section, group_head, title, grade, subject):
     return {
         'subject': subject,
         'section': section or '',
-        'group': group or '',
-        'title': title.replace('※', '').strip(),
+        # Why not: group を文字列で複製しない。項の見出しも折り返しで
+        # 伸びるため、複製すると子項目だけ切れた見出しを持つ。
+        'group_head': group_head,
+        'title': title,
+        # この項目が項の見出しそのものか。IDの分岐に使う。
+        'is_group_head': False,
         'grade': grade,
-        'advanced': '※' in title,
+        # 級ごとの限定文言。{級: [文言, ...]}。
+        'notes': {},
     }
+
+
+def emit_entry(entry, band, span=None):
+    """項目を1件確定し、以後の折り返し・限定文言の係り先として覚える。
+
+    span はその項目がPDF上で占めた表示桁の幅。欄の右端まで達していたかを
+    折り返しの判定に使うため、確定時に控える。
+    """
+    _state['section_children'] += 1
+    _state['last'] = entry
+    _state['open'][band] = {'owner': entry, 'key': 'title', 'span': span}
+    return [entry]
+
+
+def append_fragment(text, band, full):
+    """折り返しの続きを、その帯で書きかけの title または限定文言へ連結する。
+
+    折り返しは、行が級の欄の右端まで達したときにだけ起こる。欄を余して
+    終わっている項目の下の無記号の行は、「２０．収益と費用」の下に並ぶ
+    勘定科目の列挙のように、項目名の続きではない別の記述である。
+    Why not: 字下げの深さでは見分けない。同じ桁のまま折り返す欄もあれば、
+    右端で折り返すとかえって左へ寄る欄もあり、深さは向きが定まらない。
+    """
+    open_ = _state['open'].get(band)
+    if not open_:
+        return
+    if open_['key'] == 'title':
+        if open_['span'] is not None and open_['span'] < full:
+            return
+        open_['owner']['title'] += text
+    else:
+        open_['owner']['notes'][open_['key']][-1] += text
+
+
+def add_qualifier(text, grade, band):
+    """括弧書きの限定文言を、直前に確定した項目へその級で付ける。
+
+    限定は、それが書かれた桁帯の級に係る。「オ．減価償却(間接法)」の下に
+    3級欄「(定額法)」と2級欄「(定率法、生産高比例法)」が並ぶように、
+    同じ項目へ級の違う限定が同時に付く。
+    """
+    target = _state['last']
+    if target is None:
+        return
+    target['notes'].setdefault(grade, []).append(text)
+    # 限定文言も桁幅で折り返すため、閉じ括弧が揃うまで続きを受け取る。
+    _state['open'][band] = ({'owner': target, 'key': grade}
+                            if text.count('(') + text.count('（')
+                            > text.count(')') + text.count('）') else None)
 
 
 def flush_childless_section():
@@ -67,18 +133,20 @@ def flush_childless_section():
     通常の扱いのままではそのセクションが構造化データから消えてしまう。
     """
     if _state['section'] and _state['section_children'] == 0:
-        return [make(_state['section'], None, _state['section_heading'],
-                     _state['section_grade'], _state['section_subject'])]
+        return emit_entry(make(_state['section'], None, _state['section_heading'],
+                               _state['section_grade'], _state['section_subject']), 0, 0)
     return []
 
 
-def classify(seg, grade, subject, is_new_band=False):
-    """セグメント1つを分類する。項目なら1件、見出しなら0件を返す。
+def classify(seg, grade, subject, is_new_band=False, band=0, span=0, full=99):
+    """セグメント1つを分類する。新しい項目なら1件、それ以外は0件を返す。
+
+    項目にならないセグメントは捨てずに直前の項目へ吸収させる。括弧書きは
+    その級の限定文言として、記号のない断片は折り返しの続きとして扱う。
 
     is_new_band: このセグメントの表示桁帯が直前の行では空だったか。
     真のとき、ア〜ンの記号を持たない項目名（グループの子要素が記号を
-    持たないケース）を新規項目として受理する。偽のときは、前の行から
-    続く折り返し文の断片とみなし、記号なしセグメントは捨てる。
+    持たないケース）を新規項目として受理する。
     """
     m = SECTION.match(seg)
     if m:
@@ -89,20 +157,33 @@ def classify(seg, grade, subject, is_new_band=False):
         _state['section_grade'] = grade
         _state['section_subject'] = subject
         _state['section_children'] = 0
+        _state['open'] = {}
         return flushed
     if GROUP.match(seg):
-        _state['group'] = seg
-        _state['section_children'] += 1
-        return [make(_state['section'], seg, seg, grade, subject)]
-    if ITEM.match(seg):
-        _state['section_children'] += 1
-        return [make(_state['section'], _state['group'], seg, grade, subject)]
-    if SUBITEM.match(seg):
-        _state['section_children'] += 1
-        return [make(_state['section'], _state['group'], seg, grade, subject)]
-    if is_new_band and not FURNITURE.match(seg):
-        _state['section_children'] += 1
-        return [make(_state['section'], _state['group'], seg, grade, subject)]
+        head = make(_state['section'], None, seg, grade, subject)
+        head['group_head'] = head
+        head['is_group_head'] = True
+        _state['group'] = head
+        return emit_entry(head, band, span)
+    if ITEM.match(seg) or SUBITEM.match(seg):
+        return emit_entry(
+            make(_state['section'], _state['group'], seg, grade, subject), band, span)
+    if FURNITURE.match(seg):
+        return []
+    if QUALIFIER.match(seg):
+        # 書きかけの限定文言が残っている帯では、括弧で始まっていても続きである。
+        # 「(全部純資産直入法)、繰延税金資産…」のように、折り返した先頭が
+        # 内側の括弧で始まることがある。
+        open_ = _state['open'].get(band)
+        if open_ and open_['key'] != 'title':
+            append_fragment(seg, band, full)
+        else:
+            add_qualifier(seg, grade, band)
+        return []
+    if is_new_band:
+        return emit_entry(
+            make(_state['section'], _state['group'], seg, grade, subject), band, span)
+    append_fragment(seg, band, full)
     return []
 
 
@@ -121,13 +202,15 @@ def band_of(col, bounds):
     return len(bounds) - 1
 
 
-def parse(pdf, bounds, subject):
+def parse(pdf, bounds, subject, full):
     text = subprocess.run(
         ['pdftotext', '-layout', pdf, '-'],
         capture_output=True, text=True, check=True).stdout
     _state['section'] = None
     _state['group'] = None
     _state['section_children'] = 0
+    _state['last'] = None
+    _state['open'] = {}
     entries = []
     started = False
     # 折り返し行の断片を新規項目として拾わないよう、直前行で埋まって
@@ -142,11 +225,12 @@ def parse(pdf, bounds, subject):
             prev_bands = set()
             continue
         cur_bands = set()
-        for col, seg in segments(line):
+        for col, span, seg in segments(line):
             b = band_of(col, bounds)
             cur_bands.add(b)
             is_new_band = b not in prev_bands
-            entries.extend(classify(seg, grade_of(col, bounds), subject, is_new_band))
+            entries.extend(classify(seg, grade_of(col, bounds), subject,
+                                    is_new_band, b, span, full))
         prev_bands = cur_bands
     entries.extend(flush_childless_section())
     return entries
@@ -154,6 +238,16 @@ def parse(pdf, bounds, subject):
 
 def yaml_escape(s):
     return '"%s"' % s.replace('\\', '\\\\').replace('"', '\\"')
+
+
+def clean(s):
+    """※は級の注記であり項目名の一部ではないため、表示用の文字列から外す。"""
+    return s.replace('※', '').strip()
+
+
+def group_of(e):
+    """項目が属する項の見出し。折り返しを連結し終えた最終形を返す。"""
+    return clean(e['group_head']['title']) if e['group_head'] else ''
 
 
 def topic_id(e):
@@ -165,16 +259,19 @@ def topic_id(e):
     """
     head = e['section'].split()[0] if e['section'] else '無題'
     # 商業簿記と工業簿記は節番号(第一〜)を共有するため、科目を含めないと衝突する。
-    m = GROUP_NO.match(e['group'] or '')
+    m = GROUP_NO.match(group_of(e))
     parts = [e['subject'], head, m.group(1).translate(ZEN2HAN) if m else '0']
     for pat in (ITEM_NO, SUBITEM_NO):
-        m = pat.match(e['title'])
+        m = pat.match(clean(e['title']))
         if m:
             parts.append(m.group(1))
             return '-'.join(parts)
-    # 行頭記号を持たない項目。項の見出しそのものと、上級欄の無記号項目の
-    # 2種類がある。前者は見出しとして、後者は級で区別する。
-    parts.append('0' if e['title'] == e['group'] else 'g%d' % e['grade'])
+    # 行頭記号を持たない項目。※のない項の見出しは見出しとして、上級欄の
+    # 無記号項目と※つきの見出しは級で区別する。
+    # Why not: title と group の文字列一致で見分けない。見出しも折り返しで
+    # 伸びるうえ※の有無で食い違い、同じ項目が別のIDへ落ちる。
+    head_of_group = e['is_group_head'] and '※' not in e['title']
+    parts.append('0' if head_of_group else 'g%d' % e['grade'])
     return '-'.join(parts)
 
 
@@ -191,15 +288,21 @@ def emit(entries):
         tid = base if n == 1 else '%s-%d' % (base, n)
         lines.append('  - id: %s' % yaml_escape(tid))
         lines.append('    subject: %s' % e['subject'])
-        lines.append('    section: %s' % yaml_escape(e['section']))
-        lines.append('    group: %s' % yaml_escape(e['group']))
-        lines.append('    title: %s' % yaml_escape(e['title']))
+        lines.append('    section: %s' % yaml_escape(clean(e['section'])))
+        lines.append('    group: %s' % yaml_escape(group_of(e)))
+        lines.append('    title: %s' % yaml_escape(clean(e['title'])))
         lines.append('    grade: %d' % e['grade'])
-        lines.append('    advanced: %s' % ('true' if e['advanced'] else 'false'))
+        lines.append('    advanced: %s' % ('true' if '※' in e['title'] else 'false'))
+        # Why not: 級ごとの入れ子リストにしない。読み手の tools/check.mjs の
+        # YAMLリーダは項目1件を平坦なスカラーの並びとして読むため、入れ子を
+        # 置くと限定文言の行が別の論点として読まれる。
+        for grade in sorted(e['notes']):
+            lines.append('    limit_grade%d: %s'
+                         % (grade, yaml_escape(clean(' '.join(e['notes'][grade])))))
     return '\n'.join(lines) + '\n'
 
 
-def parse_kogen(pdf):
+def parse_kogen(pdf, full):
     """工業簿記の区分表を読む。
 
     1ページに「2級/1級」の組を横に2つ並べる版面のため、左右の組を分けて
@@ -211,6 +314,8 @@ def parse_kogen(pdf):
     _state['section'] = None
     _state['group'] = None
     _state['section_children'] = 0
+    _state['last'] = None
+    _state['open'] = {}
     entries = []
     for page in text.split('\f'):
         if not page.strip():
@@ -238,13 +343,21 @@ def parse_kogen(pdf):
                 continue
             cur_left_bands = set()
             cur_right_bands = set()
-            for col, seg in segments(line):
+            for col, span, seg in segments(line):
                 # 左右の組を分ける境界。ヘッダー実測は26/46だが、本文の
                 # セグメント開始桁は26-37が空白でヘッダーより右組が
                 # 手前にずれ込む（例: 桁39の項目が右組に属する）ため、
                 # 実測分布の空白帯（29と37の間）である33を境界とする。
                 is_left = col < 33
-                b = (0 if col < 18 else 1) if is_left else (0 if col < 61 else 1)
+                # 帯の境界は級の境界（61）と別に置く。右組の項目は節見出し
+                # の内側へ字下げされるため、折り返し（「イ．設備投資の意思
+                # 決定モデ」桁57 に続く「ル」桁68）が級の境界をまたぐ。
+                # 61で帯を割ると、この続きが新規項目に化ける。
+                # 同一行に2項目が並ぶのは桁74以上に限られるので、帯の境界は
+                # そこへ置く。
+                # Why not: 級判定には61をそのまま使う。桁61以上の
+                # セグメントは実測でも全て1級の内容である。
+                b = (0 if col < 18 else 1) if is_left else (0 if col < 72 else 1)
                 key = ('left' if is_left else 'right', b)
                 if key in note_bands:
                     continue
@@ -254,24 +367,26 @@ def parse_kogen(pdf):
                 if is_left:
                     is_new_band = b not in prev_left_bands
                     cur_left_bands.add(b)
-                    left.append((2 if col < 18 else 1, seg, is_new_band))
+                    left.append((2 if col < 18 else 1, seg, is_new_band, key, span))
                 else:
                     is_new_band = b not in prev_right_bands
                     cur_right_bands.add(b)
-                    right.append((2 if col < 61 else 1, seg, is_new_band))
+                    right.append((2 if col < 61 else 1, seg, is_new_band, key, span))
             prev_left_bands = cur_left_bands
             prev_right_bands = cur_right_bands
-        for grade, seg, is_new_band in left + right:
-            entries.extend(classify(seg, grade, '工', is_new_band))
+        for grade, seg, is_new_band, key, span in left + right:
+            entries.extend(classify(seg, grade, '工', is_new_band, key, span, full))
     entries.extend(flush_childless_section())
     return entries
 
 
 def main():
     # 商業簿記：3級 / 2級 / 1級 の3帯。境界は実測の桁分布による。
+    # full は「級の欄いっぱいまで書かれた」とみなす表示幅。折り返しの判定に
+    # 使う。版面が違えば欄の幅も違うため、区分表ごとに実測値を与える。
     shogyo = parse('reference/shogyouboki_kubun.pdf',
-                   [(24, 3), (48, 2), (999, 1)], '商')
-    kogen = parse_kogen('reference/kogyoboki_kubun.pdf')
+                   [(24, 3), (48, 2), (999, 1)], '商', 36)
+    kogen = parse_kogen('reference/kogyoboki_kubun.pdf', 26)
     sys.stdout.write(emit(shogyo + kogen))
 
 
