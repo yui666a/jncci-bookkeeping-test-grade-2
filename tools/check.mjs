@@ -103,6 +103,14 @@ function targets(args) {
 
 export const CHECKS = [];
 
+// 正解科目が accounts プールに入っているか、その科目名が
+// 標準・許容勘定科目表に実在するかを見る。
+//
+// 勘定科目表は製造業の科目を含まない（原本の記載による）。工業簿記の
+// 単元では実在チェックを行わず、プール整合だけを見る。
+const KNOWN_ACCOUNTS = new Set(
+  loadYaml('reference/accounts.yml').accounts.map((a) => a.name));
+
 // ゲート0：ドリルが実際に mount されたか。
 // 検査はページのJSランタイムから設問を読む。app.js の読み込みに失敗すると
 // 捕捉が空になり、以降の全ゲートが「設問0件」を検査して素通りする。
@@ -145,6 +153,37 @@ CHECKS.push(async function checkBalance(page, file) {
   for (const e of [...data.tables, ...data.drills]) {
     if (e.debit !== e.credit) {
       report(file, e.id, e.debit, e.credit, '貸借が一致しない');
+    }
+  }
+});
+
+// ゲート2：正解科目のプール整合と、科目名の実在。
+CHECKS.push(async function checkAccounts(page, file) {
+  const data = await page.evaluate(() => {
+    const out = [];
+    for (const { sel, cfg } of (window.__captured?.journal || [])) {
+      (cfg.questions || []).forEach((q, i) => {
+        const pool = q.accounts || cfg.accounts || [];
+        const used = [...(q.debit || []), ...(q.credit || [])]
+          .map((r) => r[0]).filter(Boolean);
+        out.push({ id: sel + '#q' + (i + 1), pool, used });
+      });
+    }
+    const m = document.querySelector('meta[name="boki-subject"]');
+    return { out, subject: m ? m.content : '商' };
+  });
+
+  for (const q of data.out) {
+    const pool = new Set(q.pool);
+    for (const name of q.used) {
+      if (!pool.has(name)) {
+        report(file, q.id, 'プールに含む', name,
+          '正解科目が accounts プールにない（入力できず必ず不正解になる）');
+      }
+      if (data.subject === '商' && !KNOWN_ACCOUNTS.has(name)) {
+        report(file, q.id, '勘定科目表に実在', name,
+          '標準・許容勘定科目表にない科目名');
+      }
     }
   }
 });
