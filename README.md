@@ -10,13 +10,18 @@
 | 場所 | 内容 |
 |---|---|
 | `index.html` | 公開サイトのトップページ |
+| `progress.html` | 学習の記録。集計とエクスポート |
+| `進捗ログ.md` | 学習記録の書き出し先 |
 | `学習カリキュラム.md` | 11週間の学習計画。週次の論点配分 |
 | `教材制作ルール.md` | 教材の出力形式・執筆方針・品質ゲート |
 | `出題範囲_最新確認メモ.md` | 出題範囲の確認結果 |
-| `phase0/` | 単元教材（HTML1枚／単元） |
+| `assets/` | 共通のスタイルとスクリプト（全フェーズで共有） |
+| `phase0/` `phase1/` | 単元教材（HTML1枚／単元） |
 | `reference/` | 出題区分表・勘定科目表の原本と構造化データ |
 | `tools/` | 検証スクリプト |
+| `docs/design/` `docs/adr/` | 設計文書と決定記録 |
 | `.claude/agents/` | 教材制作と検証のサブエージェント |
+| `.claude/skills/` | 学習記録の転記手順 |
 
 ## 教材を開く
 
@@ -32,8 +37,9 @@ open phase0/index.html     # Phase 0 の目次
 ```
 
 外部CDN・外部フォントを参照しないため、オフラインで動く。
-共通アセットは `phase0/assets/`（`style.css` と `app.js`）だけで、
+共通アセットは `assets/`（`style.css` と `app.js`）だけで、全フェーズが共有する。
 ドリルは `BokiJournal` / `BokiQuiz` / `BokiNum` / `BokiFill` の4種類。
+ドリルの正誤・学習時間・メモは、教材を使うだけで自動的に記録される。
 
 ## 公開
 
@@ -46,10 +52,10 @@ open phase0/index.html     # Phase 0 の目次
 npm install         # 初回のみ。Playwright を入れる
 npx playwright install chromium
 
-npm run check       # 品質ゲート0〜7（全ページ）
+npm run check       # 機械的な品質ゲート（全ページ）
 npm run check phase0/01_3kyu-review.html   # 単一ページ
 npm run coverage    # 出題区分表に対する論点カバレッジ
-npm test            # 計算式パーサの単体テスト
+npm test            # 計算式パーサと学習記録の単体テスト
 ```
 
 `npm run check` は指摘があれば終了コード1を返す。
@@ -64,6 +70,8 @@ npm test            # 計算式パーサの単体テスト
 | 5 | 目次のアンカーと見出しidの対応 |
 | 6 | JSエラー、id重複、data-key重複、リンク切れ、外部参照、420px幅の横スクロール |
 | 7 | カバー論点メタの存在と、IDが区分表に実在するか |
+| 9 | 進捗記録の配線（1問解いて採点し、記録が増えるか） |
+| 10 | 選択式の数値検算（`invariant` の等式が成り立つか） |
 
 失敗は `ファイル:該当id 期待値 実際値` の形式で出る。
 
