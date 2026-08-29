@@ -1,0 +1,9 @@
+{
+  "name": "boki2-materials",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "coverage": "node tools/coverage.mjs"
+  }
+}
