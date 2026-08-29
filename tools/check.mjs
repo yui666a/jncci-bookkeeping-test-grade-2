@@ -2,8 +2,8 @@
 // HTMLの解析に正規表現を使わない。Playwright で file:// を開き、DOM と
 // JS ランタイムから読む。mount() に渡された設定オブジェクトの中身には
 // 正規表現では到達できないため。
-import { readFileSync, readdirSync } from 'node:fs';
-import { resolve, join } from 'node:path';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
@@ -320,6 +320,135 @@ CHECKS.push(async function checkQuiz(page, file) {
         report(file, it.id, '選択肢' + (it.answer + 1), '選択肢' + n,
           '解説が指す選択肢と answer が食い違う');
       }
+    }
+  }
+});
+
+// ゲート5：.toc のアンカーと見出しidの対応。
+CHECKS.push(async function checkToc(page, file) {
+  const data = await page.evaluate(() => ({
+    anchors: [...document.querySelectorAll('.toc a[href^="#"]')]
+      .map((a) => a.getAttribute('href').slice(1)),
+    ids: [...document.querySelectorAll('h2[id]')].map((h) => h.id),
+  }));
+
+  const ids = new Set(data.ids);
+  for (const a of data.anchors) {
+    if (!ids.has(a)) {
+      report(file, '#' + a, '対応する h2[id]', 'なし', '目次のリンク先がない');
+    }
+  }
+  const linked = new Set(data.anchors);
+  for (const id of data.ids) {
+    if (!linked.has(id)) {
+      report(file, '#' + id, '目次に載る', '載っていない', '見出しが目次にない');
+    }
+  }
+});
+
+// ゲート6：JSエラー、id重複、data-key重複、リンク切れ、外部参照、
+// 420px幅の横スクロール。
+CHECKS.push(async function checkRuntime(page, file, errors) {
+  for (const e of errors) report(file, '(runtime)', 'エラーなし', e, 'JSエラー');
+
+  const found = await page.evaluate(() => {
+    const dups = (list) => {
+      const seen = {}, out = [];
+      for (const v of list) {
+        if (!v) continue;
+        seen[v] = (seen[v] || 0) + 1;
+        if (seen[v] === 2) out.push(v);
+      }
+      return out;
+    };
+    return {
+      ids: dups([...document.querySelectorAll('[id]')].map((e) => e.id)),
+      keys: dups([...document.querySelectorAll('[data-key]')].map((e) => e.dataset.key)),
+      rel: [...document.querySelectorAll('a[href]')]
+        .map((a) => a.getAttribute('href'))
+        .filter((h) => h && !h.startsWith('#') && !/^[a-z]+:/.test(h)),
+      deadAnchors: [...document.querySelectorAll('a[href^="#"]')]
+        .map((a) => a.getAttribute('href').slice(1))
+        .filter((h) => h && !document.getElementById(h)),
+      external: [...document.querySelectorAll('[src], link[href]')]
+        .map((e) => e.getAttribute('src') || e.getAttribute('href'))
+        .filter((u) => u && /^https?:/.test(u)),
+    };
+  });
+
+  for (const id of found.ids) report(file, id, '一意', '重複', 'id が重複');
+  for (const k of found.keys) {
+    report(file, k, '一意', '重複', 'data-key が重複（進捗が混線する）');
+  }
+  for (const a of found.deadAnchors) {
+    report(file, '#' + a, '存在する', 'なし', 'ページ内リンクの飛び先がない');
+  }
+  for (const u of found.external) {
+    report(file, u, '外部参照なし', u, '外部URLを参照している（オフラインで壊れる）');
+  }
+
+  for (const href of found.rel) {
+    const target = resolve(dirname(file), decodeURIComponent(href.split('#')[0]));
+    if (!existsSync(target)) report(file, href, '存在する', 'なし', 'リンク切れ');
+  }
+
+  // 420px 幅での横スクロール。.grid2 内の表が典型的な原因。
+  await page.setViewportSize({ width: 420, height: 900 });
+  const over = await page.evaluate(() => {
+    const d = document.documentElement;
+    if (d.scrollWidth <= d.clientWidth) return null;
+    // 横スクロールする入れ物（表や図を包む overflow-x:auto）の中で幅を
+    // 超える要素は、設計上そうなっているため原因ではない。祖先に
+    // スクロールする入れ物を持たない要素だけを挙げる。
+    const scrolls = (e) => {
+      const o = getComputedStyle(e).overflowX;
+      return o === 'auto' || o === 'scroll';
+    };
+    const all = [...document.querySelectorAll('*')].filter((e) => {
+      if (e.getBoundingClientRect().right <= d.clientWidth + 1) return false;
+      for (let a = e.parentElement; a && a !== d; a = a.parentElement) {
+        if (scrolls(a)) return false;
+      }
+      return true;
+    });
+    const wide = all
+      .filter((e) => !all.some((o) => o !== e && o.contains(e)))
+      .slice(0, 3)
+      // SVG要素の className は文字列ではなく SVGAnimatedString のため、
+      // String() すると '[object SVGAnimatedString]' になる。
+      .map((e) => {
+        const cls = typeof e.className === 'string' ? e.className
+          : (e.getAttribute('class') || '');
+        return e.tagName.toLowerCase() + (cls ? '.' + cls.split(' ')[0] : '');
+      });
+    return { scrollWidth: d.scrollWidth, clientWidth: d.clientWidth, wide };
+  });
+  if (over) {
+    report(file, over.wide.join(',') || '(要素不明)', over.clientWidth, over.scrollWidth,
+      '420px幅で横スクロールが出る');
+  }
+  await page.setViewportSize({ width: 1280, height: 900 });
+});
+
+// ゲート7：boki-topics メタが存在し、IDが syllabus.yml に実在するか。
+const TOPIC_IDS = new Set(loadYaml('reference/syllabus.yml').topics.map((t) => t.id));
+
+CHECKS.push(async function checkTopicsMeta(page, file) {
+  // index.html は目次であり論点を扱わない
+  if (/(^|\/)index\.html$/.test(file)) return;
+
+  const meta = await page.evaluate(() => {
+    const m = document.querySelector('meta[name="boki-topics"]');
+    return m ? m.content : null;
+  });
+  if (meta === null) {
+    report(file, '(head)', 'boki-topics あり', 'なし',
+      'カバー論点のメタがない（カバレッジ検証で未カバー扱いになる）');
+    return;
+  }
+  for (const id of meta.split(',').map((s) => s.trim()).filter(Boolean)) {
+    if (!TOPIC_IDS.has(id)) {
+      report(file, id, 'syllabus.yml に実在', 'なし', '存在しない論点ID');
     }
   }
 });
