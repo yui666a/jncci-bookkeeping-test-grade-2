@@ -18,9 +18,13 @@ SUBITEM = re.compile(r'^\(([a-z])\)\s*(.+)$')
 # 表本体の開始は「科目名」の見出し行。それより前には前文・改定履歴・
 # (注)の箇条書きがあり、行頭の全角数字がGROUPと誤認されるため除外する。
 TITLE = re.compile(r'^\s*「.+」')
+# 工業簿記の各ページ冒頭にある「２級 １級 ２級 １級」ヘッダー行。
+# これより前には表題・改定日の自由文があり項目名と誤認されるため、
+# ページごとにこの行までを読み飛ばす。
+GRADE_HEADER = re.compile(r'^\s*２級\s+１級\s+２級\s+１級\s*$')
 # ページヘッダー・注記・カッコ書きの補足・ページ番号など、項目名ではない
 # ものを無記号セグメントの中から除外する。
-FURNITURE = re.compile(r'^[（(]|^[0-9０-９]+$|^[３２１]$|^級$|^商工会議所|^「.+」$|^\(注')
+FURNITURE = re.compile(r'^[（(]|^[0-9０-９]+$|^[３２１]級?$|^級$|^商工会議所|^「.+」$|^\(注')
 
 _state = {'section': None, 'group': None}
 
@@ -145,11 +149,78 @@ def emit(entries):
     return '\n'.join(lines) + '\n'
 
 
+def parse_kogen(pdf):
+    """工業簿記の区分表を読む。
+
+    1ページに「2級/1級」の組を横に2つ並べる版面のため、左右の組を分けて
+    読み、左を読み切ってから右を読む。右組は左組の続きである。
+    """
+    text = subprocess.run(
+        ['pdftotext', '-layout', pdf, '-'],
+        capture_output=True, text=True, check=True).stdout
+    _state['section'] = None
+    _state['group'] = None
+    entries = []
+    for page in text.split('\f'):
+        if not page.strip():
+            continue
+        left, right = [], []
+        # 折り返し行の断片を新規項目として拾わないよう、直前行で埋まって
+        # いた帯を記憶する。左右の組で独立に判定する。商業簿記と同じ帯
+        # 単位の判定を用いる（同一行内で2級と1級の項目が同時に始まる
+        # ケースを正しく拾うため、左右の組単位までは緩めない）。
+        prev_left_bands = set()
+        prev_right_bands = set()
+        # (注)の脚注ブロックは表本体の下に列位置を共有して続くため、
+        # 一度検出したらそのページのその帯以降は本体ではなく脚注として
+        # 読み飛ばす。
+        note_bands = set()
+        started = False
+        for line in page.split('\n'):
+            if not started:
+                if GRADE_HEADER.match(line):
+                    started = True
+                continue
+            if not line.strip():
+                prev_left_bands = set()
+                prev_right_bands = set()
+                continue
+            cur_left_bands = set()
+            cur_right_bands = set()
+            for col, seg in segments(line):
+                # 左右の組を分ける境界。ヘッダー実測は26/46だが、本文の
+                # セグメント開始桁は26-37が空白でヘッダーより右組が
+                # 手前にずれ込む（例: 桁39の項目が右組に属する）ため、
+                # 実測分布の空白帯（29と37の間）である33を境界とする。
+                is_left = col < 33
+                b = (0 if col < 18 else 1) if is_left else (0 if col < 61 else 1)
+                key = ('left' if is_left else 'right', b)
+                if key in note_bands:
+                    continue
+                if seg.startswith('（注'):
+                    note_bands.add(key)
+                    continue
+                if is_left:
+                    is_new_band = b not in prev_left_bands
+                    cur_left_bands.add(b)
+                    left.append((2 if col < 18 else 1, seg, is_new_band))
+                else:
+                    is_new_band = b not in prev_right_bands
+                    cur_right_bands.add(b)
+                    right.append((2 if col < 61 else 1, seg, is_new_band))
+            prev_left_bands = cur_left_bands
+            prev_right_bands = cur_right_bands
+        for grade, seg, is_new_band in left + right:
+            entries.extend(classify(seg, grade, '工', is_new_band))
+    return entries
+
+
 def main():
     # 商業簿記：3級 / 2級 / 1級 の3帯。境界は実測の桁分布による。
     shogyo = parse('reference/shogyouboki_kubun.pdf',
                    [(24, 3), (48, 2), (999, 1)], '商')
-    sys.stdout.write(emit(shogyo))
+    kogen = parse_kogen('reference/kogyoboki_kubun.pdf')
+    sys.stdout.write(emit(shogyo + kogen))
 
 
 if __name__ == '__main__':
