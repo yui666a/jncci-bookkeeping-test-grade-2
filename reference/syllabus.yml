@@ -2473,6 +2473,13 @@ topics:
     title: "３．営業費の分析"
     grade: 1
     advanced: false
+  - id: "第十八-工場会計の独立"
+    subject: 工
+    section: "第十八 工場会計の独立※"
+    group: ""
+    title: "工場会計の独立"
+    grade: 2
+    advanced: true
   - id: "第十九-１．業務的意思決定の分析"
     subject: 工
     section: "第十九 差額原価収益分析"

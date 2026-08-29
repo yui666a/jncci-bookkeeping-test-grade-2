@@ -26,7 +26,8 @@ GRADE_HEADER = re.compile(r'^\s*２級\s+１級\s+２級\s+１級\s*$')
 # ものを無記号セグメントの中から除外する。
 FURNITURE = re.compile(r'^[（(]|^[0-9０-９]+$|^[３２１]級?$|^級$|^商工会議所|^「.+」$|^\(注')
 
-_state = {'section': None, 'group': None}
+_state = {'section': None, 'group': None, 'section_heading': None,
+          'section_grade': None, 'section_subject': None, 'section_children': 0}
 
 
 def width(s):
@@ -54,6 +55,18 @@ def make(section, group, title, grade, subject):
     }
 
 
+def flush_childless_section():
+    """子項目を1件も持たないまま終わったセクション見出しを、見出し自体を
+    1件の項目として返す。「第十八 工場会計の独立※」のように、区分表の
+    原本に本文の箇条書きが存在しないセクションがあり、見出しを捨てる
+    通常の扱いのままではそのセクションが構造化データから消えてしまう。
+    """
+    if _state['section'] and _state['section_children'] == 0:
+        return [make(_state['section'], None, _state['section_heading'],
+                     _state['section_grade'], _state['section_subject'])]
+    return []
+
+
 def classify(seg, grade, subject, is_new_band=False):
     """セグメント1つを分類する。項目なら1件、見出しなら0件を返す。
 
@@ -64,17 +77,26 @@ def classify(seg, grade, subject, is_new_band=False):
     """
     m = SECTION.match(seg)
     if m:
+        flushed = flush_childless_section()
         _state['section'] = '第%s %s' % (m.group(1), m.group(2))
+        _state['section_heading'] = m.group(2)
         _state['group'] = None
-        return []
+        _state['section_grade'] = grade
+        _state['section_subject'] = subject
+        _state['section_children'] = 0
+        return flushed
     if GROUP.match(seg):
         _state['group'] = seg
+        _state['section_children'] += 1
         return [make(_state['section'], seg, seg, grade, subject)]
     if ITEM.match(seg):
+        _state['section_children'] += 1
         return [make(_state['section'], _state['group'], seg, grade, subject)]
     if SUBITEM.match(seg):
+        _state['section_children'] += 1
         return [make(_state['section'], _state['group'], seg, grade, subject)]
     if is_new_band and not FURNITURE.match(seg):
+        _state['section_children'] += 1
         return [make(_state['section'], _state['group'], seg, grade, subject)]
     return []
 
@@ -100,6 +122,7 @@ def parse(pdf, bounds, subject):
         capture_output=True, text=True, check=True).stdout
     _state['section'] = None
     _state['group'] = None
+    _state['section_children'] = 0
     entries = []
     started = False
     # 折り返し行の断片を新規項目として拾わないよう、直前行で埋まって
@@ -120,6 +143,7 @@ def parse(pdf, bounds, subject):
             is_new_band = b not in prev_bands
             entries.extend(classify(seg, grade_of(col, bounds), subject, is_new_band))
         prev_bands = cur_bands
+    entries.extend(flush_childless_section())
     return entries
 
 
@@ -160,6 +184,7 @@ def parse_kogen(pdf):
         capture_output=True, text=True, check=True).stdout
     _state['section'] = None
     _state['group'] = None
+    _state['section_children'] = 0
     entries = []
     for page in text.split('\f'):
         if not page.strip():
@@ -212,6 +237,7 @@ def parse_kogen(pdf):
             prev_right_bands = cur_right_bands
         for grade, seg, is_new_band in left + right:
             entries.extend(classify(seg, grade, '工', is_new_band))
+    entries.extend(flush_childless_section())
     return entries
 
 
