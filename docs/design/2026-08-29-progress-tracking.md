@@ -18,11 +18,15 @@
 簿記2級教材/
 ├── progress.html            学習ダッシュボード（新規）
 ├── 進捗ログ.md               書き出し先（新規）
-├── phase0/assets/app.js     BokiProgress を追加
+├── assets/app.js            BokiProgress を追加（フェーズ間で共有）
 ├── tools/check.mjs          品質ゲート9を追加
 └── .claude/skills/
     └── 進捗転記/SKILL.md      JSON を 進捗ログ.md へ転記する手順（新規）
 ```
+
+共通アセットはリポジトリ直下の `assets/` へ一本化する。`phase0/assets/` と
+`phase1/assets/` はバイト単位で同一の複製であり、`BokiProgress` を入れると
+以後フェーズが増えるたびに同じ修正を複製の数だけ適用することになる。
 
 データは `localStorage` の `boki2:progress` 1キーに集約する。教材ページは書き込むだけ、`progress.html` は読んで集計するだけ、という一方向にする。
 
@@ -75,6 +79,8 @@
 
 経過時間をそのまま測ると、タブを開いたまま離席した時間が学習時間になる。実績が計画の23時間を上回っているように見えて、実際は足りていない、という最も避けたい壊れ方をする。
 
+計測は `initSession()` が起動時に自動で走る。区間の内部状態を持つため、テストから経過時間を差し込めるよう `BokiProgress.__testTick(deltaSec)` をそこで生やす。実時間の経過を待つテストは遅いうえ不安定になる。
+
 判定は `visibilitychange` と、`keydown` / `click` / `scroll` の最終時刻で行う。区間の確定は `visibilitychange`（非可視化）と `pagehide` で書き込む。`beforeunload` は Safari で発火しないことがあるため使わない。
 
 ### 既存データの移行
@@ -85,13 +91,34 @@
 
 `app.js` に `BokiProgress` を追加し、`window` に公開する。
 
+記録するもの。
+
 ```js
-BokiProgress.record(drillId, ok)   // ドリル1問の正誤
-BokiProgress.check(unitKey, key, checked)
-BokiProgress.note(text)
-BokiProgress.dump()                // 全体を返す（ダッシュボード用）
-BokiProgress.exportJSON()          // exportedAt を足した JSON 文字列
+BokiProgress.record(drillId, ok)            // ドリル1問の正誤
+BokiProgress.check(unitKey, key, checked)   // チェックボックス
+BokiProgress.note(text)                     // メモ
+BokiProgress.addSession(unitKey, startISO, sec)  // 学習時間の区間
 ```
+
+読むもの。
+
+```js
+BokiProgress.dump()        // 全体を返す（ダッシュボード用）
+BokiProgress.exportJSON()  // dump() に exportedAt を足した JSON 文字列
+BokiProgress.unitKey()     // 現在のページの単元キー
+BokiProgress.now()         // ローカルタイムゾーン付きの ISO 8601 文字列
+```
+
+内部で使うもの。
+
+```js
+BokiProgress.migrateLegacy()  // 旧 boki2:<page>:check を取り込む
+BokiProgress._reset()         // ストアを空に戻す（テストと全消去ボタン）
+```
+
+`now()` を公開するのは、日時の形式を1箇所に集約するためである。`toISOString()` は
+UTC を返すため、深夜に学習した記録が前日にずれて見える。呼び出し側が個別に
+組み立てると、この誤りが記録ごとにばらつく。
 
 ### 記録の呼び出しは app.js の内部で完結させる
 
@@ -193,8 +220,8 @@ phase0/03_dentaku#drill-teisu-1/q3
 
 | ファイル | 変更 |
 |---|---|
-| `phase0/assets/app.js` | `BokiProgress` 追加、単元キーをパス基準へ、ドリル4種とチェックリストから記録、セッション計測、旧キー移行 |
-| `phase0/assets/style.css` | ダッシュボードとメモ欄 |
+| `assets/app.js` | `BokiProgress` 追加、単元キーをパス基準へ、ドリル4種とチェックリストから記録、セッション計測、旧キー移行 |
+| `assets/style.css` | ダッシュボードとメモ欄 |
 | `tools/check.mjs` | ゲート9 |
 | `index.html` / `phase0/index.html` | `progress.html` への導線 |
 | `phase0/*.html` | `data-note` の追加（4単元） |
