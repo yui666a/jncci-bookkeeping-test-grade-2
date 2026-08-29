@@ -162,6 +162,18 @@ try {
       return s.length === 1 && s[0].sec <= 5 * 60 + 5; }),
        true, '放置した時間は加算しない');
   });
+  // 空のメモは記録しない。前後の空白は落とす。
+  await withApp(browser, 'phase0/02_kanjo-renrakuzu.html', async (page) => {
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      BokiProgress.note('  ');
+      BokiProgress.note('');
+      BokiProgress.note('  按分が分からない  ');
+      const n = BokiProgress.dump().notes;
+      return [n.length, n[0].text, n[0].unit, typeof n[0].at]; }),
+       [1, '按分が分からない', 'phase0/02_kanjo-renrakuzu', 'string'],
+       '空メモを捨て、単元を紐づける');
+  });
 } finally {
   await browser.close();
 }

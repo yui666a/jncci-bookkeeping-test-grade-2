@@ -111,6 +111,13 @@
       p.sessions.push({ unit: unitKey, start: startISO, sec: sec });
       saveProgress(p);
     },
+    note: function (text) {
+      text = String(text == null ? '' : text).trim();
+      if (!text) return;
+      var p = loadProgress();
+      p.notes.push({ at: nowISO(), unit: PAGE, text: text });
+      saveProgress(p);
+    },
     _reset: function () { saveProgress(emptyProgress()); }
   };
 
@@ -172,6 +179,49 @@
         });
         updateBars();
       });
+    });
+  }
+
+  /* ---------- 学習メモ ---------- */
+  // わからなかったことは、机を離れてから思い出して書くと粒度が粗くなる。
+  // 単元ページのその場で書けるようにする。
+  function initNotes() {
+    document.querySelectorAll('[data-note]').forEach(function (host) {
+      var wrap = el('div', 'note');
+      wrap.appendChild(el('div', 'note__label', 'わからなかったこと・気づいたこと'));
+      var ta = el('textarea', 'note__input');
+      ta.rows = 3;
+      ta.placeholder = '例：連結のアップストリームで非支配株主持分への按分が分からない';
+      var row = el('div', 'btn-row');
+      var save = el('button', 'btn btn--sm', '記録する');
+      var msg = el('span', 'small muted', '');
+      row.appendChild(save); row.appendChild(msg);
+      wrap.appendChild(ta); wrap.appendChild(row);
+
+      var list = el('div', 'note__list');
+      function render() {
+        list.innerHTML = '';
+        var notes = BokiProgress.dump().notes.filter(function (n) { return n.unit === PAGE; });
+        notes.slice().reverse().forEach(function (n) {
+          var item = el('div', 'note__item');
+          item.appendChild(el('span', 'note__at', String(n.at).slice(0, 10)));
+          item.appendChild(el('span', 'note__text', n.text));
+          list.appendChild(item);
+        });
+      }
+      wrap.appendChild(list);
+
+      save.addEventListener('click', function () {
+        if (!ta.value.trim()) return;
+        BokiProgress.note(ta.value);
+        ta.value = '';
+        msg.textContent = '記録した';
+        setTimeout(function () { msg.textContent = ''; }, 2000);
+        render();
+      });
+
+      render();
+      host.appendChild(wrap);
     });
   }
 
@@ -600,7 +650,7 @@
   };
 
   /* ---------- 初期化 ---------- */
-  function boot() { initTheme(); initChecklists(); initSession(); }
+  function boot() { initTheme(); initChecklists(); initNotes(); initSession(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
