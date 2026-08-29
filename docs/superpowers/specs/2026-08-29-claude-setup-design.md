@@ -30,7 +30,7 @@
 │   ├── syllabus.yml
 │   └── accounts.yml
 ├── tools/
-│   ├── verify.mjs
+│   ├── check.mjs
 │   └── coverage.mjs
 ├── package.json
 ├── phase0/
@@ -70,14 +70,14 @@ CLAUDE.md に入れるのは次の5項目に限る。
 1. **目的と締切** — 2026年11月15日 第174回。2027年4月の改定前に完了させる制約。これを知らないと、改定後の2027年度版を根拠に答えてしまう
 2. **一次情報の所在** — 級の境界は `reference/syllabus.yml`、勘定科目は `reference/accounts.yml`。記憶で答えない
 3. **教材を書くときは `教材制作ルール.md` を読む** — 全文は写さない
-4. **公開前に `npm run verify` を通す** — 落ちたまま完了と報告しない
+4. **公開前に `npm run check` を通す** — 落ちたまま完了と報告しない
 5. **地雷リスト** — 建設仮勘定=2級／伝票会計=3級だが出題対象／消費税・法人税等・貯蔵品・剰余金の配当=3級だが2級で必修／売上諸掛りの旧処理は削除済み
 
 書かないもの：3文書の内容の複製、グローバルCLAUDE.mdに既にある原則、制作済み一覧（`教材制作ルール.md` の表が真実）。
 
 ### .claude/settings.json
 
-`npm run verify` と `node tools/*.mjs` の実行を許可し、検証のたびに承認を求められない状態にする。
+`npm run check` と `node tools/*.mjs` の実行を許可し、検証のたびに承認を求められない状態にする。
 
 サブエージェントが検証を自走できることが前提の設計であり、そこで許可待ちが挟まると運用が止まる。逆に、教材ファイルの書き換えを伴う操作は既定のまま扱う。
 
@@ -191,8 +191,8 @@ PDFのテキストは3級・2級・1級が段組みで並び、列の開始位�
 ## 6. 検証スクリプト
 
 ```
-npm run verify                              # 全ページ
-npm run verify phase0/01_3kyu-review.html   # 単一ページ
+npm run check                              # 全ページ
+npm run check phase0/01_3kyu-review.html   # 単一ページ
 ```
 
 | # | 検査 | 判定方法 |
@@ -216,7 +216,7 @@ npm run verify phase0/01_3kyu-review.html   # 単一ページ
 { q: '...', answer: 12500, formula: '(50000 - 5000) * 0.25 + 1250' }
 ```
 
-評価に `eval` は使わない。四則演算と括弧のみを受け付ける式パーサを `verify.mjs` に置く。教材のJSは自前で書くものであり任意コード実行の必要がない以上、実行系を持ち込む理由がない。
+評価に `eval` は使わない。四則演算と括弧のみを受け付ける式パーサを `check.mjs` に置く。教材のJSは自前で書くものであり任意コード実行の必要がない以上、実行系を持ち込む理由がない。
 
 既存の Phase 0 の `BokiNum` 12問には `formula` がないため、遡って付与する。以降に作る設問では必須とし、`formula` のない `BokiNum` 設問は検証エラーとする。
 
@@ -227,12 +227,12 @@ npm run verify phase0/01_3kyu-review.html   # 単一ページ
   ├─ boki-author（本文）
   └─ boki-drill（問題）        ← 並列
         ↓
-  npm run verify               ← ゲート1〜6、機械
+  npm run check               ← ゲート1〜6、機械
         ↓
   ├─ boki-coverage（ゲート7）
   └─ boki-reviewer（ゲート8）  ← 並列
         ↓
-  指摘の採否を判断 → 修正 → npm run verify 再走
+  指摘の採否を判断 → 修正 → npm run check 再走
 ```
 
 機械的検査を先に通してからサブエージェントを呼ぶ。貸借不一致のような機械が見つけられる欠陥を残したままLLMに読ませるのは、コストの無駄であり、かつ本質的な指摘が些末な指摘に埋もれる。
