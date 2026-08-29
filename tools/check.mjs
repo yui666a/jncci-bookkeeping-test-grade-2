@@ -103,6 +103,35 @@ function targets(args) {
 
 export const CHECKS = [];
 
+// ゲート1：静的な .jnl と BokiJournal の設問、両方の貸借を検算する。
+CHECKS.push(async function checkBalance(page, file) {
+  const data = await page.evaluate(() => {
+    const num = (s) => Number(String(s).replace(/[^\d.-]/g, '')) || 0;
+    // 金額は td のみ。見出しの th.amt は「金額」の文字であり合計に含めない。
+    const tables = [...document.querySelectorAll('table.jnl')].map((t, i) => {
+      let debit = 0, credit = 0;
+      for (const cell of t.querySelectorAll('td.d.amt')) debit += num(cell.textContent);
+      for (const cell of t.querySelectorAll('td.c.amt')) credit += num(cell.textContent);
+      return { id: t.id || ('jnl[' + i + ']'), debit, credit };
+    });
+    const drills = [];
+    for (const { sel, cfg } of (window.__captured?.journal || [])) {
+      // 設問の debit/credit は [科目名, 金額] のタプル配列（app.js の実装による）
+      const sum = (rows) => (rows || []).reduce((a, r) => a + (Number(r[1]) || 0), 0);
+      (cfg.questions || []).forEach((q, i) => {
+        drills.push({ id: sel + '#q' + (i + 1), debit: sum(q.debit), credit: sum(q.credit) });
+      });
+    }
+    return { tables, drills };
+  });
+
+  for (const e of [...data.tables, ...data.drills]) {
+    if (e.debit !== e.credit) {
+      report(file, e.id, e.debit, e.credit, '貸借が一致しない');
+    }
+  }
+});
+
 async function main() {
   const files = targets(process.argv.slice(2));
   if (!files.length) {
