@@ -16,6 +16,13 @@ topics:
     title: "ア．資産、負債、および資本"
     grade: 3
     advanced: false
+  - id: "第一-純資産と資本の関係"
+    subject: 商
+    section: "第一 簿記の基本原理"
+    group: "１．基礎概念"
+    title: "純資産と資本の関係"
+    grade: 2
+    advanced: false
   - id: "第一-イ．収益、費用"
     subject: 商
     section: "第一 簿記の基本原理"
@@ -317,6 +324,13 @@ topics:
     title: "キ．受取商品券"
     grade: 3
     advanced: false
+  - id: "第二-発行商品券等"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "４．その他の債権と債務等"
+    title: "発行商品券等"
+    grade: 1
+    advanced: false
   - id: "第二-ク．差入保証金"
     subject: 商
     section: "第二 諸取引の処理"
@@ -338,6 +352,13 @@ topics:
     title: "ア．振出、受入、取立、支払"
     grade: 3
     advanced: false
+  - id: "第二-営業外支払(受取)手形"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "５．手形"
+    title: "営業外支払(受取)手形"
+    grade: 2
+    advanced: true
   - id: "第二-イ．手形の更改(書換え)"
     subject: 商
     section: "第二 諸取引の処理"
@@ -351,6 +372,13 @@ topics:
     group: "５．手形"
     title: "ウ．手形の不渡"
     grade: 2
+    advanced: false
+  - id: "第二-不渡手形の貸借対照表表示"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "５．手形"
+    title: "不渡手形の貸借対照表表示法"
+    grade: 1
     advanced: false
   - id: "第二-エ．電子記録債権・電子記"
     subject: 商
@@ -436,6 +464,13 @@ topics:
     title: "ウ．退職給付引当金"
     grade: 2
     advanced: true
+  - id: "第二-退職給付債務の計算"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "７．引当金"
+    title: "退職給付債務の計算"
+    grade: 1
+    advanced: false
   - id: "第二-エ．修繕引当金"
     subject: 商
     section: "第二 諸取引の処理"
@@ -498,6 +533,13 @@ topics:
     group: "９．商品の売買"
     title: "エ．品違い等による仕入および売上の返品"
     grade: 3
+    advanced: false
+  - id: "第二-仕入割戻"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "９．商品の売買"
+    title: "仕入割戻"
+    grade: 2
     advanced: false
   - id: "第二-オ．仕入割引・売上割引"
     subject: 商
@@ -737,6 +779,13 @@ topics:
     title: "イ．ソフトウェア、ソフトウェア仮勘定"
     grade: 2
     advanced: true
+  - id: "第二-受注制作のソフトウェア、"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "１３．無形固定資産"
+    title: "受注制作のソフトウェア、市場販売目的の"
+    grade: 1
+    advanced: false
   - id: "第二-ウ．その他の無形固定資産"
     subject: 商
     section: "第二 諸取引の処理"
@@ -849,6 +898,13 @@ topics:
     title: "エ．オペレーティング・リース取引の借手側の"
     grade: 2
     advanced: false
+  - id: "第二-貸手側の処理"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "１７．リース取引※(注１)"
+    title: "貸手側の処理"
+    grade: 1
+    advanced: false
   - id: "第二-１８．外貨建取引"
     subject: 商
     section: "第二 諸取引の処理"
@@ -883,6 +939,13 @@ topics:
     group: "２０．収益と費用"
     title: "２０．収益と費用"
     grade: 3
+    advanced: false
+  - id: "第二-研究開発費、創立費・開業"
+    subject: 商
+    section: "第二 諸取引の処理"
+    group: "２０．収益と費用"
+    title: "研究開発費、創立費・開業費など"
+    grade: 2
     advanced: false
   - id: "第二-２１．税金"
     subject: 商
@@ -1150,6 +1213,20 @@ topics:
     title: "イ．その他利益剰余金"
     grade: 3
     advanced: false
+  - id: "第四-任意積立金"
+    subject: 商
+    section: "第四 株式会社会計"
+    group: "３．利益剰余金"
+    title: "任意積立金"
+    grade: 2
+    advanced: false
+  - id: "第四-税法上の積立金の処理"
+    subject: 商
+    section: "第四 株式会社会計"
+    group: "３．利益剰余金"
+    title: "税法上の積立金の処理"
+    grade: 1
+    advanced: false
   - id: "第四-４．剰余金の配当など"
     subject: 商
     section: "第四 株式会社会計"
@@ -1164,6 +1241,20 @@ topics:
     title: "ア．剰余金の配当"
     grade: 3
     advanced: true
+  - id: "第四-準備金積立額の算定"
+    subject: 商
+    section: "第四 株式会社会計"
+    group: "４．剰余金の配当など"
+    title: "準備金積立額の算定"
+    grade: 2
+    advanced: false
+  - id: "第四-分配可能額の算定"
+    subject: 商
+    section: "第四 株式会社会計"
+    group: "４．剰余金の配当など"
+    title: "分配可能額の算定"
+    grade: 1
+    advanced: false
   - id: "第四-イ．剰余金の処分"
     subject: 商
     section: "第四 株式会社会計"

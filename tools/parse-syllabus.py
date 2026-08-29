@@ -18,6 +18,9 @@ SUBITEM = re.compile(r'^\(([a-z])\)\s*(.+)$')
 # 表本体の開始は「科目名」の見出し行。それより前には前文・改定履歴・
 # (注)の箇条書きがあり、行頭の全角数字がGROUPと誤認されるため除外する。
 TITLE = re.compile(r'^\s*「.+」')
+# ページヘッダー・注記・カッコ書きの補足・ページ番号など、項目名ではない
+# ものを無記号セグメントの中から除外する。
+FURNITURE = re.compile(r'^[（(]|^[0-9０-９]+$|^[３２１]$|^級$|^商工会議所|^「.+」$|^\(注')
 
 _state = {'section': None, 'group': None}
 
@@ -47,8 +50,14 @@ def make(section, group, title, grade, subject):
     }
 
 
-def classify(seg, grade, subject):
-    """セグメント1つを分類する。項目なら1件、見出しなら0件を返す。"""
+def classify(seg, grade, subject, is_new_band=False):
+    """セグメント1つを分類する。項目なら1件、見出しなら0件を返す。
+
+    is_new_band: このセグメントの表示桁帯が直前の行では空だったか。
+    真のとき、ア〜ンの記号を持たない項目名（グループの子要素が記号を
+    持たないケース）を新規項目として受理する。偽のときは、前の行から
+    続く折り返し文の断片とみなし、記号なしセグメントは捨てる。
+    """
     m = SECTION.match(seg)
     if m:
         _state['section'] = '第%s %s' % (m.group(1), m.group(2))
@@ -61,6 +70,8 @@ def classify(seg, grade, subject):
         return [make(_state['section'], _state['group'], seg, grade, subject)]
     if SUBITEM.match(seg):
         return [make(_state['section'], _state['group'], seg, grade, subject)]
+    if is_new_band and not FURNITURE.match(seg):
+        return [make(_state['section'], _state['group'], seg, grade, subject)]
     return []
 
 
@@ -71,6 +82,14 @@ def grade_of(col, bounds):
     return bounds[-1][1]
 
 
+def band_of(col, bounds):
+    """表示桁からその桁が属する帯の通し番号を返す。grade_of と同じ境界を使う。"""
+    for i, (limit, _) in enumerate(bounds):
+        if col < limit:
+            return i
+    return len(bounds) - 1
+
+
 def parse(pdf, bounds, subject):
     text = subprocess.run(
         ['pdftotext', '-layout', pdf, '-'],
@@ -79,15 +98,24 @@ def parse(pdf, bounds, subject):
     _state['group'] = None
     entries = []
     started = False
+    # 折り返し行の断片を新規項目として拾わないよう、直前行で埋まって
+    # いた帯を記憶する。空行はセクション区切りなので継続とみなさない。
+    prev_bands = set()
     for line in text.split('\n'):
         if not started:
             if TITLE.match(line):
                 started = True
             continue
         if not line.strip():
+            prev_bands = set()
             continue
+        cur_bands = set()
         for col, seg in segments(line):
-            entries.extend(classify(seg, grade_of(col, bounds), subject))
+            b = band_of(col, bounds)
+            cur_bands.add(b)
+            is_new_band = b not in prev_bands
+            entries.extend(classify(seg, grade_of(col, bounds), subject, is_new_band))
+        prev_bands = cur_bands
     return entries
 
 
