@@ -260,21 +260,23 @@
     </div>
     <div class="card">
       <div class="card__label">小数点セレクター</div>
-      <p>小数第何位まで表示するかを決めます。</p>
+      <p>小数第何位で止めるかを決めます。<strong>F はありません。</strong></p>
       <ul>
-        <li><strong>F</strong> … 制限なし</li>
-        <li><strong>0 / 2 / 3 / 4</strong> … その桁で止める</li>
+        <li><strong>4 / 3 / 2 / 1 / 0</strong> … その桁で止める</li>
         <li><strong>ADD2</strong> … 小数点キーを押さなくても、下2桁が自動で小数になる（外貨の実務用）</li>
       </ul>
+      <p class="small">このセレクターは<strong>ラウンドセレクターが F 以外のときだけ働きます。</strong></p>
     </div>
   </div>
 
-  <p><strong>簿記の学習では、原則として ラウンドセレクターを F、小数点セレクターを F または 0 にしておきます。</strong>理由ははっきりしています。端数処理は<mark>問題文が指示する場所で、指示されたやり方で行うもの</mark>だからです。電卓が勝手に丸めてしまうと、その丸めた数を次の計算に使うことになり、最終的な答えが問題の正解とずれます。</p>
+  <p><strong>簿記の学習では、ラウンドセレクターを F に合わせます。それだけで足ります。</strong>小数点セレクターには「制限なし」の位置がなく、どこに置いても構いません。ラウンドセレクターが F のあいだは小数点セレクターが働かないので、位置に関係なく端数処理されないからです。</p>
+
+  <p>F に合わせる理由ははっきりしています。端数処理は<mark>問題文が指示する場所で、指示されたやり方で行うもの</mark>だからです。電卓が勝手に丸めてしまうと、その丸めた数を次の計算に使うことになり、最終的な答えが問題の正解とずれます。</p>
 
   <div class="callout callout--trap">
     <span class="callout__t">セレクターが原因の「なぜか合わない」</span>
     <p>ラウンドセレクターが <strong>CUT</strong>、小数点セレクターが <strong>2</strong> のままだと、たとえば <span class="nowrap">10 ÷ 3</span> が <strong>3.33</strong> と表示されます。これに3を掛けると 9.99。本来の答え 10 になりません。配賦率が割り切れない問題でこれをやると、各部門の配賦額がすべて微妙にずれ、<strong>検算しても合計が合わない</strong>という状態になります。</p>
-    <p>そして厄介なのは、この状態でも普通の足し算・引き算は正しく動くことです。「足し算は合うのに割り算だけ合わない」と感じたら、真っ先にセレクターを疑ってください。<strong>今すぐ手元の電卓のスイッチを見て、F に合わせておきましょう。</strong></p>
+    <p>そして厄介なのは、この状態でも普通の足し算・引き算は正しく動くことです。「足し算は合うのに割り算だけ合わない」と感じたら、真っ先にセレクターを疑ってください。<strong>今すぐ手元の電卓のラウンドセレクターを見て、F に合わせておきましょう。</strong></p>
   </div>
 
   <h2 id="s4"><span class="num">4</span>メモリ機能 — M+ / M− / MR / MC</h2>
@@ -503,7 +505,7 @@
   <div class="callout callout--warn">
     <span class="callout__t">操作はメーカーによって違う。しかも逆になることがある</span>
     <p>定数計算は、<strong>「先に入れた数が定数になる」機種と「後に入れた数が定数になる」機種</strong>があります。テキストに書いてある手順をそのまま信じて練習すると、自分の電卓では違う答えが出ます。</p>
-    <p>やっかいなのは、<strong>同じ電卓でも掛け算と割り算で定数になる数が違う</strong>ことです。たとえばカシオ系は掛け算だけ「先に入れた数」を自動で覚え、足し算・引き算・割り算では「後に入れた数」を覚えます。演算キーを2回押して定数モードにする方式（画面に「K」と出る）を持つ機種もあります。シャープ系も、掛け算・割り算と足し算・引き算とで操作が揃いません。</p>
+    <p>やっかいなのは、<strong>同じ電卓でも掛け算と割り算で定数になる数が違う</strong>ことです。さらに、定数モードに入る打ち方自体が2通りあります。演算キーを<strong>1回</strong>押すだけで定数になる機種と、<strong>2回</strong>押して定数モードに入る機種（画面に「K」と出る）です。カシオ系には2回押す機種が多く、その場合は<mark>四則すべてが2回押し</mark>で揃います。</p>
     <p>つまり<strong>「カシオは2回、シャープは1回」といった一行の覚え方は、自分の電卓には当てはまらないと考えたほうが安全です。</strong><mark>説明を読むより、実際に打って確かめるほうが確実で速い</mark>です。掛け算と割り算は必ず<strong>別々に</strong>テストしてください。次の手順で確かめます。</p>
   </div>
 
@@ -511,17 +513,22 @@
 
   <ol class="steps">
     <li><strong>まず AC を押す</strong>前の計算の影響を消します。</li>
-    <li><strong><kbd>2</kbd> <kbd>×</kbd> <kbd>3</kbd> <kbd>=</kbd> と打つ</strong>6と表示されます。ここまではどの電卓でも同じです。</li>
-    <li><strong>続けて <kbd>4</kbd> <kbd>=</kbd> と打つ</strong>ここで答えが分かれます。<br>
-      <strong>8</strong> と出たら … <strong>先に入れた数（2）が定数</strong>。2×4＝8 を計算しています。<br>
-      <strong>12</strong> と出たら … <strong>後に入れた数（3）が定数</strong>。3×4＝12 を計算しています。<br>
-      <strong>4</strong> のまま、または何も起きなければ … この打ち方では定数になりません。次のステップへ。<br>
-      <span class="small">8 か 12 が出た場合も、<strong>ステップ4は飛ばしてステップ5（割り算）へ必ず進んでください。</strong>掛け算で定数になっても、割り算では別の数が定数になります。</span></li>
-    <li><strong>反応しなかった場合だけ、演算キーを2回押す</strong><kbd>AC</kbd> のあと <kbd>2</kbd> <kbd>×</kbd> <kbd>×</kbd> と押します。画面に「K」が出れば定数モードです。そのまま <kbd>3</kbd> <kbd>=</kbd> で6、続けて <kbd>4</kbd> <kbd>=</kbd> で8。この場合は<strong>先に入れた2が定数</strong>です。</li>
-    <li><strong>割り算を確かめる（掛け算の結果にかかわらず必ず行う）</strong><kbd>AC</kbd> のあと <kbd>1</kbd><kbd>0</kbd><kbd>0</kbd> <kbd>÷</kbd> <kbd>2</kbd> <kbd>=</kbd>（50）、続けて <kbd>4</kbd><kbd>0</kbd> <kbd>=</kbd>。<br>
-      <strong>20</strong> と出たら … 割る数（2）が定数。40÷2＝20 です。<strong>「同じ数で割り続ける」形</strong>で、こちらが実務では便利です。<br>
-      <strong>2.5</strong> と出たら … 割られる数（100）が定数。100÷40＝2.5 です。</li>
-    <li><strong>結果を記録する</strong>「×は先の数が定数」「÷は割る数が定数」のように、<strong>掛け算と割り算を別々に</strong>1行へまとめ、ノートの表紙に書いておきます。以後この1台しか使わないので、これを覚えれば足ります。</li>
+    <li><strong>まず「1回押し」を試す — <kbd>2</kbd> <kbd>×</kbd> <kbd>3</kbd> <kbd>=</kbd> <kbd>4</kbd> <kbd>=</kbd></strong>
+      <kbd>3</kbd> <kbd>=</kbd> までは6。そのあと <kbd>4</kbd> <kbd>=</kbd> で答えが分かれます。<br>
+      <strong>8</strong> と出たら … 1回押しで定数になり、<strong>先に入れた数（2）が定数</strong>です。<br>
+      <strong>12</strong> と出たら … 1回押しで定数になり、<strong>後に入れた数（3）が定数</strong>です。<br>
+      <strong>4</strong> のまま、または何も起きなければ … この電卓は1回押しでは定数になりません。ステップ3へ。</li>
+    <li><strong>反応しなかったら「2回押し」を試す — <kbd>AC</kbd> <kbd>2</kbd> <kbd>×</kbd> <kbd>×</kbd></strong>
+      画面に「K」が出れば定数モードです。そのまま <kbd>3</kbd> <kbd>=</kbd> で6、続けて <kbd>4</kbd> <kbd>=</kbd> で8。この場合は<strong>先に入れた2が定数</strong>です。<br>
+      <span class="small">「K」が出る機種では、以後<strong>四則すべてこの2回押しで統一</strong>できます。1回押しで定数になる機種でも、2回押しが使えることがあります。</span></li>
+    <li><strong>割り算を必ず別に確かめる</strong>
+      掛け算で定数になったからといって、割り算で同じ数が定数になるとは限りません。<strong>掛け算の結果にかかわらず、ここは必ず打ってください。</strong><br>
+      ステップ2で反応した機種は <kbd>AC</kbd> <kbd>1</kbd><kbd>0</kbd><kbd>0</kbd> <kbd>÷</kbd> <kbd>2</kbd> <kbd>=</kbd> のあと <kbd>4</kbd><kbd>0</kbd> <kbd>=</kbd>、<br>
+      ステップ3で「K」が出た機種は <kbd>AC</kbd> <kbd>1</kbd><kbd>0</kbd><kbd>0</kbd> <kbd>÷</kbd> <kbd>÷</kbd> <kbd>2</kbd> <kbd>=</kbd> と打ちます。<br>
+      <strong>結果が 50</strong> なら … <strong>後から入れた100が定数</strong>（割られる数）。100÷2＝50。<br>
+      <strong>結果が 0.02</strong> なら … <strong>先に入れた100が定数</strong>（割る数）。2÷100＝0.02。<br>
+      <span class="small">同じ <kbd>÷</kbd> <kbd>÷</kbd> でも、<kbd>2</kbd> <kbd>÷</kbd> <kbd>÷</kbd> <kbd>1</kbd><kbd>0</kbd><kbd>0</kbd> <kbd>=</kbd> と打てば 2 が割る数の定数になり、100÷2＝50 が出ます。<mark>「先に打った数が割る数の定数になる」</mark>という形です。配賦計算で使うのはこちらの向きです。</span></li>
+    <li><strong>結果を記録する</strong>「×は2回押し・先の数が定数」「÷は2回押し・先の数が割る数」のように、<strong>掛け算と割り算を別々に</strong>1行へまとめ、ノートの表紙に書いておきます。以後この1台しか使わないので、これを覚えれば足ります。</li>
   </ol>
 
   <div class="card">
@@ -556,12 +563,12 @@
   <div id="u3check">
     <ul class="checklist">
       <li><input type="checkbox" id="k1" data-key="u3d-1"><label for="k1"><span class="cl__t">本番用の1台を決めた</span><span class="cl__d">12桁・早打ち対応・メモリとGTつき。以後、練習も本番もこの1台だけを使う</span></label></li>
-      <li><input type="checkbox" id="k2" data-key="u3d-2"><label for="k2"><span class="cl__t">ラウンドセレクターを F、小数点セレクターを F または 0 に合わせた</span><span class="cl__d">CUT や 2 のままだと、割り算の答えが丸められて検算が合わなくなる</span></label></li>
+      <li><input type="checkbox" id="k2" data-key="u3d-2"><label for="k2"><span class="cl__t">ラウンドセレクターを F に合わせた</span><span class="cl__d">CUT や 5/4 のままだと、割り算の答えが丸められて検算が合わなくなる。小数点セレクターの位置は問わない</span></label></li>
       <li><input type="checkbox" id="k3" data-key="u3d-3"><label for="k3"><span class="cl__t">自分の電卓の C と CE の挙動を確かめた</span><span class="cl__d">打ち間違えたとき、最初から打ち直さずに済ませられる</span></label></li>
       <li><input type="checkbox" id="k4" data-key="u3d-4"><label for="k4"><span class="cl__t">計算の前に MC を押す習慣がついた</span><span class="cl__d">画面に「M」が出ていたらメモリに中身が残っているサイン</span></label></li>
       <li><input type="checkbox" id="k5" data-key="u3d-5"><label for="k5"><span class="cl__t">M+ / M− / MR / MC を手元を見ずに押せる</span><span class="cl__d">単価×数量の集計と、月初＋当月−月末の差引計算が指で流れる</span></label></li>
       <li><input type="checkbox" id="k6" data-key="u3d-6"><label for="k6"><span class="cl__t">GT のクリア方法を自分の電卓で確かめた</span><span class="cl__d">GTを2回／AC／切替スイッチ。機種によって違う</span></label></li>
-      <li><input type="checkbox" id="k7" data-key="u3d-7"><label for="k7"><span class="cl__t">自分の電卓の定数計算の方式を確かめた</span><span class="cl__d">2×3= → 4= が 8 か 12 か。100÷2= → 40= が 20 か 2.5 か</span></label></li>
+      <li><input type="checkbox" id="k7" data-key="u3d-7"><label for="k7"><span class="cl__t">自分の電卓の定数計算の方式を確かめた</span><span class="cl__d">演算キーは1回押しか2回押しか。割り算は先に打った数と後に打った数のどちらが定数か</span></label></li>
       <li><input type="checkbox" id="k8" data-key="u3d-8"><label for="k8"><span class="cl__t">配賦計算で「定数計算 → GTで検算」の流れができた</span><span class="cl__d">配賦額の合計が配賦前の総額と一致すれば、全部正しい</span></label></li>
       <li><input type="checkbox" id="k9" data-key="u3d-9"><label for="k9"><span class="cl__t">実習ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
       <li><input type="checkbox" id="k10" data-key="u3d-10"><label for="k10"><span class="cl__t">理解チェック4問を全問正解した</span><span class="cl__d">「この場面ではどの機能を使うか」を迷わず選べる</span></label></li>
@@ -723,8 +730,8 @@ BokiQuiz.mount('#quiz1', {
         '画面に「M」が表示されていないか'
       ],
       answer: 1,
-      explain: '<p><strong>セレクターの位置です。</strong>ラウンドセレクターが CUT や 5/4、小数点セレクターが 0 や 2 になっていると、割り算の答えがその場で丸められます。丸めた数を次の計算に使うため、配賦額がすべてずれ、合計が総額と一致しなくなります。</p>' +
-        '<p>簿記の学習では、ラウンドセレクターを <strong>F</strong>、小数点セレクターを <strong>F</strong> または <strong>0</strong> にしておきます。端数処理は電卓が勝手にやることではなく、問題文が指示する場所で指示どおりに行うものだからです。</p>' +
+      explain: '<p><strong>セレクターの位置です。</strong>ラウンドセレクターが CUT や 5/4 になっていると、小数点セレクターで指定された桁で割り算の答えがその場で丸められます。丸めた数を次の計算に使うため、配賦額がすべてずれ、合計が総額と一致しなくなります。</p>' +
+        '<p>簿記の学習では、ラウンドセレクターを <strong>F</strong> にしておきます。F のあいだは小数点セレクターが働かないので、そちらの位置は問いません。端数処理は電卓が勝手にやることではなく、問題文が指示する場所で指示どおりに行うものだからです。</p>' +
         '<p class="small muted">3と4も確認する価値はありますが、「割り算の答えだけが丸まる」という症状の原因はセレクターです。</p>'
     },
     {
@@ -738,7 +745,7 @@ BokiQuiz.mount('#quiz1', {
       answer: 1,
       explain: '<p><strong>定数計算です。</strong>600 を打つのは最初の1回だけで、以後は「時間 → =」の繰り返しになります。打鍵数が最も少なく、配賦率の打ち間違いも起こりようがありません。しかも <kbd>=</kbd> を押すたびにGTに溜まるので、最後に <kbd>GT</kbd> を押せば配賦額の合計が出て、そのまま検算になります。</p>' +
         '<p>1は 600 を5回打つことになり、そのたびに間違える機会があります。3の MR を使う方法でも計算はできますが、毎回 MR を押す手間が残ります。4は誤りで、<strong>GT は「=」で確定した答えを足し込んでいく機能</strong>であり、数値を保管して呼び出す機能ではありません。</p>' +
-        '<p class="small muted">定数計算の操作は機種によって違います。<kbd>2</kbd><kbd>×</kbd><kbd>3</kbd><kbd>=</kbd> のあと <kbd>4</kbd><kbd>=</kbd> を押して、8 が出るか 12 が出るかを自分の電卓で必ず確かめてください。</p>'
+        '<p class="small muted">定数計算の操作は機種によって違います。演算キーを1回押すか2回押すか、どちらの数が定数になるかを、掛け算と割り算それぞれで自分の電卓で必ず確かめてください。</p>'
     }
   ]
 });
