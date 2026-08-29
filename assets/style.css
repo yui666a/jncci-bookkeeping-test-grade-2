@@ -490,3 +490,15 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 }
 .note__at { color: var(--muted); white-space: nowrap; }
 .note__text { white-space: pre-wrap; }
+
+/* ---------- 学習ダッシュボード ---------- */
+.big { font-size: 28px; font-weight: 700; margin: 4px 0; font-variant-numeric: tabular-nums; }
+.row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline;
+  padding: 8px 0; border-top: 1px solid var(--border); font-size: 13px;
+}
+.row__id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  word-break: break-all;
+}
+.row__meta { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
