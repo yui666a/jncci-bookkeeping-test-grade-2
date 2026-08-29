@@ -8,24 +8,6 @@
 # 製造業の勘定科目（仕掛品・製品など）は原本に含まれない。
 # 工業簿記の科目はこの表で照合できない。
 accounts:
-  - name: "３"
-    grade: 3
-    category: 資産
-  - name: "級"
-    grade: 3
-    category: 資産
-  - name: "２"
-    grade: 3
-    category: 負債
-  - name: "Ａ"
-    grade: 3
-    category: 資産
-  - name: "欄"
-    grade: 3
-    category: 資産
-  - name: "Ｂ"
-    grade: 3
-    category: 資産
   - name: "現金"
     grade: 3
     category: 資産
@@ -172,9 +154,6 @@ accounts:
     category: 資産
   - name: "その他有価証券"
     grade: 2
-    category: 資産
-  - name: "１"
-    grade: 3
     category: 資産
   - name: "前払金"
     grade: 3
@@ -893,9 +872,6 @@ accounts:
   - name: "料"
     grade: 2
     category: 費用
-  - name: "４"
-    grade: 3
-    category: 費用
   - name: "その他"
     grade: 3
     category: 費用
@@ -945,8 +921,5 @@ accounts:
     grade: 3
     category: 費用
   - name: "期純損失"
-    grade: 3
-    category: 費用
-  - name: "５"
     grade: 3
     category: 費用

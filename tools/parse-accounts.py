@@ -11,6 +11,11 @@ import unicodedata
 SEGMENT = re.compile(r'(?:^|\s{3,})((?:\S|\s{1,2}(?=\S))+)')
 CATEGORY = re.compile(r'^(資産|負債|純資産(?:（資本）)?|収益|費用)$')
 NOISE = re.compile(r'^(Ａ\s*欄|Ｂ\s*欄|[３２]\s*級|※|・|＜|この表)')
+# 表の欄・級見出しやページ番号は、pdftotextの列分割によりＡ・欄・３・級のように
+# 一文字ずつ独立したセグメントとしても出現するため、完全一致でも除外する。
+FURNITURE = {'Ａ', 'Ｂ', '３', '２', '欄', '級',
+             '１', '４', '５', '６', '７', '８', '９',
+             '1', '2', '3', '4', '5', '6', '7', '8', '9'}
 
 # pdftotext -layout の出力を実測して求めた列境界（表示幅基準）。
 # 3級A欄:  0-19 / 3級B欄: 20-37 / 2級A欄: 38-58 / 2級B欄: 59-
@@ -53,7 +58,7 @@ def main():
         if not category:
             continue
         for col, seg in segs:
-            if NOISE.match(seg):
+            if NOISE.match(seg) or seg in FURNITURE:
                 continue
             grade = grade_of(col)
             # 同名が3級と2級の両方に出た場合、下位の級を採用する
