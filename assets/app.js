@@ -24,7 +24,6 @@
     return seg.slice(-2).join('/');
   }
   var PAGE = unitKeyOf(location.pathname);
-  var NS = 'boki2:' + PAGE + ':';
 
   /* ---------- 学習記録 ---------- */
   var PROGRESS_KEY = 'boki2:progress';
@@ -72,6 +71,37 @@
       p.exportedAt = nowISO();
       return JSON.stringify(p);
     },
+    record: function (drillId, ok) {
+      var p = loadProgress();
+      if (!p.drills[drillId]) p.drills[drillId] = { attempts: [] };
+      p.drills[drillId].attempts.push({ at: nowISO(), ok: !!ok });
+      saveProgress(p);
+    },
+    check: function (unitKey, key, checked) {
+      var p = loadProgress();
+      if (!p.checks[unitKey]) p.checks[unitKey] = {};
+      p.checks[unitKey][key] = !!checked;
+      saveProgress(p);
+    },
+    // ページ別キーで保存されていたチェックを取り込む。旧キーは消さない。
+    // 消しても得るものがなく、取り込みに失敗したときの復元手段が絶たれる。
+    migrateLegacy: function () {
+      var p = loadProgress(), moved = false;
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        var m = k && k.match(/^boki2:(.+):check$/);
+        if (!m) continue;
+        // ディレクトリを含まない旧形式のキーは、いま開いている単元のものとみなす。
+        var unit = m[1].indexOf('/') >= 0 ? m[1] : PAGE;
+        var old = LS.get(k, null);
+        if (!old || typeof old !== 'object') continue;
+        if (!p.checks[unit]) p.checks[unit] = {};
+        for (var key in old) {
+          if (p.checks[unit][key] === undefined) { p.checks[unit][key] = !!old[key]; moved = true; }
+        }
+      }
+      if (moved) saveProgress(p);
+    },
     _reset: function () { saveProgress(emptyProgress()); }
   };
 
@@ -97,15 +127,15 @@
 
   /* ---------- チェックリストの進捗保存 ---------- */
   function initChecklists() {
+    BokiProgress.migrateLegacy();
     var boxes = document.querySelectorAll('input[type="checkbox"][data-key]');
     if (!boxes.length) return;
-    var store = LS.get(NS + 'check', {});
+    var store = (BokiProgress.dump().checks || {})[PAGE] || {};
 
     Array.prototype.forEach.call(boxes, function (b) {
       if (store[b.dataset.key]) b.checked = true;
       b.addEventListener('change', function () {
-        store[b.dataset.key] = b.checked;
-        LS.set(NS + 'check', store);
+        BokiProgress.check(PAGE, b.dataset.key, b.checked);
         updateBars();
       });
     });
@@ -127,8 +157,10 @@
 
     document.querySelectorAll('[data-reset-progress]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        Array.prototype.forEach.call(boxes, function (b) { b.checked = false; });
-        LS.set(NS + 'check', {});
+        Array.prototype.forEach.call(boxes, function (b) {
+          b.checked = false;
+          BokiProgress.check(PAGE, b.dataset.key, false);
+        });
         updateBars();
       });
     });
@@ -161,10 +193,20 @@
     root.appendChild(head); root.appendChild(body);
     return { body: body, score: score };
   }
-  function makeScorer(scoreEl, total) {
+  // 記録先を決めるにはマウント先の id が要る。id がない設問は記録しない
+  // （品質ゲート9がこれを検出する）。
+  function drillBaseOf(root) {
+    return root && root.id ? PAGE + '#' + root.id : null;
+  }
+
+  // 採点の確定点は4種のドリルで共通してここを通る。記録をここに置けば、
+  // 単元HTMLの著者が記録用のコードを書く必要がなくなる。書き忘れが
+  // 起きうる場所に記録を置くと、失われたデータは後から復元できない。
+  function makeScorer(scoreEl, total, drillBase) {
     var state = {};
     return function (id, ok) {
       state[id] = ok;
+      if (drillBase) BokiProgress.record(drillBase + '/q' + (id + 1), ok);
       var done = 0, right = 0;
       for (var k in state) { done++; if (state[k]) right++; }
       scoreEl.textContent = '正解 ' + right + ' / 解答済 ' + done + '（全' + total + '問）';
@@ -183,7 +225,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '仕訳ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var accounts = q.accounts || cfg.accounts;
@@ -301,7 +343,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '確認テスト');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
@@ -360,7 +402,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, cfg.badge || '計算ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
@@ -437,7 +479,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '穴埋め');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
