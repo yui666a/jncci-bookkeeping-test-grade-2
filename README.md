@@ -9,6 +9,7 @@
 
 | 場所 | 内容 |
 |---|---|
+| `index.html` | 公開サイトのトップページ |
 | `学習カリキュラム.md` | 11週間の学習計画。週次の論点配分 |
 | `教材制作ルール.md` | 教材の出力形式・執筆方針・品質ゲート |
 | `出題範囲_最新確認メモ.md` | 出題範囲の確認結果 |
@@ -19,15 +20,25 @@
 
 ## 教材を開く
 
-HTMLをブラウザで直接開く。サーバーは要らない。
+公開版は GitHub Pages にある。
+
+<https://yui666a.github.io/jncci-bookkeeping-test-grade-2/>
+
+手元で見るときは、HTMLをブラウザで直接開く。サーバーは要らない。
 
 ```
-open phase0/index.html
+open index.html            # トップページ
+open phase0/index.html     # Phase 0 の目次
 ```
 
 外部CDN・外部フォントを参照しないため、オフラインで動く。
 共通アセットは `phase0/assets/`（`style.css` と `app.js`）だけで、
 ドリルは `BokiJournal` / `BokiQuiz` / `BokiNum` / `BokiFill` の4種類。
+
+## 公開
+
+`main` への push で GitHub Actions が `npm run check` を通し、成功した
+場合だけ Pages へ配信する。配信元はリポジトリのルート（`.github/workflows/pages.yml`）。
 
 ## 検証
 
