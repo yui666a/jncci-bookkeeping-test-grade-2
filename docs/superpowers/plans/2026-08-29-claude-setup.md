@@ -859,7 +859,8 @@ CHECKS.push(async function checkBalance(page, file) {
     const drills = [];
     for (const { sel, cfg } of (window.__captured?.journal || [])) {
       (cfg.questions || []).forEach((q, i) => {
-        const sum = (rows) => (rows || []).reduce((a, r) => a + (Number(r.amount) || 0), 0);
+        // 設問の debit/credit は [科目名, 金額] のタプル配列（app.js の実装による）
+        const sum = (rows) => (rows || []).reduce((a, r) => a + (Number(r[1]) || 0), 0);
         drills.push({ id: sel + '#q' + (i + 1), debit: sum(q.debit), credit: sum(q.credit) });
       });
     }
@@ -949,7 +950,7 @@ CHECKS.push(async function checkAccounts(page, file) {
       (cfg.questions || []).forEach((q, i) => {
         const pool = q.accounts || cfg.accounts || [];
         const used = [...(q.debit || []), ...(q.credit || [])]
-          .map((r) => r.account).filter(Boolean);
+          .map((r) => r[0]).filter(Boolean);
         out.push({ id: sel + '#q' + (i + 1), pool, used });
       });
     }
@@ -995,11 +996,12 @@ python3 - <<'PY'
 import io, re
 p = '/tmp/broken2.html'
 s = io.open(p, encoding='utf-8').read()
-s2 = re.sub(r"account:\s*'[^']+'", "account: '存在しない科目'", s, count=1)
+# debit:[['雑損',8000]] のような記法の科目名を置き換える
+s2 = re.sub(r"debit\s*:\s*\[\s*\[\s*'[^']+'", "debit:[['存在しない科目'", s, count=1)
 if s2 == s:
-    s2 = re.sub(r'account:\s*"[^"]+"', 'account: "存在しない科目"', s, count=1)
+    s2 = re.sub(r'debit\s*:\s*\[\s*\[\s*"[^"]+"', 'debit:[["存在しない科目"', s, count=1)
 if s2 == s:
-    raise SystemExit('account: の記法が想定と違う。実際の記法を確認する')
+    raise SystemExit('debit の記法が想定と違う。実際の記法を確認する')
 io.open(p, 'w', encoding='utf-8').write(s2)
 PY
 npm run check /tmp/broken2.html; echo "終了コード=$?"

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run check)",
+      "Bash(npm run check:*)",
+      "Bash(npm run coverage)",
+      "Bash(node tools/check.mjs:*)",
+      "Bash(node tools/coverage.mjs:*)",
+      "Bash(node tools/test-formula.mjs)",
+      "Bash(python3 tools/parse-syllabus.py)",
+      "Bash(python3 tools/parse-accounts.py)",
+      "Bash(pdftotext:*)"
+    ]
+  }
+}

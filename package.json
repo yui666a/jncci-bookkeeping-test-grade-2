@@ -1,0 +1,13 @@
+{
+  "name": "boki2-materials",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "coverage": "node tools/coverage.mjs",
+    "test": "node tools/test-formula.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}
