@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電卓トレーニング — 日商簿記2級 Phase 0</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 0 目次</a>
+    <span class="topbar__title">電卓トレーニング</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 03 ／ 2時間</p>
+    <h1>電卓を、手の延長にする</h1>
+    <p class="lead">2級は3級より計算量が跳ね上がります。90分で5題。<strong>メモリ（M+／M−／MR／MC）とGT、そして定数計算</strong>が指で動くかどうかが、そのまま所要時間と正答率に直結します。ここで本番用の1台を決め、以後その1台だけを使います。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 2h</span>
+      <span class="chip">キー手順つき</span>
+      <span class="chip">実習ドリル 12問</span>
+      <span class="chip">理解チェック 4問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">なぜ電卓に2時間かけるのか</a></li>
+      <li><a href="#s2">本番で使える電卓・使えない電卓</a></li>
+      <li><a href="#s3">基本キーの意味を正確に押さえる</a></li>
+      <li><a href="#s4">メモリ機能 — M+ / M− / MR / MC</a></li>
+      <li><a href="#s5">GT（グランドトータル）</a></li>
+      <li><a href="#s6">定数計算 — 同じ数を掛け続ける／割り続ける</a></li>
+      <li><a href="#s7">実習ドリル</a></li>
+      <li><a href="#s8">到達チェック</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1"><span class="num">1</span>なぜ電卓に2時間かけるのか</h2>
+
+  <p>3級のときの電卓は、たいてい「たまに使う道具」でした。仕訳が書ければ、金額はそれほど複雑ではありません。ところが2級になると、電卓を叩いている時間そのものが答案の出来を左右します。具体的にどういう場面かというと、次のようなところです。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>場面</th><th>何を計算するか</th><th>電卓に求められること</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nowrap">部門別計算</td>
+        <td>補助部門費を、配賦基準（作業時間・従業員数・面積など）の比で各製造部門に割り振る</td>
+        <td>1つの配賦率を、いくつもの部門の数値に<strong>繰り返し掛ける</strong></td>
+      </tr>
+      <tr>
+        <td class="nowrap">総合原価計算</td>
+        <td>ボックス図の中で、月初仕掛品・当月投入・月末仕掛品の原価を按分する</td>
+        <td>途中で出た数を<strong>保持したまま</strong>次の計算に進む</td>
+      </tr>
+      <tr>
+        <td class="nowrap">財務諸表作成</td>
+        <td>資産の部・負債の部・費用の各区分を、10項目以上足し上げる</td>
+        <td>長い足し算を<strong>一気に、検算つきで</strong>終える</td>
+      </tr>
+      <tr>
+        <td class="nowrap">材料費・労務費</td>
+        <td>消費額＝月初＋当月仕入−月末、賃金＝支払高−前月未払＋当月未払</td>
+        <td>足す方向と引く方向が<strong>混ざった集計</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>ここで、メモリ機能を使わないとどうなるかを考えてみます。たとえば「@200円×30個」「@150円×40個」「@300円×20個」の合計を出すとき、メモリを使わなければ、6,000と打って紙に書き、6,000と打って紙に書き、6,000と打って紙に書き、最後にその3つをもう一度電卓に打ち込むことになります。<strong>3回の計算に対して、3回の書き取りと3回の打ち直しが発生する</strong>わけです。</p>
+
+  <p>問題は時間だけではありません。打ち直しは<mark>転記ミスの発生源</mark>です。6,000 を 600 と写す、桁を1つ落とす、行を1つ飛ばす。しかも本試験では、この「途中の数字を紙に書き出す」動作が1問あたり何十回も出てきます。メモリを使えば、この書き取りと打ち直しが丸ごと消えます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ「今」やるのか</span>
+    <p>電卓の操作は、頭で覚えるものではなく<strong>指で覚えるもの</strong>です。指が覚えるには、実際に叩いた回数が要ります。今日ここで2時間を使い、そのあとW1からW11まで毎日その電卓を叩き続ければ、本番までに十分な回数が積み上がります。</p>
+    <p>逆にいえば、<strong>試験の1週間前に新しい電卓に買い替えるのは最悪の選択</strong>です。キーの配置が数ミリ違うだけで、指が空振りします。GTキーの位置が違えば、押したつもりが押せていない。それを本番で初めて経験することになります。電卓は道具ではなく手の延長です。手は取り替えられません。</p>
+  </div>
+
+  <h2 id="s2"><span class="num">2</span>本番で使える電卓・使えない電卓</h2>
+
+  <p>まず持ち込みのルールから確認します。試験会場に持ち込めるのは<strong>そろばん、または計算機能のみの電卓</strong>です。「計算機能のみ」というのがポイントで、次のような機能が付いているものは使えません。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">持ち込めないもの</div>
+      <ul>
+        <li><strong>印刷機能</strong>（プリンタ付き電卓）</li>
+        <li><strong>プログラム機能</strong>（関数電卓、公式やメモを登録できるもの）</li>
+        <li><strong>辞書機能</strong>（電子辞書との複合機）</li>
+        <li><strong>音声機能</strong>（読み上げ機能付き）</li>
+        <li>スマートフォン・タブレット・腕時計型端末の電卓アプリ</li>
+      </ul>
+      <p class="small muted">要するに「計算以外のことができる機械」は不可、と考えれば外しません。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">問題なく使えるもの</div>
+      <ul>
+        <li>いわゆる<strong>事務用電卓・実務電卓</strong></li>
+        <li>メモリキー（M+ / M− / MR / MC）付き</li>
+        <li>GTキー付き</li>
+        <li>√（ルート）キー付き</li>
+        <li>％キー付き</li>
+      </ul>
+      <p class="small muted">メモリもGTも√も「計算機能」なので、付いていて構いません。むしろ<strong>付いているものを選びます</strong>。</p>
+    </div>
+  </div>
+
+  <p class="small muted">細かい可否は受験する商工会議所の案内に従ってください。手元の電卓が不安なら、受験票が届いた時点で会場に確認するのが確実です。</p>
+
+  <h3>選ぶときに見るポイント</h3>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>項目</th><th>望ましい仕様</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nowrap">表示桁数</td>
+        <td><strong>12桁</strong></td>
+        <td>2級では億単位の数字が出ます。10桁だと連結や財務諸表で桁あふれ（エラー表示）が起きます。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">キーの大きさ</td>
+        <td>指の腹がすっぽり乗る大きさ。本体は手のひらより一回り大きいくらい</td>
+        <td>小さすぎると隣のキーを同時に押します。カード型は論外です。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">滑り止め</td>
+        <td>裏面にゴム脚があり、机の上で動かない</td>
+        <td>本体が動くと、指が狙った位置を外します。試験机は狭く、傾いていることもあります。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">早打ち対応</td>
+        <td><strong>2キーロールオーバー</strong>（前のキーを離し切る前に次を押しても両方入る）</td>
+        <td>旧式のローラー式は、速く打つと入力が抜けます。「早打ち対応」と明記されたものを選びます。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">打鍵音</td>
+        <td>サイレント（静音）タイプ</td>
+        <td>会場では周囲の打鍵音が耳につきます。自分の音が静かだと、自分も集中しやすい。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">00キー</td>
+        <td>あると有利</td>
+        <td>簿記の金額は下2桁が00になることが非常に多い。1回の打鍵が減ります。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">メモリキーの位置</td>
+        <td>右手側（テンキーの近く）にまとまっている</td>
+        <td>M+を押すたびに指が遠くへ飛ぶと、その分だけ遅くなります。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">GTキーの位置</td>
+        <td>独立したキーとして存在し、押し間違えにくい</td>
+        <td>ACの真隣にあると、GTのつもりでACを押して全部消す事故が起きます。</td>
+      </tr>
+      <tr>
+        <td class="nowrap">電源</td>
+        <td>ソーラー＋電池の2電源</td>
+        <td>会場の照明が暗い席でも消えません。電池切れの心配もなくなります。</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">初日に1台に決める</span>
+    <p>今日この場で<strong>本番に持っていく1台</strong>を決めてください。そして以後、練習も本番もその1台だけを使います。<strong>自宅練習用と本番用を分けるのは絶対にやめてください</strong>。分けた瞬間、指が覚えたキー配置と本番のキー配置がずれます。会社と自宅の両方で勉強するなら、その1台を持ち歩きます。</p>
+    <p>すでに3級で使った電卓があり、12桁で早打ち対応でメモリとGTが付いているなら、<strong>買い替える必要はありません</strong>。すでに指が覚えているという最大の利点があります。</p>
+  </div>
+
+  <h3>左手打ちにするか、右手打ちにするか</h3>
+
+  <p>右利きの人が左手で電卓を打てると、<strong>右手でペンを持ったまま計算できます</strong>。答案用紙に数字を書きながら、同時に次の計算を進められるので、その分だけ速くなります。持ち替えの動作が丸ごと消えるためです。</p>
+
+  <p>ただし、今から矯正するかどうかは各自の判断です。判断の目安はこうです。</p>
+
+  <ol class="steps">
+    <li><strong>今の到達度を見る</strong>3級のときに右手で打っていて、ペンを置く・持つの動作が気になっていなかったなら、無理に変える必要はありません。</li>
+    <li><strong>残り期間を見る</strong>本番までは約11週間あります。左手打ちの矯正には、慣れるまで1〜2週間、実用レベルまで1か月程度みておけば足ります。<strong>時間としては十分に間に合います。</strong></li>
+    <li><strong>やるなら今日から</strong>やると決めたら、今日以降のすべての練習を左手で行います。「今日は急ぐから右手で」を一度でも許すと、両方が中途半端になります。</li>
+    <li><strong>迷ったら変えない</strong>電卓の速度を上げる手段としては、左手打ちよりメモリとGTの習得のほうが効果が大きい。優先順位を間違えないでください。</li>
+  </ol>
+
+  <h2 id="s3"><span class="num">3</span>基本キーの意味を正確に押さえる</h2>
+
+  <p>毎日使っているキーでも、意味を正確に説明できないものがあります。特に <kbd>C</kbd> と <kbd>CE</kbd> の違いは、知っているかどうかで打ち直しの回数が変わります。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>キー</th><th>何が起きるか</th><th>簿記での使いどころ</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nowrap"><kbd>AC</kbd><br><span class="small muted">オールクリア</span></td>
+        <td>表示も計算途中の内容も<strong>全部消える</strong>（機種によりメモリは残る）</td>
+        <td>1つの計算が終わって、次の計算に移るとき</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><kbd>C</kbd><br><span class="small muted">クリア</span></td>
+        <td>機種により挙動が違う。ACと同じ全消去のものと、表示中の数値だけを消すものがある</td>
+        <td><strong>自分の電卓での挙動を必ず確かめる</strong></td>
+      </tr>
+      <tr>
+        <td class="nowrap"><kbd>CE</kbd><br><span class="small muted">クリアエントリー</span></td>
+        <td><strong>いま入力中の数値だけ</strong>を消す。それまでの計算の途中経過は残る</td>
+        <td>長い足し算の途中で打ち間違えたとき</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><kbd>→</kbd><br><span class="small muted">バックスペース</span></td>
+        <td>入力中の数値の<strong>末尾1桁だけ</strong>を消す</td>
+        <td>「120000」と打つつもりが「1200000」になったとき、1回押すだけで直る</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><kbd>%</kbd></td>
+        <td>直前の数値を100で割った扱いにする。掛け算・割り算と組み合わせて割合計算に使う</td>
+        <td>減価償却率、貸倒設定率、利率など</td>
+      </tr>
+      <tr>
+        <td class="nowrap"><kbd>√</kbd></td>
+        <td>平方根を求める</td>
+        <td>2級ではほとんど出番がない。あっても困らない、という程度</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">CE を知っていると何が変わるか</span>
+    <p>資産の部を12項目足している途中、8項目めで打ち間違えたとします。<kbd>AC</kbd> を押せば1項目めからやり直しです。ところが <kbd>CE</kbd> なら、<strong>8項目めの入力だけが消えて、7項目めまでの合計は生きたまま</strong>残ります。打ち直すのは1項目だけで済みます。</p>
+    <div class="keyflow">
+      <kbd>1</kbd><kbd>2</kbd><kbd>8</kbd><kbd>4</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>+</kbd><span class="arrow">→</span><kbd>6</kbd><kbd>4</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">（打ち間違い）</span><kbd>CE</kbd><span class="arrow">→</span><kbd>6</kbd><kbd>4</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>+</kbd>
+    </div>
+    <p class="small muted">この例では、1,284,000 を足した状態が残ったまま、間違えた「640000」だけを打ち直しています。</p>
+  </div>
+
+  <h3>2つのセレクター（切替スイッチ）</h3>
+
+  <p>電卓の上部には、たいてい2つの小さなスイッチが付いています。これが簿記の答えを狂わせる原因になります。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">ラウンドセレクター</div>
+      <p>割り算の答えの端数を<strong>どう処理するか</strong>を決めます。</p>
+      <ul>
+        <li><strong>F</strong>（フローティング）… 端数処理をせず、表示できる桁まで全部出す</li>
+        <li><strong>CUT</strong>（切捨）… 指定桁で切り捨てる</li>
+        <li><strong>5/4</strong>（四捨五入）… 指定桁で四捨五入する</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card__label">小数点セレクター</div>
+      <p>小数第何位まで表示するかを決めます。</p>
+      <ul>
+        <li><strong>F</strong> … 制限なし</li>
+        <li><strong>0 / 2 / 3 / 4</strong> … その桁で止める</li>
+        <li><strong>ADD2</strong> … 小数点キーを押さなくても、下2桁が自動で小数になる（外貨の実務用）</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>簿記の学習では、原則として ラウンドセレクターを F、小数点セレクターを F または 0 にしておきます。</strong>理由ははっきりしています。端数処理は<mark>問題文が指示する場所で、指示されたやり方で行うもの</mark>だからです。電卓が勝手に丸めてしまうと、その丸めた数を次の計算に使うことになり、最終的な答えが問題の正解とずれます。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">セレクターが原因の「なぜか合わない」</span>
+    <p>ラウンドセレクターが <strong>CUT</strong>、小数点セレクターが <strong>2</strong> のままだと、たとえば <span class="nowrap">10 ÷ 3</span> が <strong>3.33</strong> と表示されます。これに3を掛けると 9.99。本来の答え 10 になりません。配賦率が割り切れない問題でこれをやると、各部門の配賦額がすべて微妙にずれ、<strong>検算しても合計が合わない</strong>という状態になります。</p>
+    <p>そして厄介なのは、この状態でも普通の足し算・引き算は正しく動くことです。「足し算は合うのに割り算だけ合わない」と感じたら、真っ先にセレクターを疑ってください。<strong>今すぐ手元の電卓のスイッチを見て、F に合わせておきましょう。</strong></p>
+  </div>
+
+  <h2 id="s4"><span class="num">4</span>メモリ機能 — M+ / M− / MR / MC</h2>
+
+  <div class="term">
+    <span class="term__w">メモリ</span><span class="term__r">memory</span>
+    <p>電卓の中にある、表示部とは別のもう1つの合計欄。表示されている数を「足し込む／差し引く」ことで、画面の計算とは独立に合計を溜めておける場所です。</p>
+  </div>
+
+  <p>いま画面に映っている数（表示部）とは別に、<strong>裏側にもう1つ合計欄がある</strong>と考えてください。表示部では掛け算や割り算を自由にやりながら、その結果だけをメモリに送り込んでいく。最後にメモリの中身を呼び出せば、送り込んだ数の合計が出てくる。これがメモリ機能です。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+      <svg viewBox="0 0 900 300" style="width:100%;height:auto;min-width:760px" role="img" aria-label="表示部とメモリの関係図">
+        <rect x="40" y="40" width="330" height="100" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+        <text x="205" y="75" text-anchor="middle" font-size="17" font-weight="700" fill="var(--text)">表示部（画面）</text>
+        <text x="205" y="105" text-anchor="middle" font-size="14" fill="var(--muted)">ここで 200 × 30 などを計算する</text>
+        <text x="205" y="126" text-anchor="middle" font-size="14" fill="var(--muted)">結果が一時的に映るだけ</text>
+
+        <rect x="530" y="40" width="330" height="100" rx="10" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="695" y="75" text-anchor="middle" font-size="17" font-weight="700" fill="var(--accent)">メモリ（裏の合計欄）</text>
+        <text x="695" y="105" text-anchor="middle" font-size="14" fill="var(--muted)">送り込まれた数を足し引きして</text>
+        <text x="695" y="126" text-anchor="middle" font-size="14" fill="var(--muted)">合計を保持し続ける</text>
+
+        <path d="M 375 72 L 520 72" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#ar1)"/>
+        <text x="447" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">M+ / M−</text>
+        <text x="447" y="92" text-anchor="middle" font-size="13" fill="var(--muted)">表示中の数を送る</text>
+
+        <path d="M 520 118 L 375 118" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#ar2)"/>
+        <text x="447" y="140" text-anchor="middle" font-size="15" font-weight="700" fill="var(--credit)">MR</text>
+        <text x="447" y="160" text-anchor="middle" font-size="13" fill="var(--muted)">合計を呼び戻す</text>
+
+        <rect x="290" y="205" width="320" height="60" rx="10" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="450" y="232" text-anchor="middle" font-size="15" font-weight="700" fill="var(--warn)">MC ＝ メモリを空にする</text>
+        <text x="450" y="254" text-anchor="middle" font-size="13" fill="var(--muted)">計算を始める前に必ず押す</text>
+
+        <defs>
+          <marker id="ar1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/>
+          </marker>
+          <marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <p class="figure__cap">表示部で計算し、その結果だけをメモリに送る。紙に書き出す動作が要らなくなる。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>キー</th><th>読み</th><th>動作</th></tr></thead>
+    <tbody>
+      <tr><td class="nowrap"><kbd>M+</kbd></td><td class="nowrap">メモリプラス</td><td>いま表示されている数を、メモリに<strong>足す</strong>。計算途中なら、まず「=」を押したのと同じ結果が確定してから足される</td></tr>
+      <tr><td class="nowrap"><kbd>M−</kbd></td><td class="nowrap">メモリマイナス</td><td>いま表示されている数を、メモリから<strong>引く</strong></td></tr>
+      <tr><td class="nowrap"><kbd>MR</kbd> / <kbd>RM</kbd></td><td class="nowrap">メモリリコール</td><td>メモリの中身を<strong>画面に呼び出す</strong>。呼び出してもメモリの中身は消えない</td></tr>
+      <tr><td class="nowrap"><kbd>MC</kbd> / <kbd>CM</kbd></td><td class="nowrap">メモリクリア</td><td>メモリの中身を<strong>0にする</strong></td></tr>
+      <tr><td class="nowrap"><kbd>MRC</kbd></td><td class="nowrap">—</td><td>MRとMCが1つになったキー。<strong>1回押すとMR、続けてもう1回押すとMC</strong>。この形の機種が多い</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">計算を始める前に、必ず MC でメモリを空にする</span>
+    <p>これが最も多い事故です。前の問題で使ったメモリの中身が残ったまま次の集計を始めると、<strong>すべての答えがその残骸の分だけずれます</strong>。しかも、ずれ方が不自然でないぶん、見ただけでは気づけません。</p>
+    <p>見分け方は簡単です。<strong>画面のどこかに小さく「M」と表示されていたら、メモリに何か入っているサイン</strong>です。0が入っていれば表示は消えます。集計を始めるときは、Mが出ていないことを確認するか、無条件に <kbd>MC</kbd> を押す。この「押してから始める」を癖にしてください。押しすぎて損をすることは一度もありません。</p>
+  </div>
+
+  <h3>使いどころ① — 単価×数量を複数行足す</h3>
+
+  <p>材料の消費額、製品ごとの売上高、部門ごとの配賦額。「掛け算の結果を何行も足す」場面は2級のあらゆるところに出てきます。</p>
+
+  <div class="card">
+    <div class="card__label">例題</div>
+    <p>次の3種類の材料の消費額の合計を求めなさい。</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>材料</th><th class="num">消費単価</th><th class="num">消費数量</th></tr></thead>
+      <tbody>
+        <tr><td>A材料</td><td class="num">@200円</td><td class="num">30個</td></tr>
+        <tr><td>B材料</td><td class="num">@150円</td><td class="num">40個</td></tr>
+        <tr><td>C材料</td><td class="num">@300円</td><td class="num">20個</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>キー手順</strong></p>
+    <div class="keyflow">
+      <kbd>MC</kbd><span class="arrow">→</span>
+      <kbd>2</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>×</kbd><span class="arrow">→</span><kbd>3</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">｜</span>
+      <kbd>1</kbd><kbd>5</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>×</kbd><span class="arrow">→</span><kbd>4</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">｜</span>
+      <kbd>3</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>×</kbd><span class="arrow">→</span><kbd>2</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">→</span><kbd>MR</kbd>
+    </div>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>操作</th><th class="num">画面</th><th class="num">メモリの中身</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>MC</kbd></td><td class="num">—</td><td class="num">0</td></tr>
+        <tr><td>200 × 30 <kbd>M+</kbd></td><td class="num">6,000</td><td class="num">6,000</td></tr>
+        <tr><td>150 × 40 <kbd>M+</kbd></td><td class="num">6,000</td><td class="num">12,000</td></tr>
+        <tr><td>300 × 20 <kbd>M+</kbd></td><td class="num">6,000</td><td class="num">18,000</td></tr>
+        <tr><td><kbd>MR</kbd></td><td class="num"><strong>18,000</strong></td><td class="num">18,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><strong>答え 18,000円</strong>（6,000 ＋ 6,000 ＋ 6,000）。ここで大事なのは、<kbd>M+</kbd> を押すと<strong>「=」を押さなくても掛け算が確定してメモリに入る</strong>という点です。「=」を押す手間が省けます。</p>
+  </div>
+
+  <h3>使いどころ② — 差引計算に M− を混ぜる</h3>
+
+  <p>工業簿記の消費額は、たいてい<strong>足すものと引くものが混ざった集計</strong>になります。ここでメモリの真価が出ます。</p>
+
+  <div class="card">
+    <div class="card__label">例題</div>
+    <p>材料の当月消費額を求めなさい。月初有高 148,000円、当月仕入高 962,000円、月末有高 175,000円。</p>
+    <p class="small muted">消費額 ＝ 月初有高 ＋ 当月仕入高 − 月末有高</p>
+    <div class="keyflow">
+      <kbd>MC</kbd><span class="arrow">→</span>
+      <kbd>1</kbd><kbd>4</kbd><kbd>8</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">｜</span>
+      <kbd>9</kbd><kbd>6</kbd><kbd>2</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">｜</span>
+      <kbd>1</kbd><kbd>7</kbd><kbd>5</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M−</kbd>
+      <span class="arrow">→</span><kbd>MR</kbd>
+    </div>
+    <p><strong>答え 935,000円</strong>（148,000 ＋ 962,000 − 175,000）。</p>
+    <p>ふつうの <kbd>+</kbd> <kbd>−</kbd> でも同じ答えは出ます。ではなぜメモリを使うのか。理由は<strong>この集計の途中で、別の計算に画面を使えるから</strong>です。たとえば月末有高が「@350円×500個」で与えられていれば、画面で 350 × 500 と計算して、そのまま <kbd>M−</kbd> を押せばいい。<mark>掛け算と足し引きを、1回も紙に書かずに混ぜられる</mark>のがメモリの強みです。</p>
+  </div>
+
+  <h3>使いどころ③ — 引くものがある集計（労務費）</h3>
+
+  <p>賃金の当月消費額も同じ形です。支払った金額から前月分を除き、まだ払っていない当月分を足します。</p>
+
+  <div class="card">
+    <div class="card__label">例題</div>
+    <p>当月の賃金消費額を求めなさい。当月支払高 1,860,000円、前月末未払高 245,000円、当月末未払高 268,000円。</p>
+    <p class="small muted">消費額 ＝ 当月支払高 − 前月末未払高 ＋ 当月末未払高</p>
+    <div class="keyflow">
+      <kbd>MC</kbd><span class="arrow">→</span>
+      <kbd>1</kbd><kbd>8</kbd><kbd>6</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">｜</span>
+      <kbd>2</kbd><kbd>4</kbd><kbd>5</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M−</kbd>
+      <span class="arrow">｜</span>
+      <kbd>2</kbd><kbd>6</kbd><kbd>8</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>M+</kbd>
+      <span class="arrow">→</span><kbd>MR</kbd>
+    </div>
+    <p><strong>答え 1,883,000円</strong>（1,860,000 − 245,000 ＋ 268,000）。</p>
+    <p class="small muted">「前月分を引いて当月分を足す」の向きを、キーの <kbd>M−</kbd> <kbd>M+</kbd> と対応させて指で覚えてしまうと、向きの取り違えが減ります。</p>
+  </div>
+
+  <h2 id="s5"><span class="num">5</span>GT（グランドトータル）</h2>
+
+  <div class="term">
+    <span class="term__w">GT</span><span class="term__r">グランドトータル</span>
+    <p><kbd>=</kbd> を押して確定した答えを、電卓が裏で自動的に足し続けてくれる機能。最後に <kbd>GT</kbd> を押すと、それまでの答えの合計が表示されます。</p>
+  </div>
+
+  <p>メモリとよく似ていますが、決定的に違う点があります。<strong>GTは「=」を押すだけで勝手に溜まっていく</strong>ということです。M+を押す動作すら要りません。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th></th><th>メモリ（M+）</th><th>GT</th></tr></thead>
+    <tbody>
+      <tr><td class="nowrap">溜まるタイミング</td><td><kbd>M+</kbd> を押したとき</td><td><kbd>=</kbd> を押すたびに<strong>自動で</strong></td></tr>
+      <tr><td class="nowrap">引き算の方向</td><td><kbd>M−</kbd> で<strong>引ける</strong></td><td><strong>引けない</strong>（足す一方）</td></tr>
+      <tr><td class="nowrap">呼び出し</td><td><kbd>MR</kbd></td><td><kbd>GT</kbd></td></tr>
+      <tr><td class="nowrap">向いている場面</td><td>足す項目と引く項目が混ざる集計</td><td>同じ形の計算を並べて、最後に合計する</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>つまり<strong>使い分けはこうです。差引がある集計はメモリ、ひたすら足すだけならGT。</strong>GTは押すキーが1つ少ないぶん速い。ただし引けないので、引く項目が1つでもあるならメモリを使います。</p>
+
+  <h3>使いどころ — 部門別の配賦額を出しながら、最後に合計して検算する</h3>
+
+  <div class="card">
+    <div class="card__label">例題</div>
+    <p>製造間接費 1,800,000円を、配賦率450円/時間で各部門に配賦する。切削部門1,200時間、組立部門1,800時間、仕上部門1,000時間。各部門の配賦額と、その合計を求めなさい。</p>
+    <div class="keyflow">
+      <kbd>AC</kbd><span class="arrow">＋ GTのクリア（方法は機種による）→</span>
+      <kbd>4</kbd><kbd>5</kbd><kbd>0</kbd><kbd>×</kbd><kbd>1</kbd><kbd>2</kbd><kbd>0</kbd><kbd>0</kbd><kbd>=</kbd>
+      <span class="arrow">｜</span>
+      <kbd>4</kbd><kbd>5</kbd><kbd>0</kbd><kbd>×</kbd><kbd>1</kbd><kbd>8</kbd><kbd>0</kbd><kbd>0</kbd><kbd>=</kbd>
+      <span class="arrow">｜</span>
+      <kbd>4</kbd><kbd>5</kbd><kbd>0</kbd><kbd>×</kbd><kbd>1</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>=</kbd>
+      <span class="arrow">→</span><kbd>GT</kbd>
+    </div>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>部門</th><th class="num">時間</th><th class="num">配賦額（=を押した答え）</th><th class="num">GTに溜まる合計</th></tr></thead>
+      <tbody>
+        <tr><td>切削部門</td><td class="num">1,200</td><td class="num">540,000</td><td class="num">540,000</td></tr>
+        <tr><td>組立部門</td><td class="num">1,800</td><td class="num">810,000</td><td class="num">1,350,000</td></tr>
+        <tr><td>仕上部門</td><td class="num">1,000</td><td class="num">450,000</td><td class="num">1,800,000</td></tr>
+        <tr><td colspan="3"><kbd>GT</kbd> を押す</td><td class="num"><strong>1,800,000</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>ここがGTの本当の価値です。<strong>合計 1,800,000円が、配賦する前の製造間接費 1,800,000円と一致しました。</strong>一致すれば、3つの配賦額はすべて正しいと分かります。一致しなければ、どこかを打ち間違えています。<mark>配賦計算は「配賦した合計＝配賦する前の総額」が必ず成り立つ</mark>ので、GTがそのまま検算になるわけです。</p>
+    <p class="small muted">各部門の配賦額を答案に書き写しながら、最後にGTを押すだけ。検算のために計算をやり直す必要がありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">GTも、使う前にクリアする</span>
+    <p>メモリと同じで、GTにも前の計算の答えが残っています。残ったまま次の集計を始めれば、当然おかしな数字が出ます。</p>
+    <p><strong>クリアの方法は機種によって違います。</strong><kbd>GT</kbd> を2回続けて押すとクリアされる機種、<kbd>AC</kbd> でGTも一緒に消える機種、GTをオン／オフする切替スイッチが付いている機種があります。<strong>いま手元の電卓で、次の手順を試してください。</strong></p>
+    <ol class="steps">
+      <li><strong>適当な計算を2回する</strong><kbd>2</kbd><kbd>+</kbd><kbd>3</kbd><kbd>=</kbd> と <kbd>4</kbd><kbd>+</kbd><kbd>1</kbd><kbd>=</kbd>。</li>
+      <li><strong>GTを押す</strong>10（＝5＋5）と出れば、GTは効いています。</li>
+      <li><strong>クリアを試す</strong><kbd>AC</kbd> を押してからもう一度 <kbd>GT</kbd>。0になれば、ACでクリアできる機種です。0にならなければ <kbd>GT</kbd> をもう1回押してみます。</li>
+      <li><strong>結果を電卓に貼っておく</strong>付箋に「GTクリア＝AC」などと書いて本体に貼る。試験前に剥がします。</li>
+    </ol>
+    <p class="small muted">以降の手順で先頭に置いている「AC ＋ GTクリア」は、<strong>この節で確かめた自分の電卓のやり方</strong>に読み替えてください。ACだけでGTまで消える機種と、消えない機種があります。</p>
+  </div>
+
+  <h2 id="s6"><span class="num">6</span>定数計算 — 同じ数を掛け続ける／割り続ける</h2>
+
+  <p>配賦計算では、<strong>1つの配賦率を、いくつもの部門の基準数値に掛けます</strong>。部門が5つあれば、配賦率を5回打ち直すことになります。配賦率が「627.5」のような数だったら、5回とも打ち間違えずに入力できるでしょうか。</p>
+
+  <p>ほとんどの電卓には、この打ち直しを不要にする<strong>定数計算</strong>の機能があります。同じ数を「固定」しておいて、相手の数だけを入れ替えながら <kbd>=</kbd> を押していく使い方です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">操作はメーカーによって違う。しかも逆になることがある</span>
+    <p>定数計算は、<strong>「先に入れた数が定数になる」機種と「後に入れた数が定数になる」機種</strong>があります。テキストに書いてある手順をそのまま信じて練習すると、自分の電卓では違う答えが出ます。</p>
+    <p>おおまかには、<strong>カシオ系では演算キーを2回押して定数を設定する</strong>（画面に「K」と出ることが多い）、<strong>シャープ系では演算キーは1回でよい</strong>という違いがあります。ただし機種と年式によって挙動が異なるので、<mark>説明を読むより、実際に打って確かめるほうが確実で速い</mark>です。次の手順でテストしてください。</p>
+  </div>
+
+  <h3>自分の電卓の方式を確かめる手順</h3>
+
+  <ol class="steps">
+    <li><strong>まず AC を押す</strong>前の計算の影響を消します。</li>
+    <li><strong><kbd>2</kbd> <kbd>×</kbd> <kbd>3</kbd> <kbd>=</kbd> と打つ</strong>6と表示されます。ここまではどの電卓でも同じです。</li>
+    <li><strong>続けて <kbd>4</kbd> <kbd>=</kbd> と打つ</strong>ここで答えが分かれます。<br>
+      <strong>8</strong> と出たら … <strong>先に入れた数（2）が定数</strong>。2×4＝8 を計算しています。<br>
+      <strong>12</strong> と出たら … <strong>後に入れた数（3）が定数</strong>。3×4＝12 を計算しています。<br>
+      <strong>4</strong> のまま、または何も起きなければ … この打ち方では定数にならない機種です。次のステップへ。</li>
+    <li><strong>反応しなかった場合は、演算キーを2回押す</strong><kbd>AC</kbd> のあと <kbd>2</kbd> <kbd>×</kbd> <kbd>×</kbd> と押します。画面に「K」が出れば定数モードです。そのまま <kbd>3</kbd> <kbd>=</kbd> で6、続けて <kbd>4</kbd> <kbd>=</kbd> で8。この場合は<strong>先に入れた2が定数</strong>です。</li>
+    <li><strong>割り算も確かめる</strong><kbd>AC</kbd> のあと <kbd>1</kbd><kbd>0</kbd><kbd>0</kbd> <kbd>÷</kbd> <kbd>2</kbd> <kbd>=</kbd>（50）、続けて <kbd>4</kbd><kbd>0</kbd> <kbd>=</kbd>。<br>
+      <strong>20</strong> と出たら … 割る数（2）が定数。40÷2＝20 です。<strong>「同じ数で割り続ける」形</strong>で、こちらが実務では便利です。<br>
+      <strong>2.5</strong> と出たら … 割られる数（100）が定数。100÷40＝2.5 です。</li>
+    <li><strong>結果を記録する</strong>「×は先の数が定数」「÷は割る数が定数」のように、判明した仕様を1行にまとめてノートの表紙に書いておきます。以後この1台しか使わないので、これを覚えれば足ります。</li>
+  </ol>
+
+  <div class="card">
+    <div class="card__label">使いどころ — 配賦率を各部門に掛ける</div>
+    <p>配賦率600円/時間を、A製品3,250時間、B製品4,600時間、C製品4,150時間に配賦する場合。「先に入れた数が定数」になる機種なら、次のように打てます。</p>
+    <div class="keyflow">
+      <kbd>AC</kbd><span class="arrow">→</span>
+      <kbd>6</kbd><kbd>0</kbd><kbd>0</kbd><span class="arrow">→</span><kbd>×</kbd><span class="arrow">（機種により2回）→</span>
+      <kbd>3</kbd><kbd>2</kbd><kbd>5</kbd><kbd>0</kbd><kbd>=</kbd><span class="arrow">1,950,000</span>
+      <kbd>4</kbd><kbd>6</kbd><kbd>0</kbd><kbd>0</kbd><kbd>=</kbd><span class="arrow">2,760,000</span>
+      <kbd>4</kbd><kbd>1</kbd><kbd>5</kbd><kbd>0</kbd><kbd>=</kbd><span class="arrow">2,490,000</span>
+      <span class="arrow">→</span><kbd>GT</kbd><span class="arrow">7,200,000</span>
+    </div>
+    <p><strong>600 を打つのは最初の1回だけ</strong>です。以後は時間数と <kbd>=</kbd> だけ。しかも <kbd>=</kbd> を押すたびにGTが溜まるので、最後に <kbd>GT</kbd> を押せば配賦額の合計 7,200,000円が出て、これが配賦する前の製造間接費と一致するかどうかで検算までできます。<strong>定数計算とGTは組み合わせて使うと最も効きます。</strong></p>
+  </div>
+
+  <h2 id="s7"><span class="num">7</span>実習ドリル</h2>
+
+  <p>ここからは実際に電卓を叩いてください。<strong>頭の中で計算したり、暗算で済ませたりしないこと</strong>が大事です。目的は答えを当てることではなく、<mark>メモリ・GT・定数計算の手順を指に通すこと</mark>だからです。各問の解説にキー操作の手順を載せてあります。自分の打ち方と比べてみてください。</p>
+
+  <div id="num1"></div>
+
+  <div id="quiz1"></div>
+
+  <h2 id="s8"><span class="num">8</span>到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。全項目に✓が入ったら、このユニットは完了です。</p>
+
+  <div class="progressbar" data-progress-for="#u3check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u3check">0 / 0 完了（0%）</div>
+
+  <div id="u3check">
+    <ul class="checklist">
+      <li><input type="checkbox" id="k1" data-key="u3d-1"><label for="k1"><span class="cl__t">本番用の1台を決めた</span><span class="cl__d">12桁・早打ち対応・メモリとGTつき。以後、練習も本番もこの1台だけを使う</span></label></li>
+      <li><input type="checkbox" id="k2" data-key="u3d-2"><label for="k2"><span class="cl__t">ラウンドセレクターを F、小数点セレクターを F または 0 に合わせた</span><span class="cl__d">CUT や 2 のままだと、割り算の答えが丸められて検算が合わなくなる</span></label></li>
+      <li><input type="checkbox" id="k3" data-key="u3d-3"><label for="k3"><span class="cl__t">自分の電卓の C と CE の挙動を確かめた</span><span class="cl__d">打ち間違えたとき、最初から打ち直さずに済ませられる</span></label></li>
+      <li><input type="checkbox" id="k4" data-key="u3d-4"><label for="k4"><span class="cl__t">計算の前に MC を押す習慣がついた</span><span class="cl__d">画面に「M」が出ていたらメモリに中身が残っているサイン</span></label></li>
+      <li><input type="checkbox" id="k5" data-key="u3d-5"><label for="k5"><span class="cl__t">M+ / M− / MR / MC を手元を見ずに押せる</span><span class="cl__d">単価×数量の集計と、月初＋当月−月末の差引計算が指で流れる</span></label></li>
+      <li><input type="checkbox" id="k6" data-key="u3d-6"><label for="k6"><span class="cl__t">GT のクリア方法を自分の電卓で確かめた</span><span class="cl__d">GTを2回／AC／切替スイッチ。機種によって違う</span></label></li>
+      <li><input type="checkbox" id="k7" data-key="u3d-7"><label for="k7"><span class="cl__t">自分の電卓の定数計算の方式を確かめた</span><span class="cl__d">2×3= → 4= が 8 か 12 か。100÷2= → 40= が 20 か 2.5 か</span></label></li>
+      <li><input type="checkbox" id="k8" data-key="u3d-8"><label for="k8"><span class="cl__t">配賦計算で「定数計算 → GTで検算」の流れができた</span><span class="cl__d">配賦額の合計が配賦前の総額と一致すれば、全部正しい</span></label></li>
+      <li><input type="checkbox" id="k9" data-key="u3d-9"><label for="k9"><span class="cl__t">実習ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+      <li><input type="checkbox" id="k10" data-key="u3d-10"><label for="k10"><span class="cl__t">理解チェック4問を全問正解した</span><span class="cl__d">「この場面ではどの機能を使うか」を迷わず選べる</span></label></li>
+    </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">このあと、どう維持するか</span>
+    <p>今日で終わりにしないでください。W1以降、<strong>問題を解くときは必ずこの1台を使い、集計は必ずメモリかGTで行う</strong>。それだけで十分な反復量になります。「今日は面倒だから紙にメモして足そう」を許さないことが、11週間後に効いてきます。</p>
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← Phase 0 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 0 教材</span>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+BokiNum.mount('#num1', {
+  title: '実習ドリル — 電卓操作',
+  badge: '計算ドリル 12問',
+  questions: [
+    {
+      text: '<strong>【メモリ】</strong>次の材料の当月消費額の合計を求めなさい。<br>A材料 @200円 × 30個 ／ B材料 @150円 × 40個 ／ C材料 @300円 × 20個',
+      answer: 18000, unit: '円',
+      hint: '掛け算のあと「=」を押さずに M+ を押せば、そのまま確定してメモリに入ります。',
+      explain: '<p>200×30＝6,000、150×40＝6,000、300×20＝6,000。合計 18,000円。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>200</kbd><kbd>×</kbd><kbd>30</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>150</kbd><kbd>×</kbd><kbd>40</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>300</kbd><kbd>×</kbd><kbd>20</kbd><kbd>M+</kbd><span class="arrow">→</span><kbd>MR</kbd></div>'
+    },
+    {
+      text: '<strong>【メモリ】</strong>次の部品の消費額の合計を求めなさい。<br>X部品 @1,250円 × 48個 ／ Y部品 @860円 × 75個 ／ Z部品 @2,400円 × 32個',
+      answer: 201300, unit: '円',
+      hint: '桁が増えても手順は同じです。1行ごとに M+ を押します。',
+      explain: '<p>1,250×48＝60,000／860×75＝64,500／2,400×32＝76,800。合計 201,300円。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>1250</kbd><kbd>×</kbd><kbd>48</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>860</kbd><kbd>×</kbd><kbd>75</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>2400</kbd><kbd>×</kbd><kbd>32</kbd><kbd>M+</kbd><span class="arrow">→</span><kbd>MR</kbd></div>' +
+        '<p class="small muted">途中の 60,000 や 64,500 を紙に書き留めていたら、それが減らせる時間です。</p>'
+    },
+    {
+      text: '<strong>【メモリ】</strong>次の4種類の製品の売上高の合計を求めなさい。<br>甲 @380円 × 250個 ／ 乙 @1,150円 × 120個 ／ 丙 @95円 × 1,400個 ／ 丁 @2,700円 × 35個',
+      answer: 460500, unit: '円',
+      hint: '4行でも手順は変わりません。最後に MR を1回。',
+      explain: '<p>380×250＝95,000／1,150×120＝138,000／95×1,400＝133,000／2,700×35＝94,500。合計 460,500円。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>380</kbd><kbd>×</kbd><kbd>250</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>1150</kbd><kbd>×</kbd><kbd>120</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>95</kbd><kbd>×</kbd><kbd>1400</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>2700</kbd><kbd>×</kbd><kbd>35</kbd><kbd>M+</kbd><span class="arrow">→</span><kbd>MR</kbd></div>'
+    },
+    {
+      text: '<strong>【メモリ／差引】</strong>材料の当月消費額を求めなさい。<br>月初有高 148,000円 ／ 当月仕入高 962,000円 ／ 月末有高 175,000円',
+      answer: 935000, unit: '円',
+      hint: '消費額 ＝ 月初有高 ＋ 当月仕入高 − 月末有高。月末有高だけ M− です。',
+      explain: '<p>148,000 ＋ 962,000 − 175,000 ＝ 935,000円。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>148000</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>962000</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>175000</kbd><kbd>M−</kbd><span class="arrow">→</span><kbd>MR</kbd></div>' +
+        '<p class="small muted">「手元にあったもの＋買ったもの−残ったもの＝使ったもの」。日常の感覚どおりです。</p>'
+    },
+    {
+      text: '<strong>【メモリ／差引】</strong>当月の賃金消費額を求めなさい。<br>当月支払高 1,860,000円 ／ 前月末未払高 245,000円 ／ 当月末未払高 268,000円',
+      answer: 1883000, unit: '円',
+      hint: '消費額 ＝ 当月支払高 − 前月末未払高 ＋ 当月末未払高。引くのは前月分です。',
+      explain: '<p>1,860,000 − 245,000 ＋ 268,000 ＝ 1,883,000円。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>1860000</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>245000</kbd><kbd>M−</kbd><span class="arrow">｜</span><kbd>268000</kbd><kbd>M+</kbd><span class="arrow">→</span><kbd>MR</kbd></div>' +
+        '<p class="small muted">当月支払高には前月分の未払が含まれているので取り除き、まだ払っていない当月分を足し戻します。</p>'
+    },
+    {
+      text: '<strong>【定数計算／GT】</strong>製造間接費の年間予算 7,200,000円、基準操業度は直接作業時間 12,000時間である。予定配賦率と、次の各製品への予定配賦額を求めなさい。<br>製品A 3,250時間 ／ 製品B 4,600時間 ／ 製品C 4,150時間',
+      answer: [600, 1950000, 2760000, 2490000],
+      labels: ['予定配賦率（円/時間）', '製品A（円）', '製品B（円）', '製品C（円）'],
+      hint: '配賦率を求めたら、それを定数にして各製品の時間に掛けます。配賦率を3回打ち直す必要はありません。',
+      explain: '<p>予定配賦率 ＝ 7,200,000 ÷ 12,000 ＝ <strong>600円/時間</strong>。<br>製品A 600×3,250＝1,950,000／製品B 600×4,600＝2,760,000／製品C 600×4,150＝2,490,000。</p>' +
+        '<div class="keyflow"><kbd>AC</kbd><span class="arrow">＋GTクリア →</span><kbd>600</kbd><kbd>×</kbd><span class="arrow">（機種により2回）</span><kbd>3250</kbd><kbd>=</kbd><kbd>4600</kbd><kbd>=</kbd><kbd>4150</kbd><kbd>=</kbd><span class="arrow">→</span><kbd>GT</kbd></div>' +
+        '<p><strong>検算：</strong>3,250＋4,600＋4,150＝12,000時間なので、配賦額の合計は予算の 7,200,000円と一致するはずです。最後に GT を押して 7,200,000 と出れば、3つとも正しいと確認できます。</p>'
+    },
+    {
+      text: '<strong>【定数計算】</strong>部門共通費である電力料 1,440,000円を、各部門の電力消費量の比で配賦する。配賦率と各部門への配賦額を求めなさい。<br>切削部門 1,850kWh ／ 組立部門 2,150kWh ／ 修繕部門 800kWh',
+      answer: [300, 555000, 645000, 240000],
+      labels: ['配賦率（円/kWh）', '切削部門（円）', '組立部門（円）', '修繕部門（円）'],
+      hint: 'まず消費量の合計を出します。1,850＋2,150＋800。',
+      explain: '<p>消費量合計 ＝ 1,850＋2,150＋800 ＝ 4,800kWh。<br>配賦率 ＝ 1,440,000 ÷ 4,800 ＝ <strong>300円/kWh</strong>。<br>切削 300×1,850＝555,000／組立 300×2,150＝645,000／修繕 300×800＝240,000。</p>' +
+        '<div class="keyflow"><kbd>AC</kbd><span class="arrow">＋GTクリア →</span><kbd>300</kbd><kbd>×</kbd><span class="arrow">（定数）</span><kbd>1850</kbd><kbd>=</kbd><kbd>2150</kbd><kbd>=</kbd><kbd>800</kbd><kbd>=</kbd><span class="arrow">→</span><kbd>GT</kbd></div>' +
+        '<p><strong>検算：</strong>555,000＋645,000＋240,000＝1,440,000。配賦前の電力料と一致します。</p>'
+    },
+    {
+      text: '<strong>【定数計算】</strong>修繕部門費 918,000円を、修繕時間の比で2つの製造部門に配賦する。配賦率と各部門への配賦額を求めなさい。<br>第1製造部門 1,500時間 ／ 第2製造部門 1,900時間',
+      answer: [270, 405000, 513000],
+      labels: ['配賦率（円/時間）', '第1製造部門（円）', '第2製造部門（円）'],
+      hint: '修繕時間の合計は 1,500＋1,900＝3,400時間です。',
+      explain: '<p>配賦率 ＝ 918,000 ÷ 3,400 ＝ <strong>270円/時間</strong>。<br>第1製造部門 270×1,500＝405,000／第2製造部門 270×1,900＝513,000。</p>' +
+        '<div class="keyflow"><kbd>AC</kbd><span class="arrow">＋GTクリア →</span><kbd>918000</kbd><kbd>÷</kbd><kbd>3400</kbd><kbd>=</kbd><span class="arrow">270</span><kbd>×</kbd><span class="arrow">（定数）</span><kbd>1500</kbd><kbd>=</kbd><kbd>1900</kbd><kbd>=</kbd><span class="arrow">→</span><kbd>GT</kbd></div>' +
+        '<p><strong>検算：</strong>405,000＋513,000＝918,000。補助部門費が残らず配賦されています。</p>'
+    },
+    {
+      text: '<strong>【平均単価／総平均法】</strong>次の資料から、総平均法による平均単価を求めなさい。<br>月初有高 200個 @450円 ／ 第1回仕入 300個 @480円 ／ 第2回仕入 500個 @500円',
+      answer: 484, unit: '円',
+      hint: '平均単価 ＝（月初有高＋当月仕入高の合計金額）÷（合計数量）。金額の集計にメモリを使います。',
+      explain: '<p>金額 200×450＝90,000／300×480＝144,000／500×500＝250,000。合計 <strong>484,000円</strong>。<br>数量 200＋300＋500＝<strong>1,000個</strong>。<br>平均単価 ＝ 484,000 ÷ 1,000 ＝ <strong>484円</strong>。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>200</kbd><kbd>×</kbd><kbd>450</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>300</kbd><kbd>×</kbd><kbd>480</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>500</kbd><kbd>×</kbd><kbd>500</kbd><kbd>M+</kbd><span class="arrow">→</span><kbd>MR</kbd><kbd>÷</kbd><kbd>1000</kbd><kbd>=</kbd></div>' +
+        '<p class="small muted"><kbd>MR</kbd> で呼び出した数に、そのまま <kbd>÷</kbd> を続けられます。書き写す必要はありません。</p>'
+    },
+    {
+      text: '<strong>【平均単価／総平均法】</strong>次の資料から、総平均法による平均単価と、当月850個を消費したときの消費額を求めなさい。<br>月初有高 150個 @620円 ／ 第1回仕入 450個 @700円 ／ 第2回仕入 400個 @660円',
+      answer: [672, 571200],
+      labels: ['平均単価（円）', '消費額（円）'],
+      hint: '先に平均単価を出し、その単価を消費数量に掛けます。',
+      explain: '<p>金額 150×620＝93,000／450×700＝315,000／400×660＝264,000。合計 <strong>672,000円</strong>。<br>数量 150＋450＋400＝<strong>1,000個</strong>。<br>平均単価 ＝ 672,000 ÷ 1,000 ＝ <strong>672円</strong>。<br>消費額 ＝ 672 × 850 ＝ <strong>571,200円</strong>。</p>' +
+        '<div class="keyflow"><kbd>MC</kbd><span class="arrow">→</span><kbd>150</kbd><kbd>×</kbd><kbd>620</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>450</kbd><kbd>×</kbd><kbd>700</kbd><kbd>M+</kbd><span class="arrow">｜</span><kbd>400</kbd><kbd>×</kbd><kbd>660</kbd><kbd>M+</kbd><span class="arrow">→</span><kbd>MR</kbd><kbd>÷</kbd><kbd>1000</kbd><kbd>=</kbd><span class="arrow">672</span><kbd>×</kbd><kbd>850</kbd><kbd>=</kbd></div>'
+    },
+    {
+      text: '<strong>【GT】</strong>次の各製品の売上高と、その合計を求めなさい。<br>A @3,200円 × 450個 ／ B @1,800円 × 920個 ／ C @5,400円 × 260個 ／ D @760円 × 1,500個',
+      answer: [1440000, 1656000, 1404000, 1140000, 5640000],
+      labels: ['A（円）', 'B（円）', 'C（円）', 'D（円）', '合計（円）'],
+      hint: '各行で「=」を押していけば、答えが自動でGTに溜まります。最後に GT を1回。',
+      explain: '<p>A 3,200×450＝1,440,000／B 1,800×920＝1,656,000／C 5,400×260＝1,404,000／D 760×1,500＝1,140,000。合計 <strong>5,640,000円</strong>。</p>' +
+        '<div class="keyflow"><kbd>AC</kbd><span class="arrow">＋GTクリア →</span><kbd>3200</kbd><kbd>×</kbd><kbd>450</kbd><kbd>=</kbd><kbd>1800</kbd><kbd>×</kbd><kbd>920</kbd><kbd>=</kbd><kbd>5400</kbd><kbd>×</kbd><kbd>260</kbd><kbd>=</kbd><kbd>760</kbd><kbd>×</kbd><kbd>1500</kbd><kbd>=</kbd><span class="arrow">→</span><kbd>GT</kbd></div>' +
+        '<p class="small muted">各製品の売上高は答案に書き写す必要があるので、画面に1行ずつ出るGT方式が向いています。M+ を押す手間もありません。</p>'
+    },
+    {
+      text: '<strong>【GT】</strong>損益計算書の販売費及び一般管理費を集計する。各区分の小計と、その合計を求めなさい。<br>販売費：給料 1,850,000円、広告宣伝費 420,000円<br>一般管理費：減価償却費 360,000円、保険料 96,000円、水道光熱費 144,000円',
+      answer: [2270000, 600000, 2870000],
+      labels: ['販売費 小計（円）', '一般管理費 小計（円）', '合計（円）'],
+      hint: '区分ごとに足して「=」で確定させると、その小計がGTに溜まります。最後に GT で総合計。',
+      explain: '<p>販売費 1,850,000＋420,000＝<strong>2,270,000円</strong>。<br>一般管理費 360,000＋96,000＋144,000＝<strong>600,000円</strong>。<br>合計 2,270,000＋600,000＝<strong>2,870,000円</strong>。</p>' +
+        '<div class="keyflow"><kbd>AC</kbd><span class="arrow">＋GTクリア →</span><kbd>1850000</kbd><kbd>+</kbd><kbd>420000</kbd><kbd>=</kbd><span class="arrow">2,270,000</span><kbd>360000</kbd><kbd>+</kbd><kbd>96000</kbd><kbd>+</kbd><kbd>144000</kbd><kbd>=</kbd><span class="arrow">600,000</span><kbd>GT</kbd><span class="arrow">2,870,000</span></div>' +
+        '<p class="small muted">これがGTの典型的な使い方です。小計を答案に書きながら、総合計は電卓が勝手に持っていてくれます。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz1', {
+  title: '理解チェック — この場面ではどの機能を使うか',
+  questions: [
+    {
+      text: '「@単価 × 数量」の行が5行あり、その合計を出したい。最も速く、かつ書き間違いが起きにくいのはどれですか。',
+      choices: [
+        '各行の答えをその都度メモ用紙に書き、5つ書き終えてから電卓に打ち込んで足す',
+        '掛け算のあと M+ を押して結果をメモリに送り、5行終えたら MR で合計を呼び出す',
+        '各行を計算するたびに CE を押して、表示をきれいにしてから次に進む',
+        'ラウンドセレクターを CUT にして、端数が出ないようにしてから足す'
+      ],
+      answer: 1,
+      explain: '<p><strong>M+ を使います。</strong>掛け算のあと「=」を押さずに <kbd>M+</kbd> を押せば、計算が確定してそのままメモリに足されます。紙への書き取りも打ち直しも発生しません。</p>' +
+        '<p>1は時間がかかるうえ、5回の書き取りと5回の打ち直しがすべて転記ミスの機会になります。3の CE は入力中の数値を消すキーで、集計とは関係ありません。4のセレクター操作は、むしろ答えを狂わせる原因になります。</p>' +
+        '<p class="small muted">なお、この問題は <kbd>GT</kbd> でも解けます（各行で「=」を押して最後に GT）。引く項目がないので、どちらでも構いません。</p>'
+    },
+    {
+      text: '「材料の当月消費額 ＝ 月初有高 ＋ 当月仕入高 − 月末有高」をメモリで計算します。<strong>月末有高</strong>を入力したあとに押すキーはどれですか。',
+      choices: ['M+', 'M−', 'MR', 'MC'],
+      answer: 1,
+      explain: '<p><strong>M− です。</strong>月末有高は「まだ使わずに残っているもの」なので、消費額からは差し引きます。メモリから引くキーが <kbd>M−</kbd> です。</p>' +
+        '<p><kbd>MR</kbd> は合計を呼び出すキーなので、押すのは3つすべてを入れ終えた最後です。<kbd>MC</kbd> はメモリを空にするキーで、押すのは<strong>計算を始める前</strong>。ここで押すと、それまでの集計が全部消えます。</p>'
+    },
+    {
+      text: '配賦率を求めるために割り算をしたところ、小数点以下が勝手に切り捨てられ、各部門の配賦額を足しても配賦前の総額と一致しません。まず確認すべきことはどれですか。',
+      choices: [
+        '電池の残量が減っていないか',
+        'ラウンドセレクターと小数点セレクターの位置',
+        'GT に前の計算の答えが残っていないか',
+        '画面に「M」が表示されていないか'
+      ],
+      answer: 1,
+      explain: '<p><strong>セレクターの位置です。</strong>ラウンドセレクターが CUT や 5/4、小数点セレクターが 0 や 2 になっていると、割り算の答えがその場で丸められます。丸めた数を次の計算に使うため、配賦額がすべてずれ、合計が総額と一致しなくなります。</p>' +
+        '<p>簿記の学習では、ラウンドセレクターを <strong>F</strong>、小数点セレクターを <strong>F</strong> または <strong>0</strong> にしておきます。端数処理は電卓が勝手にやることではなく、問題文が指示する場所で指示どおりに行うものだからです。</p>' +
+        '<p class="small muted">3と4も確認する価値はありますが、「割り算の答えだけが丸まる」という症状の原因はセレクターです。</p>'
+    },
+    {
+      text: '配賦率600円/時間を、5つの部門の作業時間にそれぞれ掛けます。最も打鍵数が少なく、打ち間違いも起きにくいのはどれですか。',
+      choices: [
+        '毎回「600 × 時間 =」と打ち直す',
+        '定数計算を使い、600 を定数に設定してから「時間 =」を5回繰り返す',
+        '600 をメモリに入れておき、毎回 MR で呼び出して掛ける',
+        'GT に 600 を入れておき、毎回 GT で呼び出して掛ける'
+      ],
+      answer: 1,
+      explain: '<p><strong>定数計算です。</strong>600 を打つのは最初の1回だけで、以後は「時間 → =」の繰り返しになります。打鍵数が最も少なく、配賦率の打ち間違いも起こりようがありません。しかも <kbd>=</kbd> を押すたびにGTに溜まるので、最後に <kbd>GT</kbd> を押せば配賦額の合計が出て、そのまま検算になります。</p>' +
+        '<p>1は 600 を5回打つことになり、そのたびに間違える機会があります。3の MR を使う方法でも計算はできますが、毎回 MR を押す手間が残ります。4は誤りで、<strong>GT は「=」で確定した答えを足し込んでいく機能</strong>であり、数値を保管して呼び出す機能ではありません。</p>' +
+        '<p class="small muted">定数計算の操作は機種によって違います。<kbd>2</kbd><kbd>×</kbd><kbd>3</kbd><kbd>=</kbd> のあと <kbd>4</kbd><kbd>=</kbd> を押して、8 が出るか 12 が出るかを自分の電卓で必ず確かめてください。</p>'
+    }
+  ]
+});
+</script>
+</body>
+</html>

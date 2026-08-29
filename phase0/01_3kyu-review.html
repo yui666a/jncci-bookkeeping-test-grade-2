@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3級の総復習 — 日商簿記2級 Phase 0</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 0 目次</a>
+    <span class="topbar__title">UNIT 01 3級の総復習</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 01 ／ 4時間</p>
+    <h1>3級の総復習<br>— 2級を始める前に、穴を塞ぐ</h1>
+    <p class="lead">仕訳の考え方を言葉にし直し、決算整理9項目を一気に通し、剰余金の配当を確認したうえで、<strong>学習の順番から素通りされやすい論点</strong>（建設仮勘定・伝票会計）まで塞ぎます。最後に仕訳25問で手を動かして終わります。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 25問</span>
+      <span class="chip">計算ドリル・確認テストつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">このユニットの目的</a></li>
+      <li><a href="#s2">仕訳の考え方を、もう一度言語化する</a></li>
+      <li><a href="#s3">決算整理を一気に通す</a></li>
+      <li><a href="#s4">剰余金の配当と処分</a></li>
+      <li><a href="#s5">素通りされやすい論点 ① 建設仮勘定</a></li>
+      <li><a href="#s6">素通りされやすい論点 ② 伝票会計</a></li>
+      <li><a href="#s7">仕訳ドリル 25問</a></li>
+      <li><a href="#s8">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>このユニットの目的</h2>
+
+  <p>2級の勉強は、ふつう「連結会計」「工業簿記」といった新しい論点から始めたくなります。それでも最初の4時間を3級の復習に使うのには、はっきりした理由が2つあります。</p>
+
+  <h3>理由① 2級の試験範囲は、3級の範囲をそのまま含んでいる</h3>
+
+  <p>日商の出題区分表は、級ごとに範囲を「入れ替える」のではなく<strong>積み上げる</strong>形で作られています。2級の区分表に載っている範囲は、3級の範囲に2級の範囲を足したものです。つまり<mark>3級で出た論点は、2級でもそのまま出題対象</mark>です。</p>
+
+  <p>実際、2級の第1問（仕訳5題）には、3級レベルの仕訳がふつうに混ざります。第3問（決算・財務諸表）にいたっては、問題の骨格そのものが3級の決算整理です。減価償却・貸倒引当金・売上原価・経過勘定という3級の4点セットが土台にあり、そこに2級の論点（税効果会計、外貨換算、リース、退職給付など）が数個乗っているだけ、という構造をしています。土台がぐらついていると、2級の論点を正しく処理できても答えが合いません。</p>
+
+  <h3>理由② 学習の順番から、そのまま素通りされやすい論点がある</h3>
+
+  <p>市販の2級テキストは「2級で新しく追加された範囲」を厚く解説する本です。そのため<strong>3級の範囲であるものは原則として載っておらず</strong>、また2級の範囲であっても仕訳1本で済むものは章の片隅で軽く流されます。ところが試験には出ます。素通りされやすい代表格が次の2つです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">見落とされやすい論点 ①</div>
+      <p><strong>建設仮勘定</strong>　<span class="chip">2級の範囲</span></p>
+      <p class="small">建物を建てている途中に払った手付金・中間金を入れておく箱。出題区分表では2級の「有形固定資産」に置かれていますが、圧縮記帳や200%定率法といった重い論点と同じ章に入るため、数行で流されがちです。固定資産の問題で「建設中の建物が完成した」と出たときに使います。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">見落とされやすい論点 ②</div>
+      <p><strong>伝票会計・仕訳日計表</strong>　<span class="chip">3級の範囲</span></p>
+      <p class="small">こちらは3級の範囲なので、2級のテキストには載っていません。それでも3級の範囲は2級の出題対象です。仕組みを知らないと、伝票が並んだだけで手が止まります。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「3級は受かったから大丈夫」が通用しない理由</span>
+    <p>3級の試験は、ひとつの取引に登場する勘定科目がふつう2〜3個です。だから<strong>パターンを覚えていれば手が動きました</strong>。2級はひとつの取引に3〜5個の科目が絡み、しかも初めて見る言い回しで出題されます。パターン記憶では対応できないので、「なぜその科目が、なぜその側に来るのか」を毎回自力で組み立てられる状態にしておく必要があります。このユニットは、その組み立て方（型）を作り直すための時間でもあります。</p>
+  </div>
+
+  <p class="small muted">このユニットは「知識を新しく増やす」時間ではありません。すでに一度通った道を、<strong>説明できる状態</strong>に引き上げる時間です。読んで分かった気になるのではなく、各節の最後にあるドリルで必ず手を動かしてください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>仕訳の考え方を、もう一度言語化する</h2>
+
+  <p>仕訳とは、ひとつの取引を<strong>「左（借方）」と「右（貸方）」の2つの欄に分けて書き記すこと</strong>です。なぜわざわざ2つに分けるのか。ここから始めます。</p>
+
+  <h3>簿記は、取引を必ず「2つの面」から見る</h3>
+
+  <p>たとえば「現金 100,000円で商品を仕入れた」という取引を思い浮かべてください。この出来事には、同時に2つのことが起きています。</p>
+
+  <ul>
+    <li><strong>商品（仕入）という費用が 100,000円 発生した</strong> ← 何を手に入れたか</li>
+    <li><strong>現金が 100,000円 減った</strong> ← その代わりに何を手放したか</li>
+  </ul>
+
+  <p>会社のお金が動くとき、必ず「何かを得た」代わりに「何かを失った」か、あるいは「何かの義務を負った」かのどちらかが起きます。<mark>同じひとつの出来事を2つの面から、同じ金額で書き取る</mark>。これが複式簿記の仕組みです。</p>
+
+  <p>そして、同じ金額を左と右に1回ずつ書くのですから、すべての仕訳を足し上げれば<strong>左の合計と右の合計は必ず一致します</strong>。貸借が一致するのは簿記のルールで決められているからではなく、記録の方法がそうなっているからです。逆に言えば、<strong>貸借が合わないときは取引の見方をどこかで取り違えている</strong>ということです。合わないときに数字をいじって合わせるのは、簿記としては何の意味もありません。</p>
+
+  <div class="term">
+    <span class="term__w">借方・貸方</span><span class="term__r">かりかた・かしかた</span>
+    <p>左側が借方、右側が貸方です。名前に意味を求めても得るものはありません。<strong>「かりかた」の「り」が左に払うから左、「かしかた」の「し」が右に払うから右</strong>——この覚え方で十分です。以後は「左・右」と読み替えて構いません。</p>
+  </div>
+
+  <h3>5つの要素とホームポジション</h3>
+
+  <p>勘定科目は、必ず次の5つのどれかに属します。そして<strong>それぞれに「定位置（ホームポジション）」がある</strong>。増えたときにどちら側に書くか、それが定位置です。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 900 300" style="width:100%;height:auto;min-width:760px" role="img" aria-label="貸借対照表と損益計算書における5つの要素の位置">
+      <g font-size="16" fill="var(--text)">
+        <text x="40" y="30" font-size="14" fill="var(--muted)">貸借対照表（いま何を持ち、いくら借りているか）</text>
+        <rect x="40" y="46" width="190" height="200" fill="var(--debit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <rect x="230" y="46" width="190" height="100" fill="var(--credit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <rect x="230" y="146" width="190" height="100" fill="var(--credit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="135" y="140" text-anchor="middle" font-size="20" fill="var(--debit)" font-weight="700">資　産</text>
+        <text x="135" y="168" text-anchor="middle" font-size="12.5" fill="var(--muted)">現金・売掛金・建物</text>
+        <text x="325" y="92" text-anchor="middle" font-size="19" fill="var(--credit)" font-weight="700">負　債</text>
+        <text x="325" y="115" text-anchor="middle" font-size="12.5" fill="var(--muted)">買掛金・借入金</text>
+        <text x="325" y="192" text-anchor="middle" font-size="19" fill="var(--credit)" font-weight="700">純資産</text>
+        <text x="325" y="215" text-anchor="middle" font-size="12.5" fill="var(--muted)">資本金・繰越利益剰余金</text>
+
+        <text x="480" y="30" font-size="14" fill="var(--muted)">損益計算書（この1年でいくら儲けたか）</text>
+        <rect x="480" y="46" width="190" height="200" fill="var(--debit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <rect x="670" y="46" width="190" height="200" fill="var(--credit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="575" y="140" text-anchor="middle" font-size="20" fill="var(--debit)" font-weight="700">費　用</text>
+        <text x="575" y="168" text-anchor="middle" font-size="12.5" fill="var(--muted)">仕入・給料・支払家賃</text>
+        <text x="765" y="140" text-anchor="middle" font-size="20" fill="var(--credit)" font-weight="700">収　益</text>
+        <text x="765" y="168" text-anchor="middle" font-size="12.5" fill="var(--muted)">売上・受取利息</text>
+
+        <text x="135" y="272" text-anchor="middle" font-size="13" fill="var(--debit)" font-weight="700">← 借方（左）が定位置</text>
+        <text x="325" y="272" text-anchor="middle" font-size="13" fill="var(--credit)" font-weight="700">貸方（右）が定位置 →</text>
+        <text x="575" y="272" text-anchor="middle" font-size="13" fill="var(--debit)" font-weight="700">← 借方（左）が定位置</text>
+        <text x="765" y="272" text-anchor="middle" font-size="13" fill="var(--credit)" font-weight="700">貸方（右）が定位置 →</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">財務諸表の上でその要素が置かれている側が、そのままホームポジションになります。資産と費用は左、負債・純資産・収益は右。この図の配置を覚えてしまえば、ホームポジションの表を丸暗記する必要はありません。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>要素</th><th>ホームポジション</th><th>増えたとき</th><th>減ったとき</th><th>代表的な勘定科目</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>資産</strong><br><span class="small muted">持っているもの・もらえる権利</span></td><td>借方（左）</td><td>借方</td><td>貸方</td><td>現金／当座預金／売掛金／受取手形／繰越商品／建物／備品／土地</td></tr>
+      <tr><td><strong>負債</strong><br><span class="small muted">払わなければならない義務</span></td><td>貸方（右）</td><td>貸方</td><td>借方</td><td>買掛金／支払手形／借入金／未払金／預り金</td></tr>
+      <tr><td><strong>純資産</strong><br><span class="small muted">資産と負債の差額＝会社の正味の持ち分</span></td><td>貸方（右）</td><td>貸方</td><td>借方</td><td>資本金／繰越利益剰余金</td></tr>
+      <tr><td><strong>収益</strong><br><span class="small muted">純資産を増やす原因</span></td><td>貸方（右）</td><td>貸方</td><td>借方</td><td>売上／受取利息／受取地代／償却債権取立益</td></tr>
+      <tr><td><strong>費用</strong><br><span class="small muted">純資産を減らす原因</span></td><td>借方（左）</td><td>借方</td><td>貸方</td><td>仕入／給料／支払家賃／保険料／減価償却費</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">なぜ収益は貸方（純資産と同じ側）なのか</span>
+    <p>収益が発生すると、会社の正味の持ち分＝純資産が増えます。費用が発生すると純資産が減ります。つまり<strong>収益と費用は、純資産の増減を原因別に細かく記録するための箱</strong>です。だから収益は純資産と同じ貸方が定位置で、費用はその反対側の借方になります。この関係が分かっていると、「収益の取り消し（売上戻り）は借方」のような処理も自然に出てきます。</p>
+  </div>
+
+  <h3>仕訳を書くときの手順を、型として固定する</h3>
+
+  <p>3級までは、見た瞬間に答えが浮かぶ問題がほとんどでした。2級はそうはいきません。<strong>科目が5つ絡む長文の取引</strong>が出たときに、頭の中を整理する手順を持っているかどうかで差がつきます。次の4ステップを、簡単な問題のうちから意識して回してください。</p>
+
+  <ol class="steps">
+    <li><strong>登場する勘定科目を、全部書き出す</strong>まず左右を考えません。取引文を読みながら「動いたもの」の名前だけを挙げます。「商品を仕入れた」→ 仕入。「代金は掛け」→ 買掛金。「引取運賃を現金で払った」→ 現金。この段階で挙げ漏れると、その先は何をしても不正解です。</li>
+    <li><strong>それぞれ、増えたのか減ったのかを判定する</strong>次に、挙げた科目ひとつずつに「増」か「減」を書きます。仕入（費用）は発生＝増、買掛金（負債）は増、現金（資産）は減。<strong>ここは左右をまだ考えません。</strong>増減の判定と左右の判定を同時にやろうとするから混乱します。</li>
+    <li><strong>ホームポジションから左右を決める</strong>増えたならホームポジション側、減ったなら反対側。仕入は費用でホームは借方、増えたので借方。買掛金は負債でホームは貸方、増えたので貸方。現金は資産でホームは借方、減ったので貸方。これは<strong>判断ではなく機械的な変換</strong>です。</li>
+    <li><strong>金額を入れ、借方合計＝貸方合計を確認する</strong>最後に金額を入れて縦に足します。合わなければ、ステップ1で科目を挙げ漏れているか、ステップ2の増減判定を間違えています。<strong>合わないまま次へ進まないこと。</strong>この検算は本番でも必ずやります。</li>
+  </ol>
+
+  <p>実際にやってみます。「商品 400,000円を仕入れ、代金は掛けとした。なお、引取運賃 6,000円は現金で支払った」という取引です。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>科目（ステップ1）</th><th>要素</th><th>増減（ステップ2）</th><th>ホーム</th><th>左右（ステップ3）</th><th class="num">金額（ステップ4）</th></tr></thead>
+    <tbody>
+      <tr><td>仕入</td><td>費用</td><td>増（発生）</td><td>借方</td><td><strong>借方</strong></td><td class="num">406,000</td></tr>
+      <tr><td>買掛金</td><td>負債</td><td>増</td><td>貸方</td><td><strong>貸方</strong></td><td class="num">400,000</td></tr>
+      <tr><td>現金</td><td>資産</td><td>減</td><td>借方</td><td><strong>貸方</strong></td><td class="num">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>商品 400,000円を仕入れ、代金は掛け。引取運賃 6,000円は現金払い</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕　入</td><td class="d amt">406,000</td><td class="c">買 掛 金</td><td class="c amt">400,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">現　金</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>借方 406,000円、貸方 400,000＋6,000＝406,000円。一致します。なお<strong>引取運賃（仕入諸掛り）が仕入に含まれる</strong>のは、「その商品を売れる状態にするまでにかかった金額はすべて商品の原価だ」という考え方によります。運賃を別の費用にしてしまうと、その商品をいくらで手に入れたのかが分からなくなるからです。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここで間違える人が多い</span>
+    <p><strong>「払った＝費用」ではありません。</strong>お金を払っても費用にならない取引がたくさんあります。商品の手付金を払えば「前払金（資産）」、備品を買えば「備品（資産）」、借入金を返せば「借入金（負債）の減少」です。逆に、お金を払っていないのに費用になる取引（決算の未払費用など）もあります。<strong>お金の動きと、費用・収益の発生は別物</strong>だと切り離して考えてください。ステップ2で「増えたか減ったか」を科目ごとに判定するのは、この混同を防ぐためでもあります。</p>
+  </div>
+
+  <div id="quiz-shiwake"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>決算整理を一気に通す</h2>
+
+  <h3>決算整理とは何をする手続きか</h3>
+
+  <p>会社は1年間、取引が起きるたびに仕訳を切っています。ところが期末にその記録をそのまま集計しても、<strong>その1年の正しい業績にも、期末時点の正しい財政状態にもなりません</strong>。理由は3つあります。</p>
+
+  <ul>
+    <li><strong>期中は事実をそのまま書いているだけで、期間の切り分けをしていない</strong> — 1年分の保険料を前払いしていれば、来期の分まで当期の費用に入ったままです。</li>
+    <li><strong>記録と実物がずれている</strong> — 帳簿上の現金と金庫の中身が合わない、といったことが起こります。</li>
+    <li><strong>期中には仕訳しない出来事がある</strong> — 建物は毎日少しずつ価値が減っていますが、その都度は仕訳しません。売掛金が将来いくら焦げ付くかも、期中には分かりません。</li>
+  </ul>
+
+  <p>そこで期末に、<mark>期中の記録を「その期の正しい姿」に直す仕訳</mark>をまとめて入れます。これが決算整理です。第3問はまさにこの作業を問う問題で、2級でも構造は変わりません。ここで扱う9項目は、そのまま2級の第3問の土台になります。</p>
+
+  <p>9項目とは、①現金過不足 ②当座借越 ③貸倒引当金 ④売上原価 ⑤減価償却 ⑥経過勘定 ⑦消費税の精算 ⑧法人税、住民税及び事業税 ⑨貯蔵品への振替 です。前半の6つは「記録を正しい姿に直す」もの、後半の3つは<strong>税金と使い残しの整理</strong>です。⑦⑧は損益計算書の末尾（税引前当期純利益から下）と貸借対照表の流動負債を、⑨は貸借対照表の流動資産と販売費及び一般管理費を決めます。ここが空白だと、2級の論点をすべて正解しても当期純利益が出せません。</p>
+
+  <h3>① 現金過不足の整理</h3>
+
+  <p>帳簿上の現金残高と、金庫の実際有高が合わないことがあります。<strong>正しいのは常に実際有高</strong>なので、帳簿を実際有高に合わせ、差額を一時的に「現金過不足」という箱に入れて原因を探します。現金過不足は資産でも負債でもない、原因判明までの仮の置き場です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>発見時：実際有高が帳簿残高より 8,000円少なかった</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">現金過不足</td><td class="d amt">8,000</td><td class="c">現　金</td><td class="c amt">8,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>原因判明時：うち 6,000円は通信費の記帳漏れと判明した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">通 信 費</td><td class="d amt">6,000</td><td class="c">現金過不足</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>決算時：残り 2,000円は原因が分からないままだった</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">雑　損</td><td class="d amt">2,000</td><td class="c">現金過不足</td><td class="c amt">2,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>現金過不足勘定を決算日をまたいで残すことはできません。</strong>仮の置き場である以上、期末には空にしなければならないからです。原因不明のまま残った借方残高は「雑損」（費用）、貸方残高は「雑益」（収益）に振り替えます。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「決算日に発見した」なら現金過不足を使わない</span>
+    <p>同じ現金の不一致でも、<strong>いつ発見したかで仕訳が変わります</strong>。ここは問題文の一語で正誤が分かれる場所です。</p>
+    <ul>
+      <li><strong>期中に発見して原因不明</strong> → いったん「現金過不足」に入れ、決算で雑損または雑益へ振り替える。<strong>2段階</strong>の処理です（上の3本の仕訳がこの流れです）。</li>
+      <li><strong>決算日に発見して原因不明</strong> → 現金過不足を経由せず、<mark>はじめから雑損または雑益で処理します</mark>。現金過不足に入れても同じ日にすぐ振り替えることになり、入れて出すだけの二度手間になるからです。仕訳は「借方：雑損／貸方：現金」（実際有高が少ないとき）、「借方：現金／貸方：雑益」（多いとき）。</li>
+    </ul>
+    <p>つまり<strong>問題文に「決算日」「決算にあたり」とあるかどうか</strong>で処理が切り替わります。日付を読み飛ばして反射的に現金過不足と書いてしまうミスが非常に多いので、現金の過不足を見たら必ず「いつの話か」を先に確認してください。</p>
+  </div>
+
+  <h3>② 当座借越の振替</h3>
+
+  <p>銀行と当座借越契約を結んでいると、当座預金の残高を超えて小切手を振り出せます。この場合、期中は<strong>当座預金勘定だけで処理し、残高がマイナスになるのを気にしません</strong>。いちいち別勘定に振り替えていては事務が煩雑だからです。</p>
+
+  <p>しかし決算日に当座預金がマイナス残高（貸方残高）のままだと、貸借対照表の資産の欄にマイナスの現金預金が載ることになり、実態を表しません。<strong>マイナスの預金とは、実質的には銀行からの短期の借金</strong>です。そこで負債に振り替えます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>決算日、当座預金勘定が 150,000円の貸方残高（マイナス）になっていた</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">当座預金</td><td class="d amt">150,000</td><td class="c">当座借越</td><td class="c amt">150,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>借方に当座預金を書くことで、マイナスだった残高がゼロに戻ります。振替先の科目は「当座借越」または「借入金」で、問題文の指示に従います。翌期首には逆仕訳をして元に戻します（再振替仕訳）。</p>
+
+  <h3>③ 貸倒引当金（差額補充法）</h3>
+
+  <p>期末に残っている売掛金や受取手形のうち、いくらかは来期に回収できずに焦げ付きます。焦げ付いたときに初めて損失を計上すると、<strong>売上を計上した期と、その売上が焦げ付いた損失を計上する期がずれてしまう</strong>。だから期末時点で「このくらいは回収できないだろう」という金額を見積もり、あらかじめ費用にしておきます。</p>
+
+  <p>ただし、まだ焦げ付いていないので売掛金そのものを減らすわけにはいきません。そこで<strong>貸倒引当金という「売掛金のマイナスを表す箱」</strong>を貸方に立てます。貸借対照表では売掛金から控除する形で表示されます。</p>
+
+  <p>設定額は「期末残高 × 設定率」で計算しますが、前期に設定した引当金がまだ残っていることがあります。<strong>差額補充法</strong>は、その残高との<strong>差額だけを追加計上する</strong>方法です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>売掛金の期末残高 800,000円に対し2%を差額補充法で設定。引当金の残高は 6,000円</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">貸倒引当金繰入</td><td class="d amt">10,000</td><td class="c">貸倒引当金</td><td class="c amt">10,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>設定すべき額は 800,000 × 2% = 16,000円。すでに 6,000円あるので、追加するのは 16,000 − 6,000 = <strong>10,000円</strong>です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここで間違える人が多い</span>
+    <p>計算した <strong>16,000円をそのまま繰り入れてしまう</strong>のが定番のミスです。差額補充法は「不足分を足す」方法なので、引当金の残高を必ず引いてください。<br>また、既存の残高のほうが多い場合（例：設定額 16,000円に対して残高 20,000円）は、差額 4,000円を<strong>減らす</strong>処理になります。この場合は「借方：貸倒引当金 4,000／貸方：貸倒引当金戻入 4,000」となり、繰入ではなく戻入（収益）です。</p>
+  </div>
+
+  <h3>④ 売上原価の算定（仕入勘定で算定する方法）</h3>
+
+  <p>三分法では、商品を仕入れたとき全額を「仕入」（費用）にしています。しかし期末に売れ残った商品は、まだ費用になっていてはいけません。<strong>当期の費用にすべきなのは「当期に売れた商品の原価」だけ</strong>だからです。</p>
+
+  <p>売上原価は次の式で求まります。</p>
+
+  <p class="center"><strong>売上原価 ＝ 期首商品棚卸高 ＋ 当期商品仕入高 − 期末商品棚卸高</strong></p>
+
+  <p>この式を仕訳で実現するのが、有名な「<strong>しーくり くりしー</strong>」です。期首商品を繰越商品から仕入へ移し（仕入／繰越商品）、期末商品を仕入から繰越商品へ移す（繰越商品／仕入）。この2本を入れると、仕入勘定の残高がちょうど売上原価になります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>期首商品 120,000円、期末商品 140,000円（当期仕入高は 900,000円）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕　入</td><td class="d amt">120,000</td><td class="c">繰越商品</td><td class="c amt">120,000</td></tr>
+      <tr><td class="d">繰越商品</td><td class="d amt">140,000</td><td class="c">仕　入</td><td class="c amt">140,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>この2本を入れたあと、仕入勘定と繰越商品勘定がどうなっているかをT字勘定で見ると、何が起きたのかが一目で分かります。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">仕　入</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>当期仕入高</span><span>900,000</span></div>
+          <div class="l"><span>繰越商品（期首）</span><span>120,000</span></div>
+          <div class="l"><span>合計</span><span>1,020,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>繰越商品（期末）</span><span>140,000</span></div>
+          <div class="l"><span>損益（売上原価）</span><span>880,000</span></div>
+          <div class="l"><span>合計</span><span>1,020,000</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">繰越商品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前期繰越</span><span>120,000</span></div>
+          <div class="l"><span>仕入（期末分）</span><span>140,000</span></div>
+          <div class="l"><span>合計</span><span>260,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕入（期首分）</span><span>120,000</span></div>
+          <div class="l"><span>次期繰越</span><span>140,000</span></div>
+          <div class="l"><span>合計</span><span>260,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>仕入勘定の借方には、当期に仕入れた 900,000円と、期首に持っていた商品 120,000円が集まります。ここから期末に売れ残った 140,000円を貸方へ抜くと、残高は 900,000 ＋ 120,000 − 140,000 ＝ <strong>880,000円</strong>。これが当期に売れた商品の原価、つまり売上原価です。<mark>仕入勘定を「当期に売れた分だけが残るように整える」</mark>のが、この2本の仕訳の目的だと理解してください。</p>
+
+  <p>いっぽう繰越商品勘定は、期首の 120,000円が抜けて期末の 140,000円だけが残ります。これが貸借対照表に「商品」として載る金額です。</p>
+
+  <h3>⑤ 減価償却（定額法）</h3>
+
+  <p>建物や備品は、買った年に全額を費用にしてはいけません。<strong>何年にもわたって売上に貢献するものだから、その効果が及ぶ期間に費用を配分する</strong>必要があるからです。定額法では、毎期同じ金額ずつ費用にします。</p>
+
+  <p class="center"><strong>1年分の減価償却費 ＝ （取得原価 − 残存価額）÷ 耐用年数</strong></p>
+
+  <p>備品（取得原価 600,000円、残存価額ゼロ、耐用年数5年）なら、1年分は 600,000 ÷ 5 = 120,000円です。記帳方法は2つあります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>直接法：固定資産の帳簿価額から直接差し引く</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">減価償却費</td><td class="d amt">120,000</td><td class="c">備　品</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>間接法：累計額という別の箱に貯めていく</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">減価償却費</td><td class="d amt">120,000</td><td class="c">備品減価償却累計額</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>間接法だと備品勘定は取得原価 600,000円のまま動かず、累計額が毎期 120,000円ずつ積み上がります。<strong>「もともといくらで買ったか」と「これまでいくら減らしたか」の両方が帳簿に残る</strong>ので、こちらが実務でも試験でも主流です。2級の固定資産の問題はほぼ間接法で出ます。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">期中に取得したときは月割り計算</span>
+    <p>期の途中で買った資産は、<strong>使い始めた月から決算日までの月数分</strong>だけ償却します。会計期間が4月1日〜3月31日で、12月1日に取得した備品なら、12月・1月・2月・3月の4か月分。上の備品なら 120,000 × 4/12 = <strong>40,000円</strong>です。<br>日数ではなく<strong>月単位</strong>で計算し、取得した月は1か月として数えます。この月割りは第3問でほぼ毎回問われる場所なので、月数の数え方を指で確認する癖をつけてください。</p>
+  </div>
+
+  <h3>⑥ 経過勘定（前払費用・前受収益・未払費用・未収収益）</h3>
+
+  <p>家賃や保険料は、実際にお金を払った日と、そのサービスを受ける期間がずれます。<strong>簿記が測りたいのは「当期に使った分」であって「当期に払った分」ではありません。</strong>このずれを期末に直すのが経過勘定です。</p>
+
+  <p>4つもあって混乱しやすいのですが、区別の軸はたった2つです。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th></th><th>費用（払う側）</th><th>収益（もらう側）</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>先に払った／もらった</strong><br><span class="small muted">お金は動いたが、まだ当期のサービスになっていない<br>→ 当期の分ではないので<strong>取り消す</strong></span></td>
+        <td>
+          <strong>前払費用</strong>（前払保険料など）<br>
+          <span class="chip">資産</span><br>
+          <span class="small">当期の費用を<strong>減らす</strong>（費用を貸方へ）<br>「来期にサービスを受けられる権利」なので資産</span>
+        </td>
+        <td>
+          <strong>前受収益</strong>（前受地代など）<br>
+          <span class="chip">負債</span><br>
+          <span class="small">当期の収益を<strong>減らす</strong>（収益を借方へ）<br>「来期にサービスを提供する義務」なので負債</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>まだ払っていない／もらっていない</strong><br><span class="small muted">サービスは当期に受けた／提供したが、お金が未着<br>→ 当期の分なので<strong>足す</strong></span></td>
+        <td>
+          <strong>未払費用</strong>（未払家賃など）<br>
+          <span class="chip">負債</span><br>
+          <span class="small">当期の費用を<strong>増やす</strong>（費用を借方へ）<br>「あとで払わなければならない義務」なので負債</span>
+        </td>
+        <td>
+          <strong>未収収益</strong>（未収利息など）<br>
+          <span class="chip">資産</span><br>
+          <span class="small">当期の収益を<strong>増やす</strong>（収益を貸方へ）<br>「あとでもらえる権利」なので資産</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">資産か負債かは、覚えなくても導ける</span>
+    <p>「これからもらえる（受けられる）」ものは<strong>資産</strong>、「これから払う（提供する）」ものは<strong>負債</strong>。この1本の物差しで4つとも判定できます。前払保険料は来期に保険を受けられる権利だから資産。前受地代は来期に土地を貸す義務だから負債。未払家賃は払う義務だから負債。未収利息はもらえる権利だから資産。<strong>「前」「未」の字面で覚えると必ずどこかで逆になります。</strong>意味から導いてください。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>前払費用：8月1日に向こう1年分の保険料 120,000円を支払済み。決算は3月31日</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">前払保険料</td><td class="d amt">40,000</td><td class="c">保 険 料</td><td class="c amt">40,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">8月1日から翌年7月31日までの12か月分のうち、当期に属するのは8月〜翌3月の8か月。残る4月〜7月の<strong>4か月分</strong>が来期の分です。120,000 × 4/12 = 40,000円を当期の費用から取り消します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>未払費用：家賃は月額 50,000円の後払い。決算日までに2か月分が未払いのまま</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">支払家賃</td><td class="d amt">100,000</td><td class="c">未払家賃</td><td class="c amt">100,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">部屋は2か月分使っています。お金を払っていなくても、<strong>当期に受けたサービスは当期の費用</strong>です。50,000 × 2 = 100,000円を費用に足し、同額の支払義務を負債に計上します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>前受収益：1月1日に向こう1年分の地代 240,000円を受け取り済み。決算は3月31日</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">受取地代</td><td class="d amt">180,000</td><td class="c">前受地代</td><td class="c amt">180,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">当期に属するのは1月〜3月の3か月分だけ。残り<strong>9か月分</strong>はまだ土地を貸していないので当期の収益ではありません。240,000 × 9/12 = 180,000円を収益から取り消し、来期に貸す義務として負債に立てます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>未収収益：貸付金 1,200,000円、年利率3%、利息は毎年9月末に後払いで受け取る。決算は3月31日</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">未収利息</td><td class="d amt">18,000</td><td class="c">受取利息</td><td class="c amt">18,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">10月1日から3月31日までの<strong>6か月分</strong>の利息は、まだ受け取っていませんが当期に発生しています。1,200,000 × 3% × 6/12 = 18,000円を当期の収益に足します。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">経過勘定は翌期首に必ず戻す</span>
+    <p>経過勘定はあくまで「当期と来期の境目を正しく引く」ための調整です。翌期首には<strong>再振替仕訳</strong>として逆仕訳を入れ、元の費用・収益勘定に戻します。そうしないと、来期に同じ調整を二重にかけてしまいます。2級の第3問では「期首に再振替仕訳を行っている」という前提で残高が与えられることがあり、この前提を知らないと金額が合わなくなります。</p>
+  </div>
+
+  <h3>⑦ 消費税の精算（税抜方式）</h3>
+
+  <p>消費税は、会社が負担する税金ではありません。<strong>会社は買う人から預かって、代わりに国に納めているだけ</strong>です。だから税抜方式では、消費税の部分を売上にも仕入にも混ぜず、最初から別の科目で受け止めます。</p>
+
+  <ul>
+    <li>仕入のときに払った消費税 → <strong>仮払消費税</strong>（<span class="chip">資産</span>）。あとで納付額から差し引ける権利だから資産です。</li>
+    <li>売上のときに預かった消費税 → <strong>仮受消費税</strong>（<span class="chip">負債</span>）。あとで国に納める義務だから負債です。</li>
+  </ul>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>期中（仕入時）：商品 100,000円（税抜）を掛けで仕入れた。消費税率10%</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕　入</td><td class="d amt">100,000</td><td class="c">買 掛 金</td><td class="c amt">110,000</td></tr>
+      <tr><td class="d">仮払消費税</td><td class="d amt">10,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>期中（売上時）：商品を 150,000円（税抜）で掛け売りした。消費税率10%</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売 掛 金</td><td class="d amt">165,000</td><td class="c">売　上</td><td class="c amt">150,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">仮受消費税</td><td class="c amt">15,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>仕入は税抜の 100,000円、売上も税抜の 150,000円で計上されている点を確かめてください。<mark>税抜方式では、消費税は損益計算書に一切登場しません。</mark>預かって納めているだけのお金は、会社の収益でも費用でもないからです。</p>
+
+  <p>そして決算では、預かった分（仮受消費税）と払った分（仮払消費税）を<strong>相殺して、実際に納める金額を確定させます</strong>。差額は納付までのあいだ「未払消費税」（負債）として残します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>決算時：仮受消費税 15,000円と仮払消費税 10,000円を相殺する</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仮受消費税</td><td class="d amt">15,000</td><td class="c">仮払消費税</td><td class="c amt">10,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">未払消費税</td><td class="c amt">5,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>仮受消費税（負債）を借方に書いて消し、仮払消費税（資産）を貸方に書いて消します。残った差額 5,000円が納税額です。<strong>仮受＞仮払なら「未払消費税」（負債）</strong>、逆に<strong>仮払＞仮受なら「未収還付消費税」（資産）</strong>——払いすぎた分が返ってくる権利になります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ差額が納税額になるのか</span>
+    <p>消費税は、最終的に商品を買った消費者が負担する税金です。会社は 15,000円を預かりましたが、その商品を仕入れる時点で 10,000円をすでに仕入先に払っており、その 10,000円は仕入先が国に納めています。同じお金を二重に納めないよう、<strong>預かった額から自分が払った額を引いた残り</strong>だけを納めます。仮払消費税を資産として持っておくのは、この差し引きのためです。</p>
+  </div>
+
+  <h3>⑧ 法人税、住民税及び事業税</h3>
+
+  <p>会社は1年の利益に対して法人税などを納めます。ただし1年分をまとめて納めるのではなく、<strong>期の途中で概算額を前払いします</strong>（中間申告）。この時点ではまだ年間の税額が確定していないので、払った金額は費用にせず「仮払法人税等」（資産）として持っておきます。あとで確定額から差し引ける前払いだからです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>中間納付時：法人税等の中間申告を行い、180,000円を普通預金から納付した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仮払法人税等</td><td class="d amt">180,000</td><td class="c">普通預金</td><td class="c amt">180,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>決算で1年間の利益が確定すると、そこから年間の税額が計算できます。ここで初めて<strong>「法人税、住民税及び事業税」という費用</strong>を年額で計上し、前払いしてある仮払法人税等を消して、<strong>不足分を「未払法人税等」（負債）</strong>とします。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>決算時：当期の法人税、住民税及び事業税が 420,000円と確定した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">法人税、住民税及び事業税</td><td class="d amt">420,000</td><td class="c">仮払法人税等</td><td class="c amt">180,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">未払法人税等</td><td class="c amt">240,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>費用として立てるのは<strong>年間の確定額 420,000円</strong>で、これから払う金額（240,000円）ではありません。すでに 180,000円を納めているので、残りの 420,000 − 180,000 ＝ <strong>240,000円</strong>を確定申告で納めることになり、その義務が未払法人税等です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">消費税と法人税等の決定的な違い</span>
+    <p>どちらも「仮払」と「未払」が出てくるので混ざりやすいのですが、性格はまったく違います。<strong>消費税は預かって納めるだけなので、損益計算書に一切出てきません。</strong>いっぽう<strong>法人税等は会社自身が負担する税金なので、費用として損益計算書に載ります。</strong>載る場所は決まっていて、税引前当期純利益の下です。</p>
+    <div class="tablewrap">
+    <table>
+      <tbody>
+        <tr><td>税引前当期純利益</td><td class="num">1,200,000</td></tr>
+        <tr><td>　法人税、住民税及び事業税</td><td class="num">420,000</td></tr>
+        <tr><td><strong>当期純利益</strong></td><td class="num"><strong>780,000</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">第3問では、この最後の3行を書けるかどうかが配点に直結します。法人税等を忘れると、その上まで全部合っていても当期純利益が違ってしまいます。</p>
+  </div>
+
+  <h3>⑨ 貯蔵品への振替</h3>
+
+  <p>収入印紙は買ったときに「租税公課」（費用）、郵便切手は買ったときに「通信費」（費用）として処理します。買ってすぐ使うのがふつうなので、いちいち資産に計上せず、支出したときに費用にしてしまうのです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>購入時：収入印紙 30,000円と郵便切手 8,400円を現金で購入した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">租税公課</td><td class="d amt">30,000</td><td class="c">現　金</td><td class="c amt">38,400</td></tr>
+      <tr><td class="d">通 信 費</td><td class="d amt">8,400</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>ところが決算日に使い残しがあると、その分は<strong>まだ使っていない＝当期の費用ではありません</strong>。来期に使うものなので、費用から外して資産に戻します。この振替先が「貯蔵品」（資産）です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>決算時：収入印紙 10,000円分と郵便切手 2,000円分が未使用のまま残っていた</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">貯 蔵 品</td><td class="d amt">12,000</td><td class="c">租税公課</td><td class="c amt">10,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">通 信 費</td><td class="c amt">2,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>考え方は<strong>前払費用とまったく同じ</strong>です。「まだ役務を受けていない／まだ使っていない分は、当期の費用ではない」。この一本の物差しで、前払保険料も貯蔵品も導けます。違うのは、前払費用が<strong>時間で</strong>期間を切るのに対し、貯蔵品は<strong>現物の残り</strong>で切る点だけです。</p>
+
+  <p>そして経過勘定と同じく、<strong>翌期首には再振替仕訳をして元の費用に戻します</strong>。戻さないと、来期に使った分がどの費用勘定にも計上されなくなってしまいます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>翌期首：再振替仕訳により、貯蔵品を元の費用勘定に戻す</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">租税公課</td><td class="d amt">10,000</td><td class="c">貯 蔵 品</td><td class="c amt">12,000</td></tr>
+      <tr><td class="d">通 信 費</td><td class="d amt">2,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここで間違える人が多い</span>
+    <p><strong>収入印紙と郵便切手で振替先の費用勘定が違います。</strong>収入印紙は税金（印紙税）を納めるための紙なので<strong>租税公課</strong>、郵便切手は郵便という通信サービスを買うための紙なので<strong>通信費</strong>。まとめて貯蔵品にするのは正しいのですが、貸方は必ず<strong>2つの科目に分けて</strong>戻します。<br>もうひとつ、<strong>貯蔵品にするのは未使用分だけ</strong>です。購入額をそのまま貯蔵品にしてしまうミスが目立ちます。問題文の「未使用高」「未使用分」という言葉を拾ってください。</p>
+  </div>
+
+  <div id="num-kessan"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>剰余金の配当と処分</h2>
+
+  <h3>なぜ配当をするのか</h3>
+
+  <p>会社が1年間かけて稼いだ利益は、誰のものでしょうか。<strong>会社にお金を出した人、つまり株主のもの</strong>です。株主は配当を受け取ることを期待して出資しています。</p>
+
+  <p>ただし、稼いだ利益をどう扱うかを社長が勝手に決めることはできません。<mark>利益をいくら株主に配り、いくら会社に残すかは、株主総会で株主自身が決めます</mark>。この決定を「剰余金の処分」といい、そのうち株主に配る部分が「配当」です。</p>
+
+  <h3>配当の元になるのは繰越利益剰余金</h3>
+
+  <p>決算で計算した当期純利益は、決算の最後に「繰越利益剰余金」（純資産）へ振り替えられ、そこに積み上がっていきます。過去の利益のうち、まだ配当にも積立にも使っていない残りが溜まっている場所です。</p>
+
+  <p>配当をするということは、<strong>この繰越利益剰余金を取り崩す</strong>ということです。純資産が減るので、繰越利益剰余金は借方に来ます。</p>
+
+  <div class="term">
+    <span class="term__w">繰越利益剰余金</span><span class="term__r">くりこしりえきじょうよきん</span>
+    <p>過去から当期までに稼いだ利益のうち、まだ使い道が決まっていない部分を表す<strong>純資産</strong>の勘定。決算で当期純利益が振り替えられて増え、株主総会で配当や積立が決まると減ります。<strong>会社の利益が出入りする蛇口</strong>だと考えてください。</p>
+  </div>
+
+  <h3>仕訳を切るのは決算日ではなく、株主総会の日</h3>
+
+  <p>ここが最大のポイントです。配当は<strong>株主総会で決議されて初めて確定します</strong>。決算日の時点ではまだ誰も何も決めていないので、配当の仕訳は切りません。決算日から数か月後に株主総会が開かれ、その日に仕訳を切ります。</p>
+
+  <p>そして、決議した日にはまだお金を払っていません。決まったのは「払うことにした」という事実だけです。したがって相手科目は現金や当座預金ではなく、<strong>「未払配当金」（負債）</strong>——株主に払わなければならない義務です。</p>
+
+  <h3>利益準備金の積立は、法律で強制される</h3>
+
+  <p>配当を決めるとき、会社はもう一つやらなければならないことがあります。<strong>配当と同時に、一定額を「利益準備金」として積み立てること</strong>です。これは会社が選べる話ではなく、会社法が求めているものです。</p>
+
+  <p>なぜ強制されるのでしょうか。利益を全部配ってしまうと、会社に財産が残りません。すると、会社にお金を貸している銀行や、代金をまだ受け取っていない仕入先——つまり<strong>債権者</strong>が回収できなくなる危険があります。そこで<mark>稼いだ利益の一部は必ず社内に留保させる</mark>ことで、債権者を守る仕組みになっています。</p>
+
+  <p>積み立てる金額は、3級の出題では<strong>配当金の10分の1</strong>として計算します（資本金の4分の1という積立限度と比べる計算は、W7の株式会社会計で扱います）。利益準備金は純資産なので、増えるときは貸方です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>株主総会決議時：繰越利益剰余金を財源に、配当金 2,000,000円と利益準備金 200,000円の積立を決議した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">繰越利益剰余金</td><td class="d amt">2,200,000</td><td class="c">未払配当金</td><td class="c amt">2,000,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">利益準備金</td><td class="c amt">200,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>借方の繰越利益剰余金は、配当金と利益準備金の<strong>合計 2,200,000円</strong>です。配当額だけではありません。株主に出ていく 2,000,000円と、社内の別の箱へ移す 200,000円の両方が、繰越利益剰余金から出ていくからです。利益準備金は 2,000,000 × 1/10 ＝ <strong>200,000円</strong>。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>支払時：後日、配当金 2,000,000円を当座預金から支払った</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">未払配当金</td><td class="d amt">2,000,000</td><td class="c">当座預金</td><td class="c amt">2,000,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>支払時は、負っていた義務を果たすだけなので、未払配当金（負債）を借方で消します。<strong>この日には繰越利益剰余金も利益準備金も動きません。</strong>使い道はすでに株主総会の日に確定しているからです。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここで間違える人が多い</span>
+    <p><strong>その1：決算日に仕訳を切ってしまう。</strong>決算整理の流れで配当も処理したくなりますが、配当は決算日には存在していません。<strong>株主総会の決議日が仕訳の日付</strong>です。第2問で日付順に処理を並べる問題では、この一点で全体がずれます。</p>
+    <p><strong>その2：利益準備金の積立を忘れる。</strong>「繰越利益剰余金 2,000,000／未払配当金 2,000,000」とだけ書いてしまうミスです。配当の決議には積立が必ずついてきます。<strong>配当額を見たら、その10分の1を反射的に計算する</strong>くらいの癖をつけてください。借方の繰越利益剰余金が配当額と同じになっていたら、まず積立を落としています。<strong>この形は借方と貸方が同額で揃ってしまうため、④の貸借一致チェックでは気づけません。</strong>金額の側から気づくしかない、数少ないミスです。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">ここが2級の株式会社会計につながる</span>
+    <p>2級では、純資産の中身がもっと細かく分かれます。資本金、資本準備金・その他資本剰余金（＝資本剰余金）、利益準備金・その他利益剰余金（＝利益剰余金）といった区分を学び、増資や<strong>株主資本の計数の変動</strong>（ある区分から別の区分へ振り替える処理）を扱います。これは W7 で正面から取り組む論点です。</p>
+    <p>そして第2問で出題される<strong>株主資本等変動計算書</strong>は、これらの各区分が「期首残高 → 当期の変動 → 期末残高」とどう動いたかを一覧にした表です。その表のなかで最も動きが多く、配点も集まるのが<strong>繰越利益剰余金の行</strong>——当期純利益で増え、配当と積立で減る、という今学んだ動きそのものです。ここが土台になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>素通りされやすい論点 ① 建設仮勘定</h2>
+
+  <p>会社が自社の倉庫や工場を新築するとき、工事は何か月も、ときには何年もかかります。その間、会社は建設会社に<strong>手付金や中間金を先に支払います</strong>。ここで問題が起きます。</p>
+
+  <p>支払ったお金を「建物」勘定に入れてよいでしょうか。よくありません。<strong>建物という資産はまだ存在していない</strong>からです。まだ骨組みしかない、あるいは基礎工事しか終わっていないものを「当社の建物」として貸借対照表に載せるのは事実に反します。</p>
+
+  <p>かといって、支払った以上は帳簿から消すわけにもいきません。そこで<mark>完成するまでの間、支払った金額を一時的に置いておく箱</mark>を用意します。これが建設仮勘定です。</p>
+
+  <div class="term">
+    <span class="term__w">建設仮勘定</span><span class="term__r">けんせつかりかんじょう</span>
+    <p>建設中の固定資産に対して支払った金額を、完成・引渡しまで一時的に集めておく<strong>資産</strong>の勘定。完成した時点で、本来の勘定（建物・機械装置など）へ振り替えます。「仮」の字が示すとおり、いつかは必ず空にする勘定です。</p>
+  </div>
+
+  <h3>支払ったときの仕訳</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>倉庫の新築を依頼し、工事代金 20,000,000円のうち手付金 6,000,000円を小切手を振り出して支払った</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">建設仮勘定</td><td class="d amt">6,000,000</td><td class="c">当座預金</td><td class="c amt">6,000,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>建設仮勘定は資産なので、増えたら借方。中間金を追加で支払ったときも同じように借方へ積み上げていきます。</p>
+
+  <h3>完成・引渡しを受けたときの仕訳</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>倉庫が完成し引渡しを受けた。残額 14,000,000円は翌月末に支払うことにした</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">建　物</td><td class="d amt">20,000,000</td><td class="c">建設仮勘定</td><td class="c amt">6,000,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">未 払 金</td><td class="c amt">14,000,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>ポイントは、借方の建物が<strong>工事代金の総額 20,000,000円</strong>になっていることです。すでに払った 6,000,000円と、これから払う 14,000,000円の合計が、この建物の取得原価だからです。そして貸方で建設仮勘定 6,000,000円を消します。<strong>「仮の箱から本物の箱へ、中身を移し替える」</strong>のがこの仕訳の意味です。</p>
+
+  <p>なお、代金が未払いなので貸方は「未払金」です。<strong>買掛金ではありません。</strong>買掛金は商品の仕入れという主たる営業取引から生じる債務に限って使う科目で、建物のような固定資産の購入代金は未払金で処理します。</p>
+
+  <h3>減価償却が始まるのは引渡しを受けた後</h3>
+
+  <p>減価償却は「使うことで価値が減る」ぶんを費用にする手続きです。<strong>建設中の建物はまだ使っていないので、償却しません。</strong>建設仮勘定は減価償却の対象外です。償却が始まるのは引渡しを受けて建物勘定に振り替え、実際に使い始めてからです。</p>
+
+  <p>したがって、たとえば10月1日に引渡しを受けて使用を開始し、決算が3月31日なら、その期の減価償却費は<strong>10月から3月までの6か月分</strong>を月割りで計算します。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここで間違える人が多い</span>
+    <p><strong>その1：完成前に建物勘定へ入れてしまう。</strong>手付金や中間金を支払った段階で「建物／当座預金」と切ってしまうミスです。こうすると、まだ使っていない資産に対して減価償却を計算することになり、当期純利益まで狂います。<strong>引渡しを受けるまでは建物にならない</strong>と覚えてください。</p>
+    <p><strong>その2：引渡時に建設仮勘定を消し忘れる。</strong>完成時に「建物 20,000,000／当座預金 14,000,000」とだけ書いて、建設仮勘定 6,000,000円を貸方に落とさないミスです。この場合そもそも貸借が合いません（借方20,000,000に対し貸方14,000,000）。<strong>ステップ4の貸借一致チェックを必ずやれば、この誤りは自分で見つけられます。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>素通りされやすい論点 ② 伝票会計</h2>
+
+  <h3>なぜ伝票を使うのか</h3>
+
+  <p>取引が起きるたびに仕訳帳へ1件ずつ書いていく方法には、決定的な弱点があります。<strong>仕訳帳は1冊しかないので、一人ずつ順番に書くしかない</strong>のです。取引が1日に何百件もある会社では、これでは間に合いません。</p>
+
+  <p>そこで、仕訳帳という1冊のノートをやめて、<mark>取引1件ごとに1枚の紙（伝票）に書く</mark>方式にします。紙がバラバラなら、何人でも同時に書けます。しかも取引の種類ごとに用紙を分けておけば、現金の出入りは経理のこの人、それ以外はあの人、と分担もできます。<strong>分業できるようにするための仕組み</strong>——これが伝票会計の出発点です。</p>
+
+  <h3>3伝票制：3種類の紙に分ける</h3>
+
+  <p>もっとも基本的なのが、伝票を3種類に分ける3伝票制です。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>伝票</th><th>書く取引</th><th>紙の上に決まっていること</th><th>記入する内容</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>入金伝票</strong></td>
+        <td>現金が<strong>増える</strong>取引</td>
+        <td>借方は必ず「現金」</td>
+        <td>相手科目（貸方科目）と金額だけ</td>
+      </tr>
+      <tr>
+        <td><strong>出金伝票</strong></td>
+        <td>現金が<strong>減る</strong>取引</td>
+        <td>貸方は必ず「現金」</td>
+        <td>相手科目（借方科目）と金額だけ</td>
+      </tr>
+      <tr>
+        <td><strong>振替伝票</strong></td>
+        <td>現金が動かない取引</td>
+        <td>決まっていない</td>
+        <td>借方科目・貸方科目・金額の両方</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>入金伝票と出金伝票は、<strong>片側が「現金」だと最初から決まっている</strong>ので、書く欄が「科目」と「金額」の2つしかありません。だから伝票の様式に「借方」「貸方」の区別が印刷されていないのです。ここを知らないと、答案の書き方でつまずきます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th colspan="2">入金伝票</th></tr></thead>
+    <tbody>
+      <tr><td>売掛金</td><td class="num">80,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">この1枚は「借方：現金 80,000／貸方：売掛金 80,000」を意味します。売掛金を現金で回収した取引です。</p>
+
+  <h3>一部現金取引の起票 — 2つの方法</h3>
+
+  <p>厄介なのが、<strong>1つの取引の中に現金部分と現金以外の部分が混ざっている</strong>ケースです。伝票は「現金が増える／減る／動かない」の3種類しかないので、そのままでは1枚に収まりません。</p>
+
+  <p>次の取引で考えます。</p>
+
+  <div class="callout">
+    <span class="callout__t">例題</span>
+    <p>商品 <strong>100,000円</strong>を仕入れ、代金のうち <strong>30,000円は現金</strong>で支払い、<strong>残額 70,000円は掛け</strong>とした。</p>
+    <p class="small muted">仕訳にすれば「借方：仕入 100,000／貸方：現金 30,000・買掛金 70,000」です。これを伝票に分解します。</p>
+  </div>
+
+  <h4>方法A：いったん全額を掛け取引とみなす</h4>
+
+  <p>「まず全額を掛けで仕入れた。その直後に、掛け代金のうち 30,000円を現金で支払った」<strong>という2つの取引が続けて起きたと考える</strong>方法です。取引を分解するのではなく、<strong>取引を2段階に読み替える</strong>のがポイントです。</p>
+
+  <div class="grid2">
+    <div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th colspan="4">振替伝票</th></tr>
+        <tr><th>借方科目</th><th class="num">金額</th><th>貸方科目</th><th class="num">金額</th></tr></thead>
+        <tbody>
+          <tr><td>仕入</td><td class="num">100,000</td><td>買掛金</td><td class="num">100,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="small muted">① 全額を掛けで仕入れたとみなす</p>
+    </div>
+    <div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th colspan="2">出金伝票</th></tr></thead>
+        <tbody>
+          <tr><td>買掛金</td><td class="num">30,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="small muted">② その掛け代金のうち 30,000円を現金で支払った<br>（借方：買掛金 30,000／貸方：現金 30,000）</p>
+    </div>
+  </div>
+
+  <h4>方法B：取引を現金部分と掛け部分に分割する</h4>
+
+  <p>「30,000円分は現金で仕入れ、70,000円分は掛けで仕入れた」と、<strong>ひとつの取引を2つに切り分ける</strong>方法です。</p>
+
+  <div class="grid2">
+    <div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th colspan="2">出金伝票</th></tr></thead>
+        <tbody>
+          <tr><td>仕入</td><td class="num">30,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="small muted">① 現金で仕入れた部分<br>（借方：仕入 30,000／貸方：現金 30,000）</p>
+    </div>
+    <div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th colspan="4">振替伝票</th></tr>
+        <tr><th>借方科目</th><th class="num">金額</th><th>貸方科目</th><th class="num">金額</th></tr></thead>
+        <tbody>
+          <tr><td>仕入</td><td class="num">70,000</td><td>買掛金</td><td class="num">70,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="small muted">② 掛けで仕入れた部分</p>
+    </div>
+  </div>
+
+  <p>どちらの方法でも、2枚の伝票を合わせて仕訳に戻せば同じ「仕入 100,000／現金 30,000・買掛金 70,000」になります。方法Aは買掛金が 100,000円計上されてすぐ 30,000円減り、方法Bは最初から 70,000円しか計上されない、という違いがあるだけです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">どちらの方法か見分けるコツ</span>
+    <p>試験では「一部の伝票だけが与えられていて、残りを埋めよ」という形で出ます。見分ける手がかりは<strong>振替伝票の金額</strong>です。</p>
+    <ul>
+      <li>振替伝票の金額が<strong>取引の総額（100,000円）</strong>になっている → <strong>方法A</strong>。出金伝票の科目は「買掛金」になる。</li>
+      <li>振替伝票の金額が<strong>分割後の一部（70,000円）</strong>になっている → <strong>方法B</strong>。出金伝票の科目は「仕入」になる。</li>
+    </ul>
+    <p>出金伝票のほうが先に与えられている場合も同じです。<strong>出金伝票の科目が「買掛金」なら方法A、「仕入」なら方法B</strong>。金額と科目のどちらから見ても判別できます。</p>
+  </div>
+
+  <h3>仕訳日計表 — 1日分をまとめて元帳へ送る</h3>
+
+  <p>伝票をバラバラに書けるようにしたのはよいのですが、こんどは<strong>総勘定元帳への転記が大変になります</strong>。1日に伝票が300枚あれば、300回転記しなければなりません。</p>
+
+  <p>そこで、<mark>1日分の伝票を勘定科目ごとに集計した表</mark>を1枚作り、そこから元帳へまとめて転記します。この集計表が仕訳日計表です。元帳への転記が科目の数だけで済むので、劇的に手間が減ります。</p>
+
+  <ol class="steps">
+    <li><strong>1日分の伝票を種類別に集める</strong>入金伝票・出金伝票・振替伝票の3つの山に分けます。</li>
+    <li><strong>入金伝票を集計する</strong>入金伝票の金額の合計を、仕訳日計表の<strong>現金の借方</strong>へ。各伝票に書かれた科目は、それぞれの科目の<strong>貸方</strong>へ集計します（入金伝票は「現金／科目」の仕訳だから）。</li>
+    <li><strong>出金伝票を集計する</strong>出金伝票の金額の合計を、仕訳日計表の<strong>現金の貸方</strong>へ。各伝票の科目は、それぞれの科目の<strong>借方</strong>へ集計します（出金伝票は「科目／現金」の仕訳だから）。</li>
+    <li><strong>振替伝票を集計する</strong>借方科目は各科目の借方へ、貸方科目は各科目の貸方へ、そのまま集計します。</li>
+    <li><strong>借方合計と貸方合計の一致を確認する</strong>集計ミスをここで捕まえます。<strong>一致しなければ必ずどこかで数え違えています。</strong></li>
+    <li><strong>元帳へ転記する</strong>仕訳日計表から総勘定元帳へは<strong>合計転記</strong>（科目ごとに1回）。得意先元帳・仕入先元帳などの補助元帳へは、相手先ごとの残高を管理する必要があるので<strong>伝票から直接、個別転記</strong>します。</li>
+  </ol>
+
+  <p>実際にやってみます。ある日の伝票が次の6枚だったとします。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>伝票</th><th>記入内容</th><th>仕訳に直すと</th></tr></thead>
+    <tbody>
+      <tr><td>入金伝票</td><td>売掛金 80,000</td><td>現金 80,000 ／ 売掛金 80,000</td></tr>
+      <tr><td>入金伝票</td><td>売上 50,000</td><td>現金 50,000 ／ 売上 50,000</td></tr>
+      <tr><td>出金伝票</td><td>買掛金 60,000</td><td>買掛金 60,000 ／ 現金 60,000</td></tr>
+      <tr><td>出金伝票</td><td>通信費 12,000</td><td>通信費 12,000 ／ 現金 12,000</td></tr>
+      <tr><td>振替伝票</td><td>仕入 150,000 ／ 買掛金 150,000</td><td>同左</td></tr>
+      <tr><td>振替伝票</td><td>売掛金 200,000 ／ 売上 200,000</td><td>同左</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table>
+    <caption>仕訳日計表</caption>
+    <thead><tr><th class="num">借方</th><th>勘定科目</th><th class="num">貸方</th></tr></thead>
+    <tbody>
+      <tr><td class="num">130,000</td><td>現　金</td><td class="num">72,000</td></tr>
+      <tr><td class="num">200,000</td><td>売 掛 金</td><td class="num">80,000</td></tr>
+      <tr><td class="num">60,000</td><td>買 掛 金</td><td class="num">150,000</td></tr>
+      <tr><td class="num">—</td><td>売　上</td><td class="num">250,000</td></tr>
+      <tr><td class="num">150,000</td><td>仕　入</td><td class="num">—</td></tr>
+      <tr><td class="num">12,000</td><td>通 信 費</td><td class="num">—</td></tr>
+      <tr><td class="num"><strong>552,000</strong></td><td class="center"><strong>合　計</strong></td><td class="num"><strong>552,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>現金の借方 130,000円は入金伝票2枚の合計（80,000＋50,000）、貸方 72,000円は出金伝票2枚の合計（60,000＋12,000）です。売上の貸方 250,000円は、入金伝票の 50,000円と振替伝票の 200,000円を合わせたもの。<strong>同じ科目が複数の伝票に出てきたら、必ず合算します。</strong>そして借方合計・貸方合計がともに 552,000円で一致しています。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここで間違える人が多い</span>
+    <p><strong>入金伝票の科目を借方に書いてしまう。</strong>入金伝票の科目欄に「売掛金」と書いてあるのを見て、そのまま仕訳日計表の売掛金の借方へ集計してしまうミスです。入金伝票は「借方が現金」と決まっているので、<strong>そこに書かれた科目は必ず貸方</strong>です。出金伝票はその逆で、書かれた科目は必ず借方。<strong>迷ったら伝票を仕訳の形に戻してから集計する</strong>のが確実です。</p>
+  </div>
+
+  <div id="quiz-denpyo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>仕訳ドリル 25問</h2>
+
+  <p>ここまでの内容を、実際に手を動かして確認します。<strong>選択肢の勘定科目は全25問で共通の1つのプール</strong>から選ぶようにしてあります。本番の第1問も、その問題だけに都合よく絞られた選択肢ではなく、まぎらわしい科目が並んだ一覧から選ばされます。似た科目に迷う経験ごと練習してください。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">解くときのルール</span>
+    <p>必ず<strong>4ステップの型</strong>で解いてください。①科目を全部挙げる ②増減を判定する ③ホームポジションから左右を決める ④金額を入れて貸借一致を確認する。答えが浮かんでしまう問題でも、頭の中で4ステップを言葉にしてから入力します。この習慣が、2級の長文問題で効いてきます。</p>
+    <p class="small">解答欄は<strong>常に4行</strong>です。行数から正解の科目数が読めてしまうと本番の第1問と条件が変わるため、あえて揃えてあります。使わない行は空欄のままで構いません（採点に影響しません）。金額はカンマありでもなしでも構いません。</p>
+  </div>
+
+  <div id="drill-main"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。すべてに✓が入ったら UNIT 02（勘定連絡図）へ進んでください。</p>
+
+  <div class="progressbar" data-progress-for="#u1check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u1check">0 / 0 完了（0%）</div>
+
+  <div id="u1check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="u1r-1"><label for="k1"><span class="cl__t">5つの要素とホームポジションを、何も見ずに言える</span><span class="cl__d">資産・費用は借方、負債・純資産・収益は貸方。増えたらホーム側、減ったら反対側</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="u1r-2"><label for="k2"><span class="cl__t">貸借が必ず一致する理由を、自分の言葉で説明できる</span><span class="cl__d">ひとつの取引を「何が増えたか／何と引き換えか」の2面から同額で記録するから</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="u1r-3"><label for="k3"><span class="cl__t">仕訳の4ステップを、簡単な問題でも意識して回せる</span><span class="cl__d">科目を挙げる → 増減を判定 → 左右を決める → 貸借一致を確認</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="u1r-4"><label for="k4"><span class="cl__t">決算整理9項目を何も見ずに列挙し、それぞれ「なぜ必要か」を1文で言える</span><span class="cl__d">現金過不足・当座借越・貸倒引当金・売上原価・減価償却・経過勘定・消費税の精算・法人税等・貯蔵品への振替</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="u1r-5"><label for="k5"><span class="cl__t">経過勘定4つを、資産か負債かも含めて区別できる</span><span class="cl__d">前払費用＝資産／前受収益＝負債／未払費用＝負債／未収収益＝資産。「もらえる権利は資産、払う義務は負債」で導く</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="u1r-6"><label for="k6"><span class="cl__t">「しーくり くりしー」で仕入勘定の残高が売上原価になる理由を説明できる</span><span class="cl__d">仕入勘定に期首商品を足し、期末商品を抜くことで、当期に売れた分だけが残る</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="u1r-11"><label for="k11"><span class="cl__t">消費税の精算（税抜方式）の決算仕訳が書ける</span><span class="cl__d">仮受消費税と仮払消費税を相殺し、差額を未払消費税へ。消費税は損益計算書に一切出てこない</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="u1r-12"><label for="k12"><span class="cl__t">法人税等の中間納付と決算時の仕訳が書ける／消費税と違い損益計算書に載る理由を説明できる</span><span class="cl__d">中間は仮払法人税等。決算で年額を費用計上し、差額を未払法人税等へ。法人税等は会社自身が負担する費用だから税引前当期純利益の下に載る</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="u1r-13"><label for="k13"><span class="cl__t">貯蔵品への振替と翌期首の再振替ができる</span><span class="cl__d">未使用の収入印紙は租税公課から、郵便切手は通信費から貯蔵品へ。翌期首に元の費用勘定へ戻す</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="u1r-14"><label for="k14"><span class="cl__t">剰余金の配当の仕訳が書ける</span><span class="cl__d">決算日ではなく株主総会の日に切る。繰越利益剰余金を取り崩し、未払配当金と利益準備金（配当金の10分の1）を立てる</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="u1r-7"><label for="k7"><span class="cl__t">建設仮勘定の支払時・完成引渡時の仕訳が両方書ける</span><span class="cl__d">完成前は建物にしない。引渡時に総額を建物へ振り替え、建設仮勘定を消す。償却は引渡し後から</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="u1r-8"><label for="k8"><span class="cl__t">3伝票制で、一部現金取引の2つの起票方法を書き分けられる</span><span class="cl__d">振替伝票が総額なら方法A（出金伝票は買掛金）、分割額なら方法B（出金伝票は仕入）</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="u1r-9"><label for="k9"><span class="cl__t">仕訳日計表を集計し、借方合計と貸方合計を一致させられる</span><span class="cl__d">入金伝票の科目は貸方へ、出金伝票の科目は借方へ。元帳へは合計転記、補助元帳へは個別転記</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="u1r-10"><label for="k10"><span class="cl__t">仕訳ドリル25問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>このユニットで塞いだのは<strong>商業簿記側の穴</strong>です。次の UNIT 02 では工業簿記の土台となる勘定連絡図を作ります。Phase 0 のなかで最も投資対効果が高い4時間なので、時間が足りない日があっても UNIT 02 だけは削らないでください。</p>
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← Phase 0 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 0 教材 ／ UNIT 01</span>
+  </div>
+
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+/* ---------- 2章：仕訳の考え方 理解チェック ---------- */
+BokiQuiz.mount('#quiz-shiwake', {
+  title: '理解チェック — 仕訳の考え方',
+  questions: [
+    {
+      text: '銀行から現金を借り入れました。このとき「借入金」は仕訳のどちら側に書きますか。',
+      choices: ['借方（左側）', '貸方（右側）', '取引によって変わるので決まらない'],
+      answer: 1,
+      explain: '<p>借入金は<strong>負債</strong>です。負債のホームポジションは貸方で、借り入れたことで負債が<strong>増えた</strong>のでホームポジション側、つまり貸方に書きます。仕訳は「借方：現金／貸方：借入金」。現金（資産）は増えたので借方です。</p>'
+    },
+    {
+      text: 'すべての仕訳で、借方の合計と貸方の合計が必ず一致するのはなぜですか。',
+      choices: [
+        '簿記のルールでそう決められているから',
+        'ひとつの取引を「何が増えたか」と「その代わりに何が減った（何の義務を負った）か」の2つの面から、同じ金額で記録しているから',
+        '最後に差額を調整して合わせるルールになっているから'
+      ],
+      answer: 1,
+      explain: '<p>複式簿記は、ひとつの出来事を必ず2つの面から同額で書き取ります。同じ金額を左と右に1回ずつ書くのですから、合計が一致するのは<strong>結果</strong>であって、後から合わせているわけではありません。<br>だからこそ<strong>貸借が合わないときは、取引の見方を取り違えている</strong>という信号になります。数字をいじって合わせても意味がありません。</p>'
+    },
+    {
+      text: '「売掛金 50,000円を現金で回収した」の仕訳で、<strong>貸方</strong>に来る勘定科目はどれですか。',
+      choices: ['現金', '売掛金', '売上'],
+      answer: 1,
+      explain: '<p>売掛金は<strong>資産</strong>で、ホームポジションは借方。回収したことで売掛金という権利は<strong>なくなった＝減った</strong>ので、ホームポジションの反対側である貸方に書きます。仕訳は「借方：現金 50,000／貸方：売掛金 50,000」。<br>ここで売上を選んでしまう人がいますが、<strong>売上を計上したのは商品を引き渡した時点</strong>で、回収は代金の受け取りにすぎません。回収時に売上は動きません。</p>'
+    },
+    {
+      text: '商品の注文にあたり、手付金 30,000円を現金で支払いました。借方に来る勘定科目はどれですか。',
+      choices: ['仕入', '前払金', '支払手数料'],
+      answer: 1,
+      explain: '<p>お金を払っていますが、<strong>まだ商品を受け取っていない</strong>ので仕入（費用）にはできません。手付金を払ったことで会社が手に入れたのは「あとで商品を受け取れる権利」であり、これは<strong>資産</strong>です。だから前払金（資産）の増加として借方に書きます。仕訳は「借方：前払金 30,000／貸方：現金 30,000」。<br><strong>「払った＝費用」ではない</strong>ことの典型例です。商品を受け取った時点で「借方：仕入／貸方：前払金・買掛金など」と振り替えます。</p>'
+    }
+  ]
+});
+
+/* ---------- 3章：決算整理 計算ドリル ---------- */
+BokiNum.mount('#num-kessan', {
+  title: '計算ドリル — 決算整理の金額を出す',
+  badge: '計算ドリル',
+  questions: [
+    {
+      text: '会計期間は4月1日〜3月31日。当期の<strong>10月1日</strong>に備品（取得原価 1,500,000円、残存価額ゼロ、耐用年数8年、定額法）を取得し、同日から使用している。当期の減価償却費はいくらですか。',
+      answer: 93750,
+      unit: '円',
+      hint: 'まず1年分を出し、そのあと使用した月数で月割りします。取得した月も1か月として数えます。',
+      explain: '<p>1年分は 1,500,000 ÷ 8 ＝ <strong>187,500円</strong>。使用したのは10月・11月・12月・1月・2月・3月の<strong>6か月</strong>なので、187,500 × 6/12 ＝ <strong>93,750円</strong>。</p><p>期中に取得した資産をうっかり1年分償却してしまうのが最頻出のミスです。問題文に日付が書いてあったら、必ず月数を数えてください。</p>'
+    },
+    {
+      text: '決算にあたり、売掛金の期末残高 850,000円と受取手形の期末残高 350,000円の合計に対して<strong>3%</strong>の貸倒引当金を<strong>差額補充法</strong>により設定する。貸倒引当金の決算整理前残高は 9,500円である。貸倒引当金繰入の金額はいくらですか。',
+      answer: 26500,
+      unit: '円',
+      hint: '設定すべき金額を出したあと、すでにある残高を引きます。',
+      explain: '<p>設定すべき額は（850,000 ＋ 350,000）× 3% ＝ 1,200,000 × 3% ＝ <strong>36,000円</strong>。すでに 9,500円あるので、追加するのは 36,000 − 9,500 ＝ <strong>26,500円</strong>です。</p><p>ポイントは2つ。<strong>売掛金だけでなく受取手形も対象に含める</strong>こと（どちらも回収する権利＝売上債権だから）、そして<strong>差額補充法では残高を引く</strong>ことです。仕訳は「借方：貸倒引当金繰入 26,500／貸方：貸倒引当金 26,500」。</p>'
+    },
+    {
+      text: '会計期間は4月1日〜3月31日。当期の<strong>12月1日</strong>に、向こう1年分の保険料 144,000円を現金で支払い、全額を保険料として処理している。決算整理で計上する<strong>前払保険料</strong>と、当期の費用となる<strong>保険料</strong>の金額をそれぞれ答えなさい。',
+      answer: [96000, 48000],
+      labels: ['① 前払保険料', '② 当期の保険料'],
+      unit: '円',
+      hint: '12月1日から翌年11月30日までの12か月分です。そのうち決算日（3月31日）までに経過したのは何か月でしょうか。',
+      explain: '<p>12月1日から翌年11月30日までの12か月分のうち、当期に属するのは<strong>12月〜3月の4か月</strong>。残る<strong>8か月分</strong>は来期の分です。</p><ul><li>前払保険料＝144,000 × 8/12 ＝ <strong>96,000円</strong></li><li>当期の保険料＝144,000 × 4/12 ＝ <strong>48,000円</strong>（144,000 − 96,000 でも同じ）</li></ul><p>仕訳は「借方：前払保険料 96,000／貸方：保険料 96,000」。これで保険料勘定の残高が 48,000円になります。<strong>前払保険料は「来期に保険を受けられる権利」なので資産</strong>です。</p>'
+    },
+    {
+      text: '会計期間は4月1日〜3月31日。借入金 2,400,000円について年利率 2.5%、利息は毎年6月末と12月末の年2回、<strong>後払い</strong>で支払う契約である。12月末の支払いは済んでいる。決算整理で計上する<strong>未払利息</strong>はいくらですか。',
+      answer: 15000,
+      unit: '円',
+      hint: '最後に利息を払ったのが12月末。そこから決算日までの期間の利息は、まだ払っていませんが当期に発生しています。',
+      explain: '<p>後払いなので、12月末に支払ったのは7月〜12月分の利息です。<strong>1月1日から3月31日までの3か月分</strong>の利息は、まだ支払っていませんが当期に発生しています。</p><p>2,400,000 × 2.5% × 3/12 ＝ 60,000 × 3/12 ＝ <strong>15,000円</strong>。</p><p>仕訳は「借方：支払利息 15,000／貸方：未払利息 15,000」。お金を払っていなくても<strong>当期に発生した費用は当期の費用</strong>にします。未払利息は「あとで払う義務」なので負債です。</p>'
+    }
+  ]
+});
+
+/* ---------- 6章：伝票会計 確認テスト ---------- */
+BokiQuiz.mount('#quiz-denpyo', {
+  title: '理解チェック — 伝票会計',
+  questions: [
+    {
+      text: '「商品を売り上げ、代金 50,000円を現金で受け取った」。3伝票制では、どの伝票に記入しますか。',
+      choices: ['入金伝票', '出金伝票', '振替伝票'],
+      answer: 0,
+      explain: '<p>現金が<strong>増える</strong>取引なので入金伝票です。入金伝票は借方が「現金」と決まっているため、記入するのは相手科目（貸方科目）である「売上」と金額 50,000円だけです。<br>仕訳に戻せば「借方：現金 50,000／貸方：売上 50,000」となります。</p>'
+    },
+    {
+      text: '「商品 100,000円を仕入れ、30,000円は現金、残額は掛けとした」を3伝票制で起票したところ、<strong>振替伝票に「仕入 100,000／買掛金 100,000」</strong>と記入されていました。このとき、出金伝票の科目と金額はどうなりますか。',
+      choices: [
+        '買掛金 30,000（取引を全額掛けとみなす方法A）',
+        '仕入 30,000（取引を現金部分と掛け部分に分割する方法B）',
+        '現金 30,000'
+      ],
+      answer: 0,
+      explain: '<p>振替伝票の金額が<strong>取引の総額 100,000円</strong>になっているので、これは<strong>方法A</strong>です。「いったん全額を掛けで仕入れ、その直後に掛け代金のうち 30,000円を現金で支払った」と読み替えているので、出金伝票は<strong>買掛金 30,000</strong>となります（借方：買掛金 30,000／貸方：現金 30,000）。</p><p>もし振替伝票が「仕入 70,000／買掛金 70,000」なら方法Bで、出金伝票は「仕入 30,000」になります。<strong>振替伝票の金額が総額か分割額かで見分けられます。</strong></p>'
+    },
+    {
+      text: '仕訳日計表を作る目的として、最も適切なものはどれですか。',
+      choices: [
+        '得意先ごとの売掛金残高を管理するため',
+        '1日分の伝票を勘定科目ごとに集計し、総勘定元帳へまとめて転記（合計転記）するため',
+        '伝票の記入内容が正しいかどうかを税務署に報告するため'
+      ],
+      answer: 1,
+      explain: '<p>伝票をバラバラに書けるようにすると分業はできますが、そのぶん元帳への転記回数が膨大になります。1日分を科目ごとに集計した仕訳日計表を1枚作れば、<strong>元帳への転記は科目の数だけで済みます</strong>。これが目的です。</p><p>あわせて、集計後に<strong>借方合計と貸方合計が一致するか</strong>を確かめることで、集計ミスをその場で発見できるという利点もあります。<br>なお、得意先ごとの残高管理は<strong>得意先元帳</strong>の役割で、こちらは残高を個別に追う必要があるため、仕訳日計表からではなく<strong>伝票から直接、個別転記</strong>します。</p>'
+    }
+  ]
+});
+
+/* ---------- 7章：仕訳ドリル 25問 ---------- */
+(function () {
+  var POOL = [
+    '現金', '当座預金', '普通預金', '受取手形', '売掛金', 'クレジット売掛金',
+    '繰越商品', '貯蔵品', '従業員立替金', '未収入金', '前払保険料', '建物', '備品', '建設仮勘定',
+    '現金過不足', '仮払消費税', '仮払法人税等',
+    '支払手形', '買掛金', '未払金', '手形借入金', '所得税預り金', '社会保険料預り金',
+    '仮受消費税', '未払消費税', '未払法人税等', '未払配当金',
+    '貸倒引当金', '備品減価償却累計額',
+    '資本金', '利益準備金', '繰越利益剰余金',
+    '売上', '償却債権取立益',
+    '仕入', '給料', '法定福利費', '旅費交通費', '通信費', '消耗品費', '保険料', '発送費',
+    '租税公課', '支払手数料', '支払利息', '貸倒引当金繰入', '減価償却費', '貸倒損失', '固定資産売却損',
+    '法人税、住民税及び事業税',
+    '雑損', '雑益'
+  ];
+
+  BokiJournal.mount('#drill-main', {
+    title: '仕訳ドリル — 3級の総復習 25問',
+    accounts: POOL,
+    questions: [
+      /* --- 現金預金 3問 --- */
+      {
+        text: '<strong>決算日</strong>に金庫を実査したところ、現金の実際有高は帳簿残高より <strong>8,000円</strong> 少なかった。原因は不明である。',
+        debit: [['雑損', 8000]],
+        credit: [['現金', 8000]],
+        hint: '現金過不足は決算日をまたげません。決算日に発見したなら、置き場を経由する必要がありません。',
+        explain: '<p>実際有高のほうが少ないので、帳簿の現金を <strong>8,000円減らします</strong>。現金は資産なので、減少は貸方です。</p><p>問題は相手勘定です。<strong>期中</strong>に発見して原因が分からないときは、いったん「現金過不足」という仮の置き場に入れます。しかし現金過不足は資産でも負債でもない仮勘定で、<strong>決算日をまたいで残すことはできません</strong>。原因が分からないまま決算を迎えれば、結局「雑損」へ振り替えることになります。</p><p>この問題は<strong>決算日に発見している</strong>ので、現金過不足に入れて同じ日にすぐ雑損へ振り替える、という二度手間になります。そのため現金過不足を経由せず、はじめから雑損で処理します。<mark>「決算日」という言葉が出てきたら現金過不足は使わない</mark>、と覚えてください。</p><p>実際有高が帳簿より<strong>多かった</strong>場合は、逆に「借方：現金／貸方：雑益」となります。</p>'
+      },
+      {
+        text: '定額資金前渡法（インプレスト・システム）を採用している。小口現金係から、旅費交通費 <strong>12,000円</strong>、通信費 <strong>5,400円</strong>、消耗品費 <strong>3,200円</strong> を支払った旨の報告を受け、ただちに同額の小切手を振り出して補給した。',
+        debit: [['旅費交通費', 12000], ['通信費', 5400], ['消耗品費', 3200]],
+        credit: [['当座預金', 20600]],
+        hint: '報告と補給を同時に行うので、小口現金勘定は登場しません。',
+        explain: '<p>報告を受けた3つの費用がそれぞれ発生しているので、借方に費用を並べます（12,000＋5,400＋3,200＝<strong>20,600円</strong>）。<br>補給は小切手を振り出しているので、貸方は<strong>当座預金</strong> 20,600円。<br>報告と補給が<strong>同時</strong>に行われる場合、小口現金は「減ってすぐ同額戻る」ので差し引きゼロになり、仕訳に登場しません。報告と補給が別の日なら、報告時に「費用／小口現金」、補給時に「小口現金／当座預金」と2本に分かれます。</p>'
+      },
+      {
+        text: '買掛金 <strong>250,000円</strong> を小切手を振り出して支払った。なお、当座預金の残高は 180,000円であるが、取引銀行と限度額 500,000円の当座借越契約を結んでいる。',
+        debit: [['買掛金', 250000]],
+        credit: [['当座預金', 250000]],
+        hint: '期中は当座預金勘定だけで処理します。残高がマイナスになることを気にしません。',
+        explain: '<p>買掛金（負債）が減ったので借方、当座預金（資産）が減ったので貸方。金額は全額 <strong>250,000円</strong>です。</p><p>残高 180,000円を超えていますが、<strong>期中は当座預金勘定のまま処理し、70,000円のマイナス残高になることを気にしません</strong>。いちいち別勘定に分けると事務が煩雑になるためです。<br>この状態のまま決算日を迎えたときに初めて、「借方：当座預金／貸方：当座借越（または借入金）」という振替仕訳を入れて、マイナスの資産を負債として表示し直します。</p>'
+      },
+
+      /* --- 商品売買 5問 --- */
+      {
+        text: '商品 <strong>400,000円</strong> を仕入れ、代金は掛けとした。なお、引取運賃 <strong>6,000円</strong> は現金で支払った。',
+        debit: [['仕入', 406000]],
+        credit: [['買掛金', 400000], ['現金', 6000]],
+        hint: '当社が負担する仕入諸掛りは、商品の原価に含めます。',
+        explain: '<p>引取運賃のような<strong>仕入諸掛り（当社負担分）は仕入に含めます</strong>。その商品を売れる状態にするまでにかかった金額はすべてその商品の原価だ、という考え方によるものです。運賃を別勘定にしてしまうと、商品をいくらで手に入れたのかが帳簿から分からなくなります。</p><p>したがって借方の仕入は 400,000 ＋ 6,000 ＝ <strong>406,000円</strong>。貸方は買掛金 400,000円と現金 6,000円で、合計 406,000円。貸借は一致します。</p>'
+      },
+      {
+        text: '商品を <strong>500,000円</strong> で売り上げ、<strong>送料 8,000円</strong> を加えた合計額を掛けとした。同時に、配送業者へ送料 <strong>8,000円</strong> を現金で支払った。',
+        debit: [['売掛金', 508000], ['発送費', 8000]],
+        credit: [['売上', 508000], ['現金', 8000]],
+        hint: '売上諸掛りは、仕入諸掛りと考え方が違います。得意先に請求した金額がそのまま売上です。',
+        explain: '<p>売上諸掛り（売るときにかかる送料）は、<strong>得意先に請求した金額をそのまま売上に含めます</strong>。ここでは商品代 500,000円に送料 8,000円を上乗せして請求しているので、売上は <strong>508,000円</strong>、売掛金も 508,000円です。</p><p>いっぽう配送業者へ支払った 8,000円は当社が負担した費用なので、<strong>「発送費」（費用）</strong> として別に処理します。1つの取引ですが、性質の違う2本の仕訳が同時に立つ形です。</p><div class="callout callout--trap" style="margin:10px 0"><span class="callout__t">「先方負担だから立替金」は現行の処理ではありません</span><p>2021年度の出題区分表の改定（収益認識に関する会計基準への対応）で、売上諸掛りを「先方負担／当社負担」に分けて立替金や売掛金として処理する方法は<strong>3級の範囲から削除されました</strong>。区分表は3級の内容を2級が引き継ぐ積上げ式なので、2級でも出ません。古い問題集にはまだ残っていることがあるので注意してください。</p></div><p>なお<strong>仕入諸掛り</strong>（Q4）は考え方が逆で、当社負担分を仕入原価に含めます。売るときは費用を別建て、買うときは原価に算入。この非対称を押さえてください。</p>'
+      },
+      {
+        text: '先日、掛けで仕入れた商品のうち <strong>30,000円</strong> を、品違いのため返品した。',
+        debit: [['買掛金', 30000]],
+        credit: [['仕入', 30000]],
+        hint: '仕入れたときの仕訳を逆に書きます。',
+        explain: '<p>返品は<strong>仕入という取引の一部を取り消す</strong>処理です。仕入れたときの仕訳「借方：仕入／貸方：買掛金」を、返品した金額の分だけ逆に書きます。</p><p>仕入（費用）が減るので貸方、買掛金（負債。支払う義務）も減るので借方。<br>専用の科目（仕入戻し勘定など）は使わず、<strong>仕入勘定を直接減らす</strong>のが三分法の処理です。</p>'
+      },
+      {
+        text: '商品 <strong>200,000円</strong> をクレジット払いの条件で販売した。信販会社への手数料は販売代金の <strong>4%</strong> であり、販売時に計上する。',
+        debit: [['クレジット売掛金', 192000], ['支払手数料', 8000]],
+        credit: [['売上', 200000]],
+        hint: '手数料を差し引いた残りが、信販会社から入金される金額です。',
+        explain: '<p>売上は<strong>顧客から受け取る金額 200,000円</strong>です。手数料を引いた金額ではありません。</p><p>手数料は 200,000 × 4% ＝ <strong>8,000円</strong>。これは信販会社に払う費用なので「支払手数料」として借方に計上します。<br>実際に信販会社から入金されるのは 200,000 − 8,000 ＝ <strong>192,000円</strong>で、この請求権が「クレジット売掛金」（資産）です。</p><p>通常の売掛金と科目を分けるのは、<strong>回収先が顧客ではなく信販会社</strong>であり、貸し倒れのリスクの性質が違うためです。</p>'
+      },
+
+      {
+        text: '商品 <strong>320,000円（税抜）</strong> を仕入れ、代金は掛けとした。消費税の税率は <strong>10%</strong> であり、<strong>税抜方式</strong>で処理している。',
+        debit: [['仕入', 320000], ['仮払消費税', 32000]],
+        credit: [['買掛金', 352000]],
+        hint: '仕入は税抜金額で計上します。払った消費税は、あとで納付額から差し引ける権利です。',
+        explain: '<p>税抜方式では、消費税を仕入金額に混ぜません。仕入（費用）は<strong>税抜の 320,000円</strong>です。</p><p>消費税は 320,000 × 10% ＝ <strong>32,000円</strong>。これは仕入先を通じて国に納められるお金で、当社はあとで自分の納付額から差し引けます。つまり<strong>「あとで差し引ける権利」＝資産</strong>なので、「仮払消費税」として借方に計上します。</p><p>仕入先に支払う義務は税込の 320,000 ＋ 32,000 ＝ <strong>352,000円</strong>。買掛金は実際に払う金額なので税込です。借方合計 320,000 ＋ 32,000 ＝ 352,000円で貸借は一致します。</p><p>売り上げたときは逆に「借方：売掛金（税込）／貸方：売上（税抜）・仮受消費税」となり、預かった消費税は<strong>負債</strong>になります。</p>'
+      },
+
+      /* --- 売掛買掛・貸倒れ 2問 --- */
+      {
+        text: '得意先が倒産し、<strong>前期に発生した</strong>売掛金 <strong>90,000円</strong> が回収不能となった。貸倒引当金の残高は 70,000円である。',
+        debit: [['貸倒引当金', 70000], ['貸倒損失', 20000]],
+        credit: [['売掛金', 90000]],
+        hint: 'まず引当金を使い切り、足りない分だけを当期の損失にします。',
+        explain: '<p>前期発生の売掛金が焦げ付いた場合、<strong>その損失に備えて前期末に積んでおいた貸倒引当金をまず取り崩します</strong>。引当金（貸方に立っている）を減らすので借方に 70,000円。</p><p>しかし引当金は 70,000円しかなく、90,000円には 20,000円足りません。この不足分は当期の損失として「貸倒損失」（費用）に計上します。</p><p><strong>当期に発生した売掛金</strong>が貸し倒れた場合は話が変わります。その売掛金には引当金が設定されていない（引当金は前期末の残高に対して設定したもの）ので、<strong>全額を貸倒損失にします</strong>。「前期発生か当期発生か」は必ず問題文で確認してください。</p>'
+      },
+      {
+        text: '前期に貸倒れとして処理した売掛金 50,000円のうち、<strong>30,000円</strong> を現金で回収した。',
+        debit: [['現金', 30000]],
+        credit: [['償却債権取立益', 30000]],
+        hint: 'すでに帳簿から消した売掛金なので、売掛金は動きません。',
+        explain: '<p>この売掛金は前期にすでに貸倒れ処理をして帳簿から消えています。<strong>帳簿にない売掛金を減らすことはできない</strong>ので、貸方に売掛金は来ません。</p><p>回収できた 30,000円は、当期にとっては<strong>思いがけない収入＝収益</strong>です。これを表す専用の科目が「償却債権取立益」（収益）です。収益の発生なので貸方に書きます。</p><p>貸倒引当金を戻すのではない点にも注意してください。引当金はすでに前期の貸倒れ処理で取り崩されています。</p>'
+      },
+
+      /* --- 手形 2問 --- */
+      {
+        text: '商品 <strong>300,000円</strong> を売り上げ、代金のうち <strong>100,000円</strong> は得意先振出の約束手形で受け取り、残額は掛けとした。',
+        debit: [['受取手形', 100000], ['売掛金', 200000]],
+        credit: [['売上', 300000]],
+        hint: '手形で受け取った分と、掛けの分で科目が変わります。',
+        explain: '<p>売上は総額 <strong>300,000円</strong>。代金の受け取り方が2通りに分かれるので、借方が2行になります。</p><ul><li>約束手形を受け取った 100,000円 → <strong>受取手形</strong>（資産）</li><li>残りの 200,000円 → <strong>売掛金</strong>（資産）</li></ul><p>どちらも「あとでお金をもらえる権利」ですが、手形は<strong>支払期日と金額が証券に明記された債権</strong>で、法的な強さも譲渡のしやすさも売掛金とは違います。だから科目を分けます。</p><p>なお当社が受け取る側なので<strong>受取手形</strong>です。支払手形は、当社が手形を振り出して支払う側になったときに使います。</p>'
+      },
+      {
+        text: '銀行から <strong>500,000円</strong> を借り入れ、同額の約束手形を振り出した。利息 <strong>6,000円</strong> が差し引かれ、残額が当座預金口座に入金された。',
+        debit: [['当座預金', 494000], ['支払利息', 6000]],
+        credit: [['手形借入金', 500000]],
+        hint: '返済しなければならないのは、入金額ではなく手形の額面です。',
+        explain: '<p>借入金として負うのは<strong>手形の額面 500,000円</strong>です。実際に入金されたのは 500,000 − 6,000 ＝ <strong>494,000円</strong>ですが、返すのは 500,000円なので、負債は 500,000円で計上します。</p><p>差し引かれた 6,000円は前払いした利息なので「支払利息」（費用）として借方に計上します。借方合計は 494,000 ＋ 6,000 ＝ 500,000円で一致します。</p><p>科目が「借入金」ではなく<strong>手形借入金</strong>なのは、借入れの証拠として約束手形を振り出しているからです。借用証書による借入れなら「借入金」を使います。<br>また、これは<strong>お金を借りるために振り出した手形</strong>なので「支払手形」は使いません。支払手形は商品代金の支払いのために振り出した手形（商業手形）に限られます。</p>'
+      },
+
+      /* --- 固定資産 3問 --- */
+      {
+        text: '営業用の備品 <strong>800,000円</strong> を購入し、据付費 <strong>30,000円</strong> とあわせて代金は翌月末に支払うこととした。',
+        debit: [['備品', 830000]],
+        credit: [['未払金', 830000]],
+        hint: '固定資産の取得原価には、使える状態にするまでの費用を含めます。',
+        explain: '<p>据付費のような<strong>付随費用は取得原価に含めます</strong>。据え付けなければその備品は使えないので、使える状態にするまでにかかった金額はすべてその備品の原価だと考えるからです。仕入諸掛りを仕入に含めるのと同じ考え方です。<br>したがって備品は 800,000 ＋ 30,000 ＝ <strong>830,000円</strong>。</p><p>貸方が<strong>未払金</strong>である点に注意してください。買掛金は<strong>商品の仕入れという主たる営業取引</strong>から生じた債務にだけ使う科目です。備品のような固定資産の購入代金は、営業取引ではないので未払金で処理します。</p>'
+      },
+      {
+        text: '取得原価 <strong>900,000円</strong>、減価償却累計額 <strong>540,000円</strong> の備品を <strong>300,000円</strong> で売却し、代金は月末に受け取ることとした。なお、減価償却は間接法で記帳している。',
+        debit: [['備品減価償却累計額', 540000], ['未収入金', 300000], ['固定資産売却損', 60000]],
+        credit: [['備品', 900000]],
+        hint: 'まず帳簿価額を出します。それより安く売れば売却損です。',
+        explain: '<p>間接法なので、備品勘定には取得原価 900,000円がそのまま残り、減った分は累計額に貯まっています。売却するときは<strong>この2つを両方とも消します</strong>。備品（資産）を減らすので貸方に 900,000円、累計額（貸方に立っている）を減らすので借方に 540,000円。</p><p>帳簿価額は 900,000 − 540,000 ＝ <strong>360,000円</strong>。これを 300,000円で売ったので、差額 <strong>60,000円が固定資産売却損</strong>（費用）です。</p><p>代金は月末受取りなので<strong>未収入金</strong>（資産）。売掛金ではありません。売掛金は商品を売った代金にだけ使う科目で、固定資産を売った代金は未収入金です。</p><p>借方合計は 540,000 ＋ 300,000 ＋ 60,000 ＝ 900,000円で、貸方と一致します。</p>'
+      },
+      {
+        text: '建設を依頼していた倉庫が完成し、引渡しを受けた。工事代金は総額 <strong>12,000,000円</strong> で、すでに <strong>8,000,000円</strong> を支払い建設仮勘定に計上している。残額は小切手を振り出して支払った。',
+        debit: [['建物', 12000000]],
+        credit: [['建設仮勘定', 8000000], ['当座預金', 4000000]],
+        hint: '建物の取得原価は、すでに払った分とこれから払う分の合計です。',
+        explain: '<p>引渡しを受けたことで、初めて「建物」という資産が完成します。取得原価は<strong>工事代金の総額 12,000,000円</strong>です。すでに払った 8,000,000円だけではありません。</p><p>そして、これまで一時的に置いていた<strong>建設仮勘定 8,000,000円を貸方で消します</strong>。仮の箱から本物の箱へ中身を移し替えるのがこの仕訳の意味です。残額 12,000,000 − 8,000,000 ＝ <strong>4,000,000円</strong>は小切手を振り出したので当座預金の減少です。</p><p>建設仮勘定を消し忘れると貸借が合いません。<strong>減価償却が始まるのは引渡しを受けて使い始めてから</strong>で、建設中は償却しません。</p>'
+      },
+
+      /* --- 給料・預り金・立替金 2問 --- */
+      {
+        text: '従業員に給料 <strong>350,000円</strong> を支給するにあたり、所得税の源泉徴収額 <strong>21,000円</strong> と社会保険料の従業員負担分 <strong>32,000円</strong> を差し引き、残額を普通預金口座から振り込んだ。',
+        debit: [['給料', 350000]],
+        credit: [['所得税預り金', 21000], ['社会保険料預り金', 32000], ['普通預金', 297000]],
+        hint: '会社の費用になるのは、差引前の総額です。',
+        explain: '<p>給料（費用）は<strong>差引前の総額 350,000円</strong>です。振り込んだ金額ではありません。会社が従業員に対して負担した金額は、あくまで 350,000円だからです。</p><p>差し引いた所得税 21,000円と社会保険料 32,000円は、<strong>会社が従業員から預かって、あとで税務署や年金事務所に納める</strong>お金です。会社にとっては支払う義務＝<strong>負債</strong>なので、預り金として貸方に計上します。</p><p>実際に振り込むのは 350,000 − 21,000 − 32,000 ＝ <strong>297,000円</strong>。貸方合計は 21,000 ＋ 32,000 ＋ 297,000 ＝ 350,000円で一致します。</p><p>のちに納付したときは「借方：所得税預り金／貸方：現金など」と、預り金を減らす仕訳を切ります。</p>'
+      },
+      {
+        text: '労働保険料 <strong>24,000円</strong> を現金で納付した。このうち <strong>6,000円</strong> は従業員負担分で、後日の給料支払時に差し引くこととした。残額は会社負担分である。',
+        debit: [['従業員立替金', 6000], ['法定福利費', 18000]],
+        credit: [['現金', 24000]],
+        hint: '従業員が負担すべき分を会社が先に払っています。あとで回収できます。',
+        explain: '<p>この納付には性質の違う2つが混ざっています。</p><ul><li><strong>従業員負担分 6,000円</strong>：本来は従業員が払うべきものを会社が立て替えました。あとで給料から差し引いて回収できるので、これは会社の費用ではなく<strong>「あとで回収できる権利」＝資産</strong>です。従業員立替金として借方に計上します。</li><li><strong>会社負担分 18,000円</strong>（24,000 − 6,000）：これは会社が負担する社会保険関係の費用なので「法定福利費」（費用）です。労働保険のうち労災保険料は全額が会社負担、雇用保険料も会社負担の割合のほうが大きいため、会社負担分が多くなります。</li></ul><p>全額を法定福利費にしてしまうのがよくあるミスです。<strong>お金を払った＝全部費用、とは限りません。</strong>あとで回収できる分は資産です。</p>'
+      },
+
+      /* --- 決算整理 7問 --- */
+      {
+        text: '決算にあたり、売上原価を<strong>仕入勘定で算定</strong>する。期首商品棚卸高は <strong>180,000円</strong>、期末商品棚卸高は <strong>210,000円</strong> であった。',
+        debit: [['仕入', 180000], ['繰越商品', 210000]],
+        credit: [['繰越商品', 180000], ['仕入', 210000]],
+        hint: '「しーくり くりしー」の2本です。借方・貸方それぞれ2行になります。',
+        explain: '<p>2本の仕訳をまとめて記入します。</p><ul><li><strong>借方：仕入 180,000／貸方：繰越商品 180,000</strong>（しーくり）… 期首の商品を繰越商品勘定から仕入勘定へ移します。期首商品は当期に売れる対象なので、売上原価の計算に含めるためです。</li><li><strong>借方：繰越商品 210,000／貸方：仕入 210,000</strong>（くりしー）… 期末に売れ残った商品を仕入勘定から抜き、繰越商品勘定へ移します。売れ残りは当期の費用ではないからです。</li></ul><p>この2本を入れると、仕入勘定の残高が「期首商品 ＋ 当期仕入 − 期末商品」＝<strong>売上原価</strong>になり、繰越商品勘定の残高が期末商品 210,000円になって貸借対照表の「商品」になります。</p>'
+      },
+      {
+        text: '決算にあたり、売掛金の期末残高 <strong>1,200,000円</strong> と受取手形の期末残高 <strong>300,000円</strong> の合計に対して <strong>2%</strong> の貸倒引当金を<strong>差額補充法</strong>により設定する。貸倒引当金の決算整理前残高は 12,000円である。',
+        debit: [['貸倒引当金繰入', 18000]],
+        credit: [['貸倒引当金', 18000]],
+        hint: '対象は売掛金だけではありません。設定額を出したら残高を引きます。',
+        explain: '<p>貸倒引当金の対象になるのは<strong>売上債権</strong>、つまり売掛金と受取手形の両方です。合計 1,200,000 ＋ 300,000 ＝ 1,500,000円。</p><p>設定すべき額は 1,500,000 × 2% ＝ <strong>30,000円</strong>。すでに 12,000円あるので、差額補充法では 30,000 − 12,000 ＝ <strong>18,000円</strong>だけを追加計上します。</p><p>計算した 30,000円をそのまま繰り入れてしまうのが定番のミスです。<strong>差額補充法は「不足分を足す」方法</strong>だと覚えてください。</p>'
+      },
+      {
+        text: '決算（会計期間は4月1日〜3月31日）にあたり、当期の <strong>11月1日</strong> に取得して同日から使用している備品（取得原価 <strong>720,000円</strong>、残存価額ゼロ、耐用年数6年、定額法、<strong>間接法</strong>）の減価償却を行う。',
+        debit: [['減価償却費', 50000]],
+        credit: [['備品減価償却累計額', 50000]],
+        hint: '1年分を出してから、使用した月数で月割りします。',
+        explain: '<p>1年分の減価償却費は 720,000 ÷ 6 ＝ <strong>120,000円</strong>。</p><p>使用したのは11月・12月・1月・2月・3月の<strong>5か月</strong>なので、120,000 × 5/12 ＝ <strong>50,000円</strong>です。取得した月も1か月として数えます。</p><p>間接法なので、貸方は備品勘定ではなく<strong>備品減価償却累計額</strong>です。備品勘定は取得原価 720,000円のまま動かさず、減らした金額を累計額に貯めていきます。こうすることで「いくらで買ったか」と「これまでいくら減らしたか」の両方が帳簿に残ります。</p>'
+      },
+      {
+        text: '決算（会計期間は4月1日〜3月31日）にあたり、保険料の前払分を計上する。この保険料は当期の <strong>8月1日</strong> に向こう1年分 <strong>120,000円</strong> を支払い、全額を保険料として処理したものである。',
+        debit: [['前払保険料', 40000]],
+        credit: [['保険料', 40000]],
+        hint: '決算日の翌日から契約が切れる日までが、来期の分です。',
+        explain: '<p>8月1日から翌年7月31日までの12か月分のうち、当期（3月31日まで）に属するのは8月〜3月の8か月。残る<strong>4月〜7月の4か月分</strong>は来期のサービスに対する支払いです。</p><p>120,000 × 4/12 ＝ <strong>40,000円</strong>。この分を当期の費用から取り消すので、保険料（費用）を貸方に書いて減らします。</p><p>相手勘定の前払保険料は<strong>資産</strong>です。「来期に保険サービスを受けられる権利」を持っているからです。<strong>「前」という字で覚えるのではなく、もらえる権利か払う義務かで判断してください。</strong></p><p>なお翌期首には「借方：保険料 40,000／貸方：前払保険料 40,000」という再振替仕訳を入れて元に戻します。</p>'
+      },
+      {
+        text: '決算にあたり、消費税の納付額を計算し確定させる。当期の<strong>仮受消費税</strong>は <strong>480,000円</strong>、<strong>仮払消費税</strong>は <strong>310,000円</strong> であった。なお、消費税は<strong>税抜方式</strong>で処理している。',
+        debit: [['仮受消費税', 480000]],
+        credit: [['仮払消費税', 310000], ['未払消費税', 170000]],
+        hint: '期中に貯まった2つの科目を、両方とも消してしまいます。残った差額が納める金額です。',
+        explain: '<p>決算では、預かった消費税と払った消費税を<strong>相殺して納税額を確定させます</strong>。</p><ul><li>仮受消費税は<strong>負債</strong>で貸方に残っています。これを消すので借方に 480,000円。</li><li>仮払消費税は<strong>資産</strong>で借方に残っています。これを消すので貸方に 310,000円。</li></ul><p>差額 480,000 − 310,000 ＝ <strong>170,000円</strong>が、これから国に納める金額です。まだ納めていないので「未払消費税」（負債）として貸方に立てます。</p><p>預かった額から自分が払った額を引くのは、同じ消費税を二重に納めないためです。<strong>もし仮払のほうが多ければ</strong>、払いすぎた分が返ってくるので「未収還付消費税」（資産）になります。</p><p>なお税抜方式では、この一連の処理に<strong>損益計算書に載る科目が1つも出てきません</strong>。消費税は会社が預かって納めているだけで、会社の収益でも費用でもないからです。</p>'
+      },
+      {
+        text: '決算にあたり、当期の<strong>法人税、住民税及び事業税</strong>が <strong>750,000円</strong> と確定した。なお、中間申告時に <strong>320,000円</strong> を納付し、仮払法人税等として処理している。',
+        debit: [['法人税、住民税及び事業税', 750000]],
+        credit: [['仮払法人税等', 320000], ['未払法人税等', 430000]],
+        hint: '費用に計上するのは年間の確定額です。前払いしてある分を消し、残りが納める金額になります。',
+        explain: '<p>費用として計上するのは<strong>年間の確定額 750,000円</strong>です。これから納める金額ではありません。当期の利益に対してかかった税金は、あくまで 750,000円だからです。</p><p>中間申告で納めた 320,000円は「仮払法人税等」（資産）として借方に残っています。年税額が確定した今、これは確定額から差し引かれるので<strong>貸方で消します</strong>。</p><p>残りの 750,000 − 320,000 ＝ <strong>430,000円</strong>を確定申告で納めることになり、その義務が「未払法人税等」（負債）です。</p><p>消費税と混同しないでください。<strong>法人税等は会社自身が負担する費用</strong>なので損益計算書に載り、税引前当期純利益の下に置かれて当期純利益を決めます。いっぽう消費税は預かって納めるだけなので損益計算書に出てきません。</p>'
+      },
+      {
+        text: '決算にあたり、購入時に費用として処理していた<strong>収入印紙 24,000円分</strong>と<strong>郵便切手 5,000円分</strong>が未使用であることが判明したため、適切な勘定へ振り替える。',
+        debit: [['貯蔵品', 29000]],
+        credit: [['租税公課', 24000], ['通信費', 5000]],
+        hint: '未使用分は当期に使っていません。振替先の費用勘定は、印紙と切手で別々です。',
+        explain: '<p>収入印紙も郵便切手も、買ったときに全額を費用にしています。しかし決算日に使い残しがあるなら、その分は<strong>まだ使っていない＝当期の費用ではありません</strong>。来期に使うものなので費用から外し、資産である「貯蔵品」へ振り替えます。合計 24,000 ＋ 5,000 ＝ <strong>29,000円</strong>。</p><p>貸方は<strong>2つの科目に分けます</strong>。収入印紙は印紙税を納めるための紙なので<strong>租税公課</strong>、郵便切手は郵便サービスを買うための紙なので<strong>通信費</strong>。まとめて1科目にはできません。</p><p>考え方は前払費用と同じで、「まだ使っていない分は当期の費用ではない」。したがって<strong>翌期首には再振替仕訳</strong>「借方：租税公課 24,000・通信費 5,000／貸方：貯蔵品 29,000」を入れて元に戻します。戻さないと、来期に使った分がどの費用にも計上されません。</p>'
+      },
+
+      /* --- 株式会社の純資産 1問 --- */
+      {
+        text: '株主総会において、繰越利益剰余金を財源として <strong>1,500,000円</strong> の配当を行うことが決議された。あわせて、会社法の規定により<strong>配当金の10分の1</strong>を利益準備金として積み立てる。なお、配当金はまだ支払っていない。',
+        debit: [['繰越利益剰余金', 1650000]],
+        credit: [['未払配当金', 1500000], ['利益準備金', 150000]],
+        hint: '取り崩す繰越利益剰余金は、配当額だけではありません。まだ払っていないので相手は負債です。',
+        explain: '<p>配当は<strong>株主総会の決議日</strong>に仕訳を切ります。決算日ではありません。そしてこの日にはまだ支払っていないので、相手科目は現金や当座預金ではなく<strong>「未払配当金」（負債）</strong>——株主に払わなければならない義務です。</p><p>利益準備金は 1,500,000 × 1/10 ＝ <strong>150,000円</strong>。配当をするときは、利益を全部社外に出してしまわないよう、会社法により一定額の積立が義務づけられています。債権者を守るための仕組みです。利益準備金は純資産なので貸方。</p><p>借方の繰越利益剰余金は、配当金と利益準備金の<strong>合計 1,650,000円</strong>です。株主へ出ていく分と社内の別の箱へ移す分の両方が、繰越利益剰余金から出ていくからです。<strong>ここを 1,500,000円としてしまう</strong>のが最頻出のミスで、その場合そもそも貸借が合いません。</p><p>後日実際に支払ったときは「借方：未払配当金 1,500,000／貸方：当座預金 1,500,000」。この日には繰越利益剰余金も利益準備金も動きません。</p>'
+      }
+    ]
+  });
+})();
+</script>
+</body>
+</html>

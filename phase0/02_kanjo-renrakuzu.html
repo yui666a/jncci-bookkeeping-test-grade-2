@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>勘定連絡図を描けるようにする — 日商簿記2級 Phase 0</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* ---- 勘定連絡図（このページ専用） ---- */
+/* 図が1画面に収まるよう、広い画面ではコンテンツ幅より少しはみ出させる */
+@media (min-width: 1010px) {
+  .figure--main .svgwrap { margin-left: -24px; margin-right: -24px; }
+}
+.rz text { font-family: inherit; }
+.rz .node-label { font-size: 13px; font-weight: 700; fill: var(--text); }
+.rz .ent  { font-size: 11px; fill: var(--muted); }
+.rz .leg  { font-size: 11px; fill: var(--muted); }
+.rz .alab {
+  font-size: 10.5px; fill: var(--muted);
+  paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round;
+}
+.rz .lab-d { fill: var(--debit); }
+.rz .lab-i { fill: var(--credit); }
+.rz .lab-m { fill: var(--accent); }
+.rz .box { fill: var(--surface); stroke: var(--border-2); stroke-width: 1.5; }
+.rz .hd  { fill: var(--surface-2); }
+.rz .div { stroke: var(--border-2); stroke-width: 1.2; }
+.rz .node { cursor: pointer; }
+.rz .node:hover .box { stroke: var(--accent); }
+.rz .node:hover .hd  { fill: var(--accent-2); }
+.rz .node:focus { outline: none; }
+.rz .node:focus-visible .box { stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 5 3; }
+.rz .node.is-sel .box { stroke: var(--accent); stroke-width: 2.5; }
+.rz .node.is-sel .hd  { fill: var(--accent); }
+.rz .node.is-sel .node-label { fill: var(--surface); }
+.rz .fl { fill: none; }
+.rz .fl--d { stroke: var(--debit);  stroke-width: 2; }
+.rz .fl--i { stroke: var(--credit); stroke-width: 2; stroke-dasharray: 6 4; }
+.rz .fl--m { stroke: var(--accent); stroke-width: 2.5; }
+.rz .mk-d { fill: var(--debit); }
+.rz .mk-i { fill: var(--credit); }
+.rz .mk-m { fill: var(--accent); }
+.rzbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 0 0 12px; }
+.rzbar .small { color: var(--muted); }
+.dside { border-left: 4px solid var(--debit); background: var(--debit-bg); }
+.dside .callout__t { color: var(--debit); }
+.cside { border-left: 4px solid var(--credit); background: var(--credit-bg); }
+.cside .callout__t { color: var(--credit); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 0 目次</a>
+    <span class="topbar__title">勘定連絡図</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 02 ／ 4時間 ／ 最重要</p>
+    <h1>勘定連絡図を<br>描けるようにする</h1>
+    <p class="lead">工業簿記40点分の論点は、すべて1枚の図の上に乗っています。このユニットのゴールはただ一つ、<strong>白紙に、何も見ずに勘定連絡図を描き切れること</strong>です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">第4問・第5問（40点）の土台</span>
+      <span class="chip">2日に分けて取り組む</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">なぜ、1枚の図から始めるのか</a></li>
+      <li><a href="#s2">工業簿記が扱っているもの — 原価の分類</a></li>
+      <li><a href="#s3">勘定連絡図の全体像（クリックできる図）</a></li>
+      <li><a href="#s4">1本の流れを、数字と仕訳で追う</a></li>
+      <li><a href="#s5">この図の上に、これから学ぶ論点がどう乗るか</a></li>
+      <li><a href="#s6">描く練習</a></li>
+      <li><a href="#s7">理解チェック</a></li>
+      <li><a href="#s8">到達チェック</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1"><span class="num">1</span>なぜ、1枚の図から始めるのか</h2>
+
+  <p>3級で学んだ商業簿記は、ものすごく単純化すると<strong>「買ってきたものを、そのまま売る」</strong>商売の記録でした。100円で仕入れた商品を150円で売る。仕入と売上の2つの勘定があれば、話はだいたい片づきます。</p>
+
+  <p>工業簿記が扱うのは<strong>「材料を買ってきて、工場で加工して、製品にしてから売る」</strong>商売です。買ったものと売ったものが同じ形をしていません。鋼板とタイヤとネジを買ってきて、工員が組み立て、機械を動かし、工場の電気を使い、その結果「自動車」という別のものが出てくる。</p>
+
+  <p>ここで問題が起きます。<mark>売った自動車1台の原価は、いくらなのか。</mark>買ってきた鋼板の値段でもなければ、払った電気代でもありません。いろいろな費用が形を変えながら合流して、1台の原価になっています。その合流のしかたを記録するために、商業簿記にはなかった勘定が増えます。増えた勘定とその間の流れを1枚にまとめたものが、<strong>勘定連絡図</strong>です。</p>
+
+  <div class="term">
+    <span class="term__w">勘定連絡図</span><span class="term__r">かんじょうれんらくず</span>
+    <p style="margin-bottom:0">材料費・労務費・経費が、製造間接費や仕掛品を経由して製品になり、最後に売上原価になるまでの流れを、勘定どうしの矢印で表した図。工業簿記の全論点は、この図のどこかを詳しく計算しているにすぎません。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ、いきなり個々の計算を覚えないのか</span>
+    <p>工業簿記のテキストは、費目別計算 → 部門別計算 → 個別原価計算 → 総合原価計算 → 標準原価計算 → 直接原価計算、という順で進みます。これを図なしで読むと、それぞれが独立した計算パズルに見えます。「平均法と先入先出法」「シングルプランとパーシャルプラン」「予定配賦率」…… 用語が積み上がるだけで、何のためにやっているのか分からなくなる。これが工業簿記で挫折する典型パターンです。</p>
+    <p>先に図を入れておくと、話が変わります。新しい論点が出てきたとき<strong>「ああ、これは図のこの矢印の計算方法の話だな」</strong>と位置づけられる。位置が分かれば覚える量が激減します。だからこのユニットに4時間かけます。</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout__t">配点との関係</span>
+    <p>2級の配点は 第1問20点／第2問20点／第3問20点／第4問28点／第5問12点とされています（日商は各問の配点を事前に公表しておらず、第4問28点・第5問12点は予備校分析による通説です。詳しくは <a href="04_junbi.html">UNIT 04</a>）。いずれにせよ<strong>第4問と第5問の40点が工業簿記</strong>です。商業簿記の60点は範囲が広く、どこが出るか読みにくい。一方の工業簿記は範囲が狭く、出題パターンがほぼ固定されています。つまり<strong>投下時間あたりの得点効率が最も高い</strong>のが工業簿記で、その工業簿記の入口がこの図です。</p>
+  </div>
+
+  <h2 id="s2"><span class="num">2</span>工業簿記が扱っているもの — 原価の分類</h2>
+
+  <p>図の話に入る前に、図の上を流れる「モノ」の正体をはっきりさせます。流れているのは<strong>原価</strong>です。</p>
+
+  <div class="term">
+    <span class="term__w">原価</span><span class="term__r">げんか</span>
+    <p style="margin-bottom:0">製品を作るためにかかった金額のこと。より正確には「製造原価」。工場で製品を作るために消費した、材料・人手・その他のすべてを金額に置き換えたものです。</p>
+  </div>
+
+  <h3>分類その1 — 何を消費したか（形態別分類）</h3>
+
+  <p>まず、<strong>何を消費したのか</strong>で3つに分けます。これを形態別分類といいます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">形態別分類 ①</div>
+      <p style="margin-top:0"><strong>材料費</strong></p>
+      <p class="small muted" style="margin-bottom:0">モノを消費した分。鋼板、木材、小麦粉、ネジ、接着剤、機械油、工場の軍手。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">形態別分類 ②</div>
+      <p style="margin-top:0"><strong>労務費</strong></p>
+      <p class="small muted" style="margin-bottom:0">人手を消費した分。工員の賃金、工場長の給料、工場事務員の給料、法定福利費。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">形態別分類 ③</div>
+      <p style="margin-top:0"><strong>経費</strong></p>
+      <p class="small muted" style="margin-bottom:0">材料費でも労務費でもない残り全部。工場の電気代・水道代、工場建物の減価償却費、外注加工賃、工場の火災保険料。</p>
+    </div>
+  </div>
+
+  <p class="small muted">この3つは「消去法」で覚えると速いです。モノなら材料費、人なら労務費、それ以外は全部経費。</p>
+
+  <h3>分類その2 — どの製品のものか分かるか（製品との関連による分類）</h3>
+
+  <p>次に、まったく別の切り口で2つに分けます。<strong>その原価が、どの製品にいくらかかったか特定できるかどうか</strong>です。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">製品との関連 ①</div>
+      <p style="margin-top:0"><strong>直接費</strong></p>
+      <p class="small" style="margin-bottom:0">「この製品にいくら使った」とはっきり分かるもの。パン工場なら、あんパンに使った小麦粉とあんこ。1個あたりの使用量が分かるので、そのまま製品の原価にできます。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">製品との関連 ②</div>
+      <p style="margin-top:0"><strong>間接費</strong></p>
+      <p class="small" style="margin-bottom:0">分からない、または分けても意味がないもの。パン工場の電気代を「あんパンの分」「食パンの分」に分けることはできません。オーブンは全部のパンを一緒に焼いています。</p>
+    </div>
+  </div>
+
+  <h3>この2つを掛け合わせると、6種類になる</h3>
+
+  <p>形態別の3つ × 製品との関連の2つ ＝ <strong>6つの分類</strong>。工業簿記の原価は、必ずこの6つのどれかに入ります。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>直接費<br><span class="small muted" style="font-weight:400">その製品にいくらかかったか分かる</span></th>
+        <th>間接費<br><span class="small muted" style="font-weight:400">分からない・分けても意味がない</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>材料費<br><span class="small muted" style="font-weight:400">モノ</span></th>
+        <td><strong>直接材料費</strong><br><span class="small muted">自動車のボディに使う鋼板／パンの小麦粉・あんこ／家具の木材</span></td>
+        <td><strong>間接材料費</strong><br><span class="small muted">ネジ・接着剤・塗料／機械の潤滑油／工場の軍手・掃除用具</span></td>
+      </tr>
+      <tr>
+        <th>労務費<br><span class="small muted" style="font-weight:400">人</span></th>
+        <td><strong>直接労務費</strong><br><span class="small muted">製品を実際に加工した工員（直接工）の、直接作業時間ぶんの賃金</span></td>
+        <td><strong>間接労務費</strong><br><span class="small muted">工場長・工場事務員の給料／修繕係・材料倉庫係の賃金／直接工の手待時間ぶんの賃金</span></td>
+      </tr>
+      <tr>
+        <th>経費<br><span class="small muted" style="font-weight:400">それ以外</span></th>
+        <td><strong>直接経費</strong><br><span class="small muted">外注加工賃／特定の製品のためだけに払った特許権使用料。<em>該当するものは少ない</em></span></td>
+        <td><strong>間接経費</strong><br><span class="small muted">工場建物・機械の減価償却費／工場の電気代・水道代／工場の火災保険料</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ、直接と間接を分けるのか</span>
+    <p>直接費は簡単です。「あんパンに小麦粉を3,000円分使った」と分かっているので、そのまま「あんパンの原価は3,000円ぶん増えた」と記録すればいい。<strong>まっすぐ仕掛品勘定に入れられます。</strong></p>
+    <p>困るのは間接費です。工場の電気代80,000円を、あんパンと食パンとクロワッサンに、どう分ければいいのか。<strong>実際のところ、正確には分けられません。</strong>だからやり方を変えます。いったん<strong>「製造間接費」という1つの箱に全部集めて</strong>から、何らかの基準（作業時間、機械の運転時間など）で「えいや」と割り振る。この割り振りのことを<strong>配賦</strong>といいます。</p>
+    <p>つまり、直接費と間接費を分ける理由は<mark>通り道が違うから</mark>です。直接費は仕掛品へ直行、間接費は製造間接費を経由して配賦。この「2本の通り道」が、これから描く図の骨格になります。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">配賦</span><span class="term__r">はいふ</span>
+    <p style="margin-bottom:0">1か所に集めた製造間接費を、一定の基準にしたがって各製品（各製造指図書、各部門）に割り当てること。「配布」ではなく「配賦」と書きます。</p>
+  </div>
+
+  <h3>製造原価に入らないもの</h3>
+
+  <p>ここが最初の大きな落とし穴です。会社で発生する費用がすべて製造原価になるわけではありません。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「工場で発生したかどうか」が境目</span>
+    <p>本社の経理部の事務員の給料、本社建物の減価償却費、営業所の家賃、広告宣伝費、販売員の給料、製品の発送費 ── これらは<strong>製造原価ではありません</strong>。販売費及び一般管理費（販管費）です。製品を作るためにかかった費用ではなく、売るため・会社を運営するためにかかった費用だからです。</p>
+    <p>判断の物差しはシンプルで、<mark>その費用は工場で発生したか</mark>。工場で発生していれば製造原価、そうでなければ販管費。</p>
+    <p><strong>ひっかけの定番：</strong>「工場の事務員の給料」は間接労務費（製造原価に入る）。「本社の事務員の給料」は販管費（入らない）。同じ「事務員の給料」でも、工場か本社かで扱いが正反対になります。「工場の」「本社の」という一言を、問題文で必ず確認してください。</p>
+  </div>
+
+  <p>この違いは図の上でも見た目に表れます。製造原価は 材料・賃金・経費 → 仕掛品 → 製品 → 売上原価 という長い道を通りますが、販管費は<strong>その道をまったく通らず、月次損益に直行します</strong>。</p>
+
+  <h2 id="s3"><span class="num">3</span>勘定連絡図の全体像</h2>
+
+  <p>これが、これから11週間ずっと使う1枚です。まずは眺めて、それから<strong>箱をクリック</strong>してください。その勘定の意味・借方と貸方に入るもの・代表的な仕訳・つまずきポイントが、図の下に出ます。</p>
+
+  <div class="rzbar">
+    <button class="btn btn--sm" type="button" id="blank-toggle" aria-pressed="false">勘定名を隠す（穴埋めモード）</button>
+    <span class="small">箱をクリック／Tabで移動してEnter</span>
+  </div>
+
+  <div class="figure figure--main">
+    <div class="svgwrap">
+<svg id="renrakuzu" class="rz" viewBox="0 0 1020 500" style="width:100%;height:auto;min-width:906px">
+  <title>工業簿記の勘定連絡図</title>
+  <defs>
+    <marker id="arD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path class="mk-d" d="M0,0 L10,5 L0,10 Z"></path>
+    </marker>
+    <marker id="arI" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path class="mk-i" d="M0,0 L10,5 L0,10 Z"></path>
+    </marker>
+    <marker id="arM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path class="mk-m" d="M0,0 L10,5 L0,10 Z"></path>
+    </marker>
+  </defs>
+
+  <!-- ========== 矢印（箱より先に描く） ========== -->
+  <!-- 直接費 -->
+  <path class="fl fl--d" d="M175,135 L316,275" marker-end="url(#arD)"></path>
+  <path class="fl fl--d" d="M175,255 L316,300" marker-end="url(#arD)"></path>
+  <path class="fl fl--d" d="M175,375 L316,330" marker-end="url(#arD)"></path>
+  <!-- 間接費 -->
+  <path class="fl fl--i" d="M175,100 L316,62"  marker-end="url(#arI)"></path>
+  <path class="fl fl--i" d="M175,220 L316,88"  marker-end="url(#arI)"></path>
+  <path class="fl fl--i" d="M175,340 L316,112" marker-end="url(#arI)"></path>
+  <!-- 配賦・完成・売上原価・振替 -->
+  <path class="fl fl--m" d="M460,128 L460,182 L375,182 L375,236" marker-end="url(#arM)"></path>
+  <path class="fl fl--m" d="M510,290 L596,290" marker-end="url(#arM)"></path>
+  <path class="fl fl--m" d="M780,285 L846,285" marker-end="url(#arM)"></path>
+  <path class="fl fl--m" d="M955,313 L955,355 L885,355 L885,396" marker-end="url(#arM)"></path>
+
+  <!-- 矢印ラベル -->
+  <text class="alab lab-d" x="182" y="130">直接材料費</text>
+  <text class="alab lab-i" x="182" y="94">間接材料費</text>
+  <text class="alab lab-d" x="182" y="250">直接労務費</text>
+  <text class="alab lab-i" x="182" y="214">間接労務費</text>
+  <text class="alab lab-d" x="182" y="370">直接経費</text>
+  <text class="alab lab-i" x="182" y="334">間接経費</text>
+  <text class="alab lab-m" x="468" y="178">配賦</text>
+  <text class="alab lab-m" x="555" y="282" text-anchor="middle">当月完成品原価</text>
+  <text class="alab lab-m" x="815" y="277" text-anchor="middle">当月売上原価</text>
+  <text class="alab lab-m" x="958" y="348">損益へ振替</text>
+
+  <!-- ========== 勘定（箱） ========== -->
+
+  <!-- 材料 -->
+  <g class="node" data-node="material" tabindex="0" role="button" aria-label="材料勘定の解説を開く">
+    <rect class="box" x="20" y="60" width="155" height="90" rx="8"></rect>
+    <rect class="hd" x="21" y="61" width="153" height="26" rx="7"></rect>
+    <rect class="hd" x="21" y="74" width="153" height="13"></rect>
+    <line class="div" x1="20" y1="87" x2="175" y2="87"></line>
+    <line class="div" x1="97.5" y1="87" x2="97.5" y2="150"></line>
+    <text class="node-label" x="97.5" y="80" text-anchor="middle" data-label="材料">材料</text>
+    <text class="ent" x="27" y="103">月初有高</text>
+    <text class="ent" x="27" y="118">当月仕入高</text>
+    <text class="ent" x="104.5" y="103">直接材料費</text>
+    <text class="ent" x="104.5" y="118">間接材料費</text>
+    <text class="ent" x="104.5" y="133">月末有高</text>
+  </g>
+
+  <!-- 賃金・給料 -->
+  <g class="node" data-node="labor" tabindex="0" role="button" aria-label="賃金・給料勘定の解説を開く">
+    <rect class="box" x="20" y="180" width="155" height="90" rx="8"></rect>
+    <rect class="hd" x="21" y="181" width="153" height="26" rx="7"></rect>
+    <rect class="hd" x="21" y="194" width="153" height="13"></rect>
+    <line class="div" x1="20" y1="207" x2="175" y2="207"></line>
+    <line class="div" x1="97.5" y1="207" x2="97.5" y2="270"></line>
+    <text class="node-label" x="97.5" y="200" text-anchor="middle" data-label="賃金・給料">賃金・給料</text>
+    <text class="ent" x="27" y="223">当月支払高</text>
+    <text class="ent" x="27" y="238">月末未払高</text>
+    <text class="ent" x="104.5" y="223">直接労務費</text>
+    <text class="ent" x="104.5" y="238">間接労務費</text>
+    <text class="ent" x="104.5" y="253">月初未払高</text>
+  </g>
+
+  <!-- 経費 -->
+  <g class="node" data-node="expense" tabindex="0" role="button" aria-label="経費勘定の解説を開く">
+    <rect class="box" x="20" y="300" width="155" height="90" rx="8"></rect>
+    <rect class="hd" x="21" y="301" width="153" height="26" rx="7"></rect>
+    <rect class="hd" x="21" y="314" width="153" height="13"></rect>
+    <line class="div" x1="20" y1="327" x2="175" y2="327"></line>
+    <line class="div" x1="97.5" y1="327" x2="97.5" y2="390"></line>
+    <text class="node-label" x="97.5" y="320" text-anchor="middle" data-label="経費">経費</text>
+    <text class="ent" x="27" y="343">当月発生額</text>
+    <text class="ent" x="104.5" y="343">直接経費</text>
+    <text class="ent" x="104.5" y="358">間接経費</text>
+  </g>
+
+  <!-- 製造間接費 -->
+  <g class="node" data-node="oh" tabindex="0" role="button" aria-label="製造間接費勘定の解説を開く">
+    <rect class="box" x="320" y="40" width="190" height="88" rx="8"></rect>
+    <rect class="hd" x="321" y="41" width="188" height="26" rx="7"></rect>
+    <rect class="hd" x="321" y="54" width="188" height="13"></rect>
+    <line class="div" x1="320" y1="67" x2="510" y2="67"></line>
+    <line class="div" x1="415" y1="67" x2="415" y2="128"></line>
+    <text class="node-label" x="415" y="60" text-anchor="middle" data-label="製造間接費">製造間接費</text>
+    <text class="ent" x="327" y="83">間接材料費</text>
+    <text class="ent" x="327" y="98">間接労務費</text>
+    <text class="ent" x="327" y="113">間接経費</text>
+    <text class="ent" x="422" y="83">仕掛品へ配賦</text>
+  </g>
+
+  <!-- 仕掛品 -->
+  <g class="node" data-node="wip" tabindex="0" role="button" aria-label="仕掛品勘定の解説を開く">
+    <rect class="box" x="320" y="240" width="190" height="120" rx="8"></rect>
+    <rect class="hd" x="321" y="241" width="188" height="26" rx="7"></rect>
+    <rect class="hd" x="321" y="254" width="188" height="13"></rect>
+    <line class="div" x1="320" y1="267" x2="510" y2="267"></line>
+    <line class="div" x1="415" y1="267" x2="415" y2="360"></line>
+    <text class="node-label" x="415" y="260" text-anchor="middle" data-label="仕掛品">仕掛品</text>
+    <text class="ent" x="327" y="283">月初有高</text>
+    <text class="ent" x="327" y="298">直接材料費</text>
+    <text class="ent" x="327" y="313">直接労務費</text>
+    <text class="ent" x="327" y="328">直接経費</text>
+    <text class="ent" x="327" y="343">製造間接費</text>
+    <text class="ent" x="422" y="283">当月完成品原価</text>
+    <text class="ent" x="422" y="298">月末有高</text>
+  </g>
+
+  <!-- 製品 -->
+  <g class="node" data-node="fg" tabindex="0" role="button" aria-label="製品勘定の解説を開く">
+    <rect class="box" x="600" y="240" width="180" height="90" rx="8"></rect>
+    <rect class="hd" x="601" y="241" width="178" height="26" rx="7"></rect>
+    <rect class="hd" x="601" y="254" width="178" height="13"></rect>
+    <line class="div" x1="600" y1="267" x2="780" y2="267"></line>
+    <line class="div" x1="690" y1="267" x2="690" y2="330"></line>
+    <text class="node-label" x="690" y="260" text-anchor="middle" data-label="製品">製品</text>
+    <text class="ent" x="607" y="283">月初有高</text>
+    <text class="ent" x="607" y="298">当月完成品原価</text>
+    <text class="ent" x="697" y="283">当月売上原価</text>
+    <text class="ent" x="697" y="298">月末有高</text>
+  </g>
+
+  <!-- 売上原価 -->
+  <g class="node" data-node="cogs" tabindex="0" role="button" aria-label="売上原価勘定の解説を開く">
+    <rect class="box" x="850" y="255" width="140" height="58" rx="8"></rect>
+    <rect class="hd" x="851" y="256" width="138" height="26" rx="7"></rect>
+    <rect class="hd" x="851" y="269" width="138" height="13"></rect>
+    <line class="div" x1="850" y1="282" x2="990" y2="282"></line>
+    <line class="div" x1="920" y1="282" x2="920" y2="313"></line>
+    <text class="node-label" x="920" y="275" text-anchor="middle" data-label="売上原価">売上原価</text>
+    <text class="ent" x="857" y="298">製品から</text>
+    <text class="ent" x="927" y="298">月次損益へ</text>
+  </g>
+
+  <!-- 月次損益 -->
+  <g class="node" data-node="pl" tabindex="0" role="button" aria-label="月次損益勘定の解説を開く">
+    <rect class="box" x="850" y="400" width="140" height="58" rx="8"></rect>
+    <rect class="hd" x="851" y="401" width="138" height="26" rx="7"></rect>
+    <rect class="hd" x="851" y="414" width="138" height="13"></rect>
+    <line class="div" x1="850" y1="427" x2="990" y2="427"></line>
+    <line class="div" x1="920" y1="427" x2="920" y2="458"></line>
+    <text class="node-label" x="920" y="420" text-anchor="middle" data-label="月次損益">月次損益</text>
+    <text class="ent" x="857" y="443">売上原価</text>
+    <text class="ent" x="927" y="443">売上</text>
+  </g>
+
+  <!-- 凡例 -->
+  <g>
+    <path class="fl fl--d" d="M20,470 L50,470" marker-end="url(#arD)"></path>
+    <text class="leg" x="58" y="474">直接費（仕掛品へ直行）</text>
+    <path class="fl fl--i" d="M230,470 L260,470" marker-end="url(#arI)"></path>
+    <text class="leg" x="268" y="474">間接費（製造間接費へ集める）</text>
+    <path class="fl fl--m" d="M520,470 L550,470" marker-end="url(#arM)"></path>
+    <text class="leg" x="558" y="474">原価の流れ</text>
+  </g>
+</svg>
+    </div>
+    <p class="figure__cap">工業簿記の勘定連絡図。左から右へ、原価が形を変えながら流れていく。箱をクリックすると、その勘定の解説が下に表示されます。</p>
+  </div>
+
+  <div id="node-detail" class="card"></div>
+
+  <h3>この図の読み方</h3>
+
+  <ol class="steps">
+    <li><strong>左端の3つは「何を消費したか」の受け皿</strong>材料・賃金・給料・経費。工場で発生した原価は、まずこの3つのどれかに入ります。ここが形態別分類（材料費・労務費・経費）に対応しています。</li>
+    <li><strong>そこから道が2本に分かれる</strong>直接費は仕掛品へまっすぐ。間接費は製造間接費へ。この分岐が製品との関連による分類（直接費・間接費）に対応しています。左の3つの箱それぞれから2本ずつ、合計6本の矢印が出るのは、原価が6つに分類されるからです。</li>
+    <li><strong>製造間接費で合流し、配賦されて仕掛品へ合流する</strong>いったん1か所に集めた間接費を、基準にしたがって割り振る。この矢印1本が、のちに「予定配賦」「差異分析」「部門別計算」という大論点になります。</li>
+    <li><strong>仕掛品にすべてが集まる</strong>直接材料費・直接労務費・直接経費・製造間接費配賦額。これに月初仕掛品を足したものが、仕掛品勘定の借方合計です。図の中心はここです。</li>
+    <li><strong>完成した分だけが製品へ出ていく</strong>仕掛品の借方合計から月末仕掛品を引いた残りが、当月完成品原価。まだ作りかけの分は仕掛品に残ります。</li>
+    <li><strong>売れた分だけが売上原価へ出ていく</strong>製品の借方合計から月末製品を引いた残りが、当月売上原価。売れ残りは製品として資産に残ります。</li>
+    <li><strong>売上原価は月次損益で締められる</strong>ここでようやく費用になり、売上高と対応させて利益が出ます。販売費及び一般管理費は、この長い道を通らずに直接ここへ来ます。</li>
+  </ol>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">「入って、出て、残る」がすべての箱で同じ</span>
+    <p>材料・仕掛品・製品の3つは、構造がまったく同じです。<strong>借方＝月初有高＋当月の増加／貸方＝当月の減少＋月末有高。</strong>そして「当月の減少」は、借方合計から月末有高を引けば求まります。この形は3級の商品有高帳とまったく同じ考え方です。新しいことは何も起きていません。</p>
+  </div>
+
+  <h2 id="s4"><span class="num">4</span>1本の流れを、数字と仕訳で追う</h2>
+
+  <p>図の形が入ったら、次は数字を1本通します。以下は当月1か月ぶんの資料です。この数字が図のどこに乗るのかを意識しながら読んでください。</p>
+
+  <div class="card">
+    <div class="card__label">当月の資料</div>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>項目</th><th class="num">金額</th><th>内訳・備考</th></tr></thead>
+      <tbody>
+        <tr><td>材料 月初有高</td><td class="num">20,000</td><td class="small muted">前月から繰り越された在庫</td></tr>
+        <tr><td>材料 当月仕入高</td><td class="num">180,000</td><td class="small muted">引取運賃込み</td></tr>
+        <tr><td>材料 月末有高</td><td class="num">30,000</td><td class="small muted">実地棚卸の結果</td></tr>
+        <tr><td>賃金・給料 当月支払高</td><td class="num">150,000</td><td class="small muted">月初未払 20,000／月末未払 30,000</td></tr>
+        <tr><td>経費 当月発生額</td><td class="num">90,000</td><td class="small muted">うち外注加工賃 10,000</td></tr>
+        <tr><td>仕掛品 月初有高</td><td class="num">40,000</td><td></td></tr>
+        <tr><td>仕掛品 月末有高</td><td class="num">60,000</td><td></td></tr>
+        <tr><td>製品 月初有高</td><td class="num">50,000</td><td></td></tr>
+        <tr><td>製品 月末有高</td><td class="num">70,000</td><td></td></tr>
+        <tr><td>当月売上高</td><td class="num">500,000</td><td class="small muted">すべて掛け売上</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small muted" style="margin-bottom:0">直接・間接の内訳：材料の消費額のうち直接材料費 140,000／賃金の消費額のうち直接労務費 120,000／経費のうち直接経費（外注加工賃）10,000。製造間接費は実際発生額をそのまま仕掛品に配賦する。</p>
+  </div>
+
+  <h3>ステップ① 材料の消費</h3>
+
+  <p>まず、当月に材料をいくら使ったのかを出します。買った金額ではなく、<strong>使った金額</strong>です。</p>
+
+  <div class="keyflow">
+    <kbd>月初 20,000</kbd><span class="arrow">＋</span><kbd>仕入 180,000</kbd><span class="arrow">−</span><kbd>月末 30,000</kbd><span class="arrow">＝</span><kbd>消費額 170,000</kbd>
+  </div>
+
+  <p>この 170,000円 のうち、直接材料費が 140,000円。残りの 30,000円 が間接材料費です（170,000 − 140,000 ＝ 30,000）。図の上では、材料の箱から2本の矢印が出ていく場面です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 材料を消費した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">140,000</td><td class="c">材料</td><td class="c amt">170,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">30,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>ステップ② 賃金・給料の消費</h3>
+
+  <p>賃金も「払った金額」ではなく「働いてもらった金額」が原価です。当月に払った 150,000円 のうち 20,000円 は<em>先月ぶん</em>の未払を精算したもの。逆に、当月働いてもらったのにまだ払っていない分が 30,000円 あります。</p>
+
+  <div class="keyflow">
+    <kbd>支払 150,000</kbd><span class="arrow">−</span><kbd>月初未払 20,000</kbd><span class="arrow">＋</span><kbd>月末未払 30,000</kbd><span class="arrow">＝</span><kbd>消費額 160,000</kbd>
+  </div>
+
+  <p>160,000円 のうち直接労務費 120,000円、間接労務費 40,000円（160,000 − 120,000 ＝ 40,000）。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 賃金・給料を消費した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">120,000</td><td class="c">賃金・給料</td><td class="c amt">160,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">40,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>ステップ③ 経費の消費</h3>
+
+  <p>経費 90,000円 のうち、外注加工賃 10,000円 が直接経費。残り 80,000円 が間接経費です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ 経費を消費した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">10,000</td><td class="c">経費</td><td class="c amt">90,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">80,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>ステップ④ 製造間接費の配賦</h3>
+
+  <p>ここまでで製造間接費の箱に集まった金額を合計します。</p>
+
+  <div class="keyflow">
+    <kbd>間接材料費 30,000</kbd><span class="arrow">＋</span><kbd>間接労務費 40,000</kbd><span class="arrow">＋</span><kbd>間接経費 80,000</kbd><span class="arrow">＝</span><kbd>150,000</kbd>
+  </div>
+
+  <p>この 150,000円 を仕掛品に配賦します。図の中央の縦向きの矢印です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>④ 製造間接費を仕掛品に配賦した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">150,000</td><td class="c">製造間接費</td><td class="c amt">150,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">この仕訳で製造間接費勘定の残高はゼロになります。集めて、配って、空にする。製造間接費は<strong>通過点</strong>の勘定です。</p>
+
+  <h3>ステップ⑤ 完成</h3>
+
+  <p>仕掛品の借方に入った金額を数えます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>仕掛品 借方の内訳</th><th class="num">金額</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品原価</td><td class="num">40,000</td></tr>
+      <tr><td>直接材料費</td><td class="num">140,000</td></tr>
+      <tr><td>直接労務費</td><td class="num">120,000</td></tr>
+      <tr><td>直接経費</td><td class="num">10,000</td></tr>
+      <tr><td>製造間接費配賦額</td><td class="num">150,000</td></tr>
+      <tr><td><strong>借方合計</strong></td><td class="num"><strong>460,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>このうち直接材料費・直接労務費・直接経費・製造間接費配賦額の4つを合計した <strong>420,000円</strong> を<strong>当月製造費用</strong>といいます（140,000 ＋ 120,000 ＋ 10,000 ＋ 150,000 ＝ 420,000）。製造原価報告書の様式では同じものを<strong>当月総製造費用</strong>と表示します。呼び名が2つありますが中身は同じです。月初仕掛品 40,000円 を足して 460,000円。ここから月末仕掛品 60,000円 を引いた残りが、当月に完成した製品の原価です。</p>
+
+  <div class="keyflow">
+    <kbd>460,000</kbd><span class="arrow">−</span><kbd>月末仕掛品 60,000</kbd><span class="arrow">＝</span><kbd>当月完成品原価 400,000</kbd>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑤ 製品が完成した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製品</td><td class="d amt">400,000</td><td class="c">仕掛品</td><td class="c amt">400,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>ステップ⑥ 販売</h3>
+
+  <p>製品の箱でも同じ計算をします。月初製品 50,000円 ＋ 当月完成 400,000円 ＝ 450,000円。ここから月末製品 70,000円 を引いて、当月売上原価は 380,000円 です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑥ 製品を売り上げた（売価 500,000円・掛け／その原価 380,000円）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売掛金</td><td class="d amt">500,000</td><td class="c">売上</td><td class="c amt">500,000</td></tr>
+      <tr><td class="d">売上原価</td><td class="d amt">380,000</td><td class="c">製品</td><td class="c amt">380,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">売上の仕訳と売上原価の仕訳は「2本セット」</span>
+    <p>3級の三分法では、売ったときに売上だけを記録し、原価は決算で一括計算していました。工業簿記では<strong>売った瞬間に、売価の仕訳と原価の仕訳を2本立てます</strong>（売上原価対立法と同じ考え方）。片方を書き忘れる人が非常に多い場所です。</p>
+  </div>
+
+  <h3>ステップ⑦ 月次損益への振替</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑦ 収益と費用を月次損益に振り替えた</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上</td><td class="d amt">500,000</td><td class="c">月次損益</td><td class="c amt">500,000</td></tr>
+      <tr><td class="d">月次損益</td><td class="d amt">380,000</td><td class="c">売上原価</td><td class="c amt">380,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>月次損益の貸方 500,000円 − 借方 380,000円 ＝ <strong>売上総利益 120,000円</strong>。ここから販売費及び一般管理費を引けば営業利益になります。</p>
+
+  <h3>T字勘定で貸借を確認する</h3>
+
+  <p>ここまでの流れを勘定の形で並べます。<strong>どの勘定も左右の合計が一致</strong>していることを、自分の目と電卓で確かめてください。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">材料</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>月初有高</span><span>20,000</span></div>
+          <div class="l"><span>当月仕入高</span><span>180,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>200,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品</span><span>140,000</span></div>
+          <div class="l"><span>製造間接費</span><span>30,000</span></div>
+          <div class="l"><span>月末有高</span><span>30,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>200,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tacc">
+      <div class="tacc__name">賃金・給料</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>当月支払高</span><span>150,000</span></div>
+          <div class="l"><span>月末未払高</span><span>30,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>180,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>月初未払高</span><span>20,000</span></div>
+          <div class="l"><span>仕掛品</span><span>120,000</span></div>
+          <div class="l"><span>製造間接費</span><span>40,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>180,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">製造間接費</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>間接材料費</span><span>30,000</span></div>
+          <div class="l"><span>間接労務費</span><span>40,000</span></div>
+          <div class="l"><span>間接経費</span><span>80,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>150,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品</span><span>150,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>150,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tacc">
+      <div class="tacc__name">仕掛品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>月初有高</span><span>40,000</span></div>
+          <div class="l"><span>直接材料費</span><span>140,000</span></div>
+          <div class="l"><span>直接労務費</span><span>120,000</span></div>
+          <div class="l"><span>直接経費</span><span>10,000</span></div>
+          <div class="l"><span>製造間接費</span><span>150,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>460,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品</span><span>400,000</span></div>
+          <div class="l"><span>月末有高</span><span>60,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>460,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">製品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>月初有高</span><span>50,000</span></div>
+          <div class="l"><span>仕掛品</span><span>400,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>450,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>売上原価</span><span>380,000</span></div>
+          <div class="l"><span>月末有高</span><span>70,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>450,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tacc">
+      <div class="tacc__name">売上原価</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>製品</span><span>380,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>380,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>月次損益</span><span>380,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>380,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この設例の数字を、そのまま覚えてしまう</span>
+    <p>20,000／180,000／30,000 …… この一式を丸ごと記憶して、白紙に図と数字を同時に書けるようにすると、非常に強くなります。本番で「材料の消費額の出し方って、足すんだっけ引くんだっけ」と迷ったとき、覚えた数字を当てはめれば一瞬で確認できるからです。<strong>覚えた具体例は、公式より速い。</strong></p>
+  </div>
+
+  <details class="acc">
+    <summary>参考：この設例の製造原価報告書と損益計算書（W1以降で扱います）</summary>
+    <div class="acc__body">
+      <p class="small muted">勘定連絡図と、決算書の様式は1対1で対応しています。いまは「対応している」ことだけ確認できれば十分です。</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>製造原価報告書</th><th class="num">金額</th></tr></thead>
+        <tbody>
+          <tr><td>Ⅰ 直接材料費</td><td class="num">140,000</td></tr>
+          <tr><td>Ⅱ 直接労務費</td><td class="num">120,000</td></tr>
+          <tr><td>Ⅲ 直接経費</td><td class="num">10,000</td></tr>
+          <tr><td>Ⅳ 製造間接費</td><td class="num">150,000</td></tr>
+          <tr><td>　当月総製造費用</td><td class="num">420,000</td></tr>
+          <tr><td>　月初仕掛品棚卸高</td><td class="num">40,000</td></tr>
+          <tr><td>　合計</td><td class="num">460,000</td></tr>
+          <tr><td>　月末仕掛品棚卸高</td><td class="num">△60,000</td></tr>
+          <tr><td><strong>　当月製品製造原価</strong></td><td class="num"><strong>400,000</strong></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>損益計算書（売上総利益まで）</th><th class="num">金額</th></tr></thead>
+        <tbody>
+          <tr><td>Ⅰ 売上高</td><td class="num">500,000</td></tr>
+          <tr><td>Ⅱ 売上原価</td><td class="num"></td></tr>
+          <tr><td>　月初製品棚卸高</td><td class="num">50,000</td></tr>
+          <tr><td>　当月製品製造原価</td><td class="num">400,000</td></tr>
+          <tr><td>　合計</td><td class="num">450,000</td></tr>
+          <tr><td>　月末製品棚卸高</td><td class="num">△70,000</td></tr>
+          <tr><td>　売上原価</td><td class="num">380,000</td></tr>
+          <tr><td><strong>　売上総利益</strong></td><td class="num"><strong>120,000</strong></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </details>
+
+  <h2 id="s5"><span class="num">5</span>この図の上に、これから学ぶ論点がどう乗るか</h2>
+
+  <p>ここが、このユニットに4時間かける最大の理由です。工業簿記のすべての論点は、この図のどこかを詳しくしているだけです。先に対応関係を見ておいてください。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>論点</th><th>図のどこの話か</th><th class="nowrap">学ぶ時期</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>費目別計算</strong><br><span class="small muted">材料費・労務費・経費</span></td>
+        <td>左端の3つの箱そのもの。「消費額をいくらと計算するか」（材料の払出単価、賃率、経費の測定）が中身です。</td>
+        <td class="nowrap">W1〜W2</td>
+      </tr>
+      <tr>
+        <td><strong>製造間接費の予定配賦・差異分析</strong></td>
+        <td>製造間接費の箱。実際に発生した額（借方）と、あらかじめ決めた率で配賦した額（貸方）がズレるので、その差を予算差異・操業度差異に分けて説明します。</td>
+        <td class="nowrap">W3</td>
+      </tr>
+      <tr>
+        <td><strong>部門別計算</strong></td>
+        <td>製造間接費と仕掛品の<strong>あいだに、部門費の箱が割り込みます</strong>。製造間接費 → 各部門 → 仕掛品。箱が1段増えるだけで、流れは変わりません。</td>
+        <td class="nowrap">W4</td>
+      </tr>
+      <tr>
+        <td><strong>個別原価計算</strong></td>
+        <td>仕掛品の箱の中身を、製造指図書ごと（No.101・No.102…）に分けて管理します。原価計算表がその明細です。</td>
+        <td class="nowrap">W4</td>
+      </tr>
+      <tr>
+        <td><strong>総合原価計算</strong></td>
+        <td>仕掛品の箱の中の計算方法。「月末仕掛品をいくらにするか」を、完成品換算量・平均法・先入先出法で決めます。工程別・組別・等級別はその応用です。</td>
+        <td class="nowrap">W5</td>
+      </tr>
+      <tr>
+        <td><strong>標準原価計算</strong></td>
+        <td>各箱に、実際の原価ではなく<strong>「あるべき原価」</strong>を入れます。実際との差を差異として抜き出し、材料・労務費・製造間接費それぞれで原因を分析します。</td>
+        <td class="nowrap">W6</td>
+      </tr>
+      <tr>
+        <td><strong>直接原価計算</strong></td>
+        <td>図の一部を組み替えます。固定製造原価を製造原価から外し、期間費用として直接に損益へ流す。仕掛品・製品を通る金額が変わります。</td>
+        <td class="nowrap">W7</td>
+      </tr>
+      <tr>
+        <td><strong>本社工場会計</strong></td>
+        <td>この図を、工場側の帳簿として切り出します。工場の帳簿には材料・仕掛品・製品が置かれ、本社との間は本社勘定・工場勘定でつなぎます。図そのものは変わりません。</td>
+        <td class="nowrap">W7</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この表の使いかた</span>
+    <p>W1以降、新しい論点に入るたびに、この表に戻ってきてください。<strong>「いま自分は図のどこを勉強しているのか」</strong>を毎回確認する。それだけで、工業簿記は「バラバラな計算の集まり」ではなく「1つの話」として頭に入ります。</p>
+    <p>本番の第4問・第5問でも同じです。問題文を読んで最初にやるのは、余白に図を描いて「今回聞かれているのはこの矢印だ」と当たりをつけることです。</p>
+  </div>
+
+  <h2 id="s6"><span class="num">6</span>描く練習</h2>
+
+  <p>ここからがこのユニットの本体です。読んで分かった気になっても、白紙に描けなければ本番では使えません。<strong>紙とペンを用意してください。</strong></p>
+
+  <h3>描く手順</h3>
+
+  <ol class="steps">
+    <li><strong>両端に杭を打つ</strong>紙の左端に「材料」「賃金・給料」「経費」の3つを縦に並べ、右端に「売上原価」を書きます。この4つが図の外枠です。ゴールから先に決めると、途中が迷子になりません。</li>
+    <li><strong>真ん中に仕掛品</strong>図の中心。左3つと売上原価のちょうど中間あたりに置きます。</li>
+    <li><strong>仕掛品と右端の間に製品</strong>仕掛品 → 製品 → 売上原価 の3つが横一列に並びます。</li>
+    <li><strong>左3つと仕掛品の間の「上」に製造間接費</strong>ここが図の立体感を作る場所。仕掛品の真上あたりに置きます。</li>
+    <li><strong>直接費の矢印を3本、仕掛品へ</strong>材料 → 仕掛品（直接材料費）、賃金・給料 → 仕掛品（直接労務費）、経費 → 仕掛品（直接経費）。矢印の横に費目名を書きます。</li>
+    <li><strong>間接費の矢印を3本、製造間接費へ</strong>材料 → 製造間接費（間接材料費）、賃金・給料 → 製造間接費（間接労務費）、経費 → 製造間接費（間接経費）。左の3つの箱それぞれから2本ずつ出ている状態になります。</li>
+    <li><strong>製造間接費から仕掛品へ、配賦の矢印</strong>矢印の横に「配賦」と書きます。この1本が第4問の頻出論点です。</li>
+    <li><strong>仕掛品 → 製品 → 売上原価</strong>矢印の上に「当月完成品原価」「当月売上原価」と書いて完成。余力があれば、売上原価 → 月次損益 まで。</li>
+  </ol>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">順番に決まりはないが、毎回同じ順で描く</span>
+    <p>上の手順が唯一の正解ではありません。左から順に描く人もいれば、仕掛品を先に置く人もいます。大事なのは<mark>毎回まったく同じ順序で描くこと</mark>です。順序を固定すると手が順番を覚えて、本番では考えずに手が動きます。逆に毎回違う順で描いていると、いつまでも「次はどこだっけ」と考え続けることになります。</p>
+    <p>目標時間は<strong>90秒</strong>。本番の答案用紙の余白に、90秒で描けるようにしておくと、第4問・第5問の見通しが劇的に良くなります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">描いたあとに必ずやる自己チェック</span>
+    <p>描き終えたら、次の4点を自分で点検してください。<strong>①左の3つの箱から矢印が2本ずつ、合計6本出ているか</strong>／<strong>②その6本のうち3本が仕掛品、3本が製造間接費に向かっているか</strong>／<strong>③製造間接費から仕掛品への矢印に「配賦」と書いたか</strong>／<strong>④仕掛品と製品の箱に「月初」「月末」を書き添えたか</strong>。抜けるのはたいてい④です。</p>
+  </div>
+
+  <h3>練習ログ</h3>
+
+  <p class="small muted">同じ図を5回描きます。1回描くごとにチェックを入れてください。チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#logchk"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#logchk">0 / 0 完了（0%）</div>
+
+  <div id="logchk">
+  <ul class="checklist">
+    <li><input type="checkbox" id="lg1" data-key="u2log-1"><label for="lg1"><span class="cl__t">1回目 — 上の図を見ながら、そっくり写す</span><span class="cl__d">まずは形を手に通す。この回は見てよい</span></label></li>
+    <li><input type="checkbox" id="lg2" data-key="u2log-2"><label for="lg2"><span class="cl__t">2回目 — 穴埋めモードで、勘定名だけ自分で埋める</span><span class="cl__d">上のボタンで勘定名を隠し、7つの勘定名を言えるか確認する</span></label></li>
+    <li><input type="checkbox" id="lg3" data-key="u2log-3"><label for="lg3"><span class="cl__t">3回目 — 何も見ずに描く（詰まったら見てよい）</span><span class="cl__d">どこで手が止まったかを覚えておく。止まった場所が弱点</span></label></li>
+    <li><input type="checkbox" id="lg4" data-key="u2log-4"><label for="lg4"><span class="cl__t">4回目 — 何も見ずに、最後まで一度も見ずに描き切る</span><span class="cl__d">矢印のラベル（直接材料費・配賦など）まで書く</span></label></li>
+    <li><input type="checkbox" id="lg5" data-key="u2log-5"><label for="lg5"><span class="cl__t">5回目 — 90秒以内に描き切る</span><span class="cl__d">時間を計る。本番の余白で使える速度にする</span></label></li>
+    <li><input type="checkbox" id="lg6" data-key="u2log-6"><label for="lg6"><span class="cl__t">翌日 — もう一度、何も見ずに描く</span><span class="cl__d">これが一番重要。1日目に描けても翌日には消えていることが多い。一晩挟んで描けて、初めて定着したといえる</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <h2 id="s7"><span class="num">7</span>理解チェック</h2>
+
+  <div id="quiz1"></div>
+
+  <div id="num1"></div>
+
+  <div id="fill1"></div>
+
+  <h2 id="s8"><span class="num">8</span>到達チェック</h2>
+
+  <p class="small muted">全部に✓が入ったら、このユニットは完了です。特に最後の2項目は、翌日に持ち越して構いません。</p>
+
+  <div class="progressbar" data-progress-for="#u2check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u2check">0 / 0 完了（0%）</div>
+
+  <div id="u2check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="u2k-1"><label for="k1"><span class="cl__t">原価の6分類を、具体例つきで言える</span><span class="cl__d">直接材料費／間接材料費／直接労務費／間接労務費／直接経費／間接経費</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="u2k-2"><label for="k2"><span class="cl__t">直接費と間接費で、図の中の通り道が違う理由を説明できる</span><span class="cl__d">間接費は個々の製品にひもづけられないので、1か所に集めてから配賦する</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="u2k-3"><label for="k3"><span class="cl__t">製造原価と販売費及び一般管理費の境目を説明できる</span><span class="cl__d">工場で発生したかどうか。工場の事務員の給料は製造原価、本社の事務員の給料は販管費</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="u2k-4"><label for="k4"><span class="cl__t">材料・仕掛品・製品の3つで「消費額（減少額）」の求め方が同じだと分かった</span><span class="cl__d">月初＋当月増加−月末。3級の商品有高帳と同じ構造</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="u2k-5"><label for="k5"><span class="cl__t">設例の数字を、材料から売上原価まで一気通貫で追えた</span><span class="cl__d">材料170,000 → 仕掛品460,000 → 完成400,000 → 売上原価380,000</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="u2k-6"><label for="k6"><span class="cl__t">7つの勘定それぞれで、代表的な仕訳を1本書ける</span><span class="cl__d">消費・配賦・完成・販売・振替</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="u2k-7"><label for="k7"><span class="cl__t">これから学ぶ論点が、図のどこに乗るかの対応表を一度通読した</span><span class="cl__d">W1以降、新しい論点に入るたびにここへ戻る</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="u2k-8"><label for="k8"><span class="cl__t">白紙に、何も見ずに勘定連絡図を描き切れた</span><span class="cl__d">このユニットのゴール。矢印のラベルまで書けること</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="u2k-9"><label for="k9"><span class="cl__t">翌日にもう一度、何も見ずに描いた</span><span class="cl__d">一晩挟んで描けて初めて定着。ここまでやって完了</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok" style="margin-top:28px">
+    <span class="callout__t">このユニットが終わったら</span>
+    <p>次は <a href="03_dentaku.html">UNIT 03 電卓トレーニング</a> です。工業簿記は配賦計算のように「同じ数を何度も掛ける」場面が多く、電卓の使い方がそのまま解答時間に効いてきます。図が描けるようになったこの状態で電卓に進むと、練習問題の意味も同時に分かります。</p>
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← Phase 0 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 0 教材</span>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+/* =========================================================
+   勘定連絡図 — ノード解説パネル ＆ 穴埋めモード
+   ========================================================= */
+(function () {
+  'use strict';
+
+  var NODES = {
+    material: {
+      name: '材料',
+      lead: '製品を作るために買ってきた「モノ」を管理する勘定です。買ったときに借方へ入り、使ったときに貸方から出ていきます。まだ使っていない分は月末有高として残り、翌月へ繰り越されます。',
+      dr: '月初有高（前月から繰り越された在庫）と、当月の仕入高。仕入高には引取運賃などの付随費用（材料副費）も含めます。',
+      cr: '当月に消費した分。直接材料費は仕掛品勘定へ、間接材料費は製造間接費勘定へ。残りが月末有高として次月へ繰り越されます。',
+      jcap: '材料 170,000円 を消費した（直接材料費 140,000円、間接材料費 30,000円）',
+      jnl: [['仕掛品', '140,000', '材料', '170,000'], ['製造間接費', '30,000', '', '']],
+      trap: '<strong>「買った金額」と「使った金額」は別物です。</strong>原価になるのは使った分だけ。消費額 ＝ 月初有高 ＋ 当月仕入高 − 月末有高 で計算します。当月仕入高をそのまま仕掛品に流してはいけません。'
+    },
+    labor: {
+      name: '賃金・給料',
+      lead: '工場で働く人に払う給料を管理する勘定です。ここでも「払った金額」ではなく「働いてもらった分＝消費額」が原価になります。',
+      dr: '当月に支払った金額と、当月末の未払高（当月働いてもらったが、まだ払っていない分）。',
+      cr: '当月の消費額（直接労務費は仕掛品へ、間接労務費は製造間接費へ）と、月初未払高（前月ぶんの未払で、当月の支払に含まれていた分）。',
+      jcap: '賃金・給料 160,000円 を消費した（直接労務費 120,000円、間接労務費 40,000円）',
+      jnl: [['仕掛品', '120,000', '賃金・給料', '160,000'], ['製造間接費', '40,000', '', '']],
+      trap: '支払額と消費額はズレます。<strong>消費額 ＝ 当月支払高 − 月初未払高 ＋ 月末未払高。</strong>また、直接工の賃金がすべて直接労務費になるわけではありません。材料待ちなどで作業していない時間（手待時間）ぶんは間接労務費です。'
+    },
+    expense: {
+      name: '経費',
+      lead: '材料費でも労務費でもない製造原価をまとめて扱う勘定です。工場の電気代・水道代、工場建物や機械の減価償却費、外注加工賃、工場の火災保険料などが入ります。',
+      dr: '当月の発生額。支払った額そのものではなく、前払・未払を調整した「当月に発生した分」を計上します。',
+      cr: '直接経費（外注加工賃など）は仕掛品へ、間接経費は製造間接費へ。',
+      jcap: '経費 90,000円 を消費した（直接経費 10,000円、間接経費 80,000円）',
+      jnl: [['仕掛品', '10,000', '経費', '90,000'], ['製造間接費', '80,000', '', '']],
+      trap: '経費の大部分は<strong>間接経費</strong>です。直接経費になるのは外注加工賃や特定製品のための特許権使用料など、ごく限られたものだけ。また「工場の」電気代は製造原価ですが「本社の」電気代は販売費及び一般管理費です。なお実務・問題によっては経費勘定を設けず、各費目から直接に製造間接費へ振り替える形もあります。'
+    },
+    oh: {
+      name: '製造間接費',
+      lead: 'どの製品にいくらかかったか特定できない原価を、いったん全部ここに集めます。集めてから、一定の基準（直接作業時間・機械運転時間など）で各製品に割り振る。この割り振りが「配賦」です。',
+      dr: '間接材料費・間接労務費・間接経費。つまり実際に発生した製造間接費。',
+      cr: '仕掛品勘定へ配賦した金額。あらかじめ決めた率で配賦する（予定配賦）場合は、借方の実際発生額と貸方の配賦額に差が出ます。この差が製造間接費配賦差異で、予算差異と操業度差異に分解します（W3で学びます）。',
+      jcap: '製造間接費 150,000円 を仕掛品に配賦した',
+      jnl: [['仕掛品', '150,000', '製造間接費', '150,000']],
+      trap: '<strong>製造間接費は「経費」ではありません。</strong>間接材料費と間接労務費も含みます。「間接費＝経費」と覚えてしまうと必ず間違えます。また、この勘定は集めて配って空にする<strong>通過点</strong>です。実際配賦なら残高はゼロになります。'
+    },
+    wip: {
+      name: '仕掛品',
+      lead: '図の中心。まだ完成していない、作りかけの製品の原価が集まる場所です。左から流れ込んだ原価がここでいったん貯まり、完成した分だけが製品勘定へ出ていきます。',
+      dr: '月初仕掛品原価 ＋ 当月製造費用（直接材料費・直接労務費・直接経費・製造間接費配賦額の4つ）。',
+      cr: '当月完成品原価（製品勘定へ）と、月末仕掛品原価（次月繰越）。',
+      jcap: '製品 400,000円 が完成した',
+      jnl: [['製品', '400,000', '仕掛品', '400,000']],
+      trap: '借方に入った金額が、そのまま全部製品になるわけではありません。<strong>当月完成品原価 ＝ 月初仕掛品 ＋ 当月製造費用 − 月末仕掛品。</strong>そして「月末仕掛品をいくらと計算するか」を扱うのが総合原価計算（W5）です。仕掛品勘定の中身を製造指図書ごとに管理するのが個別原価計算（W4）。この1つの箱に、工業簿記の2大論点がぶら下がっています。'
+    },
+    fg: {
+      name: '製品',
+      lead: '完成した製品の倉庫にあたる勘定です。完成したときに入ってきて、売れたときに出ていきます。売れ残りは資産として残ります。',
+      dr: '月初製品有高 ＋ 当月完成品原価。',
+      cr: '当月売上原価（売れた分の製造原価）と、月末製品有高。',
+      jcap: '製品を売り上げた（売価 500,000円・掛け／その製造原価 380,000円）',
+      jnl: [['売掛金', '500,000', '売上', '500,000'], ['売上原価', '380,000', '製品', '380,000']],
+      trap: '<strong>売上の仕訳と売上原価の仕訳は2本セット</strong>です。片方の書き忘れが非常に多い。製品勘定から出ていくのは売れた「金額（売価）」ではなく、売れた製品の「原価」であることにも注意してください。'
+    },
+    cogs: {
+      name: '売上原価',
+      lead: '当月に売れた製品の製造原価。損益計算書で売上高から差し引かれる費用です。ここまで来て、はじめて原価が「費用」になります。',
+      dr: '製品勘定から振り替えられた当月売上原価。原価差異が出た場合、原則としてここで調整します。',
+      cr: '月末に月次損益（または損益）勘定へ振り替えて締めます。',
+      jcap: '売上原価 380,000円 を月次損益に振り替えた',
+      jnl: [['月次損益', '380,000', '売上原価', '380,000']],
+      trap: '<strong>製造原価と売上原価は違います。</strong>当月に作った原価が全部その月の売上原価になるわけではありません。売れ残った分は製品（資産）として貸借対照表に残り、費用になりません。「作った ≠ 売れた」という当たり前のことが、勘定の上ではこの2つの箱の違いとして表れます。'
+    },
+    pl: {
+      name: '月次損益',
+      lead: '1か月ぶんの収益と費用を集めて、当月の利益を計算する勘定です。工業簿記では原価管理のために月ごとに締めるのが基本なので、年に一度の損益勘定ではなく月次損益を使います。',
+      dr: '売上原価、販売費及び一般管理費など、当月の費用。',
+      cr: '売上高など、当月の収益。貸方合計 − 借方合計が当月の利益です。',
+      jcap: '売上 500,000円 を月次損益に振り替えた',
+      jnl: [['売上', '500,000', '月次損益', '500,000']],
+      trap: '<strong>販売費及び一般管理費は、ここに直接入ります。</strong>仕掛品にも製品にも入りません。本社の事務員の給料や広告宣伝費は、勘定連絡図の長い道を通らずに月次損益へ直行する ── これが「製造原価ではない」ということの、勘定の上での意味です。'
+    }
+  };
+
+  var svg = document.getElementById('renrakuzu');
+  var panel = document.getElementById('node-detail');
+  if (!svg || !panel) return;
+
+  function render(d) {
+    var rows = d.jnl.map(function (r) {
+      return '<tr><td class="d">' + r[0] + '</td><td class="d amt">' + r[1] + '</td>' +
+             '<td class="c">' + r[2] + '</td><td class="c amt">' + r[3] + '</td></tr>';
+    }).join('');
+    return '<div class="card__label">選択中の勘定</div>' +
+      '<h3 style="margin-top:0">' + d.name + '</h3>' +
+      '<p>' + d.lead + '</p>' +
+      '<div class="grid2">' +
+        '<div class="callout dside"><span class="callout__t">借方（左）に入るもの</span><p>' + d.dr + '</p></div>' +
+        '<div class="callout cside"><span class="callout__t">貸方（右）から出ていくもの</span><p>' + d.cr + '</p></div>' +
+      '</div>' +
+      '<div class="tablewrap"><table class="jnl"><caption>代表的な仕訳 — ' + d.jcap + '</caption>' +
+      '<thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table></div>' +
+      '<div class="callout callout--trap"><span class="callout__t">つまずきポイント</span><p>' + d.trap + '</p></div>';
+  }
+
+  var groups = svg.querySelectorAll('g.node');
+
+  function select(key) {
+    var d = NODES[key];
+    if (!d) return;
+    Array.prototype.forEach.call(groups, function (g) {
+      if (g.getAttribute('data-node') === key) g.classList.add('is-sel');
+      else g.classList.remove('is-sel');
+    });
+    panel.innerHTML = render(d);
+  }
+
+  Array.prototype.forEach.call(groups, function (g) {
+    var key = g.getAttribute('data-node');
+    g.addEventListener('click', function () { select(key); });
+    g.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        select(key);
+      }
+    });
+  });
+
+  select('material');
+
+  /* ---- 穴埋めモード ---- */
+  var btn = document.getElementById('blank-toggle');
+  var labels = svg.querySelectorAll('text.node-label');
+  var blank = false;
+  if (btn) {
+    btn.addEventListener('click', function () {
+      blank = !blank;
+      Array.prototype.forEach.call(labels, function (t) {
+        t.textContent = blank ? '＿＿＿' : t.getAttribute('data-label');
+      });
+      btn.textContent = blank ? '勘定名を表示する' : '勘定名を隠す（穴埋めモード）';
+      btn.setAttribute('aria-pressed', blank ? 'true' : 'false');
+    });
+  }
+})();
+
+/* =========================================================
+   ドリル
+   ========================================================= */
+BokiQuiz.mount('#quiz1', {
+  title: '理解チェック — 原価の分類と、図の上の通り道',
+  questions: [
+    {
+      text: '自動車メーカーで、車体に取り付けるタイヤの原価は次のどれか。',
+      choices: ['直接材料費', '間接材料費', '直接経費', '製造原価には入らない（販売費及び一般管理費）'],
+      answer: 0,
+      explain: '<p>モノを消費しているので<strong>材料費</strong>。そして「自動車1台にタイヤ4本」と、どの製品にいくら使ったかがはっきり分かるので<strong>直接費</strong>。合わせて直接材料費です。図の上では、材料勘定から仕掛品勘定へ直行します。</p>'
+    },
+    {
+      text: '工場で使う機械の潤滑油（機械油）の原価は次のどれか。',
+      choices: ['直接材料費', '間接材料費', '間接経費', '製造原価には入らない（販売費及び一般管理費）'],
+      answer: 1,
+      explain: '<p>油という<strong>モノ</strong>を消費しているので材料費です。ただし、その油がどの製品のために何円分使われたかは特定できないので<strong>間接費</strong>。よって間接材料費。「経費っぽい」と感じても、消費したものがモノなら材料費です。図の上では、材料勘定から製造間接費勘定へ向かいます。</p>'
+    },
+    {
+      text: '本社の経理部で働く事務員の給料は次のどれか。',
+      choices: ['直接労務費', '間接労務費', '間接経費', '製造原価には入らない（販売費及び一般管理費）'],
+      answer: 3,
+      explain: '<p>製造原価になるのは<strong>工場で発生した費用</strong>だけです。本社の事務員は製品を作っていないので、その給料は販売費及び一般管理費。勘定連絡図の長い道（材料 → 仕掛品 → 製品 → 売上原価）を通らず、月次損益へ直行します。</p><p><strong>比較：</strong>これが「<em>工場の</em>事務員の給料」なら間接労務費で、製造原価に入ります。同じ「事務員の給料」でも工場か本社かで正反対になるので、問題文の一言を必ず読んでください。</p>'
+    },
+    {
+      text: '工場の建物にかけた火災保険料は、勘定連絡図のうえでどこを通って仕掛品にたどり着くか。',
+      choices: [
+        '経費勘定 → 仕掛品勘定（直行する）',
+        '経費勘定 → 製造間接費勘定 → 仕掛品勘定',
+        '材料勘定 → 製造間接費勘定 → 仕掛品勘定',
+        'どこも通らない。販売費及び一般管理費である'
+      ],
+      answer: 1,
+      explain: '<p>工場で発生しているので製造原価。モノでも人でもないので<strong>経費</strong>。そして工場全体にかけた保険なので、どの製品にいくらとは特定できず<strong>間接経費</strong>です。間接費は必ず製造間接費勘定にいったん集められ、配賦されて仕掛品へ入ります。</p>'
+    },
+    {
+      text: '「配賦」とは何をすることか。',
+      choices: [
+        '製造間接費を、一定の基準にしたがって各製品（各製造指図書）に割り当てること',
+        '材料の購入額を、月初有高と月末有高に分けること',
+        '完成した製品の原価を、売上原価勘定に振り替えること',
+        '工場で発生した費用を、本社に請求すること'
+      ],
+      answer: 0,
+      explain: '<p>間接費は、そのままでは個々の製品にひもづけられません。そこで製造間接費勘定にいったん集め、直接作業時間や機械運転時間といった基準で「割り振り」ます。これが配賦です。図の中央の縦向きの矢印1本がこれにあたり、W3の予定配賦・差異分析、W4の部門別計算はどちらもこの矢印を詳しくした話です。</p>'
+    },
+    {
+      text: '仕掛品勘定の<strong>貸方</strong>に記入されるものの組み合わせとして正しいものはどれか。',
+      choices: [
+        '月初仕掛品原価 と 当月製造費用',
+        '当月完成品原価 と 月末仕掛品原価',
+        '当月完成品原価 と 当月売上原価',
+        '直接材料費 と 製造間接費配賦額'
+      ],
+      answer: 1,
+      explain: '<p>仕掛品勘定は「入って、出て、残る」の形です。借方＝月初仕掛品原価＋当月製造費用（直接材料費・直接労務費・直接経費・製造間接費配賦額）。貸方＝当月完成品原価（製品へ出ていく分）＋月末仕掛品原価（残る分）。</p><p>選択肢3の「当月売上原価」は製品勘定の貸方であって、仕掛品勘定には出てきません。</p>'
+    },
+    {
+      text: '直接工が製品の加工をしていた時間ぶんの賃金は直接労務費になる。では、材料待ちで作業ができず手が空いていた時間（手待時間）ぶんの賃金はどう扱うか。',
+      choices: ['直接労務費', '間接労務費', '直接経費', '製造原価には入らない（販売費及び一般管理費）'],
+      answer: 1,
+      explain: '<p>手待時間は、特定の製品のための作業をしていない時間です。どの製品の原価かを特定できないので<strong>間接労務費</strong>になります。「直接工の賃金＝直接労務費」と単純に覚えると間違える、W2の頻出ポイントです。直接工の賃金でも、直接作業時間ぶんだけが直接労務費になります。</p>'
+    },
+    {
+      text: '製造原価 500円 の製品を 800円 で販売した。このとき、製品勘定から売上原価勘定に振り替えられる金額はいくらか。',
+      choices: ['800円', '500円', '300円', '振り替えは行わない'],
+      answer: 1,
+      explain: '<p>製品勘定は原価で記録されている資産の勘定です。売れて出ていくのはその<strong>原価 500円</strong>。売価 800円 は売上（収益）として別の仕訳で記録します。</p><div class="tablewrap"><table class="jnl"><thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead><tbody><tr><td class="d">売掛金など</td><td class="d amt">800</td><td class="c">売上</td><td class="c amt">800</td></tr><tr><td class="d">売上原価</td><td class="d amt">500</td><td class="c">製品</td><td class="c amt">500</td></tr></tbody></table></div><p>差額の 300円 はどこにも仕訳されません。売上と売上原価が月次損益に集まった結果として、利益 300円 が自動的に出てきます。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num1', {
+  title: '計算ドリル — 図の上を数字で歩く',
+  badge: '計算ドリル',
+  questions: [
+    {
+      text: '材料の月初有高は 20,000円、当月仕入高は 180,000円、月末有高は 30,000円 であった。<strong>当月の材料消費額</strong>はいくらか。',
+      answer: 170000, unit: '円',
+      hint: '原価になるのは「使った分」だけ。買った金額ではありません。',
+      explain: '<p>20,000 ＋ 180,000 − 30,000 ＝ <strong>170,000円</strong></p><p>検算：材料勘定の借方合計は 20,000 ＋ 180,000 ＝ 200,000円。貸方は 消費額 170,000 ＋ 月末有高 30,000 ＝ 200,000円。左右が一致します。</p>'
+    },
+    {
+      text: '賃金・給料の当月支払高は 150,000円、月初未払高は 20,000円、月末未払高は 30,000円 であった。<strong>当月の賃金消費額</strong>はいくらか。',
+      answer: 160000, unit: '円',
+      hint: '当月の支払には「先月ぶんの未払を精算した分」が混ざっています。逆に、当月働いてもらったのにまだ払っていない分があります。',
+      explain: '<p>150,000 − 20,000 ＋ 30,000 ＝ <strong>160,000円</strong></p><p>先月ぶんの精算 20,000円 は当月の原価ではないので引く。当月働いてもらった未払 30,000円 は当月の原価なので足す。</p><p>検算：賃金・給料勘定の借方は 当月支払 150,000 ＋ 月末未払 30,000 ＝ 180,000円。貸方は 月初未払 20,000 ＋ 消費額 160,000 ＝ 180,000円。左右が一致します。</p>'
+    },
+    {
+      text: '製造間接費は直接作業時間を基準に予定配賦している。予定配賦率は 1時間あたり 600円、当月の実際直接作業時間は 250時間 であった。<strong>当月の製造間接費配賦額</strong>はいくらか。',
+      answer: 150000, unit: '円',
+      hint: '配賦額 ＝ 配賦率 × 実際の配賦基準量。',
+      explain: '<p>600円 × 250時間 ＝ <strong>150,000円</strong></p><p>この 150,000円 が、製造間接費勘定の貸方から仕掛品勘定の借方へ移動します。図の中央の縦向きの矢印がこれです。</p><p>なお、この月の製造間接費の実際発生額も 150,000円（間接材料費 30,000 ＋ 間接労務費 40,000 ＋ 間接経費 80,000）だったので、配賦差異は生じていません。実際発生額とズレたときに差異分析が必要になります（W3）。</p>'
+    },
+    {
+      text: '当月の直接材料費 140,000円、直接労務費 120,000円、直接経費 10,000円、製造間接費配賦額 150,000円。月初仕掛品原価は 40,000円、月末仕掛品原価は 60,000円 であった。<strong>①当月製造費用</strong>と<strong>②当月完成品原価</strong>を求めなさい。',
+      answer: [420000, 400000], labels: ['① 当月製造費用', '② 当月完成品原価'], unit: '円',
+      hint: '当月製造費用は「当月に仕掛品へ流し込んだ4つの合計」。完成品原価はそこに月初を足して月末を引きます。',
+      explain: '<p>① 140,000 ＋ 120,000 ＋ 10,000 ＋ 150,000 ＝ <strong>420,000円</strong></p><p>② 40,000 ＋ 420,000 − 60,000 ＝ <strong>400,000円</strong></p><p>検算：仕掛品勘定の借方合計は 40,000 ＋ 420,000 ＝ 460,000円。貸方は 完成品 400,000 ＋ 月末 60,000 ＝ 460,000円。左右が一致します。</p><p>①で月初仕掛品を足してしまう間違いが非常に多い場所です。「当月<em>製造費用</em>」は当月に新しく投入した分だけ。月初仕掛品は先月投入した分なので入りません。</p>'
+    },
+    {
+      text: '月初製品有高は 50,000円、当月完成品原価は 400,000円、月末製品有高は 70,000円 であった。<strong>当月の売上原価</strong>はいくらか。',
+      answer: 380000, unit: '円',
+      hint: '製品勘定も「月初 ＋ 当月増加 − 月末」。材料や仕掛品とまったく同じ構造です。',
+      explain: '<p>50,000 ＋ 400,000 − 70,000 ＝ <strong>380,000円</strong></p><p>検算：製品勘定の借方合計は 50,000 ＋ 400,000 ＝ 450,000円。貸方は 売上原価 380,000 ＋ 月末 70,000 ＝ 450,000円。左右が一致します。</p><p>当月に 400,000円 ぶん作りましたが、売上原価になったのは 380,000円 です。作った金額と売れた金額は一致しません。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill1', {
+  title: '勘定名の穴埋め',
+  questions: [
+    {
+      text: 'まだ完成していない、作りかけの製品の原価を集計しておく勘定を ______ 勘定という。',
+      answer: ['仕掛品'],
+      explain: '<p>勘定連絡図の中心にある箱です。借方に月初有高と当月製造費用が入り、貸方から当月完成品原価が製品勘定へ出ていきます。</p>'
+    },
+    {
+      text: 'どの製品にいくらかかったかを個別に把握できない原価を、いったん集めておく勘定を ______ 勘定という。',
+      answer: ['製造間接費'],
+      explain: '<p>間接材料費・間接労務費・間接経費の3つがここに集まり、配賦されて仕掛品へ移ります。「間接費」だけでは不十分で、勘定科目としては「製造間接費」です。</p>'
+    },
+    {
+      text: '製造間接費を、直接作業時間などの一定の基準にしたがって各製品に割り当てる手続きを ______ という。',
+      answer: ['配賦', '配賦する'],
+      explain: '<p>「配布」ではなく「配賦」。図の中央の縦向きの矢印がこれにあたります。予定配賦率を使う場合、実際発生額との差が製造間接費配賦差異になります。</p>'
+    },
+    {
+      text: '完成した製品のうち、当月に販売された分の原価を振り替える先の勘定を ______ 勘定という。',
+      answer: ['売上原価'],
+      explain: '<p>製品勘定の貸方から売上原価勘定の借方へ移ります。売れ残った分は製品勘定に月末有高として残り、費用になりません。</p>'
+    }
+  ]
+});
+</script>
+</body>
+</html>
