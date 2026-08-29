@@ -467,6 +467,69 @@ CHECKS.push(async function checkTopicsMeta(page, file) {
   }
 });
 
+// ゲート10：BokiQuiz の設問に書かれた数値を検算する。
+//
+// answer は選択肢のインデックスなので、BokiNum の formula 方式は載らない。
+// 代わりに設問が invariant（成り立つべき等式）を宣言し、それを評価する。
+// 不変条件を検査側に組み込まないのは、端数処理のように「一致しないことを
+// 教えている」設問が正しく存在するため。教材が「ここは一致しない」と
+// 言えなければ、正しい教材が落ちる。
+//
+// 対象は「全選択肢が金額を含む」設問に限る。金額が条件として出てくるだけの
+// 設問（「1,000万円以上で2%割戻…この処理はどれか」）は、答えが金額ではなく
+// 検算しようがない。含めると書きようのない invariant を要求することになる。
+CHECKS.push(async function checkQuizNumbers(page, file) {
+  const items = await page.evaluate(() => {
+    const money = /[0-9]{1,3}(,[0-9]{3})+|[0-9]+\s*円/;
+    const out = [];
+    for (const { sel, cfg } of (window.__captured?.quiz || [])) {
+      (cfg.questions || []).forEach((q, i) => {
+        const choices = (q.choices || []).map((c) => String(c).replace(/<[^>]*>/g, ''));
+        out.push({
+          id: sel + '#q' + (i + 1),
+          allMoney: choices.length > 1 && choices.every((c) => money.test(c)),
+          invariant: q.invariant,
+          answerText: choices[q.answer] || '',
+        });
+      });
+    }
+    return out;
+  });
+
+  for (const it of items) {
+    if (!it.allMoney) continue;
+    if (it.invariant === undefined) {
+      report(file, it.id, 'invariant あり', 'なし',
+        '選択肢が金額なのに検算式がない（数値が誤っていても検出できない）');
+      continue;
+    }
+    for (const [k, pair] of (it.invariant || []).entries()) {
+      const [lhs, rhs, opt] = pair;
+      const id = it.id + '.inv' + (k + 1);
+      // 'answer' は正解の選択肢から取り出した数値。問題文の数値と
+      // 選択肢の数値が繋がっていないと、片方だけ誤っていても通る。
+      const sub = (x) => String(x) === 'answer'
+        ? (it.answerText.match(/[0-9][0-9,]*/) || [''])[0].replace(/,/g, '')
+        : String(x);
+      let a, b;
+      try { a = evalFormula(sub(lhs)); b = evalFormula(sub(rhs)); }
+      catch (e) {
+        report(file, id, '評価できる式', lhs + ' / ' + rhs, '式を評価できない: ' + e.message);
+        continue;
+      }
+      const tol = opt && Number(opt.tolerance) || 0;
+      // 許容誤差には理由を書かせる。黙って許すと、本当の計算違いが
+      // tolerance に隠れる。
+      if (tol && !(opt && opt.why)) {
+        report(file, id, 'tolerance に why', 'なし', '許容誤差の理由が書かれていない');
+      }
+      if (Math.abs(a - b) > tol + 1e-9) {
+        report(file, id, a, b, '検算が合わない（' + lhs + ' ≠ ' + rhs + '）');
+      }
+    }
+  }
+});
+
 // ゲート9：進捗記録の健全性。
 // 記録の配線が切れても画面には何も現れない。気づくのは数週間後、記録を
 // 書き出そうとして空だったときであり、そのデータはもう戻らない。

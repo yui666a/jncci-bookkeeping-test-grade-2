@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第五-1-0,工-第五-2-0,工-第五-3-0,工-第五-4-0,工-第五-5-0,工-第五-6-0">
+<title>材料費 — 日商簿記2級 Phase 1 W1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 04 材料費</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 04 ／ 3時間 ／ 工業簿記</p>
+    <h1>材料費<br>— 費目別計算の1つ目</h1>
+    <p class="lead">原価計算の3手続（費目別 → 部門別 → 製品別）のうち、いちばん最初の<strong>費目別計算</strong>に入ります。費目別計算とは、工場で使ったお金を材料費・労務費・経費の3つに分けて金額を確定させる作業のことでした。この単元はその1つ目、<strong>材料費</strong>です。「いくらで買ったか」「いくつ使ったか」「1つあたりいくらとして計算するか」の3つを順に固めていきます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 10問</span>
+      <span class="chip">計算ドリル 8問</span>
+      <span class="chip">確認テスト 10問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">材料費は勘定連絡図のどこにいるか</a></li>
+      <li><a href="#s2">材料費の分類 — 直課するか、集めるか</a></li>
+      <li><a href="#s3">いくらで買ったか — 購入原価と材料副費</a></li>
+      <li><a href="#s4">材料副費の予定配賦と材料副費差異</a></li>
+      <li><a href="#s5">いくつ使ったか — 消費量の計算</a></li>
+      <li><a href="#s6">証ひょうと帳簿 — 数量はどこから来るのか</a></li>
+      <li><a href="#s7">1つあたりいくらか — 実際消費単価の計算</a></li>
+      <li><a href="#s8">予定価格による計算と材料消費価格差異</a></li>
+      <li><a href="#s9">期末棚卸高と棚卸減耗</a></li>
+      <li><a href="#s10">仕訳ドリル 10問</a></li>
+      <li><a href="#s11">計算ドリル 8問</a></li>
+      <li><a href="#s12">確認テスト 10問</a></li>
+      <li><a href="#s13">用語の穴埋め 6問</a></li>
+      <li><a href="#s14">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>材料費は勘定連絡図のどこにいるか</h2>
+
+  <p>前の単元で、原価計算は3つの手続を順にたどると学びました。もう一度置き直します。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>費目別計算</strong>　工場で使ったお金を、材料費・労務費・経費の3つに分けて金額を確定する</li>
+      <li><strong>部門別計算</strong>　そのうち製品ごとに分けられないものを、いったん部門に集めてから配る</li>
+      <li><strong>製品別計算</strong>　最終的に、製品1個あたりいくらかかったかを出す</li>
+    </ol>
+  </div>
+
+  <p>この単元は<mark>1番目の費目別計算の、さらに1つ目である材料費</mark>を扱います。労務費と経費は次の週です。</p>
+
+  <p>材料費は、勘定連絡図では<strong>いちばん左の入口</strong>にあたります。図で確認します。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 300" style="width:100%;height:auto;min-width:700px" role="img" aria-label="勘定連絡図における材料勘定の位置。材料勘定から直接材料費が仕掛品へ、間接材料費が製造間接費へ流れる">
+      <g font-size="14" fill="var(--text)">
+        <!-- 材料 -->
+        <rect x="20" y="90" width="150" height="110" rx="6" fill="var(--debit-bg)" stroke="var(--accent-br)" stroke-width="2"/>
+        <text x="95" y="120" text-anchor="middle" font-size="17" font-weight="700" fill="var(--debit)">材　料</text>
+        <text x="95" y="145" text-anchor="middle" font-size="12" fill="var(--muted)">月初有高</text>
+        <text x="95" y="164" text-anchor="middle" font-size="12" fill="var(--muted)">＋当月購入高</text>
+        <text x="95" y="183" text-anchor="middle" font-size="12" fill="var(--muted)">－月末有高</text>
+
+        <!-- 直接材料費 矢印 -->
+        <path d="M175 120 L 330 80" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#ah1)"/>
+        <text x="248" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--debit)">直接材料費</text>
+        <text x="252" y="106" text-anchor="middle" font-size="11.5" fill="var(--muted)">そのまま直課</text>
+
+        <!-- 間接材料費 矢印 -->
+        <path d="M175 175 L 330 218" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#ah2)"/>
+        <text x="250" y="205" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--credit)">間接材料費</text>
+        <text x="253" y="240" text-anchor="middle" font-size="11.5" fill="var(--muted)">いったん集める</text>
+
+        <!-- 製造間接費 -->
+        <rect x="335" y="185" width="160" height="70" rx="6" fill="var(--credit-bg)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="415" y="217" text-anchor="middle" font-size="16" font-weight="700" fill="var(--credit)">製造間接費</text>
+        <text x="415" y="238" text-anchor="middle" font-size="11.5" fill="var(--muted)">あとで配賦する</text>
+
+        <!-- 製造間接費→仕掛品 -->
+        <path d="M415 182 L 415 130 L 530 130" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#ah2)"/>
+        <text x="452" y="122" text-anchor="middle" font-size="11.5" fill="var(--muted)">配賦</text>
+
+        <!-- 仕掛品 -->
+        <rect x="535" y="45" width="150" height="115" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="610" y="100" text-anchor="middle" font-size="17" font-weight="700">仕掛品</text>
+        <text x="610" y="124" text-anchor="middle" font-size="11.5" fill="var(--muted)">作りかけの製品</text>
+
+        <!-- 仕掛品→製品 -->
+        <path d="M690 102 L 745 102" stroke="var(--muted)" stroke-width="2.5" fill="none" marker-end="url(#ah3)"/>
+
+        <!-- 製品 -->
+        <rect x="750" y="45" width="105" height="115" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="802" y="100" text-anchor="middle" font-size="17" font-weight="700">製品</text>
+        <text x="802" y="124" text-anchor="middle" font-size="11.5" fill="var(--muted)">完成品</text>
+
+        <text x="95" y="60" text-anchor="middle" font-size="12.5" fill="var(--muted)">この単元で扱う範囲</text>
+        <rect x="12" y="70" width="166" height="140" rx="10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 4"/>
+      </g>
+      <defs>
+        <marker id="ah1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/>
+        </marker>
+        <marker id="ah2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/>
+        </marker>
+        <marker id="ah3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">材料勘定から出た先が2つに割れている。この分岐こそが、材料費の分類が意味していることそのもの。</p>
+  </div>
+
+  <p>材料勘定に入ってきたものは、必ずどこかへ出ていきます。出口は<strong>仕掛品</strong>か<strong>製造間接費</strong>の2つだけです。この単元でやることは、突き詰めると次の3つに尽きます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">問い ①</div>
+      <p><strong>いくらで買ったか</strong></p>
+      <p class="small">材料勘定の借方に入れる金額。商品の仕入と同じく、代金だけでなく引取運賃なども含める。→ 3章・4章</p>
+    </div>
+    <div class="card">
+      <div class="card__label">問い ②</div>
+      <p><strong>いくつ使ったか</strong></p>
+      <p class="small">材料勘定から出ていく数量。数え方に2つの流儀があり、どちらを選ぶかで見えるものが変わる。→ 5章・6章</p>
+    </div>
+    <div class="card">
+      <div class="card__label">問い ③</div>
+      <p><strong>1つあたりいくらとするか</strong></p>
+      <p class="small">出ていく1個あたりの金額。実際の単価を使う方法と、あらかじめ決めた単価を使う方法がある。→ 7章・8章</p>
+    </div>
+  </div>
+
+  <p><strong>消費額 ＝ 消費量 × 消費単価</strong>。問い②と問い③をかけ合わせたものが、材料勘定から出ていく金額です。式そのものは当たり前ですが、工業簿記ではこの2つの因数を<strong>別々の論点として分けて扱います</strong>。分けているのには理由があり、それが8章の中心になります。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>材料費の分類 — 直課するか、集めるか</h2>
+
+  <p>「材料」と一口に言っても、工場にはいろいろなものが置いてあります。家具工場を思い浮かべてください。</p>
+
+  <ul>
+    <li>テーブルの天板になる<strong>木材</strong></li>
+    <li>脚に取り付ける、外から買ってきた<strong>キャスター</strong></li>
+    <li>組み立てに使う<strong>接着剤</strong>や<strong>塗料</strong></li>
+    <li>作業台を拭く<strong>ウエス</strong>、床に敷く<strong>養生シート</strong></li>
+    <li>3年くらい使える<strong>スパナ</strong>や<strong>ドライバー</strong></li>
+  </ul>
+
+  <p>ここで手を止めて考えてほしいことがあります。<mark>このテーブル1台にいくらかかったかを計算するとき、上の5つは同じように扱えるでしょうか。</mark></p>
+
+  <p>木材とキャスターは扱えます。「このテーブルには天板の木材が1枚、キャスターが4個」と数えられるからです。<strong>製品1台ごとに、いくつ使ったかを直接ひもづけられる</strong>のです。</p>
+
+  <p>ところが接着剤はどうでしょう。1本のボトルからテーブルにもイスにも塗ります。1台あたり何グラム使ったかを厳密に測ることは<strong>技術的にはできても、割に合いません</strong>。ウエスやスパナに至っては、そもそも製品に含まれてすらいません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ「分類」という手続がわざわざ必要なのか</span>
+    <p>分類が必要なのは、<strong>製品ごとにひもづけられるものと、できないものとで、その後の計算経路が完全に分かれるから</strong>です。ひもづけられるものは仕掛品へまっすぐ入れます（直課）。できないものは、いったん製造間接費という箱に全部集めて、あとで何らかの基準で製品に配り直します（配賦）。<br>つまり材料費の分類とは、<strong>1章の図で見た矢印が上へ行くか下へ行くかを決める作業</strong>です。分類のための分類ではありません。</p>
+  </div>
+
+  <h3>直接材料費 — 仕掛品へ直課するもの</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>種類</th><th>中身</th><th>家具工場の例</th></tr></thead>
+    <tbody>
+      <tr><td><strong>主要材料費</strong><br><span class="small muted">素材費・原料費とも</span></td><td>製品の主な本体を構成する材料</td><td>天板や脚になる木材</td></tr>
+      <tr><td><strong>買入部品費</strong></td><td>外部から買ってきて、そのまま取り付ける部品</td><td>キャスター、蝶番、取っ手</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>間接材料費 — 製造間接費へ集めるもの</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>種類</th><th>中身</th><th>家具工場の例</th></tr></thead>
+    <tbody>
+      <tr><td><strong>補助材料費</strong></td><td>製品を作るために使うが、製品ごとの使用量をいちいち追わないもの</td><td>接着剤、塗料、燃料</td></tr>
+      <tr><td><strong>工場消耗品費</strong></td><td>製品そのものにはならず、作業のために消費されるもの</td><td>ウエス、軍手、潤滑油、養生シート</td></tr>
+      <tr><td><strong>消耗工具器具備品費</strong></td><td>工具・器具・備品のうち、金額が小さい、または使用期間が短いため固定資産にせず費用にするもの</td><td>スパナ、ドライバー、ハンマー</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「消耗工具器具備品費」は減価償却しない</span>
+    <p>工具や器具と聞くと、商業簿記の「備品」を思い出して減価償却したくなります。しかし<strong>消耗工具器具備品費は固定資産ではなく、その期に使い切る材料費として扱います</strong>。金額が小さい、または使用期間が短いために、わざわざ資産計上して何年もかけて償却する意味がないものを、まとめてここに入れているからです。分類名に「備品」の3文字が入っているだけで、備品勘定とは別物です。</p>
+  </div>
+
+  <h3>迷ったときの決め手は「素材か消耗品か」ではない</h3>
+
+  <p>分類を暗記で乗り切ろうとすると、必ず「これはどっちだったか」で詰まります。判断は次の1問に還元できます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この材料は、製品1個あたりの使用量を数えて割り当てているか</span>
+    <p><strong>数えている → 直接材料費（仕掛品へ）／数えていない → 間接材料費（製造間接費へ）</strong><br>木材は「このテーブルに天板1枚」と数えています。接着剤は数えていません。同じ塗料でも、製品ごとの使用量を測定して割り当てる方式を採っている工場なら直接材料費になり得ます。<mark>物の性質ではなく、その工場が製品ごとに追跡しているかどうかで決まります</mark>。試験では問題文に「直接材料として消費した」「間接材料として消費した」と書かれるか、主要材料・買入部品といった分類名で示されるので、そちらを優先して読み取ってください。</p>
+  </div>
+
+  <h3>分類を仕訳の形で見る</h3>
+
+  <p>材料を消費したときの仕訳は、分類がそのまま借方の科目になります。倉庫から出た材料が 240,000円（うち直接材料費 200,000円、間接材料費 40,000円）だったとします。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">200,000</td><td class="c">材料</td><td class="c amt">240,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">40,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>貸方の材料はひとまとまりで減り、借方が2つに割れています。<strong>1章の図の分岐が、そのまま仕訳の借方の2行になっている</strong>という対応を押さえてください。この仕訳は工業簿記の全期間で数え切れないほど書くことになります。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>いくらで買ったか — 購入原価と材料副費</h2>
+
+  <p>ここから問い①に入ります。材料を 1,000,000円 分買いました。材料勘定にはいくら入れるべきでしょうか。</p>
+
+  <p>3級の商品売買を思い出してください。商品を仕入れたとき、送料や運送保険料などの仕入諸掛りは<strong>仕入原価に含めました</strong>。「その商品を自分の手元まで持ってくるためにかかった金額は、すべてその商品の値段のうち」という考え方です。工業簿記でも同じです。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 190" style="width:100%;height:auto;min-width:560px" role="img" aria-label="購入原価は購入代価と材料副費の合計であることを示す図">
+      <g font-size="14" fill="var(--text)">
+        <rect x="30" y="55" width="240" height="70" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="150" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="var(--debit)">購入代価</text>
+        <text x="150" y="110" text-anchor="middle" font-size="12" fill="var(--muted)">材料そのものの値段</text>
+
+        <text x="292" y="97" text-anchor="middle" font-size="24" fill="var(--muted)">＋</text>
+
+        <rect x="315" y="55" width="200" height="70" fill="var(--credit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="415" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="var(--credit)">材料副費</text>
+        <text x="415" y="110" text-anchor="middle" font-size="12" fill="var(--muted)">手元に届くまでの費用</text>
+
+        <text x="537" y="97" text-anchor="middle" font-size="24" fill="var(--muted)">＝</text>
+
+        <rect x="558" y="45" width="115" height="90" rx="6" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="615" y="82" text-anchor="middle" font-size="16" font-weight="700">購入原価</text>
+        <text x="615" y="105" text-anchor="middle" font-size="12" fill="var(--muted)">材料勘定の</text>
+        <text x="615" y="122" text-anchor="middle" font-size="12" fill="var(--muted)">借方に入る額</text>
+
+        <text x="350" y="167" text-anchor="middle" font-size="12.5" fill="var(--muted)">購入原価を購入数量で割ったものが、その材料の受入単価になる</text>
+      </g>
+    </svg>
+    </div>
+  </div>
+
+  <div class="term">
+    <span class="term__w">材料副費</span><span class="term__r">ざいりょうふくひ</span>
+    <p>材料を購入し、倉庫に納めるまでにかかる、購入代価以外の費用のこと。商業簿記の「仕入諸掛り」に対応する概念ですが、工業簿記では倉庫に入れたあとの保管費まで含み得る点が広くなっています。</p>
+  </div>
+
+  <h3>材料副費は2つに分かれる</h3>
+
+  <p>材料副費は、材料が<strong>倉庫に到着するまで</strong>にかかったものと、<strong>到着してから</strong>かかったものに分けられます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">外部副費（引取費用）</div>
+      <p><strong>材料が倉庫に届くまでにかかる費用</strong></p>
+      <ul class="small">
+        <li>引取運賃</li>
+        <li>買入手数料</li>
+        <li>関税</li>
+        <li>荷役費・保険料</li>
+      </ul>
+      <p class="small muted">会社の外部に払う費用なので外部副費。購入原価に含めることに争いがなく、<strong>試験で「材料副費」とだけ書かれていればまずこちら</strong>。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">内部副費</div>
+      <p><strong>材料が届いたあと、社内でかかる費用</strong></p>
+      <ul class="small">
+        <li>購入事務費</li>
+        <li>検収費</li>
+        <li>整理費・選別費</li>
+        <li>保管費</li>
+      </ul>
+      <p class="small muted">自社の中で発生する費用なので内部副費。個々の材料にいくらかかったかを直接測れないため、<strong>予定配賦の必要が強く出るのはこちら</strong>。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">内部副費は「含めなくてもよい」</span>
+    <p>外部副費は購入原価に含めます。一方<strong>内部副費は、その全部または一部を購入原価に含めないことができます</strong>。含めなかった分は製造間接費として処理します。試験では問題文の指示に従えば足りますが、「内部副費は含めない」と書かれていても誤りではない、と知っておくと迷いません。</p>
+  </div>
+
+  <h3>購入時の仕訳</h3>
+
+  <p>材料 1,000,000円 を掛けで購入し、引取運賃 30,000円 を現金で支払った、という場面です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">材料</td><td class="d amt">1,030,000</td><td class="c">買掛金</td><td class="c amt">1,000,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">現金</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>引取運賃を「支払運賃」などの費用にしないでください。<strong>材料の値段の一部として、材料勘定に取り込みます</strong>。購入原価は 1,030,000円 です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>材料副費の予定配賦と材料副費差異</h2>
+
+  <p>前の章の仕訳は、引取運賃 30,000円 がその場で分かっていたから書けました。ところが実務ではそうならない場面のほうが多いのです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ副費を「予定」するのか</span>
+    <p>購入事務費や検収費といった内部副費は、<strong>その材料1回分にいくらかかったかを、その場では誰も知りません</strong>。購買部の人件費も倉庫の光熱費も、月末に締めてはじめて月合計が分かります。しかも、それは月合計であって「今日届いたこの材料の分」ではありません。<br>ここで実際額を待つと、<mark>材料の受入単価が月末まで確定せず、月中の払出も計算できません</mark>。材料は毎日出庫されるのに、その原価が月末まで決まらないのでは工場が動きません。<br>そこで、あらかじめ<strong>「購入代価の何％を副費とみなす」という率を決めておき、購入のつどその率で計算した金額を材料に含めます</strong>。これが予定配賦です。実際額が出るのを待たずに済ませるための仕組みであり、あとで出た実際額とのズレは差異として別に処理します。</p>
+  </div>
+
+  <p class="small muted">この「実際額を待たずに予定で回し、ズレを差異で受け止める」という発想は、工業簿記のほぼ全論点に共通します。材料副費はその最初の登場です。8章の予定価格、W3の製造間接費の予定配賦、W6の標準原価計算まで、同じ骨格が繰り返されます。</p>
+
+  <h3>計算式</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">材料副費の予定配賦額</span>
+    <p><strong>予定配賦額 ＝ 購入代価 × 予定配賦率</strong><br>予定配賦率は「購入代価の5％」のように与えられます。基準が購入代価なのか購入数量なのかは問題文の指示によりますが、2級では購入代価に対する率が一般的です。</p>
+  </div>
+
+  <h3>3つの場面の仕訳</h3>
+
+  <p>次の設例で通します。</p>
+
+  <div class="card">
+    <div class="card__label">設例</div>
+    <ol class="small">
+      <li>材料 1,200,000円 を掛けで購入した。材料副費は購入代価の5％を予定配賦している。</li>
+      <li>当月の材料副費の実際発生額は 68,000円 であった（現金払い）。</li>
+      <li>月末に、予定配賦額と実際発生額の差額を材料副費差異勘定に振り替えた。</li>
+    </ol>
+  </div>
+
+  <p><strong>場面①　購入時</strong>　予定配賦額は 1,200,000 × 5％ ＝ 60,000円。購入原価は 1,200,000 ＋ 60,000 ＝ 1,260,000円 です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">材料</td><td class="d amt">1,260,000</td><td class="c">買掛金</td><td class="c amt">1,200,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">材料副費</td><td class="c amt">60,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>材料副費勘定の<strong>貸方</strong>に予定額が入ります。「材料に振り替えた分だけ副費勘定から出ていく」と読んでください。</p>
+
+  <p><strong>場面②　実際額が判明したとき</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">材料副費</td><td class="d amt">68,000</td><td class="c">現金</td><td class="c amt">68,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>材料副費勘定の<strong>借方</strong>に実際額が入ります。これで副費勘定は「借方に実際 68,000／貸方に予定 60,000」となり、借方に 8,000円 の残高が残りました。</p>
+
+  <p><strong>場面③　差異の振替</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">材料副費差異</td><td class="d amt">8,000</td><td class="c">材料副費</td><td class="c amt">8,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>差異の向きを、勘定の形で判断する</h3>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">材料副費</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>実際発生額</span><span>68,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>材料（予定配賦額）</span><span>60,000</span></div>
+          <div class="l"><span><strong>材料副費差異</strong></span><span><strong>8,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>実際 68,000円 に対し、材料に含めたのは 60,000円 だけでした。つまり<mark>実際にかかった費用を製品原価に入れきれていない</mark>状態です。会社にとって都合が悪いほうなので<strong>不利差異</strong>、差異勘定の借方に立つので<strong>借方差異</strong>と呼びます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">差異の判定はこの1行で足りる</span>
+    <p><strong>予定 ＜ 実際 → 借方差異（不利差異）／予定 ＞ 実際 → 貸方差異（有利差異）</strong><br>「予定していたより実際に多く払ってしまった＝損」と読めば、有利・不利の言葉と結果が一致します。<mark>借方差異と不利差異は同じもの、貸方差異と有利差異は同じもの</mark>です。2つの呼び方を対にして覚えてください。</p>
+  </div>
+
+  <h3>差異はどこへ行くか</h3>
+
+  <p>材料副費差異は、原則として<strong>会計年度末に売上原価に賦課します</strong>。不利差異なら売上原価を増やす（借方）、有利差異なら売上原価を減らす（貸方）方向です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">8,000</td><td class="c">材料副費差異</td><td class="c amt">8,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">差異の振替は「月末」ではなく「年度末」</span>
+    <p>差異勘定を売上原価へ振り替えるのは<strong>会計年度末</strong>です。月ごとの差異はいったん差異勘定に積み上げておき、年度末にまとめて売上原価に賦課します。問題文が「月末に差異勘定へ振り替えた」と言っているのか「会計年度末に売上原価に賦課した」と言っているのかで、書く仕訳が変わります。この2つは別の手続です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>いくつ使ったか — 消費量の計算</h2>
+
+  <p>問い②に移ります。倉庫から材料が何個出ていったかを知る方法は、大きく2つしかありません。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">方法A</div>
+      <p><strong>継続記録法</strong></p>
+      <p class="small">材料が入るたび・出るたびに、その数量を帳簿に書く。帳簿を見れば、いつでも「いま何個あるはず」が分かる。</p>
+      <p class="small"><strong>消費量＝帳簿に記録した払出数量の合計</strong></p>
+    </div>
+    <div class="card">
+      <div class="card__label">方法B</div>
+      <p><strong>棚卸計算法</strong></p>
+      <p class="small">出るたびの記録はしない。月末に倉庫を実際に数えて、残った数量を確認する。</p>
+      <p class="small"><strong>消費量 ＝ 月初有高 ＋ 当月購入量 − 月末実地棚卸数量</strong></p>
+    </div>
+  </div>
+
+  <p>棚卸計算法の式は、家の冷蔵庫の卵と同じ考え方です。「10個あって12個買い足した。いま6個残っている。だから16個食べた」。記録をつけていなくても引き算で分かります。</p>
+
+  <h3>両者の決定的な差 — 減った理由が分かるか</h3>
+
+  <p>手間だけを見れば棚卸計算法のほうが圧倒的に楽です。それでも継続記録法が原則とされるのには、はっきりした理由があります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">棚卸計算法では「使ったのか、消えたのか」が区別できない</span>
+    <p>棚卸計算法では、消費量を<strong>引き算の結果として</strong>出します。すると、盗難・紛失・目減りで消えた分まで、まとめて「消費した」ことにされてしまいます。減った数量は分かるのに、<mark>その減少が製造に使われたからなのか、あるべきものが失われたからなのかを区別できません</mark>。<br>継続記録法なら、帳簿上あるはずの数量（帳簿棚卸数量）が分かっています。月末に実際に数えて（実地棚卸数量）突き合わせれば、<strong>その差が「使ったのではなく消えた分」</strong>として浮かび上がります。これが棚卸減耗です。<br>つまり両者の本質的な差は手間ではなく、<strong>棚卸減耗を把握できるかどうか</strong>です。原価管理のために材料の異常な減少を見つけたいのなら、継続記録法しか選べません。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>継続記録法</th><th>棚卸計算法</th></tr></thead>
+    <tbody>
+      <tr><td><strong>記録の手間</strong></td><td>大きい（出入りのつど記入）</td><td>小さい（月末に数えるだけ）</td></tr>
+      <tr><td><strong>消費量の出し方</strong></td><td>払出記録を合計する</td><td>月初＋購入−月末実地で引き算する</td></tr>
+      <tr><td><strong>帳簿棚卸数量</strong></td><td>常に分かる</td><td>分からない</td></tr>
+      <tr><td><strong>棚卸減耗の把握</strong></td><td><strong>できる</strong></td><td><strong>できない</strong></td></tr>
+      <tr><td><strong>向いている材料</strong></td><td>金額の大きい主要材料・買入部品</td><td>金額の小さい工場消耗品など</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>実務では両方を併用します。<strong>直接材料費になるような重要な材料は継続記録法、細かい工場消耗品は棚卸計算法</strong>という組み合わせが典型です。金額の小さいものにまで出入りの記録をつけるのは、得られる情報に対して手間が見合わないからです。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>証ひょうと帳簿 — 数量はどこから来るのか</h2>
+
+  <p>継続記録法は「出入りのつど帳簿に書く」方法でした。では、その帳簿に書く数字は誰がどこから持ってくるのでしょうか。会計係が倉庫に張り付いているわけではありません。<strong>現場で作られた紙が回ってくる</strong>のです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>名称</th><th>いつ作られるか</th><th>何を伝えるか</th></tr></thead>
+    <tbody>
+      <tr><td><strong>材料受入報告書</strong><br><span class="small muted">検収報告書</span></td><td>材料が届き、検収したとき</td><td>実際に受け入れた数量。注文書どおりの品が届いたかを確認した結果であり、<strong>材料元帳の受入欄</strong>のもとになる</td></tr>
+      <tr><td><strong>材料出庫伝票</strong><br><span class="small muted">出庫票・材料出庫請求書</span></td><td>製造現場が倉庫から材料を持ち出すとき</td><td>払い出した数量と、どの製造指図書のために使うか。<strong>材料元帳の払出欄</strong>と、直接材料費の製品への割り当てのもとになる</td></tr>
+      <tr><td><strong>材料元帳</strong></td><td>上の2つを受けて随時記入</td><td>材料ごとの受入・払出・残高を、数量と金額の両方で記録する補助元帳。<strong>継続記録法の実体そのもの</strong></td></tr>
+      <tr><td><strong>返材票</strong></td><td>現場が使わなかった材料を倉庫に戻すとき</td><td>戻した数量。材料元帳では払出のマイナス、または受入として記入する</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">材料出庫伝票が2つの役割を同時に果たしている</span>
+    <p>出庫伝票には「どの製造指図書のために持ち出すか」が書かれています。この1枚が、<strong>材料元帳の払出数量</strong>と<strong>その材料費をどの製品に割り当てるか</strong>を同時に決めています。<mark>2章の分類が実務上どこで確定するのかといえば、この伝票の記載</mark>です。特定の製造指図書番号が書かれていれば直接材料費、書かれていない（工場全体のための払出）なら間接材料費になります。</p>
+  </div>
+
+  <p class="small muted">材料元帳は補助元帳であり、総勘定元帳の材料勘定を材料の種類ごとに細かく分けたものです。したがって<strong>材料元帳の残高をすべて合計すると、材料勘定の残高に一致します</strong>。3級の商品有高帳と売掛金元帳の関係と同じ構造です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>1つあたりいくらか — 実際消費単価の計算</h2>
+
+  <p>問い③です。消費量が分かっても、単価が決まらなければ金額になりません。ここで困るのは、<strong>同じ材料でも買った時期によって値段が違う</strong>ことです。</p>
+
+  <p>先月 @500円 で買った木材と、今月 @540円 で買った木材が、倉庫で同じ棚に並んでいます。現場が「木材250枚」と持ち出したとき、その250枚は @500円 のものなのか @540円 のものなのか。物理的には見分けがつきません。そこで<strong>計算上のルールを決めます</strong>。3級の商品有高帳でやったことと同じです。</p>
+
+  <div class="card">
+    <div class="card__label">設例 — 甲材料の10月の動き</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>日付</th><th>摘要</th><th class="amt">数量</th><th class="amt">単価</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td>10/1</td><td>月初有高</td><td class="amt">100個</td><td class="amt">500円</td><td class="amt">50,000</td></tr>
+        <tr><td>10/10</td><td>仕入</td><td class="amt">300個</td><td class="amt">540円</td><td class="amt">162,000</td></tr>
+        <tr><td>10/15</td><td>出庫</td><td class="amt">250個</td><td class="amt">—</td><td class="amt">—</td></tr>
+        <tr><td>10/22</td><td>仕入</td><td class="amt">150個</td><td class="amt">570円</td><td class="amt">85,500</td></tr>
+        <tr><td>10/27</td><td>出庫</td><td class="amt">200個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small muted">受入合計 550個・297,500円、払出合計 450個、帳簿上の月末数量 100個。</p>
+  </div>
+
+  <h3>先入先出法 — 古いものから出ていったとみなす</h3>
+
+  <p>実際の物の流れに近いのがこの方法です。倉庫では古い材料から先に使うのがふつうだからです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>日付</th><th>払出の内訳</th><th class="amt">払出額</th><th>残高</th></tr></thead>
+    <tbody>
+      <tr><td>10/15</td><td>100個 × @500 ＋ 150個 × @540</td><td class="amt">131,000</td><td>150個 @540</td></tr>
+      <tr><td>10/27</td><td>150個 × @540 ＋ 50個 × @570</td><td class="amt">109,500</td><td>100個 @570</td></tr>
+      <tr><td colspan="2"><strong>当月消費額</strong></td><td class="amt"><strong>240,500</strong></td><td><strong>月末 57,000円</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">検算：受入合計 297,500 − 消費額 240,500 ＝ 57,000。月末有高と一致します。<strong>この検算は必ず入れてください</strong>。先入先出法は内訳が複雑になるほど計算ミスが出ますが、この引き算1本で気づけます。</p>
+
+  <h3>移動平均法 — 仕入れるたびに平均を出し直す</h3>
+
+  <p>材料が入ってくるたびに、それまでの残高と混ぜ合わせた平均単価を計算し直す方法です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>時点</th><th>計算</th><th class="amt">平均単価</th><th class="amt">払出額</th></tr></thead>
+    <tbody>
+      <tr><td>10/10 仕入後</td><td>(50,000 ＋ 162,000) ÷ (100 ＋ 300)個</td><td class="amt">@530</td><td class="amt">—</td></tr>
+      <tr><td>10/15 出庫</td><td>@530 × 250個</td><td class="amt">—</td><td class="amt">132,500</td></tr>
+      <tr><td>10/22 仕入後</td><td>(79,500 ＋ 85,500) ÷ (150 ＋ 150)個</td><td class="amt">@550</td><td class="amt">—</td></tr>
+      <tr><td>10/27 出庫</td><td>@550 × 200個</td><td class="amt">—</td><td class="amt">110,000</td></tr>
+      <tr><td colspan="3"><strong>当月消費額</strong></td><td class="amt"><strong>242,500</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">10/15 出庫後の残高は 150個・79,500円（＝@530 × 150）。ここに 10/22 の仕入 150個・85,500円 を混ぜて @550 になります。月末有高は @550 × 100個 ＝ 55,000円。検算：297,500 − 242,500 ＝ 55,000。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">移動平均法は「払出のたび」ではなく「受入のたび」に単価を計算し直す</span>
+    <p>平均単価が変わるのは<strong>新しく材料が入ってきたとき</strong>だけです。払い出しても、残っている材料の平均単価は変わりません。混ぜ合わせる相手が増えていないからです。出庫の行で平均を計算し直そうとして手が止まるのは、この点を取り違えているときです。</p>
+  </div>
+
+  <h3>総平均法 — 月末にまとめて1つの単価を出す</h3>
+
+  <p>月中はいっさい単価を計算せず、月末に「月初有高＋当月受入高」の総額を「月初数量＋当月受入数量」で割って、その月の単価を1つだけ決める方法です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">総平均単価</span>
+    <p><strong>総平均単価 ＝（月初有高金額 ＋ 当月受入金額の合計）÷（月初数量 ＋ 当月受入数量の合計）</strong><br>分母にも分子にも<strong>払出は入りません</strong>。「その月に手元にあったものの全部」を平均します。</p>
+  </div>
+
+  <p>乙材料で計算してみます。月初 200個 @480円（96,000円）、8日に 500個 @520円（260,000円）、20日に 300個 @540円（162,000円）を仕入れ、当月800個を消費したとします。</p>
+
+  <div class="steps">
+    <ol>
+      <li>総額 ＝ 96,000 ＋ 260,000 ＋ 162,000 ＝ <strong>518,000円</strong></li>
+      <li>総数量 ＝ 200 ＋ 500 ＋ 300 ＝ <strong>1,000個</strong></li>
+      <li>総平均単価 ＝ 518,000 ÷ 1,000 ＝ <strong>@518円</strong></li>
+      <li>消費額 ＝ @518 × 800個 ＝ <strong>414,400円</strong>　／　月末有高 ＝ @518 × 200個 ＝ <strong>103,600円</strong></li>
+    </ol>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>先入先出法</th><th>移動平均法</th><th>総平均法</th></tr></thead>
+    <tbody>
+      <tr><td><strong>単価を決める時点</strong></td><td>払出のつど（古い順に取り崩す）</td><td>受入のつど</td><td>月末に1回だけ</td></tr>
+      <tr><td><strong>月中に消費額が分かるか</strong></td><td>分かる</td><td>分かる</td><td><strong>分からない</strong></td></tr>
+      <tr><td><strong>計算の手間</strong></td><td>大きい</td><td>大きい</td><td>小さい</td></tr>
+      <tr><td><strong>端数</strong></td><td>出ない</td><td>受入のたびに出やすい</td><td>1回だけ出る</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">平均法では端数処理の指示を必ず確認する</span>
+    <p>平均単価は割り切れないことのほうが多く、<strong>円未満を四捨五入するのか切り捨てるのか、どの桁でそうするのかで答えが変わります</strong>。問題文に「単価は円未満を四捨五入する」といった指示があります。指示された桁で単価を丸めてから数量を掛けるのが原則で、丸めずに掛けてから最後に丸めると答えが合いません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>予定価格による計算と材料消費価格差異</h2>
+
+  <p>ここが本単元の中核です。前の章では実際の単価を計算しました。ところが実務では、<strong>実際の単価を使わずに、あらかじめ決めておいた単価で計算する</strong>ことが広く行われています。</p>
+
+  <div class="term">
+    <span class="term__w">予定価格</span><span class="term__r">よていかかく</span>
+    <p>期首にあらかじめ決めておく、材料1単位あたりの消費単価。過去の実績と将来の価格見込みから設定します。予定消費価格とも呼びます。</p>
+  </div>
+
+  <h3>なぜ予定価格を使うのか — 理由は2つある</h3>
+
+  <p>ここを暗記で済ませると、8章以降の工業簿記が全部つらくなります。<strong>2つの理由を、それぞれ自分の言葉で言えるようにしてください。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">理由① 実際単価は月末まで確定せず、計算が遅れる</span>
+    <p>総平均法なら、その月の単価が決まるのは月末です。移動平均法でも、月中に仕入があるたびに単価が動きます。<mark>材料は毎日出庫されるのに、その1回あたりの金額が月末まで確定しない</mark>のでは、日々の原価計算ができません。<br>受注のたびに「この製品はいくらでできますか」と聞かれて「来月にならないと分かりません」では商売になりません。予定価格なら、<strong>出庫伝票を見た瞬間に金額が出ます</strong>。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">理由② 実際単価には市場価格の変動が混ざり、現場の能率が見えなくなる</span>
+    <p>こちらのほうが重要です。木材の市場価格が今月10％上がったとします。まったく同じ作り方で、同じ枚数を使って、同じテーブルを作ったのに、実際単価で計算すると<strong>製品原価が10％近く上がります</strong>。<br>すると数字を見た人はこう考えてしまいます。「今月は原価が悪化した。現場で何かあったのか」。しかし現場は何も変えていません。<mark>悪化したのは市場価格であって、工場の能率ではありません</mark>。<br>予定価格を使えば単価は期を通じて固定されます。すると原価が動く原因は<strong>使った数量だけ</strong>になり、「無駄に材料を使ったのか、節約できたのか」という工場が責任を負うべき部分だけが数字に現れます。価格変動という工場の責任外の要因を、製品原価から切り離すためです。</p>
+  </div>
+
+  <h3>予定するのは単価だけ。数量は実際</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">予定消費額の計算</span>
+    <p><strong>予定消費額 ＝ 予定価格 × <mark>実際</mark>消費量</strong><br>掛ける数量は、実際に出庫した数量です。予定するのは<strong>単価だけ</strong>で、数量は実際のものをそのまま使います。</p>
+  </div>
+
+  <p>なぜ数量まで予定しないのか。理由②を読み返せば分かります。<strong>数量の多い少ないこそが、工場の能率そのもの</strong>だからです。それを予定に置き換えてしまったら、原価計算から現場の情報が消えてしまいます。切り離したいのは価格変動だけであって、数量の変動は残さなければ意味がありません。</p>
+
+  <p class="small muted">数量まで標準を設定して、数量の差も分析対象にするのが標準原価計算（W6）です。この単元で扱う予定価格の計算は、そこへ向かう途中にあります。</p>
+
+  <h3>材料消費価格差異</h3>
+
+  <p>予定価格で計算した金額と、実際価格で計算した金額はズレます。このズレを<strong>材料消費価格差異</strong>といいます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">材料消費価格差異</span>
+    <p><strong>材料消費価格差異 ＝（予定価格 − 実際価格）× 実際消費量</strong><br>符号つきで計算すると、結果がそのまま差異の性格を示します。<strong>マイナスなら借方差異（不利差異）、プラスなら貸方差異（有利差異）</strong>です。</p>
+  </div>
+
+  <h3>差異をボックス図で見る</h3>
+
+  <p>差異の向きを覚えようとすると必ず取り違えます。<strong>面積図を描いて、目で見て判断してください。</strong>横軸に数量、縦軸に単価をとると、金額が長方形の面積になります。</p>
+
+  <p>予定価格 @520円、実際価格 @545円、実際消費量 900kg の場合です。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 660 340" style="width:100%;height:auto;min-width:560px" role="img" aria-label="材料消費価格差異の面積図。実際価格が予定価格を上回るため不利差異となる">
+      <g font-size="13" fill="var(--text)">
+        <!-- 予定消費額の面積 -->
+        <rect x="110" y="150" width="380" height="130" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2"/>
+        <!-- 差異部分 -->
+        <rect x="110" y="90" width="380" height="60" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+
+        <!-- 縦軸 -->
+        <path d="M110 60 L 110 300" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M110 280 L 560 280" stroke="var(--border-2)" stroke-width="2"/>
+
+        <!-- 縦軸ラベル -->
+        <text x="100" y="95" text-anchor="end" font-size="13" fill="var(--danger)" font-weight="700">実際 @545</text>
+        <text x="100" y="155" text-anchor="end" font-size="13" fill="var(--debit)" font-weight="700">予定 @520</text>
+        <text x="100" y="285" text-anchor="end" font-size="12" fill="var(--muted)">0</text>
+        <text x="42" y="45" font-size="12.5" fill="var(--muted)">単価</text>
+
+        <!-- 横軸ラベル -->
+        <text x="300" y="303" text-anchor="middle" font-size="13" font-weight="700">実際消費量 900kg</text>
+        <text x="540" y="303" text-anchor="middle" font-size="12.5" fill="var(--muted)">数量</text>
+
+        <!-- 面積の中身 -->
+        <text x="300" y="212" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">予定消費額</text>
+        <text x="300" y="236" text-anchor="middle" font-size="14" fill="var(--debit)">@520 × 900 ＝ 468,000</text>
+        <text x="300" y="118" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--danger)">差異 △22,500（借方＝不利）</text>
+        <text x="300" y="138" text-anchor="middle" font-size="12" fill="var(--danger)">(520 − 545) × 900</text>
+
+        <!-- 実際消費額の注記 -->
+        <path d="M500 90 L 530 90 L 530 280 L 500 280" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="545" y="180" font-size="12" fill="var(--muted)">実際</text>
+        <text x="545" y="196" font-size="12" fill="var(--muted)">490,500</text>
+
+        <!-- 破線 -->
+        <path d="M110 90 L 490 90" stroke="var(--danger)" stroke-width="1" stroke-dasharray="4 3"/>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">実際価格が予定価格の上に乗っている。はみ出した上の帯が差異。仕掛品に入れた（下の青い長方形）より実際は多くかかったので不利差異。</p>
+  </div>
+
+  <p>この図から読み取れることを言葉にします。</p>
+
+  <div class="steps">
+    <ol>
+      <li>下の長方形（予定消費額 468,000円）が、<strong>仕掛品や製造間接費に振り替えた金額</strong>です。製品原価はこの金額で計算されます。</li>
+      <li>全体の長方形（実際消費額 490,500円）が、<strong>実際に材料勘定から出ていった金額</strong>です。</li>
+      <li>その差の帯 22,500円 が、<strong>製品原価に含めきれなかった分</strong>。会社にとって都合が悪いので不利差異、借方に立つので借方差異です。</li>
+    </ol>
+  </div>
+
+  <p>逆に、予定 @600円 に対して実際が @580円 まで下がっていた場合を考えます。実際消費量が 1,500kg なら、差異は（600 − 580）× 1,500 ＝ ＋30,000円。<strong>製品原価に多めに入れておいたのに、実際には少なくて済んだ</strong>のですから有利差異、差異勘定の貸方に立つので貸方差異です。図では実際価格の線が予定価格の線の下に来て、帯が長方形の内側に食い込む形になります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「差異が有利なら良いこと」とは限らない</span>
+    <p>有利差異は<strong>予定より実際が安く済んだ</strong>という事実を示すだけです。品質の低い材料に切り替えた結果かもしれず、そもそも予定価格の設定が甘かっただけかもしれません。試験では「有利・不利」を金額の大小から機械的に判定すればよく、良し悪しの評価まで問われることはありません。<mark>符号の判定と価値判断を混同しない</mark>ことが、かえって取り違えを防ぎます。</p>
+  </div>
+
+  <h3>仕訳の流れ</h3>
+
+  <p>予定価格 @520円、実際消費量 900kg（うち直接材料費 700kg、間接材料費 200kg）、実際価格 @545円 の場合です。</p>
+
+  <p><strong>① 消費時（予定価格で振り替える）</strong>　直接 @520 × 700 ＝ 364,000円、間接 @520 × 200 ＝ 104,000円。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">364,000</td><td class="c">材料</td><td class="c amt">468,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">104,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>② 月末（実際価格が判明し、差異を把握する）</strong>　実際消費額は @545 × 900 ＝ 490,500円。材料勘定は予定額 468,000円 しか減らしていないので、22,500円 だけ減らし足りていません。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">材料消費価格差異</td><td class="d amt">22,500</td><td class="c">材料</td><td class="c amt">22,500</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">材料</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>月初有高・当月購入高</span><span>（実際額）</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品・製造間接費</span><span>468,000</span></div>
+          <div class="l"><span><strong>材料消費価格差異</strong></span><span><strong>22,500</strong></span></div>
+          <div class="l"><span>月末有高</span><span>（実際額）</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">材料消費価格差異</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>材料</span><span>22,500</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>（年度末に売上原価へ）</span><span>22,500</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p><mark>材料勘定は実際額で残高が管理され、仕掛品と製造間接費には予定額が入る</mark>。この構造が読めれば、差異が材料勘定側から出てくることも自然に理解できます。材料勘定の借方は実際の購入原価で入っているのですから、貸方を予定額だけで埋めたら残高が合いません。その埋め合わせが差異です。</p>
+
+  <p><strong>③ 会計年度末（差異を売上原価に賦課する）</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">22,500</td><td class="c">材料消費価格差異</td><td class="c amt">22,500</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>有利差異の場合は借方と貸方が逆になります。売上原価が貸方に来て減る形です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>期末棚卸高と棚卸減耗</h2>
+
+  <p>5章で予告した棚卸減耗を、ここで処理まで通します。継続記録法で材料元帳をつけていれば、月末に2つの数量が手元にあります。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">帳簿棚卸数量</div>
+      <p><strong>材料元帳の上で残っているはずの数量</strong></p>
+      <p class="small">月初数量 ＋ 受入数量 − 払出数量。記録から計算で出る。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">実地棚卸数量</div>
+      <p><strong>実際に倉庫を数えた数量</strong></p>
+      <p class="small">現物を数えた結果。ふつう帳簿より少なくなる。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">棚卸減耗費</span>
+    <p><strong>棚卸減耗費 ＝（帳簿棚卸数量 − 実地棚卸数量）× 単価</strong><br>掛ける単価は、7章で決めた消費単価（先入先出法なら月末に残っている材料の単価）です。</p>
+  </div>
+
+  <p>7章の甲材料の例で、先入先出法により帳簿棚卸数量 100個・@570円 だったところ、実地棚卸数量が 95個 だったとします。棚卸減耗費は（100 − 95）× @570 ＝ <strong>2,850円</strong> です。</p>
+
+  <h3>処理先 — ここが商業簿記と違う</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製造間接費</td><td class="d amt">2,850</td><td class="c">材料</td><td class="c amt">2,850</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">工業簿記の棚卸減耗は製造間接費へ。商業簿記の棚卸減耗損とは行き先が違う</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>商業簿記（商品）</th><th>工業簿記（材料）</th></tr></thead>
+      <tbody>
+        <tr><td><strong>科目</strong></td><td>棚卸減耗損</td><td>棚卸減耗費（間接経費）</td></tr>
+        <tr><td><strong>行き先</strong></td><td>損益計算書の売上原価または販売費及び一般管理費</td><td><strong>製造間接費</strong>（そこから仕掛品へ配賦される）</td></tr>
+        <tr><td><strong>結果として</strong></td><td>当期の費用になる</td><td><strong>製品原価の一部になる</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>正常な範囲の棚卸減耗は、<strong>製造活動に伴って通常発生するもの</strong>と考えます。だから期間の費用ではなく、製品を作るためのコストとして製品原価に含めます。仕訳の借方に「棚卸減耗損」や「棚卸減耗費」ではなく<mark>製造間接費</mark>と書ける形にしておいてください。<br>ただし、火災や盗難といった<strong>異常な原因による減耗は製品原価に含めません</strong>。非原価項目として営業外費用や特別損失に計上します。「通常起こる程度のことなら製品の原価、そうでなければ製品の原価にしない」という線引きです。</p>
+  </div>
+
+  <h3>月末有高はどちらの数量で計上するか</h3>
+
+  <p>棚卸減耗を計上したあとの材料勘定の残高は、<strong>実地棚卸数量に基づく金額</strong>になります。上の例なら 95個 × @570 ＝ 54,150円 です。帳簿棚卸高 57,000円 から減耗分 2,850円 を引いた金額と一致します。</p>
+
+  <div class="steps">
+    <ol>
+      <li>帳簿棚卸高　100個 × @570 ＝ 57,000円</li>
+      <li>棚卸減耗費　　5個 × @570 ＝ 2,850円 → 製造間接費へ</li>
+      <li><strong>月末材料有高　95個 × @570 ＝ 54,150円</strong>（貸借対照表に載る金額）</li>
+    </ol>
+  </div>
+
+  <p class="small muted">材料の期末有高は、貸借対照表では<strong>流動資産の「材料」</strong>として表示されます。仕掛品・製品と並んで棚卸資産の一部です。この表示区分はW8の第3問対策で改めて扱います。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕訳ドリル 10問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-zairyohi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>計算ドリル 8問</h2>
+
+  <p>電卓を使って構いません。<strong>紙に途中式を書いてから電卓を叩いてください。</strong>差異の問題は、必ず面積図を描いてから符号を判断します。</p>
+
+  <div id="num-zairyohi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>確認テスト 10問</h2>
+
+  <div id="quiz-zairyohi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>用語の穴埋め 6問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-zairyohi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u04check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u04check">0 / 0 完了（0%）</div>
+
+  <div id="u04check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u04-w1u04-1"><label for="k1"><span class="cl__t">材料費の分類が、勘定連絡図のどの分岐に対応するかを図で説明できる</span><span class="cl__d">直接材料費は仕掛品へ直課、間接材料費は製造間接費へ集めてから配賦する。分類はこの矢印の行き先を決める作業</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u04-w1u04-2"><label for="k2"><span class="cl__t">直接材料費2種類・間接材料費3種類を、具体例つきで挙げられる</span><span class="cl__d">直接＝主要材料費・買入部品費／間接＝補助材料費・工場消耗品費・消耗工具器具備品費</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u04-w1u04-3"><label for="k3"><span class="cl__t">購入原価＝購入代価＋材料副費の式を書け、外部副費と内部副費を区別できる</span><span class="cl__d">外部副費（引取運賃・買入手数料・関税）は購入原価に含める。内部副費（購入事務費・検収費・保管費）は全部または一部を含めないことができる</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u04-w1u04-4"><label for="k4"><span class="cl__t">材料副費を予定配賦する理由を自分の言葉で言える</span><span class="cl__d">実際発生額は月末に締めるまで分からず、購入のつど受入単価を確定できないから</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u04-w1u04-5"><label for="k5"><span class="cl__t">材料副費の購入時・実際額判明時・差異振替の3本を書ける</span><span class="cl__d">購入時は貸方に材料副費（予定額）、実際額は借方に材料副費、残高を材料副費差異へ。売上原価への賦課は会計年度末</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u04-w1u04-6"><label for="k6"><span class="cl__t">継続記録法と棚卸計算法の本質的な差を1文で言える</span><span class="cl__d">継続記録法は帳簿数量と実地数量を突き合わせて棚卸減耗を把握できるが、棚卸計算法は引き算で消費量を出すため減耗が消費に紛れて把握できない</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u04-w1u04-7"><label for="k7"><span class="cl__t">材料受入報告書・材料出庫伝票・材料元帳の役割を区別できる</span><span class="cl__d">受入報告書は受入数量、出庫伝票は払出数量とどの製造指図書向けか、材料元帳は受入・払出・残高を数量と金額で記録する補助元帳</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u04-w1u04-8"><label for="k8"><span class="cl__t">先入先出法・移動平均法・総平均法で消費額と月末有高を計算でき、検算できる</span><span class="cl__d">移動平均法は受入のたびに単価を出し直す。総平均法は月末に1回。検算は「受入合計−消費額＝月末有高」</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u04-w1u04-9"><label for="k9"><span class="cl__t">予定価格を使う理由を2つとも言える</span><span class="cl__d">①実際単価は月末まで確定せず計算が遅れる ②実際単価には市場価格の変動が混ざり、工場の能率が見えなくなる</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u04-w1u04-10"><label for="k10"><span class="cl__t">予定消費額は「予定価格×実際消費量」であり、数量は予定しないと説明できる</span><span class="cl__d">数量の多寡こそ工場の能率そのもの。切り離したいのは価格変動だけ</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u04-w1u04-11"><label for="k11"><span class="cl__t">材料消費価格差異の面積図を、何も見ずに描ける</span><span class="cl__d">横軸に実際消費量、縦軸に単価。予定価格の線と実際価格の線に挟まれた帯が差異</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u04-w1u04-12"><label for="k12"><span class="cl__t">借方差異＝不利差異＝予定より実際が高かった、を即座に判定できる</span><span class="cl__d">予定＜実際なら借方差異（不利差異）、予定＞実際なら貸方差異（有利差異）。この判定は工業簿記全体で繰り返し出る</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u04-w1u04-13"><label for="k13"><span class="cl__t">棚卸減耗費が製造間接費に振り替わる理由を、商業簿記との違いとして言える</span><span class="cl__d">正常な減耗は製造に伴って通常発生するものなので製品原価に含める。商業簿記の棚卸減耗損は期間の費用。異常な減耗は非原価項目</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u04-w1u04-14"><label for="k14"><span class="cl__t">仕訳ドリル10問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u04-w1u04-15"><label for="k15"><span class="cl__t">計算ドリル8問・確認テスト10問を全問正解した</span><span class="cl__d">特に差異の有利・不利判定を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元で身につけた<strong>「予定で回して、ズレを差異で受け止める」</strong>という構造は、このあと何度も繰り返されます。W2の労務費では予定賃率と賃率差異が、W3の製造間接費では予定配賦率と予算差異・操業度差異が、同じ骨格で出てきます。<mark>材料費でこの型を完全に理解しておけば、以降の論点は同じ図を描き直すだけになります</mark>。ここで曖昧なまま先に進まないでください。</p>
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W1 ／ UNIT 04 材料費</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var ZAIRYO_ACCOUNTS = [
+  '材料', '仕掛品', '製造間接費', '製品', '売上原価',
+  '材料副費', '材料副費差異', '材料消費価格差異',
+  '現金', '当座預金', '買掛金', '未払金', '支払手形',
+  '賃金・給料', '棚卸減耗損', '仕入', '発送費'
+];
+
+BokiJournal.mount('#drill-zairyohi', {
+  title: '仕訳ドリル — 材料費',
+  accounts: ZAIRYO_ACCOUNTS,
+  questions: [
+    {
+      text: '主要材料 800,000円を掛けで購入し、引取運賃 24,000円を現金で支払った。材料副費は予定配賦していない。',
+      debit: [['材料', 824000]],
+      credit: [['買掛金', 800000], ['現金', 24000]],
+      hint: '引取運賃は費用にせず、材料の値段に取り込みます。',
+      explain: '<p>購入原価 ＝ 購入代価 800,000 ＋ 材料副費（引取運賃）24,000 ＝ <strong>824,000円</strong>。引取運賃を「支払運賃」などの費用として独立させないでください。材料が倉庫に届くまでにかかった費用は、その材料の値段の一部です。</p>'
+    },
+    {
+      text: '材料 1,200,000円を掛けで購入した。材料副費は購入代価の5％を予定配賦している。',
+      debit: [['材料', 1260000]],
+      credit: [['買掛金', 1200000], ['材料副費', 60000]],
+      hint: '予定配賦額 ＝ 購入代価 × 予定配賦率。副費勘定は貸方に立ちます。',
+      explain: '<p>予定配賦額 ＝ 1,200,000 × 5％ ＝ 60,000円。購入原価 ＝ 1,200,000 ＋ 60,000 ＝ <strong>1,260,000円</strong>。<br>材料副費勘定の<strong>貸方</strong>に予定額を計上します。「材料に振り替えた分だけ副費勘定から出ていく」と読んでください。実際にいくらかかったかはまだ分かっていません。</p>'
+    },
+    {
+      text: '当月の材料副費の実際発生額 68,000円を現金で支払った。なお、当月の材料副費の予定配賦額は 60,000円である。実際発生額の支払いの仕訳を示しなさい。',
+      debit: [['材料副費', 68000]],
+      credit: [['現金', 68000]],
+      hint: '実際額は材料副費勘定の借方に入れます。差異の振替はまだしません。',
+      explain: '<p>実際発生額は材料副費勘定の<strong>借方</strong>に計上します。これで副費勘定は借方 68,000／貸方 60,000 となり、借方に 8,000円 の残高が残ります。<br>この設問で問われているのは支払いの仕訳だけなので、差異の振替仕訳はここでは書きません。</p>'
+    },
+    {
+      text: '月末に、材料副費勘定の残高を材料副費差異勘定に振り替えた。当月の材料副費の予定配賦額は 60,000円、実際発生額は 68,000円であった。',
+      debit: [['材料副費差異', 8000]],
+      credit: [['材料副費', 8000]],
+      hint: '予定 60,000 ＜ 実際 68,000。どちらの差異でしょうか。',
+      explain: '<p>差異 ＝ 68,000 − 60,000 ＝ 8,000円。<mark>予定より実際のほうが多くかかった</mark>ので<strong>借方差異（不利差異）</strong>です。材料副費勘定に残った借方残高を、差異勘定の借方へ移します。<br>この段階では売上原価に振り替えません。売上原価への賦課は<strong>会計年度末</strong>です。</p>'
+    },
+    {
+      text: '倉庫から材料 380,000円を払い出した。うち 310,000円は特定の製造指図書向けの主要材料、70,000円は工場全体で使う補助材料である。',
+      debit: [['仕掛品', 310000], ['製造間接費', 70000]],
+      credit: [['材料', 380000]],
+      hint: '特定の製造指図書向けなら直接材料費、工場全体なら間接材料費です。',
+      explain: '<p>主要材料は<strong>直接材料費</strong>なので仕掛品へ直課します。補助材料は<strong>間接材料費</strong>なのでいったん製造間接費に集めます。<br>貸方の材料はひとまとまりで 380,000円 減り、借方が2つに割れます。勘定連絡図で材料勘定から2本の矢印が出ていたことと、この仕訳の形は対応しています。</p>'
+    },
+    {
+      text: '当月の材料消費額を予定価格 @520円で計上した。実際消費量は 900kgで、うち直接材料としての消費が 700kg、間接材料としての消費が 200kgであった。',
+      debit: [['仕掛品', 364000], ['製造間接費', 104000]],
+      credit: [['材料', 468000]],
+      hint: '予定するのは単価だけ。数量は実際のものを使います。',
+      explain: '<p>直接材料費 ＝ @520 × 700kg ＝ <strong>364,000円</strong>／間接材料費 ＝ @520 × 200kg ＝ <strong>104,000円</strong>。合計 468,000円。<br><mark>予定価格 × <strong>実際</strong>消費量</mark>です。数量は予定に置き換えません。数量の多寡は工場の能率そのものであり、そこを予定にしてしまうと原価計算から現場の情報が消えるからです。</p>'
+    },
+    {
+      text: '月末に材料の実際消費価格が判明した。当月の材料の実際消費量は 900kg、予定価格は @520円、実際価格は @545円であった。材料消費価格差異を計上する仕訳を示しなさい。',
+      debit: [['材料消費価格差異', 22500]],
+      credit: [['材料', 22500]],
+      hint: '（予定価格 − 実際価格）× 実際消費量。符号がそのまま差異の性格を示します。',
+      explain: '<p>（@520 − @545）× 900kg ＝ <strong>△22,500円</strong>。マイナスなので<strong>借方差異（不利差異）</strong>です。<br>材料勘定は借方に実際の購入原価で入っているのに、貸方には予定額 468,000円 しか計上していません。実際消費額は 490,500円 なので、22,500円 だけ減らし足りていない。その埋め合わせとして材料勘定の貸方に差異を立てます。</p>'
+    },
+    {
+      text: '月末に材料の実際消費価格が判明した。当月の材料の実際消費量は 1,500kg、予定価格は @600円、実際価格は @580円であった。材料消費価格差異を計上する仕訳を示しなさい。',
+      debit: [['材料', 30000]],
+      credit: [['材料消費価格差異', 30000]],
+      hint: '今度は予定より実際のほうが安く済んでいます。前問と借方・貸方が逆になります。',
+      explain: '<p>（@600 − @580）× 1,500kg ＝ <strong>＋30,000円</strong>。プラスなので<strong>貸方差異（有利差異）</strong>です。<br>予定額 900,000円 を材料勘定の貸方に計上したのに、実際消費額は 870,000円 でした。30,000円 だけ減らしすぎているので、材料勘定の<strong>借方</strong>に戻し、差異勘定の貸方に立てます。前問と借方・貸方がそっくり入れ替わることを確認してください。</p>'
+    },
+    {
+      text: '月末に材料の実地棚卸を行ったところ、帳簿棚卸数量 100個に対し実地棚卸数量は 95個であった。当該材料の単価は @570円であり、この減耗は正常な範囲のものである。',
+      debit: [['製造間接費', 2850]],
+      credit: [['材料', 2850]],
+      hint: '商業簿記の棚卸減耗損とは行き先が違います。',
+      explain: '<p>棚卸減耗費 ＝（100個 − 95個）× @570 ＝ <strong>2,850円</strong>。<br>正常な範囲の棚卸減耗は<mark>間接経費として製造間接費に振り替えます</mark>。製造活動に伴って通常発生するものなので、期間の費用ではなく製品原価の一部になるからです。商業簿記のように棚卸減耗損として損益計算書に直接落とすのではありません。<br>なお、火災や盗難のような異常な原因による減耗は非原価項目として扱い、製品原価に含めません。</p>'
+    },
+    {
+      text: '会計年度末となったため、材料消費価格差異勘定の借方残高 41,000円と材料副費差異勘定の借方残高 9,000円を、いずれも売上原価に賦課した。',
+      debit: [['売上原価', 50000]],
+      credit: [['材料消費価格差異', 41000], ['材料副費差異', 9000]],
+      hint: 'どちらも借方残高＝不利差異。売上原価はどちら側に来るでしょうか。',
+      explain: '<p>借方残高の差異は<strong>不利差異</strong>で、製品原価に入れきれなかった分です。年度末に売上原価を<strong>増やす</strong>方向で処理するので、売上原価が借方に来ます。合計 41,000 ＋ 9,000 ＝ <strong>50,000円</strong>。<br>有利差異（貸方残高）なら逆に、売上原価を減らす方向（貸方）になります。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-zairyohi', {
+  title: '計算ドリル — 材料費',
+  badge: '計算ドリル 8問',
+  questions: [
+    {
+      text: '材料 1,500,000円を購入した。引取運賃 42,000円、買入手数料 18,000円、関税 25,000円がかかっている。この材料の購入原価はいくらか。',
+      answer: 1585000, formula: '1500000 + 42000 + 18000 + 25000', unit: '円',
+      hint: '引取運賃・買入手数料・関税はいずれも外部副費（引取費用）です。',
+      explain: '<p>購入原価 ＝ 購入代価 ＋ 材料副費 ＝ 1,500,000 ＋（42,000 ＋ 18,000 ＋ 25,000）＝ <strong>1,585,000円</strong>。<br>3つとも材料が倉庫に届くまでにかかった<strong>外部副費</strong>なので、すべて購入原価に含めます。</p>'
+    },
+    {
+      text: '材料 2,400,000円を購入した。材料副費は購入代価の4％を予定配賦している。当月の材料副費の実際発生額は 104,000円であった。① 予定配賦額、② 購入原価、③ 材料副費差異の金額（絶対値）を求めなさい。',
+      answer: [96000, 2496000, 8000],
+      formula: ['2400000 * 4 / 100', '2400000 + 2400000 * 4 / 100', '104000 - 2400000 * 4 / 100'],
+      labels: ['① 予定配賦額', '② 購入原価', '③ 材料副費差異（絶対値）'],
+      unit: '円',
+      hint: '差異は予定と実際の差。どちらが大きいかで有利・不利が決まります。',
+      explain: '<p>① 予定配賦額 ＝ 2,400,000 × 4％ ＝ <strong>96,000円</strong><br>② 購入原価 ＝ 2,400,000 ＋ 96,000 ＝ <strong>2,496,000円</strong><br>③ 差異 ＝ 実際 104,000 − 予定 96,000 ＝ <strong>8,000円</strong><br><mark>予定 96,000 ＜ 実際 104,000</mark> なので<strong>借方差異（不利差異）</strong>です。実際にかかった費用を製品原価に入れきれていない状態です。</p>'
+    },
+    {
+      text: '甲材料の10月の動きは次のとおりである。月初有高 100個 @500円／10日 仕入 300個 @540円／15日 出庫 250個／22日 仕入 150個 @570円／27日 出庫 200個。<strong>先入先出法</strong>により、① 当月消費額、② 月末帳簿棚卸高を求めなさい。',
+      answer: [240500, 57000],
+      formula: ['100 * 500 + 150 * 540 + 150 * 540 + 50 * 570', '100 * 570'],
+      labels: ['① 当月消費額', '② 月末帳簿棚卸高'],
+      unit: '円',
+      hint: '古いものから順に払い出したとみなします。15日の250個は月初分から先に取り崩します。',
+      explain: '<p><strong>15日の出庫250個</strong>＝ 月初 100個 × @500 ＋ 10日仕入分 150個 × @540 ＝ 50,000 ＋ 81,000 ＝ 131,000円。残高は 10日仕入分 150個 @540。<br><strong>27日の出庫200個</strong>＝ 150個 × @540 ＋ 22日仕入分 50個 × @570 ＝ 81,000 ＋ 28,500 ＝ 109,500円。<br>① 消費額 ＝ 131,000 ＋ 109,500 ＝ <strong>240,500円</strong><br>② 月末は 22日仕入分の残り 100個 × @570 ＝ <strong>57,000円</strong><br><strong>検算：</strong>受入合計（50,000 ＋ 162,000 ＋ 85,500）＝ 297,500円。297,500 − 240,500 ＝ 57,000円。一致します。</p>'
+    },
+    {
+      text: '前問と同じ甲材料の動きについて、<strong>移動平均法</strong>により ① 15日出庫時の払出単価、② 27日出庫時の払出単価、③ 当月消費額を求めなさい。なお、単価に端数は生じない。',
+      answer: [530, 550, 242500],
+      formula: ['(100 * 500 + 300 * 540) / (100 + 300)', '(150 * 530 + 150 * 570) / (150 + 150)', '530 * 250 + 550 * 200'],
+      labels: ['① 15日の払出単価', '② 27日の払出単価', '③ 当月消費額'],
+      unit: '円',
+      hint: '平均単価が変わるのは受入のときだけ。払い出しても平均単価は動きません。',
+      explain: '<p>① 10日の仕入後：(50,000 ＋ 162,000) ÷ (100 ＋ 300)個 ＝ <strong>@530円</strong><br>15日出庫 ＝ @530 × 250個 ＝ 132,500円。残高 150個・79,500円。<br>② 22日の仕入後：(79,500 ＋ 85,500) ÷ (150 ＋ 150)個 ＝ 165,000 ÷ 300 ＝ <strong>@550円</strong><br>③ 消費額 ＝ 132,500 ＋（@550 × 200個 ＝ 110,000）＝ <strong>242,500円</strong><br>月末有高は @550 × 100個 ＝ 55,000円。検算：297,500 − 242,500 ＝ 55,000円。<br class="small">同じ材料の動きでも、先入先出法（240,500円）と移動平均法（242,500円）では消費額が違います。<strong>どの方法を採るかで製品原価が変わる</strong>ということです。</p>'
+    },
+    {
+      text: '乙材料の11月の動きは次のとおりである。月初有高 200個 @480円／8日 仕入 500個 @520円／20日 仕入 300個 @540円。当月の消費量は 800個であった。<strong>総平均法</strong>により ① 総平均単価、② 当月消費額、③ 月末帳簿棚卸高を求めなさい。なお、単価は円未満を四捨五入する（本問では端数は生じない）。',
+      answer: [518, 414400, 103600],
+      formula: ['(200 * 480 + 500 * 520 + 300 * 540) / (200 + 500 + 300)', '518 * 800', '518 * (200 + 500 + 300 - 800)'],
+      labels: ['① 総平均単価', '② 当月消費額', '③ 月末帳簿棚卸高'],
+      unit: '円',
+      hint: '分母にも分子にも払出は入りません。その月に手元にあったものの全部を平均します。',
+      explain: '<p>総額 ＝ 96,000 ＋ 260,000 ＋ 162,000 ＝ 518,000円<br>総数量 ＝ 200 ＋ 500 ＋ 300 ＝ 1,000個<br>① 総平均単価 ＝ 518,000 ÷ 1,000 ＝ <strong>@518円</strong><br>② 消費額 ＝ @518 × 800個 ＝ <strong>414,400円</strong><br>③ 月末数量 ＝ 1,000 − 800 ＝ 200個。月末有高 ＝ @518 × 200個 ＝ <strong>103,600円</strong><br>検算：414,400 ＋ 103,600 ＝ 518,000円。総額と一致します。</p>'
+    },
+    {
+      text: '当月の材料の実際消費量は 900kgであった。予定価格は @520円、実際価格は @545円である。① 予定消費額、② 実際消費額、③ 材料消費価格差異の金額（絶対値）を求めなさい。',
+      answer: [468000, 490500, 22500],
+      formula: ['520 * 900', '545 * 900', '545 * 900 - 520 * 900'],
+      labels: ['① 予定消費額', '② 実際消費額', '③ 材料消費価格差異（絶対値）'],
+      unit: '円',
+      hint: '面積図を描いてください。予定価格の線と実際価格の線に挟まれた帯が差異です。',
+      explain: '<p>① 予定消費額 ＝ @520 × 900kg ＝ <strong>468,000円</strong>（仕掛品・製造間接費に振り替えた金額）<br>② 実際消費額 ＝ @545 × 900kg ＝ <strong>490,500円</strong>（実際に材料勘定から出ていった金額）<br>③ 差異 ＝（@520 − @545）× 900kg ＝ △22,500 → 金額は <strong>22,500円</strong>、<mark><strong>借方差異（不利差異）</strong></mark>。<br>予定より実際のほうが高くついたので、その分を製品原価に入れきれていません。</p>'
+    },
+    {
+      text: '当月の材料の実際消費量は 1,500kgであった。予定価格は @600円、実際価格は @580円である。① 予定消費額、② 材料消費価格差異の金額（絶対値）を求めなさい。また、この差異が有利差異なら 1、不利差異なら 2 を③に入力しなさい。',
+      answer: [900000, 30000, 1],
+      formula: ['600 * 1500', '600 * 1500 - 580 * 1500', '1'],
+      labels: ['① 予定消費額', '② 差異の金額（絶対値）', '③ 有利なら1・不利なら2'],
+      hint: '予定より実際のほうが安く済んでいます。',
+      explain: '<p>① 予定消費額 ＝ @600 × 1,500kg ＝ <strong>900,000円</strong><br>② 実際消費額 ＝ @580 × 1,500kg ＝ 870,000円。差異 ＝（@600 − @580）× 1,500 ＝ ＋30,000 → <strong>30,000円</strong><br>③ プラスなので<strong>貸方差異（有利差異）＝ 1</strong>。<br>予定額を多めに製品原価に入れておいたのに、実際には少なくて済んだ形です。年度末には売上原価を<strong>減らす</strong>方向（貸方）で賦課します。</p>'
+    },
+    {
+      text: '月末の材料の帳簿棚卸数量は 100個、実地棚卸数量は 95個であった。単価は @570円である。この減耗は正常な範囲のものである。① 棚卸減耗費、② 貸借対照表に計上される月末材料有高を求めなさい。',
+      answer: [2850, 54150],
+      formula: ['(100 - 95) * 570', '95 * 570'],
+      labels: ['① 棚卸減耗費', '② 月末材料有高'],
+      unit: '円',
+      hint: '貸借対照表に載るのは、帳簿数量と実地数量のどちらに基づく金額でしょうか。',
+      explain: '<p>① 棚卸減耗費 ＝（100個 − 95個）× @570 ＝ <strong>2,850円</strong>。正常な範囲なので<strong>製造間接費</strong>に振り替えます。<br>② 貸借対照表に載るのは<mark>実際に手元にある分</mark>なので、実地棚卸数量に基づきます。95個 × @570 ＝ <strong>54,150円</strong>。<br>帳簿棚卸高 57,000円 から減耗分 2,850円 を引いた金額と一致します。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-zairyohi', {
+  title: '確認テスト — 材料費',
+  questions: [
+    {
+      text: '継続記録法と棚卸計算法の本質的な違いとして、最も適切なものはどれですか。',
+      choices: [
+        '継続記録法のほうが記録の手間が小さい',
+        '棚卸計算法では実地棚卸を行わないので、月末有高が分からない',
+        '継続記録法は帳簿数量と実地数量を突き合わせられるため棚卸減耗を把握できるが、棚卸計算法では減耗が消費量に紛れ込んで把握できない',
+        '棚卸計算法では消費単価を計算できない'
+      ],
+      answer: 2,
+      explain: '<p>棚卸計算法は「月初 ＋ 購入 − 月末実地」の<strong>引き算</strong>で消費量を出します。すると盗難・紛失・目減りで消えた分まで「消費した」ことにされ、<mark>使ったのか消えたのかを区別できません</mark>。<br>継続記録法なら帳簿上あるはずの数量が分かっているので、実地棚卸と突き合わせて差を棚卸減耗として取り出せます。手間の大小ではなく、これが両者の決定的な差です。<br>選択肢1は逆で、手間が小さいのは棚卸計算法です。選択肢2について、棚卸計算法でも月末に実地棚卸は行います（むしろそれなしには消費量が計算できません）。</p>'
+    },
+    {
+      text: '予定価格 @400円に対し、実際価格が @430円であった。実際消費量は 600kgである。材料消費価格差異について正しい記述はどれですか。',
+      choices: [
+        '18,000円の貸方差異（有利差異）',
+        '18,000円の借方差異（不利差異）',
+        '258,000円の借方差異（不利差異）',
+        '差異は生じない'
+      ],
+      answer: 1,
+      explain: '<p>（@400 − @430）× 600kg ＝ <strong>△18,000円</strong>。マイナスなので<strong>借方差異（不利差異）</strong>です。<br><mark>予定 ＜ 実際 → 借方差異（不利差異）</mark>。予定していたより実際に多く払ってしまった、と読めば有利・不利の言葉と結果が一致します。<br>選択肢3の 258,000円 は実際消費額（@430 × 600）そのものです。差異は<strong>単価の差</strong>に数量を掛けたものであって、実際消費額ではありません。</p>'
+    },
+    {
+      text: '次のうち、直接材料費に分類されるものの組み合わせはどれですか。',
+      choices: [
+        '主要材料費と買入部品費',
+        '主要材料費と補助材料費',
+        '買入部品費と工場消耗品費',
+        '補助材料費と消耗工具器具備品費'
+      ],
+      answer: 0,
+      explain: '<p>直接材料費は<strong>主要材料費（素材費・原料費）</strong>と<strong>買入部品費</strong>の2つです。どちらも製品1個あたりの使用量を数えて割り当てられます。<br>間接材料費は<strong>補助材料費・工場消耗品費・消耗工具器具備品費</strong>の3つ。直接2種類・間接3種類という数まで込みで覚えてください。</p>'
+    },
+    {
+      text: '家具工場で、テーブルの組み立てに使う接着剤を消費しました。この材料費の分類と、振り替える先の勘定として正しいものはどれですか。',
+      choices: [
+        '主要材料費 — 仕掛品',
+        '買入部品費 — 仕掛品',
+        '補助材料費 — 製造間接費',
+        '工場消耗品費 — 仕掛品'
+      ],
+      answer: 2,
+      explain: '<p>接着剤は製品を作るために使いますが、テーブル1台あたり何グラム使ったかを追跡していません。したがって<strong>補助材料費（間接材料費）</strong>であり、いったん<strong>製造間接費</strong>に集めてから配賦します。<br>間接材料費が仕掛品に直課されることはありません。製品ごとにひもづけられないからこそ間接材料費に分類されているのであって、直課できるならそもそも直接材料費です。</p>'
+    },
+    {
+      text: '材料副費を予定配賦する理由として、最も適切なものはどれですか。',
+      choices: [
+        '実際発生額を計算するのが面倒だから',
+        '購入事務費や検収費などの実際発生額は月末に締めるまで分からず、購入のつど材料の受入単価を確定できないから',
+        '予定配賦したほうが購入原価が安くなるから',
+        '材料副費は購入原価に含めてはいけないから'
+      ],
+      answer: 1,
+      explain: '<p>内部副費はその材料1回分にいくらかかったかを、その場では誰も知りません。実際額を待つと<mark>受入単価が月末まで確定せず、月中の払出も計算できません</mark>。材料は毎日出庫されるのに原価が決まらないのでは工場が動かないため、あらかじめ決めた率で計算します。<br>選択肢3について、予定配賦は購入原価を安く見せるための操作ではありません。ズレは差異として別に把握されます。選択肢4は誤りで、外部副費は購入原価に含めます。</p>'
+    },
+    {
+      text: '予定価格を用いて材料の消費額を計算するとき、予定消費額の計算式として正しいものはどれですか。',
+      choices: [
+        '予定価格 × 予定消費量',
+        '予定価格 × 実際消費量',
+        '実際価格 × 予定消費量',
+        '実際価格 × 実際消費量'
+      ],
+      answer: 1,
+      explain: '<p><strong>予定消費額 ＝ 予定価格 × 実際消費量</strong>。<mark>予定するのは単価だけで、数量は実際のものを使います。</mark><br>数量まで予定にしない理由は明確です。使った数量の多い少ないこそが工場の能率そのものであり、そこを予定に置き換えたら原価計算から現場の情報が消えてしまいます。切り離したいのは工場の責任外である価格変動だけです。<br>選択肢4は実際消費額であって、予定消費額ではありません。</p>'
+    },
+    {
+      text: '実際価格ではなく予定価格を用いる理由として、市場価格の変動に関わるものはどれですか。',
+      choices: [
+        '実際価格を使うと、同じ作り方をしていても市場価格の変動によって製品原価が月ごとに変わり、工場の能率の良し悪しが見えなくなるから',
+        '実際価格を使うと、材料の購入金額そのものが変わってしまうから',
+        '予定価格を使えば、材料の実際の購入価格を記録しなくてよくなるから',
+        '予定価格のほうが実際価格より必ず低く設定されるから'
+      ],
+      answer: 0,
+      explain: '<p>材料の市場価格が上がれば、まったく同じ作り方で同じ数量を使っても製品原価は上がります。数字だけ見た人は「現場で何かあったのか」と考えますが、<mark>悪化したのは市場価格であって工場の能率ではありません</mark>。<br>予定価格なら単価が固定されるので、原価が動く原因は使った数量だけになり、工場が責任を負うべき部分だけが数字に現れます。<br>選択肢3は誤りです。材料勘定は実際の購入原価で記録され続けます。だからこそ予定額との差が差異として出てきます。</p>'
+    },
+    {
+      text: '月末に材料の実地棚卸を行い、正常な範囲の棚卸減耗 3,000円が判明しました。この処理として正しいものはどれですか。',
+      choices: [
+        '借方：棚卸減耗損　貸方：材料',
+        '借方：製造間接費　貸方：材料',
+        '借方：仕掛品　貸方：材料',
+        '借方：売上原価　貸方：材料'
+      ],
+      answer: 1,
+      explain: '<p>正常な範囲の棚卸減耗は<strong>間接経費</strong>として<strong>製造間接費</strong>に振り替えます。製造活動に伴って通常発生するものなので、期間の費用ではなく<mark>製品原価の一部</mark>になるからです。<br>商業簿記では棚卸減耗損として損益計算書に載せますが（選択肢1）、工業簿記では行き先が違います。この対比は取り違えやすいので、意識して区別してください。<br>なお、火災や盗難といった異常な原因による減耗は非原価項目として扱い、製品原価に含めません。</p>'
+    },
+    {
+      text: '次のうち、内部副費に該当するものはどれですか。',
+      choices: [
+        '引取運賃',
+        '買入手数料',
+        '関税',
+        '検収費'
+      ],
+      answer: 3,
+      explain: '<p><strong>検収費</strong>は材料が届いたあと、社内で行う検収作業にかかる費用なので<strong>内部副費</strong>です。ほかに購入事務費・整理費・選別費・保管費があります。<br>引取運賃・買入手数料・関税は、材料が倉庫に届く<strong>まで</strong>にかかる<strong>外部副費（引取費用）</strong>です。「倉庫に着くまでか、着いてからか」で線を引いてください。<br>外部副費は購入原価に含めますが、内部副費はその全部または一部を含めないことができます。</p>'
+    },
+    {
+      text: '材料消費価格差異勘定に借方残高が 15,000円ある状態で会計年度末を迎えました。この差異を売上原価に賦課する仕訳として正しいものはどれですか。',
+      choices: [
+        '借方：売上原価 15,000　貸方：材料消費価格差異 15,000',
+        '借方：材料消費価格差異 15,000　貸方：売上原価 15,000',
+        '借方：製造間接費 15,000　貸方：材料消費価格差異 15,000',
+        '借方：材料 15,000　貸方：材料消費価格差異 15,000'
+      ],
+      answer: 0,
+      invariant: [['15000', 'answer']],
+      explain: '<p>借方残高の差異は<strong>不利差異</strong>で、実際にかかった分を製品原価に入れきれなかったことを意味します。年度末には売上原価を<strong>増やす</strong>方向で処理するので、売上原価が借方に来ます。<br>差異勘定の借方残高を消すには貸方に立てる必要があり、相手科目が売上原価の借方になる、という順で考えても同じ答えになります。<br>有利差異（貸方残高）なら選択肢2の形になり、売上原価が減ります。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-zairyohi', {
+  title: '用語の穴埋め — 材料費',
+  questions: [
+    {
+      text: '購入代価に加算して購入原価を構成する、引取運賃や買入手数料などの費用を何といいますか。',
+      answer: ['材料副費', 'ざいりょうふくひ'],
+      explain: '<p>購入原価 ＝ 購入代価 ＋ <strong>材料副費</strong>。商業簿記の仕入諸掛りに対応しますが、工業簿記では倉庫に入れたあとの保管費まで含み得る点が広くなっています。</p>'
+    },
+    {
+      text: '材料の受入・払出のつど数量を帳簿に記録し、払出記録の合計から消費量を把握する方法を何といいますか。',
+      answer: ['継続記録法', 'けいぞくきろくほう'],
+      explain: '<p><strong>継続記録法</strong>。帳簿棚卸数量が常に分かるため、実地棚卸と突き合わせて棚卸減耗を把握できます。対する棚卸計算法では、減耗が消費量に紛れ込んで把握できません。</p>'
+    },
+    {
+      text: '材料ごとの受入・払出・残高を数量と金額の両方で記録する補助元帳を何といいますか。',
+      answer: ['材料元帳', 'ざいりょうもとちょう'],
+      explain: '<p><strong>材料元帳</strong>。継続記録法の実体そのものです。総勘定元帳の材料勘定を材料の種類ごとに細かく分けたものなので、全部を合計すると材料勘定の残高に一致します。</p>'
+    },
+    {
+      text: '製造現場が倉庫から材料を持ち出すときに作成され、払出数量とどの製造指図書向けかを記載する証ひょうを何といいますか。',
+      answer: ['材料出庫伝票', '出庫票', '材料出庫請求書', '出庫伝票'],
+      explain: '<p><strong>材料出庫伝票</strong>（出庫票・材料出庫請求書とも）。この1枚が材料元帳の払出数量と、その材料費をどの製品に割り当てるかを同時に決めています。特定の製造指図書番号があれば直接材料費、なければ間接材料費です。</p>'
+    },
+    {
+      text: '予定価格で計算した消費額と、実際価格で計算した消費額との差額を処理する勘定を何といいますか。',
+      answer: ['材料消費価格差異', 'ざいりょうしょうひかかくさい'],
+      explain: '<p><strong>材料消費価格差異</strong> ＝（予定価格 − 実際価格）× 実際消費量。マイナスなら借方差異（不利差異）、プラスなら貸方差異（有利差異）です。</p>'
+    },
+    {
+      text: '予定より実際のほうが多くかかったために生じ、差異勘定の借方に立つ差異を、有利・不利の別で何といいますか。',
+      answer: ['不利差異', 'ふりさい'],
+      explain: '<p><strong>不利差異</strong>。借方差異と同じものです。実際にかかった費用を製品原価に入れきれていない状態なので、会社にとって都合が悪いほうです。逆は貸方差異＝有利差異。<mark>借方＝不利、貸方＝有利</mark>という対応は工業簿記全体で繰り返し出ます。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>
