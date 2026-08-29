@@ -35,7 +35,7 @@ accounts:
   - name: "未収還付消費税(等)"
     grade: 2
     category: 資産
-  - name: "未収消費税、未収入金、未"
+  - name: "未収消費税、未収入金、未収金"
     grade: 2
     category: 資産
   - name: "普通預金"
@@ -43,9 +43,6 @@ accounts:
     category: 資産
   - name: "銀行預金"
     grade: 3
-    category: 資産
-  - name: "収金"
-    grade: 2
     category: 資産
   - name: "普通預金○○銀行"
     grade: 3
@@ -83,13 +80,10 @@ accounts:
   - name: "建設仮勘定"
     grade: 2
     category: 資産
-  - name: "建設仮、建設前渡金、建設"
+  - name: "建設仮、建設前渡金、建設仮払金"
     grade: 2
     category: 資産
   - name: "クレジット売掛金"
-    grade: 3
-    category: 資産
-  - name: "仮払金"
     grade: 3
     category: 資産
   - name: "電子記録債権"
@@ -173,6 +167,9 @@ accounts:
   - name: "長期貸付金"
     grade: 2
     category: 資産
+  - name: "仮払金"
+    grade: 3
+    category: 資産
   - name: "不渡手形"
     grade: 2
     category: 資産
@@ -209,7 +206,7 @@ accounts:
   - name: "構築物"
     grade: 2
     category: 資産
-  - name: "前払保険料など前払費用"
+  - name: "前払保険料"
     grade: 3
     category: 資産
   - name: "前払費用"
@@ -218,10 +215,7 @@ accounts:
   - name: "借地権"
     grade: 2
     category: 資産
-  - name: "の各勘定"
-    grade: 3
-    category: 資産
-  - name: "未収家賃など未収収益の"
+  - name: "未収家賃"
     grade: 3
     category: 資産
   - name: "未収収益"
@@ -229,9 +223,6 @@ accounts:
     category: 資産
   - name: "商標権"
     grade: 2
-    category: 資産
-  - name: "各勘定"
-    grade: 3
     category: 資産
   - name: "建物"
     grade: 3
@@ -260,16 +251,10 @@ accounts:
   - name: "車両、運搬具"
     grade: 3
     category: 資産
-  - name: "車両運搬具減価償却累計"
+  - name: "車両運搬具減価償却累計額"
     grade: 3
     category: 資産
-  - name: "車両減価償却累計額、減価"
-    grade: 3
-    category: 資産
-  - name: "額"
-    grade: 3
-    category: 資産
-  - name: "償却累計額"
+  - name: "車両減価償却累計額、減価償却累計額"
     grade: 3
     category: 資産
   - name: "土地"
@@ -311,16 +296,13 @@ accounts:
   - name: "未払金"
     grade: 3
     category: 負債
-  - name: "前受金（顧客との契約か"
+  - name: "前受金（顧客との契約から生じたものに限る）"
     grade: 2
     category: 負債
   - name: "役員借入金"
     grade: 3
     category: 負債
   - name: "契約負債"
-    grade: 2
-    category: 負債
-  - name: "ら生じたものに限る）"
     grade: 2
     category: 負債
   - name: "手形借入金"
@@ -344,7 +326,7 @@ accounts:
   - name: "商品(製品)保証引当金"
     grade: 2
     category: 負債
-  - name: "未払利息など未払費用の"
+  - name: "未払利息"
     grade: 3
     category: 負債
   - name: "未払費用"
@@ -353,7 +335,7 @@ accounts:
   - name: "(役員)賞与引当金"
     grade: 2
     category: 負債
-  - name: "前受地代など前受収益の"
+  - name: "前受地代"
     grade: 3
     category: 負債
   - name: "前受収益"
@@ -419,14 +401,11 @@ accounts:
   - name: "株式申込証拠金"
     grade: 2
     category: 純資産
-  - name: "申込証拠金、新株式申込証"
+  - name: "申込証拠金、新株式申込証拠金"
     grade: 2
     category: 純資産
   - name: "資本金"
     grade: 3
-    category: 純資産
-  - name: "拠金"
-    grade: 2
     category: 純資産
   - name: "利益準備金"
     grade: 3
@@ -455,10 +434,7 @@ accounts:
   - name: "別途積立金"
     grade: 2
     category: 純資産
-  - name: "その他有価証券評価差額"
-    grade: 2
-    category: 純資産
-  - name: "金"
+  - name: "その他有価証券評価差額金"
     grade: 2
     category: 純資産
   - name: "非支配株主持分"
@@ -485,14 +461,11 @@ accounts:
   - name: "有価証券売却益"
     grade: 2
     category: 収益
-  - name: "有価証券売買益、有価証券"
+  - name: "有価証券売買益、有価証券運用益"
     grade: 2
     category: 収益
   - name: "受取地代"
     grade: 3
-    category: 収益
-  - name: "運用益"
-    grade: 2
     category: 収益
   - name: "受取手数料"
     grade: 3
@@ -539,14 +512,11 @@ accounts:
   - name: "固定資産売却益"
     grade: 3
     category: 収益
-  - name: "備品売却益、土地売却益、"
+  - name: "備品売却益、土地売却益、建物売却益"
     grade: 3
     category: 収益
   - name: "保険差益"
     grade: 2
-    category: 収益
-  - name: "建物売却益"
-    grade: 3
     category: 収益
   - name: "負ののれん発生益"
     grade: 2
@@ -554,10 +524,7 @@ accounts:
   - name: "修繕引当金戻入"
     grade: 2
     category: 収益
-  - name: "商品(製品)保証引当金戻"
-    grade: 2
-    category: 収益
-  - name: "入"
+  - name: "商品(製品)保証引当金戻入"
     grade: 2
     category: 収益
   - name: "固定資産受贈益"
@@ -608,7 +575,7 @@ accounts:
   - name: "棚卸評価損"
     grade: 2
     category: 費用
-  - name: "給料手当、賃金給料、販売"
+  - name: "給料手当、賃金給料、販売員給料"
     grade: 2
     category: 費用
   - name: "法定福利費"
@@ -616,9 +583,6 @@ accounts:
     category: 費用
   - name: "社会保険料"
     grade: 3
-    category: 費用
-  - name: "員給料"
-    grade: 2
     category: 費用
   - name: "広告宣伝費"
     grade: 3
@@ -632,7 +596,7 @@ accounts:
   - name: "退職給付費用"
     grade: 2
     category: 費用
-  - name: "退職給付引当金繰入(額)、"
+  - name: "退職給付引当金繰入(額)、退職給付引当損、退職給付"
     grade: 2
     category: 費用
   - name: "支払手数料"
@@ -640,9 +604,6 @@ accounts:
     category: 費用
   - name: "販売手数料"
     grade: 3
-    category: 費用
-  - name: "退職給付引当損、退職給付"
-    grade: 2
     category: 費用
   - name: "金、退職金"
     grade: 2
@@ -662,7 +623,7 @@ accounts:
   - name: "(役員)賞与引当金繰入"
     grade: 2
     category: 費用
-  - name: "商品(製品)保証引当金繰"
+  - name: "商品(製品)保証引当金繰入"
     grade: 2
     category: 費用
   - name: "貸倒引当金繰入"
@@ -680,14 +641,11 @@ accounts:
   - name: "減価償却費"
     grade: 3
     category: 費用
-  - name: "建物減価償却費、備品減価"
+  - name: "建物減価償却費、備品減価償却費"
     grade: 3
     category: 費用
   - name: "のれん償却"
     grade: 2
-    category: 費用
-  - name: "償却費"
-    grade: 3
     category: 費用
   - name: "通信費"
     grade: 3
@@ -716,14 +674,11 @@ accounts:
   - name: "支払家賃"
     grade: 3
     category: 費用
-  - name: "地代家賃、(支払)賃借料、"
+  - name: "地代家賃、(支払)賃借料、(支払)不動産賃借料"
     grade: 3
     category: 費用
   - name: "創立費"
     grade: 2
-    category: 費用
-  - name: "(支払)不動産賃借料"
-    grade: 3
     category: 費用
   - name: "支払地代"
     grade: 3
@@ -743,14 +698,11 @@ accounts:
   - name: "租税公課"
     grade: 3
     category: 費用
-  - name: "公租公課、固定資産税、印"
+  - name: "公租公課、固定資産税、印紙税"
     grade: 3
     category: 費用
   - name: "開発費"
     grade: 2
-    category: 費用
-  - name: "紙税"
-    grade: 3
     category: 費用
   - name: "修繕費"
     grade: 3
@@ -779,19 +731,13 @@ accounts:
   - name: "固定資産売却損"
     grade: 3
     category: 費用
-  - name: "備品売却損、建物売却損、"
+  - name: "備品売却損、建物売却損、土地売却損"
     grade: 3
     category: 費用
   - name: "有価証券売却損"
     grade: 2
     category: 費用
-  - name: "有価証券売買損、有価証券"
-    grade: 2
-    category: 費用
-  - name: "土地売却損"
-    grade: 3
-    category: 費用
-  - name: "運用損"
+  - name: "有価証券売買損、有価証券運用損"
     grade: 2
     category: 費用
   - name: "有価証券評価損"
@@ -815,7 +761,7 @@ accounts:
   - name: "その他有価証券売却損"
     grade: 2
     category: 費用
-  - name: "法人税、住民税及び事業"
+  - name: "法人税、住民税及び事業税"
     grade: 3
     category: 費用
   - name: "法人税等"
@@ -827,16 +773,10 @@ accounts:
   - name: "災害損失"
     grade: 2
     category: 費用
-  - name: "税"
-    grade: 3
-    category: 費用
   - name: "固定資産除却損"
     grade: 2
     category: 費用
-  - name: "固定資産廃棄損、備品除却"
-    grade: 2
-    category: 費用
-  - name: "損、建物除却損、ソフトウ"
+  - name: "固定資産廃棄損、備品除却損、建物除却損、ソフトウ"
     grade: 2
     category: 費用
   - name: "ェア除却損、除却損"
@@ -845,10 +785,7 @@ accounts:
   - name: "固定資産圧縮損"
     grade: 2
     category: 費用
-  - name: "備品圧縮損、建物圧縮損、"
-    grade: 2
-    category: 費用
-  - name: "機械装置圧縮損"
+  - name: "備品圧縮損、建物圧縮損、機械装置圧縮損"
     grade: 2
     category: 費用
   - name: "追徴法人税等"
@@ -866,10 +803,7 @@ accounts:
   - name: "保守費"
     grade: 2
     category: 費用
-  - name: "維持費、支払メンテナンス"
-    grade: 2
-    category: 費用
-  - name: "料"
+  - name: "維持費、支払メンテナンス料"
     grade: 2
     category: 費用
   - name: "その他"
@@ -914,12 +848,9 @@ accounts:
   - name: "本店"
     grade: 2
     category: 費用
-  - name: "非支配株主に帰属する当"
+  - name: "非支配株主に帰属する当期純利益"
     grade: 2
     category: 費用
-  - name: "期純利益"
-    grade: 2
-    category: 費用
-  - name: "期純損失"
+  - name: "非支配株主に帰属する当期純損失"
     grade: 2
     category: 費用

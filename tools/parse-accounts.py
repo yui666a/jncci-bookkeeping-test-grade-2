@@ -31,6 +31,12 @@ BOUNDS = [(97, 3), (242, 3), (387, 2), (99999, 2)]
 COLUMN_TOLERANCE = 25.0
 # 同一行と見なすyMinの許容誤差（pt）。同一行の単語はyMinがほぼ一致する。
 ROW_TOLERANCE = 1.0
+# 折り返しの後半は、セル内の行送り（12pt）だけ下に現れる。次の科目は
+# 行の高さ（15pt以上）だけ離れるため、yMinの差で両者を区別できる。
+# 行番号で数えると、間に別の列の行が挟まる場合に取り違える。
+WRAP_LINE_GAP = 13.0
+# 折り返しが起きる科目名の最小長。これ未満はセル幅に余裕があり折り返さない。
+WRAP_MIN_LEN = 10
 
 
 def grade_of(x):
@@ -41,14 +47,14 @@ def grade_of(x):
 
 
 def group_rows(words):
-    """(x, y, text) のリストを、yMinの近い単語ごとの行にまとめる。"""
+    """(x, y, text) のリストを、yMinの近い単語ごとに (y, 行) へまとめる。"""
     rows = []
     for x, y, text in sorted(words, key=lambda w: (w[1], w[0])):
         if rows and abs(rows[-1][0] - y) <= ROW_TOLERANCE:
             rows[-1][1].append((x, text))
         else:
             rows.append([y, [(x, text)]])
-    return [r[1] for r in rows]
+    return [(r[0], r[1]) for r in rows]
 
 
 def merge_columns(row):
@@ -65,6 +71,51 @@ def merge_columns(row):
     return [(x, text) for x, text, _ in merged]
 
 
+# 「前払保険料など前払費用の各勘定」のように、具体的な科目名と、それが
+# 属する分類とを1つのセルにまとめた記載がある。前半は実在する科目名なので、
+# 分割して両方を登録しないと、正しい科目名が「実在しない」と判定される。
+GLOSS = re.compile(r'^(.+?)など(.+?)の各勘定$')
+
+
+def split_gloss(name):
+    """具体例つきの記載を、具体的な科目名と分類名に分ける。"""
+    m = GLOSS.match(name)
+    return [m.group(1), m.group(2)] if m else [name]
+
+
+def join_wrapped_cells(rows):
+    """セル内で折り返した科目名を、直前の同じ列の科目名に連結する。
+
+    表のセルは幅を超えると次の行へ折り返す。折り返した後半は独立した行に
+    現れるため、そのままでは前半が切れた科目名（「法人税、住民税及び事業」）と
+    意味をなさない断片（「税」）の2件になる。
+
+    折り返しはセル内の行送り（12pt）だけ下に現れ、次の科目は行の高さ
+    （15pt以上）だけ離れる。この差で両者を区別する。行番号で数えると、
+    間に別の列の行が挟まる場合に取り違える。
+    """
+    out = [(y, list(segs)) for y, segs in rows]
+    for i, (y, segs) in enumerate(out):
+        # 1行に複数の列が同時に折り返すことがある（「車両運搬具減価償却累計」と
+        # 「車両減価償却累計額、減価」が同じ行で折り返す）。各セグメントを
+        # 独立に見る。後ろから消すのでインデックスがずれない。
+        for si in range(len(segs) - 1, -1, -1):
+            x, text = out[i][1][si]
+            for j in range(i - 1, -1, -1):
+                if y - out[j][0] > WRAP_LINE_GAP:
+                    break
+                same = [k for k, (px, _) in enumerate(out[j][1])
+                        if abs(px - x) <= COLUMN_TOLERANCE]
+                if not same:
+                    continue
+                k = same[0]
+                if len(out[j][1][k][1]) >= WRAP_MIN_LEN:
+                    out[j][1][k] = (out[j][1][k][0], out[j][1][k][1] + text)
+                    del out[i][1][si]
+                break
+    return [segs for _, segs in out if segs]
+
+
 def main():
     xml_text = subprocess.run(
         ['pdftotext', '-bbox', 'reference/kamokuhyo.pdf', '-'],
@@ -79,8 +130,9 @@ def main():
             text = (w.text or '').strip()
             if text:
                 words.append((float(w.get('xMin')), float(w.get('yMin')), text))
-        for row in group_rows(words):
-            segs = merge_columns(row)
+        rows = [(y, merge_columns(r)) for y, r in group_rows(words)]
+        rows = join_wrapped_cells(rows)
+        for segs in rows:
             if len(segs) == 1 and CATEGORY.match(segs[0][1]):
                 category = segs[0][1].replace('（資本）', '')
                 continue
@@ -90,9 +142,11 @@ def main():
                 if NOISE.match(seg) or seg in FURNITURE:
                     continue
                 grade = grade_of(x)
-                # 同名が3級と2級の両方に出た場合、下位の級を採用する
-                if seg not in found or grade > found[seg]['grade']:
-                    found[seg] = {'name': seg, 'grade': grade, 'category': category}
+                for name in split_gloss(seg):
+                    # 同名が3級と2級の両方に出た場合、下位の級を採用する
+                    if name not in found or grade > found[name]['grade']:
+                        found[name] = {'name': name, 'grade': grade,
+                                       'category': category}
 
     lines = ['# 商業簿記標準・許容勘定科目表（2022年度版）を構造化したもの。',
              '# 原本と生成方法は reference/SOURCES.md と tools/parse-accounts.py を参照。',
