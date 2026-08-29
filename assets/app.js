@@ -15,8 +15,65 @@
       try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 保存できなくても続行 */ }
     }
   };
-  var PAGE = (location.pathname.split('/').pop() || 'index') .replace(/\.html?$/, '');
+  // 単元キーはディレクトリを含める。ファイル名だけだと phase0/01_... と
+  // phase1/01_... が同じキーになり、別単元の記録が混ざる。
+  function unitKeyOf(pathname) {
+    var p = pathname.replace(/^\/+/, '').replace(/\.html?$/, '');
+    var seg = p.split('/').filter(Boolean);
+    if (!seg.length) return 'index';
+    return seg.slice(-2).join('/');
+  }
+  var PAGE = unitKeyOf(location.pathname);
   var NS = 'boki2:' + PAGE + ':';
+
+  /* ---------- 学習記録 ---------- */
+  var PROGRESS_KEY = 'boki2:progress';
+  var PROGRESS_VERSION = 1;
+
+  function emptyProgress() {
+    return { version: PROGRESS_VERSION, sessions: [], drills: {}, checks: {}, notes: [] };
+  }
+
+  // 保存された値が壊れていても、そこで学習が止まらないようにする。
+  // 形が違えば初期値に戻すが、version が未来のものはそのまま保持して
+  // 上書きを避ける（新しい版で書かれた記録を古い版が壊さない）。
+  function loadProgress() {
+    var raw = LS.get(PROGRESS_KEY, null);
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return emptyProgress();
+    var base = emptyProgress();
+    if (typeof raw.version === 'number') base.version = raw.version;
+    if (Array.isArray(raw.sessions)) base.sessions = raw.sessions;
+    if (Array.isArray(raw.notes)) base.notes = raw.notes;
+    if (raw.drills && typeof raw.drills === 'object') base.drills = raw.drills;
+    if (raw.checks && typeof raw.checks === 'object') base.checks = raw.checks;
+    return base;
+  }
+
+  function saveProgress(p) { LS.set(PROGRESS_KEY, p); }
+
+  // ローカルタイムゾーン付きの ISO 8601。toISOString() は UTC になり、
+  // 深夜に学習した記録が前日にずれて見える。
+  function nowISO() {
+    var d = new Date();
+    var off = -d.getTimezoneOffset();
+    var sign = off >= 0 ? '+' : '-';
+    function p2(n) { return (n < 10 ? '0' : '') + n; }
+    return d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate()) +
+      'T' + p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds()) +
+      sign + p2(Math.floor(Math.abs(off) / 60)) + ':' + p2(Math.abs(off) % 60);
+  }
+
+  var BokiProgress = {
+    unitKey: function () { return PAGE; },
+    now: nowISO,
+    dump: loadProgress,
+    exportJSON: function () {
+      var p = loadProgress();
+      p.exportedAt = nowISO();
+      return JSON.stringify(p);
+    },
+    _reset: function () { saveProgress(emptyProgress()); }
+  };
 
   /* ---------- テーマ切替 ---------- */
   function initTheme() {
@@ -431,5 +488,6 @@
   window.BokiQuiz = BokiQuiz;
   window.BokiNum = BokiNum;
   window.BokiFill = BokiFill;
+  window.BokiProgress = BokiProgress;
   window.BokiLS = LS;
 })();
