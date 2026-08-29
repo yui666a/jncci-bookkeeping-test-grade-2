@@ -114,6 +114,54 @@ try {
       return BokiProgress.dump().checks['phase0/04_junbi'].k; }),
        false, '移行が新しい記録を上書きしない');
   });
+  // 極端に短い区間は記録しない。ページを開いて即座に閉じた分が
+  // 大量に積もると、集計が読めなくなる。
+  await withApp(browser, 'phase0/03_dentaku.html', async (page) => {
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      BokiProgress.addSession('phase0/03_dentaku', BokiProgress.now(), 3);
+      BokiProgress.addSession('phase0/03_dentaku', BokiProgress.now(), 120);
+      const s = BokiProgress.dump().sessions;
+      return [s.length, s[0].sec, s[0].unit]; }),
+       [1, 120, 'phase0/03_dentaku'], '10秒未満の区間は捨てる');
+  });
+
+  // 秒は整数に丸める。小数のまま貯めると集計時に誤差が積もる。
+  await withApp(browser, 'phase0/03_dentaku.html', async (page) => {
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      BokiProgress.addSession('u', BokiProgress.now(), 61.7);
+      return BokiProgress.dump().sessions[0].sec; }),
+       62, '秒が整数に丸められる');
+  });
+
+  // 非可視化で区間が確定する。実時間ではなく能動時間を測る。
+  await withApp(browser, 'phase0/03_dentaku.html', async (page) => {
+    eq(await page.evaluate(async () => {
+      BokiProgress._reset();
+      BokiProgress.__testTick(-60);            // 60秒前に開始したことにする
+      Object.defineProperty(document, 'hidden', { value: true, configurable: true });
+      document.dispatchEvent(new Event('visibilitychange'));
+      await new Promise((r) => setTimeout(r, 30));
+      const s = BokiProgress.dump().sessions;
+      return [s.length, s.length ? s[0].sec >= 55 && s[0].sec <= 65 : null]; }),
+       [1, true], '非可視化で区間が確定する');
+  });
+
+  // 直近の操作から離れた時間は加算しない。タブを開いたまま離席した
+  // 8時間が学習時間になると、記録が意味を失う。
+  await withApp(browser, 'phase0/03_dentaku.html', async (page) => {
+    eq(await page.evaluate(async () => {
+      BokiProgress._reset();
+      BokiProgress.__testTick(-3600, -3600);   // 1時間前に開始し、以後操作なし
+      Object.defineProperty(document, 'hidden', { value: true, configurable: true });
+      document.dispatchEvent(new Event('visibilitychange'));
+      await new Promise((r) => setTimeout(r, 30));
+      const s = BokiProgress.dump().sessions;
+      // 操作が途絶えてから5分で打ち切られるので、1時間ではなく5分前後
+      return s.length === 1 && s[0].sec <= 5 * 60 + 5; }),
+       true, '放置した時間は加算しない');
+  });
 } finally {
   await browser.close();
 }

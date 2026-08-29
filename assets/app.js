@@ -102,6 +102,15 @@
       }
       if (moved) saveProgress(p);
     },
+    // 10秒未満は捨てる。ページを開いて即閉じた区間が積もると集計が
+    // 読めなくなるうえ、学習時間としての意味もない。
+    addSession: function (unitKey, startISO, sec) {
+      sec = Math.round(sec);
+      if (!(sec >= 10)) return;
+      var p = loadProgress();
+      p.sessions.push({ unit: unitKey, start: startISO, sec: sec });
+      saveProgress(p);
+    },
     _reset: function () { saveProgress(emptyProgress()); }
   };
 
@@ -164,6 +173,75 @@
         updateBars();
       });
     });
+  }
+
+  /* ---------- 学習時間の計測 ---------- */
+  // 経過時間ではなく能動時間を測る。タブを開いたまま離席した時間が
+  // 学習時間に入ると、計画の週23時間を満たしているように見えて実際は
+  // 足りていない、という最も避けたい壊れ方をする。
+  var IDLE_MS = 5 * 60 * 1000;
+
+  function initSession() {
+    var startedAt = Date.now();
+    var startISO = nowISO();
+    var lastActive = Date.now();
+    var accrued = 0;
+    var running = true;
+
+    function touch() { lastActive = Date.now(); }
+    ['keydown', 'click', 'scroll', 'pointerdown'].forEach(function (ev) {
+      document.addEventListener(ev, touch, { passive: true });
+    });
+
+    // 直近の操作から IDLE_MS を超えた分は加算しない。
+    function slice() {
+      if (!running) return;
+      var now = Date.now();
+      var cut = Math.min(now, lastActive + IDLE_MS);
+      if (cut > startedAt) accrued += (cut - startedAt) / 1000;
+      startedAt = now;
+    }
+
+    function flush() {
+      slice();
+      if (accrued >= 10) BokiProgress.addSession(PAGE, startISO, accrued);
+      accrued = 0;
+      running = false;
+    }
+
+    function resume() {
+      startedAt = Date.now();
+      lastActive = Date.now();
+      startISO = nowISO();
+      accrued = 0;
+      running = true;
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) flush();
+      else resume();
+    });
+    // pagehide は bfcache と離脱の双方で発火する。beforeunload は
+    // Safari で発火しないことがあるため使わない。
+    window.addEventListener('pagehide', flush);
+
+    // 長時間の学習でも記録を失わないよう、定期的に確定させる。
+    setInterval(function () {
+      slice();
+      if (accrued >= 60) {
+        BokiProgress.addSession(PAGE, startISO, accrued);
+        accrued = 0;
+        startISO = nowISO();
+      }
+    }, 60 * 1000);
+
+    // テストから経過時間を差し込む。実時間の経過を待つ検査は遅いうえ
+    // 不安定になる。
+    BokiProgress.__testTick = function (deltaSec, lastActiveDeltaSec) {
+      startedAt += deltaSec * 1000;
+      lastActive = lastActiveDeltaSec === undefined
+        ? Date.now() : Date.now() + lastActiveDeltaSec * 1000;
+    };
   }
 
   /* ---------- 共通ヘルパ ---------- */
@@ -522,7 +600,7 @@
   };
 
   /* ---------- 初期化 ---------- */
-  function boot() { initTheme(); initChecklists(); }
+  function boot() { initTheme(); initChecklists(); initSession(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
