@@ -26,6 +26,11 @@ GRADE_HEADER = re.compile(r'^\s*２級\s+１級\s+２級\s+１級\s*$')
 # ものを無記号セグメントの中から除外する。
 FURNITURE = re.compile(r'^[（(]|^[0-9０-９]+$|^[３２１]級?$|^級$|^商工会議所|^「.+」$|^\(注')
 
+GROUP_NO = re.compile(r'^[（(]?([０-９0-9]{1,2})')
+ITEM_NO = re.compile(r'^([ア-ン])[．.]')
+SUBITEM_NO = re.compile(r'^[（(]([a-zａ-ｚ])[）)]')
+ZEN2HAN = str.maketrans('０１２３４５６７８９', '0123456789')
+
 _state = {'section': None, 'group': None, 'section_heading': None,
           'section_grade': None, 'section_subject': None, 'section_children': 0}
 
@@ -151,6 +156,28 @@ def yaml_escape(s):
     return '"%s"' % s.replace('\\', '\\\\').replace('"', '\\"')
 
 
+def topic_id(e):
+    """区分表の構造（節・項番号・項目記号）からIDを組む。
+
+    見出し文字列を切り詰めてIDにすると、原本の字句がわずかに変わるだけで
+    IDが別物になる。IDは教材の boki-topics メタが指す永続キーであり、
+    黙って別の論点を指すと、カバレッジ検証が誤った合格を出す。
+    """
+    head = e['section'].split()[0] if e['section'] else '無題'
+    # 商業簿記と工業簿記は節番号(第一〜)を共有するため、科目を含めないと衝突する。
+    m = GROUP_NO.match(e['group'] or '')
+    parts = [e['subject'], head, m.group(1).translate(ZEN2HAN) if m else '0']
+    for pat in (ITEM_NO, SUBITEM_NO):
+        m = pat.match(e['title'])
+        if m:
+            parts.append(m.group(1))
+            return '-'.join(parts)
+    # 行頭記号を持たない項目。項の見出しそのものと、上級欄の無記号項目の
+    # 2種類がある。前者は見出しとして、後者は級で区別する。
+    parts.append('0' if e['title'] == e['group'] else 'g%d' % e['grade'])
+    return '-'.join(parts)
+
+
 def emit(entries):
     lines = ['# 出題区分表（2022年度版）を構造化したもの。',
              '# 原本と生成方法は reference/SOURCES.md と tools/parse-syllabus.py を参照。',
@@ -158,8 +185,7 @@ def emit(entries):
              'topics:']
     seen = {}
     for e in entries:
-        head = e['section'].split()[0] if e['section'] else '無題'
-        base = '%s-%s' % (head, e['title'][:12])
+        base = topic_id(e)
         n = seen.get(base, 0) + 1
         seen[base] = n
         tid = base if n == 1 else '%s-%d' % (base, n)
