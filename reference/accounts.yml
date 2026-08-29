@@ -873,7 +873,7 @@ accounts:
     grade: 2
     category: 費用
   - name: "その他"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "現金過不足"
     grade: 3
@@ -894,32 +894,32 @@ accounts:
     grade: 2
     category: 費用
   - name: "有価証券評価損益"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "有価証券運用損益"
     grade: 2
     category: 費用
   - name: "保証債務見返"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "保証債務"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "法人税等調整額"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "支店"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "本店"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "非支配株主に帰属する当"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "期純利益"
-    grade: 3
+    grade: 2
     category: 費用
   - name: "期純損失"
-    grade: 3
+    grade: 2
     category: 費用
