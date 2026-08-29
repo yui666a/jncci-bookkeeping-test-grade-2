@@ -273,6 +273,12 @@
 
   <p>F に合わせる理由ははっきりしています。端数処理は<mark>問題文が指示する場所で、指示されたやり方で行うもの</mark>だからです。電卓が勝手に丸めてしまうと、その丸めた数を次の計算に使うことになり、最終的な答えが問題の正解とずれます。</p>
 
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>この機種のセレクターは上の説明どおりです。<strong>ラウンドセレクター F / CUT / 5/4</strong>、<strong>小数点セレクター 4 / 3 / 2 / 1 / 0 / ADD2</strong>。小数点セレクターに F はありません。</p>
+    <p>やることは1つだけです。<strong>ラウンドセレクターを F にする。</strong>小数点セレクターは触らなくて構いません。取扱説明書の小数点セレクターの項に「ラウンドセレクターが「F」以外の場合に機能します」とあり、F のあいだは働かないからです。原本は <code>reference/casio_jw-122cl_manual.pdf</code>。</p>
+  </div>
+
   <div class="callout callout--trap">
     <span class="callout__t">セレクターが原因の「なぜか合わない」</span>
     <p>ラウンドセレクターが <strong>CUT</strong>、小数点セレクターが <strong>2</strong> のままだと、たとえば <span class="nowrap">10 ÷ 3</span> が <strong>3.33</strong> と表示されます。これに3を掛けると 9.99。本来の答え 10 になりません。配賦率が割り切れない問題でこれをやると、各部門の配賦額がすべて微妙にずれ、<strong>検算しても合計が合わない</strong>という状態になります。</p>
@@ -530,6 +536,15 @@
       <span class="small">同じ <kbd>÷</kbd> <kbd>÷</kbd> でも、<kbd>2</kbd> <kbd>÷</kbd> <kbd>÷</kbd> <kbd>1</kbd><kbd>0</kbd><kbd>0</kbd> <kbd>=</kbd> と打てば 2 が割る数の定数になり、100÷2＝50 が出ます。<mark>「先に打った数が割る数の定数になる」</mark>という形です。配賦計算で使うのはこちらの向きです。</span></li>
     <li><strong>結果を記録する</strong>「×は2回押し・先の数が定数」「÷は2回押し・先の数が割る数」のように、<strong>掛け算と割り算を別々に</strong>1行へまとめ、ノートの表紙に書いておきます。以後この1台しか使わないので、これを覚えれば足ります。</li>
   </ol>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の答え合わせ</span>
+    <p>この機種は<strong>2回押し</strong>です。四則すべて演算キーを2回押すと「K」が出て定数モードに入ります。1回押しでは定数になりません。上の手順でいえばステップ3の系統です。</p>
+    <p>割り算は <strong>先に打った数が「割る数」の定数</strong>になります。実際に打つとこうなります。</p>
+    <div class="keyflow"><kbd>1</kbd><kbd>0</kbd><kbd>0</kbd><kbd>÷</kbd><kbd>÷</kbd><kbd>2</kbd><kbd>=</kbd><span class="arrow">→ 0.02</span><span class="small">（2 ÷ 100。100 が割る数）</span></div>
+    <div class="keyflow"><kbd>2</kbd><kbd>÷</kbd><kbd>÷</kbd><kbd>1</kbd><kbd>0</kbd><kbd>0</kbd><kbd>=</kbd><span class="arrow">→ 50</span><span class="small">（100 ÷ 2。2 が割る数）</span></div>
+    <p><strong>配賦計算で使うのは下の向き</strong>です。割る数（1個あたりの基準や配賦率の分母）を先に打ち、そのあと配賦対象の数値を入れ替えて <kbd>=</kbd> を繰り返します。掛け算も同じく<strong>先に打った数が定数</strong>なので、<mark>「定数にしたい数を先に打って、演算キーを2回」</mark>の1本で四則とも通せます。以下の記述で「機種により2回」とあるところは、この電卓では常に2回です。</p>
+  </div>
 
   <div class="card">
     <div class="card__label">使いどころ — 配賦率を各部門に掛ける</div>
