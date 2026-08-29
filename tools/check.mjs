@@ -150,7 +150,11 @@ function targets(args) {
       if (f.endsWith('.html')) found.push(join(dir.name, f));
     }
   }
-  return found.sort();
+  found.sort();
+  // ダッシュボードはフェーズ配下にないが、JSエラーと壊れた記録への耐性を
+  // 見る必要があるため対象に含める。
+  if (existsSync('progress.html')) found.push('progress.html');
+  return found;
 }
 
 export const CHECKS = [];
@@ -460,6 +464,81 @@ CHECKS.push(async function checkTopicsMeta(page, file) {
     if (!TOPIC_IDS.has(id)) {
       report(file, id, 'syllabus.yml に実在', 'なし', '存在しない論点ID');
     }
+  }
+});
+
+// ゲート9：進捗記録の健全性。
+// 記録の配線が切れても画面には何も現れない。気づくのは数週間後、記録を
+// 書き出そうとして空だったときであり、そのデータはもう戻らない。
+// ゲート0が mount の実行を検査するのと同じ理由で、機械的に見る。
+CHECKS.push(async function checkProgressWiring(page, file) {
+  const ready = await page.evaluate(() => typeof window.BokiProgress === 'object');
+  if (!ready) {
+    report(file, '(progress)', 'BokiProgress あり', 'なし',
+      '学習記録が読み込まれていない');
+    return;
+  }
+
+  // マウント先に id がないと記録先が決まらず、その設問は永久に記録されない。
+  const missing = await page.evaluate(() => {
+    const out = [];
+    for (const slot of ['journal', 'quiz', 'num', 'fill']) {
+      for (const { sel } of (window.__captured?.[slot] || [])) {
+        const root = document.querySelector(sel);
+        if (root && !root.id) out.push(sel);
+      }
+    }
+    return out;
+  });
+  for (const sel of missing) {
+    report(file, sel, 'id あり', 'なし', 'マウント先に id がなく記録できない');
+  }
+
+  // 実際に1問解いて採点し、記録が増えることを確かめる。設定の検査だけでは、
+  // 配線が外れていても素通りする。
+  //
+  // 解答せずにボタンを押すと、BokiQuiz は「選択肢を選んでください」で
+  // 早期に戻り採点しない。記録がないのが正しい挙動なので、必ず解答してから
+  // 押す。ドリルの種類ごとに解答の与え方が違う。
+  const grew = await page.evaluate(async () => {
+    const drill = document.querySelector('.drill');
+    if (!drill) return null;                  // ドリルのないページは対象外
+    window.BokiProgress._reset();
+
+    const radio = drill.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;          // BokiQuiz
+    for (const sel of drill.querySelectorAll('select')) {
+      if (sel.options.length > 1) sel.selectedIndex = 1;   // BokiJournal
+    }
+    for (const inp of drill.querySelectorAll('input[type="text"]')) {
+      inp.value = '1';                        // BokiNum / BokiFill / 金額欄
+    }
+
+    const btn = drill.querySelector('.btn');
+    if (!btn) return null;
+    btn.click();
+    await new Promise((r) => setTimeout(r, 60));
+    return Object.keys(window.BokiProgress.dump().drills).length;
+  });
+  if (grew === 0) {
+    report(file, '(progress)', '記録が増える', '増えない',
+      '採点しても学習記録に残らない');
+  }
+});
+
+// 壊れた記録でもダッシュボードが開けることを確かめる。ここで例外が出ると、
+// 記録が壊れたときに復旧の入口ごと失われる。
+CHECKS.push(async function checkDashboardRobust(page, file, errors) {
+  if (!/(^|\/)progress\.html$/.test(file)) return;
+  await page.evaluate(() => {
+    localStorage.setItem('boki2:progress', '{壊れた JSON');
+  });
+  errors.length = 0;
+  await page.reload({ waitUntil: 'load' });
+  const fatal = errors.filter((e) => !/favicon/i.test(e));
+  if (fatal.length) {
+    report(file, '(robust)', '例外なし', fatal[0],
+      '壊れた記録があるとダッシュボードが開けない');
   }
 });
 
