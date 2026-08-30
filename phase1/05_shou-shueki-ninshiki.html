@@ -851,7 +851,7 @@
     <li><input type="checkbox" id="c17" data-key="p1u05-17"><label for="c17"><span class="cl__t">変動対価とは何かを、例を挙げて説明できる</span><span class="cl__d">対価のうち金額が変わりうる部分。売上割戻（リベート）、値引き、返品の見込みなど</span></label></li>
     <li><input type="checkbox" id="c18" data-key="p1u05-18"><label for="c18"><span class="cl__t">返金負債を使う仕訳を書ける</span><span class="cl__d">売上を全額計上してから、割戻見込額を「売上／返金負債」で振り替える。売掛金は減らさない</span></label></li>
     <li><input type="checkbox" id="c19" data-key="p1u05-19"><label for="c19"><span class="cl__t">実際に割戻を行ったときの仕訳で、売上が動かない理由を言える</span><span class="cl__d">「返金負債／売掛金」。減額はすでに見積りの段階で済ませてあるため</span></label></li>
-    <li><input type="checkbox" id="c20" data-key="p1u05-20"><label for="c20"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u05-20"><label for="c20"><span class="cl__t">仕訳ドリル15問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
   </ul>
   </div>
 
@@ -1120,7 +1120,7 @@
   ];
 
   BokiJournal.mount('#drill-shueki', {
-    title: '仕訳ドリル — 収益認識 14問',
+    title: '仕訳ドリル — 収益認識 15問',
     accounts: ACC,
     questions: [
       /* --- 契約負債 3問 --- */
@@ -1231,7 +1231,7 @@
         explain: '<p><strong>売掛金 800,000 ／ 売上 760,000・返金負債 40,000</strong> です。</p><p>割戻の見込額は 800,000 × 5% ＝ <strong>40,000円</strong>。これは最終的にもらえない見込みなので、<strong>はじめから収益に含めません</strong>。売上は 800,000 − 40,000 ＝ 760,000円です。</p><p><strong>売掛金は 800,000円のまま</strong>です。いま相手に請求できるのは満額であり、返すのは条件を満たした後だからです。前問と結果は同じで、書き方が1本か2本かの違いだけです。答案でどちらを書くかは問題文の指示で決まります。</p>'
       },
       {
-        text: '前問の得意先について、本日、年間の購入額が条件を満たしたため、割戻 <strong>30,000円</strong> を売掛金から控除した。なお、この割戻については <strong>返金負債 30,000円</strong> を計上済みである。',
+        text: '<strong>13問目</strong>の得意先（販売額 1,000,000円・割戻率 3%）について、本日、年間の購入額が条件を満たしたため、割戻 <strong>30,000円</strong> を売掛金から控除した。なお、この割戻については <strong>返金負債 30,000円</strong> を計上済みである。',
         debit: [['返金負債', 30000]],
         credit: [['売掛金', 30000]],
         hint: '売上は動くでしょうか。減額はいつ済ませたか思い出してください。',

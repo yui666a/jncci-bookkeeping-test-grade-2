@@ -29,7 +29,7 @@
       <span class="chip chip--accent">目安 3h</span>
       <span class="chip">工業簿記</span>
       <span class="chip">確認テスト 14問</span>
-      <span class="chip">穴埋め 10問・計算 4問</span>
+      <span class="chip">穴埋め 10問・計算 4問・仕訳 4問</span>
     </div>
   </div>
 
@@ -429,7 +429,7 @@
 
         <rect x="20" y="200" width="130" height="52" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
         <text x="85" y="222" text-anchor="middle" font-size="12.5" font-weight="700">販売費・一般管理費</text>
-        <text x="85" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">本社で発生</text>
+        <text x="85" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">製造活動の外</text>
 
         <path d="M 152 66 L 218 90" fill="none" stroke="var(--debit)" stroke-width="2" marker-end="url(#ar1)"/>
         <path d="M 152 132 L 218 106" fill="none" stroke="var(--credit)" stroke-width="2" marker-end="url(#ar1)"/>
@@ -455,7 +455,7 @@
 
         <rect x="470" y="200" width="130" height="52" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
         <text x="535" y="222" text-anchor="middle" font-size="12.5" font-weight="700">販売費・一般管理費</text>
-        <text x="535" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">本社で発生</text>
+        <text x="535" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">製造活動の外</text>
 
         <path d="M 602 66 L 668 76" fill="none" stroke="var(--debit)" stroke-width="2" marker-end="url(#ar1)"/>
         <rect x="672" y="52" width="120" height="52" rx="6" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="1.5"/>
@@ -502,7 +502,7 @@
   <!-- ============================================================ -->
   <h2 id="s8"><span class="num">8</span>分類の軸を1枚に重ねる</h2>
 
-  <p>ここまでで6つの分類が出そろいました。Phase 0 で扱った<strong>形態別分類</strong>（材料費・労務費・経費）と<strong>製品との関連による分類</strong>（直接費・間接費）を含めた全体です。重要なのは、<mark>これらが順番に適用される段階ではなく、同じ原価を同時に見る別々の切り口だ</mark>ということです。</p>
+  <p>ここまでで7つの分類が出そろいました。Phase 0 で扱った<strong>形態別分類</strong>（材料費・労務費・経費）、<strong>製品との関連による分類</strong>（直接費・間接費）、<strong>発生の場所と機能による分類</strong>（製造原価・販売費・一般管理費）を含めた全体です。重要なのは、<mark>これらが順番に適用される段階ではなく、同じ原価を同時に見る別々の切り口だ</mark>ということです。</p>
 
   <div class="tablewrap">
   <table>
@@ -877,7 +877,7 @@
       </tr>
       <tr>
         <td><strong>賃金台帳</strong><br><span class="small muted">補助簿</span></td>
-        <td>従業員ごとの支払額・作業時間。直接作業時間と間接作業時間を区別して記録する</td>
+        <td>従業員ごとの支給額・控除額・差引支給額。直接作業時間と間接作業時間の区別は作業時間報告書が記録する（W2）</td>
         <td>賃金・給料勘定／費目別計算</td>
       </tr>
       <tr>
@@ -1063,7 +1063,7 @@
     <li><input type="checkbox" id="c7" data-key="p1u03-w1u3-7"><label for="c7"><span class="cl__t">製品原価と期間原価の違いを、費用収益対応の観点で説明できる</span><span class="cl__d">製品にくっついて売れた月の費用になるか、発生した月の費用になるか</span></label></li>
     <li><input type="checkbox" id="c8" data-key="p1u03-w1u3-8"><label for="c8"><span class="cl__t">全部原価計算と直接原価計算の違いを1文で言える</span><span class="cl__d">固定製造原価を製品原価に含めるか、期間原価として全額落とすか</span></label></li>
     <li><input type="checkbox" id="c9" data-key="p1u03-w1u3-9"><label for="c9"><span class="cl__t">直接原価計算の「直接」が変動費の意味だと分かっている</span><span class="cl__d">変動製造間接費は製品原価に含まれる。直接費か間接費かではなく変動か固定かで判断する</span></label></li>
-    <li><input type="checkbox" id="c10" data-key="p1u03-w1u3-10"><label for="c10"><span class="cl__t">1つの原価を、5つの軸で同時に分類できる</span><span class="cl__d">形態別／製品との関連／操業度／製品原価か期間原価か／全部・直接原価計算での扱い</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u03-w1u3-10"><label for="c10"><span class="cl__t">1つの原価を、4つの軸で同時に分類できる</span><span class="cl__d">形態別／製品との関連／操業度／全部・直接原価計算それぞれで製品原価か期間原価か</span></label></li>
     <li><input type="checkbox" id="c11" data-key="p1u03-w1u3-11"><label for="c11"><span class="cl__t">個別原価計算と総合原価計算の使い分けと、問題文での見分け方を言える</span><span class="cl__d">受注生産か同種製品の大量生産か。製造指図書が出たら個別、加工進捗度が出たら総合</span></label></li>
     <li><input type="checkbox" id="c12" data-key="p1u03-w1u3-12"><label for="c12"><span class="cl__t">原価計算の3手続を順に挙げ、それぞれ何を求める段階か言える</span><span class="cl__d">費目別（何にいくら）→ 部門別（どの部門で）→ 製品別（どの製品にいくら）</span></label></li>
     <li><input type="checkbox" id="c13" data-key="p1u03-w1u3-13"><label for="c13"><span class="cl__t">直接費が部門別計算を通らない理由を説明できる</span><span class="cl__d">どの製品のものか最初から分かっているので、製品に直接ひもづけられる。部門に集める必要がない</span></label></li>
