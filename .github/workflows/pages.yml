@@ -27,17 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-      - run: npm install
-      - run: npx playwright install --with-deps chromium
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
       - name: 機械的な品質ゲート
-        run: npm run check
+        run: pnpm run check
       - name: 単体テスト
-        run: npm test
+        run: pnpm test
       - name: 論点カバレッジ
-        run: npm run coverage
+        run: pnpm run coverage
 
   deploy:
     needs: check

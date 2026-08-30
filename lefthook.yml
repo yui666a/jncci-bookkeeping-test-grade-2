@@ -1,0 +1,14 @@
+# https://lefthook.dev/configuration/
+
+pre-push:
+  jobs:
+    # runではなくscriptで実行する。runはlefthookがpush対象ファイルを数え、
+    # 空なら "no matching push files" でジョブごと飛ばす。空コミットや
+    # 差分のないマージがmainに入ってしまうため、その打ち切りを受けない
+    # script形式を使う。
+    #
+    # use_stdinがないと、gitがpush先のrefを渡す標準入力をスクリプトが
+    # 受け取れず、判定材料がないまま常に素通りする。
+    - script: "block-protected-push.sh"
+      runner: sh
+      use_stdin: true

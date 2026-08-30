@@ -1,6 +1,7 @@
 {
   "name": "boki2-materials",
   "private": true,
+  "packageManager": "pnpm@11.16.0",
   "type": "module",
   "scripts": {
     "check": "node tools/check.mjs",
@@ -8,6 +9,7 @@
     "test": "node tools/test-formula.mjs && node tools/test-progress.mjs"
   },
   "devDependencies": {
+    "lefthook": "^2.1.12",
     "playwright": "^1.62.1"
   }
 }
