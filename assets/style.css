@@ -364,9 +364,27 @@ select:focus, input:focus { outline: 2px solid var(--accent-br); outline-offset:
 .jinput th.ch { color: var(--credit); }
 .jinput td { border: 1px solid var(--border); padding: 5px 7px; }
 .jinput select { width: 100%; min-width: 130px; }
+.jinput .apick { min-width: 150px; }
 .jinput input.amt { width: 100%; min-width: 90px; }
 .jinput td.ok  { background: var(--ok-bg); }
 .jinput td.ng  { background: var(--danger-bg); }
+
+/* 勘定科目の検索つき選択 */
+/* 候補一覧を absolute で浮かせない。この入力は overflow-x:auto の
+   .tablewrap の中にあり、浮かせると上下も切り取られて候補が読めなくなる。
+   行の高さを押し広げる代わりに、切れずに全件たどれる。 */
+.apick { position: relative; }
+.apick__in { width: 100%; }
+.apick__list {
+  display: none; margin-top: 4px; max-height: 190px; overflow-y: auto;
+  border: 1px solid var(--border-2); border-radius: 6px;
+  background: var(--surface); box-shadow: var(--shadow);
+}
+.apick__list.open { display: block; }
+.apick__it { padding: 5px 9px; font-size: 13px; cursor: pointer; white-space: nowrap; }
+.apick__it:hover, .apick__it.is-act { background: var(--accent-2); }
+.apick__it.is-sel { font-weight: 700; }
+.apick__none { padding: 5px 9px; font-size: 13px; color: var(--muted); }
 
 .rowbtns { display: flex; gap: 6px; margin-top: 8px; }
 .linkbtn {
