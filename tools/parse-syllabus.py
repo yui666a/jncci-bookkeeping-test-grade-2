@@ -349,14 +349,12 @@ def parse_kogen(pdf, full):
                 # 手前にずれ込む（例: 桁39の項目が右組に属する）ため、
                 # 実測分布の空白帯（29と37の間）である33を境界とする。
                 is_left = col < 33
-                # 帯の境界は級の境界（61）と別に置く。右組の項目は節見出し
+                # 帯の境界は級の境界（53）と別に置く。右組の項目は節見出し
                 # の内側へ字下げされるため、折り返し（「イ．設備投資の意思
                 # 決定モデ」桁57 に続く「ル」桁68）が級の境界をまたぐ。
-                # 61で帯を割ると、この続きが新規項目に化ける。
+                # 53で帯を割ると、この続きが新規項目に化ける。
                 # 同一行に2項目が並ぶのは桁74以上に限られるので、帯の境界は
                 # そこへ置く。
-                # Why not: 級判定には61をそのまま使う。桁61以上の
-                # セグメントは実測でも全て1級の内容である。
                 b = (0 if col < 18 else 1) if is_left else (0 if col < 72 else 1)
                 key = ('left' if is_left else 'right', b)
                 if key in note_bands:
@@ -371,7 +369,13 @@ def parse_kogen(pdf, full):
                 else:
                     is_new_band = b not in prev_right_bands
                     cur_right_bands.add(b)
-                    right.append((2 if col < 61 else 1, seg, is_new_band, key, span))
+                    # 級の境界は桁53。右組の2級欄は桁37-52、1級欄は桁54-69に
+                    # 分布し、桁53は全ページで空である。
+                    # Why not: 桁61で割らない。1級欄の項目名が長いと欄いっぱい
+                    # まで書かれて桁54から始まり、61で割ると「エ．繰延法」
+                    # 「エ．複数基準配賦法」「イ．設備投資の意思決定モデル」の
+                    # ように、項目名の長さで級が決まってしまう。
+                    right.append((2 if col < 53 else 1, seg, is_new_band, key, span))
             prev_left_bands = cur_left_bands
             prev_right_bands = cur_right_bands
         for grade, seg, is_new_band, key, span in left + right:

@@ -1984,7 +1984,7 @@ topics:
     section: "第八 製造間接費計算"
     group: "６．配賦差額の処理"
     title: "エ．繰延法"
-    grade: 2
+    grade: 1
     advanced: false
   - id: "工-第九-1-0"
     subject: 工
@@ -2054,7 +2054,7 @@ topics:
     section: "第九 部門費計算"
     group: "５．補助部門費の製造部門への配賦"
     title: "エ．複数基準配賦法"
-    grade: 2
+    grade: 1
     advanced: false
   - id: "工-第九-5-オ"
     subject: 工
@@ -2540,7 +2540,7 @@ topics:
     section: "第十九 差額原価収益分析"
     group: "２．構造的意思決定の分析"
     title: "イ．設備投資の意思決定モデル"
-    grade: 2
+    grade: 1
     advanced: false
   - id: "工-第十九-2-ウ"
     subject: 工
@@ -2561,7 +2561,7 @@ topics:
     section: "第二十 戦略の策定と遂行のため"
     group: "１．ライフサイクル・コスティング"
     title: "１．ライフサイクル・コスティング"
-    grade: 2
+    grade: 1
     advanced: false
   - id: "工-第二十-2-0"
     subject: 工
@@ -2575,7 +2575,7 @@ topics:
     section: "第二十 戦略の策定と遂行のため"
     group: "３．原価企画・原価維持・原価改善"
     title: "３．原価企画・原価維持・原価改善"
-    grade: 2
+    grade: 1
     advanced: false
   - id: "工-第二十-4-0"
     subject: 工
