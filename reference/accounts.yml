@@ -7,6 +7,11 @@
 #
 # 製造業の勘定科目（仕掛品・製品など）は原本に含まれない。
 # 工業簿記の科目はこの表で照合できない。
+#
+# category は信用しない。原本の見出しを直前から引き継ぐ実装のため、
+# 見出しが変わらないまま続く箇所で誤った分類が付く
+# （未決算・保証債務・保証債務見返などが「費用」になる）。
+# この表を根拠にしてよいのは name と grade だけである。
 accounts:
   - name: "現金"
     grade: 3
@@ -806,51 +811,48 @@ accounts:
   - name: "維持費、支払メンテナンス料"
     grade: 2
     category: 費用
-  - name: "その他"
-    grade: 2
-    category: 費用
   - name: "現金過不足"
     grade: 3
-    category: 費用
+    category: その他
   - name: "未決算"
     grade: 2
-    category: 費用
+    category: その他
   - name: "火災未決算、保険未決算"
     grade: 2
-    category: 費用
+    category: その他
   - name: "損益"
     grade: 3
-    category: 費用
+    category: その他
   - name: "為替差損益"
     grade: 2
-    category: 費用
+    category: その他
   - name: "為替差損、為替差益"
     grade: 2
-    category: 費用
+    category: その他
   - name: "有価証券評価損益"
     grade: 2
-    category: 費用
+    category: その他
   - name: "有価証券運用損益"
     grade: 2
-    category: 費用
+    category: その他
   - name: "保証債務見返"
     grade: 2
-    category: 費用
+    category: その他
   - name: "保証債務"
     grade: 2
-    category: 費用
+    category: その他
   - name: "法人税等調整額"
     grade: 2
-    category: 費用
+    category: その他
   - name: "支店"
     grade: 2
-    category: 費用
+    category: その他
   - name: "本店"
     grade: 2
-    category: 費用
+    category: その他
   - name: "非支配株主に帰属する当期純利益"
     grade: 2
-    category: 費用
+    category: その他
   - name: "非支配株主に帰属する当期純損失"
     grade: 2
-    category: 費用
+    category: その他
