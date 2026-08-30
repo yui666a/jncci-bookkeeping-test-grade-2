@@ -38,7 +38,9 @@
   <div id="days"></div>
 
   <h2><span class="num">4</span>要復習</h2>
-  <p class="small muted">誤答を含む設問を、直近の誤答が新しい順に並べています。ここが次にやり直す場所です。</p>
+  <p class="small muted">誤答を含む設問を、直近の誤答が新しい順に並べています。ここが次にやり直す場所です。
+    設問名をクリックすると、その問題のある単元へ飛びます。
+    <strong>3回続けて正解すると、この一覧から消えます。</strong>途中で間違えると連続は振り出しに戻ります。</p>
   <div id="review"></div>
 
   <h2><span class="num">5</span>単元別</h2>
@@ -173,24 +175,50 @@
   });
 
   /* 4. 要復習 */
+  // 記録IDは「単元パス#マウント先のid/q番号」。設問には app.js が
+  // 「マウント先のid-q番号」でidを振っているので、設問そのものへ飛べる。
+  var CLEAR_STREAK = 3;
+  function drillLink(id) {
+    var m = /^(.+?)#([^/]+)\/q(\d+)$/.exec(id);
+    if (!m) return null;
+    return { href: m[1] + '.html#' + m[2] + '-q' + m[3], unit: m[1], q: Number(m[3]) };
+  }
+  // 連続正解で数える。通算にすると、正解の貯金が誤答で消えないため、
+  // 直前に間違えた問題まで一覧から落ちてしまう。
+  function tailStreak(at) {
+    var n = 0;
+    for (var i = at.length - 1; i >= 0 && at[i].ok; i--) n++;
+    return n;
+  }
+
   var review = Object.keys(drills).map(function (id) {
     var at = drills[id].attempts || [];
     var wrong = at.filter(function (a) { return !a.ok; });
     if (!wrong.length) return null;
+    var streak = tailStreak(at);
+    if (streak >= CLEAR_STREAK) return null;
     return {
-      id: id, wrong: wrong.length, total: at.length,
-      last: wrong[wrong.length - 1].at,
-      solved: at.length && at[at.length - 1].ok
+      id: id, wrong: wrong.length, total: at.length, streak: streak,
+      last: wrong[wrong.length - 1].at
     };
   }).filter(Boolean).sort(function (a, b) { return a.last < b.last ? 1 : -1; });
 
   var rv = document.getElementById('review');
-  if (!review.length) rv.appendChild(el('p', 'small muted', '誤答はまだありません。'));
+  if (!review.length) rv.appendChild(el('p', 'small muted', '要復習の設問はありません。'));
   review.forEach(function (r) {
     var row = el('div', 'row');
-    row.appendChild(el('span', 'row__id', r.id));
+    var link = drillLink(r.id);
+    if (link) {
+      var a = el('a', 'row__id', link.unit + ' 第' + link.q + '問');
+      a.href = link.href;
+      row.appendChild(a);
+    } else {
+      row.appendChild(el('span', 'row__id', r.id));
+    }
     row.appendChild(el('span', 'row__meta',
-      r.wrong + '誤 / ' + r.total + '回' + (r.solved ? '（直近は正解）' : '（未正解）')));
+      r.wrong + '誤 / ' + r.total + '回'));
+    row.appendChild(el('span', 'row__meta',
+      r.streak ? '連続正解 ' + r.streak + '/' + CLEAR_STREAK : '未正解'));
     row.appendChild(el('span', 'row__meta', String(r.last).slice(0, 10)));
     rv.appendChild(row);
   });
