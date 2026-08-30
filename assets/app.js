@@ -326,6 +326,12 @@
   function drillBaseOf(root) {
     return root && root.id ? PAGE + '#' + root.id : null;
   }
+  // 設問1問ごとに id を振る。学習の記録の「要復習」は設問単位で記録して
+  // いるので、ドリル全体へ飛ぶだけでは、どれをやり直すのか画面から
+  // 読み取れない。id は記録IDの末尾（q1, q2…）と同じ番号にそろえる。
+  function tagQuestion(wrapQ, root, i) {
+    if (root && root.id) wrapQ.id = root.id + '-q' + (i + 1);
+  }
 
   // 採点の確定点は4種のドリルで共通してここを通る。記録をここに置けば、
   // 単元HTMLの著者が記録用のコードを書く必要がなくなる。書き忘れが
@@ -634,6 +640,7 @@
       cfg.questions.forEach(function (q, i) {
         var accounts = q.accounts || cfg.accounts;
         var wrapQ = el('div', 'q');
+        tagQuestion(wrapQ, root, i);
         var head = el('p', 'q__text');
         head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
         var span = el('span'); span.innerHTML = q.text; head.appendChild(span);
@@ -747,6 +754,7 @@
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
+        tagQuestion(wrapQ, root, i);
         var head = el('p', 'q__text');
         head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
         var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
@@ -808,6 +816,7 @@
         var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
         var labels = q.labels || [];
         var wrapQ = el('div', 'q');
+        tagQuestion(wrapQ, root, i);
         var head = el('p', 'q__text');
         head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
         var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
@@ -883,6 +892,7 @@
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
+        tagQuestion(wrapQ, root, i);
         var head = el('p', 'q__text');
         head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
         var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
