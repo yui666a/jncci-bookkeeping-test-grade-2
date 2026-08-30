@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-topics" content="商-第一-1-g2,商-第二-1-カ">
+<title>純資産の全体像と銀行勘定調整表 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">W1 UNIT 01 純資産の全体像と銀行勘定調整表</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W1 UNIT 01 ／ 2.5時間</p>
+    <h1>純資産の全体像と、銀行勘定調整表<br>— 2級の地図を1枚、得点源を1つ</h1>
+    <p class="lead">前半では、3級の「資産 − 負債 ＝ 資本」が2級で<strong>純資産</strong>という広い枠に置き換わる理由と、その内訳の地図を作ります。後半は<strong>第2問の頻出論点である銀行勘定調整表</strong>。不一致の原因6つを、修正仕訳が要るものと要らないものに仕分けし、両者区分調整法で表を作れる状態まで持っていきます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 2.5h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 8問</span>
+      <span class="chip">確認テスト 10問</span>
+      <span class="chip">計算ドリル・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">この単元の位置づけ</a></li>
+      <li><a href="#s2">「資本」から「純資産」へ</a></li>
+      <li><a href="#s3">株主資本の内訳 — 払い込まれたものと、稼いだもの</a></li>
+      <li><a href="#s4">用語の穴埋め — 純資産の地図</a></li>
+      <li><a href="#s5">なぜ帳簿と銀行の残高はズレるのか</a></li>
+      <li><a href="#s6">不一致の原因6つと、修正仕訳の要・不要</a></li>
+      <li><a href="#s7">未渡小切手 — この単元で最も落とす場所</a></li>
+      <li><a href="#s8">銀行勘定調整表の3つの様式</a></li>
+      <li><a href="#s9">確認テスト — どちらを調整し、仕訳は要るか</a></li>
+      <li><a href="#s10">仕訳ドリル 8問</a></li>
+      <li><a href="#s11">計算ドリル — 両者区分調整法</a></li>
+      <li><a href="#s12">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>この単元の位置づけ</h2>
+
+  <p>2級の商業簿記は、3級で作った枠組みに新しい論点を足していく形で広がります。この単元では、その広がりの<strong>地図</strong>と、<strong>すぐ点になる論点</strong>を1つずつ扱います。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">前半 ／ 地図をもらう</div>
+      <p><strong>純資産と資本の関係</strong></p>
+      <p class="small">3級で「資本」と呼んでいた場所が、2級では<strong>純資産</strong>という広い枠になり、その中が階層に分かれます。ここで覚えるのは仕訳ではなく<strong>構造</strong>です。株式の発行（W7）、剰余金の配当、株主資本等変動計算書（W8）、その他有価証券の評価（W5）は、すべてこの地図のどこかに着地します。地図がないまま各論に入ると、似た名前の科目が区別できなくなります。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">後半 ／ 得点源を作る</div>
+      <p><strong>銀行勘定調整表</strong>　<span class="chip">第2問 頻出</span></p>
+      <p class="small">第2問は連結会計と個別論点が交互に出る枠で、銀行勘定調整表はその個別論点の常連です。<strong>覚えることが少ないわりに配点が大きい</strong>、2級で最も費用対効果の高い論点のひとつ。原因が6つしかなく、それぞれの処理が固定されているので、仕分けを覚えきれば安定して得点できます。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この2つを同じ単元に置く理由</span>
+    <p>どちらも<strong>「箱の中身を正しく分ける」話</strong>だからです。純資産では、株主が払い込んだお金と会社が稼いだお金を混ぜてはいけない。銀行勘定調整表では、帳簿を直すべきズレと直してはいけないズレを混ぜてはいけない。<mark>同じ場所に置いてあっても、出どころが違うものは分けて管理する</mark>——この感覚が2級の商業簿記では繰り返し要求されます。</p>
+  </div>
+
+  <p class="small muted">なお、W1の商業簿記ではこのあと商品売買（売上原価対立法・棚卸減耗損・商品評価損・仕入割戻）を扱います。この単元では触れません。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>「資本」から「純資産」へ</h2>
+
+  <h3>3級で習った式には、収まらないものがある</h3>
+
+  <p>3級では、貸借対照表の右下を次のように習いました。</p>
+
+  <p style="text-align:center;font-size:19px;font-weight:700;margin:20px 0">資産 − 負債 ＝ 資本</p>
+
+  <p>「会社が持っているもの（資産）から、返さなければならないもの（負債）を引いた残りが、株主のもの（資本）」。素直で分かりやすい式です。実際、3級の範囲ではこの式で困りません。右下に並ぶのは資本金と繰越利益剰余金くらいだからです。</p>
+
+  <p>ところが2級に入ると、<strong>この差額の中に「株主のもの」と言い切れないものが混ざり始めます。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え — 家計の「まだ売っていない株の含み益」</span>
+    <p>あなたが100万円で買った株が、いま120万円になっているとします。財産の一覧を作れば、この株は<strong>120万円</strong>と書くのが実態に合っています。では、増えた20万円は「今年の収入」でしょうか。</p>
+    <p>収入とは言いにくいはずです。<strong>まだ売っていないので、手元に1円も入っていません。</strong>明日には110万円に戻るかもしれない。給料と同じ「今年稼いだお金」の欄に入れてしまうと、実際には使えないお金を稼ぎとして数えることになります。</p>
+    <p>かといって無視もできません。財産の一覧の左側（持っているもの）を120万円に書き換えた以上、右側にも同額の増加を書かないと、左右が合わなくなります。</p>
+    <p><mark>「資産は増えた。でも稼ぎではない。」</mark>この20万円をどこに置くか——それが2級で「純資産」という広い枠が必要になった理由です。</p>
+  </div>
+
+  <h3>純資産 ＝ 株主資本 ＋ 評価・換算差額等</h3>
+
+  <p>そこで2級では、資産と負債の差額を<strong>純資産</strong>と呼び直し、その中を2つに分けます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 300" style="width:100%;height:auto;min-width:660px" role="img" aria-label="貸借対照表の右下が純資産となり、株主資本と評価・換算差額等に分かれる図">
+      <g font-size="15" fill="var(--text)">
+        <rect x="30" y="46" width="230" height="220" fill="var(--debit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="145" y="140" text-anchor="middle" font-size="20" fill="var(--debit)" font-weight="700">資　産</text>
+        <text x="145" y="166" text-anchor="middle" font-size="12.5" fill="var(--muted)">現金・売掛金・建物</text>
+
+        <rect x="260" y="46" width="230" height="90" fill="var(--credit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="375" y="86" text-anchor="middle" font-size="19" fill="var(--credit)" font-weight="700">負　債</text>
+        <text x="375" y="108" text-anchor="middle" font-size="12.5" fill="var(--muted)">買掛金・借入金</text>
+
+        <rect x="260" y="136" width="230" height="130" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2"/>
+        <text x="375" y="176" text-anchor="middle" font-size="19" fill="var(--ok)" font-weight="700">純 資 産</text>
+        <text x="375" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">資産 − 負債 の差額</text>
+        <text x="375" y="226" text-anchor="middle" font-size="12.5" fill="var(--muted)">＝ この枠の名前が</text>
+        <text x="375" y="246" text-anchor="middle" font-size="12.5" fill="var(--muted)">3級の「資本」から変わった</text>
+
+        <text x="30" y="30" font-size="13" fill="var(--muted)">貸借対照表</text>
+
+        <path d="M500 200 L 548 200" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+        <path d="M542 195 L 550 200 L 542 205 Z" fill="var(--muted)"/>
+
+        <rect x="556" y="100" width="300" height="76" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="706" y="128" text-anchor="middle" font-size="17" fill="var(--accent)" font-weight="700">株 主 資 本</text>
+        <text x="706" y="152" text-anchor="middle" font-size="12.5" fill="var(--muted)">株主が払い込んだ ＋ 会社が稼いだ</text>
+        <text x="706" y="168" text-anchor="middle" font-size="12" fill="var(--muted)">資本金・資本剰余金・利益剰余金</text>
+
+        <rect x="556" y="188" width="300" height="76" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2"/>
+        <text x="706" y="214" text-anchor="middle" font-size="16" fill="var(--warn)" font-weight="700">評価・換算差額等</text>
+        <text x="706" y="238" text-anchor="middle" font-size="12.5" fill="var(--muted)">まだ実現していない評価の差額</text>
+        <text x="706" y="254" text-anchor="middle" font-size="12" fill="var(--muted)">その他有価証券評価差額金</text>
+
+        <text x="706" y="82" text-anchor="middle" font-size="13" fill="var(--muted)">純資産の内訳（2級の範囲）</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">純資産は「資産 − 負債」の差額であることに変わりはありません。変わったのは、その差額の中を<strong>株主資本</strong>と<strong>評価・換算差額等</strong>に分けるようになった点です。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">株主資本</span><span class="term__r">かぶぬししほん</span>
+    <p>純資産のうち、<strong>株主に帰属する部分</strong>。株主が払い込んだお金と、会社がそれを元手に稼いで社内に残したお金の合計です。3級で「資本」と呼んでいたものは、ほぼこの株主資本にあたります。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">評価・換算差額等</span><span class="term__r">ひょうか・かんさんさがくとう</span>
+    <p>純資産のうち、<strong>まだ実現していない評価の差額</strong>を置く場所。損益計算書を通していない（＝当期の利益にしていない）ため、株主資本には入れず、その外側に並べます。<strong>2級で扱うのは「その他有価証券評価差額金」だけ</strong>です。中身の処理はW5の有価証券で学びます。ここでは<mark>純資産には株主資本の外側にもう1つ枠がある</mark>ことだけ押さえてください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">なぜ「資本」ではなく「純資産」という括りが要るのか</span>
+    <p>「資本＝株主のもの」という定義を守るなら、株主のものとは言い切れない評価差額を資本の中に入れるわけにいきません。かといって負債でもない（誰かに返す義務ではない）。<strong>資産でも負債でもなく、株主資本でもないもの</strong>を置く場所が必要になったのです。</p>
+    <p>そこで、<strong>「資産 − 負債の差額」という位置だけを意味する中立的な名前</strong>として純資産を用意し、その中に株主資本と評価・換算差額等を並べました。純資産は「株主のもの」という意味を持たない、単なる<strong>差額の総称</strong>です。この一段の余裕があるおかげで、株主資本の定義を汚さずに評価差額を置けます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>株主資本の内訳 — 払い込まれたものと、稼いだもの</h2>
+
+  <p>株主資本の中は、さらに階層に分かれます。<strong>分ける基準はただ1つ、そのお金がどこから来たか</strong>です。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 400" style="width:100%;height:auto;min-width:700px" role="img" aria-label="株主資本が資本金・資本剰余金・利益剰余金に分かれ、さらに準備金とその他に分かれる階層図">
+      <g font-size="14" fill="var(--text)">
+        <rect x="20" y="20" width="180" height="360" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="110" y="46" text-anchor="middle" font-size="16" fill="var(--accent)" font-weight="700">株主資本</text>
+
+        <!-- 資本金 -->
+        <rect x="212" y="30" width="200" height="60" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="312" y="56" text-anchor="middle" font-size="15" font-weight="700">資 本 金</text>
+        <text x="312" y="76" text-anchor="middle" font-size="11.5" fill="var(--muted)">払込額のうち資本金とした額</text>
+
+        <!-- 資本剰余金 -->
+        <rect x="212" y="102" width="200" height="126" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="1.5"/>
+        <text x="312" y="128" text-anchor="middle" font-size="15" fill="var(--debit)" font-weight="700">資本剰余金</text>
+        <text x="312" y="148" text-anchor="middle" font-size="11.5" fill="var(--muted)">株主が払い込んだもの</text>
+        <rect x="424" y="112" width="230" height="48" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="539" y="132" text-anchor="middle" font-size="13.5" font-weight="700">資本準備金</text>
+        <text x="539" y="150" text-anchor="middle" font-size="11" fill="var(--muted)">払込額のうち資本金にしなかった額</text>
+        <rect x="424" y="168" width="230" height="48" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="539" y="188" text-anchor="middle" font-size="13.5" font-weight="700">その他資本剰余金</text>
+        <text x="539" y="206" text-anchor="middle" font-size="11" fill="var(--muted)">資本剰余金のうち準備金以外</text>
+
+        <!-- 利益剰余金 -->
+        <rect x="212" y="240" width="200" height="140" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="312" y="268" text-anchor="middle" font-size="15" fill="var(--credit)" font-weight="700">利益剰余金</text>
+        <text x="312" y="288" text-anchor="middle" font-size="11.5" fill="var(--muted)">会社が稼いだもの</text>
+        <rect x="424" y="240" width="230" height="48" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="539" y="260" text-anchor="middle" font-size="13.5" font-weight="700">利益準備金</text>
+        <text x="539" y="278" text-anchor="middle" font-size="11" fill="var(--muted)">配当時に積み立てが強制される</text>
+        <rect x="424" y="296" width="230" height="84" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="539" y="318" text-anchor="middle" font-size="13.5" font-weight="700">その他利益剰余金</text>
+        <text x="539" y="338" text-anchor="middle" font-size="11" fill="var(--muted)">任意積立金（新築積立金など）</text>
+        <text x="539" y="356" text-anchor="middle" font-size="11" fill="var(--muted)">繰越利益剰余金</text>
+
+        <!-- 出どころのラベル -->
+        <text x="672" y="140" font-size="12.5" fill="var(--debit)" font-weight="700">↑ 出どころ：株主</text>
+        <text x="672" y="160" font-size="11.5" fill="var(--muted)">元手そのもの</text>
+        <text x="672" y="290" font-size="12.5" fill="var(--credit)" font-weight="700">↑ 出どころ：営業</text>
+        <text x="672" y="310" font-size="11.5" fill="var(--muted)">元手を運用して</text>
+        <text x="672" y="328" font-size="11.5" fill="var(--muted)">増やした分</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">株主資本の階層。<strong>「資本」と付く箱は株主が払い込んだもの、「利益」と付く箱は会社が稼いだもの</strong>。名前が出どころを表しています。</p>
+  </div>
+
+  <h3>3つの箱を、出どころで読む</h3>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>箱</th><th>出どころ</th><th>中身</th><th>何をしたときに動くか</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>資本金</strong></td>
+        <td>株主</td>
+        <td>払込額のうち、資本金として登記した額</td>
+        <td>株式の発行（W7）</td>
+      </tr>
+      <tr>
+        <td><strong>資本剰余金</strong></td>
+        <td>株主</td>
+        <td><strong>資本準備金</strong>／<strong>その他資本剰余金</strong></td>
+        <td>株式の発行で資本金にしなかった分、株主資本の計数変動（W7）</td>
+      </tr>
+      <tr>
+        <td><strong>利益剰余金</strong></td>
+        <td>会社の営業</td>
+        <td><strong>利益準備金</strong>／<strong>その他利益剰余金</strong>（任意積立金・繰越利益剰余金）</td>
+        <td>当期純利益の振替、剰余金の配当、積立金の設定</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>3級で唯一なじみがあるのは、この表の最下段にある<strong>繰越利益剰余金</strong>です。決算で損益勘定から振り替えられ、株主総会で配当として取り崩される、あの箱です。2級ではその上に「その他利益剰余金 → 利益剰余金 → 株主資本 → 純資産」という4段の階層が乗っている、と捉えてください。</p>
+
+  <h3>資本剰余金と利益剰余金を、混ぜてはいけない</h3>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">株主資本を貫く原則</span>
+    <p><strong>株主が払い込んだもの（資本剰余金）と、会社が稼いだもの（利益剰余金）は、混ぜて表示してはならない。</strong></p>
+  </div>
+
+  <p>なぜこの原則があるのか。<strong>2つの金額が、それぞれ違う質問に答えているから</strong>です。</p>
+
+  <ul>
+    <li><strong>資本剰余金は「株主がいくら出したか」を表す</strong> — 会社の元手の大きさです。</li>
+    <li><strong>利益剰余金は「その元手でいくら稼いだか」を表す</strong> — 会社の実績です。</li>
+  </ul>
+
+  <p>この2つを合算した数字には、意味がありません。仮に混ぜられるとすると、<mark>まったく稼いでいない会社が、株主から集めたお金を「利益剰余金」として並べられてしまいます。</mark>株主から1億円集めただけの会社と、元手ゼロから1億円稼いだ会社が、貸借対照表の上で見分けられなくなる。だから分けます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え — 貯金通帳の内訳</span>
+    <p>通帳の残高が300万円あったとして、その内訳が「親から200万円もらった＋自分で100万円貯めた」なのか「全部自分で貯めた」なのかは、まったく違う情報です。残高だけ見て「よく貯めたね」とは言えません。会社の貸借対照表も同じで、<strong>合計額ではなく内訳に情報がある</strong>ため、出どころ別に並べます。</p>
+  </div>
+
+  <p>この原則は、覚えておくと後の論点で効きます。</p>
+
+  <ul>
+    <li><strong>剰余金の配当（3級・W8）</strong> — 配当の原資が資本剰余金なら資本準備金を、利益剰余金なら利益準備金を積み立てます。<strong>取り崩した箱と同じ側の準備金</strong>に積む。混ぜないからこう決まっています。</li>
+    <li><strong>株主資本等変動計算書（W8）</strong> — 表の列が「資本金／資本準備金／その他資本剰余金／利益準備金／任意積立金／繰越利益剰余金」と並ぶのは、この階層をそのまま横に倒したものです。列の順番を覚えるのではなく、階層を思い出せば書けます。</li>
+    <li><strong>株主資本の計数変動（W7）</strong> — 資本準備金を資本金にする、繰越利益剰余金の欠損を利益準備金で埋める、といった振替は、原則として<strong>同じ出どころの箱どうし</strong>で行います。</li>
+  </ul>
+
+  <p class="small muted">各論の仕訳はW7・W8で扱います。この単元での到達点は、<strong>純資産の階層を白紙に書き出せること</strong>と、<strong>資本剰余金と利益剰余金を混ぜない理由を説明できること</strong>の2つです。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>用語の穴埋め — 純資産の地図</h2>
+
+  <p>図を見ずに答えてください。答えられない箇所があれば、前の節の階層図に戻ります。</p>
+
+  <div id="fill-junshisan"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>なぜ帳簿と銀行の残高はズレるのか</h2>
+
+  <p>ここから後半です。当座預金という、3級から使ってきた勘定を題材にします。</p>
+
+  <h3>同じ口座を、2人が別々に記録している</h3>
+
+  <p>当座預金の残高は、2か所に記録されています。</p>
+
+  <ul>
+    <li><strong>会社の帳簿（当座預金勘定）</strong> — 会社が、自分の取引にもとづいて記録したもの</li>
+    <li><strong>銀行の残高証明書</strong> — 銀行が、実際の入出金にもとづいて記録したもの</li>
+  </ul>
+
+  <p>同じ口座なのだから、この2つは一致するはずです。ところが実務では、<strong>期末に照合するとほぼ必ず食い違います。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え — 家計簿とクレジットカードの明細</span>
+    <p>買い物をした日に家計簿へ「5,000円」と書いても、カード会社の明細に載るのは翌月です。逆に、年会費が自動で引き落とされていたのに、通知に気づかず家計簿に書いていないこともある。</p>
+    <p>このとき家計簿とカード明細は一致しませんが、<strong>ズレの意味は2通りあります。</strong></p>
+    <ul>
+      <li><strong>時期のズレ</strong>（買い物の記帳と明細への反映） — どちらも間違っていない。放っておけば来月には揃う</li>
+      <li><strong>自分の落ち度</strong>（年会費の記入漏れ） — こちらは家計簿を直さないと、いつまでも合わない</li>
+    </ul>
+    <p><mark>直さなければならないズレと、直してはいけないズレがある。</mark>銀行勘定調整表は、この仕分けをする表です。</p>
+  </div>
+
+  <h3>ズレの原因は2種類しかない</h3>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">原因の種類 ①</div>
+      <p><strong>タイミングのズレ</strong>　→ <span style="color:var(--ok);font-weight:700">仕訳は不要</span></p>
+      <p class="small">会社も銀行も、それぞれ自分のルールで正しく記録しています。ただ記録する<strong>時点</strong>が違うだけ。会社の帳簿はすでに正しいので、<strong>直す必要がありません</strong>。時間が経てば銀行側の記録が追いつきます。調整するのは<strong>銀行残高</strong>のほうです。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">原因の種類 ②</div>
+      <p><strong>自社の記帳ミス・記帳漏れ</strong>　→ <span style="color:var(--danger);font-weight:700">仕訳が必要</span></p>
+      <p class="small">会社が書くべきことを書いていない、あるいは金額を間違えて書いている。<strong>会社の帳簿が間違っている</strong>ので、修正仕訳を切ります。銀行の記録は正しいため、銀行側は動かしません。調整するのは<strong>帳簿残高</strong>のほうです。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">判断の軸はここに集約される</span>
+    <p><strong>「会社の帳簿は間違っているか？」</strong>——これだけです。</p>
+    <p>間違っていれば修正仕訳を切って<strong>企業側</strong>を調整する。間違っていなければ何もせず<strong>銀行側</strong>を調整する。<mark>調整する側と、仕訳の要・不要は連動します。</mark>企業側を調整する項目は必ず仕訳が要り、銀行側を調整する項目は必ず仕訳が要りません。2つを別々に覚える必要はありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>不一致の原因6つと、修正仕訳の要・不要</h2>
+
+  <p>試験に出る不一致の原因は<strong>6つ</strong>です。この6つですべてです。まず一覧を示し、そのあと1つずつ見ていきます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>原因</th><th>何が起きているか</th><th>調整する側</th><th>修正仕訳</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>① 時間外預入</strong><br><span class="small muted">じかんがいあずけいれ</span></td>
+        <td>銀行の営業時間後に夜間金庫へ入金した。会社は入金として記帳済み、銀行の記帳は翌営業日</td>
+        <td>銀行（加算）</td>
+        <td><span style="color:var(--ok);font-weight:700">不要</span></td>
+      </tr>
+      <tr>
+        <td><strong>② 未取立小切手</strong><br><span class="small muted">みとりたてこぎって</span></td>
+        <td>受け取った小切手を銀行に預けたが、銀行がまだ取り立てていない。会社は入金として記帳済み</td>
+        <td>銀行（加算）</td>
+        <td><span style="color:var(--ok);font-weight:700">不要</span></td>
+      </tr>
+      <tr>
+        <td><strong>③ 未取付小切手</strong><br><span class="small muted">みとりつけこぎって</span></td>
+        <td>相手に振り出した小切手が、まだ銀行に持ち込まれていない。会社は支払として記帳済み</td>
+        <td>銀行（減算）</td>
+        <td><span style="color:var(--ok);font-weight:700">不要</span></td>
+      </tr>
+      <tr>
+        <td><strong>④ 未渡小切手</strong><br><span class="small muted">みわたしこぎって</span></td>
+        <td>小切手を作って記帳したのに、<strong>相手に渡していない</strong>。まだ支払っていないのに支払ったことにしている</td>
+        <td>企業（加算）</td>
+        <td><span style="color:var(--danger);font-weight:700">必要</span></td>
+      </tr>
+      <tr>
+        <td><strong>⑤ 連絡未通知</strong><br><span class="small muted">れんらくみつうち</span></td>
+        <td>振込入金や自動引落があったのに、会社に連絡が届かず未記帳</td>
+        <td>企業（加算または減算）</td>
+        <td><span style="color:var(--danger);font-weight:700">必要</span></td>
+      </tr>
+      <tr>
+        <td><strong>⑥ 誤記入</strong><br><span class="small muted">ごきにゅう</span></td>
+        <td>会社が金額を書き間違えた（45,000円を54,000円と記帳したなど）</td>
+        <td>企業（加算または減算）</td>
+        <td><span style="color:var(--danger);font-weight:700">必要</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">6つを2つに割る覚え方</span>
+    <p><strong>①②③は「小切手・現金がまだ動ききっていない」タイミングの話</strong>。会社は正しく書いており、銀行が追いつくのを待つだけなので<strong>仕訳不要</strong>。</p>
+    <p><strong>④⑤⑥は「会社が書き間違えた・書き漏らした」話</strong>。会社の帳簿が事実と違うので<strong>仕訳が必要</strong>。</p>
+    <p>④の未渡小切手だけは名前が①②③と似ていますが、<strong>中身は「会社の記帳が事実と違う」</strong>ため④⑤⑥の側です。ここが最大の罠なので、次の節で単独に扱います。</p>
+  </div>
+
+  <h3>① 時間外預入 — 銀行が閉まっていただけ</h3>
+
+  <p>17時に銀行の窓口が閉まったあと、夜間金庫に現金 80,000円を入れました。会社は当日の入金として記帳します。銀行がこれを口座に記録するのは翌営業日です。</p>
+
+  <p><strong>会社の記帳は正しい</strong>——現金は確かにその日、会社の手を離れて銀行に入りました。銀行の記録がまだ追いついていないだけです。<strong>仕訳は不要</strong>で、調整表では<strong>銀行残高に加算</strong>します。</p>
+
+  <h3>② 未取立小切手 — 銀行がまだ換金していない</h3>
+
+  <p>得意先から受け取った小切手 55,000円を銀行に預け、取立てを依頼しました。会社は預けた日に当座預金の増加として記帳します。ところが銀行が相手の銀行から実際に代金を取り立てるには数日かかり、それまで口座残高には反映されません。</p>
+
+  <p>これも<strong>会社の記帳は正しい</strong>。時間の問題です。<strong>仕訳は不要</strong>、<strong>銀行残高に加算</strong>します。</p>
+
+  <h3>③ 未取付小切手 — 相手がまだ銀行へ持ち込んでいない</h3>
+
+  <p>仕入先に小切手 154,000円を振り出して<strong>渡しました</strong>。会社は振り出した日に当座預金の減少として記帳します。ところが受け取った仕入先が、まだその小切手を自分の銀行に持ち込んでいない。だから会社の口座からはまだ引かれていません。</p>
+
+  <p><strong>会社の記帳は正しい</strong>——小切手を渡した時点で支払いは完了しており、いつ持ち込まれても引き落とされます。<strong>仕訳は不要</strong>、銀行残高のほうが多すぎる状態なので<strong>銀行残高から減算</strong>します。</p>
+
+  <div class="term">
+    <span class="term__w">取付（とりつけ）</span>
+    <p>小切手を受け取った人が、それを銀行に持ち込んで換金することを「取り付ける」と言います。<strong>未取付＝まだ持ち込まれていない</strong>。「取立て」（②）は自分の銀行に集金を頼むこと、「取付け」（③）は相手が銀行に持ち込むこと。似ていますが、<strong>②は自分が受け取った小切手、③は自分が振り出した小切手</strong>の話です。</p>
+  </div>
+
+  <h3>⑤ 連絡未通知 — 知らないうちに動いていた</h3>
+
+  <p>口座の入出金は、会社が指示したものだけではありません。</p>
+
+  <ul>
+    <li><strong>入金の例</strong> — 得意先が売掛金 60,000円を振り込んだが、その連絡が会社に届いていなかった</li>
+    <li><strong>出金の例</strong> — 電気代 35,000円が自動引落されたが、会社に通知が来ておらず未記帳だった</li>
+  </ul>
+
+  <p>どちらも<strong>実際にお金は動いており、銀行の記録が正しい</strong>。会社は書くべきことを書いていません。<strong>修正仕訳が必要</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連絡未通知（入金）売掛金 60,000円の振込が未記帳だった</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">当座預金</td><td class="d amt">60,000</td><td class="c">売 掛 金</td><td class="c amt">60,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連絡未通知（出金）水道光熱費 35,000円の自動引落が未記帳だった</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">水道光熱費</td><td class="d amt">35,000</td><td class="c">当座預金</td><td class="c amt">35,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>入金なら当座預金を増やし、出金なら減らす。<strong>相手科目は取引の中身がそのまま入ります</strong>。振込の入金なら売掛金の回収、引落なら費用の支払い、といった具合です。</p>
+
+  <h3>⑥ 誤記入 — 会社が金額を書き間違えた</h3>
+
+  <p>売掛金 45,000円が振り込まれたのに、帳簿に 54,000円と記帳していた。数字を入れ替えて書いてしまった、よくあるミスです。</p>
+
+  <p>帳簿は 9,000円だけ多く記録されています。<strong>この差額だけを取り消す仕訳</strong>を切ります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>誤記入　売掛金の回収 45,000円を 54,000円と記帳していた</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売 掛 金</td><td class="d amt">9,000</td><td class="c">当座預金</td><td class="c amt">9,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">誤記入は「差額だけ」を動かす</span>
+    <p>「間違えたのだから、いったん全部取り消して正しく入れ直そう」と考えると、54,000円の逆仕訳と45,000円の正しい仕訳の2本になります。答えとして間違いではありませんが、<strong>本試験は解答欄が1行しかないことがほとんど</strong>です。</p>
+    <p><strong>正しい金額と記帳した金額の差額を求め、それを反対側に1本書く。</strong>多く書きすぎていたなら減らし、少なく書いていたなら足す。「いくら違うか」と「どちら向きか」の2つだけを考えてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>未渡小切手 — この単元で最も落とす場所</h2>
+
+  <p>④の未渡小切手だけ、節を分けます。<strong>この単元の失点は、ほとんどここに集中します。</strong></p>
+
+  <h3>何が起きているのか</h3>
+
+  <p>会社は仕入先に支払うため、小切手を作りました。作った時点で経理は「支払った」と考え、こう記帳します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>振出時に切っていた仕訳（買掛金の支払いのつもりで作成した小切手 120,000円）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">買 掛 金</td><td class="d amt">120,000</td><td class="c">当座預金</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>ところが決算日になっても、その小切手は<strong>金庫の中に入ったままでした。</strong>担当者が渡しそびれた、相手が取りに来なかった、郵送し忘れた——理由はどうあれ、<mark>相手に渡っていません。</mark></p>
+
+  <p>渡っていない以上、<strong>買掛金はまだ消えていません</strong>。当座預金も減っていません。上の仕訳は<strong>事実に反しています</strong>。だから取り消します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>未渡小切手の修正仕訳（買掛金の支払い用だった場合）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">当座預金</td><td class="d amt">120,000</td><td class="c">買 掛 金</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>借方は必ず<strong>当座預金</strong>です。減らしすぎた当座預金を戻す。ここは動きません。<strong>問題は貸方です。</strong></p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">罠その1 —「未渡小切手」という勘定科目は存在しない</span>
+    <p>「未取立小切手」「未取付小切手」「未渡小切手」と3つ並ぶので、これらが勘定科目のように見えてきます。<strong>いずれも勘定科目ではありません。</strong>不一致の原因につけた名前にすぎません。</p>
+    <p>解答欄に「未渡小切手」と書いた時点で不正解です。書くのは<strong>当座預金</strong>と、<strong>取り消される相手科目</strong>だけです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">罠その2 — 貸方は「誰に渡すはずだった小切手か」で変わる</span>
+    <p>当座預金の減少を取り消すところまでは同じですが、<strong>貸方に何を立てるかは、その小切手が何の支払い用だったかで変わります。</strong>問題文は必ずそれを書いています。</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>小切手の用途</th><th>修正仕訳</th><th>なぜそうなるか</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>仕入代金（商品代金）の支払い用</strong></td>
+          <td>（借）当座預金 ／（貸）<strong>買掛金</strong></td>
+          <td>商品を仕入れたことで生じた債務は<strong>買掛金</strong>。支払いが取り消されるのだから、買掛金が元に戻る</td>
+        </tr>
+        <tr>
+          <td><strong>費用・固定資産などの支払い用</strong><br><span class="small muted">広告料・修繕費・備品購入代など、すでに債務が確定しているもの</span></td>
+          <td>（借）当座預金 ／（貸）<strong>未払金</strong></td>
+          <td>商品以外の取引から生じた債務は<strong>未払金</strong>。費用や資産の計上自体は正しいので取り消さず、未払いの状態に戻すだけ</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p><strong>貸方に費用の科目（広告宣伝費・修繕費など）を書いてはいけません。</strong>広告はすでに掲載されており、修繕はすでに終わっています。<mark>取り消されたのは「支払い」であって、「費用の発生」ではありません。</mark>費用は残したまま、支払っていない状態＝未払金に戻します。</p>
+  </div>
+
+  <p>例を2本並べます。金額はどちらも 120,000円ですが、貸方が違います。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>買掛金の支払いのために作成した小切手 120,000円が未渡しだった</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">当座預金</td><td class="d amt">120,000</td><td class="c">買 掛 金</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>広告料の支払いのために作成した小切手 120,000円が未渡しだった（広告はすでに掲載済み）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">当座預金</td><td class="d amt">120,000</td><td class="c">未 払 金</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>未取付小切手との違いを、1つの図で切り分ける</h3>
+
+  <p>未取付小切手（③・仕訳不要）と未渡小切手（④・仕訳必要）は、どちらも「自社が振り出した小切手で、まだ当座預金から引き落とされていない」状態です。字面もよく似ています。<strong>違いは1点だけ</strong>です。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 320" style="width:100%;height:auto;min-width:700px" role="img" aria-label="未取付小切手と未渡小切手の違いを、小切手が相手に渡ったかどうかで対比した図">
+      <g font-size="14" fill="var(--text)">
+        <text x="20" y="24" font-size="13" fill="var(--muted)">自社が小切手を作成し、当座預金の減少として記帳した</text>
+        <rect x="330" y="36" width="200" height="46" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="430" y="65" text-anchor="middle" font-size="14.5" font-weight="700">小切手を作成・記帳した</text>
+        <path d="M430 82 L 430 100" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+        <text x="440" y="98" font-size="13" fill="var(--muted)">相手に渡したか？</text>
+        <path d="M430 100 L 200 100 L 200 122" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+        <path d="M195 116 L 200 124 L 205 116 Z" fill="var(--muted)"/>
+        <path d="M430 100 L 660 100 L 660 122" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+        <path d="M655 116 L 660 124 L 665 116 Z" fill="var(--muted)"/>
+
+        <!-- 左：未取付 -->
+        <rect x="40" y="126" width="320" height="170" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2"/>
+        <text x="200" y="152" text-anchor="middle" font-size="15" fill="var(--ok)" font-weight="700">渡した</text>
+        <text x="200" y="180" text-anchor="middle" font-size="16" font-weight="700">③ 未取付小切手</text>
+        <text x="200" y="206" text-anchor="middle" font-size="12.5" fill="var(--muted)">相手がまだ銀行に持ち込んでいない</text>
+        <text x="200" y="228" text-anchor="middle" font-size="12.5" fill="var(--muted)">支払いは済んでいる＝帳簿は正しい</text>
+        <text x="200" y="258" text-anchor="middle" font-size="14.5" fill="var(--ok)" font-weight="700">仕訳不要／銀行残高から減算</text>
+        <text x="200" y="280" text-anchor="middle" font-size="12" fill="var(--muted)">持ち込まれれば自然に一致する</text>
+
+        <!-- 右：未渡 -->
+        <rect x="500" y="126" width="320" height="170" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="660" y="152" text-anchor="middle" font-size="15" fill="var(--danger)" font-weight="700">渡していない（手元にある）</text>
+        <text x="660" y="180" text-anchor="middle" font-size="16" font-weight="700">④ 未渡小切手</text>
+        <text x="660" y="206" text-anchor="middle" font-size="12.5" fill="var(--muted)">まだ支払っていないのに支払った</text>
+        <text x="660" y="224" text-anchor="middle" font-size="12.5" fill="var(--muted)">ことにしている＝帳簿が誤り</text>
+        <text x="660" y="254" text-anchor="middle" font-size="14.5" fill="var(--danger)" font-weight="700">仕訳が必要／帳簿残高に加算</text>
+        <text x="660" y="276" text-anchor="middle" font-size="12" fill="var(--muted)">（借）当座預金／（貸）買掛金 または 未払金</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">分岐点は「小切手が相手に渡ったか」だけ。<strong>渡っていれば支払い完了なので帳簿は正しく、渡っていなければ支払っていないので帳簿が誤り</strong>です。問題文には必ず「まだ相手に渡していなかった」「金庫に保管されたままであった」といった手がかりがあります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>銀行勘定調整表の3つの様式</h2>
+
+  <p>6つの原因を仕分けできるようになったら、それを表の形にまとめます。様式は3つあり、<strong>どれを使っても結論は同じ</strong>です。違うのは、どこから出発してどこへ着地するか。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>様式</th><th>出発点 → 着地点</th><th>本試験での扱い</th></tr></thead>
+    <tbody>
+      <tr><td><strong>企業残高基準法</strong></td><td>帳簿残高 → 銀行残高</td><td>出題は少ない</td></tr>
+      <tr><td><strong>銀行残高基準法</strong></td><td>銀行残高 → 帳簿残高</td><td>出題は少ない</td></tr>
+      <tr><td><strong>両者区分調整法</strong></td><td>帳簿残高と銀行残高の両方 → 同じ正しい残高</td><td><strong>中心。まずこれを書けるようにする</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>設例</h3>
+
+  <div class="card">
+    <p class="small muted" style="margin-top:0">当期末（3月31日）における当座預金の照合</p>
+    <p>当座預金勘定の<strong>帳簿残高は 1,284,000円</strong>、銀行の<strong>残高証明書の金額は 1,439,000円</strong>であった。不一致の原因を調査したところ、次のことが判明した。</p>
+    <ol>
+      <li>決算日に現金 80,000円を夜間金庫へ預け入れたが、銀行では翌日付の入金として処理されていた。</li>
+      <li>得意先から受け取り、銀行に取立てを依頼していた小切手 55,000円が、決算日現在まだ取り立てられていなかった。</li>
+      <li>仕入先へ振り出して渡した小切手 154,000円が、決算日現在まだ銀行に呈示されていなかった。</li>
+      <li>買掛金の支払いのために作成した小切手 120,000円が、担当者の手元に保管されたままであった。</li>
+      <li>得意先から売掛金 60,000円の振込があったが、その通知が当社に届いていなかった。</li>
+      <li>水道光熱費 35,000円が当座預金から自動引落されていたが、当社では未記帳であった。</li>
+      <li>売掛金 45,000円の回収を、誤って 54,000円と記帳していた。</li>
+    </ol>
+  </div>
+
+  <h3>手順1 — 7項目を、企業側と銀行側に仕分ける</h3>
+
+  <p>いきなり表を書き始めず、<strong>まず仕分けます</strong>。判断軸は「会社の帳簿は間違っているか」の1つだけでした。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>項目</th><th>原因</th><th>帳簿は？</th><th>調整する側</th><th class="amt">増減</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>時間外預入</td><td>正しい</td><td>銀行</td><td class="amt">＋80,000</td></tr>
+      <tr><td>2</td><td>未取立小切手</td><td>正しい</td><td>銀行</td><td class="amt">＋55,000</td></tr>
+      <tr><td>3</td><td>未取付小切手</td><td>正しい</td><td>銀行</td><td class="amt">−154,000</td></tr>
+      <tr><td>4</td><td>未渡小切手</td><td><strong>誤り</strong></td><td>企業</td><td class="amt">＋120,000</td></tr>
+      <tr><td>5</td><td>連絡未通知（入金）</td><td><strong>誤り</strong></td><td>企業</td><td class="amt">＋60,000</td></tr>
+      <tr><td>6</td><td>連絡未通知（出金）</td><td><strong>誤り</strong></td><td>企業</td><td class="amt">−35,000</td></tr>
+      <tr><td>7</td><td>誤記入</td><td><strong>誤り</strong></td><td>企業</td><td class="amt">−9,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small">項目7は 54,000 − 45,000 ＝ 9,000円を多く記帳していたので、帳簿残高から差額を減らします。</p>
+
+  <h3>手順2 — 修正仕訳を切る（企業側の4項目だけ）</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>企業側の調整に対応する修正仕訳（銀行側の1〜3には仕訳がない）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">当座預金</td><td class="d amt">120,000</td><td class="c">買 掛 金</td><td class="c amt">120,000</td></tr>
+      <tr><td class="d">当座預金</td><td class="d amt">60,000</td><td class="c">売 掛 金</td><td class="c amt">60,000</td></tr>
+      <tr><td class="d">水道光熱費</td><td class="d amt">35,000</td><td class="c">当座預金</td><td class="c amt">35,000</td></tr>
+      <tr><td class="d">売 掛 金</td><td class="d amt">9,000</td><td class="c">当座預金</td><td class="c amt">9,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>当座預金の増減を集計すると、120,000 ＋ 60,000 − 35,000 − 9,000 ＝ <strong>＋136,000円</strong>。帳簿残高 1,284,000 ＋ 136,000 ＝ <strong>1,420,000円</strong>になります。</p>
+
+  <h3>手順3 — 両者区分調整法の表を作る</h3>
+
+  <p>この様式は<strong>上下2段</strong>に分かれます。上段が企業側、下段が銀行側。それぞれ自分の残高から出発して調整し、<mark>2つの段が同じ金額に着地すれば正解</mark>です。</p>
+
+  <div class="tablewrap">
+  <table>
+    <caption style="caption-side:top;text-align:left;padding:6px 2px;font-size:13px;color:var(--muted)">銀行勘定調整表（両者区分調整法）　×2年3月31日　（単位：円）</caption>
+    <thead><tr><th>区分</th><th>摘要</th><th class="amt">加算</th><th class="amt">減算</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td><strong>企業側</strong></td><td>当座預金勘定の残高</td><td class="amt"></td><td class="amt"></td><td class="amt"><strong>1,284,000</strong></td></tr>
+      <tr><td></td><td>(加算) 未渡小切手</td><td class="amt">120,000</td><td class="amt"></td><td class="amt"></td></tr>
+      <tr><td></td><td>(加算) 売掛金振込の未記帳</td><td class="amt">60,000</td><td class="amt"></td><td class="amt"></td></tr>
+      <tr><td></td><td>(減算) 水道光熱費の引落未記帳</td><td class="amt"></td><td class="amt">35,000</td><td class="amt"></td></tr>
+      <tr><td></td><td>(減算) 売掛金回収の誤記入</td><td class="amt"></td><td class="amt">9,000</td><td class="amt"></td></tr>
+      <tr><td></td><td><strong>修正後の残高</strong></td><td class="amt"></td><td class="amt"></td><td class="amt"><strong>1,420,000</strong></td></tr>
+      <tr><td><strong>銀行側</strong></td><td>残高証明書の残高</td><td class="amt"></td><td class="amt"></td><td class="amt"><strong>1,439,000</strong></td></tr>
+      <tr><td></td><td>(加算) 時間外預入</td><td class="amt">80,000</td><td class="amt"></td><td class="amt"></td></tr>
+      <tr><td></td><td>(加算) 未取立小切手</td><td class="amt">55,000</td><td class="amt"></td><td class="amt"></td></tr>
+      <tr><td></td><td>(減算) 未取付小切手</td><td class="amt"></td><td class="amt">154,000</td><td class="amt"></td></tr>
+      <tr><td></td><td><strong>修正後の残高</strong></td><td class="amt"></td><td class="amt"></td><td class="amt"><strong>1,420,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <ul>
+    <li>企業側：1,284,000 ＋ 120,000 ＋ 60,000 − 35,000 − 9,000 ＝ <strong>1,420,000円</strong></li>
+    <li>銀行側：1,439,000 ＋ 80,000 ＋ 55,000 − 154,000 ＝ <strong>1,420,000円</strong></li>
+  </ul>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この様式が本試験の中心である理由</span>
+    <p>第一に、<strong>両側が同じ金額に着地するので、その場で検算できます</strong>。他の2様式は片方の残高に着地するため、途中で符号を1つ間違えても気づけません。</p>
+    <p>第二に、<strong>企業側の調整項目と修正仕訳が1対1で対応します</strong>。上段に並んだ項目がそのまま切るべき仕訳のリストになるので、「表を作る」と「仕訳を書く」が同じ作業になります。第2問では両方を問われることが多く、二度手間になりません。</p>
+  </div>
+
+  <h3>修正後の残高が、貸借対照表に載る金額になる</h3>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">この論点の出口</span>
+    <p>調整表で求めた<strong>修正後の残高 1,420,000円が、貸借対照表の「当座預金」に載る金額</strong>です。</p>
+  </div>
+
+  <p>なぜ帳簿残高 1,284,000円でも、残高証明書の 1,439,000円でもないのか。順に確かめます。</p>
+
+  <ul>
+    <li><strong>帳簿残高 1,284,000円は誤っている</strong> — 未渡小切手・連絡未通知・誤記入という記帳誤りを含んだままの数字です。</li>
+    <li><strong>残高証明書 1,439,000円も、決算日時点の会社の権利を表していない</strong> — 銀行が翌日処理する予定の入金が抜け、すでに支払い済みの小切手が引かれていません。</li>
+    <li><strong>修正後の 1,420,000円だけが、決算日時点で会社が実際にいくら引き出せるかを表している</strong> — 企業側と銀行側の両方から検算されています。</li>
+  </ul>
+
+  <p>第3問（財務諸表の作成）で当座預金の調整が決算整理事項として出たときも、やることは同じです。<strong>企業側の修正仕訳を切り、修正後の残高を貸借対照表に書く。</strong>銀行側の項目は仕訳がないので、貸借対照表には何の影響も与えません。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">修正後の残高がマイナスになったら</span>
+    <p>修正の結果、当座預金の残高が<strong>貸方残高（マイナス）</strong>になることがあります。これは口座が当座借越の状態にあるということです。この場合、貸借対照表には資産としてマイナスを書くのではなく、<strong>「当座借越」または「短期借入金」として負債の側に表示</strong>します。3級で学んだ当座借越の決算処理と同じ考え方です。</p>
+  </div>
+
+  <h3>他の2様式 — 同じ設例を書き換える</h3>
+
+  <p>残る2様式も、やることは変わりません。<strong>片側の残高から出発し、もう片方の残高に着地させる</strong>だけです。そのために、自分の側の調整はそのまま、<strong>相手側の調整は符号を逆にして</strong>足していきます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">企業残高基準法</div>
+      <p class="small">帳簿残高から出発して、銀行残高に着地する。</p>
+      <ul class="small">
+        <li>1,284,000（帳簿残高）</li>
+        <li>＋120,000 ＋60,000 −35,000 −9,000　<span class="muted">企業側はそのまま</span></li>
+        <li>−80,000 −55,000 ＋154,000　<span class="muted">銀行側は符号を逆に</span></li>
+        <li>＝ <strong>1,439,000円</strong>（銀行残高）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card__label">銀行残高基準法</div>
+      <p class="small">銀行残高から出発して、帳簿残高に着地する。</p>
+      <ul class="small">
+        <li>1,439,000（銀行残高）</li>
+        <li>＋80,000 ＋55,000 −154,000　<span class="muted">銀行側はそのまま</span></li>
+        <li>−120,000 −60,000 ＋35,000 ＋9,000　<span class="muted">企業側は符号を逆に</span></li>
+        <li>＝ <strong>1,284,000円</strong>（帳簿残高）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">様式が変わっても、修正仕訳は変わらない</span>
+    <p>3つの様式は<strong>表の書き方が違うだけ</strong>で、どの原因が企業側か銀行側かという仕分けは共通です。したがって<strong>切る修正仕訳も、貸借対照表に載る金額（1,420,000円）も、様式によって変わりません。</strong>企業残高基準法や銀行残高基準法で作った表には修正後の残高が現れませんが、それでも財務諸表に載るのは 1,420,000円です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>確認テスト — どちらを調整し、仕訳は要るか</h2>
+
+  <p>仕訳を書く前に、仕分けの判断だけを固めます。<strong>迷ったら「会社の帳簿は間違っているか」に戻ってください。</strong></p>
+
+  <div id="quiz-chosei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕訳ドリル 8問</h2>
+
+  <p>銀行勘定調整における修正仕訳です。<strong>ここに出るのは、すべて企業側の調整項目</strong>——つまり修正仕訳が必要なものだけです。解答欄は4行ありますが、埋まらない行があって構いません。</p>
+
+  <div id="drill-ginko"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>計算ドリル — 両者区分調整法</h2>
+
+  <p>両者区分調整法の表を頭の中で組み立て、企業側・銀行側それぞれの修正後残高と、一致する金額を答えます。<strong>2つの段が同じ数字にならなければ、どこかで仕分けか符号を間違えています。</strong></p>
+
+  <div id="num-chosei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。すべてに✓が入ったら、W1の商業簿記の後半（商品売買）へ進んでください。</p>
+
+  <div class="progressbar" data-progress-for="#w1u1check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#w1u1check">0 / 0 完了（0%）</div>
+
+  <div id="w1u1check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u01-w1u1-1"><label for="c1"><span class="cl__t">純資産が「株主資本」と「評価・換算差額等」に分かれる理由を説明できる</span><span class="cl__d">まだ実現していない評価の差額は、株主のものとも負債とも言えない。株主資本の定義を汚さずに置く場所として、上位に中立的な枠が必要になった</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u01-w1u1-2"><label for="c2"><span class="cl__t">株主資本の内訳を、何も見ずに階層で書き出せる</span><span class="cl__d">資本金／資本剰余金（資本準備金・その他資本剰余金）／利益剰余金（利益準備金・その他利益剰余金＝任意積立金・繰越利益剰余金）</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u01-w1u1-3"><label for="c3"><span class="cl__t">資本剰余金と利益剰余金を混ぜてはいけない理由を1文で言える</span><span class="cl__d">「株主がいくら出したか」と「その元手でいくら稼いだか」は別の情報。混ぜると、集めただけの会社と稼いだ会社が区別できなくなる</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u01-w1u1-4"><label for="c4"><span class="cl__t">帳簿残高と銀行残高がズレる原因が2種類しかないと言える</span><span class="cl__d">タイミングのズレ（帳簿は正しい／銀行側を調整／仕訳不要）と、自社の記帳ミス・記帳漏れ（帳簿が誤り／企業側を調整／仕訳必要）</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u01-w1u1-5"><label for="c5"><span class="cl__t">不一致の原因6つを列挙し、それぞれの調整側と仕訳の要・不要を即答できる</span><span class="cl__d">時間外預入・未取立小切手・未取付小切手＝銀行側／仕訳不要。未渡小切手・連絡未通知・誤記入＝企業側／仕訳必要</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u01-w1u1-6"><label for="c6"><span class="cl__t">未取付小切手と未渡小切手を、問題文から切り分けられる</span><span class="cl__d">分岐点は「相手に渡したか」だけ。渡していれば支払い完了で帳簿は正しく、渡していなければ支払っていないので帳簿が誤り</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u01-w1u1-7"><label for="c7"><span class="cl__t">未渡小切手の修正仕訳を、貸方を2通り書き分けられる</span><span class="cl__d">借方は必ず当座預金。貸方は仕入代金なら買掛金、費用や固定資産ですでに債務が確定しているなら未払金。費用の科目を貸方に書かない</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u01-w1u1-8"><label for="c8"><span class="cl__t">誤記入は差額だけを1本の仕訳で動かせる</span><span class="cl__d">正しい金額と記帳した金額の差を求め、多すぎるなら減らす向きに1本切る。逆仕訳と正しい仕訳の2本には分けない</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u01-w1u1-9"><label for="c9"><span class="cl__t">両者区分調整法の表を、白紙から作れる</span><span class="cl__d">上段が企業側（帳簿残高から）、下段が銀行側（残高証明書から）。両段が同じ金額に着地することがそのまま検算になる</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u01-w1u1-10"><label for="c10"><span class="cl__t">貸借対照表に載る当座預金の金額がどれかを説明できる</span><span class="cl__d">修正後の残高。帳簿残高は記帳誤りを含み、残高証明書は決算日時点の権利を表していない。修正後の残高が貸方残高なら当座借越（負債）として表示する</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u01-w1u1-11"><label for="c11"><span class="cl__t">仕訳ドリル8問・確認テスト10問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>銀行勘定調整表は<strong>第2問の頻出論点</strong>です。一度解けるようになっても、数週間触れないと未渡小切手の貸方で迷い始めます。毎週の演習枠で第2問の個別論点を回すとき、この論点を必ずローテーションに入れてください。</p>
+    <p>W1の商業簿記はこのあと商品売買（売上原価対立法・棚卸減耗損・商品評価損・仕入割戻）へ進みます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W1 UNIT 01</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* ---------- 4章：純資産の内訳 用語穴埋め ---------- */
+BokiFill.mount('#fill-junshisan', {
+  title: '穴埋め — 純資産の階層',
+  questions: [
+    {
+      text: '純資産は、「株主資本」と「〔　　　〕」の2つに分かれる。2級で扱われるこの区分の科目は、その他有価証券評価差額金である。',
+      answer: ['評価・換算差額等', '評価換算差額等', '評価・換算差額', '評価換算差額'],
+      explain: '<p><strong>評価・換算差額等</strong>。まだ売却していない資産の評価差額のように、<strong>当期の利益にしていない（損益計算書を通していない）評価の差額</strong>を置く枠です。株主に帰属すると言い切れないため株主資本の外に並べます。2級で入るのはその他有価証券評価差額金だけです。</p>'
+    },
+    {
+      text: '株主資本は「資本金」「〔　　　〕」「利益剰余金」の3つに分かれる。このうち〔　　　〕は、株主が払い込んだ金額のうち資本金としなかった部分などを含む。',
+      answer: ['資本剰余金'],
+      explain: '<p><strong>資本剰余金</strong>。出どころは株主です。中身は<strong>資本準備金</strong>と<strong>その他資本剰余金</strong>の2つ。「資本」と付く箱は株主が払い込んだもの、と名前で読めます。</p>'
+    },
+    {
+      text: '資本剰余金は「〔　　　〕」と「その他資本剰余金」に分かれる。〔　　　〕は、株式の発行で払い込まれた金額のうち資本金としなかった額が入る箱である。',
+      answer: ['資本準備金'],
+      explain: '<p><strong>資本準備金</strong>。株式を発行したとき、払込額の全額を資本金にせず一部を準備金として積むことがあり、その受け皿です。仕訳はW7の株式会社会計で扱います。</p>'
+    },
+    {
+      text: '利益剰余金は「利益準備金」と「〔　　　〕」に分かれ、後者はさらに任意積立金と繰越利益剰余金に分かれる。',
+      answer: ['その他利益剰余金'],
+      explain: '<p><strong>その他利益剰余金</strong>。3級から使っている<strong>繰越利益剰余金</strong>は、この中に入っています。「利益剰余金 → その他利益剰余金 → 繰越利益剰余金」という3段の入れ子です。新築積立金・別途積立金といった任意積立金も同じ階層に並びます。</p>'
+    },
+    {
+      text: '株主が払い込んだ資本剰余金と、会社が稼いだ利益剰余金を混ぜてはならない、という原則がある。このうち「会社が稼いだもの」に該当し、剰余金の配当時に積み立てが強制されるのは〔　　　〕である。',
+      answer: ['利益準備金'],
+      explain: '<p><strong>利益準備金</strong>。繰越利益剰余金を原資として配当するとき、配当額の10分の1を積み立てます（3級の範囲）。<strong>取り崩した箱と同じ出どころの準備金に積む</strong>ため、原資が利益剰余金なら利益準備金、資本剰余金なら資本準備金になります。混ぜない原則から導けます。</p>'
+    },
+    {
+      text: '純資産のうち、株主に帰属する部分の総称を〔　　　〕という。3級で「資本」と呼んでいたものは、おおむねこれにあたる。',
+      answer: ['株主資本'],
+      explain: '<p><strong>株主資本</strong>。資本金・資本剰余金・利益剰余金の合計です。純資産はこれより1段広く、株主資本の外側に評価・換算差額等を含みます。</p>'
+    }
+  ]
+});
+
+/* ---------- 9章：銀行勘定調整 確認テスト ---------- */
+BokiQuiz.mount('#quiz-chosei', {
+  title: '確認テスト — 調整する側と、仕訳の要・不要',
+  questions: [
+    {
+      text: '決算日の営業時間終了後、現金 90,000円を夜間金庫へ預け入れた。銀行では翌営業日の入金として処理されている。この項目の扱いとして正しいものはどれですか。',
+      choices: [
+        '企業側を調整し、修正仕訳が必要',
+        '銀行側を調整し、修正仕訳は不要',
+        '企業側を調整するが、修正仕訳は不要',
+        '銀行側を調整し、修正仕訳も必要'
+      ],
+      answer: 1,
+      explain: '<p><strong>時間外預入</strong>です。現金は決算日に会社の手を離れて銀行に入っており、<strong>会社の記帳は正しい</strong>。銀行の処理が翌日になっているだけなので、<strong>銀行残高に加算</strong>して調整します。会社の帳簿は正しいのだから、修正仕訳を切る理由がありません。</p><p>選択肢3・4のように「調整する側」と「仕訳の要・不要」が食い違う組み合わせは存在しません。<mark>企業側の調整＝仕訳必要、銀行側の調整＝仕訳不要</mark>で必ず連動します。</p>'
+    },
+    {
+      text: '仕入先に振り出して渡した小切手 148,000円が、決算日現在まだ銀行に呈示されていなかった。この項目の扱いとして正しいものはどれですか。',
+      choices: [
+        '銀行残高から減算する。修正仕訳は不要',
+        '銀行残高に加算する。修正仕訳は不要',
+        '帳簿残高に加算する。修正仕訳が必要',
+        '帳簿残高から減算する。修正仕訳が必要'
+      ],
+      answer: 0,
+      explain: '<p><strong>未取付小切手</strong>です。小切手はすでに<strong>相手に渡っており</strong>、支払いは完了しています。会社が支払いとして記帳したのは正しく、修正仕訳は不要です。</p><p>ただし銀行の口座からはまだ引かれていないため、<strong>銀行残高は実態より多すぎます</strong>。だから銀行残高から 148,000円を<strong>減算</strong>します。加算ではありません。</p>'
+    },
+    {
+      text: '買掛金の支払いのために作成した小切手 75,000円が、決算日現在まだ仕入先に渡されず金庫に保管されていた。この項目の扱いとして正しいものはどれですか。',
+      choices: [
+        '銀行残高から減算する。修正仕訳は不要',
+        '銀行残高に加算する。修正仕訳は不要',
+        '帳簿残高に加算する。修正仕訳が必要',
+        '帳簿残高から減算する。修正仕訳が必要'
+      ],
+      answer: 2,
+      explain: '<p><strong>未渡小切手</strong>です。前問の未取付小切手と字面は似ていますが、決定的に違うのは<strong>相手に渡っていない</strong>点。渡していない以上まだ支払っておらず、買掛金も消えていません。<mark>会社の帳簿が事実に反している</mark>ので、修正仕訳が必要です。</p><p>減らしすぎた当座預金を戻すので、<strong>帳簿残高に加算</strong>。仕訳は「（借）当座預金 75,000 ／（貸）買掛金 75,000」です。</p>'
+    },
+    {
+      text: '銀行に取立てを依頼していた、得意先振出の小切手 62,000円が、決算日現在まだ取り立てられていなかった。この項目の扱いとして正しいものはどれですか。',
+      choices: [
+        '帳簿残高に加算する。修正仕訳が必要',
+        '銀行残高に加算する。修正仕訳は不要',
+        '銀行残高から減算する。修正仕訳は不要',
+        '帳簿残高から減算する。修正仕訳が必要'
+      ],
+      answer: 1,
+      explain: '<p><strong>未取立小切手</strong>です。会社は小切手を受け取り、銀行に預けた時点で当座預金の増加として記帳しています。<strong>この記帳は正しく</strong>、銀行がまだ代金を取り立てていないだけ。修正仕訳は不要です。</p><p>銀行残高のほうが実態より少ないので、<strong>銀行残高に加算</strong>します。</p>'
+    },
+    {
+      text: '得意先から売掛金 110,000円の振込があったが、当社に通知が届いておらず未記帳であった。必要な修正仕訳はどれですか。',
+      choices: [
+        '仕訳不要（銀行側の調整項目である）',
+        '（借）売掛金 110,000 ／（貸）当座預金 110,000',
+        '（借）当座預金 110,000 ／（貸）売掛金 110,000',
+        '（借）当座預金 110,000 ／（貸）売上 110,000'
+      ],
+      answer: 2,
+      explain: '<p><strong>連絡未通知</strong>です。お金は実際に口座へ入っており、<strong>銀行の記録が正しい</strong>。会社が書き漏らしているので修正仕訳が必要です。当座預金が増え、回収された売掛金が減ります。</p><p>選択肢4は誤りです。これは<strong>売掛金の回収</strong>であって、新たな売上ではありません。売上はすでに計上済みで、その代金が入金されただけです。</p>'
+    },
+    {
+      text: '水道光熱費 28,000円が当座預金から自動引落されていたが、当社では未記帳であった。必要な修正仕訳はどれですか。',
+      choices: [
+        '（借）水道光熱費 28,000 ／（貸）当座預金 28,000',
+        '（借）当座預金 28,000 ／（貸）水道光熱費 28,000',
+        '（借）水道光熱費 28,000 ／（貸）未払金 28,000',
+        '仕訳不要（銀行側の調整項目である）'
+      ],
+      answer: 0,
+      explain: '<p><strong>連絡未通知（出金）</strong>です。引落は実際に行われているので、当座預金を<strong>減らし</strong>、費用を計上します。帳簿残高からは 28,000円を<strong>減算</strong>します。</p><p>選択肢3は誤りです。すでに引き落とされて<strong>支払いが完了している</strong>ので、未払金は立ちません。未払金が出てくるのは、支払いが完了していない未渡小切手の場合です。</p>'
+    },
+    {
+      text: '売掛金 83,000円を回収した際、誤って 38,000円と記帳していた。必要な修正仕訳はどれですか。',
+      choices: [
+        '（借）当座預金 83,000 ／（貸）売掛金 83,000',
+        '（借）売掛金 45,000 ／（貸）当座預金 45,000',
+        '（借）当座預金 45,000 ／（貸）売掛金 45,000',
+        '（借）当座預金 121,000 ／（貸）売掛金 121,000'
+      ],
+      answer: 2,
+      invariant: [['83000 - 38000', '45000'], ['83000 - 38000', 'answer']],
+      explain: '<p><strong>誤記入</strong>です。正しい 83,000円に対して 38,000円しか記帳しておらず、<strong>45,000円足りません</strong>（83,000 − 38,000 ＝ 45,000）。足りない分を足す向きなので、当座預金を借方で増やします。帳簿残高には<strong>加算</strong>します。</p><p>選択肢1は誤りです。すでに 38,000円を記帳しているので、さらに全額を計上すると二重になります。<strong>誤記入は差額だけを動かす</strong>のが原則です。</p>'
+    },
+    {
+      text: '備品購入代金の支払いのために作成した小切手 200,000円が、決算日現在まだ渡されずに手元にあった。備品はすでに引き渡しを受けている。必要な修正仕訳はどれですか。',
+      choices: [
+        '（借）当座預金 200,000 ／（貸）買掛金 200,000',
+        '（借）当座預金 200,000 ／（貸）未払金 200,000',
+        '（借）当座預金 200,000 ／（貸）備品 200,000',
+        '（借）当座預金 200,000 ／（貸）未渡小切手 200,000'
+      ],
+      answer: 1,
+      invariant: [['200000', 'answer']],
+      explain: '<p><strong>未渡小切手</strong>で、用途が<strong>備品の購入代金</strong>です。商品以外の取引から生じた債務なので、貸方は<strong>未払金</strong>になります。買掛金になるのは仕入代金（商品代金）の場合だけです。</p><p>選択肢3は誤りです。備品はすでに引き渡しを受けており、<strong>資産の計上そのものは正しい</strong>。取り消されたのは支払いだけなので、備品は消さず未払いの状態に戻します。選択肢4の「未渡小切手」は<strong>勘定科目として存在しません</strong>。</p>'
+    },
+    {
+      text: '両者区分調整法で調整表を作成したところ、企業側の修正後残高が 962,000円、銀行側の修正後残高が 971,000円となった。この状況について正しい説明はどれですか。',
+      choices: [
+        '正常である。企業側と銀行側の修正後残高は一致しないのが普通である',
+        '差額 9,000円を貸借対照表の当座預金に加算すればよい',
+        'どこかに誤りがある。仕分けか符号を見直す必要がある',
+        '銀行側が正しいので、貸借対照表には 971,000円を載せる'
+      ],
+      answer: 2,
+      explain: '<p>両者区分調整法は、企業側と銀行側の両方を「決算日時点の正しい残高」に近づける様式です。同じ口座の同じ日の残高を2つの経路で求めているのですから、<mark>一致しなければ必ずどこかが間違っています</mark>。<strong>この一致自体が検算</strong>であり、この様式が本試験の中心である理由でもあります。</p><p>典型的な誤りは、未渡小切手を銀行側に入れてしまう（本当は企業側）、未取付小切手を加算してしまう（本当は減算）、誤記入の差額の向きを逆にする、の3つです。</p>'
+    },
+    {
+      text: '当座預金の帳簿残高は 540,000円、銀行の残高証明書は 678,000円である。未渡小切手 30,000円、未取付小切手 108,000円のほか不一致の原因はなかった。貸借対照表に載る当座預金の金額はいくらですか。',
+      choices: [
+        '540,000円',
+        '570,000円',
+        '678,000円',
+        '510,000円'
+      ],
+      answer: 1,
+      invariant: [['540000 + 30000', '678000 - 108000'], ['540000 + 30000', 'answer']],
+      explain: '<p>企業側：540,000 ＋ 30,000（未渡小切手）＝ <strong>570,000円</strong>。銀行側：678,000 − 108,000（未取付小切手）＝ <strong>570,000円</strong>。両者が一致するので正しく仕分けできています。</p><p>貸借対照表に載るのは<strong>修正後の残高 570,000円</strong>です。帳簿残高 540,000円は未渡小切手の記帳誤りを含んでおり、残高証明書 678,000円は支払い済みの小切手が引かれていないため、どちらも決算日時点の実態を表していません。</p>'
+    }
+  ]
+});
+
+/* ---------- 10章：銀行勘定調整の修正仕訳ドリル ---------- */
+BokiJournal.mount('#drill-ginko', {
+  title: '仕訳ドリル — 銀行勘定調整の修正仕訳',
+  accounts: ['当座預金', '普通預金', '現金', '売掛金', '受取手形', '未収入金', '買掛金', '支払手形',
+             '未払金', '借入金', '売上', '仕入', '水道光熱費', '通信費', '広告宣伝費', '修繕費',
+             '支払家賃', '支払手数料', '保険料', '旅費交通費', '消耗品費', '備品', '支払利息'],
+  questions: [
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、<strong>買掛金の支払いのために作成した小切手 240,000円</strong>が、仕入先に渡されないまま金庫に保管されていることが判明した。必要な修正仕訳を示しなさい。',
+      debit: [['当座預金', 240000]],
+      credit: [['買掛金', 240000]],
+      hint: '小切手はまだ相手に渡っていません。振出時に切った仕訳の何が事実と違うのかを考えてください。',
+      explain: '<p><strong>未渡小切手</strong>です。振出時に「（借）買掛金 240,000／（貸）当座預金 240,000」と記帳していますが、渡していない以上<strong>支払いは行われておらず、買掛金も消えていません</strong>。この仕訳を取り消します。</p><p>借方は減らしすぎた<strong>当座預金</strong>を戻し、貸方は<strong>買掛金</strong>を元に戻す。仕入代金の支払い用なので買掛金です。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、<strong>広告宣伝費の支払いのために作成した小切手 88,000円</strong>が、まだ相手先に渡されていないことが判明した。なお、広告はすでに掲載済みである。必要な修正仕訳を示しなさい。',
+      debit: [['当座預金', 88000]],
+      credit: [['未払金', 88000]],
+      hint: '広告はすでに掲載されています。取り消されたのは「費用の発生」でしょうか、それとも「支払い」でしょうか。',
+      explain: '<p><strong>未渡小切手</strong>で、用途が<strong>費用の支払い</strong>のパターンです。借方が当座預金なのは前問と同じですが、貸方が変わります。</p><p>広告はすでに掲載済みなので、<strong>広告宣伝費という費用の発生は正しく、取り消しません</strong>。取り消されたのは支払いだけ。商品以外の取引から生じた債務なので<strong>未払金</strong>に戻します。ここで貸方に「広告宣伝費」と書くのが最も多い誤答です。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、<strong>得意先から売掛金 175,000円の振込</strong>があったにもかかわらず、当社に通知が届いておらず未記帳であることが判明した。必要な修正仕訳を示しなさい。',
+      debit: [['当座預金', 175000]],
+      credit: [['売掛金', 175000]],
+      hint: '入金は実際に行われています。会社が書き漏らしているのは何の取引でしょうか。',
+      explain: '<p><strong>連絡未通知（入金）</strong>です。お金は実際に口座へ入っており銀行の記録が正しいので、会社が記帳を補います。当座預金が増え、回収された<strong>売掛金</strong>が減ります。</p><p>売上ではありません。売上は掛け販売の時点ですでに計上されており、ここで動くのはその代金の回収だけです。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、<strong>電話料金 42,000円が自動引落</strong>されていたが、当社では未記帳であることが判明した。必要な修正仕訳を示しなさい。',
+      debit: [['通信費', 42000]],
+      credit: [['当座預金', 42000]],
+      hint: '引落はすでに完了しています。まだ払っていない状態に戻す必要はありません。',
+      explain: '<p><strong>連絡未通知（出金）</strong>です。引落は実際に行われているので、<strong>当座預金を減らし</strong>、通信費を計上します。帳簿残高からは 42,000円を減算します。</p><p>貸方を未払金にしてはいけません。<strong>すでに支払いが済んでいる</strong>ので債務は残っていません。未払金が出るのは、支払いが行われていない未渡小切手の場合です。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、<strong>売掛金 96,000円の回収を、誤って 69,000円と記帳していた</strong>ことが判明した。必要な修正仕訳を示しなさい。',
+      debit: [['当座預金', 27000]],
+      credit: [['売掛金', 27000]],
+      hint: '正しい金額と記帳した金額の差額だけを、1本の仕訳で動かします。足りないのか、多すぎるのか。',
+      explain: '<p><strong>誤記入</strong>です。96,000 − 69,000 ＝ <strong>27,000円が不足</strong>しています。足りない分を足す向きなので、借方に当座預金 27,000円。</p><p>全額の 96,000円で切ると、すでに記帳した 69,000円と合わせて二重計上になります。<strong>差額だけを動かす</strong>のが原則です。帳簿残高には 27,000円を加算します。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、<strong>売掛金 52,000円の回収を、誤って 25,000円多く記帳していた</strong>ことが判明した。必要な修正仕訳を示しなさい。',
+      debit: [['売掛金', 25000]],
+      credit: [['当座預金', 25000]],
+      hint: '前問と向きが逆です。多く書きすぎた分を、どちら側で取り消しますか。',
+      explain: '<p><strong>誤記入</strong>で、前問と<strong>向きが逆</strong>のパターンです。25,000円を多く記帳しているので、その分だけ当座預金を<strong>減らします</strong>。貸方に当座預金 25,000円、借方に売掛金 25,000円。</p><p>回収しすぎたことにしていた売掛金が、その分だけ戻ります。帳簿残高からは 25,000円を減算します。<mark>誤記入は「いくら違うか」と「どちら向きか」の2つだけを判断する</mark>と、金額の書き方が変わっても迷いません。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、次の2つが判明した。まとめて1つの仕訳で示しなさい。<br>(1) <strong>買掛金の支払いのために作成した小切手 130,000円</strong>が未渡しであった。<br>(2) <strong>備品の購入代金として作成した小切手 90,000円</strong>が未渡しであった。なお備品はすでに引き渡しを受けている。',
+      debit: [['当座預金', 220000]],
+      credit: [['買掛金', 130000], ['未払金', 90000]],
+      hint: '2枚とも未渡小切手ですが、用途が違います。貸方が同じ科目になるかを確かめてください。',
+      explain: '<p>どちらも未渡小切手なので、借方はまとめて<strong>当座預金 220,000円</strong>（130,000 ＋ 90,000）。</p><p>貸方は用途で分かれます。(1)は仕入代金なので<strong>買掛金 130,000円</strong>、(2)は備品という商品以外の購入代金なので<strong>未払金 90,000円</strong>。<mark>同じ「未渡小切手」でも、貸方は1枚ずつ用途を確かめて決めます。</mark></p><p>備品は引き渡し済みなので取り消しません。取り消されたのは支払いだけです。</p>'
+    },
+    {
+      text: '決算にあたり当座預金の残高を照合したところ、次の3つが判明した。まとめて1つの仕訳で示しなさい。<br>(1) 決算日に現金 60,000円を夜間金庫へ預け入れたが、銀行では翌日付で処理されていた。<br>(2) <strong>借入金の利息 15,000円が当座預金から自動引落</strong>されていたが、当社では未記帳であった。<br>(3) <strong>修繕費の支払いのために作成した小切手 47,000円</strong>が未渡しであった。なお修繕はすでに完了している。',
+      debit: [['当座預金', 32000], ['支払利息', 15000]],
+      credit: [['未払金', 47000]],
+      hint: '3つのうち1つは修正仕訳が不要です。それを除いてから、当座預金の増減を合算してください。',
+      explain: '<p>まず<strong>(1)は時間外預入</strong>——会社の記帳は正しいので<strong>仕訳しません</strong>。銀行側の調整項目です。ここに手を出すと必ず不正解になります。</p><p>残る2つを合わせます。(2)は連絡未通知（出金）で「（借）支払利息 15,000／（貸）当座預金 15,000」。(3)は未渡小切手で「（借）当座預金 47,000／（貸）未払金 47,000」。修繕は完了しているので修繕費は取り消さず、未払金に戻します。</p><p>当座預金は −15,000 ＋ 47,000 ＝ <strong>＋32,000円</strong>なので借方にまとめます。借方合計 32,000 ＋ 15,000 ＝ 47,000円、貸方 47,000円で一致します。</p>'
+    }
+  ]
+});
+
+/* ---------- 11章：両者区分調整法 計算ドリル ---------- */
+BokiNum.mount('#num-chosei', {
+  title: '計算ドリル — 両者区分調整法の修正後残高',
+  badge: '計算ドリル',
+  unit: '円',
+  questions: [
+    {
+      text: '当座預金の<strong>帳簿残高は 842,000円</strong>、<strong>銀行の残高証明書は 1,091,000円</strong>であった。不一致の原因は次のとおりである。<br>(1) 買掛金の支払いのために作成した小切手 90,000円が未渡しであった。<br>(2) 得意先から売掛金 130,000円の振込があったが、当社に通知が届いていなかった。<br>(3) 電気代 24,000円が自動引落されていたが、当社では未記帳であった。<br>(4) 決算日に現金 65,000円を夜間金庫へ預け入れたが、銀行では翌日付の処理となっていた。<br>(5) 仕入先へ渡した小切手 118,000円が、まだ銀行に呈示されていなかった。<br>両者区分調整法により、次の金額を求めなさい。',
+      answer: [1038000, 1038000, 1038000],
+      formula: ['842000 + 90000 + 130000 - 24000',
+                '1091000 + 65000 - 118000',
+                '842000 + 90000 + 130000 - 24000'],
+      labels: ['① 企業側の修正後残高', '② 銀行側の修正後残高', '③ 貸借対照表に載る当座預金'],
+      hint: '5つの項目を「会社の帳簿は間違っているか」で仕分けてから計算します。(1)〜(3)が企業側、(4)(5)が銀行側です。',
+      explain: '<p><strong>企業側</strong>：842,000 ＋ 90,000（未渡小切手）＋ 130,000（振込の未記帳）− 24,000（引落の未記帳）＝ <strong>1,038,000円</strong>。</p><p><strong>銀行側</strong>：1,091,000 ＋ 65,000（時間外預入）− 118,000（未取付小切手）＝ <strong>1,038,000円</strong>。両者が一致したので、仕分けと符号は正しく処理できています。</p><p><strong>貸借対照表</strong>に載るのは、この一致した<strong>1,038,000円</strong>です。帳簿残高 842,000円は記帳誤りを含み、残高証明書 1,091,000円は決算日時点の実態を表していないため、どちらも使いません。</p>'
+    },
+    {
+      text: '当座預金の<strong>帳簿残高は 1,560,000円</strong>、<strong>銀行の残高証明書は 1,732,000円</strong>であった。不一致の原因は次のとおりである。<br>(1) 修繕費の支払いのために作成した小切手 210,000円が未渡しであった。なお修繕は完了している。<br>(2) 銀行に取立てを依頼していた小切手 96,000円が、まだ取り立てられていなかった。<br>(3) 保険料 48,000円が自動引落されていたが、当社では未記帳であった。<br>(4) 決算日に売上代金 40,000円を夜間金庫へ預け入れたが、銀行では翌日付の処理となっていた。<br>(5) 売掛金 84,000円の回収を、誤って 111,000円と記帳していた。<br>(6) 仕入先へ渡した小切手 173,000円が、まだ銀行に呈示されていなかった。<br>両者区分調整法により、次の金額を求めなさい。',
+      answer: [1695000, 1695000, 1695000],
+      formula: ['1560000 + 210000 - 48000 - 27000',
+                '1732000 + 96000 + 40000 - 173000',
+                '1560000 + 210000 - 48000 - 27000'],
+      labels: ['① 企業側の修正後残高', '② 銀行側の修正後残高', '③ 貸借対照表に載る当座預金'],
+      hint: '(5)の誤記入は差額だけを動かします。111,000 と 84,000 のどちらが正しい金額で、どちら向きに直しますか。',
+      explain: '<p><strong>企業側</strong>：1,560,000 ＋ 210,000（未渡小切手）− 48,000（引落の未記帳）− 27,000（誤記入）＝ <strong>1,695,000円</strong>。</p><p>誤記入は、正しい 84,000円に対して 111,000円と記帳しており、<strong>27,000円多すぎます</strong>（111,000 − 84,000）。多い分を<strong>減算</strong>します。修正仕訳は「（借）売掛金 27,000／（貸）当座預金 27,000」。</p><p><strong>銀行側</strong>：1,732,000 ＋ 96,000（未取立小切手）＋ 40,000（時間外預入）− 173,000（未取付小切手）＝ <strong>1,695,000円</strong>。</p><p>(1)の未渡小切手は修繕費の支払い用で修繕は完了しているため、修正仕訳の貸方は<strong>未払金</strong>です。金額の計算には影響しませんが、仕訳を問われたときに間違えやすい箇所です。<strong>貸借対照表</strong>には一致した <strong>1,695,000円</strong>を載せます。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>

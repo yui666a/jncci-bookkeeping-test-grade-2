@@ -10,7 +10,11 @@ import { loadYaml } from './check.mjs';
 
 const topics = loadYaml('reference/syllabus.yml').topics;
 // 2級の教材が扱うべき論点。3級は前提知識であり Phase 0 の総復習で扱う。
-const required = topics.filter((t) => t.grade === 2);
+//
+// grade が 3 でも limit_grade2 を持つ論点は、3級の範囲に2級で上乗せがある
+// ことを意味する（例：商品有高帳は3級だが、総平均法は2級で加わる）。
+// 上乗せ分は2級で初めて学ぶので、grade===2 だけを見ると取りこぼす。
+const required = topics.filter((t) => t.grade === 2 || t.limit_grade2);
 
 const files = [];
 for (const d of readdirSync('.', { withFileTypes: true })) {

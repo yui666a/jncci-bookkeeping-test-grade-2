@@ -39,6 +39,7 @@
 | 使ってよい勘定科目 | `reference/accounts.yml`（2級は grade 2 と 3 の和集合） |
 | 原本と出典 | `reference/SOURCES.md`、`reference/*.pdf` |
 | 手元の電卓の仕様 | `reference/casio_jw-122cl_manual.pdf`（カシオ JW-122CL） |
+| 学習の進捗 | `progress.html`（ブラウザの localStorage）。`進捗ログ.md` はその書き出し |
 
 YAMLは原本のPDFから生成したもので、**手で編集しない。**
 直すときは `tools/parse-syllabus.py` / `tools/parse-accounts.py` を直して再生成する。
@@ -53,11 +54,21 @@ YAMLは原本のPDFから生成したもので、**手で編集しない。**
 ## 公開前に必ず通す
 
 ```
-npm run check       # 品質ゲート1〜7（機械的検査）
-npm run coverage    # 論点カバレッジ
+npm run check       # 品質ゲート1〜6・9・10（機械的検査）
+npm run coverage    # 品質ゲート7（論点カバレッジ）
 ```
 
 `npm run check` が落ちている状態で「完了した」と報告しない。
+
+## 学習の進捗
+
+進捗の一次情報は `progress.html` が持つブラウザの `localStorage` である。
+`進捗ログ.md` はそこからの書き出しであり、食い違ったときは `localStorage` を正とする。
+
+転記は `.claude/skills/進捗転記/` の手順で行う。エクスポートは常に全期間を含むので、
+どこから追記するかは `進捗ログ.md` の最終記録日を見て判断する。
+
+決定の背景は `docs/adr/0001-progress-tracking-source-of-truth.md`。
 
 判断が要る検査はサブエージェントに投げる。
 

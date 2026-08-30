@@ -15,8 +15,111 @@
       try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 保存できなくても続行 */ }
     }
   };
-  var PAGE = (location.pathname.split('/').pop() || 'index') .replace(/\.html?$/, '');
-  var NS = 'boki2:' + PAGE + ':';
+  // 単元キーはディレクトリを含める。ファイル名だけだと phase0/01_... と
+  // phase1/01_... が同じキーになり、別単元の記録が混ざる。
+  function unitKeyOf(pathname) {
+    var p = pathname.replace(/^\/+/, '').replace(/\.html?$/, '');
+    var seg = p.split('/').filter(Boolean);
+    if (!seg.length) return 'index';
+    return seg.slice(-2).join('/');
+  }
+  var PAGE = unitKeyOf(location.pathname);
+
+  /* ---------- 学習記録 ---------- */
+  var PROGRESS_KEY = 'boki2:progress';
+  var PROGRESS_VERSION = 1;
+
+  function emptyProgress() {
+    return { version: PROGRESS_VERSION, sessions: [], drills: {}, checks: {}, notes: [] };
+  }
+
+  // 保存された値が壊れていても、そこで学習が止まらないようにする。
+  // 形が違えば初期値に戻すが、version が未来のものはそのまま保持して
+  // 上書きを避ける（新しい版で書かれた記録を古い版が壊さない）。
+  function loadProgress() {
+    var raw = LS.get(PROGRESS_KEY, null);
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return emptyProgress();
+    var base = emptyProgress();
+    if (typeof raw.version === 'number') base.version = raw.version;
+    if (Array.isArray(raw.sessions)) base.sessions = raw.sessions;
+    if (Array.isArray(raw.notes)) base.notes = raw.notes;
+    if (raw.drills && typeof raw.drills === 'object') base.drills = raw.drills;
+    if (raw.checks && typeof raw.checks === 'object') base.checks = raw.checks;
+    return base;
+  }
+
+  function saveProgress(p) { LS.set(PROGRESS_KEY, p); }
+
+  // ローカルタイムゾーン付きの ISO 8601。toISOString() は UTC になり、
+  // 深夜に学習した記録が前日にずれて見える。
+  function nowISO() {
+    var d = new Date();
+    var off = -d.getTimezoneOffset();
+    var sign = off >= 0 ? '+' : '-';
+    function p2(n) { return (n < 10 ? '0' : '') + n; }
+    return d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate()) +
+      'T' + p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds()) +
+      sign + p2(Math.floor(Math.abs(off) / 60)) + ':' + p2(Math.abs(off) % 60);
+  }
+
+  var BokiProgress = {
+    unitKey: function () { return PAGE; },
+    now: nowISO,
+    dump: loadProgress,
+    exportJSON: function () {
+      var p = loadProgress();
+      p.exportedAt = nowISO();
+      return JSON.stringify(p);
+    },
+    record: function (drillId, ok) {
+      var p = loadProgress();
+      if (!p.drills[drillId]) p.drills[drillId] = { attempts: [] };
+      p.drills[drillId].attempts.push({ at: nowISO(), ok: !!ok });
+      saveProgress(p);
+    },
+    check: function (unitKey, key, checked) {
+      var p = loadProgress();
+      if (!p.checks[unitKey]) p.checks[unitKey] = {};
+      p.checks[unitKey][key] = !!checked;
+      saveProgress(p);
+    },
+    // ページ別キーで保存されていたチェックを取り込む。旧キーは消さない。
+    // 消しても得るものがなく、取り込みに失敗したときの復元手段が絶たれる。
+    migrateLegacy: function () {
+      var p = loadProgress(), moved = false;
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        var m = k && k.match(/^boki2:(.+):check$/);
+        if (!m) continue;
+        // ディレクトリを含まない旧形式のキーは、いま開いている単元のものとみなす。
+        var unit = m[1].indexOf('/') >= 0 ? m[1] : PAGE;
+        var old = LS.get(k, null);
+        if (!old || typeof old !== 'object') continue;
+        if (!p.checks[unit]) p.checks[unit] = {};
+        for (var key in old) {
+          if (p.checks[unit][key] === undefined) { p.checks[unit][key] = !!old[key]; moved = true; }
+        }
+      }
+      if (moved) saveProgress(p);
+    },
+    // 10秒未満は捨てる。ページを開いて即閉じた区間が積もると集計が
+    // 読めなくなるうえ、学習時間としての意味もない。
+    addSession: function (unitKey, startISO, sec) {
+      sec = Math.round(sec);
+      if (!(sec >= 10)) return;
+      var p = loadProgress();
+      p.sessions.push({ unit: unitKey, start: startISO, sec: sec });
+      saveProgress(p);
+    },
+    note: function (text) {
+      text = String(text == null ? '' : text).trim();
+      if (!text) return;
+      var p = loadProgress();
+      p.notes.push({ at: nowISO(), unit: PAGE, text: text });
+      saveProgress(p);
+    },
+    _reset: function () { saveProgress(emptyProgress()); }
+  };
 
   /* ---------- テーマ切替 ---------- */
   function initTheme() {
@@ -40,15 +143,15 @@
 
   /* ---------- チェックリストの進捗保存 ---------- */
   function initChecklists() {
+    BokiProgress.migrateLegacy();
     var boxes = document.querySelectorAll('input[type="checkbox"][data-key]');
     if (!boxes.length) return;
-    var store = LS.get(NS + 'check', {});
+    var store = (BokiProgress.dump().checks || {})[PAGE] || {};
 
     Array.prototype.forEach.call(boxes, function (b) {
       if (store[b.dataset.key]) b.checked = true;
       b.addEventListener('change', function () {
-        store[b.dataset.key] = b.checked;
-        LS.set(NS + 'check', store);
+        BokiProgress.check(PAGE, b.dataset.key, b.checked);
         updateBars();
       });
     });
@@ -70,11 +173,125 @@
 
     document.querySelectorAll('[data-reset-progress]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        Array.prototype.forEach.call(boxes, function (b) { b.checked = false; });
-        LS.set(NS + 'check', {});
+        Array.prototype.forEach.call(boxes, function (b) {
+          b.checked = false;
+          BokiProgress.check(PAGE, b.dataset.key, false);
+        });
         updateBars();
       });
     });
+  }
+
+  /* ---------- 学習メモ ---------- */
+  // わからなかったことは、机を離れてから思い出して書くと粒度が粗くなる。
+  // 単元ページのその場で書けるようにする。
+  function initNotes() {
+    document.querySelectorAll('[data-note]').forEach(function (host) {
+      var wrap = el('div', 'note');
+      wrap.appendChild(el('div', 'note__label', 'わからなかったこと・気づいたこと'));
+      var ta = el('textarea', 'note__input');
+      ta.rows = 3;
+      ta.placeholder = '例：連結のアップストリームで非支配株主持分への按分が分からない';
+      var row = el('div', 'btn-row');
+      var save = el('button', 'btn btn--sm', '記録する');
+      var msg = el('span', 'small muted', '');
+      row.appendChild(save); row.appendChild(msg);
+      wrap.appendChild(ta); wrap.appendChild(row);
+
+      var list = el('div', 'note__list');
+      function render() {
+        list.innerHTML = '';
+        var notes = BokiProgress.dump().notes.filter(function (n) { return n.unit === PAGE; });
+        notes.slice().reverse().forEach(function (n) {
+          var item = el('div', 'note__item');
+          item.appendChild(el('span', 'note__at', String(n.at).slice(0, 10)));
+          item.appendChild(el('span', 'note__text', n.text));
+          list.appendChild(item);
+        });
+      }
+      wrap.appendChild(list);
+
+      save.addEventListener('click', function () {
+        if (!ta.value.trim()) return;
+        BokiProgress.note(ta.value);
+        ta.value = '';
+        msg.textContent = '記録した';
+        setTimeout(function () { msg.textContent = ''; }, 2000);
+        render();
+      });
+
+      render();
+      host.appendChild(wrap);
+    });
+  }
+
+  /* ---------- 学習時間の計測 ---------- */
+  // 経過時間ではなく能動時間を測る。タブを開いたまま離席した時間が
+  // 学習時間に入ると、計画の週23時間を満たしているように見えて実際は
+  // 足りていない、という最も避けたい壊れ方をする。
+  var IDLE_MS = 5 * 60 * 1000;
+
+  function initSession() {
+    var startedAt = Date.now();
+    var startISO = nowISO();
+    var lastActive = Date.now();
+    var accrued = 0;
+    var running = true;
+
+    function touch() { lastActive = Date.now(); }
+    ['keydown', 'click', 'scroll', 'pointerdown'].forEach(function (ev) {
+      document.addEventListener(ev, touch, { passive: true });
+    });
+
+    // 直近の操作から IDLE_MS を超えた分は加算しない。
+    function slice() {
+      if (!running) return;
+      var now = Date.now();
+      var cut = Math.min(now, lastActive + IDLE_MS);
+      if (cut > startedAt) accrued += (cut - startedAt) / 1000;
+      startedAt = now;
+    }
+
+    function flush() {
+      slice();
+      if (accrued >= 10) BokiProgress.addSession(PAGE, startISO, accrued);
+      accrued = 0;
+      running = false;
+    }
+
+    function resume() {
+      startedAt = Date.now();
+      lastActive = Date.now();
+      startISO = nowISO();
+      accrued = 0;
+      running = true;
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) flush();
+      else resume();
+    });
+    // pagehide は bfcache と離脱の双方で発火する。beforeunload は
+    // Safari で発火しないことがあるため使わない。
+    window.addEventListener('pagehide', flush);
+
+    // 長時間の学習でも記録を失わないよう、定期的に確定させる。
+    setInterval(function () {
+      slice();
+      if (accrued >= 60) {
+        BokiProgress.addSession(PAGE, startISO, accrued);
+        accrued = 0;
+        startISO = nowISO();
+      }
+    }, 60 * 1000);
+
+    // テストから経過時間を差し込む。実時間の経過を待つ検査は遅いうえ
+    // 不安定になる。
+    BokiProgress.__testTick = function (deltaSec, lastActiveDeltaSec) {
+      startedAt += deltaSec * 1000;
+      lastActive = lastActiveDeltaSec === undefined
+        ? Date.now() : Date.now() + lastActiveDeltaSec * 1000;
+    };
   }
 
   /* ---------- 共通ヘルパ ---------- */
@@ -104,10 +321,20 @@
     root.appendChild(head); root.appendChild(body);
     return { body: body, score: score };
   }
-  function makeScorer(scoreEl, total) {
+  // 記録先を決めるにはマウント先の id が要る。id がない設問は記録しない
+  // （品質ゲート9がこれを検出する）。
+  function drillBaseOf(root) {
+    return root && root.id ? PAGE + '#' + root.id : null;
+  }
+
+  // 採点の確定点は4種のドリルで共通してここを通る。記録をここに置けば、
+  // 単元HTMLの著者が記録用のコードを書く必要がなくなる。書き忘れが
+  // 起きうる場所に記録を置くと、失われたデータは後から復元できない。
+  function makeScorer(scoreEl, total, drillBase) {
     var state = {};
     return function (id, ok) {
       state[id] = ok;
+      if (drillBase) BokiProgress.record(drillBase + '/q' + (id + 1), ok);
       var done = 0, right = 0;
       for (var k in state) { done++; if (state[k]) right++; }
       scoreEl.textContent = '正解 ' + right + ' / 解答済 ' + done + '（全' + total + '問）';
@@ -126,7 +353,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '仕訳ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var accounts = q.accounts || cfg.accounts;
@@ -244,7 +471,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '確認テスト');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
@@ -303,7 +530,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, cfg.badge || '計算ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
@@ -380,7 +607,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '穴埋め');
-      var report = makeScorer(ui.score, cfg.questions.length);
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
@@ -423,7 +650,7 @@
   };
 
   /* ---------- 初期化 ---------- */
-  function boot() { initTheme(); initChecklists(); }
+  function boot() { initTheme(); initChecklists(); initNotes(); initSession(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
@@ -431,5 +658,6 @@
   window.BokiQuiz = BokiQuiz;
   window.BokiNum = BokiNum;
   window.BokiFill = BokiFill;
+  window.BokiProgress = BokiProgress;
   window.BokiLS = LS;
 })();

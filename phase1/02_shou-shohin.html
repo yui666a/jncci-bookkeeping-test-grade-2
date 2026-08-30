@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-9-イ,商-第二-9-g2,商-第二-9-ク,商-第二-9-ケ,商-第二-9-キ">
+<meta name="boki-subject" content="商">
+<title>商品売買 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 02 商品売買</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W1 商業簿記 ／ UNIT 02 ／ 2.5時間</p>
+    <h1>商品売買<br>— 売上原価対立法と、期末商品の目減り</h1>
+    <p class="lead">3級では商品売買といえば三分法の一択でした。2級では<strong>もうひとつの記帳方法</strong>が加わり、さらに<strong>期末に残った商品が帳簿どおりではない</strong>という現実を処理できるようになります。棚卸減耗損と商品評価損は第3問（決算・財務諸表）でほぼ毎回問われる場所です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 2.5h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算・確認テストつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">この単元で何ができるようになるか</a></li>
+      <li><a href="#s2">売上原価対立法 — 売るたびに原価を振り替える</a></li>
+      <li><a href="#s3">三分法との対比、そして決算整理が要らないということ</a></li>
+      <li><a href="#s4">総平均法 — 期末に一度だけ単価を決める</a></li>
+      <li><a href="#s5">仕入割戻 — 値引・割引との区別</a></li>
+      <li><a href="#s6">期末商品は、帳簿どおりには残っていない</a></li>
+      <li><a href="#s7">ボックス図で、2つの損失を面積として見る</a></li>
+      <li><a href="#s8">決算整理仕訳の順序（三分法の場合）</a></li>
+      <li><a href="#s9">表示区分 — 損益計算書のどこに載せるか</a></li>
+      <li><a href="#s10">仕訳ドリル 12問</a></li>
+      <li><a href="#s11">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s12">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>この単元で何ができるようになるか</h2>
+
+  <p>商品売買は3級で一度通った論点です。それでも2級で改めて時間を割くのは、3級で扱わなかった次の4つが加わるからです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">加わるもの ①</div>
+      <p><strong>売上原価対立法</strong></p>
+      <p class="small">販売のつど売上原価勘定に振り替える方法。三分法とは使う勘定科目がまるごと違います。第1問の仕訳や第2問の個別論点で出ます。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">加わるもの ②</div>
+      <p><strong>仕入割戻</strong></p>
+      <p class="small">大量に買ったお礼として代金を返してもらう取引。似た言葉が3つあり、そのどれなのかを読み分けるところが問われます。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">加わるもの ③</div>
+      <p><strong>総平均法</strong></p>
+      <p class="small">払出単価の計算方法のうち、3級で扱わないもの。期末に一度だけ平均単価を出します。商品有高帳や売上原価の計算で使います。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">加わるもの ④</div>
+      <p><strong>棚卸減耗損・商品評価損</strong></p>
+      <p class="small">この単元の主役。決算日に「帳簿にあるはずの商品が足りない」「傷んで安くしか売れない」を処理します。<strong>第3問で必ず出ます。</strong></p>
+    </div>
+  </div>
+
+  <p>逆に、3級で身につけた前提はそのまま使います。返品の処理、送料込みで売上を計上して支払った送料を発送費とする売上諸掛りの処理。これらは既習として扱い、この単元では繰り返しません。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">総平均法だけは3級で習っていない</span>
+    <p>払出単価の計算方法のうち、<strong>先入先出法と移動平均法は3級の範囲ですが、総平均法は2級で加わります</strong>。3級のテキストを見返しても載っていないので、「知っているはず」と流さずにここで押さえてください。次の節で扱います。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ棚卸減耗損と商品評価損に最も時間を使うのか</span>
+    <p>第3問は損益計算書か貸借対照表を作らせる問題で、その骨格は決算整理です。<strong>売上原価は損益計算書のいちばん上、売上高のすぐ下に来る大きな数字</strong>で、ここを外すと売上総利益・営業利益・経常利益・当期純利益がすべて連動して崩れます。1か所の誤りが解答欄をいくつも巻き込む場所なので、投下時間あたりの得点が最も高くなります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>売上原価対立法 — 売るたびに原価を振り替える</h2>
+
+  <h3>三分法の困りごと</h3>
+
+  <p>3級で使ってきた三分法を思い出してください。商品を 800円で仕入れて 1,200円で売ったとき、仕訳はこうなります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>三分法（商品1個を仕入れ、その1個を売った）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕入</td><td class="d amt">800</td><td class="c">買掛金</td><td class="c amt">800</td></tr>
+      <tr><td class="d">売掛金</td><td class="d amt">1,200</td><td class="c">売上</td><td class="c amt">1,200</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>ここで社長に「今月はいくら儲かった」と聞かれたとします。答えられません。<mark>仕入勘定に入っている 800円は、売れた分なのか、まだ倉庫にある分なのか、帳簿を見ても区別がつかない</mark>からです。三分法の「仕入」は<strong>買った金額を全部ためこむ箱</strong>であって、売れた分の原価を表してはいません。</p>
+
+  <p>だから三分法では、決算日に倉庫の商品を数えて「売れ残りはこれだけ」と確定させ、そこから逆算して売上原価を出します。これが「しーくり くりしー」です。裏を返すと、<strong>決算日まで待たないと売上総利益が分からない</strong>ということです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え：レジで原価も打つ</span>
+    <p>コンビニのレジは、パンが1個売れた瞬間に「売価 150円の売上」と同時に「そのパンの仕入値 100円が在庫から出ていった」ことも記録しています。だから店長は月末を待たずに、今日いくらの粗利が出たかを見られます。<strong>売上原価対立法は、これを手書きの仕訳でやる方法</strong>です。売るたびに、売価の記録と原価の記録を2本立てで書きます。</p>
+  </div>
+
+  <h3>使う勘定科目が変わる</h3>
+
+  <p>売上原価対立法では、三分法の「仕入」と「繰越商品」を使いません。代わりに次の2つを使います。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">資産</div>
+      <p><strong>商品</strong></p>
+      <p class="small">仕入れたときに増え、売れたときに減る箱。<strong>期中ずっと、いま倉庫にある商品の原価を表しています。</strong>三分法の繰越商品が決算日にしか正しくならないのと対照的です。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">費用</div>
+      <p><strong>売上原価</strong></p>
+      <p class="small">売れた分の原価だけが積み上がる箱。三分法の「仕入」と違い、<strong>この勘定の残高はいつ見ても売上原価</strong>です。決算で計算し直す必要がありません。</p>
+    </div>
+  </div>
+
+  <h3>3つの場面の仕訳</h3>
+
+  <p>商品を 1個 800円で 10個仕入れ（掛け）、そのうち 6個を 1個 1,200円で売った（掛け）、という流れで見ます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 仕入時 — 商品 10個 @800円を掛けで仕入れた</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">商品</td><td class="d amt">8,000</td><td class="c">買掛金</td><td class="c amt">8,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>借方は「仕入」ではなく<strong>「商品」</strong>です。まだ売れていない以上これは費用ではなく、倉庫にある<strong>資産</strong>だからです。この一点が三分法との最大の違いで、ここを間違えると以降が全部ずれます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 販売時 — 6個を @1,200円で掛け売りした（原価は @800円）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売掛金</td><td class="d amt">7,200</td><td class="c">売上</td><td class="c amt">7,200</td></tr>
+      <tr><td class="d">売上原価</td><td class="d amt">4,800</td><td class="c">商品</td><td class="c amt">4,800</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>販売時は<strong>必ず2本立て</strong>になります。上の1本は「売価でいくら売れたか」、下の1本は「その商品の原価がいくらだったか」。<mark>売価の記録と原価の記録は別の話なので、金額も別々</mark>です。売価 1,200 × 6個 ＝ 7,200円、原価 800 × 6個 ＝ 4,800円。</p>
+
+  <p>この2本を書いた時点で、売上 7,200円 − 売上原価 4,800円 ＝ <strong>売上総利益 2,400円</strong>が帳簿から直接読めます。決算日を待つ必要がありません。そして商品勘定には 8,000 − 4,800 ＝ 3,200円（＝ 4個分）が残り、これが<strong>いま倉庫にある在庫の原価</strong>そのものになっています。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">下の1本を書き忘れると、どうなるか</span>
+    <p>売価の1本だけ書いて原価の1本を忘れると、売上は計上されたのに費用が計上されず、<strong>利益が過大になります</strong>。同時に商品勘定が減らないので、売った商品がまだ倉庫にあることになります。仕訳問題で「販売した」と出てきたら、<strong>解答欄に4行あることを使って必ず2本書く</strong>と決めておいてください。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ 決算時 — 売上原価を算定する決算整理仕訳</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕訳なし</td><td class="d amt"></td><td class="c">仕訳なし</td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>売上原価は期中に振り替え済みで、商品勘定にも期末在庫の金額がすでに載っています。<strong>計算し直すものが何も残っていない</strong>ので、売上原価を算定するための決算整理仕訳は不要です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">引っかけどころ：「しーくり くりしー」を書いてしまう</span>
+    <p>3級で決算整理といえば「仕入／繰越商品」「繰越商品／仕入」を反射的に書く訓練をしてきました。売上原価対立法の問題でこれを書くと、<strong>存在しない勘定を動かすことになり全滅します</strong>。この方法では繰越商品勘定も仕入勘定も使っていません。</p>
+    <p>問題文でどちらの方法かを見分ける手がかりは決まっています。<strong>「販売のつど売上原価勘定に振り替える方法により処理している」「商品売買は売上原価対立法による」と書いてあれば売上原価対立法</strong>、「三分法による」と書いてあれば三分法です。答案を書き始める前に、問題文の冒頭のこの一文を必ず確認してください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">ただし、棚卸減耗損・商品評価損の処理は残る</span>
+    <p>「決算整理が不要」なのは<strong>売上原価を算定するための仕訳</strong>だけです。数えたら商品が足りない、傷んで価値が下がっている——これは記帳方法とは無関係に起きる事実なので、売上原価対立法でも処理します。この場合、減らす相手は繰越商品ではなく<strong>商品</strong>勘定です（§5以降で扱います）。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>三分法との対比、そして決算整理が要らないということ</h2>
+
+  <p>2つの方法を並べます。同じ取引を扱っているのに、勘定科目も仕訳の本数も違うことを目で確認してください。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th></th><th>三分法</th><th>売上原価対立法<br><span class="small muted">（販売のつど売上原価勘定に振り替える方法）</span></th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>使う勘定科目</strong></td>
+        <td>仕入（費用）／売上（収益）／繰越商品（資産）</td>
+        <td><strong>商品（資産）</strong>／売上（収益）／<strong>売上原価（費用）</strong></td>
+      </tr>
+      <tr>
+        <td><strong>仕入時の仕訳</strong></td>
+        <td>仕入 ／ 買掛金</td>
+        <td><strong>商品</strong> ／ 買掛金</td>
+      </tr>
+      <tr>
+        <td><strong>販売時の仕訳</strong></td>
+        <td>売掛金 ／ 売上<br><span class="small muted">1本だけ</span></td>
+        <td>売掛金 ／ 売上<br><strong>売上原価 ／ 商品</strong><br><span class="small muted">2本立て</span></td>
+      </tr>
+      <tr>
+        <td><strong>売上原価算定の決算整理</strong></td>
+        <td><strong>必要</strong><br>仕入／繰越商品（期首）<br>繰越商品／仕入（期末）</td>
+        <td><strong>不要</strong><br><span class="small muted">期中に振替済み</span></td>
+      </tr>
+      <tr>
+        <td><strong>期中に売上総利益が分かるか</strong></td>
+        <td><strong>分からない</strong><br><span class="small muted">決算日に在庫を数えるまで確定しない</span></td>
+        <td><strong>いつでも分かる</strong><br><span class="small muted">売上 − 売上原価をそのまま読める</span></td>
+      </tr>
+      <tr>
+        <td><strong>期中の在庫金額が帳簿で分かるか</strong></td>
+        <td>分からない<br><span class="small muted">繰越商品は期首の金額のまま動かない</span></td>
+        <td>分かる<br><span class="small muted">商品勘定の残高がそのまま在庫</span></td>
+      </tr>
+      <tr>
+        <td><strong>手間</strong></td>
+        <td>少ない<br><span class="small muted">売るたびに原価を調べなくてよい</span></td>
+        <td>多い<br><span class="small muted">売るたびに払出単価の計算が要る</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">どちらが優れているという話ではない</span>
+    <p>売上原価対立法は情報が早く手に入るかわりに、<strong>売るたびに「その商品の原価がいくらか」を確定させる手間</strong>がかかります。売価はレシートに書いてあるので分かりますが、原価は先入先出法や移動平均法で計算しないと出てきません。商品の種類が多く取引が頻繁な会社ほど負担が重くなります。</p>
+    <p>三分法はその手間を決算日にまとめて1回だけ払う方法です。<strong>手間の少なさと情報の早さのどちらを取るかという設計上の選択</strong>であって、正しい方法・間違った方法があるわけではありません。だから試験でも「どちらの方法によるか」が必ず問題文で指定されます。</p>
+  </div>
+
+  <p class="small muted">なお、期中に払い出す商品の原価をどう計算するか（先入先出法・移動平均法・総平均法）は、記帳方法とは別の話です。売上原価対立法でも三分法でも、同じ計算方法を使えます。</p>
+
+  <div id="quiz-taritsu"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>総平均法 — 期末に一度だけ単価を決める</h2>
+
+  <p>同じ商品でも、仕入れる時期によって値段は変わります。4月に 440円で買ったものと、9月に 560円で買ったものが倉庫で混ざっている。ここで1個売れたとき、<strong>売れたのはどちらの1個なのか</strong>。</p>
+
+  <p>実際には倉庫の商品に「これは440円で買った分」という札は付いていませんし、砂糖や灯油のように混ざってしまえば区別のしようがありません。それでも売上原価を計算するには、払い出した1個をいくらとみなすかを決めなければなりません。<mark>そこで「こういうルールで決めます」と約束を作る。これが払出単価の計算方法です。</mark></p>
+
+  <p>3級では<strong>先入先出法</strong>（先に仕入れたものから先に払い出したとみなす）と<strong>移動平均法</strong>（仕入れるたびに平均単価を計算し直す）を学びました。2級ではここに<strong>総平均法</strong>が加わります。</p>
+
+  <h3>総平均法の計算式</h3>
+
+  <p>総平均法は、<strong>1期間分をまとめて1回だけ平均する</strong>方法です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">総平均単価の求め方</span>
+    <p class="center"><strong>総平均単価 ＝ （期首商品棚卸高 ＋ 当期受入高の合計） ÷ （期首数量 ＋ 当期受入数量の合計）</strong></p>
+    <p>分子は金額の合計、分母は数量の合計。<strong>「その期に手元を通った商品の、ならした1個あたりの原価」</strong>を出しているだけです。式を覚えるより、金額の合計を数量の合計で割っているだけだと理解してください。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">なぜ「総」平均なのか</span><span class="term__r">そうへいきん</span>
+    <p>移動平均法が仕入のたびに何度も平均を計算し直すのに対し、総平均法は<strong>期間の全体（総体）をひとまとめにして、期末に一度だけ</strong>平均を出します。「総」は「全部まとめて」という意味です。計算回数が1回で済むぶん手間が軽く、そのかわり<strong>期末になるまで単価が確定しません</strong>。</p>
+  </div>
+
+  <h3>移動平均法との決定的な違い</h3>
+
+  <p>2つはどちらも「平均する」方法ですが、<strong>平均を出すタイミング</strong>が違います。そしてその違いが、実務上の使い勝手をまるごと変えます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">3級で学んだ</div>
+      <p><strong>移動平均法</strong></p>
+      <p class="small">仕入れるたびに、その時点の残高と数量から平均単価を計算し直します。<strong>売った瞬間にその商品の原価が分かる</strong>ので、期中いつでも売上原価と在庫金額を把握できます。そのかわり仕入のたびに計算が必要です。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">2級で加わる</div>
+      <p><strong>総平均法</strong></p>
+      <p class="small">期末に一度だけ計算します。計算は1回で済みますが、<strong>期中は払出単価が決まりません</strong>。3月に売った商品の原価が、12月の仕入価格によって後から変わるという奇妙なことが起こります。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">総平均法では「期中に売上原価が分からない」</span>
+    <p>総平均単価の分子には<strong>当期の受入高がすべて</strong>入ります。ということは、期末までに1回でも仕入があれば単価は動きます。<mark>6月に売った商品の原価が、11月の仕入値によって変わる</mark>のです。</p>
+    <p>だから総平均法を採用している会社は、期中に「今いくら儲かっているか」を確定させられません。§2で見た<strong>売上原価対立法の狙い（期中に売上総利益を把握する）とは相性が悪い</strong>ということです。売るたびに「売上原価／商品」と振り替えたくても、その金額が期末まで決まらないからです。</p>
+    <p>逆に言えば、期中の把握を捨てるかわりに計算の手間を最小にした方法が総平均法です。§3で見た三分法と売上原価対立法の関係と同じで、<strong>手間の軽さと情報の早さのどちらを取るかという選択</strong>がここにも現れています。</p>
+  </div>
+
+  <h3>同じ資料を3つの方法で計算する</h3>
+
+  <p>3つの方法は<strong>同じ取引を扱っても答えが変わります</strong>。次の資料で確かめます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <caption>当期の商品A の受入・払出（会計期間は4月1日〜3月31日）</caption>
+    <thead><tr><th>日付</th><th>摘要</th><th class="num">数量</th><th class="num">単価</th><th class="num">金額</th></tr></thead>
+    <tbody>
+      <tr><td>4/1</td><td>前期繰越</td><td class="nowrap">100個</td><td class="nowrap">@400円</td><td class="nowrap">40,000円</td></tr>
+      <tr><td>6/10</td><td>仕入</td><td class="nowrap">200個</td><td class="nowrap">@460円</td><td class="nowrap">92,000円</td></tr>
+      <tr><td>8/20</td><td>売上</td><td class="nowrap">150個</td><td class="nowrap">—</td><td class="nowrap">—</td></tr>
+      <tr><td>11/15</td><td>仕入</td><td class="nowrap">300個</td><td class="nowrap">@560円</td><td class="nowrap">168,000円</td></tr>
+      <tr><td>2/10</td><td>売上</td><td class="nowrap">150個</td><td class="nowrap">—</td><td class="nowrap">—</td></tr>
+      <tr><td colspan="2"><strong>受入合計</strong></td><td class="nowrap"><strong>600個</strong></td><td class="nowrap">—</td><td class="nowrap"><strong>300,000円</strong></td></tr>
+      <tr><td colspan="2"><strong>払出合計（売上数量）</strong></td><td class="nowrap"><strong>300個</strong></td><td class="nowrap">—</td><td class="nowrap">—</td></tr>
+      <tr><td colspan="2"><strong>期末数量</strong></td><td class="nowrap"><strong>300個</strong></td><td class="nowrap">—</td><td class="nowrap">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>総平均法</strong>で計算します。分子は期首と当期仕入をすべて足した 40,000 ＋ 92,000 ＋ 168,000 ＝ <strong>300,000円</strong>、分母は 100 ＋ 200 ＋ 300 ＝ <strong>600個</strong>。</p>
+
+  <p class="center"><strong>総平均単価 ＝ 300,000 ÷ 600 ＝ @500円</strong></p>
+
+  <p>この 1個 500円 という単価を、<strong>当期に払い出した全部に適用します</strong>。8月に売った150個も2月に売った150個も同じ 500円です。売上原価は 500 × 300 ＝ 150,000円、期末棚卸高は 500 × 300 ＝ 150,000円になります。</p>
+
+  <p>同じ資料を3つの方法で計算すると、こうなります。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>方法</th><th>級</th><th>単価の決め方</th><th class="num">売上原価<br><span class="small muted">払出額の合計</span></th><th class="num">期末棚卸高<br><span class="small muted">300個分</span></th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>先入先出法</strong></td>
+        <td><span class="chip">3級</span></td>
+        <td>先に仕入れた分から先に払い出したとみなす<br><span class="small muted">払出300個＝期首100個@400 ＋ 6/10仕入200個@460</span></td>
+        <td class="nowrap">132,000円</td>
+        <td class="nowrap"><strong>168,000円</strong><br><span class="small muted">11/15仕入 300個 × @560</span></td>
+      </tr>
+      <tr>
+        <td><strong>移動平均法</strong></td>
+        <td><span class="chip">3級</span></td>
+        <td>仕入のつど平均を計算し直す<br><span class="small muted">6/10後 @440 → 11/15後 @520</span></td>
+        <td class="nowrap">144,000円</td>
+        <td class="nowrap"><strong>156,000円</strong><br><span class="small muted">300個 × @520</span></td>
+      </tr>
+      <tr>
+        <td><strong>総平均法</strong></td>
+        <td><span class="chip chip--accent">2級</span></td>
+        <td>期末に一度だけ平均を出す<br><span class="small muted">300,000 ÷ 600 ＝ @500</span></td>
+        <td class="nowrap">150,000円</td>
+        <td class="nowrap"><strong>150,000円</strong><br><span class="small muted">300個 × @500</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>期末に残っている商品は<strong>どの方法でも同じ300個</strong>です。それなのに金額は 168,000円・156,000円・150,000円と食い違います。<mark>物理的にまったく同じ在庫が、計算ルールの違いだけで別の金額になる</mark>——これが払出単価の計算方法を学ぶ意味です。</p>
+
+  <p>どの方法でも「売上原価 ＋ 期末棚卸高 ＝ 300,000円」（受入合計）になっていることも確かめてください。3つの方法は<strong>同じ 300,000円を売上原価と期末棚卸高にどう振り分けるかが違うだけ</strong>で、合計は動きません。この関係は検算に使えます。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">移動平均法の単価が変化していく様子</span>
+    <p>上の表の移動平均法の欄を補足します。6/10の仕入直後、手元には期首100個（40,000円）と仕入200個（92,000円）で<strong>300個・132,000円</strong>。単価は 132,000 ÷ 300 ＝ <strong>@440円</strong>です。8/20に150個を払い出すので 440 × 150 ＝ 66,000円が売上原価になり、残りは150個・66,000円。</p>
+    <p>11/15に300個（168,000円）を仕入れると<strong>450個・234,000円</strong>となり、単価は 234,000 ÷ 450 ＝ <strong>@520円</strong>に更新されます。2/10の払出は 520 × 150 ＝ 78,000円。売上原価の合計は 66,000 ＋ 78,000 ＝ <strong>144,000円</strong>です。</p>
+    <p><strong>移動平均法では同じ商品の払出単価が440円と520円で違う</strong>のに対し、総平均法ではどちらも500円で揃います。この差が期末棚卸高の 156,000円と 150,000円の違いになって表れます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">端数が出たときは、必ず問題文の指示に従う</span>
+    <p>総平均単価は割り切れないことがよくあります。たとえば合計 268,000円 ÷ 600個 ＝ 446.66…円。このとき<strong>小数第何位で、四捨五入か切捨てか</strong>を自分で決めてはいけません。</p>
+    <p>問題文に必ず指示があります。「総平均単価の計算において円未満を四捨五入すること」「小数点以下第1位を四捨五入する」といった一文です。<strong>指示を読み飛ばして自分の流儀で処理すると、その後の売上原価も期末棚卸高もすべてずれます。</strong></p>
+    <p>指示の読み方にも注意が必要です。<strong>「単価を丸める」のか「金額を丸める」のかで答えが変わります。</strong>単価を丸めてから数量を掛けるのと、正確な単価で計算した金額を丸めるのとでは、結果が一致しないことがあるからです。指示された順序どおりに計算してください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">記帳方法と、払出単価の計算方法は別の話</span>
+    <p>ここまでに出てきた言葉を整理します。<strong>三分法・売上原価対立法は「どの勘定科目でどう記帳するか」の話</strong>（§2・§3）、<strong>先入先出法・移動平均法・総平均法は「払い出した商品の原価をいくらとみなすか」の話</strong>（この節）です。</p>
+    <p>この2つは独立していて、どの組み合わせもありえます。三分法＋総平均法も、売上原価対立法＋先入先出法も成り立ちます。<strong>問題文では両方が別々に指定される</strong>ので、2つとも拾ってください。</p>
+  </div>
+
+  <div id="num-sohei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>仕入割戻 — 値引・割引との区別</h2>
+
+  <p>商品を仕入れたあとで、支払う金額が当初より減ることがあります。減る理由は3種類あり、<strong>理由が違えば処理も違います</strong>。この3つの読み分けが問われます。</p>
+
+  <h3>まず、なぜ処理を分けるのか</h3>
+
+  <p>考え方の軸はひとつです。<mark>「その商品を手に入れるのに、結局いくらかかったのか」が変わったのか、それとも「商品の値段とは関係ない別の理由」でお金が浮いたのか</mark>。</p>
+
+  <ul>
+    <li><strong>商品の取得原価そのものが変わった</strong>なら、仕入という費用を減らします</li>
+    <li><strong>商品の値段とは関係ない</strong>なら、仕入を減らしてはいけません。別の科目で処理します</li>
+  </ul>
+
+  <p>この軸で3つを振り分けます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>用語</th><th>何が起きたか</th><th>取得原価は変わるか</th><th>処理</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>仕入割戻</strong><br><span class="small muted">しいれわりもどし（リベート）</span></td>
+        <td>たくさん買ってくれたお礼として、代金の一部を返してもらう</td>
+        <td><strong>変わる</strong><br><span class="small muted">同じ商品を安く買えたのと同じ</span></td>
+        <td><strong>仕入の減少</strong></td>
+      </tr>
+      <tr>
+        <td><strong>仕入値引</strong><br><span class="small muted">しいれねびき</span></td>
+        <td>品質が悪い・数量が足りないので、その分だけ代金をまけてもらう</td>
+        <td><strong>変わる</strong><br><span class="small muted">その品にその値段の価値がなかった</span></td>
+        <td><strong>仕入の減少</strong></td>
+      </tr>
+      <tr>
+        <td><strong>仕入割引</strong><br><span class="small muted">しいれわりびき</span></td>
+        <td>支払期日より早く払ったので、その見返りに代金を免除してもらう</td>
+        <td><strong>変わらない</strong><br><span class="small muted">商品の中身も数量も何も変わっていない</span></td>
+        <td><strong>仕入の減少ではない</strong><br><span class="small muted">§4末の注記を参照</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ割引だけ扱いが違うのか</span>
+    <p>「4月30日払いの約束を、4月10日に前倒しで払ったら 2% まけてもらえた」という取引を考えてください。<strong>商品には何も起きていません。</strong>同じ品が同じ数だけ届いています。変わったのは支払った日付だけです。</p>
+    <p>仕入先の立場で言えば、本来20日後にもらえるはずのお金を今もらえた見返りに、その20日分の利息にあたる額を値引きしているのです。<mark>これは商品の取引ではなく、お金を早く動かしたことに対する金利のやりとり</mark>です。だから商品の取得原価には触れません。</p>
+    <p>割戻と値引はどちらも「その品を手に入れるのに結局いくらかかったか」を変えるので、仕入のマイナスになります。<strong>割戻と値引は仕入のマイナス、割引だけは仕入と無関係</strong>——理由まで含めてこの形で覚えてください。</p>
+  </div>
+
+  <h3>仕訳例</h3>
+
+  <p>商品 500,000円を掛けで仕入れている状態を出発点にします。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 仕入割戻 — 年間の仕入高が一定額を超えたため、20,000円の割戻を受け、買掛金と相殺した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">買掛金</td><td class="d amt">20,000</td><td class="c">仕入</td><td class="c amt">20,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>払う義務が 20,000円減るので買掛金（負債）を借方で減らし、その分だけ商品を安く買えたことになるので<strong>仕入（費用）を貸方で減らします</strong>。仕入は費用なのでホームポジションは借方、それを減らすので反対側の貸方です。</p>
+
+  <p class="small muted">なお、割戻を現金で受け取る場合は借方が現金になります。買掛金と相殺するのか現金で受け取るのかは、借方が変わるだけで貸方の考え方は同じです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 仕入値引 — 品質不良のため 15,000円の値引を受け、買掛金と相殺した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">買掛金</td><td class="d amt">15,000</td><td class="c">仕入</td><td class="c amt">15,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>仕訳の形は割戻とまったく同じです。理由は違っても、どちらも取得原価を下げるからです。<strong>仕訳が同じなら区別しなくていい、ということにはなりません。</strong>問題文が「割戻」なのか「値引」なのかを読み分ける必要があるのは、次の割引と取り違えないためです。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">引っかけどころ：返品と値引を混同しない</span>
+    <p>品違いなどで<strong>商品そのものを送り返す</strong>のが返品（仕入戻し）で、これも「仕入」を貸方で減らします。仕訳の形は値引と同じですが、返品では商品が手元から出ていくのに対し、<strong>値引では商品は手元に残ったまま代金だけが下がります</strong>。数量が減るか減らないかが違いです。商品有高帳を書かせる問題では、返品なら数量欄が動き、値引なら数量欄が動かず単価だけが変わるという差になって表れます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">仕入割引は、2級の出題範囲ではない</span>
+    <p>上の表に「仕入割引」を並べたのは、<strong>問題文の言葉を読み分けるため</strong>です。処理そのものは2級の範囲ではありません。</p>
+    <p>出題区分表（2022年度版）で「仕入割引・売上割引」は<strong>1級</strong>に置かれており、標準的な勘定科目表にも「仕入割引」という科目はありません。したがって2級の答案で仕入割引を使う場面はありません。</p>
+    <p>2級で必要なのは次の判断です。<strong>「割戻」「値引」と書いてあれば仕入のマイナス。</strong>そして<strong>「割引」という言葉が出てきたら、それは仕入のマイナスではない</strong>——ここまでを区別できていれば、割戻を問う問題で誤答しません。逆に、割戻の問題文を「割引」と読み違えて処理を変えてしまうのが、この論点でいちばん多い失点です。</p>
+  </div>
+
+  <div id="quiz-warimodoshi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>期末商品は、帳簿どおりには残っていない</h2>
+
+  <h3>倉庫に行くと、帳簿と合わない</h3>
+
+  <p>決算日、経理担当者は帳簿を見て「商品は 500個 残っているはずだ」と考えます。ところが倉庫へ行って実際に数えてみると <strong>470個</strong> しかありません。30個はどこへ行ったのか。</p>
+
+  <p>盗まれたかもしれない、運ぶ途中で壊れたかもしれない、蒸発した・こぼれた・数え間違えて出荷したのかもしれない。理由はさまざまですが、はっきりしていることが1つあります。<mark>その30個はもう売れない。それなのに帳簿は「まだ資産として持っている」と言っている</mark>。この嘘を正すのが棚卸減耗の処理です。</p>
+
+  <p>さらに、残っている 470個 にも問題が見つかります。仕入れたときは 1個 800円でしたが、型落ちして傷みも出ており、いま売ろうとしても 1個 740円でしか売れません。売れば売るほど 1個あたり 60円 足が出る状態です。<strong>800円の価値があるものとして貸借対照表に載せると、資産を水増ししたことになります。</strong>これを正すのが商品評価の処理です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この2つを処理する理由は、どちらも同じ</span>
+    <p>貸借対照表は「決算日に会社が何をいくら持っているか」を示す表です。<strong>持っていないものを載せてはいけないし、売れば 740円にしかならないものを 800円と書いてもいけません。</strong>財産の状態を実際より良く見せない、というのが会計の基本姿勢です。</p>
+    <p>そして、資産を減らした分は必ずどこかで費用になります。持っていたはずの商品が消えた、価値が下がった——これは会社が損をしたということなので、損益計算書に費用として現れます。それが<strong>棚卸減耗損</strong>と<strong>商品評価損</strong>です。</p>
+  </div>
+
+  <h3>4つの数値を、混同しない形で定義する</h3>
+
+  <p>この論点は登場する数値が4つあり、そのどれとどれを掛けるかで答えが変わります。まず言葉を固定します。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>用語</th><th>意味</th><th>この例での値</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>帳簿棚卸数量</strong><br><span class="small muted">ちょうぼたなおろしすうりょう</span></td>
+        <td>帳簿の上で「残っているはず」の数量。期首の数量に仕入数量を足し、売った数量を引いた計算上の数</td>
+        <td class="nowrap"><strong>500個</strong></td>
+      </tr>
+      <tr>
+        <td><strong>実地棚卸数量</strong><br><span class="small muted">じっちたなおろしすうりょう</span></td>
+        <td>決算日に倉庫で<strong>実際に数えた</strong>数量。これが本当に会社が持っている数</td>
+        <td class="nowrap"><strong>470個</strong></td>
+      </tr>
+      <tr>
+        <td><strong>原価</strong><br><span class="small muted">＝取得原価。単価で表す</span></td>
+        <td>その商品を仕入れるのにかかった1個あたりの金額</td>
+        <td class="nowrap"><strong>@800円</strong></td>
+      </tr>
+      <tr>
+        <td><strong>正味売却価額</strong><br><span class="small muted">しょうみばいきゃくかがく</span></td>
+        <td>いま売ったら手取りでいくらになるかの1個あたりの金額。売却見込額から、売るのにかかる費用を引いた額</td>
+        <td class="nowrap"><strong>@740円</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="term">
+    <span class="term__w">正味売却価額</span><span class="term__r">しょうみばいきゃくかがく</span>
+    <p>「正味」は<strong>差し引いた後</strong>という意味です。1個 760円で売れる見込みでも、売るのに運賃や手数料が 20円かかるなら、会社の手元に残るのは 740円。この 740円が正味売却価額です。問題文では「時価」「見積売却価額」といった言葉と一緒に、控除する費用が示されることがあります。<strong>売価そのものではなく、費用を引いた後の金額</strong>を使ってください。</p>
+  </div>
+
+  <h3>2つの損失は、原因が違う</h3>
+
+  <p>ここが最も大事な区別です。<strong>棚卸減耗損は数量の問題、商品評価損は単価の問題</strong>です。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">数量の問題</div>
+      <p><strong>棚卸減耗損</strong></p>
+      <p class="small">帳簿にあるはずの数より実際が少ない。<strong>足りない分（500 − 470 ＝ 30個）が消えた</strong>ことによる損失。消えてしまった商品なので、その原価 @800円で評価します。</p>
+      <p class="small"><strong>原価 ×（帳簿数量 − 実地数量）</strong></p>
+    </div>
+    <div class="card">
+      <div class="card__label">単価の問題</div>
+      <p><strong>商品評価損</strong></p>
+      <p class="small">実際にある商品の値打ちが原価より下がっている。<strong>1個あたり 800 − 740 ＝ 60円 の目減り</strong>による損失。手元にある商品にだけ起きる話です。</p>
+      <p class="small"><strong>（原価 − 正味売却価額）× 実地数量</strong></p>
+    </div>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">この論点で最も多い誤り：商品評価損に帳簿数量を掛ける</span>
+    <p>商品評価損は <strong>60円 × 470個 ＝ 28,200円</strong> です。60円 × 500個 ＝ 30,000円ではありません。</p>
+    <p>理由を考えれば迷いません。<mark>消えてしまった 30個は、もう会社にありません。手元にない商品の値打ちが下がったところで、会社は何も損をしていない</mark>のです。すでに棚卸減耗損として全額（原価まるごと）を損失にしてあります。そこにさらに評価損を乗せたら、同じ 30個について二重に損失を計上することになります。</p>
+    <p><strong>評価損の対象は「いま実際に持っている商品」＝実地棚卸数量。</strong>覚え方ではなく、二重計上になるという理由で導いてください。数値を変えて出題されても間違えません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>ボックス図で、2つの損失を面積として見る</h2>
+
+  <p>この論点は<strong>図を描いてから計算する</strong>と決めてしまうのが確実です。縦軸に単価、横軸に数量をとると、金額はすべて長方形の面積になります。本番の計算用紙でも、まずこの図を描いてください。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 760 420" style="width:100%;height:auto;min-width:660px" role="img" aria-label="棚卸減耗損と商品評価損のボックス図。縦軸が単価、横軸が数量。">
+      <g font-size="13" fill="var(--text)">
+
+        <!-- 貸借対照表価額（実地数量 × 正味売却価額） -->
+        <rect x="120" y="150" width="330" height="180" fill="var(--ok-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <!-- 商品評価損（実地数量 × 単価の下落分） -->
+        <rect x="120" y="80" width="330" height="70" fill="var(--credit-bg)" stroke="var(--border)" stroke-width="1.5"/>
+        <!-- 棚卸減耗損（減った数量 × 原価） -->
+        <rect x="450" y="80" width="150" height="250" fill="var(--warn-bg)" stroke="var(--border)" stroke-width="1.5"/>
+
+        <!-- 外枠（期末帳簿棚卸高） -->
+        <rect x="120" y="80" width="480" height="250" fill="none" stroke="var(--text)" stroke-width="2.5"/>
+
+        <!-- 縦軸 -->
+        <line x1="120" y1="60" x2="120" y2="360" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="112" y="76" text-anchor="end" font-size="12.5" fill="var(--muted)">単価</text>
+        <text x="112" y="86" text-anchor="end" font-size="13" fill="var(--text)" font-weight="700">原価 @800</text>
+        <text x="112" y="155" text-anchor="end" font-size="13" fill="var(--text)" font-weight="700">正味売却価額</text>
+        <text x="112" y="171" text-anchor="end" font-size="13" fill="var(--text)" font-weight="700">@740</text>
+        <text x="112" y="336" text-anchor="end" font-size="12.5" fill="var(--muted)">0</text>
+        <line x1="114" y1="80" x2="126" y2="80" stroke="var(--muted)" stroke-width="1.5"/>
+        <line x1="114" y1="150" x2="126" y2="150" stroke="var(--muted)" stroke-width="1.5"/>
+
+        <!-- 横軸 -->
+        <line x1="120" y1="330" x2="640" y2="330" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="285" y="352" text-anchor="middle" font-size="13" fill="var(--text)" font-weight="700">実地棚卸数量 470個</text>
+        <text x="525" y="352" text-anchor="middle" font-size="13" fill="var(--text)" font-weight="700">減耗 30個</text>
+        <text x="600" y="376" text-anchor="middle" font-size="12.5" fill="var(--muted)">帳簿棚卸数量 500個 →</text>
+        <text x="646" y="330" font-size="12.5" fill="var(--muted)">数量</text>
+        <line x1="450" y1="324" x2="450" y2="336" stroke="var(--muted)" stroke-width="1.5"/>
+
+        <!-- 各領域のラベル -->
+        <text x="285" y="112" text-anchor="middle" font-size="14" fill="var(--credit)" font-weight="700">商品評価損</text>
+        <text x="285" y="132" text-anchor="middle" font-size="12.5" fill="var(--muted)">(800 − 740) × 470 ＝ 28,200</text>
+
+        <text x="525" y="185" text-anchor="middle" font-size="14" fill="var(--warn)" font-weight="700">棚卸減耗損</text>
+        <text x="525" y="205" text-anchor="middle" font-size="12.5" fill="var(--muted)">800 × 30</text>
+        <text x="525" y="223" text-anchor="middle" font-size="12.5" fill="var(--muted)">＝ 24,000</text>
+
+        <text x="285" y="235" text-anchor="middle" font-size="14" fill="var(--ok)" font-weight="700">貸借対照表の「商品」</text>
+        <text x="285" y="257" text-anchor="middle" font-size="12.5" fill="var(--muted)">740 × 470 ＝ 347,800</text>
+
+        <!-- 外枠の説明 -->
+        <text x="360" y="46" text-anchor="middle" font-size="13" fill="var(--text)" font-weight="700">外枠全体 ＝ 期末帳簿棚卸高　800 × 500 ＝ 400,000</text>
+        <text x="360" y="64" text-anchor="middle" font-size="12" fill="var(--muted)">決算整理前に「繰越商品」へ振り替えた金額</text>
+
+        <!-- 検算 -->
+        <text x="120" y="402" font-size="12.5" fill="var(--muted)">検算：400,000 −（棚卸減耗損 24,000 ＋ 商品評価損 28,200）＝ 347,800 ＝ 貸借対照表の商品</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">外枠は「帳簿の上での期末商品の金額」。そこから右の帯（棚卸減耗損）と上の帯（商品評価損）を削り取った残りが、貸借対照表に載る商品の金額です。<strong>上の帯が右端まで伸びていない</strong>ことに注目してください。これが「商品評価損は実地数量にだけかける」ということの図としての意味です。</p>
+  </div>
+
+  <h3>図の描き方を手順にする</h3>
+
+  <ol class="steps">
+    <li><strong>横に長方形を描き、右端に帳簿数量・左寄りに実地数量の目盛りを入れる</strong>横幅は帳簿棚卸数量。実地棚卸数量のところで縦線を1本引きます。右にできた細い部分が「消えた分」です。</li>
+    <li><strong>縦に原価と正味売却価額の目盛りを入れる</strong>上端が原価、その少し下が正味売却価額。<strong>横線を引くのは実地数量のところまで</strong>で止めます。ここで右端まで線を引いてしまうと、評価損に帳簿数量を掛ける誤りに直結します。</li>
+    <li><strong>右の細長い部分に「棚卸減耗損」と書く</strong>この部分は上から下まで（原価まるごと）が損失です。消えた商品は1円の値打ちも残らないからです。面積は 原価 ×（帳簿数量 − 実地数量）。</li>
+    <li><strong>左上の平たい部分に「商品評価損」と書く</strong>高さは単価の下がり幅、横幅は実地数量。面積は（原価 − 正味売却価額）× 実地数量。</li>
+    <li><strong>残った左下の大きな部分が、貸借対照表に載る商品</strong>正味売却価額 × 実地数量。外枠の面積から2つの損失を引いた値と一致するはずなので、<strong>この検算を必ずやってください。</strong>合わなければどこかで数量を取り違えています。</li>
+  </ol>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">正味売却価額が原価より高いときは、何もしない</span>
+    <p>商品評価損を計上するのは<strong>正味売却価額が原価を下回ったときだけ</strong>です。値上がりして 850円で売れるようになっていても、評価益は計上しません。商品は 800円のまま貸借対照表に載ります。</p>
+    <p>まだ売れていない段階の値上がりは、売れる保証のない見込みの利益だからです。損は早めに、まだ確定していない利益は計上しない——この非対称な扱いは会計全体を貫く考え方です。<strong>問題文の正味売却価額が原価より高かったら、それは「評価損ゼロ」を答えさせる出題</strong>だと考えてください。棚卸減耗損のほうは通常どおり計算します。</p>
+  </div>
+
+  <div id="num-box"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>決算整理仕訳の順序（三分法の場合）</h2>
+
+  <p>§6と同じ数値を使って、決算整理仕訳を組み立てます。前提を整理します。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>項目</th><th class="num">金額・数量</th></tr></thead>
+    <tbody>
+      <tr><td>期首商品棚卸高（繰越商品勘定の決算整理前残高）</td><td class="nowrap">320,000円</td></tr>
+      <tr><td>当期商品仕入高（仕入勘定の決算整理前残高）</td><td class="nowrap">2,600,000円</td></tr>
+      <tr><td>期末商品の帳簿棚卸数量</td><td class="nowrap">500個</td></tr>
+      <tr><td>期末商品の実地棚卸数量</td><td class="nowrap">470個</td></tr>
+      <tr><td>原価</td><td class="nowrap">@800円</td></tr>
+      <tr><td>正味売却価額</td><td class="nowrap">@740円</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>期末帳簿棚卸高は 800 × 500 ＝ <strong>400,000円</strong>。棚卸減耗損 <strong>24,000円</strong>、商品評価損 <strong>28,200円</strong>（§6の計算）。順番に仕訳を切ります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 期首商品を仕入勘定へ振り替える（しーくり）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕入</td><td class="d amt">320,000</td><td class="c">繰越商品</td><td class="c amt">320,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 期末商品（帳簿棚卸高）を仕入勘定から抜く（くりしー）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">繰越商品</td><td class="d amt">400,000</td><td class="c">仕入</td><td class="c amt">400,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>ここで使うのは<strong>帳簿棚卸高 400,000円</strong>であって、実地棚卸高でも評価減後の金額でもありません。この段階では帳簿どおりに振り替えておき、そこから減耗と評価損を順に削っていきます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ 棚卸減耗損を計上する</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">棚卸減耗損</td><td class="d amt">24,000</td><td class="c">繰越商品</td><td class="c amt">24,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>④ 商品評価損を計上する</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">商品評価損</td><td class="d amt">28,200</td><td class="c">繰越商品</td><td class="c amt">28,200</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>③④の貸方はどちらも<strong>繰越商品</strong>です。②で 400,000円 を積んだ繰越商品勘定から、消えた分と値下がりした分を削り取っています。残高は 400,000 − 24,000 − 28,200 ＝ <strong>347,800円</strong>となり、これがそのまま貸借対照表の「商品」になります。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">繰越商品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前期繰越</span><span>320,000</span></div>
+          <div class="l"><span>② 仕入</span><span>400,000</span></div>
+          <div class="l"><span>合計</span><span>720,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>① 仕入</span><span>320,000</span></div>
+          <div class="l"><span>③ 棚卸減耗損</span><span>24,000</span></div>
+          <div class="l"><span>④ 商品評価損</span><span>28,200</span></div>
+          <div class="l"><span>次期繰越</span><span>347,800</span></div>
+          <div class="l"><span>合計</span><span>720,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">引っかけどころ：②を実地棚卸高でやってしまう</span>
+    <p>②で 470個 × 800円 ＝ 376,000円 と書いてしまうと、減耗分がすでに引かれた状態から③でもう一度 24,000円を引くことになり、<strong>減耗を二重に計上します</strong>。しかも棚卸減耗損という費用科目が出てこなくなるため、損益計算書の表示も崩れます。</p>
+    <p><strong>②は必ず帳簿棚卸高。</strong>「帳簿の数字をいったんそのまま受け止めて、そこから事実に合わせて削っていく」という順序だと理解してください。順序が意味を持っているので、③④を先に書くこともできません。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">売上原価対立法の場合は、②までが要らない</span>
+    <p>売上原価対立法では①②が不要です（§2参照）。ただし③④に相当する処理は必要で、そのときの<strong>貸方は「繰越商品」ではなく「商品」</strong>になります。この方法では繰越商品勘定を使っていないからです。</p>
+    <p class="small">例：棚卸減耗損 24,000 ／ 商品 24,000　　商品評価損 28,200 ／ 商品 28,200</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>表示区分 — 損益計算書のどこに載せるか</h2>
+
+  <p>仕訳が書けても、第3問では終わりません。<strong>計上した費用を損益計算書のどの区分に置くか</strong>が別に問われます。置き場所が変われば売上総利益や営業利益の金額が変わるので、ここは配点に直結します。</p>
+
+  <h3>商品評価損 — 原則として売上原価の内訳</h3>
+
+  <p>商品評価損は、原則として<strong>売上原価の内訳項目</strong>として表示します。売上総利益を計算する段階で差し引かれます。</p>
+
+  <p>理由は、値下がりが<strong>商品そのものに起きたこと</strong>だからです。原価 800円で仕入れたものが 740円の値打ちしかないというのは、その商品を仕入れて売るという本業の中で生じた目減りです。だから売上原価に含めて、売上高と直接に対応させます。</p>
+
+  <h3>棚卸減耗損 — 原価性があるかどうかで分かれる</h3>
+
+  <p>棚卸減耗損は一律ではありません。<strong>その減耗が、通常の営業活動をしていれば当然に起きる程度のものかどうか</strong>で置き場所が変わります。これを「原価性があるか」と言います。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>費用</th><th>状況</th><th>損益計算書の区分</th><th>影響を受ける利益</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3"><strong>棚卸減耗損</strong></td>
+        <td><strong>原価性がある</strong>（毎期ふつうに生じる程度）</td>
+        <td><strong>売上原価</strong>の内訳<br><span class="small muted">または</span><br><strong>販売費及び一般管理費</strong></td>
+        <td>売上原価なら売上総利益から<br>販管費なら営業利益から</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>原価性がない</strong>（異常な量。災害・盗難など）</td>
+        <td><strong>営業外費用</strong></td>
+        <td>経常利益から</td>
+      </tr>
+      <tr>
+        <td><strong>特別損失</strong></td>
+        <td>税引前当期純利益から</td>
+      </tr>
+      <tr>
+        <td><strong>商品評価損</strong></td>
+        <td>原則</td>
+        <td><strong>売上原価</strong>の内訳</td>
+        <td>売上総利益から</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ原価性の有無で分けるのか</span>
+    <p>食料品を扱う会社なら、多少の目減りや破損は毎期どうしても出ます。<strong>それは商品を売るという事業に必然的に伴うコスト</strong>なので、売上高と対応させて売上原価や販管費に入れるのが実態に合っています。</p>
+    <p>いっぽう、倉庫に泥棒が入って商品が大量になくなったのなら、これは本業とは関係のない出来事です。これを売上原価に含めると、<strong>売上総利益が本業の実力を表さなくなります</strong>。翌期以降との比較もできません。だから営業外費用や特別損失として、本業の利益から切り離した場所に置きます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">最優先の鉄則：問題文の指示に従う</span>
+    <p>「原価性があるかどうかを自分で判断する」問題は出ません。<strong>問題文に必ず指示があります。</strong>典型的な言い回しはこうです。</p>
+    <ul>
+      <li>「棚卸減耗損および商品評価損は<strong>売上原価の内訳項目として表示する</strong>」</li>
+      <li>「棚卸減耗損は<strong>販売費及び一般管理費</strong>に計上する」</li>
+      <li>「棚卸減耗損のうち 10,000円は原価性がないため<strong>特別損失</strong>とする」</li>
+    </ul>
+    <p>上の表は指示がどの選択肢を指しているかを理解するためのものであって、<strong>指示より優先されることはありません。</strong>指示を読み飛ばして「商品評価損は売上原価だったはず」と記憶で処理するのが典型的な失点です。決算の問題を解くときは、まず注記を最後まで読んでから答案に手をつけてください。</p>
+  </div>
+
+  <h3>売上原価の内訳に入れるときの振替仕訳</h3>
+
+  <p>「売上原価の内訳項目として表示する」と指示された場合、棚卸減耗損・商品評価損の金額を<strong>仕入勘定へ振り替えます</strong>。仕入勘定の残高が損益計算書の売上原価になるので、そこへ含めてしまうわけです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑤ 棚卸減耗損と商品評価損を売上原価（仕入）へ振り替える</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕入</td><td class="d amt">52,200</td><td class="c">棚卸減耗損</td><td class="c amt">24,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">商品評価損</td><td class="c amt">28,200</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>棚卸減耗損・商品評価損という費用勘定を貸方で消し、その分を仕入勘定へ移します。これで仕入勘定の残高が、そのまま損益計算書の売上原価になります。</p>
+
+  <p>この会社の売上原価を計算してみます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>損益計算書 Ⅰ 売上原価</th><th class="num">金額（円）</th></tr></thead>
+    <tbody>
+      <tr><td>1. 期首商品棚卸高</td><td class="nowrap">320,000</td></tr>
+      <tr><td>2. 当期商品仕入高</td><td class="nowrap">2,600,000</td></tr>
+      <tr><td>　　合計</td><td class="nowrap">2,920,000</td></tr>
+      <tr><td>3. 期末商品棚卸高　<span class="small muted">← 帳簿棚卸高を引く</span></td><td class="nowrap">400,000</td></tr>
+      <tr><td>　　差引</td><td class="nowrap">2,520,000</td></tr>
+      <tr><td>4. 棚卸減耗損</td><td class="nowrap">24,000</td></tr>
+      <tr><td>5. 商品評価損</td><td class="nowrap">28,200</td></tr>
+      <tr><td><strong>　　売上原価</strong></td><td class="nowrap"><strong>2,572,200</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">損益計算書の「3. 期末商品棚卸高」は帳簿棚卸高</span>
+    <p>ここに書くのは <strong>400,000円</strong>（帳簿棚卸高）です。貸借対照表に載る 347,800円ではありません。</p>
+    <p>帳簿棚卸高をいったん引いておいて、そのあと「4. 棚卸減耗損」「5. 商品評価損」として足し戻す形になっているからです。ここに 347,800円を書くと、減耗と評価損を二重に引いたうえで再び足すことになり、売上原価が合いません。<strong>損益計算書に出てくる期末商品棚卸高と、貸借対照表に載る商品の金額は別物</strong>だと理解しておいてください。</p>
+    <p>数値で確かめると、2,920,000 − 347,800 ＝ 2,572,200円。<strong>「合計 − 貸借対照表の商品」でも同じ売上原価になります。</strong>減耗も評価損もすべて売上原価に入れる場合に限りますが、検算に使えます。</p>
+  </div>
+
+  <div id="quiz-hyoji"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は常に4行あります。<strong>4行あるからといって4行埋めるわけではありません。</strong>使わない行は空のままにしてください。逆に、売上原価対立法の販売時のように2本立てになる問題では、4行のうち2行ずつを使います。</p>
+
+  <div id="drill-shohin"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>仕訳が書けることと、金額を正しく出せること、置き場所を判断できることは別の能力です。それぞれ独立に確認します。</p>
+
+  <div id="num-kessan"></div>
+
+  <div id="fill-yougo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。棚卸減耗損・商品評価損の項目は、W8（第3問独立週）でもう一度戻ってくる場所です。ここで曖昧なまま進めないでください。</p>
+
+  <div class="progressbar" data-progress-for="#u2check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u2check">0 / 0 完了（0%）</div>
+
+  <div id="u2check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u02-w1u2-1"><label for="c1"><span class="cl__t">売上原価対立法が存在する理由を、三分法の困りごとから説明できる</span><span class="cl__d">三分法の仕入勘定は売れた分と売れ残りが混ざっているため、決算日まで売上総利益が分からない</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u02-w1u2-2"><label for="c2"><span class="cl__t">売上原価対立法の仕入時・販売時の仕訳を書ける</span><span class="cl__d">仕入時は「商品／買掛金」。販売時は「売掛金／売上」と「売上原価／商品」の2本立て</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u02-w1u2-3"><label for="c3"><span class="cl__t">売上原価対立法では売上原価算定の決算整理が不要な理由を言える</span><span class="cl__d">期中に売るたびに振り替え済みで、商品勘定の残高も期末在庫を表しているため、計算し直すものが残っていない</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u02-w1u2-4"><label for="c4"><span class="cl__t">問題文からどちらの記帳方法かを判定できる</span><span class="cl__d">「販売のつど売上原価勘定に振り替える方法」「売上原価対立法」か「三分法」かが冒頭に必ず書いてある</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u02-w1u2-17"><label for="c17"><span class="cl__t">総平均法の計算式を書け、なぜ「総」平均なのか説明できる</span><span class="cl__d">（期首棚卸高＋当期受入高の合計）÷（期首数量＋当期受入数量の合計）。期間の全体をひとまとめにして期末に一度だけ平均を出すから</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u02-w1u2-18"><label for="c18"><span class="cl__t">総平均法と移動平均法の違いを、実務上の差まで含めて言える</span><span class="cl__d">移動平均は仕入のつど単価を更新するので期中でも売上原価が分かる。総平均は期末まで単価が確定しないため、期中に売上原価が分からない</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u02-w1u2-19"><label for="c19"><span class="cl__t">同じ資料でも3つの方法で期末棚卸高が変わることを、計算して確かめた</span><span class="cl__d">先入先出法・移動平均法・総平均法。物理的に同じ在庫でも計算ルールで金額が変わる。端数処理は必ず問題文の指示に従う</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u02-w1u2-5"><label for="c5"><span class="cl__t">割戻・値引・割引の3つを、処理が分かれる理由とともに区別できる</span><span class="cl__d">割戻と値引は取得原価が変わるので仕入のマイナス。割引は支払日が早まっただけで商品には何も起きていないので仕入のマイナスではない（2級の範囲外）</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u02-w1u2-6"><label for="c6"><span class="cl__t">仕入割戻の仕訳を書ける</span><span class="cl__d">買掛金と相殺するなら「買掛金／仕入」。仕入という費用を貸方で減らす</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u02-w1u2-7"><label for="c7"><span class="cl__t">帳簿棚卸数量・実地棚卸数量・原価・正味売却価額の4つを説明できる</span><span class="cl__d">正味売却価額は売却見込額から売るのにかかる費用を引いた後の金額</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u02-w1u2-8"><label for="c8"><span class="cl__t">ボックス図を何も見ずに描ける</span><span class="cl__d">縦軸が単価、横軸が数量。外枠が期末帳簿棚卸高、右の帯が棚卸減耗損、左上の帯が商品評価損、残りが貸借対照表の商品</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u02-w1u2-9"><label for="c9"><span class="cl__t">商品評価損に実地棚卸数量を掛ける理由を説明できる</span><span class="cl__d">消えた分はすでに棚卸減耗損として全額を損失にしてある。手元にない商品に評価損を乗せると二重計上になる</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u02-w1u2-10"><label for="c10"><span class="cl__t">正味売却価額が原価を上回るときは評価損を計上しないと言える</span><span class="cl__d">まだ売れていない値上がりは確定していない利益なので計上しない。商品は原価のまま貸借対照表に載る</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u02-w1u2-11"><label for="c11"><span class="cl__t">三分法の決算整理4本を、順序どおりに書ける</span><span class="cl__d">仕入／繰越商品（期首）→ 繰越商品／仕入（期末帳簿棚卸高）→ 棚卸減耗損／繰越商品 → 商品評価損／繰越商品</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u02-w1u2-12"><label for="c12"><span class="cl__t">2本目に帳簿棚卸高を使う理由を説明できる</span><span class="cl__d">実地棚卸高を使うと減耗が二重に引かれ、棚卸減耗損という費用科目も出てこなくなる</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u02-w1u2-13"><label for="c13"><span class="cl__t">商品評価損と棚卸減耗損の表示区分を、選択肢とともに言える</span><span class="cl__d">商品評価損は原則として売上原価の内訳。棚卸減耗損は原価性があれば売上原価か販売費及び一般管理費、なければ営業外費用か特別損失</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u02-w1u2-14"><label for="c14"><span class="cl__t">表示区分は問題文の指示が最優先だと理解している</span><span class="cl__d">原価性の有無を自分で判断させる問題は出ない。注記を最後まで読んでから答案に着手する</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u02-w1u2-15"><label for="c15"><span class="cl__t">損益計算書の「期末商品棚卸高」に帳簿棚卸高を書くと言える</span><span class="cl__d">いったん帳簿棚卸高を引き、そのあと棚卸減耗損・商品評価損として足し戻す形になっているため。貸借対照表の商品の金額とは別物</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u02-w1u2-16"><label for="c16"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>棚卸減耗損・商品評価損は、この単元で終わりではありません。<strong>W8の第3問独立週で、他の決算整理と同時に処理する形でもう一度出てきます。</strong>そのとき「ボックス図を描く」から自動的に手が動く状態になっていれば、第3問で最も配点の大きい売上原価を確実に取れます。毎週の仕訳ドリル1.5時間の枠に、この単元の問題を必ず混ぜてください。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W1 UNIT 02 商品売買</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  /* ========== 確認テスト：売上原価対立法 ========== */
+  BokiQuiz.mount('#quiz-taritsu', {
+    title: '理解チェック — 売上原価対立法',
+    questions: [
+      {
+        text: '売上原価対立法で商品を仕入れたとき、借方に来る勘定科目はどれですか。',
+        choices: ['仕入（費用）', '商品（資産）', '繰越商品（資産）'],
+        answer: 1,
+        explain: '<p>仕入れた時点ではまだ売れていないので、これは費用ではなく<strong>倉庫にある資産</strong>です。だから「商品」（資産）を借方に書きます。</p><p>この方法では仕入勘定も繰越商品勘定も使いません。費用になるのは売れた瞬間で、そのときに「売上原価／商品」という振替が行われます。</p>'
+      },
+      {
+        text: '売上原価対立法で商品を販売したとき、仕訳は何本必要ですか。',
+        choices: [
+          '1本。「売掛金／売上」だけでよい',
+          '2本。「売掛金／売上」と「売上原価／商品」',
+          '2本。「売掛金／売上」と「仕入／商品」'
+        ],
+        answer: 1,
+        explain: '<p>売価の記録と原価の記録は別の話なので、2本立てになります。上の1本で「いくらで売れたか」、下の1本で「その商品の原価がいくらだったか」を記録します。金額も当然ちがいます。</p><p>下の1本を忘れると、収益だけ計上されて費用が計上されず利益が過大になり、さらに売った商品が倉庫に残ったままになります。</p>'
+      },
+      {
+        text: '売上原価対立法を採用している会社の決算整理として、<strong>売上原価を算定するために</strong>必要な仕訳はどれですか。なお、棚卸減耗も評価損も生じていないものとします。',
+        choices: [
+          '仕入／繰越商品、繰越商品／仕入 の2本',
+          '売上原価／商品 の1本',
+          '仕訳は不要'
+        ],
+        answer: 2,
+        explain: '<p>売上原価は期中に売るたび振り替え済みで、商品勘定の残高も期末在庫の原価を表しています。<strong>計算し直すものが何も残っていない</strong>ので仕訳は不要です。</p><p>3級の癖で選択肢1の「しーくり くりしー」を書いてしまうのが最頻出の誤りですが、この方法では繰越商品勘定も仕入勘定も使っていないため、存在しない勘定を動かすことになります。</p>'
+      },
+      {
+        text: '三分法と売上原価対立法を比べたとき、<strong>売上原価対立法の欠点</strong>にあたるのはどれですか。',
+        choices: [
+          '期中に売上総利益が分からない',
+          '売るたびに払出単価の計算が必要で、手間がかかる',
+          '期末に在庫を数えなくてよいので、実際の在庫が分からない'
+        ],
+        answer: 1,
+        explain: '<p>売価はレシートに書いてありますが、原価は先入先出法などで計算しないと出てきません。<strong>売るたびにその計算が必要</strong>になるため、商品の種類が多く取引が頻繁な会社ほど負担が重くなります。三分法はこの手間を決算日にまとめて1回だけ払う方法です。</p><p>選択肢1は三分法のほうの欠点です。選択肢3も誤りで、どちらの方法でも決算日には実地棚卸を行います。帳簿と実際が一致するとは限らないからです。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル：総平均法 ========== */
+  BokiNum.mount('#num-sohei', {
+    title: '計算ドリル — 総平均法',
+    badge: '計算ドリル',
+    questions: [
+      {
+        text: '当期の商品Bについて、期首棚卸 <strong>100個 @400円</strong>、6月に <strong>200個 @460円</strong>、11月に <strong>300個 @560円</strong> を仕入れた。当期の売上数量は <strong>300個</strong> である。<strong>総平均法</strong>により、<strong>総平均単価</strong>・<strong>売上原価</strong>・<strong>期末商品棚卸高</strong>を答えなさい。',
+        answer: [500, 150000, 150000],
+        formula: ['(100 * 400 + 200 * 460 + 300 * 560) / (100 + 200 + 300)', '(100 * 400 + 200 * 460 + 300 * 560) / (100 + 200 + 300) * 300', '(100 * 400 + 200 * 460 + 300 * 560) / (100 + 200 + 300) * (100 + 200 + 300 - 300)'],
+        labels: ['総平均単価（円）', '売上原価', '期末商品棚卸高'],
+        unit: '円',
+        hint: '分子は期首と当期仕入の金額の合計、分母は数量の合計です。出した単価を払出数量と期末数量にそれぞれ掛けます。',
+        explain: '<ul><li>金額の合計＝40,000 ＋ 92,000 ＋ 168,000 ＝ 300,000円</li><li>数量の合計＝100 ＋ 200 ＋ 300 ＝ 600個</li><li><strong>総平均単価＝300,000 ÷ 600 ＝ @500円</strong></li><li>期末数量＝600 − 300 ＝ 300個</li><li>売上原価＝500 × 300 ＝ <strong>150,000円</strong></li><li>期末商品棚卸高＝500 × 300 ＝ <strong>150,000円</strong></li></ul><p>検算：150,000 ＋ 150,000 ＝ 300,000円で受入合計と一致します。<strong>売上原価と期末棚卸高の合計は、どの計算方法でも受入合計になります。</strong></p>'
+      },
+      {
+        text: '当期の商品Cについて、期首棚卸 <strong>200個 @500円</strong>、5月に <strong>400個 @560円</strong> を仕入れ、7月に <strong>300個</strong> を売り上げ、10月に <strong>200個 @620円</strong> を仕入れ、1月に <strong>300個</strong> を売り上げた。<strong>総平均法による期末商品棚卸高</strong>と、<strong>移動平均法による期末商品棚卸高</strong>をそれぞれ答えなさい。',
+        answer: [112000, 114400],
+        formula: ['(200 * 500 + 400 * 560 + 200 * 620) / (200 + 400 + 200) * (200 + 400 + 200 - 600)', '(200 * 500 + 400 * 560 + 200 * 620 - (200 * 500 + 400 * 560) / (200 + 400) * 300) / (200 + 400 - 300 + 200) * 200'],
+        labels: ['総平均法による期末棚卸高', '移動平均法による期末棚卸高'],
+        unit: '円',
+        hint: '総平均法は期末に一度だけ計算します。移動平均法は仕入のつど単価を計算し直すので、5月と10月の2回更新されます。',
+        explain: '<p><strong>総平均法</strong>：金額合計＝100,000 ＋ 224,000 ＋ 124,000 ＝ 448,000円、数量合計＝800個。総平均単価＝448,000 ÷ 800 ＝ <strong>@560円</strong>。期末数量＝800 − 600 ＝ 200個なので、期末棚卸高＝560 × 200 ＝ <strong>112,000円</strong>。</p><p><strong>移動平均法</strong>：</p><ul><li>5月の仕入後 … 600個・324,000円 → 単価 @540円</li><li>7月の払出 … 540 × 300 ＝ 162,000円。残り300個・162,000円</li><li>10月の仕入後 … 500個・286,000円 → 単価 <strong>@572円</strong>に更新</li><li>1月の払出 … 572 × 300 ＝ 171,600円。残り200個・<strong>114,400円</strong></li></ul><p>同じ取引なのに期末棚卸高が 2,400円ちがいます。<strong>総平均法は当期の仕入をすべてならすため、期末近くの高い仕入（@620円）の影響が払出分にも薄く広がります。</strong>移動平均法では1月時点の単価@572円が期末在庫にそのまま残るので、その分だけ高くなります。</p>'
+      },
+      {
+        text: '当期の商品Dについて、期首棚卸 <strong>120個 @500円</strong>、当期仕入は <strong>280個 @520円</strong> と <strong>100個 @610円</strong> であった。当期の売上数量は <strong>340個</strong> である。<strong>総平均法</strong>により計算する。なお、<strong>総平均単価の計算において円未満を四捨五入すること</strong>。<strong>総平均単価</strong>・<strong>売上原価</strong>・<strong>期末商品棚卸高</strong>を答えなさい。',
+        answer: [533, 181220, 85280],
+        formula: ['533', '533 * 340', '533 * (120 + 280 + 100 - 340)'],
+        labels: ['総平均単価（円）', '売上原価', '期末商品棚卸高'],
+        unit: '円',
+        hint: 'まず割り切れない単価を出し、指示どおりに丸めてから数量を掛けます。丸めるのは単価であって、金額ではありません。',
+        explain: '<ul><li>金額の合計＝60,000 ＋ 145,600 ＋ 61,000 ＝ 266,600円</li><li>数量の合計＝120 ＋ 280 ＋ 100 ＝ 500個</li><li>266,600 ÷ 500 ＝ 533.2円 → 円未満を四捨五入して <strong>@533円</strong></li><li>期末数量＝500 − 340 ＝ 160個</li><li>売上原価＝533 × 340 ＝ <strong>181,220円</strong></li><li>期末商品棚卸高＝533 × 160 ＝ <strong>85,280円</strong></li></ul><p><strong>丸めるのは単価です。</strong>正確な単価 533.2円のまま計算して金額を丸めると、売上原価は 533.2 × 340 ＝ <strong>181,288円</strong>、期末棚卸高は 533.2 × 160 ＝ <strong>85,312円</strong>となり、どちらも答えが変わってしまいます。問題文が「単価の計算において四捨五入」と言っているので、<strong>単価を丸めてから数量を掛けます</strong>。</p><p>なお、この問題では 181,220 ＋ 85,280 ＝ 266,500円となり、受入合計 266,600円と <strong>100円ずれます</strong>。単価を丸めた影響で、丸め誤差 0.2円 × 500個 ＝ 100円が消えるためです。<strong>端数処理の指示があるときは「売上原価 ＋ 期末棚卸高 ＝ 受入合計」の検算が厳密には成り立たない</strong>ことを知っておいてください。ずれが数百円以内なら丸めのせいで、それより大きければ計算違いです。</p>'
+      },
+      {
+        text: '当期（4月1日〜3月31日）の商品Eの受払は次のとおりである。<strong>期首棚卸 150個 @600円</strong>／<strong>7月 仕入 300個 @660円</strong>／<strong>8月 売上 200個</strong>／<strong>11月 仕入 300個 @760円</strong>／<strong>12月 売上 150個</strong>。<strong>総平均法</strong>による。<br>(1) <strong>8月末の時点で判明している受入分だけ</strong>で平均単価を計算するといくらか。<br>(2) 期末に確定する<strong>総平均単価</strong>はいくらか。<br>(3) 確定した単価による<strong>売上原価</strong>と(4)<strong>期末商品棚卸高</strong>を答えなさい。',
+        answer: [640, 688, 240800, 275200],
+        formula: ['(150 * 600 + 300 * 660) / (150 + 300)', '(150 * 600 + 300 * 660 + 300 * 760) / (150 + 300 + 300)', '(150 * 600 + 300 * 660 + 300 * 760) / (150 + 300 + 300) * (200 + 150)', '(150 * 600 + 300 * 660 + 300 * 760) / (150 + 300 + 300) * (150 + 300 + 300 - 200 - 150)'],
+        labels: ['(1) 8月末時点で計算した平均単価（円）', '(2) 期末に確定する総平均単価（円）', '(3) 売上原価', '(4) 期末商品棚卸高'],
+        unit: '円',
+        hint: '(1)は8月末までに受け入れた分だけで平均します。(2)は11月の仕入も分子・分母に入れます。2つの単価が違うことが、この問題の主題です。',
+        explain: '<ul><li><strong>(1)</strong> 8月末までの受入は期首150個と7月の300個だけ。（90,000 ＋ 198,000）÷（150 ＋ 300）＝ 288,000 ÷ 450 ＝ <strong>@640円</strong></li><li><strong>(2)</strong> 11月の仕入を含めると（288,000 ＋ 228,000）÷（450 ＋ 300）＝ 516,000 ÷ 750 ＝ <strong>@688円</strong></li><li><strong>(3)</strong> 売上原価＝688 ×（200 ＋ 150）＝ 688 × 350 ＝ <strong>240,800円</strong></li><li><strong>(4)</strong> 期末数量＝750 − 350 ＝ 400個。期末商品棚卸高＝688 × 400 ＝ <strong>275,200円</strong></li></ul><p><strong>ここがこの節の本題です。</strong>8月に売った200個の原価は、8月末の時点では 640 × 200 ＝ 128,000円に見えます。ところが確定値は 688 × 200 ＝ 137,600円で、<mark>9,600円も違います</mark>。差を生んだのは11月の仕入（@760円）です。</p><p>つまり<strong>8月の売上原価が、3か月後の仕入価格によって後から変わった</strong>ということです。総平均法では当期の受入をすべて分子・分母に入れるので、期末の1回しか単価が確定しません。これが「総平均法では期中に売上原価が分からない」ということの正体です。</p><p>解答として求められるのは(2)〜(4)、つまり<strong>確定した単価 @688円で計算した金額だけ</strong>です。(1)の @640円は途中経過であって、答案に書く数字ではありません。この点が、払い出しのつど原価が確定する移動平均法との決定的な違いです。</p><p>検算：240,800 ＋ 275,200 ＝ 516,000円で受入合計と一致します。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト：割戻・値引・割引 ========== */
+  BokiQuiz.mount('#quiz-warimodoshi', {
+    title: '理解チェック — 割戻・値引・割引の区別',
+    questions: [
+      {
+        text: '「年間の仕入高が 1,000万円を超えたため、仕入先から代金の一部を返してもらった」。これは3つのうちどれにあたりますか。',
+        choices: ['仕入割戻', '仕入値引', '仕入割引'],
+        answer: 0,
+        explain: '<p>大量に買ったことに対する見返りなので<strong>仕入割戻</strong>（リベート）です。同じ商品を結果的に安く買えたことになるので取得原価が下がり、仕入を貸方で減らします。</p>'
+      },
+      {
+        text: '「届いた商品の一部に汚れがあったため、代金を 8,000円まけてもらった。商品は返品せずそのまま引き取った」。これは3つのうちどれにあたりますか。',
+        choices: ['仕入割戻', '仕入値引', '仕入割引'],
+        answer: 1,
+        explain: '<p>品質に問題があったことによる減額なので<strong>仕入値引</strong>です。その品にその値段の価値がなかったということなので取得原価が下がり、仕入を貸方で減らします。</p><p>商品を返送していれば返品（仕入戻し）になります。仕訳の形は同じですが、値引では数量が減らず、返品では数量が減るという違いがあります。</p>'
+      },
+      {
+        text: '「支払期日は4月30日だったが4月10日に支払ったため、代金の2%を免除された」。この取引について、2級の学習範囲として正しい理解はどれですか。',
+        choices: [
+          '仕入割戻にあたるので、仕入を減らす',
+          '仕入値引にあたるので、仕入を減らす',
+          '仕入割引にあたる。商品には何も起きていないので仕入は減らさない。ただし処理そのものは2級の出題範囲ではない'
+        ],
+        answer: 2,
+        explain: '<p>これは<strong>仕入割引</strong>です。同じ品が同じ数だけ届いており、変わったのは支払った日付だけなので、商品の取得原価には触れません。仕入先が本来20日後にもらえるお金を今もらう見返りに、その利息相当額をまけているという金融取引です。</p><p>出題区分表（2022年度版）では「仕入割引・売上割引」は<strong>1級</strong>に置かれており、標準的な勘定科目表にも仕入割引という科目はありません。2級で必要なのは「割引と書いてあったら仕入のマイナスではない」という判定までで、これができていれば割戻の問題で誤答しません。</p>'
+      },
+      {
+        text: '割戻と値引が、どちらも仕入のマイナスとして処理される理由はどれですか。',
+        choices: [
+          'どちらも代金が減るから。代金が減る取引はすべて仕入のマイナスになる',
+          'どちらも「その商品を手に入れるのに結局いくらかかったか」を変えるから',
+          'どちらも仕入先の都合で起きることだから'
+        ],
+        answer: 1,
+        explain: '<p>判断の軸は「取得原価が変わったかどうか」です。割戻は同じ品を安く買えたのと同じ、値引はその品にその値段の価値がなかったということ。<strong>どちらも取得原価が変わる</strong>ので仕入を減らします。</p><p>選択肢1は誤りです。割引も代金は減りますが、商品には何も起きていないので仕入は減りません。代金が減るかどうかではなく、<strong>取得原価が変わるかどうか</strong>で振り分けます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル：ボックス図 ========== */
+  BokiNum.mount('#num-box', {
+    title: '計算ドリル — ボックス図で金額を出す',
+    badge: '計算ドリル',
+    questions: [
+      {
+        text: '期末商品について、帳簿棚卸数量 <strong>600個</strong>、実地棚卸数量 <strong>580個</strong>、原価 <strong>@500円</strong>、正味売却価額 <strong>@460円</strong> であった。<strong>期末帳簿棚卸高</strong>・<strong>棚卸減耗損</strong>・<strong>商品評価損</strong>・<strong>貸借対照表に載る商品の金額</strong>をそれぞれ答えなさい。',
+        answer: [300000, 10000, 23200, 266800],
+        formula: ['500 * 600', '500 * (600 - 580)', '(500 - 460) * 580', '460 * 580'],
+        labels: ['期末帳簿棚卸高', '棚卸減耗損', '商品評価損', '貸借対照表の商品'],
+        unit: '円',
+        hint: 'まず外枠（原価 × 帳簿数量）を描き、右に減耗の帯、左上に評価損の帯を切り出します。評価損の横幅がどちらの数量かに注意してください。',
+        explain: '<ul><li>期末帳簿棚卸高＝500 × 600 ＝ <strong>300,000円</strong></li><li>棚卸減耗損＝500 ×（600 − 580）＝ 500 × 20 ＝ <strong>10,000円</strong>。消えた商品には値打ちが1円も残らないので、原価まるごとが損失です</li><li>商品評価損＝（500 − 460）× <strong>580</strong> ＝ 40 × 580 ＝ <strong>23,200円</strong>。<strong>600個ではありません。</strong>消えた20個はすでに棚卸減耗損として全額を損失にしてあるので、そこに評価損を乗せると二重計上になります</li><li>貸借対照表の商品＝460 × 580 ＝ <strong>266,800円</strong></li></ul><p>検算：300,000 −（10,000 ＋ 23,200）＝ 266,800円。一致します。</p>'
+      },
+      {
+        text: '期末商品について、帳簿棚卸数量 <strong>1,200個</strong>、実地棚卸数量 <strong>1,150個</strong>、原価 <strong>@300円</strong>、正味売却価額 <strong>@270円</strong> であった。<strong>棚卸減耗損</strong>と<strong>商品評価損</strong>を答えなさい。',
+        answer: [15000, 34500],
+        formula: ['300 * (1200 - 1150)', '(300 - 270) * 1150'],
+        labels: ['棚卸減耗損', '商品評価損'],
+        unit: '円',
+        hint: '減耗は数量の差に原価を掛ける。評価損は単価の差に、実際に手元にある数量を掛ける。',
+        explain: '<ul><li>棚卸減耗損＝300 ×（1,200 − 1,150）＝ 300 × 50 ＝ <strong>15,000円</strong></li><li>商品評価損＝（300 − 270）× 1,150 ＝ 30 × 1,150 ＝ <strong>34,500円</strong></li></ul><p>評価損に帳簿数量 1,200個を掛けると 36,000円になりますが、これは誤りです。差はちょうど 50個 × 30円 ＝ 1,500円分で、この 50個は消えてしまってもう手元にありません。<strong>持っていないものの値下がりで会社は損をしません。</strong></p>'
+      },
+      {
+        text: '期末商品について、帳簿棚卸数量 <strong>400個</strong>、実地棚卸数量 <strong>385個</strong>、原価 <strong>@1,200円</strong> である。この商品は 1個 <strong>1,300円</strong> で売却できる見込みだが、売却にあたり 1個あたり <strong>60円</strong> の販売費用がかかる。<strong>正味売却価額（単価）</strong>・<strong>棚卸減耗損</strong>・<strong>商品評価損</strong>・<strong>貸借対照表に載る商品の金額</strong>を答えなさい。',
+        answer: [1240, 18000, 0, 462000],
+        formula: ['1300 - 60', '1200 * (400 - 385)', '0 * 385', '1200 * 385'],
+        labels: ['正味売却価額（単価）', '棚卸減耗損', '商品評価損', '貸借対照表の商品'],
+        unit: '円',
+        hint: '正味売却価額は売却見込額から販売費用を引いた額です。出した単価を原価と比べてください。',
+        explain: '<ul><li>正味売却価額＝1,300 − 60 ＝ <strong>@1,240円</strong>。売価そのままではなく、売るのにかかる費用を引いた後の手取り額です</li><li>棚卸減耗損＝1,200 ×（400 − 385）＝ 1,200 × 15 ＝ <strong>18,000円</strong></li><li>商品評価損＝<strong>0円</strong>。正味売却価額 1,240円が原価 1,200円を<strong>上回っている</strong>ので、評価損は計上しません。まだ売れていない段階の値上がりは確定していない利益だからです</li><li>貸借対照表の商品＝<strong>原価</strong> 1,200 × 385 ＝ <strong>462,000円</strong>。1,240円で評価してはいけません</li></ul><p>この設定は「正味売却価額を出させ、原価と比べさせる」出題です。単価を出した時点で原価と比較する習慣をつけてください。</p>'
+      },
+      {
+        text: '期首商品棚卸高 <strong>450,000円</strong>、当期商品仕入高 <strong>3,150,000円</strong>。期末商品は帳簿棚卸数量 <strong>800個</strong>、実地棚卸数量 <strong>760個</strong>、原価 <strong>@700円</strong>、正味売却価額 <strong>@650円</strong> であった。棚卸減耗損・商品評価損はいずれも<strong>売上原価の内訳項目として表示する</strong>。損益計算書に載る<strong>期末商品棚卸高</strong>と<strong>売上原価</strong>、および貸借対照表に載る<strong>商品</strong>を答えなさい。',
+        answer: [560000, 3106000, 494000],
+        formula: ['700 * 800', '450000 + 3150000 - 700 * 800 + 700 * (800 - 760) + (700 - 650) * 760', '650 * 760'],
+        labels: ['損益計算書の期末商品棚卸高', '売上原価', '貸借対照表の商品'],
+        unit: '円',
+        hint: '損益計算書の期末商品棚卸高は帳簿棚卸高です。そこから引いたあとで、減耗と評価損を足し戻します。',
+        explain: '<ul><li>損益計算書の期末商品棚卸高＝700 × 800 ＝ <strong>560,000円</strong>（帳簿棚卸高）。貸借対照表の 494,000円ではありません</li><li>棚卸減耗損＝700 × 40 ＝ 28,000円、商品評価損＝50 × 760 ＝ 38,000円</li><li>売上原価＝450,000 ＋ 3,150,000 − 560,000 ＋ 28,000 ＋ 38,000 ＝ <strong>3,106,000円</strong></li><li>貸借対照表の商品＝650 × 760 ＝ <strong>494,000円</strong></li></ul><p>検算：減耗も評価損もすべて売上原価に入れる場合、（450,000 ＋ 3,150,000）− 494,000 ＝ 3,106,000円 と、貸借対照表の商品を直接引いても同じ値になります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト：表示区分 ========== */
+  BokiQuiz.mount('#quiz-hyoji', {
+    title: '理解チェック — 表示区分',
+    questions: [
+      {
+        text: '商品評価損は、原則として損益計算書のどこに表示しますか。',
+        choices: ['売上原価の内訳項目', '販売費及び一般管理費', '営業外費用'],
+        answer: 0,
+        explain: '<p>値下がりは商品そのものに起きたことで、商品を仕入れて売るという本業の中で生じた目減りです。だから<strong>売上原価に含めて売上高と直接に対応させます</strong>。売上総利益を計算する段階で差し引かれます。</p>'
+      },
+      {
+        text: '棚卸減耗損の表示区分について、正しい説明はどれですか。',
+        choices: [
+          '常に売上原価の内訳項目とする',
+          '原価性があれば売上原価または販売費及び一般管理費、原価性がなければ営業外費用または特別損失',
+          '常に特別損失とする'
+        ],
+        answer: 1,
+        explain: '<p>棚卸減耗損は一律ではありません。毎期ふつうに生じる程度の減耗（原価性がある）なら、事業に必然的に伴うコストなので売上原価か販売費及び一般管理費。災害や盗難による異常な減耗（原価性がない）なら、本業とは関係のない出来事なので営業外費用か特別損失です。</p><p>異常なものを売上原価に入れると、<strong>売上総利益が本業の実力を表さなくなり</strong>、翌期以降との比較もできなくなります。</p>'
+      },
+      {
+        text: '第3問の問題文に「棚卸減耗損のうち 12,000円は原価性がないため特別損失とする」とあります。どう対応しますか。',
+        choices: [
+          '棚卸減耗損は原則として売上原価なので、指示は無視して売上原価に含める',
+          '問題文の指示に従い、12,000円を特別損失の区分に表示する',
+          '原価性の有無は自分で判断すべきなので、金額の大きさを見て決める'
+        ],
+        answer: 1,
+        explain: '<p><strong>表示区分は問題文の指示が最優先です。</strong>原価性があるかどうかを受験者に判断させる問題は出ません。必ず指示があり、その指示どおりに置きます。</p><p>覚えている原則を優先して指示を読み飛ばすのが、この論点の典型的な失点です。決算の問題では注記を最後まで読んでから答案に着手してください。</p>'
+      },
+      {
+        text: '棚卸減耗損と商品評価損を売上原価の内訳項目として表示するとき、必要な振替仕訳はどれですか。金額は棚卸減耗損 24,000円、商品評価損 28,200円とします。',
+        choices: [
+          '借方：仕入 52,200／貸方：棚卸減耗損 24,000・商品評価損 28,200',
+          '借方：棚卸減耗損 24,000・商品評価損 28,200／貸方：仕入 52,200',
+          '借方：売上原価 52,200／貸方：繰越商品 52,200'
+        ],
+        answer: 0,
+      invariant: [['24000 + 28200', '52200'], ['24000 + 28200', 'answer']],
+        explain: '<p>仕入勘定の残高が損益計算書の売上原価になるので、<strong>2つの費用勘定を貸方で消して、その分を仕入勘定へ移します</strong>。棚卸減耗損と商品評価損はどちらも費用なので借方に残高があり、消すには貸方に書きます。</p><p>選択肢2は貸借が逆です。これでは仕入が減り、費用勘定が増えてしまいます。</p>'
+      },
+      {
+        text: '損益計算書の売上原価の内訳にある「期末商品棚卸高」には、どの金額を書きますか。',
+        choices: [
+          '実地棚卸数量 × 正味売却価額（＝貸借対照表に載る商品の金額）',
+          '帳簿棚卸数量 × 原価（＝期末帳簿棚卸高）',
+          '実地棚卸数量 × 原価'
+        ],
+        answer: 1,
+        explain: '<p><strong>帳簿棚卸高</strong>です。いったん帳簿どおりの金額を引いておいて、そのあと「棚卸減耗損」「商品評価損」として足し戻す構成になっているからです。</p><p>ここに貸借対照表の金額を書くと、減耗と評価損を引いたうえで再び足すことになり、売上原価が合いません。<strong>損益計算書の期末商品棚卸高と、貸借対照表の商品の金額は別物</strong>です。</p>'
+      },
+      {
+        text: '正味売却価額が原価を上回っている場合、決算でどう処理しますか。',
+        choices: [
+          '差額を商品評価益として収益に計上する',
+          '商品評価損は計上せず、商品は原価で評価する',
+          '商品評価損をマイナスの金額で計上する'
+        ],
+        answer: 1,
+        explain: '<p>評価損を計上するのは<strong>正味売却価額が原価を下回ったときだけ</strong>です。値上がりしていても評価益は計上せず、商品は原価のまま貸借対照表に載ります。</p><p>まだ売れていない段階の値上がりは、売れる保証のない見込みの利益だからです。損は早めに、確定していない利益は計上しない——この非対称な扱いは会計全体を貫く考え方です。なお棚卸減耗損のほうは、この場合でも通常どおり計算します。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル：決算の周辺 ========== */
+  BokiNum.mount('#num-kessan', {
+    title: '計算ドリル — 決算まわりの金額',
+    badge: '計算ドリル',
+    questions: [
+      {
+        text: '売上原価対立法により処理している。当期に商品 <strong>900個</strong> を @<strong>600円</strong> で仕入れ、そのうち <strong>640個</strong> を @<strong>950円</strong> で販売した。期首に商品はなかった。<strong>売上高</strong>・<strong>売上原価</strong>・<strong>売上総利益</strong>・<strong>期末の商品勘定の残高</strong>を答えなさい。',
+        answer: [608000, 384000, 224000, 156000],
+        formula: ['950 * 640', '600 * 640', '950 * 640 - 600 * 640', '600 * (900 - 640)'],
+        labels: ['売上高', '売上原価', '売上総利益', '商品勘定の残高'],
+        unit: '円',
+        hint: '売価と原価は別々に集計します。商品勘定は仕入れた分から売れた分を引いた残りです。',
+        explain: '<ul><li>売上高＝950 × 640 ＝ <strong>608,000円</strong></li><li>売上原価＝600 × 640 ＝ <strong>384,000円</strong>。売れた分の原価だけが売上原価です</li><li>売上総利益＝608,000 − 384,000 ＝ <strong>224,000円</strong></li><li>商品勘定の残高＝600 ×（900 − 640）＝ 600 × 260 ＝ <strong>156,000円</strong></li></ul><p>この方法では決算整理を待たずに、帳簿から直接この4つが読めます。売上原価勘定の残高がそのまま売上原価であり、商品勘定の残高がそのまま在庫の原価です。</p>'
+      },
+      {
+        text: '三分法により処理している。期首商品棚卸高 <strong>280,000円</strong>、当期商品仕入高 <strong>1,940,000円</strong>、期末商品の帳簿棚卸数量 <strong>350個</strong>、実地棚卸数量 <strong>335個</strong>、原価 <strong>@900円</strong>、正味売却価額 <strong>@840円</strong>。棚卸減耗損・商品評価損はいずれも売上原価に含める。<strong>棚卸減耗損</strong>・<strong>商品評価損</strong>・<strong>売上原価</strong>を答えなさい。',
+        answer: [13500, 20100, 1938600],
+        formula: ['900 * (350 - 335)', '(900 - 840) * 335', '280000 + 1940000 - 900 * 350 + 900 * (350 - 335) + (900 - 840) * 335'],
+        labels: ['棚卸減耗損', '商品評価損', '売上原価'],
+        unit: '円',
+        hint: '期末帳簿棚卸高を引いてから、減耗と評価損を足し戻します。',
+        explain: '<ul><li>期末帳簿棚卸高＝900 × 350 ＝ 315,000円</li><li>棚卸減耗損＝900 ×（350 − 335）＝ 900 × 15 ＝ <strong>13,500円</strong></li><li>商品評価損＝（900 − 840）× 335 ＝ 60 × 335 ＝ <strong>20,100円</strong>。350個ではありません</li><li>売上原価＝280,000 ＋ 1,940,000 − 315,000 ＋ 13,500 ＋ 20,100 ＝ <strong>1,938,600円</strong></li></ul><p>検算：貸借対照表の商品＝840 × 335 ＝ 281,400円。（280,000 ＋ 1,940,000）− 281,400 ＝ 1,938,600円で一致します。</p>'
+      },
+      {
+        text: '商品Xと商品Yを扱っている。<strong>商品X</strong>：帳簿数量 200個、実地数量 190個、原価 @1,500円、正味売却価額 @1,400円。<strong>商品Y</strong>：帳簿数量 500個、実地数量 500個、原価 @400円、正味売却価額 @360円。<strong>棚卸減耗損の合計</strong>と<strong>商品評価損の合計</strong>を答えなさい。',
+        answer: [15000, 39000],
+        formula: ['1500 * (200 - 190) + 400 * (500 - 500)', '(1500 - 1400) * 190 + (400 - 360) * 500'],
+        labels: ['棚卸減耗損の合計', '商品評価損の合計'],
+        unit: '円',
+        hint: '商品ごとにボックス図を描いてから合計します。減耗が生じていない商品もあります。',
+        explain: '<ul><li>棚卸減耗損：商品X＝1,500 × 10 ＝ 15,000円。商品Yは帳簿数量と実地数量が同じなので<strong>0円</strong>。合計 <strong>15,000円</strong></li><li>商品評価損：商品X＝100 × <strong>190</strong> ＝ 19,000円（200個ではありません）。商品Y＝40 × 500 ＝ 20,000円。合計 <strong>39,000円</strong></li></ul><p>複数の商品が出る問題では、<strong>商品ごとに個別にボックス図を描いてから合計します。</strong>数量や単価を混ぜて先に合計してはいけません。商品Yのように減耗がなく評価損だけ生じる場合、実地数量＝帳簿数量なのでどちらを掛けても同じ答えになりますが、商品Xでは割れます。</p>'
+      },
+      {
+        text: '期末商品の帳簿棚卸数量 <strong>700個</strong>、実地棚卸数量 <strong>660個</strong>、原価 <strong>@250円</strong>、正味売却価額 <strong>@230円</strong>。棚卸減耗損のうち、<strong>原価性があると認められる分は 6,000円</strong> で、これは売上原価に含める。<strong>残りは原価性がないため特別損失</strong>とする。商品評価損は売上原価に含める。<strong>棚卸減耗損の総額</strong>・<strong>特別損失に計上する金額</strong>・<strong>商品評価損</strong>・<strong>売上原価に含める減耗と評価損の合計</strong>を答えなさい。',
+        answer: [10000, 4000, 13200, 19200],
+        formula: ['250 * (700 - 660)', '250 * (700 - 660) - 6000', '(250 - 230) * 660', '6000 + (250 - 230) * 660'],
+        labels: ['棚卸減耗損の総額', '特別損失に計上する金額', '商品評価損', '売上原価に含める合計'],
+        unit: '円',
+        hint: 'まず減耗の総額を出し、そこから指示された金額を分けます。評価損の数量に注意してください。',
+        explain: '<ul><li>棚卸減耗損の総額＝250 ×（700 − 660）＝ 250 × 40 ＝ <strong>10,000円</strong></li><li>特別損失＝10,000 − 6,000 ＝ <strong>4,000円</strong>。原価性がある 6,000円を除いた残りです</li><li>商品評価損＝（250 − 230）× 660 ＝ 20 × 660 ＝ <strong>13,200円</strong></li><li>売上原価に含める合計＝6,000 ＋ 13,200 ＝ <strong>19,200円</strong></li></ul><p>減耗を2つの区分に分けて表示させる出題です。<strong>金額の計算そのものは変わらず、置き場所だけが分かれます。</strong>問題文の指示を読み飛ばして 10,000円全額を売上原価に入れると、売上総利益・営業利益・経常利益がすべてずれます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 穴埋め ========== */
+  BokiFill.mount('#fill-yougo', {
+    title: '穴埋め — 用語を正確に言えるか',
+    questions: [
+      {
+        text: '決算日に倉庫で実際に数えた商品の数量を何といいますか。',
+        answer: ['実地棚卸数量', '実地棚卸高', '実地棚卸'],
+        explain: '<p><strong>実地棚卸数量</strong>です。帳簿の上で「残っているはず」とされる数量は帳簿棚卸数量といい、この2つの差が棚卸減耗になります。</p>'
+      },
+      {
+        text: '商品をいま売却したときの見込額から、売却にかかる費用を差し引いた金額を何といいますか。',
+        answer: ['正味売却価額', '正味売却価格'],
+        explain: '<p><strong>正味売却価額</strong>です。「正味」は差し引いた後という意味で、売価そのものではありません。1個 760円で売れる見込みでも売却費用が 20円かかるなら、正味売却価額は 740円です。</p>'
+      },
+      {
+        text: '帳簿棚卸数量より実地棚卸数量が少ないときに、その差に原価を掛けて計上する費用の勘定科目は何ですか。',
+        answer: ['棚卸減耗損', '棚卸減耗費'],
+        explain: '<p><strong>棚卸減耗損</strong>です。消えてしまった商品には値打ちが1円も残らないので、原価まるごとが損失になります。計算式は 原価 ×（帳簿棚卸数量 − 実地棚卸数量）。</p>'
+      },
+      {
+        text: '販売のつど売上原価勘定に振り替える方法で、商品を仕入れたときに借方に計上する<strong>資産</strong>の勘定科目は何ですか。',
+        answer: ['商品'],
+        explain: '<p><strong>商品</strong>です。三分法の「仕入」でも「繰越商品」でもありません。仕入れた時点ではまだ売れていないので費用ではなく、倉庫にある資産として扱います。</p>'
+      },
+      {
+        text: '大量に購入したことに対する見返りとして、仕入先から代金の一部を返してもらう取引を何といいますか。漢字4文字で答えなさい。',
+        answer: ['仕入割戻'],
+        explain: '<p><strong>仕入割戻</strong>です。リベートとも呼ばれます。同じ商品を結果的に安く買えたことになるので取得原価が下がり、仕入を貸方で減らします。品質不良による減額は仕入値引、支払期日前の支払いに対する免除は仕入割引で、割引だけは仕入のマイナスになりません。</p>'
+      },
+      {
+        text: '棚卸減耗損が、通常の営業活動をしていれば当然に生じる程度のものであることを指して、「◯◯◯がある」といいます。◯◯◯にあたる語を答えなさい。',
+        answer: ['原価性'],
+        explain: '<p><strong>原価性</strong>です。原価性があれば売上原価または販売費及び一般管理費、原価性がなければ営業外費用または特別損失に表示します。ただし試験では原価性の有無を自分で判断させることはなく、必ず問題文に指示があります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 仕訳ドリル 12問 ========== */
+  var ACC = [
+    '現金', '当座預金', '売掛金', '受取手形', '商品', '繰越商品',
+    '買掛金', '支払手形', '未払金',
+    '売上', '仕入', '売上原価', '発送費',
+    '棚卸減耗損', '商品評価損'
+  ];
+
+  BokiJournal.mount('#drill-shohin', {
+    title: '仕訳ドリル — 商品売買 12問',
+    accounts: ACC,
+    questions: [
+      /* --- 売上原価対立法 4問 --- */
+      {
+        text: '商品売買は<strong>販売のつど売上原価勘定に振り替える方法</strong>により処理している。商品 <strong>300個</strong> を 1個 <strong>640円</strong> で仕入れ、代金は掛けとした。',
+        debit: [['商品', 192000]],
+        credit: [['買掛金', 192000]],
+        hint: 'この方法では「仕入」勘定を使いません。まだ売れていないものは費用でしょうか、資産でしょうか。',
+        explain: '<p>640 × 300 ＝ <strong>192,000円</strong>。</p><p>借方は<strong>「商品」（資産）</strong>です。仕入れた時点ではまだ売れていないので費用ではなく、倉庫にある資産として計上します。この一点が三分法との最大の違いで、ここで「仕入」と書いてしまうと以降がすべてずれます。</p><p>問題文の「販売のつど売上原価勘定に振り替える方法」という一文が、どちらの記帳方法かを示しています。答案を書く前に必ず確認してください。</p>'
+      },
+      {
+        text: '商品売買は<strong>売上原価対立法</strong>により処理している。原価 1個 <strong>640円</strong> の商品 <strong>180個</strong> を、1個 <strong>1,000円</strong> で販売し、代金は掛けとした。',
+        debit: [['売掛金', 180000], ['売上原価', 115200]],
+        credit: [['売上', 180000], ['商品', 115200]],
+        hint: '売価の記録と原価の記録は別の話です。仕訳は2本立てになります。',
+        explain: '<p>2本立てで書きます。</p><ul><li><strong>売掛金 180,000 ／ 売上 180,000</strong> … 売価 1,000 × 180個。いくらで売れたかの記録です</li><li><strong>売上原価 115,200 ／ 商品 115,200</strong> … 原価 640 × 180個。売れた商品の原価を、資産である商品勘定から費用である売上原価勘定へ移します</li></ul><p>下の1本を忘れると、収益だけ計上されて費用が計上されず<strong>利益が過大になり</strong>、さらに売った商品が倉庫に残ったままになります。「販売した」と読んだら必ず2本と決めてください。</p><p>この時点で売上総利益 180,000 − 115,200 ＝ 64,800円が帳簿から直接読めます。決算を待つ必要がないのがこの方法の狙いです。</p>'
+      },
+      {
+        text: '商品売買は<strong>売上原価対立法</strong>により処理している。原価 1個 <strong>2,500円</strong> の商品 <strong>40個</strong> を、1個 <strong>3,800円</strong> で販売した。代金のうち <strong>60,000円</strong> は現金で受け取り、残額は掛けとした。',
+        debit: [['現金', 60000], ['売掛金', 92000], ['売上原価', 100000]],
+        credit: [['売上', 152000], ['商品', 100000]],
+        hint: '売価の合計を出してから、現金で受け取った分を差し引きます。原価の1本も忘れずに。',
+        explain: '<p>売価の合計は 3,800 × 40 ＝ <strong>152,000円</strong>。うち現金 60,000円を受け取ったので、掛けとなるのは 152,000 − 60,000 ＝ <strong>92,000円</strong>です。</p><p>原価は 2,500 × 40 ＝ <strong>100,000円</strong>。これを商品勘定から売上原価勘定へ振り替えます。</p><p>代金の受け取り方が2つに分かれても、<strong>原価の1本には影響しません</strong>。売価の記録と原価の記録は独立しているからです。</p>'
+      },
+      {
+        text: '商品売買は<strong>売上原価対立法</strong>により処理している。決算にあたり、売上原価を算定する。なお、期末商品の帳簿棚卸数量と実地棚卸数量は一致しており、正味売却価額は原価を上回っている。<br><span class="small muted">仕訳が不要だと判断した場合は、解答欄を空のままにして「採点する」を押してください。</span>',
+        debit: [],
+        credit: [],
+        hint: '期中に何をしてきたかを思い出してください。決算日に計算し直すものが残っているでしょうか。',
+        explain: '<p><strong>仕訳なし</strong>です（上の解答表が空なのはそのためです）。</p><p>売上原価は売るたびに商品勘定から売上原価勘定へ振り替え済みで、売上原価勘定の残高がすでに当期の売上原価になっています。商品勘定の残高も期末在庫の原価を表しています。<strong>計算し直すものが何も残っていません。</strong></p><p>3級の癖で「仕入／繰越商品」「繰越商品／仕入」と書いてしまうのが最頻出の誤りですが、この方法では仕入勘定も繰越商品勘定も使っていないため、存在しない勘定を動かすことになります。</p><p>なお、数量が足りない・正味売却価額が原価を下回るという事実があれば、その処理は記帳方法にかかわらず必要です。この問題ではどちらも生じていないと明記されています。</p>'
+      },
+
+      /* --- 仕入割戻・値引 3問 --- */
+      {
+        text: '当期の仕入高が一定額を超えたため、仕入先から <strong>35,000円</strong> の<strong>割戻</strong>を受け、同額を買掛金から控除した。なお、商品売買は<strong>三分法</strong>により処理している。',
+        debit: [['買掛金', 35000]],
+        credit: [['仕入', 35000]],
+        hint: '割戻は「その商品を手に入れるのに結局いくらかかったか」を変えるでしょうか。',
+        explain: '<p>払う義務が 35,000円減るので<strong>買掛金（負債）を借方で減らします</strong>。</p><p>割戻は大量に買ったことに対する見返りで、同じ商品を結果的に安く買えたのと同じです。<strong>取得原価が下がる</strong>ので、貸方は仕入（費用）。仕入は費用でホームポジションが借方なので、減らすには反対側の貸方に書きます。</p><p>「仕入割戻」という科目を使う処理もありますが、2級では仕入を直接減額する形で問われます。問題文に指定がない限りこの形で書いてください。</p>'
+      },
+      {
+        text: '先に掛けで仕入れた商品について、品質不良を理由に <strong>18,000円</strong> の<strong>値引</strong>を受けた。商品は返送せずそのまま引き取っている。なお、商品売買は<strong>三分法</strong>により処理している。',
+        debit: [['買掛金', 18000]],
+        credit: [['仕入', 18000]],
+        hint: '品質が悪いということは、その品にその値段の価値があったでしょうか。',
+        explain: '<p>仕訳の形は割戻とまったく同じ「買掛金／仕入」です。品質不良ということは<strong>その品にその値段の価値がなかった</strong>ということなので、取得原価が下がります。</p><p>商品を返送していれば返品（仕入戻し）ですが、これも仕訳の形は同じです。違いは<strong>数量が減るかどうか</strong>で、値引では商品は手元に残ったまま代金だけが下がるため、商品有高帳では数量欄が動きません。</p><p>割戻・値引・返品はいずれも仕入のマイナスです。仕入のマイナスにならないのは<strong>割引</strong>だけで、これは支払日が早まっただけで商品には何も起きていないからです。</p>'
+      },
+      {
+        text: '商品売買は<strong>売上原価対立法</strong>により処理している。先に <strong>420,000円</strong> で掛け仕入した商品について、大量購入に対する<strong>割戻</strong> <strong>21,000円</strong> を受け、買掛金から控除した。なお、この商品はまだ販売していない。',
+        debit: [['買掛金', 21000]],
+        credit: [['商品', 21000]],
+        hint: 'この方法では仕入勘定を使いません。取得原価が下がるとき、減らすべき勘定はどれでしょうか。',
+        explain: '<p>買掛金 21,000円を借方で減らすところは三分法と同じですが、<strong>貸方は「仕入」ではなく「商品」</strong>です。売上原価対立法では仕入勘定を使わず、取得した商品は資産である商品勘定に載っているからです。</p><p>割戻によって取得原価が 420,000 − 21,000 ＝ 399,000円に下がったので、商品勘定の金額もその分だけ減らします。</p><p><strong>記帳方法が変われば、減額する相手の勘定も変わります。</strong>「割戻＝仕入のマイナス」と形だけ覚えていると、この問題で誤ります。「取得原価が下がる」という中身で覚えてください。</p>'
+      },
+
+      /* --- 棚卸減耗損・商品評価損 5問 --- */
+      {
+        text: '商品売買は<strong>三分法</strong>により処理している。決算にあたり、期首商品棚卸高 <strong>240,000円</strong> と期末商品の<strong>帳簿棚卸高 310,000円</strong> について、売上原価を算定するための決算整理仕訳を行う。なお、棚卸減耗および商品評価損の処理は<strong>この仕訳では行わない</strong>。',
+        debit: [['仕入', 240000], ['繰越商品', 310000]],
+        credit: [['繰越商品', 240000], ['仕入', 310000]],
+        hint: '「しーくり くりしー」の2本です。2本目に使うのは帳簿棚卸高です。',
+        explain: '<p>2本の仕訳をまとめて記入します。</p><ul><li><strong>仕入 240,000 ／ 繰越商品 240,000</strong>（しーくり）… 期首の商品を仕入勘定へ移します。期首商品は当期に売れる対象なので、売上原価の計算に含めます</li><li><strong>繰越商品 310,000 ／ 仕入 310,000</strong>（くりしー）… 期末に売れ残った分を仕入勘定から抜きます</li></ul><p>2本目で使うのは<strong>帳簿棚卸高</strong>です。ここで実地棚卸高を使ってしまうと、減耗分がすでに引かれた状態から次の仕訳でもう一度引くことになり、<strong>減耗を二重に計上します</strong>。しかも棚卸減耗損という費用科目が出てこなくなり、損益計算書の表示も崩れます。</p><p>帳簿の数字をいったんそのまま受け止め、そこから事実に合わせて削っていく——この順序に意味があります。</p>'
+      },
+      {
+        text: '商品売買は<strong>三分法</strong>により処理している。決算にあたり期末商品を調べたところ、帳簿棚卸数量 <strong>500個</strong>、実地棚卸数量 <strong>470個</strong>、原価 <strong>@800円</strong>、正味売却価額 <strong>@740円</strong> であった。<strong>棚卸減耗損と商品評価損を計上する仕訳</strong>を行う（売上原価算定の仕訳は済んでいる）。',
+        debit: [['棚卸減耗損', 24000], ['商品評価損', 28200]],
+        credit: [['繰越商品', 52200]],
+        hint: 'ボックス図を描いてください。評価損に掛けるのは帳簿数量と実地数量のどちらでしょうか。',
+        explain: '<ul><li><strong>棚卸減耗損</strong>＝原価 ×（帳簿数量 − 実地数量）＝ 800 ×（500 − 470）＝ 800 × 30 ＝ <strong>24,000円</strong>。消えた商品には値打ちが1円も残らないので、原価まるごとが損失です</li><li><strong>商品評価損</strong>＝（原価 − 正味売却価額）× <strong>実地数量</strong> ＝（800 − 740）× 470 ＝ 60 × 470 ＝ <strong>28,200円</strong></li></ul><p>評価損に帳簿数量 500個を掛けると 30,000円になりますが、これは誤りです。消えた 30個はすでに棚卸減耗損として全額を損失にしてあるので、そこに評価損を乗せると<strong>同じ30個について二重に損失を計上する</strong>ことになります。</p><p>貸方はどちらも<strong>繰越商品</strong>で、合計 52,200円。帳簿棚卸高 800 × 500 ＝ 400,000円から 52,200円が削られ、残る <strong>347,800円</strong>（＝ 740 × 470）が貸借対照表の商品になります。</p>'
+      },
+      {
+        text: '商品売買は<strong>売上原価対立法</strong>により処理している。決算にあたり期末商品を調べたところ、帳簿棚卸数量 <strong>250個</strong>、実地棚卸数量 <strong>240個</strong>、原価 <strong>@1,100円</strong>、正味売却価額 <strong>@1,050円</strong> であった。必要な決算整理仕訳を行う。',
+        debit: [['棚卸減耗損', 11000], ['商品評価損', 12000]],
+        credit: [['商品', 23000]],
+        hint: 'この方法でも減耗と評価損の処理は必要です。ただし減らす相手の勘定が違います。',
+        explain: '<ul><li>棚卸減耗損＝1,100 ×（250 − 240）＝ 1,100 × 10 ＝ <strong>11,000円</strong></li><li>商品評価損＝（1,100 − 1,050）× <strong>240</strong> ＝ 50 × 240 ＝ <strong>12,000円</strong></li></ul><p>貸方は<strong>「繰越商品」ではなく「商品」</strong>です。売上原価対立法では繰越商品勘定を使っておらず、期末在庫は商品勘定に載っているからです。</p><p>「売上原価対立法なら決算整理は不要」というのは<strong>売上原価を算定するための仕訳</strong>についての話です。数えたら足りない、傷んで価値が下がっているという事実は記帳方法と無関係に起きるので、処理が必要になります。</p><p>商品勘定の残高は 1,100 × 250 ＝ 275,000円から 23,000円が削られ、1,050 × 240 ＝ <strong>252,000円</strong>になります。</p>'
+      },
+      {
+        text: '商品売買は<strong>三分法</strong>により処理している。決算にあたり計上した<strong>棚卸減耗損 24,000円</strong> と <strong>商品評価損 28,200円</strong> について、問題文の指示により<strong>いずれも売上原価の内訳項目として表示する</strong>ため、必要な振替仕訳を行う。',
+        debit: [['仕入', 52200]],
+        credit: [['棚卸減耗損', 24000], ['商品評価損', 28200]],
+        hint: '損益計算書の売上原価になるのは、どの勘定の残高でしょうか。費用勘定を消すにはどちら側に書きますか。',
+        explain: '<p>仕入勘定の残高が損益計算書の売上原価になるので、<strong>2つの費用勘定を消して、その分を仕入勘定へ移します</strong>。</p><p>棚卸減耗損も商品評価損も費用なので借方に残高があります。これを消すには反対側の<strong>貸方</strong>に書きます。借方はその合計 24,000 ＋ 28,200 ＝ <strong>52,200円</strong>を仕入勘定へ。</p><p>この振替を行うかどうかは<strong>問題文の指示で決まります。</strong>「販売費及び一般管理費に計上する」「原価性がないため特別損失とする」と指示されていれば、その分は仕入へ振り替えず、棚卸減耗損のまま該当区分に表示します。</p>'
+      },
+      {
+        text: '商品売買は<strong>三分法</strong>により処理している。決算にあたり期末商品を調べたところ、帳簿棚卸数量 <strong>800個</strong>、実地棚卸数量 <strong>770個</strong>、原価 <strong>@450円</strong>、正味売却価額 <strong>@480円</strong> であった。<strong>棚卸減耗損と商品評価損を計上する仕訳</strong>を行う（売上原価算定の仕訳は済んでいる）。',
+        debit: [['棚卸減耗損', 13500]],
+        credit: [['繰越商品', 13500]],
+        hint: '正味売却価額と原価を比べてください。どちらが高いでしょうか。',
+        explain: '<p>棚卸減耗損＝450 ×（800 − 770）＝ 450 × 30 ＝ <strong>13,500円</strong>。ここは通常どおりです。</p><p><strong>商品評価損は計上しません。</strong>正味売却価額 480円が原価 450円を<strong>上回っている</strong>からです。評価損を計上するのは正味売却価額が原価を下回ったときだけで、値上がりしていても評価益は計上しません。</p><p>まだ売れていない段階の値上がりは、売れる保証のない見込みの利益だからです。損は早めに、確定していない利益は計上しない——この非対称な扱いは会計全体を貫く考え方です。</p><p>したがって期末商品は<strong>原価 @450円</strong>で評価し、貸借対照表の商品は 450 × 770 ＝ 346,500円になります。480円で評価してはいけません。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

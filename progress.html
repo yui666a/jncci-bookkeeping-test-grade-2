@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="なし">
+<title>学習の記録 — 日商簿記2級</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <span class="topbar__title">日商簿記2級 ／ 学習の記録</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">PROGRESS</p>
+    <h1>学習の記録</h1>
+    <p class="lead">ドリルの正誤・学習時間・チェック・メモが、教材を使うだけで貯まります。
+      <strong>この記録はこのブラウザの中にしかありません。</strong>消えると戻らないため、
+      週に1回はエクスポートして <code>進捗ログ.md</code> に転記してください。</p>
+  </div>
+
+  <h2><span class="num">1</span>今週</h2>
+  <div id="week"></div>
+
+  <h2><span class="num">2</span>要復習</h2>
+  <p class="small muted">誤答を含む設問を、直近の誤答が新しい順に並べています。ここが次にやり直す場所です。</p>
+  <div id="review"></div>
+
+  <h2><span class="num">3</span>単元別</h2>
+  <div id="units"></div>
+
+  <h2><span class="num">4</span>メモ</h2>
+  <div id="notes"></div>
+
+  <h2><span class="num">5</span>エクスポート</h2>
+  <p class="small muted">全期間の記録を JSON でコピーします。Claude に貼ると
+    <code>進捗ログ.md</code> へ転記されます。</p>
+  <div class="btn-row">
+    <button class="btn" type="button" id="export">クリップボードにコピー</button>
+    <span class="small muted" id="export-msg"></span>
+  </div>
+
+  <h2><span class="num">6</span>記録の全消去</h2>
+  <p class="small muted">元に戻せません。エクスポートして転記を済ませてから実行してください。</p>
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" id="wipe">すべての記録を消す</button>
+    <span class="small muted" id="wipe-msg"></span>
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← 教材トップに戻る</a></span>
+    <span>日商簿記2級 学習の記録</span>
+  </div>
+
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var P = window.BokiProgress;
+
+  function el(t, c, x) {
+    var n = document.createElement(t);
+    if (c) n.className = c;
+    if (x !== undefined) n.textContent = x;
+    return n;
+  }
+  function hm(sec) {
+    var m = Math.round(sec / 60);
+    return Math.floor(m / 60) + 'h' + (m % 60) + 'm';
+  }
+  // 週の始まりは月曜。学習カリキュラムが月曜起点で週を数えている。
+  function weekStart() {
+    var d = new Date();
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+    return d;
+  }
+
+  // 壊れた記録でもダッシュボードは開けなければならない。ここで例外が
+  // 出ると、記録が壊れたときに復旧の入口ごと失われる。
+  var data;
+  try { data = P.dump(); }
+  catch (e) { data = { version: 1, sessions: [], drills: {}, checks: {}, notes: [] }; }
+
+  var sessions = data.sessions || [];
+  var drills = data.drills || {};
+  var checks = data.checks || {};
+  var notes = data.notes || [];
+
+  /* 1. 今週 */
+  var ws = weekStart();
+  var weekSec = sessions.reduce(function (a, s) {
+    var t = new Date(s.start);
+    return a + (isFinite(t.getTime()) && t >= ws ? (Number(s.sec) || 0) : 0);
+  }, 0);
+  var TARGET = 23 * 3600;
+  var pct = Math.round(weekSec / TARGET * 100);
+  var wk = document.getElementById('week');
+  wk.appendChild(el('p', 'big', hm(weekSec) + ' / 23h'));
+  var bar = el('div', 'progressbar');
+  var fill = el('i');
+  fill.style.width = Math.min(100, pct) + '%';
+  bar.appendChild(fill);
+  wk.appendChild(bar);
+  wk.appendChild(el('div', 'progresstext', pct + '%（月曜起点）'));
+
+  /* 2. 要復習 */
+  var review = Object.keys(drills).map(function (id) {
+    var at = drills[id].attempts || [];
+    var wrong = at.filter(function (a) { return !a.ok; });
+    if (!wrong.length) return null;
+    return {
+      id: id, wrong: wrong.length, total: at.length,
+      last: wrong[wrong.length - 1].at,
+      solved: at.length && at[at.length - 1].ok
+    };
+  }).filter(Boolean).sort(function (a, b) { return a.last < b.last ? 1 : -1; });
+
+  var rv = document.getElementById('review');
+  if (!review.length) rv.appendChild(el('p', 'small muted', '誤答はまだありません。'));
+  review.forEach(function (r) {
+    var row = el('div', 'row');
+    row.appendChild(el('span', 'row__id', r.id));
+    row.appendChild(el('span', 'row__meta',
+      r.wrong + '誤 / ' + r.total + '回' + (r.solved ? '（直近は正解）' : '（未正解）')));
+    row.appendChild(el('span', 'row__meta', String(r.last).slice(0, 10)));
+    rv.appendChild(row);
+  });
+
+  /* 3. 単元別 */
+  var units = {};
+  function slot(u) {
+    if (!units[u]) units[u] = { sec: 0, ok: 0, n: 0, checked: 0, total: 0 };
+    return units[u];
+  }
+  sessions.forEach(function (s) { slot(s.unit).sec += Number(s.sec) || 0; });
+  Object.keys(drills).forEach(function (id) {
+    var at = drills[id].attempts || [];
+    if (!at.length) return;
+    var s = slot(id.split('#')[0]);
+    s.n++;
+    if (at[at.length - 1].ok) s.ok++;
+  });
+  Object.keys(checks).forEach(function (u) {
+    var s = slot(u), c = checks[u];
+    for (var k in c) { s.total++; if (c[k]) s.checked++; }
+  });
+
+  var ul = document.getElementById('units');
+  var names = Object.keys(units).sort();
+  if (!names.length) ul.appendChild(el('p', 'small muted', 'まだ記録がありません。'));
+  names.forEach(function (u) {
+    var s = units[u], row = el('div', 'row');
+    row.appendChild(el('span', 'row__id', u));
+    row.appendChild(el('span', 'row__meta', hm(s.sec)));
+    row.appendChild(el('span', 'row__meta',
+      s.n ? '正答 ' + Math.round(s.ok / s.n * 100) + '%（' + s.n + '問）' : 'ドリルなし'));
+    if (s.total) row.appendChild(el('span', 'row__meta',
+      'チェック ' + s.checked + '/' + s.total));
+    ul.appendChild(row);
+  });
+
+  /* 4. メモ */
+  var nl = document.getElementById('notes');
+  if (!notes.length) nl.appendChild(el('p', 'small muted', 'メモはまだありません。'));
+  notes.slice().reverse().forEach(function (n) {
+    var row = el('div', 'row');
+    row.appendChild(el('span', 'row__meta', String(n.at).slice(0, 10)));
+    row.appendChild(el('span', 'row__id', n.unit));
+    row.appendChild(el('span', 'note__text', n.text));
+    nl.appendChild(row);
+  });
+
+  /* 5. エクスポート */
+  document.getElementById('export').addEventListener('click', function () {
+    var msg = document.getElementById('export-msg');
+    navigator.clipboard.writeText(P.exportJSON()).then(function () {
+      msg.textContent = 'コピーした。Claude に貼ってください。';
+    }, function () {
+      msg.textContent = 'コピーできなかった（ブラウザがクリップボードを許可していない）。';
+    });
+  });
+
+  /* 6. 全消去 */
+  document.getElementById('wipe').addEventListener('click', function () {
+    if (!confirm('すべての学習記録を消します。元に戻せません。よろしいですか。')) return;
+    P._reset();
+    document.getElementById('wipe-msg').textContent = '消去した。再読み込みしてください。';
+  });
+})();
+</script>
+</body>
+</html>

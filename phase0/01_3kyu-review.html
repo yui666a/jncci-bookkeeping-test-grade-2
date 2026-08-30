@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="boki-topics" content="商-第二-4-カ,商-第二-4-キ,商-第二-4-ク,商-第二-5-エ,商-第二-12-エ,商-第三-1-0,商-第三-2-0,商-第三-5-0,商-第三-6-0,商-第三-8-0">
 <title>3級の総復習 — 日商簿記2級 Phase 0</title>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
@@ -1251,6 +1251,8 @@
     <p>このユニットで塞いだのは<strong>商業簿記側の穴</strong>です。次の UNIT 02 では工業簿記の土台となる勘定連絡図を作ります。Phase 0 のなかで最も投資対効果が高い4時間なので、時間が足りない日があっても UNIT 02 だけは削らないでください。</p>
   </div>
 
+  <div data-note></div>
+
   <div class="footer">
     <span><a href="index.html">← Phase 0 目次に戻る</a></span>
     <span>日商簿記2級 Phase 0 教材 ／ UNIT 01</span>
@@ -1258,7 +1260,7 @@
 
 </div>
 
-<script src="assets/app.js"></script>
+<script src="../assets/app.js"></script>
 <script>
 /* ---------- 2章：仕訳の考え方 理解チェック ---------- */
 BokiQuiz.mount('#quiz-shiwake', {
@@ -1350,6 +1352,7 @@ BokiQuiz.mount('#quiz-denpyo', {
         '現金 30,000'
       ],
       answer: 0,
+      invariant: [['30000', 'answer']],
       explain: '<p>振替伝票の金額が<strong>取引の総額 100,000円</strong>になっているので、これは<strong>方法A</strong>です。「いったん全額を掛けで仕入れ、その直後に掛け代金のうち 30,000円を現金で支払った」と読み替えているので、出金伝票は<strong>買掛金 30,000</strong>となります（借方：買掛金 30,000／貸方：現金 30,000）。</p><p>もし振替伝票が「仕入 70,000／買掛金 70,000」なら方法Bで、出金伝票は「仕入 30,000」になります。<strong>振替伝票の金額が総額か分割額かで見分けられます。</strong></p>'
     },
     {
@@ -1407,6 +1410,7 @@ BokiQuiz.mount('#quiz-shimekiri', {
         '借方：売上 2,000,000／貸方：繰越利益剰余金 2,000,000'
       ],
       answer: 1,
+      invariant: [['2000000', 'answer']],
       explain: '<p>売上は収益なので、残高は<strong>貸方</strong>にあります。これをゼロにするには反対側の<strong>借方</strong>に書きます。同額が損益勘定の貸方に移り、損益勘定の上で収益として集計されます。</p><p>選択肢3のように収益を直接、繰越利益剰余金へ振り替えることはしません。<strong>いったん損益勘定に収益と費用を全部集めて差額を出す</strong>のが目的で、繰越利益剰余金へ移すのはその差額（当期純利益）が確定したあとです。</p>'
     },
     {

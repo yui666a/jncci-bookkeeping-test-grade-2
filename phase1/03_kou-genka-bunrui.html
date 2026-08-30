@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-subject" content="工">
+<meta name="boki-topics" content="工-第一-1-0,工-第一-2-0,工-第一-5-0,工-第一-6-0,工-第一-6-ア,工-第一-6-イ,工-第二-1-ウ,工-第二-2-エ,工-第二-2-オ,工-第二-2-キ,工-第二-2-ク,工-第三-1-0,工-第三-2-0,工-第三-2-ア,工-第三-2-イ,工-第三-2-ウ,工-第三-2-エ,工-第三-2-オ,工-第三-3-0,工-第三-3-ア,工-第三-3-イ,工-第三-3-ウ,工-第三-4-0,工-第三-5-0,工-第四-2-0,工-第四-3-0,工-第四-4-0">
+<title>工業簿記の全体像・原価の分類 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 03 工業簿記の全体像・原価の分類</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W1 工業簿記 ／ 3時間</p>
+    <h1>工業簿記の全体像・原価の分類<br>— 11週間ぶんの地図を先に持つ</h1>
+    <p class="lead">Phase 0 で描けるようになった勘定連絡図に、<strong>座標</strong>を入れます。原価をどう分けるのか、なぜその分け方が要るのか、そして工業簿記の11週間はどの順番で進むのか。ここで扱う分類はすべて、あとの週で「何を判断するか」に直結します。分類そのものを覚える時間ではなく、<strong>これから出会う計算の使い分けを先に受け取る時間</strong>です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">確認テスト 14問</span>
+      <span class="chip">穴埋め 10問・計算 4問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">この単元の位置 — 分類は何のためにあるのか</a></li>
+      <li><a href="#s2">工業簿記の本質 — なぜ商業簿記では足りないのか</a></li>
+      <li><a href="#s3">原価計算基準と、そこでいう「原価」</a></li>
+      <li><a href="#s4">原価の分類 ① 実際原価と予定原価</a></li>
+      <li><a href="#s5">原価の分類 ② 変動費と固定費</a></li>
+      <li><a href="#s6">原価の分類 ③ 製品原価と期間原価</a></li>
+      <li><a href="#s7">原価の分類 ④ 全部原価と直接（変動）原価</a></li>
+      <li><a href="#s8">分類の軸を1枚に重ねる</a></li>
+      <li><a href="#s9">原価計算の目的と種類</a></li>
+      <li><a href="#s10">原価計算の3手続 — 11週間の骨格</a></li>
+      <li><a href="#s11">原価計算単位と原価計算期間</a></li>
+      <li><a href="#s12">工業簿記の構造 — 帳簿・決算・財務諸表</a></li>
+      <li><a href="#s13">ドリル</a></li>
+      <li><a href="#s14">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>この単元の位置 — 分類は何のためにあるのか</h2>
+
+  <p>この単元には、新しい計算がほとんど出てきません。出てくるのは<strong>分類</strong>ばかりです。実際原価と予定原価、変動費と固定費、製品原価と期間原価、全部原価と直接原価。用語だけを眺めると、覚えることが多いわりに手が動かず、いちばん退屈になりやすい場所です。</p>
+
+  <p>それでも最初にここを通すのは、<mark>これらの分類が「あとで学ぶ計算のスイッチ」だから</mark>です。工業簿記では、同じ工場・同じ製品を相手にしていても、<strong>目的が違えば計算方法が変わります</strong>。どの計算方法を使うかを決めているのが、この単元で扱う分類です。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>この単元で覚える分類</th><th>あとでこの判断に使う</th><th class="nowrap">使う週</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>実際原価／予定原価</strong></td>
+        <td>製造間接費を実際発生額で配賦するのか、あらかじめ決めた率で配賦するのか。予定を使うなら差異が出るので、その差異を分析する</td>
+        <td class="nowrap">W3・W6</td>
+      </tr>
+      <tr>
+        <td><strong>変動費／固定費</strong></td>
+        <td>製造間接費の予算を変動予算で組むのか固定予算で組むのか。何個売れば赤字にならないか（損益分岐点）を求める</td>
+        <td class="nowrap">W3・W6・W7</td>
+      </tr>
+      <tr>
+        <td><strong>製品原価／期間原価</strong></td>
+        <td>その費用を仕掛品・製品に乗せて資産として繰り越すのか、当月の費用として損益に落とすのか</td>
+        <td class="nowrap">W1〜W8</td>
+      </tr>
+      <tr>
+        <td><strong>全部原価／直接原価</strong></td>
+        <td>固定製造原価を製品原価に含めるのか外すのか。外した場合、外部報告用の利益に戻すための固定費調整が要る</td>
+        <td class="nowrap">W7</td>
+      </tr>
+      <tr>
+        <td><strong>個別原価計算／総合原価計算</strong></td>
+        <td>製造指図書ごとに原価を集計するのか、1か月の生産量で割るのか。第4問(2)でどちらの解き方に入るかがこれで決まる</td>
+        <td class="nowrap">W4・W5</td>
+      </tr>
+      <tr>
+        <td><strong>費目別／部門別／製品別</strong></td>
+        <td>いま計算しているのが原価計算の第何段階か。問題文の情報がどの段階のものかを見分ける</td>
+        <td class="nowrap">W1〜W5</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">読み方の指示</span>
+    <p>以降、分類が出てくるたびに<strong>「この分類は、どの判断に使うのか」</strong>を明示します。分類の名前だけを覚えようとせず、右側の「何を判断するのか」とセットで頭に入れてください。本番で問われるのは名前ではなく判断のほうです。</p>
+  </div>
+
+  <p>もう一つ、この単元は<strong>地図</strong>でもあります。Phase 0 で描けるようになった勘定連絡図は「原価がどこを流れるか」の図でした。この単元では、そこに<strong>「どの順番で計算していくか」</strong>という手順（費目別 → 部門別 → 製品別）を重ねます。この手順が、工業簿記の11週間の進み方そのものです。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>工業簿記の本質 — なぜ商業簿記では足りないのか</h2>
+
+  <h3>商業と工業の、決定的な違い</h3>
+
+  <p>八百屋を思い浮かべてください。100円で仕入れたトマトを150円で売る。<strong>仕入れたものと売ったものが同じ</strong>です。だから売上原価は、仕入伝票を見れば分かります。3級で「売上原価 ＝ 期首商品 ＋ 当期仕入 − 期末商品」と計算できたのは、仕入れた金額がそのまま原価だったからです。</p>
+
+  <p>今度はパン工場です。小麦粉を仕入れます。しかし<strong>売るのは小麦粉ではありません</strong>。小麦粉に、酵母を混ぜ、人が捏ね、オーブンで焼き、あんパンにして売ります。ここで「あんパン1個の原価はいくらか」と聞かれたとき、仕入伝票のどこを見ても答えは書いていません。</p>
+
+  <div class="term">
+    <span class="term__w">工業経営の特質</span><span class="term__r">こうぎょうけいえいのとくしつ</span>
+    <p style="margin-bottom:0">仕入れたものを<strong>そのまま売るのではなく、社内で加工して別のものに変えてから売る</strong>こと。買った時点の金額と売るモノとが対応しなくなるため、社内で何がいくら消費されたかを自分で集計しないと、売ったものの原価が分かりません。</p>
+  </div>
+
+  <p>つまり工業経営では、<mark>原価が会社の内部で作られる</mark>。外から来る証憑（請求書・領収書）を写すだけでは、製品1個の原価にたどりつきません。だから商業簿記の帳簿の上に、<strong>「社内で何がいくら消費され、どの製品に乗ったか」を追いかける仕組み</strong>を足す必要があります。これが原価計算であり、それを帳簿に組み込んだものが工業簿記です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">工業簿記と原価計算の関係</span>
+    <p>この2つは、別々のものではありません。<strong>原価計算が「いくらか」を計算し、工業簿記がその結果を勘定に記録する。</strong>Phase 0 で描いた勘定連絡図が工業簿記の側、この単元以降で扱う配賦計算や完成品原価の計算が原価計算の側です。試験でも両者は一体で問われます。第4問(1)の仕訳は工業簿記、第4問(2)の総合問題は原価計算が主役、という程度の役割分担です。</p>
+  </div>
+
+  <h3>責任センター — なぜ部門ごとに原価を集めるのか</h3>
+
+  <p>工場の電気代が先月より20万円増えたとします。社長が「なぜだ」と聞いたとき、「工場全体で増えました」としか答えられなければ、打つ手がありません。<strong>切削部門で増えたのか、組立部門で増えたのか</strong>が分かって、はじめて誰に何を聞けばいいかが決まります。</p>
+
+  <p>そこで工場を、原価の発生を管理できる単位に区切ります。この単位を<strong>原価中心点（原価責任単位）</strong>といい、区切られた組織単位一般を<strong>責任センター</strong>と呼びます。</p>
+
+  <div class="term">
+    <span class="term__w">原価中心点・原価責任単位</span><span class="term__r">げんかちゅうしんてん・げんかせきにんたんい</span>
+    <p style="margin-bottom:0">原価の発生を跡づけ、その責任を負う人を特定できる組織上の区分。切削部門・組立部門といった製造部門、動力部門・修繕部門といった補助部門がこれにあたります。「この部門の原価は、この部門の管理者の責任」と対応づけるための単位です。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">これが W4「部門別計算」の存在理由</span>
+    <p>製品の原価を計算するだけなら、工場全体の製造間接費をまとめて1つの率で配賦すればよく、部門に分ける必要はありません。それでも部門別計算をするのは、<strong>①原価の管理責任を部門ごとにはっきりさせるため</strong>と、<strong>②部門ごとの性格の違いを配賦に反映して製品原価を正確にするため</strong>です（機械中心の切削部門と、人手中心の組立部門では、間接費のかかり方が違う）。</p>
+    <p>W4で「なぜわざわざ部門に分けるのか」と感じたら、ここに戻ってきてください。答えは<strong>責任の所在</strong>です。</p>
+  </div>
+
+  <h3>完全工業簿記と商的工業簿記</h3>
+
+  <p>「工場を持つ会社の帳簿」といっても、精密さには段階があります。出題区分表は工業簿記を2種類に分けています。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">工業簿記の種類 ①</div>
+      <p style="margin-top:0"><strong>完全工業簿記</strong></p>
+      <p class="small">原価計算の仕組みが帳簿と<strong>結合している</strong>形。材料・仕掛品・製品・製造間接費といった勘定が帳簿の中に置かれ、原価計算の結果がそのまま勘定記入になります。Phase 0 で描いた勘定連絡図は、完全工業簿記の姿そのものです。</p>
+      <p class="small" style="margin-bottom:0">月末に、帳簿から製品1個の原価も、月末仕掛品の金額も出てきます。<strong>2級で扱うのは、原則としてこちらです。</strong></p>
+    </div>
+    <div class="card">
+      <div class="card__label">工業簿記の種類 ②</div>
+      <p style="margin-top:0"><strong>商的工業簿記</strong></p>
+      <p class="small">原価計算の仕組みを帳簿に組み込まず、<strong>商業簿記と同じやり方で製造業を記録する</strong>形。材料も賃金も経費も、発生したときにそのまま費用として記録しておき、<strong>期末に棚卸をして</strong>、残っている材料・仕掛品・製品を差し引くことで当期の製造原価を逆算します。</p>
+      <p class="small" style="margin-bottom:0">3級の「売上原価 ＝ 期首 ＋ 当期仕入 − 期末」と同じ発想を、製造業に当てはめたものです。手間はかかりませんが、<strong>期中に製品1個の原価が分かりません</strong>。小規模な工場向けの簡便法です。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2つを分ける決め手</span>
+    <p><strong>原価計算の機構が帳簿と結合しているかどうか</strong>、言いかえれば<strong>期中に製品原価が帳簿から出てくるか、期末の棚卸で推定するか</strong>です。「完全＝細かい／商的＝ざっくり」という語感で覚えると、判定を問われたときに根拠を書けません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>原価計算基準と、そこでいう「原価」</h2>
+
+  <h3>解答の拠り所がどこにあるか</h3>
+
+  <p>「本社の役員給与は製造原価に入りますか」と聞かれたとき、感覚で答えるわけにはいきません。会社ごとに答えが違っては、財務諸表を比べられないからです。日本には、この判断の基準となる文書があります。</p>
+
+  <div class="term">
+    <span class="term__w">原価計算基準</span><span class="term__r">げんかけいさんきじゅん</span>
+    <p style="margin-bottom:0"><strong>1962年（昭和37年）に大蔵省企業会計審議会が設定した</strong>、原価計算の実践基準。当時の日本の実務で慣行として行われていたやり方の中から、一般に公正妥当と認められるところを要約したものです。法律ではありませんが、企業会計原則の一部を構成する位置づけにあり、<strong>簿記検定の解答もこの基準に従います</strong>。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「実務の慣行を要約した」という性格</span>
+    <p>この一文は覚える価値があります。原価計算基準は、学者が理想の計算方法を設計して押しつけたものではなく、<strong>すでに現場で行われていたやり方を集めて整理したもの</strong>です。だから「ある目的にはこの方法、別の目的には別の方法」という具合に、複数のやり方を並べて認めています。工業簿記に「実際原価計算と標準原価計算」「個別原価計算と総合原価計算」「全部原価計算と直接原価計算」と選択肢が多いのは、この性格の反映です。<strong>どれか1つが正解なのではなく、目的によって使い分ける</strong>——この単元で分類を扱う理由もここにあります。</p>
+  </div>
+
+  <h3>原価計算基準がいう「原価」の要件</h3>
+
+  <p>Phase 0 で、工場で発生したものが製造原価、本社で発生したものが販売費及び一般管理費、そして<strong>そもそも原価に入らないもの（非原価項目）</strong>がある、という区別を確認しました。ここでは、その境目を引いている条件のほうを見ます。原価計算基準は、原価を次の4つの性質を持つものとしています。</p>
+
+  <ol class="steps">
+    <li><strong>経済価値の消費である</strong>モノやサービスが実際に使われて減ったこと。買っただけ・持っているだけでは原価になりません。材料は「仕入れた分」ではなく「消費した分」が原価になる、という Phase 0 の話がこれです。</li>
+    <li><strong>給付に転嫁される価値である</strong>その消費が、製品やサービス（給付）を生み出すことに向けられていること。作ることと無関係な支出は原価になりません。</li>
+    <li><strong>経営目的に関連したものである</strong>会社の本来の営みである、製造・販売という活動に関わっていること。財務活動（資金の調達・運用）から生じるものは、本来の営みの外にあるので原価に入りません。</li>
+    <li><strong>正常なものである</strong>通常の状態で生じるもの。異常な事態から生じたものは原価に入りません。</li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">出題されるのは、3番目と4番目の要件を外れるもの</span>
+    <p>非原価項目として問われるのは、ほぼこの2つの要件に引っかかるものです。</p>
+    <p><strong>経営目的に関連しない</strong>——支払利息、社債利息、有価証券の売却損など、<strong>財務活動から生じるもの</strong>。工場の建設資金の借入利息であっても、原価には入りません。</p>
+    <p><strong>正常でない</strong>——火災・風水害による損失、盗難損失、<strong>異常な</strong>仕損・減損、臨時多額の退職給付、遊休設備の減価償却費など。ここで効くのが<strong>「異常な」という一言</strong>です。<mark>正常な仕損・減損は原価に含まれ、異常な仕損・減損は非原価項目になります。</mark>同じ「仕損」でも扱いが正反対なので、問題文の「異常な」「正常な」を必ず確認してください（W5の総合原価計算で本格的に扱います）。</p>
+  </div>
+
+  <p>この4要件を満たしたものが「原価」であり、そのうち製造活動に関わるものが製造原価、販売・一般管理に関わるものが販売費及び一般管理費です。製造原価と販売費及び一般管理費を合計したものを<strong>総原価</strong>といいます。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>原価の分類 ① 実際原価と予定原価</h2>
+
+  <h3>実際にかかった金額を待っていると、月末まで何も分からない</h3>
+
+  <p>製造間接費（工場の電気代、機械の減価償却費、工場長の給料…）を思い出してください。<strong>今月の電気代がいくらだったかは、月末に検針票が来るまで分かりません</strong>。ところが製品は毎日完成し、毎日出荷されます。実際の金額が確定するのを待っていたら、月の途中で完成した製品の原価を計算できず、いくらで売るかも決められません。</p>
+
+  <p>そこで「実際にいくらかかったか」ではなく「<strong>だいたいこれくらいかかるはず</strong>」という数字をあらかじめ決めておいて、それを使って計算します。この2つを区別するのが実際原価と予定原価です。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">計算に使う数字の種類 ①</div>
+      <p style="margin-top:0"><strong>実際原価</strong></p>
+      <p class="small">実際に消費した量に、実際の価格を掛けて計算した原価。<strong>事実の記録</strong>です。</p>
+      <p class="small" style="margin-bottom:0">正確ですが、月末にならないと確定しません。また「今月は電気代が高かった」という結果が出るだけで、それが高いのか安いのか、誰の責任なのかは分かりません。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">計算に使う数字の種類 ②</div>
+      <p style="margin-top:0"><strong>予定原価</strong></p>
+      <p class="small">将来かかるであろう原価として、あらかじめ決めておいた原価。<strong>基準として使う数字</strong>です。</p>
+      <p class="small" style="margin-bottom:0">月の途中でも計算できます。さらに、実際の金額が出たときに<strong>予定と比べることで、差の原因を追及できます</strong>。</p>
+    </div>
+  </div>
+
+  <h3>予定原価は2種類ある</h3>
+
+  <p>予定原価は、その決め方によってさらに2つに分かれます。<strong>この区別が W3 と W6 の分かれ道です。</strong></p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>予定原価の種類</th><th>どうやって決めるか</th><th>何のために使うか</th><th class="nowrap">学ぶ週</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>見積原価</strong><br><span class="small muted">みつもりげんか</span></td>
+        <td>過去の実績をもとに「たぶんこれくらいになるだろう」と<strong>予想した</strong>原価。過去の平均を延長した数字なので、過去に無駄があればその無駄も引き継ぎます</td>
+        <td>製品原価の計算を早く済ませる。価格の見積り。<strong>製造間接費の予定配賦</strong>で使う予定配賦率がこれ</td>
+        <td class="nowrap">W3</td>
+      </tr>
+      <tr>
+        <td><strong>標準原価</strong><br><span class="small muted">ひょうじゅんげんか</span></td>
+        <td>科学的・統計的な調査にもとづいて「<strong>こうあるべきだ</strong>」と設定した目標としての原価。無駄を含まない、達成すべき水準として作ります</td>
+        <td><strong>原価管理</strong>。実際原価と比べて差異を出し、なぜ目標から外れたのかを分析して現場に改善を促す</td>
+        <td class="nowrap">W6</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「予想」と「目標」の違いが、そのまま用途の違いになる</span>
+    <p>見積原価は<strong>予想</strong>です。当たっていればよく、外れたら「予想が甘かった」で終わります。標準原価は<strong>目標</strong>です。外れたときに「なぜ達成できなかったのか」を問えます。だから原価管理に使えるのは標準原価のほうです。</p>
+    <p>W6の標準原価計算で、差異を価格差異と数量差異に分解し、時間差異・能率差異と名前をつけて追いかけるのは、<mark>目標との差だからこそ、原因を分けて追及する意味がある</mark>からです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">予定原価は「原価計算をサボるための概算」ではない</span>
+    <p>予定原価を使って計算しても、<strong>実際にかかった金額の記録をやめるわけではありません。</strong>実際発生額も並行して記録し、予定で計算した額との差を<strong>原価差異</strong>として把握します。W3の製造間接費配賦差異も、W6の標準原価差異も、この構造です。</p>
+    <p>そして期末には、この差異を売上原価などに賦課して、<strong>最終的には実際原価にもとづいた財務諸表に戻します</strong>。予定で計算しっぱなしにはできません。財務諸表は実際原価で作るのが原則だからです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>原価の分類 ② 変動費と固定費</h2>
+
+  <h3>「たくさん作れば1個あたりは安くなる」の正体</h3>
+
+  <p>パン屋で、あんパンを100個作る日と200個作る日を比べます。</p>
+
+  <ul>
+    <li><strong>小麦粉とあんこの代金</strong>は、200個作れば約2倍になります。1個作るのに一定量が要るからです</li>
+    <li><strong>店舗の家賃</strong>は、100個でも200個でも同じ金額です。作らない日でも発生します</li>
+  </ul>
+
+  <p>この違いが変動費と固定費です。分ける基準は<strong>操業度</strong>——どれだけ稼働したかを表す数値（生産量、直接作業時間、機械運転時間など）です。</p>
+
+  <div class="term">
+    <span class="term__w">変動費・固定費</span><span class="term__r">へんどうひ・こていひ</span>
+    <p><strong>変動費</strong>：操業度の増減に応じて、総額が比例して増減する原価。直接材料費、出来高払いの賃金、機械の動力費など。</p>
+    <p style="margin-bottom:0"><strong>固定費</strong>：操業度が増減しても、総額が変わらない原価。工場建物・機械の減価償却費、工場の火災保険料、月給制の工場長の給料、定額部分の賃借料など。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 300" style="width:100%;height:auto;min-width:700px" role="img" aria-label="変動費と固定費の、総額と単位あたりのグラフ">
+      <g font-size="13" fill="var(--text)">
+        <!-- 左：総額 -->
+        <text x="30" y="22" font-size="14" font-weight="700" fill="var(--muted)">総額で見る</text>
+        <line x1="60" y1="60" x2="60" y2="240" stroke="var(--border-2)" stroke-width="1.5"/>
+        <line x1="60" y1="240" x2="380" y2="240" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="34" y="56" font-size="12" fill="var(--muted)">原価</text>
+        <text x="330" y="262" font-size="12" fill="var(--muted)">操業度</text>
+        <!-- 変動費線 -->
+        <line x1="60" y1="240" x2="360" y2="90" stroke="var(--debit)" stroke-width="2.5"/>
+        <text x="286" y="86" font-size="13" fill="var(--debit)" font-weight="700">変動費</text>
+        <text x="200" y="182" font-size="11.5" fill="var(--muted)">作るほど増える</text>
+        <!-- 固定費線 -->
+        <line x1="60" y1="150" x2="360" y2="150" stroke="var(--credit)" stroke-width="2.5"/>
+        <text x="300" y="142" font-size="13" fill="var(--credit)" font-weight="700">固定費</text>
+        <text x="120" y="170" font-size="11.5" fill="var(--muted)">作らなくても発生する</text>
+
+        <!-- 右：単位あたり -->
+        <text x="480" y="22" font-size="14" font-weight="700" fill="var(--muted)">製品1個あたりで見る</text>
+        <line x1="510" y1="60" x2="510" y2="240" stroke="var(--border-2)" stroke-width="1.5"/>
+        <line x1="510" y1="240" x2="830" y2="240" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="470" y="56" font-size="12" fill="var(--muted)">単価</text>
+        <text x="780" y="262" font-size="12" fill="var(--muted)">操業度</text>
+        <!-- 変動費：水平 -->
+        <line x1="510" y1="120" x2="810" y2="120" stroke="var(--debit)" stroke-width="2.5"/>
+        <text x="742" y="112" font-size="13" fill="var(--debit)" font-weight="700">変動費</text>
+        <text x="560" y="140" font-size="11.5" fill="var(--muted)">1個あたりは一定</text>
+        <!-- 固定費：反比例 -->
+        <path d="M 528 80 Q 600 210 810 228" fill="none" stroke="var(--credit)" stroke-width="2.5"/>
+        <text x="700" y="212" font-size="13" fill="var(--credit)" font-weight="700">固定費</text>
+        <text x="556" y="70" font-size="11.5" fill="var(--muted)">作るほど1個あたりは下がる</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">同じ原価でも、総額で見るか1個あたりで見るかでグラフの形が逆転する。「たくさん作れば安くなる」は右側の固定費の線のこと。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">総額の話か、単位あたりの話かを取り違えない</span>
+    <p>変動費は「操業度に比例して増える」、固定費は「操業度が変わっても一定」。<strong>これはどちらも総額の話です。</strong>製品1個あたりで見ると、<mark>変動費は一定、固定費は操業度が増えるほど下がる</mark>——ちょうど逆になります。</p>
+    <p>問題文が「変動費は一定である」と述べているとき、それが総額の話なら誤り、単位あたりの話なら正しい。<strong>どちらの話をしているのかを毎回確かめてください。</strong>W7のCVP分析で、この取り違えは致命的な誤答になります。</p>
+  </div>
+
+  <h3>きれいに2つに分かれない原価がある</h3>
+
+  <p>実際の原価には、固定費と変動費の両方の性格を持つものがあります。基本料金＋従量料金の電気代が典型です。使わなくても基本料金は発生し、使えば使うほど従量料金が増えます。これを<strong>準変動費</strong>といいます。また、一定の範囲では固定だが、その範囲を超えると段階的に跳ね上がるものを<strong>準固定費</strong>といいます（監督者を1人増やせば人件費が階段状に上がる、など）。</p>
+
+  <p>ただし2級の計算問題では、これらを<strong>変動費部分と固定費部分に分解した状態で与えられる</strong>のがふつうです。「変動費率は1時間あたり300円、月間固定費は200,000円」という形です。分解の作業そのものを問われることは多くありません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この分類が効く場所</span>
+    <p><strong>W3の製造間接費予算</strong>——固定予算は「操業度がどうであれ予算はこの額」と決める方式、変動予算は「変動費率×操業度 ＋ 固定費」で操業度に応じて予算を作る方式です。両者の違いはそのまま変動費と固定費の分け方から来ています。差異分析で予算差異と操業度差異に分けられるのも、原価が2つの性格に分かれているからです。</p>
+    <p><strong>W7のCVP分析</strong>——売上高から変動費を引いて貢献利益を出し、そこから固定費を引いて営業利益を求めます。何個売れば固定費を回収できるか（損益分岐点）という問いは、原価を変動費と固定費に分けていなければ立てられません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>原価の分類 ③ 製品原価と期間原価</h2>
+
+  <h3>今月使ったお金が、今月の費用になるとは限らない</h3>
+
+  <p>今月、材料を50万円ぶん消費して製品を作りました。しかし1個も売れませんでした。この50万円は、今月の費用でしょうか。</p>
+
+  <p>違います。<strong>製品は倉庫にあります。</strong>売れていない以上、収益も上がっていません。ここで50万円を今月の費用にしてしまうと、収益ゼロ・費用50万円で大赤字になり、来月それが売れたときには収益だけが立って大黒字になります。実態を表していません。</p>
+
+  <p>そこで、その原価を<strong>製品にくっつけて資産として繰り越すのか、その月の費用として落とすのか</strong>で区別します。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">原価の落とし方 ①</div>
+      <p style="margin-top:0"><strong>製品原価</strong></p>
+      <p class="small">一定単位の製品に集計される原価。<strong>製品と一緒に動きます。</strong>仕掛品・製品として貸借対照表に資産計上され、売れた月にはじめて売上原価という費用になります。</p>
+      <p class="small" style="margin-bottom:0">勘定連絡図でいえば、<strong>材料・賃金・経費 → 仕掛品 → 製品 → 売上原価</strong>という長い道を通るもの。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">原価の落とし方 ②</div>
+      <p style="margin-top:0"><strong>期間原価</strong></p>
+      <p class="small">一定期間における発生額を、その期間の収益に対応させる原価。<strong>製品にくっつきません。</strong>発生した月に、そのまま費用になります。</p>
+      <p class="small" style="margin-bottom:0">勘定連絡図でいえば、長い道を通らず<strong>月次損益へ直行する</strong>もの。販売費及び一般管理費が代表例です。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ販売費は製品にくっつけないのか</span>
+    <p>費用収益対応の原則からです。製造原価は「その製品を作るためにかかったもの」なので、その製品が売れた月の売上と対応させるのが筋です。一方、広告宣伝費や本社の家賃は<strong>特定の製品と結びつきません</strong>。今月の広告が来月どの製品を何個売ったかを跡づけられない以上、期間に対応させるほかありません。</p>
+    <p><strong>製品原価か期間原価かは、原価の性質そのものではなく「どの収益に対応させるか」で決まります。</strong>この考え方が、次の節の全部原価と直接原価につながります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「製造原価か販管費か」と「製品原価か期間原価か」は別の軸</span>
+    <p>実務上ほとんど重なりますが、質問が違います。<strong>製造原価／販管費</strong>は<mark>どこで発生したか</mark>（工場か本社か）を問う分類。<strong>製品原価／期間原価</strong>は<mark>どの期間の費用として落とすか</mark>を問う分類です。</p>
+    <p>この2つがずれるのが、次に扱う<strong>直接原価計算</strong>です。直接原価計算では、固定製造原価は工場で発生した製造原価でありながら、製品にくっつけず期間原価として扱います。<strong>製造原価だから製品原価だ、と自動的に決めつけないでください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>原価の分類 ④ 全部原価と直接（変動）原価</h2>
+
+  <h3>作りだめすると、利益が増えてしまう</h3>
+
+  <p>工場長が今月の利益を良く見せたいと考えたとします。売上を増やすのは大変ですが、<strong>製品を作りだめする</strong>ことならできます。なぜそれで利益が増えるのか。</p>
+
+  <p>機械の減価償却費のような固定製造原価は、作っても作らなくても発生します。この固定費を製品原価に含める計算では、<strong>作った製品の個数で頭割り</strong>されます。作りだめすれば、そのうち売れずに倉庫に残った分の固定費は、製品という資産として繰り越されて<strong>今月の費用から外れます</strong>。売上が同じでも、たくさん作った月のほうが利益が大きく出るのです。</p>
+
+  <p>この現象を避け、経営判断に使える利益を出すために、固定製造原価を製品に含めない計算方法があります。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">固定製造原価の扱い ①</div>
+      <p style="margin-top:0"><strong>全部原価</strong></p>
+      <p class="small">製造原価の<strong>全部</strong>——直接材料費・直接労務費・直接経費・製造間接費（変動費も固定費も）——を製品原価とする考え方。</p>
+      <p class="small" style="margin-bottom:0">固定製造原価も製品にくっついて仕掛品・製品に入ります。<strong>外部に公表する財務諸表は、この全部原価計算で作らなければなりません。</strong>制度会計上の原則です。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">固定製造原価の扱い ②</div>
+      <p style="margin-top:0"><strong>直接原価（変動原価）</strong></p>
+      <p class="small"><strong>変動製造原価だけ</strong>を製品原価とし、<strong>固定製造原価は発生した期間の費用（期間原価）として全額落とす</strong>考え方。</p>
+      <p class="small" style="margin-bottom:0">生産量に利益が左右されないので、<strong>社内の経営管理・意思決定に使います</strong>。外部公表用には使えません。</p>
+    </div>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 320" style="width:100%;height:auto;min-width:720px" role="img" aria-label="全部原価計算と直接原価計算で、固定製造原価の行き先が変わることを示す図">
+      <g font-size="13" fill="var(--text)">
+        <!-- 見出し -->
+        <text x="20" y="20" font-size="14" font-weight="700" fill="var(--muted)">全部原価計算</text>
+        <text x="470" y="20" font-size="14" font-weight="700" fill="var(--muted)">直接原価計算</text>
+        <line x1="440" y1="8" x2="440" y2="310" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4"/>
+
+        <!-- 左：全部原価 -->
+        <rect x="20" y="40" width="130" height="52" rx="6" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="1.5"/>
+        <text x="85" y="62" text-anchor="middle" font-size="12.5" fill="var(--debit)" font-weight="700">変動製造原価</text>
+        <text x="85" y="80" text-anchor="middle" font-size="11" fill="var(--muted)">直接材料費など</text>
+
+        <rect x="20" y="106" width="130" height="52" rx="6" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="85" y="128" text-anchor="middle" font-size="12.5" fill="var(--credit)" font-weight="700">固定製造原価</text>
+        <text x="85" y="146" text-anchor="middle" font-size="11" fill="var(--muted)">機械の減価償却費など</text>
+
+        <rect x="20" y="200" width="130" height="52" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="85" y="222" text-anchor="middle" font-size="12.5" font-weight="700">販売費・一般管理費</text>
+        <text x="85" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">本社で発生</text>
+
+        <path d="M 152 66 L 218 90" fill="none" stroke="var(--debit)" stroke-width="2" marker-end="url(#ar1)"/>
+        <path d="M 152 132 L 218 106" fill="none" stroke="var(--credit)" stroke-width="2" marker-end="url(#ar1)"/>
+        <rect x="222" y="72" width="120" height="52" rx="6" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="282" y="94" text-anchor="middle" font-size="12.5" fill="var(--accent)" font-weight="700">製品原価</text>
+        <text x="282" y="112" text-anchor="middle" font-size="11" fill="var(--muted)">仕掛品・製品へ</text>
+
+        <path d="M 344 98 L 400 98" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar1)"/>
+        <text x="372" y="90" text-anchor="middle" font-size="10.5" fill="var(--muted)">売れた分</text>
+        <path d="M 152 226 L 400 226" fill="none" stroke="var(--border-2)" stroke-width="2" marker-end="url(#ar1)"/>
+        <text x="276" y="218" text-anchor="middle" font-size="10.5" fill="var(--muted)">期間原価としてそのまま</text>
+        <text x="404" y="102" font-size="12" font-weight="700">損益</text>
+        <text x="404" y="230" font-size="12" font-weight="700">損益</text>
+
+        <!-- 右：直接原価 -->
+        <rect x="470" y="40" width="130" height="52" rx="6" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="1.5"/>
+        <text x="535" y="62" text-anchor="middle" font-size="12.5" fill="var(--debit)" font-weight="700">変動製造原価</text>
+        <text x="535" y="80" text-anchor="middle" font-size="11" fill="var(--muted)">直接材料費など</text>
+
+        <rect x="470" y="106" width="130" height="52" rx="6" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="535" y="128" text-anchor="middle" font-size="12.5" fill="var(--credit)" font-weight="700">固定製造原価</text>
+        <text x="535" y="146" text-anchor="middle" font-size="11" fill="var(--muted)">機械の減価償却費など</text>
+
+        <rect x="470" y="200" width="130" height="52" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="535" y="222" text-anchor="middle" font-size="12.5" font-weight="700">販売費・一般管理費</text>
+        <text x="535" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">本社で発生</text>
+
+        <path d="M 602 66 L 668 76" fill="none" stroke="var(--debit)" stroke-width="2" marker-end="url(#ar1)"/>
+        <rect x="672" y="52" width="120" height="52" rx="6" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="732" y="74" text-anchor="middle" font-size="12.5" fill="var(--accent)" font-weight="700">製品原価</text>
+        <text x="732" y="92" text-anchor="middle" font-size="11" fill="var(--muted)">仕掛品・製品へ</text>
+        <path d="M 794 78 L 840 78" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar1)"/>
+        <text x="820" y="70" text-anchor="middle" font-size="10.5" fill="var(--muted)">売れた分</text>
+
+        <path d="M 602 132 L 700 166 L 840 166" fill="none" stroke="var(--credit)" stroke-width="2.5" marker-end="url(#ar1)"/>
+        <text x="716" y="158" text-anchor="middle" font-size="11" fill="var(--credit)" font-weight="700">全額を期間原価に</text>
+        <path d="M 602 226 L 840 226" fill="none" stroke="var(--border-2)" stroke-width="2" marker-end="url(#ar1)"/>
+        <text x="726" y="218" text-anchor="middle" font-size="10.5" fill="var(--muted)">期間原価としてそのまま</text>
+        <text x="844" y="82" font-size="12" font-weight="700">損益</text>
+        <text x="844" y="170" font-size="12" font-weight="700">損益</text>
+        <text x="844" y="230" font-size="12" font-weight="700">損益</text>
+
+        <text x="20" y="286" font-size="12" fill="var(--muted)">固定製造原価が製品にくっつくので、売れ残れば</text>
+        <text x="20" y="304" font-size="12" fill="var(--muted)">資産として繰り越され、今月の費用から外れる</text>
+        <text x="470" y="286" font-size="12" fill="var(--muted)">固定製造原価は作った量・売れた量に関係なく</text>
+        <text x="470" y="304" font-size="12" fill="var(--muted)">全額が今月の費用になる</text>
+      </g>
+      <defs>
+        <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">違いは1点だけ。固定製造原価が、製品原価の箱に入るか、まっすぐ損益へ行くか。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">2つの利益が食い違うので、つなぎが要る</span>
+    <p>同じ月・同じ売上でも、全部原価計算の営業利益と直接原価計算の営業利益は一致しません。差の正体は、<strong>在庫（仕掛品・製品）に含まれる固定製造原価</strong>です。全部原価計算ではこれが資産に残り、直接原価計算では費用になっているからです。</p>
+    <p>社内では直接原価計算で判断し、外部公表用には全部原価計算の利益に直す。この直しの作業を<strong>固定費調整</strong>といいます。W7で扱います。<mark>ここで「固定製造原価をどちらに置くか」を理解しておくと、W7で公式を丸暗記せずに済みます。</mark></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「直接原価計算」の直接は、直接費の直接ではない</span>
+    <p><strong>直接原価計算で製品原価に含めるのは「直接費」ではなく「変動費」です。</strong>変動製造間接費は間接費ですが、変動費なので製品原価に含めます。逆に、固定的な直接労務費（月給制の直接工の賃金）は直接費ですが、固定費なので製品原価から外れます。</p>
+    <p>紛らわしいので<strong>変動原価計算</strong>とも呼ばれます。判断するときは「直接か間接か」ではなく<mark>「変動か固定か」</mark>で考えてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>分類の軸を1枚に重ねる</h2>
+
+  <p>ここまでで6つの分類が出そろいました。Phase 0 で扱った<strong>形態別分類</strong>（材料費・労務費・経費）と<strong>製品との関連による分類</strong>（直接費・間接費）を含めた全体です。重要なのは、<mark>これらが順番に適用される段階ではなく、同じ原価を同時に見る別々の切り口だ</mark>ということです。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>分類の軸</th><th>問うていること</th><th>分かれ方</th><th class="nowrap">主に使う週</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>形態別分類</strong><br><span class="small muted">Phase 0 既習</span></td>
+        <td>何を消費したか</td>
+        <td>材料費／労務費／経費</td>
+        <td class="nowrap">W1〜W2</td>
+      </tr>
+      <tr>
+        <td><strong>製品との関連</strong><br><span class="small muted">Phase 0 既習</span></td>
+        <td>どの製品のものか特定できるか</td>
+        <td>直接費／間接費</td>
+        <td class="nowrap">W1〜W4</td>
+      </tr>
+      <tr>
+        <td><strong>発生の場所と機能</strong><br><span class="small muted">Phase 0 既習</span></td>
+        <td>工場で発生したか、売る・運営するために発生したか</td>
+        <td>製造原価／販売費／一般管理費（合計が総原価）</td>
+        <td class="nowrap">W1・W8</td>
+      </tr>
+      <tr>
+        <td><strong>操業度との関係</strong></td>
+        <td>作る量が変われば総額が変わるか</td>
+        <td>変動費／固定費</td>
+        <td class="nowrap">W3・W6・W7</td>
+      </tr>
+      <tr>
+        <td><strong>計算に使う数字</strong></td>
+        <td>実際にかかった額か、あらかじめ決めた額か</td>
+        <td>実際原価／予定原価（見積原価・標準原価）</td>
+        <td class="nowrap">W3・W6</td>
+      </tr>
+      <tr>
+        <td><strong>収益への対応</strong></td>
+        <td>製品にくっつけて繰り越すか、その期の費用にするか</td>
+        <td>製品原価／期間原価</td>
+        <td class="nowrap">W1〜W8</td>
+      </tr>
+      <tr>
+        <td><strong>集計の範囲</strong></td>
+        <td>固定製造原価を製品原価に含めるか</td>
+        <td>全部原価／直接（変動）原価</td>
+        <td class="nowrap">W7</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>同じ原価が、同時にいくつもの名前を持つ</h3>
+
+  <p>ひとつの原価について、上の軸を全部当てはめると次のようになります。<strong>「直接材料費は変動費か」といった問いに答えられることが、この単元のゴールです。</strong></p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr>
+        <th>具体例</th>
+        <th>形態別</th>
+        <th>製品との関連</th>
+        <th>操業度</th>
+        <th>全部／直接原価計算での扱い</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>自動車のボディに使う<strong>鋼板</strong></td>
+        <td>材料費</td>
+        <td>直接費</td>
+        <td>変動費</td>
+        <td>どちらでも<strong>製品原価</strong></td>
+      </tr>
+      <tr>
+        <td>直接工の賃金<br><span class="small muted">出来高払い・直接作業時間ぶん</span></td>
+        <td>労務費</td>
+        <td>直接費</td>
+        <td>変動費</td>
+        <td>どちらでも<strong>製品原価</strong></td>
+      </tr>
+      <tr>
+        <td>機械の<strong>動力費</strong>（電力の従量部分）</td>
+        <td>経費</td>
+        <td>間接費</td>
+        <td>変動費</td>
+        <td>どちらでも<strong>製品原価</strong><br><span class="small muted">間接費だが変動費なので直接原価計算でも製品原価</span></td>
+      </tr>
+      <tr>
+        <td>工場長の給料（月給制）</td>
+        <td>労務費</td>
+        <td>間接費</td>
+        <td>固定費</td>
+        <td>全部＝製品原価／<strong>直接＝期間原価</strong></td>
+      </tr>
+      <tr>
+        <td>工場建物の減価償却費</td>
+        <td>経費</td>
+        <td>間接費</td>
+        <td>固定費</td>
+        <td>全部＝製品原価／<strong>直接＝期間原価</strong></td>
+      </tr>
+      <tr>
+        <td>本社建物の減価償却費</td>
+        <td colspan="3" class="center"><strong>製造原価ではない（一般管理費）</strong></td>
+        <td>どちらでも<strong>期間原価</strong></td>
+      </tr>
+      <tr>
+        <td>支払利息</td>
+        <td colspan="3" class="center"><strong>非原価項目（経営目的に関連しない）</strong></td>
+        <td>原価に入らない</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">表の読みどころ</span>
+    <p>3行目の<strong>動力費</strong>と4行目の<strong>工場長の給料</strong>を見比べてください。どちらも間接費（製造間接費）ですが、変動費か固定費かが違うため、直接原価計算での扱いが正反対になります。<strong>「間接費だから期間原価」ではありません。</strong></p>
+    <p>2行目の直接工の賃金も、出来高払いなら変動費ですが、月給制で作業量に関係なく一定額なら固定費です。<mark>同じ費目名でも、支払い方が変われば変動費か固定費かは変わります。</mark>問題文の条件を読んでください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>原価計算の目的と種類</h2>
+
+  <h3>原価計算は何のためにするのか</h3>
+
+  <p>原価計算の目的は1つではありません。原価計算基準は複数の目的を挙げており、<strong>目的が違えば、集計する範囲も使う数字も変わります</strong>。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>目的</th><th>内容</th><th>そのために使う計算</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>財務諸表作成目的</strong></td>
+        <td>損益計算書の売上原価と、貸借対照表の棚卸資産（材料・仕掛品・製品）の金額を出す。外部に公表するための数字</td>
+        <td>実際原価計算・<strong>全部原価計算</strong>が原則</td>
+      </tr>
+      <tr>
+        <td><strong>原価管理目的</strong></td>
+        <td>原価の無駄を発見し、現場に改善を促す。目標と実績の差を分析する</td>
+        <td><strong>標準原価計算</strong>、部門別計算</td>
+      </tr>
+      <tr>
+        <td><strong>予算管理目的</strong></td>
+        <td>予算を編成し、実績と比べて統制する</td>
+        <td>製造間接費予算（固定予算・変動予算）</td>
+      </tr>
+      <tr>
+        <td><strong>価格計算目的</strong></td>
+        <td>製品をいくらで売るかを決める材料にする</td>
+        <td>総原価（製造原価＋販売費及び一般管理費）の計算</td>
+      </tr>
+      <tr>
+        <td><strong>基本計画設定目的</strong></td>
+        <td>設備投資や生産量の決定など、経営の意思決定に役立てる</td>
+        <td><strong>直接原価計算</strong>、CVP分析</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ計算方法がこんなに多いのか、これで説明がつく</span>
+    <p>「どれが正しい原価計算か」という問いは立ちません。<strong>外部に報告するなら全部原価計算、社内で判断するなら直接原価計算。無駄を見つけたいなら標準原価計算、単に決算数値が欲しいなら実際原価計算。</strong>目的が方法を決めます。</p>
+    <p>問題文に「経営意思決定のため」「原価管理のため」と書いてあったら、それは<strong>どの計算方法を使えという指示</strong>です。読み飛ばさないでください。</p>
+  </div>
+
+  <h3>原価計算制度と、その外側</h3>
+
+  <p>原価計算基準は、原価計算を<strong>原価計算制度</strong>と、それ以外に分けています。</p>
+
+  <div class="term">
+    <span class="term__w">原価計算制度</span><span class="term__r">げんかけいさんせいど</span>
+    <p style="margin-bottom:0"><strong>財務会計の帳簿と有機的に結合し、常時継続的に行われる原価計算</strong>のこと。日々の記帳の一部として動き、その結果が財務諸表につながります。実際原価計算制度と標準原価計算制度があり、<strong>2級で扱うのはすべてこの原価計算制度の中の話です。</strong></p>
+  </div>
+
+  <p>これに対し、特定の意思決定のために臨時に行う原価の調査（設備を買い替えるべきか、この注文を受けるべきか、といった検討）は、帳簿とは切り離して随時行われます。こちらは制度の外側であり、2級の範囲外です。</p>
+
+  <h3>集計する範囲による分類</h3>
+
+  <p>どこまでの原価を集計するかで、3つの呼び方があります。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">集計範囲 ①</div>
+      <p style="margin-top:0"><strong>製造原価計算</strong></p>
+      <p class="small" style="margin-bottom:0">製造活動にかかった原価だけを集計する。工業簿記の中心。勘定連絡図の 材料・賃金・経費 → 仕掛品 → 製品 の部分。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">集計範囲 ②</div>
+      <p style="margin-top:0"><strong>営業費計算</strong></p>
+      <p class="small" style="margin-bottom:0">販売費と一般管理費（あわせて営業費）を集計する。製品を売り、会社を運営するためにかかった原価。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">集計範囲 ③</div>
+      <p style="margin-top:0"><strong>総原価計算</strong></p>
+      <p class="small" style="margin-bottom:0">製造原価と営業費を合計した<strong>総原価</strong>を計算する。「この製品をいくらで売れば儲かるか」を判断する材料になる。</p>
+    </div>
+  </div>
+
+  <h3>生産形態による分類 — 個別原価計算と総合原価計算</h3>
+
+  <p>これは<strong>第4問(2)でどちらの解き方に入るかを決める分類</strong>です。判断の決め手は<mark>何を作っている工場か</mark>です。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">生産形態 ①</div>
+      <p style="margin-top:0"><strong>個別原価計算</strong>　<span class="chip">W4</span></p>
+      <p class="small"><strong>受注生産</strong>の工場で使う。注文ごとに違うものを作るので、造船所、特注の機械メーカー、印刷所、建設業などが典型です。</p>
+      <p class="small">注文ごとに<strong>製造指図書</strong>を発行し、その番号（No.101、No.102…）ごとに原価を集計します。集計の表が<strong>原価計算表</strong>です。</p>
+      <p class="small" style="margin-bottom:0">1個ずつ中身が違うので、平均を取る意味がありません。<strong>指図書ごとの積み上げ</strong>で計算します。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">生産形態 ②</div>
+      <p style="margin-top:0"><strong>総合原価計算</strong>　<span class="chip">W5</span></p>
+      <p class="small"><strong>同種製品の大量見込生産</strong>の工場で使う。製菓工場、飲料工場、製紙工場、化学工場などが典型です。</p>
+      <p class="small">作っているものが全部同じなので、指図書ごとに分ける意味がありません。<strong>1か月ぶんの原価をまとめて集計し、その月の生産量で割って1個あたりの原価を出します。</strong></p>
+      <p class="small" style="margin-bottom:0">作りかけの仕掛品をどう評価するかが論点になり、平均法・先入先出法や完成品換算量が出てきます。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">問題文のどこで見分けるか</span>
+    <p><strong>「製造指図書No.101」「受注」「特注」</strong>という言葉が出たら個別原価計算。<strong>「月初仕掛品」「当月投入」「加工進捗度」「完成品換算量」</strong>が出たら総合原価計算です。第4問(2)は最初の数行でどちらかが判別できます。<mark>解き方を選び間違えると全滅するので、書き出す前に必ず確認してください。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>原価計算の3手続 — 11週間の骨格</h2>
+
+  <p>ここがこの単元でいちばん重要な節です。原価計算は、<strong>次の3つの段階を、この順に進みます</strong>。</p>
+
+  <ol class="steps">
+    <li><strong>費目別計算 — 何にいくら使ったか</strong>一定期間に消費した原価を、材料費・労務費・経費といった費目ごとに集計します。同時に、それぞれを直接費と間接費に分けます。<strong>原価計算の出発点</strong>であり、ここで拾い損ねた原価は以降どの段階にも現れません。<span class="chip">W1〜W3</span></li>
+    <li><strong>部門別計算 — どの部門で使ったか</strong>費目別計算で把握した<strong>製造間接費を</strong>、切削部門・組立部門といった原価部門ごとに集計します。補助部門（動力部門・修繕部門など）の費用は製造部門へ配賦します。原価の管理責任を明らかにし、部門ごとの配賦率で製品原価をより正確にするための段階です。<strong>製品原価の計算だけが目的なら省略できる</strong>ため、問題によっては出てきません。<span class="chip">W4</span></li>
+    <li><strong>製品別計算 — どの製品にいくらかかったか</strong>集計した原価を、製品単位に割り当てて<strong>製品1個あたりの原価</strong>を計算します。個別原価計算なら製造指図書ごとに、総合原価計算なら生産量で割って求めます。この段階の出口が、完成品原価と月末仕掛品原価です。<span class="chip">W4〜W5</span></li>
+  </ol>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 340" style="width:100%;height:auto;min-width:720px" role="img" aria-label="原価計算の3手続を勘定連絡図に重ねた図">
+      <g font-size="13" fill="var(--text)">
+        <!-- 段階の帯 -->
+        <rect x="20" y="34" width="220" height="250" rx="8" fill="var(--accent-2)" opacity="0.5"/>
+        <rect x="252" y="34" width="220" height="250" rx="8" fill="var(--warn-bg)" opacity="0.7"/>
+        <rect x="484" y="34" width="376" height="250" rx="8" fill="var(--ok-bg)" opacity="0.7"/>
+        <text x="130" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--accent)">① 費目別計算</text>
+        <text x="130" y="72" text-anchor="middle" font-size="11" fill="var(--muted)">何にいくら使ったか　W1〜W3</text>
+        <text x="362" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--warn)">② 部門別計算</text>
+        <text x="362" y="72" text-anchor="middle" font-size="11" fill="var(--muted)">どの部門で使ったか　W4</text>
+        <text x="672" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ok)">③ 製品別計算</text>
+        <text x="672" y="72" text-anchor="middle" font-size="11" fill="var(--muted)">どの製品にいくらか　W4〜W5</text>
+
+        <!-- 費目別：3つの箱 -->
+        <rect x="36" y="92" width="106" height="40" rx="5" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="89" y="117" text-anchor="middle" font-size="12.5" font-weight="700">材料費</text>
+        <rect x="36" y="146" width="106" height="40" rx="5" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="89" y="171" text-anchor="middle" font-size="12.5" font-weight="700">労務費</text>
+        <rect x="36" y="200" width="106" height="40" rx="5" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="89" y="225" text-anchor="middle" font-size="12.5" font-weight="700">経費</text>
+        <text x="130" y="264" text-anchor="middle" font-size="10.5" fill="var(--muted)">それぞれ直接費と間接費に分ける</text>
+
+        <!-- 直接費：下を通って仕掛品へ -->
+        <path d="M 144 228 L 200 228 L 200 312 L 640 312 L 640 250" fill="none" stroke="var(--debit)" stroke-width="2.2" marker-end="url(#ar2)"/>
+        <text x="392" y="328" text-anchor="middle" font-size="11.5" fill="var(--debit)" font-weight="700">直接費（直接材料費・直接労務費・直接経費）は部門別計算を通らず、そのまま製品へ賦課</text>
+
+        <!-- 間接費 → 製造間接費 -->
+        <path d="M 144 112 L 268 148" fill="none" stroke="var(--warn)" stroke-width="2" marker-end="url(#ar2)"/>
+        <path d="M 144 166 L 268 160" fill="none" stroke="var(--warn)" stroke-width="2" marker-end="url(#ar2)"/>
+        <path d="M 144 214 L 268 172" fill="none" stroke="var(--warn)" stroke-width="2" marker-end="url(#ar2)"/>
+        <rect x="272" y="132" width="180" height="46" rx="5" fill="var(--surface)" stroke="var(--warn)" stroke-width="1.8"/>
+        <text x="362" y="152" text-anchor="middle" font-size="12.5" font-weight="700">製造間接費</text>
+        <text x="362" y="169" text-anchor="middle" font-size="10.5" fill="var(--muted)">間接材料費＋間接労務費＋間接経費</text>
+
+        <!-- 部門へ -->
+        <path d="M 362 180 L 362 196" fill="none" stroke="var(--warn)" stroke-width="2" marker-end="url(#ar2)"/>
+        <rect x="272" y="200" width="86" height="40" rx="5" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="315" y="216" text-anchor="middle" font-size="11.5" font-weight="700">切削部門</text>
+        <text x="315" y="232" text-anchor="middle" font-size="10" fill="var(--muted)">製造部門</text>
+        <rect x="366" y="200" width="86" height="40" rx="5" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="409" y="216" text-anchor="middle" font-size="11.5" font-weight="700">組立部門</text>
+        <text x="409" y="232" text-anchor="middle" font-size="10" fill="var(--muted)">製造部門</text>
+        <text x="362" y="262" text-anchor="middle" font-size="10.5" fill="var(--muted)">補助部門の費用も製造部門へ集める</text>
+
+        <!-- 製品別へ -->
+        <path d="M 456 220 L 528 220" fill="none" stroke="var(--warn)" stroke-width="2.2" marker-end="url(#ar2)"/>
+        <text x="492" y="212" text-anchor="middle" font-size="10.5" fill="var(--muted)">配賦</text>
+
+        <!-- 製品別：仕掛品→製品 -->
+        <rect x="532" y="196" width="112" height="48" rx="5" fill="var(--surface)" stroke="var(--ok)" stroke-width="1.8"/>
+        <text x="588" y="216" text-anchor="middle" font-size="12.5" font-weight="700">仕掛品</text>
+        <text x="588" y="233" text-anchor="middle" font-size="10.5" fill="var(--muted)">指図書別／生産量で按分</text>
+        <path d="M 648 220 L 692 220" fill="none" stroke="var(--ok)" stroke-width="2.2" marker-end="url(#ar2)"/>
+        <rect x="696" y="196" width="72" height="48" rx="5" fill="var(--surface)" stroke="var(--ok)" stroke-width="1.8"/>
+        <text x="732" y="224" text-anchor="middle" font-size="12.5" font-weight="700">製品</text>
+        <path d="M 772 220 L 808 220" fill="none" stroke="var(--ok)" stroke-width="2.2" marker-end="url(#ar2)"/>
+        <text x="836" y="216" text-anchor="middle" font-size="11.5" font-weight="700">売上</text>
+        <text x="836" y="232" text-anchor="middle" font-size="11.5" font-weight="700">原価</text>
+        <text x="672" y="120" text-anchor="middle" font-size="11.5" fill="var(--muted)">個別原価計算なら製造指図書ごとに集計（W4）</text>
+        <text x="672" y="140" text-anchor="middle" font-size="11.5" fill="var(--muted)">総合原価計算なら生産量で割る（W5）</text>
+        <text x="672" y="160" text-anchor="middle" font-size="11.5" fill="var(--muted)">出口は「完成品原価」と「月末仕掛品原価」</text>
+      </g>
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">Phase 0 の勘定連絡図に、3手続の帯を重ねたもの。この図の左から右への移動が、そのまま W1 から W5 への進み方になる。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">直接費は、部門別計算を通らない</span>
+    <p>上の図で、直接費だけが下を大回りして製品へ向かっているのに注目してください。<strong>直接費は最初から「どの製品のものか」が分かっているので、部門に集める必要がありません。</strong>製品に直接ひもづける（賦課する・直課する）だけです。</p>
+    <p>部門別計算に進むのは<strong>製造間接費だけ</strong>です。W4で部門費配賦表を作るときに「なぜ直接材料費が表に出てこないのか」と迷ったら、ここに戻ってください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この3手続が、そのまま学習の地図になる</span>
+    <p>W1〜W3で第1段階（費目別計算）を、W4で第2段階（部門別計算）と第3段階の前半（個別原価計算）を、W5で第3段階の後半（総合原価計算）をやります。W6の標準原価計算とW7の直接原価計算は、この3手続の上で「使う数字を変える」「集計する範囲を変える」ものです。</p>
+    <p><strong>新しい論点に入るたびに、いま自分が第何段階の話をしているのかを確認してください。</strong>それだけで問題文の情報がどこに属するかが分かります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>原価計算単位と原価計算期間</h2>
+
+  <h3>原価計算単位 — 何あたりの原価を出すのか</h3>
+
+  <p>「この製品の原価は300円です」と言うとき、何あたり300円なのかが決まっていなければ意味が通りません。1個なのか、1kgなのか、1ダースなのか。この<strong>原価を計算する対象の単位</strong>を原価計算単位（原価単位）といいます。</p>
+
+  <div class="term">
+    <span class="term__w">原価計算単位</span><span class="term__r">げんかけいさんたんい</span>
+    <p style="margin-bottom:0">製品原価を計算するときの、製品の数量単位。個・台・箱・kg・m・リットルなど、その製品の性質に合わせて選びます。サービス業なら「1時間あたり」「1件あたり」といった単位も使われます。<strong>単位が決まってはじめて、製品1単位あたりの原価が計算できます。</strong></p>
+  </div>
+
+  <h3>原価計算期間 — 1年ではなく1か月</h3>
+
+  <p>ここは間違えやすい場所です。<strong>会計期間は通常1年ですが、原価計算期間は1か月です。</strong></p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">原価計算期間は1か月。会計期間の1年ではない</span>
+    <p>工業簿記の問題文に出てくる「月初」「当月」「月末」は、この原価計算期間のことです。<strong>3級の商業簿記が「期首・当期・期末」で動いていたのに対し、工業簿記は「月初・当月・月末」で動きます。</strong>Phase 0 で作った勘定連絡図の各勘定に「月初有高」「月末有高」と書いたのは、このためです。</p>
+    <p><strong>なぜ1か月なのか。</strong>原価計算の大きな目的が原価管理だからです。1年経ってから「去年は原価が高かった」と分かっても、打つ手はもうありません。<mark>毎月締めて、毎月改善する。</mark>だから毎月末に締め、毎月「月次損益」を出します。</p>
+    <p><strong>試験でどう効くか。</strong>減価償却費や保険料のように、年額で与えられる費用があります。これらは<strong>12で割って月額にしてから</strong>その月の原価に含めます。「年間の機械減価償却費 2,400,000円」と書かれていたら、当月の間接経費は 200,000円 です。年額のまま使うと12倍の誤答になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>工業簿記の構造 — 帳簿・決算・財務諸表</h2>
+
+  <h3>帳簿組織 — 原価計算と帳簿をつなぐもの</h3>
+
+  <p>Phase 0 で見た勘定連絡図は、<strong>総勘定元帳（主要簿）</strong>の姿です。材料勘定、仕掛品勘定、製品勘定といった勘定が並び、そこに金額が集計されます。しかし主要簿だけでは足りません。<strong>材料勘定には「材料 500,000円」としか書かれておらず、その内訳（鋼板がいくら、ネジがいくら）が分からない</strong>からです。</p>
+
+  <p>そこで、内訳を記録する<strong>補助簿</strong>を置きます。工業簿記の補助簿は、原価計算の各段階の計算そのものが記録される場所でもあります。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>帳簿</th><th>何を記録するか</th><th>つながる勘定・段階</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>仕訳帳・総勘定元帳</strong><br><span class="small muted">主要簿</span></td>
+        <td>すべての取引の仕訳と、勘定ごとの集計。勘定連絡図そのもの</td>
+        <td>全体</td>
+      </tr>
+      <tr>
+        <td><strong>材料元帳</strong><br><span class="small muted">補助簿</span></td>
+        <td>材料の種類ごとの受入・払出・残高。3級の商品有高帳と同じ構造で、先入先出法や平均法で払出単価を決める</td>
+        <td>材料勘定／費目別計算</td>
+      </tr>
+      <tr>
+        <td><strong>賃金台帳</strong><br><span class="small muted">補助簿</span></td>
+        <td>従業員ごとの支払額・作業時間。直接作業時間と間接作業時間を区別して記録する</td>
+        <td>賃金・給料勘定／費目別計算</td>
+      </tr>
+      <tr>
+        <td><strong>経費帳</strong><br><span class="small muted">補助簿</span></td>
+        <td>経費の費目ごとの発生額</td>
+        <td>経費勘定／費目別計算</td>
+      </tr>
+      <tr>
+        <td><strong>部門費配賦表</strong></td>
+        <td>製造間接費を部門ごとに集計し、補助部門費を製造部門へ配賦した過程</td>
+        <td>製造間接費勘定・各部門費勘定／部門別計算</td>
+      </tr>
+      <tr>
+        <td><strong>原価計算表</strong></td>
+        <td>製造指図書ごとの原価の内訳（直接材料費・直接労務費・製造間接費配賦額）と合計</td>
+        <td>仕掛品勘定／製品別計算</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">原価計算表と仕掛品勘定の関係</span>
+    <p>個別原価計算では、<strong>原価計算表の「未完成の指図書」の合計が、仕掛品勘定の残高と一致します。</strong>原価計算表は仕掛品勘定の内訳明細だからです。3級で商品有高帳の残高が繰越商品勘定と一致したのと同じ関係です。</p>
+    <p>W4の個別原価計算では、この一致を使って検算します。<mark>補助簿の合計＝主要簿の勘定残高</mark>という関係は、工業簿記でも変わりません。</p>
+  </div>
+
+  <h3>決算手続 — 月次で締め、年次で締める</h3>
+
+  <p>工業簿記の締めは2段構えです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">締めの単位 ①</div>
+      <p style="margin-top:0"><strong>月次の締め</strong></p>
+      <p class="small">原価計算期間（1か月）ごと。材料・仕掛品・製品の各勘定で月末有高を確定し、当月の完成品原価と売上原価を計算します。売上と売上原価を<strong>月次損益</strong>勘定に振り替え、当月の利益を出します。</p>
+      <p class="small" style="margin-bottom:0">原価差異が出ていれば、いったん<strong>差異の勘定に振り替えて積み上げておきます</strong>。売上原価に賦課するのは月次ではなく年度末です。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">締めの単位 ②</div>
+      <p style="margin-top:0"><strong>年次の締め（決算）</strong></p>
+      <p class="small">会計期間（1年）ごと。12か月ぶんを集計して、外部に公表する財務諸表を作ります。</p>
+      <p class="small">材料・仕掛品・製品は<strong>棚卸資産として貸借対照表に載せ</strong>、当期に売れた分は損益計算書の売上原価になります。<span class="chip">W8</span></p>
+      <p class="small" style="margin-bottom:0">積み上げておいた原価差異を、ここで<strong>売上原価に賦課します</strong>。不利差異なら売上原価を増やし、有利差異なら減らします。</p>
+    </div>
+  </div>
+
+  <h3>財務諸表 — 製造原価報告書が損益計算書につながる</h3>
+
+  <p>製造業の会社では、損益計算書と貸借対照表に加えて、もう1枚を作ります。</p>
+
+  <div class="term">
+    <span class="term__w">製造原価報告書</span><span class="term__r">せいぞうげんかほうこくしょ　C/R</span>
+    <p style="margin-bottom:0">当期にかかった製造原価の内訳と、当期に完成した製品の原価を示す報告書。<strong>損益計算書の売上原価の内訳を、さらにさかのぼって説明するもの</strong>です。商品を仕入れて売るだけの会社には、そもそも製造がないので存在しません。</p>
+  </div>
+
+  <p>この3枚のつながりを、金額の流れで押さえてください。<strong>製造原価報告書の末尾に出る「当期製品製造原価」が、損益計算書の売上原価の計算に入っていきます。</strong></p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 400" style="width:100%;height:auto;min-width:740px" role="img" aria-label="製造原価報告書・損益計算書・貸借対照表のつながり">
+      <g font-size="12.5" fill="var(--text)">
+        <!-- 製造原価報告書 -->
+        <rect x="20" y="30" width="250" height="250" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="145" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--accent)">製造原価報告書（C/R）</text>
+        <line x1="36" y1="64" x2="254" y2="64" stroke="var(--border)" stroke-width="1"/>
+        <text x="40" y="88">Ⅰ　材料費</text>
+        <text x="40" y="112">Ⅱ　労務費</text>
+        <text x="40" y="136">Ⅲ　経費</text>
+        <line x1="40" y1="146" x2="250" y2="146" stroke="var(--border)" stroke-width="1"/>
+        <text x="40" y="168">　　当期総製造費用</text>
+        <text x="40" y="192">　＋ 期首仕掛品棚卸高</text>
+        <text x="40" y="216">　− 期末仕掛品棚卸高</text>
+        <line x1="40" y1="226" x2="250" y2="226" stroke="var(--text)" stroke-width="1.5"/>
+        <text x="40" y="250" font-weight="700" fill="var(--accent)">　　当期製品製造原価</text>
+        <text x="40" y="270" font-size="11" fill="var(--muted)">＝ 当期に完成した製品の原価</text>
+
+        <!-- 矢印 -->
+        <path d="M 272 244 L 330 244 L 330 168 L 366 168" fill="none" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#ar3)"/>
+        <text x="322" y="200" text-anchor="middle" font-size="11" fill="var(--accent)" font-weight="700">同じ金額</text>
+
+        <!-- 損益計算書 -->
+        <rect x="370" y="30" width="250" height="250" rx="8" fill="var(--surface)" stroke="var(--ok)" stroke-width="2"/>
+        <text x="495" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ok)">損益計算書（P/L）</text>
+        <line x1="386" y1="64" x2="604" y2="64" stroke="var(--border)" stroke-width="1"/>
+        <text x="390" y="88">Ⅰ　売上高</text>
+        <text x="390" y="112">Ⅱ　売上原価</text>
+        <text x="390" y="134" font-size="11.5">　　1 期首製品棚卸高</text>
+        <text x="390" y="156" font-size="11.5" font-weight="700" fill="var(--accent)">　　2 当期製品製造原価</text>
+        <text x="390" y="178" font-size="11.5">　　3 期末製品棚卸高（−）</text>
+        <line x1="390" y1="188" x2="600" y2="188" stroke="var(--border)" stroke-width="1"/>
+        <text x="390" y="210" font-weight="700">　　売上総利益</text>
+        <text x="390" y="234">Ⅲ　販売費及び一般管理費</text>
+        <line x1="390" y1="244" x2="600" y2="244" stroke="var(--text)" stroke-width="1.5"/>
+        <text x="390" y="266" font-weight="700">　　営業利益</text>
+
+        <!-- 貸借対照表 -->
+        <path d="M 145 282 L 145 316 L 745 316 L 745 300" fill="none" stroke="var(--credit)" stroke-width="2" marker-end="url(#ar3)"/>
+        <path d="M 495 282 L 495 316" fill="none" stroke="var(--credit)" stroke-width="2"/>
+        <text x="330" y="336" text-anchor="middle" font-size="11.5" fill="var(--credit)" font-weight="700">売れ残り・作りかけは資産として次期へ</text>
+
+        <rect x="640" y="30" width="220" height="170" rx="8" fill="var(--surface)" stroke="var(--credit)" stroke-width="2"/>
+        <text x="750" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--credit)">貸借対照表（B/S）</text>
+        <line x1="656" y1="64" x2="844" y2="64" stroke="var(--border)" stroke-width="1"/>
+        <text x="660" y="88">流動資産</text>
+        <text x="660" y="112" font-size="11.5">　　材料</text>
+        <text x="660" y="134" font-size="11.5">　　仕掛品</text>
+        <text x="660" y="156" font-size="11.5">　　製品</text>
+        <text x="660" y="180" font-size="11" fill="var(--muted)">　　（棚卸資産）</text>
+        <text x="750" y="290" text-anchor="middle" font-size="11.5" fill="var(--muted)">期末棚卸高がここに載る</text>
+
+        <text x="20" y="368" font-size="11.5" fill="var(--muted)">C/R は「工場でいくらかかって、いくらぶん完成したか」。P/L は「そのうちいくらぶんが売れたか」。B/S は「いくらぶんが残ったか」。</text>
+        <text x="20" y="388" font-size="11.5" fill="var(--muted)">3枚は別々の書類ではなく、同じ原価の流れを3つの角度から切り出したもの。</text>
+      </g>
+      <defs>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">当期製品製造原価が、C/R の出口であり P/L の売上原価の入口。この1本のつながりが製造業の決算の骨格になる。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「当期総製造費用」と「当期製品製造原価」を混同しない</span>
+    <p>C/R には似た名前の金額が2つ出てきます。</p>
+    <p><strong>当期総製造費用</strong>＝当期に工場で消費した材料費・労務費・経費の合計。<strong>投入した金額</strong>です。</p>
+    <p><strong>当期製品製造原価</strong>＝そのうち<strong>完成した</strong>製品の原価。当期総製造費用に期首仕掛品を足し、期末仕掛品を引いたもの。</p>
+    <p>作りかけの分だけずれます。<mark>P/L の売上原価の計算に入るのは、下側の「当期製品製造原価」のほう</mark>です。上の「当期総製造費用」を持っていくと、期末仕掛品のぶんだけ売上原価が過大になります。W8の第3問形式でここが問われます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">3級の「売上原価」の計算と同じ形が3回出てくる</span>
+    <p>気づいたでしょうか。工業簿記の主要な計算は、すべて同じ形をしています。</p>
+    <p><strong>材料</strong>：月初有高 ＋ 当月仕入高 − 月末有高 ＝ 当月消費額<br>
+    <strong>仕掛品</strong>：期首仕掛品 ＋ 当期総製造費用 − 期末仕掛品 ＝ 当期製品製造原価<br>
+    <strong>製品</strong>：期首製品 ＋ 当期製品製造原価 − 期末製品 ＝ 売上原価</p>
+    <p>3級の「期首商品 ＋ 当期仕入 − 期末商品 ＝ 売上原価」がそのまま3段重ねになっているだけです。<strong>箱に入って、箱から出る。残ったものが次へ繰り越される。</strong>形が同じだと分かれば、覚える量は3分の1になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>ドリル</h2>
+
+  <p>ここからは手を動かします。分類の判定は、本文の表と見比べながらで構いません。<strong>大事なのは正解することではなく、なぜそう分類されるのかを言葉で言えることです。</strong>間違えた問題は、該当する節に戻ってください。</p>
+
+  <h3>原価の分類を判定する</h3>
+
+  <div id="quiz-genka-bunrui"></div>
+
+  <h3>用語を書けるようにする</h3>
+
+  <div id="fill-yougo"></div>
+
+  <h3>費目一覧から必要なものだけ拾う</h3>
+
+  <p class="small muted">実際の第4問・第5問では、与えられた費目の一覧から「今回必要な分類に当てはまるものだけ」を選んで足す作業が必ず入ります。ここで練習しておきます。</p>
+
+  <div id="num-shukei"></div>
+
+  <h3>勘定連絡図に沿った基本仕訳</h3>
+
+  <p class="small muted">Phase 0 で扱った仕訳の確認です。この単元で新しく学んだ分類が、仕訳のどこに現れるかを見てください。</p>
+
+  <div id="drill-kihon-shiwake"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>この単元の到達チェック</h2>
+
+  <p class="small muted">全部に✓が入ったら、この単元は完了です。次の「材料費」に進みます。</p>
+
+  <div class="progressbar" data-progress-for="#u3check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u3check">0 / 0 完了（0%）</div>
+
+  <div id="u3check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u03-w1u3-1"><label for="c1"><span class="cl__t">工業経営で原価計算が要る理由を、商業と比べて説明できる</span><span class="cl__d">仕入れたものをそのまま売らず社内で加工するため、買った金額と売るモノが対応しない</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u03-w1u3-2"><label for="c2"><span class="cl__t">原価計算基準がいつ誰によって設定されたか、どういう性格の文書かを言える</span><span class="cl__d">1962年・大蔵省企業会計審議会。実務の慣行を要約した実践基準で、複数の方法を目的別に認めている</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u03-w1u3-3"><label for="c3"><span class="cl__t">完全工業簿記と商的工業簿記の違いを、決め手つきで説明できる</span><span class="cl__d">原価計算機構が帳簿と結合しているか。期中に原価が出るか、期末の棚卸で推定するか</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u03-w1u3-4"><label for="c4"><span class="cl__t">非原価項目になる2つの典型を、理由とともに挙げられる</span><span class="cl__d">経営目的に関連しない（支払利息など財務活動）／正常でない（火災損失、異常な仕損・減損）</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u03-w1u3-5"><label for="c5"><span class="cl__t">見積原価と標準原価の違いと、それぞれの用途を言える</span><span class="cl__d">見積は予想、標準はあるべき目標。原価管理に使えるのは標準原価</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u03-w1u3-6"><label for="c6"><span class="cl__t">変動費と固定費のグラフを、総額と単位あたりの両方で描ける</span><span class="cl__d">総額では変動費が右上がり・固定費が水平。単位あたりでは変動費が水平・固定費が右下がり</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u03-w1u3-7"><label for="c7"><span class="cl__t">製品原価と期間原価の違いを、費用収益対応の観点で説明できる</span><span class="cl__d">製品にくっついて売れた月の費用になるか、発生した月の費用になるか</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u03-w1u3-8"><label for="c8"><span class="cl__t">全部原価計算と直接原価計算の違いを1文で言える</span><span class="cl__d">固定製造原価を製品原価に含めるか、期間原価として全額落とすか</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u03-w1u3-9"><label for="c9"><span class="cl__t">直接原価計算の「直接」が変動費の意味だと分かっている</span><span class="cl__d">変動製造間接費は製品原価に含まれる。直接費か間接費かではなく変動か固定かで判断する</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u03-w1u3-10"><label for="c10"><span class="cl__t">1つの原価を、5つの軸で同時に分類できる</span><span class="cl__d">形態別／製品との関連／操業度／製品原価か期間原価か／全部・直接原価計算での扱い</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u03-w1u3-11"><label for="c11"><span class="cl__t">個別原価計算と総合原価計算の使い分けと、問題文での見分け方を言える</span><span class="cl__d">受注生産か同種製品の大量生産か。製造指図書が出たら個別、加工進捗度が出たら総合</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u03-w1u3-12"><label for="c12"><span class="cl__t">原価計算の3手続を順に挙げ、それぞれ何を求める段階か言える</span><span class="cl__d">費目別（何にいくら）→ 部門別（どの部門で）→ 製品別（どの製品にいくら）</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u03-w1u3-13"><label for="c13"><span class="cl__t">直接費が部門別計算を通らない理由を説明できる</span><span class="cl__d">どの製品のものか最初から分かっているので、製品に直接ひもづけられる。部門に集める必要がない</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u03-w1u3-14"><label for="c14"><span class="cl__t">原価計算期間が1か月であることと、その理由を言える</span><span class="cl__d">原価管理のため毎月締める。年額で与えられた費用は12で割って当月分にする</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u03-w1u3-15"><label for="c15"><span class="cl__t">当期総製造費用と当期製品製造原価の違いを言える</span><span class="cl__d">投入した金額か、完成した金額か。仕掛品の増減ぶんだけずれる</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u03-w1u3-16"><label for="c16"><span class="cl__t">製造原価報告書と損益計算書のつながりを、金額の名前で説明できる</span><span class="cl__d">C/R の末尾の当期製品製造原価が、P/L の売上原価の計算に入る</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u03-w1u3-17"><label for="c17"><span class="cl__t">この単元の分類が、どの週のどの論点で使われるかを一通り言える</span><span class="cl__d">第1節の表。新しい論点に入るたびにここへ戻る</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok" style="margin-top:28px">
+    <span class="callout__t">この単元が終わったら</span>
+    <p>次は<strong>材料費</strong>です。原価計算の3手続のうち、第1段階（費目別計算）の入口にあたります。この単元で作った地図の、いちばん左端から具体的な計算に入っていきます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材</span>
+  </div>
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+BokiQuiz.mount('#quiz-genka-bunrui', {
+  title: '原価の分類 判定14問',
+  questions: [
+    {
+      text: '工場の機械の減価償却費（定額法）は、操業度との関係でどう分類されるか。',
+      choices: ['変動費', '固定費', '準変動費', '操業度との関係では分類できない'],
+      answer: 1,
+      explain: '<p>定額法の減価償却費は、機械をどれだけ動かしても、まったく動かさなくても、月々同じ額が発生します。操業度が変わっても総額が変わらないので<strong>固定費</strong>です。</p><p>ただし製品1個あたりで見れば、たくさん作るほど1個あたりの負担額は下がります。「固定費は一定」というのは<strong>総額の話</strong>である点を確認してください。</p>'
+    },
+    {
+      text: '同じ「工場の機械」に関する原価でも、機械を動かすための電力の従量料金部分は、操業度との関係でどう分類されるか。',
+      choices: ['変動費', '固定費', '減価償却費と同じ扱いなので固定費', '非原価項目'],
+      answer: 0,
+      explain: '<p>従量料金は機械を動かした時間に比例して増えるので<strong>変動費</strong>です。前問の減価償却費と同じ機械に関する原価でも、片方は固定費、片方は変動費になります。</p><p><strong>費目が同じ設備に属するかどうかは、変動費か固定費かの判断に関係ありません。</strong>判断基準は「操業度が変われば総額が変わるか」の一点です。</p>'
+    },
+    {
+      text: '本社の役員給与は、原価計算上どう扱われるか。<strong>全部原価計算を前提とする。</strong>',
+      choices: ['製造原価（間接労務費）', '製造原価であり、製品原価', '期間原価（一般管理費）', '非原価項目'],
+      answer: 2,
+      explain: '<p>本社で発生しているので製造原価ではなく、<strong>一般管理費</strong>です。一般管理費は特定の製品にひもづかないので、製品にくっつけず発生した期間の費用にします。つまり<strong>期間原価</strong>です。</p><p>非原価項目ではありません。会社を運営するための費用であり、経営目的に関連し、正常なものだからです。原価には含まれ、そのうち総原価の一部を構成します。選択肢4と迷ったら、原価計算基準の4要件（第3節）に戻ってください。</p>'
+    },
+    {
+      text: '工場が火災に遭い、焼失した製品の損失を計上した。この損失は原価計算上どう扱われるか。',
+      choices: ['製造原価（間接経費）', '期間原価（販売費）', '非原価項目', '製品原価'],
+      answer: 2,
+      explain: '<p><strong>非原価項目</strong>です。原価計算基準がいう原価の4要件のうち「正常なものであること」を満たしません。火災は通常の製造活動で生じる事態ではないからです。</p><p>工場で発生したかどうかは関係ありません。<mark>「工場で発生したら製造原価」という物差しは、原価として認められたものの中での話</mark>です。まず原価かどうかを判定し、そのうえで工場か本社かを見ます。</p>'
+    },
+    {
+      text: '工場の建設資金として借り入れた借入金に対する支払利息は、原価計算上どう扱われるか。',
+      choices: ['工場に関するものなので製造原価', '期間原価（一般管理費）', '非原価項目', '製品原価に含めるか期間原価にするかは選択できる'],
+      answer: 2,
+      explain: '<p><strong>非原価項目</strong>です。支払利息は財務活動から生じるもので、原価の4要件のうち「経営目的に関連したものであること」を満たしません。</p><p>用途が工場であっても判定は変わりません。ここでも「工場かどうか」は決め手になりません。<strong>財務活動から生じるものは原価に入らない</strong>——これで覚えてください。</p>'
+    },
+    {
+      text: '月給制で雇用している工場長の給料は、直接原価計算では製品原価と期間原価のどちらになるか。',
+      choices: ['製造原価なので製品原価', '固定製造原価なので期間原価', '間接費なので期間原価', '製造原価でも販管費でもないので原価にならない'],
+      answer: 1,
+      explain: '<p>工場長の給料は工場で発生した製造原価（間接労務費）ですが、月給制なので<strong>固定費</strong>です。直接原価計算では固定製造原価を製品原価に含めず、発生した期間の費用として全額落とすので、<strong>期間原価</strong>になります。</p><p>選択肢3の「間接費だから」という理由は誤りです。直接原価計算の判断基準は<mark>変動費か固定費か</mark>であって、直接費か間接費かではありません。変動製造間接費は間接費ですが製品原価に含まれます。</p>'
+    },
+    {
+      text: '前問と同じ工場長の給料は、全部原価計算では製品原価と期間原価のどちらになるか。',
+      choices: ['製品原価', '期間原価', '全部原価計算では分類しない', '売れた月に期間原価、売れ残った月に製品原価'],
+      answer: 0,
+      explain: '<p>全部原価計算では、製造原価の全部——変動費も固定費も——を製品原価とします。したがって<strong>製品原価</strong>です。仕掛品・製品にくっついて資産となり、売れた月に売上原価になります。</p><p>同じ原価が、計算方法によって製品原価にも期間原価にもなる。これが<strong>「製品原価か期間原価かは原価の性質ではなく、どの収益に対応させるかで決まる」</strong>ということの具体例です。外部公表用の財務諸表は全部原価計算で作るので、こちらが制度上の原則になります。</p>'
+    },
+    {
+      text: '直接工の賃金のうち、直接作業時間に対応する部分は、製品との関連による分類ではどうなるか。',
+      choices: ['直接労務費', '間接労務費', '直接経費', '手待時間ぶんと同じ扱いで間接労務費'],
+      answer: 0,
+      explain: '<p>直接工が実際に製品を加工していた時間ぶんの賃金なので、どの製品にいくらかかったかを特定できます。よって<strong>直接労務費</strong>です。</p><p>ただし同じ直接工の賃金でも、材料待ちなどで作業していない<strong>手待時間</strong>ぶんは、どの製品のものとも言えないので間接労務費になります。<mark>「直接工の賃金＝直接労務費」ではありません。</mark></p>'
+    },
+    {
+      text: '機械を動かす電力の従量料金（変動費・製造間接費）は、直接原価計算では製品原価と期間原価のどちらになるか。',
+      choices: ['間接費なので期間原価', '変動製造原価なので製品原価', '製造間接費は直接原価計算では扱わない', '固定費部分だけ製品原価'],
+      answer: 1,
+      explain: '<p><strong>製品原価</strong>です。直接原価計算で製品原価とするのは<strong>変動製造原価</strong>であり、それが直接費か間接費かは問いません。変動製造間接費は、間接費ですが変動費なので製品原価に含まれます。</p><p>これが「直接原価計算」という名前の紛らわしいところで、<strong>変動原価計算</strong>とも呼ばれる理由です。</p>'
+    },
+    {
+      text: '製品原価の計算に、あらかじめ決めた率を使って製造間接費を配賦している。この配賦率のもとになっているのは、次のうちどれか。',
+      choices: ['標準原価', '見積原価', '実際原価', '全部原価'],
+      answer: 1,
+      explain: '<p>製造間接費の予定配賦で使う予定配賦率は、過去の実績などをもとに「たぶんこれくらいになるだろう」と予想して決めるものなので、予定原価のうち<strong>見積原価</strong>にあたります。W3で扱います。</p><p>標準原価は、科学的・統計的な調査にもとづいて「こうあるべきだ」と設定する目標としての原価で、原価管理のために使います（W6）。<strong>予想か目標か</strong>が2つを分けます。</p>'
+    },
+    {
+      text: '造船所で、注文を受けた船ごとに原価を集計している。この会社の原価計算を<strong>生産形態によって分類する</strong>と、どれにあたるか。',
+      choices: ['総合原価計算', '個別原価計算', '直接原価計算', '標準原価計算'],
+      answer: 1,
+      explain: '<p>受注生産で、注文ごとに作るものが違うので<strong>個別原価計算</strong>です。注文ごとに製造指図書を発行し、その番号ごとに原価を集計します。集計表が原価計算表です（W4）。</p><p>選択肢3と4は、この問いとは別の軸の分類です。個別／総合は<strong>生産形態</strong>による分類、全部／直接は<strong>集計する範囲</strong>による分類、実際／標準は<strong>使う数字</strong>による分類で、これらは組み合わせて使われます。「個別原価計算かつ全部原価計算かつ実際原価計算」という状態がありえます。</p>'
+    },
+    {
+      text: '原価計算の3手続のうち、製品原価の計算だけが目的であれば省略できるのはどれか。',
+      choices: ['費目別計算', '部門別計算', '製品別計算', 'どれも省略できない'],
+      answer: 1,
+      explain: '<p><strong>部門別計算</strong>です。製造間接費を工場全体でまとめて1つの率で配賦しても、製品原価は計算できます。部門別計算を行うのは、<strong>原価の管理責任を部門ごとにはっきりさせる</strong>ためと、<strong>部門ごとの性格の違いを配賦率に反映して製品原価をより正確にする</strong>ためです。</p><p>費目別計算は出発点なので省略できません。ここで拾い損ねた原価は以降どの段階にも現れません。製品別計算は原価計算の出口そのものです。</p>'
+    },
+    {
+      text: '製造間接費を各部門に集計する段階に進むのは、次のうちどれか。',
+      choices: ['直接材料費と製造間接費', '製造間接費のみ', 'すべての製造原価', '直接費のみ'],
+      answer: 1,
+      explain: '<p><strong>製造間接費のみ</strong>です。直接費（直接材料費・直接労務費・直接経費）は、どの製品のものか最初から分かっているので、部門に集める必要がありません。製品に直接ひもづける（賦課する）だけです。</p><p>W4で部門費配賦表を作るとき、表に出てくるのは製造間接費だけです。直接材料費が表に見当たらなくても間違いではありません。</p>'
+    },
+    {
+      text: '製造原価報告書の末尾に出る「当期製品製造原価」は、損益計算書のどこに現れるか。',
+      choices: ['売上高の内訳', '売上原価の計算', '販売費及び一般管理費', '営業外費用'],
+      answer: 1,
+      explain: '<p><strong>売上原価の計算</strong>に入ります。「期首製品棚卸高 ＋ 当期製品製造原価 − 期末製品棚卸高 ＝ 売上原価」という形です。3級の「期首商品 ＋ 当期仕入 − 期末商品 ＝ 売上原価」の、当期仕入の位置に入ると考えると分かりやすいでしょう。</p><p>混同しやすいのが、C/R の途中に出てくる<strong>当期総製造費用</strong>です。こちらは当期に投入した金額であり、仕掛品の増減を調整する前の数字です。P/L に持っていくのは<mark>調整後の当期製品製造原価</mark>のほうです。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-yougo', {
+  title: '用語の穴埋め 10問',
+  questions: [
+    {
+      text: '原価計算の手続は3段階からなる。第1段階の、消費した原価を材料費・労務費・経費といった費目ごとに集計する手続を ______ 計算という。',
+      answer: ['費目別'],
+      explain: '<p>原価計算の出発点です。W1〜W3で扱います。ここで拾い損ねた原価は、以降のどの段階にも現れません。</p>'
+    },
+    {
+      text: '原価計算の第2段階の、製造間接費を切削部門・組立部門などの原価部門ごとに集計する手続を ______ 計算という。',
+      answer: ['部門別'],
+      explain: '<p>W4で扱います。製品原価の計算だけが目的なら省略できますが、原価の管理責任を明らかにし、部門ごとの性格の違いを配賦率に反映するために行います。</p>'
+    },
+    {
+      text: '原価計算の第3段階の、集計した原価を製品単位に割り当てて製品1単位あたりの原価を求める手続を ______ 計算という。',
+      answer: ['製品別'],
+      explain: '<p>W4〜W5で扱います。個別原価計算なら製造指図書ごとに、総合原価計算なら生産量で割って求めます。出口は完成品原価と月末仕掛品原価です。</p>'
+    },
+    {
+      text: '工業簿記で原価を集計する期間を原価計算期間といい、その長さは通常 ______ である。',
+      answer: ['1か月', '1ヶ月', '1カ月', '一か月', '1箇月', '1ヵ月', '一ヶ月', '１か月'],
+      explain: '<p>会計期間の1年とは違います。原価管理のためには毎月締めて毎月改善する必要があるからです。年額で与えられた減価償却費や保険料は、12で割って当月分にしてから原価に含めます。</p>'
+    },
+    {
+      text: '原価を計算する対象の数量単位（個・kg・箱など）を ______ という。',
+      answer: ['原価計算単位', '原価単位'],
+      explain: '<p>この単位が決まってはじめて「製品1単位あたりの原価はいくらか」が言えます。製品の性質に応じて選びます。</p>'
+    },
+    {
+      text: '1962年に大蔵省企業会計審議会が設定した、原価計算の実践基準を ______ という。',
+      answer: ['原価計算基準'],
+      explain: '<p>実務の慣行として行われていたやり方のうち、一般に公正妥当と認められるところを要約したものです。だから「目的が違えば方法も違う」という形で複数の計算方法を並べて認めています。検定の解答もこの基準に従います。</p>'
+    },
+    {
+      text: '原価計算の機構が帳簿と結合しておらず、期末の棚卸によって製造原価を推定する簡便な工業簿記を ______ 工業簿記という。',
+      answer: ['商的'],
+      explain: '<p>商業簿記と同じやり方で製造業を記録する形です。手間はかかりませんが、期中に製品1個の原価が分かりません。これに対し、原価計算機構が帳簿と結合しているものを完全工業簿記といい、2級で扱うのは原則としてこちらです。</p>'
+    },
+    {
+      text: '予定原価のうち、科学的・統計的な調査にもとづいて「こうあるべきだ」という目標として設定される原価を ______ 原価という。',
+      answer: ['標準'],
+      explain: '<p>実際原価と比べて差異を出し、原因を分析して現場の改善につなげます（W6）。単に過去の実績から予想しただけの見積原価と違い、目標だからこそ「なぜ達成できなかったのか」を問えます。</p>'
+    },
+    {
+      text: '固定製造原価を製品原価に含めず、発生した期間の費用として全額を計上する原価計算を ______ 原価計算という。',
+      answer: ['直接', '変動'],
+      explain: '<p>変動原価計算とも呼ばれます。生産量によって利益が動かないので、経営の意思決定に使えます。ただし外部公表用の財務諸表は全部原価計算で作らなければならないため、W7で固定費調整をして利益を戻します。</p>'
+    },
+    {
+      text: '製造原価と、販売費及び一般管理費を合計したものを ______ という。',
+      answer: ['総原価'],
+      explain: '<p>製品をいくらで売れば儲かるかを判断する材料になります。総原価を計算することを総原価計算といい、製造原価だけを計算する製造原価計算、営業費だけを計算する営業費計算と区別されます。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-shukei', {
+  title: '費目一覧から拾って集計する 4問',
+  badge: '集計ドリル',
+  questions: [
+    {
+      text: '当月の費用の発生状況は次のとおりであった。<br>直接材料費 480,000円／間接材料費 90,000円／直接労務費 320,000円／間接労務費 150,000円／直接経費 40,000円／間接経費 210,000円／販売員給料 130,000円／本社建物減価償却費 80,000円／支払利息 25,000円<br><strong>当月の製造原価はいくらか。</strong>',
+      answer: 1290000,
+      formula: '480000+90000+320000+150000+40000+210000',
+      unit: '円',
+      hint: '工場で発生したもの（直接費3つ＋間接費3つ）だけを合計する。販売員給料と本社建物減価償却費は販売費及び一般管理費、支払利息は非原価項目。',
+      explain: '<p>直接材料費480,000 ＋ 間接材料費90,000 ＋ 直接労務費320,000 ＋ 間接労務費150,000 ＋ 直接経費40,000 ＋ 間接経費210,000 ＝ <strong>1,290,000円</strong>。</p><p>販売員給料と本社建物減価償却費は販売費及び一般管理費なので製造原価に入りません。支払利息は財務活動から生じるもので、そもそも原価ではありません（非原価項目）。</p>'
+    },
+    {
+      text: '前問と同じ資料による。<br><strong>当月の総原価はいくらか。</strong>',
+      answer: 1500000,
+      formula: '1290000+130000+80000',
+      unit: '円',
+      hint: '総原価 ＝ 製造原価 ＋ 販売費及び一般管理費。非原価項目は最後まで入らない。',
+      explain: '<p>製造原価1,290,000 ＋ 販売員給料130,000 ＋ 本社建物減価償却費80,000 ＝ <strong>1,500,000円</strong>。</p><p>販売費及び一般管理費は製造原価には入りませんが、<strong>総原価には入ります</strong>。一方で支払利息25,000円は非原価項目なので、総原価にも入りません。<mark>「製造原価に入らない＝原価ではない」ではない</mark>ことを確認してください。</p>'
+    },
+    {
+      text: '当月の製造原価の内訳は次のとおりであった。<br>直接材料費 720,000円（すべて変動費）／直接労務費 450,000円（うち出来高払いの変動費 280,000円、月給制の固定費 170,000円）／変動製造間接費 195,000円／固定製造間接費 365,000円<br><strong>当月の変動製造原価はいくらか。</strong>',
+      answer: 1195000,
+      formula: '720000+280000+195000',
+      unit: '円',
+      hint: '直接費か間接費かではなく、変動費か固定費かで拾う。直接労務費は変動部分だけを取る。',
+      explain: '<p>直接材料費720,000 ＋ 直接労務費の変動部分280,000 ＋ 変動製造間接費195,000 ＝ <strong>1,195,000円</strong>。</p><p>直接労務費は直接費ですが、月給制の170,000円は固定費なので変動製造原価に入りません。逆に変動製造間接費195,000円は間接費ですが変動費なので入ります。<strong>直接原価計算で製品原価とするのは、この1,195,000円です。</strong></p>'
+    },
+    {
+      text: '前問と同じ資料による。<br><strong>当月の固定製造原価はいくらか。</strong>',
+      answer: 535000,
+      formula: '170000+365000',
+      unit: '円',
+      hint: '月給制の直接労務費と、固定製造間接費。',
+      explain: '<p>直接労務費の固定部分170,000 ＋ 固定製造間接費365,000 ＝ <strong>535,000円</strong>。</p><p>全部原価計算ではこの535,000円も製品原価に含めて仕掛品・製品に乗せますが、直接原価計算では<strong>期間原価として当月に全額を費用にします</strong>。この扱いの違いが、2つの計算方法での営業利益の差になります（W7の固定費調整）。</p><p>検算：変動製造原価1,195,000 ＋ 固定製造原価535,000 ＝ 1,730,000円。これは直接材料費720,000 ＋ 直接労務費450,000 ＋ 変動製造間接費195,000 ＋ 固定製造間接費365,000 と一致します。</p>'
+    }
+  ]
+});
+
+/* 製造業の勘定科目は標準・許容勘定科目表に含まれないため、
+   正解科目は各設問の accounts に列挙する。 */
+BokiJournal.mount('#drill-kihon-shiwake', {
+  title: '勘定連絡図に沿った基本仕訳 4問',
+  accounts: ['材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品',
+             '売上原価', '売上', '売掛金', '月次損益', '買掛金', '現金',
+             '当座預金', '販売費', '一般管理費', '支払利息'],
+  questions: [
+    {
+      text: '当月、材料 620,000円 を消費した。うち直接材料費は 470,000円、間接材料費は 150,000円 である。',
+      debit: [['仕掛品', 470000], ['製造間接費', 150000]],
+      credit: [['材料', 620000]],
+      hint: '直接費は仕掛品へ直行、間接費は製造間接費へ集める。',
+      explain: '<p>費目別計算の段階です。同じ材料勘定から出た金額が、直接費か間接費かで行き先が分かれます。<strong>直接材料費は部門別計算を通らず製品へ賦課され、間接材料費は製造間接費に集められてから配賦されます。</strong></p>'
+    },
+    {
+      text: '当月の賃金・給料の消費額は 540,000円 であった。直接工の直接作業時間ぶんが 380,000円、直接工の手待時間ぶんと間接工の賃金の合計が 160,000円 である。',
+      debit: [['仕掛品', 380000], ['製造間接費', 160000]],
+      credit: [['賃金・給料', 540000]],
+      hint: '直接工の賃金でも、手待時間ぶんは直接労務費にならない。',
+      explain: '<p>直接工の賃金がすべて直接労務費になるわけではありません。<strong>製品を加工していた時間ぶんだけが直接労務費</strong>で、材料待ちなどで作業していない手待時間ぶんは、どの製品のものとも言えないので間接労務費です。</p>'
+    },
+    {
+      text: '当月の製造間接費 810,000円 を、直接作業時間を基準として仕掛品に配賦した。',
+      debit: [['仕掛品', 810000]],
+      credit: [['製造間接費', 810000]],
+      hint: '製造間接費勘定は集めて配って空にする通過点。',
+      explain: '<p>製造間接費を製品に割り振る手続が<strong>配賦</strong>です。実際発生額をそのまま配賦する実際配賦なら、この仕訳で製造間接費勘定の残高はゼロになります。</p><p>あらかじめ決めた率で配賦する<strong>予定配賦</strong>の場合は、借方の実際発生額と貸方の予定配賦額に差が出ます。この差が製造間接費配賦差異で、W3で予算差異と操業度差異に分解します。</p>'
+    },
+    {
+      text: '製品 1,400,000円 が完成し、倉庫に納入された。',
+      debit: [['製品', 1400000]],
+      credit: [['仕掛品', 1400000]],
+      hint: '完成した分だけが仕掛品から出ていく。',
+      explain: '<p>製品別計算の出口です。仕掛品勘定の借方に集まった金額のうち、<strong>完成した分だけ</strong>が製品勘定へ移ります。残りは月末仕掛品として仕掛品勘定に残ります。</p><p>当月完成品原価 ＝ 月初仕掛品 ＋ 当月製造費用 − 月末仕掛品。年次の財務諸表ではこれが<strong>当期製品製造原価</strong>として製造原価報告書の末尾に出て、損益計算書の売上原価の計算に入っていきます。</p>'
+    }
+  ]
+});
+</script>
+</body>
+</html>
