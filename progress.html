@@ -27,20 +27,27 @@
       週に1回はエクスポートして <code>進捗ログ.md</code> に転記してください。</p>
   </div>
 
-  <h2><span class="num">1</span>今週</h2>
+  <h2><span class="num">1</span>これまで</h2>
+  <div id="total"></div>
+
+  <h2><span class="num">2</span>今週</h2>
   <div id="week"></div>
 
-  <h2><span class="num">2</span>要復習</h2>
+  <h2><span class="num">3</span>日別</h2>
+  <p class="small muted">学習した日を新しい順に並べています。空白の日は出てきません。</p>
+  <div id="days"></div>
+
+  <h2><span class="num">4</span>要復習</h2>
   <p class="small muted">誤答を含む設問を、直近の誤答が新しい順に並べています。ここが次にやり直す場所です。</p>
   <div id="review"></div>
 
-  <h2><span class="num">3</span>単元別</h2>
+  <h2><span class="num">5</span>単元別</h2>
   <div id="units"></div>
 
-  <h2><span class="num">4</span>メモ</h2>
+  <h2><span class="num">6</span>メモ</h2>
   <div id="notes"></div>
 
-  <h2><span class="num">5</span>エクスポート</h2>
+  <h2><span class="num">7</span>エクスポート</h2>
   <p class="small muted">全期間の記録を JSON でコピーします。Claude に貼ると
     <code>進捗ログ.md</code> へ転記されます。</p>
   <div class="btn-row">
@@ -48,7 +55,7 @@
     <span class="small muted" id="export-msg"></span>
   </div>
 
-  <h2><span class="num">6</span>記録の全消去</h2>
+  <h2><span class="num">8</span>記録の全消去</h2>
   <p class="small muted">元に戻せません。エクスポートして転記を済ませてから実行してください。</p>
   <div class="btn-row">
     <button class="btn btn--ghost btn--sm" type="button" id="wipe">すべての記録を消す</button>
@@ -97,7 +104,39 @@
   var checks = data.checks || {};
   var notes = data.notes || [];
 
-  /* 1. 今週 */
+  // 日付は保存時のローカル時刻で記録されている。ISO 文字列を切り出すと
+  // UTC 基準になり、深夜の学習が前日に寄るため Date に通して数える。
+  function dayKey(iso) {
+    var t = new Date(iso);
+    if (!isFinite(t.getTime())) return null;
+    return t.getFullYear() + '-' +
+      ('0' + (t.getMonth() + 1)).slice(-2) + '-' +
+      ('0' + t.getDate()).slice(-2);
+  }
+  var WD = ['日', '月', '火', '水', '木', '金', '土'];
+
+  /* 1. これまで */
+  var byDay = {};
+  var totalSec = 0;
+  sessions.forEach(function (s) {
+    var sec = Number(s.sec) || 0;
+    var k = dayKey(s.start);
+    totalSec += sec;
+    if (k) byDay[k] = (byDay[k] || 0) + sec;
+  });
+  var dayKeys = Object.keys(byDay).sort();
+
+  var tt = document.getElementById('total');
+  tt.appendChild(el('p', 'big', hm(totalSec)));
+  if (dayKeys.length) {
+    tt.appendChild(el('div', 'progresstext',
+      dayKeys.length + '日 ／ 1日あたり ' + hm(totalSec / dayKeys.length) +
+      ' ／ ' + dayKeys[0].replace(/-/g, '/') + ' から'));
+  } else {
+    tt.appendChild(el('div', 'progresstext', 'まだ記録がありません。'));
+  }
+
+  /* 2. 今週 */
   var ws = weekStart();
   var weekSec = sessions.reduce(function (a, s) {
     var t = new Date(s.start);
@@ -114,7 +153,26 @@
   wk.appendChild(bar);
   wk.appendChild(el('div', 'progresstext', pct + '%（月曜起点）'));
 
-  /* 2. 要復習 */
+  /* 3. 日別 */
+  var dl = document.getElementById('days');
+  // 1日の最長を基準に伸ばす。目標時間を基準にすると、目標未達の日が
+  // どれも同じくらい短く見えて日ごとの差が読めなくなる。
+  var maxDay = dayKeys.reduce(function (a, k) { return Math.max(a, byDay[k]); }, 0);
+  if (!dayKeys.length) dl.appendChild(el('p', 'small muted', 'まだ記録がありません。'));
+  dayKeys.slice().reverse().forEach(function (k) {
+    var d = new Date(k + 'T00:00:00');
+    var row = el('div', 'row');
+    row.appendChild(el('span', 'row__id', k.replace(/-/g, '/') + '（' + WD[d.getDay()] + '）'));
+    row.appendChild(el('span', 'row__meta', hm(byDay[k])));
+    var b = el('div', 'progressbar daybar');
+    var f = el('i');
+    f.style.width = Math.round(byDay[k] / maxDay * 100) + '%';
+    b.appendChild(f);
+    row.appendChild(b);
+    dl.appendChild(row);
+  });
+
+  /* 4. 要復習 */
   var review = Object.keys(drills).map(function (id) {
     var at = drills[id].attempts || [];
     var wrong = at.filter(function (a) { return !a.ok; });
@@ -137,7 +195,7 @@
     rv.appendChild(row);
   });
 
-  /* 3. 単元別 */
+  /* 5. 単元別 */
   var units = {};
   function slot(u) {
     if (!units[u]) units[u] = { sec: 0, ok: 0, n: 0, checked: 0, total: 0 };
@@ -170,7 +228,7 @@
     ul.appendChild(row);
   });
 
-  /* 4. メモ */
+  /* 6. メモ */
   var nl = document.getElementById('notes');
   if (!notes.length) nl.appendChild(el('p', 'small muted', 'メモはまだありません。'));
   notes.slice().reverse().forEach(function (n) {
@@ -181,7 +239,7 @@
     nl.appendChild(row);
   });
 
-  /* 5. エクスポート */
+  /* 7. エクスポート */
   document.getElementById('export').addEventListener('click', function () {
     var msg = document.getElementById('export-msg');
     navigator.clipboard.writeText(P.exportJSON()).then(function () {
@@ -191,7 +249,7 @@
     });
   });
 
-  /* 6. 全消去 */
+  /* 8. 全消去 */
   document.getElementById('wipe').addEventListener('click', function () {
     if (!confirm('すべての学習記録を消します。元に戻せません。よろしいですか。')) return;
     P._reset();
