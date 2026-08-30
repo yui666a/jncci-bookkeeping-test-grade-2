@@ -1,0 +1,5 @@
+# lefthook は postinstall で `lefthook install` を実行し、.git/hooks に
+# フックを配置する。pnpm 11 はビルドスクリプトを既定で無視するため、
+# 明示的に許可しないと clone 後にフックが有効にならない。
+allowBuilds:
+  lefthook: true
