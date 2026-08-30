@@ -341,6 +341,279 @@
     };
   }
 
+  /* ---------- 勘定科目の検索つき選択 ---------- */
+  // 科目名の読み。漢字だけの部分一致にすると、変換を確定してからでないと
+  // 絞り込めない。ドリルは電卓と併用するため、打鍵と変換の往復を減らす。
+  // ここにない科目は漢字の部分一致だけで引ける（検索できないだけで、
+  // 選択そのものは常にできる）。
+  var YOMI = {
+    'クレジット売掛金': 'くれじっとうりかけきん',
+    '一般管理費': 'いっぱんかんりひ',
+    '仕入': 'しいれ',
+    '仕掛品': 'しかかりひん',
+    '仮受消費税': 'かりうけしょうひぜい',
+    '仮受金': 'かりうけきん',
+    '仮払法人税等': 'かりばらいほうじんぜいとう',
+    '仮払消費税': 'かりばらいしょうひぜい',
+    '仮払金': 'かりばらいきん',
+    '保証債務': 'ほしょうさいむ',
+    '保証債務見返': 'ほしょうさいむみかえり',
+    '保険差益': 'ほけんさえき',
+    '保険料': 'ほけんりょう',
+    '修繕料': 'しゅうぜんりょう',
+    '修繕費': 'しゅうぜんひ',
+    '借入金': 'かりいれきん',
+    '備品': 'びひん',
+    '備品減価償却累計額': 'びひんげんかしょうきゃくるいけいがく',
+    '償却債権取立益': 'しょうきゃくさいけんとりたてえき',
+    '利益準備金': 'りえきじゅんびきん',
+    '前受金': 'まえうけきん',
+    '前払保険料': 'まえばらいほけんりょう',
+    '前払費用': 'まえばらいひよう',
+    '創立費': 'そうりつひ',
+    '受取利息': 'うけとりりそく',
+    '受取商品券': 'うけとりしょうひんけん',
+    '受取手形': 'うけとりてがた',
+    '商品': 'しょうひん',
+    '商品評価損': 'しょうひんひょうかそん',
+    '固定資産売却損': 'こていしさんばいきゃくそん',
+    '土地': 'とち',
+    '売上': 'うりあげ',
+    '売上割戻': 'うりあげわりもどし',
+    '売上原価': 'うりあげげんか',
+    '売掛金': 'うりかけきん',
+    '外注加工賃': 'がいちゅうかこうちん',
+    '契約負債': 'けいやくふさい',
+    '契約資産': 'けいやくしさん',
+    '差入保証金': 'さしいれほしょうきん',
+    '広告宣伝費': 'こうこくせんでんひ',
+    '建物': 'たてもの',
+    '建物減価償却累計額': 'たてものげんかしょうきゃくるいけいがく',
+    '建設仮勘定': 'けんせつかりかんじょう',
+    '当座預金': 'とうざよきん',
+    '役務原価': 'えきむげんか',
+    '役務収益': 'えきむしゅうえき',
+    '従業員立替金': 'じゅうぎょういんたてかえきん',
+    '従業員賞与手当': 'じゅうぎょういんしょうよてあて',
+    '所得税預り金': 'しょとくぜいあずかりきん',
+    '手形借入金': 'てがたかりいれきん',
+    '支払利息': 'しはらいりそく',
+    '支払家賃': 'しはらいやちん',
+    '支払手形': 'しはらいてがた',
+    '支払手数料': 'しはらいてすうりょう',
+    '旅費交通費': 'りょひこうつうひ',
+    '普通預金': 'ふつうよきん',
+    '月次損益': 'げつじそんえき',
+    '未収入金': 'みしゅうにゅうきん',
+    '未払法人税等': 'みばらいほうじんぜいとう',
+    '未払消費税': 'みばらいしょうひぜい',
+    '未払費用': 'みばらいひよう',
+    '未払配当金': 'みばらいはいとうきん',
+    '未払金': 'みばらいきん',
+    '未決算': 'みけっさん',
+    '材料': 'ざいりょう',
+    '材料副費': 'ざいりょうふくひ',
+    '材料副費差異': 'ざいりょうふくひさい',
+    '材料消費価格差異': 'ざいりょうしょうひかかくさい',
+    '株式交付費': 'かぶしきこうふひ',
+    '棚卸減耗損': 'たなおろしげんもうそん',
+    '棚卸減耗費': 'たなおろしげんもうひ',
+    '機械減価償却累計額': 'きかいげんかしょうきゃくるいけいがく',
+    '機械装置': 'きかいそうち',
+    '水道光熱費': 'すいどうこうねつひ',
+    '法人税、住民税及び事業税': 'ほうじんぜいじゅうみんぜいおよびじぎょうぜい',
+    '法定福利費': 'ほうていふくりひ',
+    '消耗品費': 'しょうもうひんひ',
+    '減価償却費': 'げんかしょうきゃくひ',
+    '火災損失': 'かさいそんしつ',
+    '現金': 'げんきん',
+    '現金過不足': 'げんきんかぶそく',
+    '発送費': 'はっそうひ',
+    '研究開発費': 'けんきゅうかいはつひ',
+    '社会保険料預り金': 'しゃかいほけんりょうあずかりきん',
+    '租税公課': 'そぜいこうか',
+    '経費': 'けいひ',
+    '給料': 'きゅうりょう',
+    '繰越利益剰余金': 'くりこしりえきじょうよきん',
+    '繰越商品': 'くりこししょうひん',
+    '製品': 'せいひん',
+    '製造間接費': 'せいぞうかんせつひ',
+    '販売費': 'はんばいひ',
+    '貯蔵品': 'ちょぞうひん',
+    '買掛金': 'かいかけきん',
+    '貸倒引当金': 'かしだおれひきあてきん',
+    '貸倒引当金繰入': 'かしだおれひきあてきんくりいれ',
+    '貸倒損失': 'かしだおれそんしつ',
+    '賃率差異': 'ちんりつさい',
+    '賃金・給料': 'ちんぎんきゅうりょう',
+    '資本準備金': 'しほんじゅんびきん',
+    '資本金': 'しほんきん',
+    '返金負債': 'へんきんふさい',
+    '退職給付費用': 'たいしょくきゅうふひよう',
+    '通信費': 'つうしんひ',
+    '開業費': 'かいぎょうひ',
+    '開発費': 'かいはつひ',
+    '雑損': 'ざっそん',
+    '雑益': 'ざつえき',
+    '電力料': 'でんりょくりょう',
+    '電子記録債務': 'でんしきろくさいむ',
+    '電子記録債権': 'でんしきろくさいけん',
+    '預り金': 'あずかりきん',
+  };
+
+  // 「うりかけ」「ウリカケ」「売掛」のどれでも同じ結果を返す。
+  // 全角英数と長音・濁点の揺れまでは吸収しない。科目名に現れないため。
+  function normalize(s) {
+    return String(s).toLowerCase().replace(/[ァ-ヴ]/g, function (c) {
+      return String.fromCharCode(c.charCodeAt(0) - 0x60);
+    });
+  }
+
+  // 促音・濁点・半濁点を落とした形。「ざつ」で「雑損（ざっそん）」を、
+  // 「みはらいきん」で「未払金（みばらいきん）」を引けるようにする。
+  // 連濁は語が結合したときに起きるため、単語ごとに覚えた読みで打つと
+  // 「みはらい」「かふそく」のように濁点が落ちる。別読みを併記する形に
+  // すると、科目を足すたびに揺れを予測して書き並べることになる。
+  var DAKUTEN = 'がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ';
+  var SEION   = 'かきくけこさしすせそたちつてとはひふへほはひふへほ';
+  function plain(s) {
+    return s.replace(/っ/g, 'つ').replace(/[ぁ-ゖ]/g, function (c) {
+      var i = DAKUTEN.indexOf(c);
+      return i < 0 ? c : SEION.charAt(i);
+    });
+  }
+
+  function matches(name, query) {
+    if (!query) return true;
+    var q = normalize(query);
+    if (normalize(name).indexOf(q) >= 0) return true;
+    var y = YOMI[name];
+    if (!y) return false;
+    y = normalize(y);
+    return y.indexOf(q) >= 0 || plain(y).indexOf(plain(q)) >= 0;
+  }
+
+  // <select> と同じ責務を持つ入力。value プロパティで読み書きでき、
+  // 一覧にない文字列は確定できない。採点は collect() が読む value だけを
+  // 見るため、この2点を満たす限り正誤判定は <select> のときと変わらない。
+  var pickerSeq = 0;
+
+  function accountPicker(accounts, side) {
+    var uid = 'apick' + (++pickerSeq);
+    var wrap = el('div', 'apick');
+    var inp = el('input', 'apick__in');
+    inp.type = 'text';
+    inp.placeholder = '科目を検索';
+    inp.autocomplete = 'off';
+    inp.setAttribute('role', 'combobox');
+    inp.setAttribute('aria-expanded', 'false');
+    inp.setAttribute('aria-autocomplete', 'list');
+    // placeholder だけだと240個すべてが同じ「科目を検索」と読まれ、
+    // いま借方と貸方のどちらを入力しているのか分からない。
+    inp.setAttribute('aria-label', (side === 'd' ? '借方' : '貸方') + 'の勘定科目');
+    var list = el('div', 'apick__list');
+    list.id = uid + '-list';
+    list.setAttribute('role', 'listbox');
+    // overflow-y:auto はスクロールできる要素として自動でフォーカス対象に
+    // なる。1ページに240個あるため、Tabのたびに空の停止が挟まる。
+    list.tabIndex = -1;
+    inp.setAttribute('aria-controls', list.id);
+    wrap.appendChild(inp); wrap.appendChild(list);
+
+    var value = '';
+    var active = -1;
+    var shown = [];
+
+    // 未確定の入力は捨てて、確定済みの科目名に戻す。空欄のまま閉じたときに
+    // 打ちかけの文字列が残ると、選択済みに見えて実際は未選択になる。
+    function revert() {
+      inp.value = value;
+      close();
+    }
+    function close() {
+      list.classList.remove('open');
+      inp.setAttribute('aria-expanded', 'false');
+      active = -1;
+      inp.removeAttribute('aria-activedescendant');
+      // 閉じた一覧の候補は残さない。1ページに240個あるため、一巡すると
+      // 非表示の option が1万個を超える。支援技術は非表示の要素も
+      // 走査対象にすることがある。
+      list.innerHTML = '';
+    }
+    function commit(name) {
+      value = name;
+      inp.value = name;
+      close();
+      wrap.dispatchEvent(new CustomEvent('change', { bubbles: true }));
+    }
+    function render() {
+      var q = inp.value === value ? '' : inp.value;
+      shown = accounts.filter(function (a) { return matches(a, q); });
+      list.innerHTML = '';
+      if (!shown.length) {
+        var none = el('div', 'apick__none', '該当なし');
+        list.appendChild(none);
+      }
+      shown.forEach(function (a, i) {
+        var it = el('div', 'apick__it', a);
+        it.setAttribute('role', 'option');
+        it.id = uid + '-o' + i;
+        it.setAttribute('aria-selected', a === value ? 'true' : 'false');
+        if (a === value) it.classList.add('is-sel');
+        if (i === active) it.classList.add('is-act');
+        // mousedown で確定する。click だと先に blur が起きて revert() が走る。
+        it.addEventListener('mousedown', function (e) {
+          e.preventDefault();
+          commit(a);
+        });
+        list.appendChild(it);
+      });
+      list.classList.add('open');
+      inp.setAttribute('aria-expanded', 'true');
+      // 矢印キーで動いた先を読み上げさせる。フォーカスは入力欄に
+      // 置いたままなので、これがないと移動しても何も伝わらない。
+      if (active >= 0) inp.setAttribute('aria-activedescendant', uid + '-o' + active);
+      else inp.removeAttribute('aria-activedescendant');
+    }
+    function move(d) {
+      if (!list.classList.contains('open')) { render(); return; }
+      if (!shown.length) return;
+      active = (active + d + shown.length) % shown.length;
+      render();
+      var cur = list.querySelector('.is-act');
+      if (cur) cur.scrollIntoView({ block: 'nearest' });
+    }
+
+    inp.addEventListener('focus', render);
+    inp.addEventListener('input', function () { active = -1; render(); });
+    inp.addEventListener('blur', revert);
+    inp.addEventListener('keydown', function (e) {
+      // 変換中のキーはIMEのものであり、この一覧の操作ではない。日本語を
+      // 打つ以上、確定のEnterと選択のEnterは必ず重なる。
+      if (e.isComposing || e.keyCode === 229) return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
+      else if (e.key === 'Enter') {
+        // 候補が1件に絞れていれば、選ばずに Enter でも確定してよい。
+        // 絞り込んだ結果を目で確かめてから選び直す手間を省く。
+        if (list.classList.contains('open')) {
+          e.preventDefault();
+          if (active >= 0) commit(shown[active]);
+          else if (shown.length === 1) commit(shown[0]);
+        }
+      } else if (e.key === 'Escape') { revert(); }
+    });
+
+    wrap.dataset.side = side;
+    // <select> と同じ形で読み書きできるようにする。呼び出し側が
+    // select か入力かを気にせずに済む。
+    Object.defineProperty(wrap, 'value', {
+      get: function () { return value; },
+      set: function (v) { value = v || ''; inp.value = value; }
+    });
+    return wrap;
+  }
+
   /* ===========================================================
      1. 仕訳入力ドリル
      BokiJournal.mount('#id', {
@@ -349,6 +622,9 @@
      })
      =========================================================== */
   var BokiJournal = {
+    // 読みの登録漏れを品質ゲートから検査するための口。
+    // YOMI 自体を公開すると、単元HTMLから書き換えられてしまう。
+    __hasYomi: function (name) { return Object.prototype.hasOwnProperty.call(YOMI, name); },
     mount: function (sel, cfg) {
       var root = document.querySelector(sel);
       if (!root) return;
@@ -375,11 +651,7 @@
           var tr = el('tr');
           ['d', 'c'].forEach(function (side) {
             var td1 = el('td'), td2 = el('td');
-            var s = el('select');
-            s.appendChild(new Option('— 選択 —', ''));
-            accounts.forEach(function (a) { s.appendChild(new Option(a, a)); });
-            s.dataset.side = side;
-            td1.appendChild(s);
+            td1.appendChild(accountPicker(accounts, side));
             var inp = el('input', 'amt');
             inp.type = 'text'; inp.inputMode = 'numeric'; inp.placeholder = '0';
             inp.dataset.side = side;
@@ -414,7 +686,7 @@
         function collect(side) {
           var out = [];
           Array.prototype.forEach.call(tb.querySelectorAll('tr'), function (tr) {
-            var s = tr.querySelector('select[data-side="' + side + '"]');
+            var s = tr.querySelector('.apick[data-side="' + side + '"]');
             var a = tr.querySelector('input[data-side="' + side + '"]');
             var v = parseAmt(a.value);
             if (s.value && !isNaN(v)) out.push([s.value, v]);
