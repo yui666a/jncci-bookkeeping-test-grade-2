@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="boki-topics" content="商-第二-9-イ,商-第二-9-g2,商-第二-9-ク,商-第二-9-ケ,商-第二-9-キ">
+<meta name="boki-topics" content="商-第二-9-ア,商-第二-9-イ,商-第二-9-g2,商-第二-9-ク,商-第二-9-ケ,商-第二-9-キ">
 <meta name="boki-subject" content="商">
 <title>商品売買 — 日商簿記2級 Phase 1</title>
 <link rel="stylesheet" href="../assets/style.css">
@@ -191,7 +191,7 @@
 
   <div class="callout callout--ok">
     <span class="callout__t">ただし、棚卸減耗損・商品評価損の処理は残る</span>
-    <p>「決算整理が不要」なのは<strong>売上原価を算定するための仕訳</strong>だけです。数えたら商品が足りない、傷んで価値が下がっている——これは記帳方法とは無関係に起きる事実なので、売上原価対立法でも処理します。この場合、減らす相手は繰越商品ではなく<strong>商品</strong>勘定です（§5以降で扱います）。</p>
+    <p>「決算整理が不要」なのは<strong>売上原価を算定するための仕訳</strong>だけです。数えたら商品が足りない、傷んで価値が下がっている——これは記帳方法とは無関係に起きる事実なので、売上原価対立法でも処理します。この場合、減らす相手は繰越商品ではなく<strong>商品</strong>勘定です（§6以降で扱います）。</p>
   </div>
 
   <!-- ============================================================ -->
@@ -252,6 +252,45 @@
 
   <p class="small muted">なお、期中に払い出す商品の原価をどう計算するか（先入先出法・移動平均法・総平均法）は、記帳方法とは別の話です。売上原価対立法でも三分法でも、同じ計算方法を使えます。</p>
 
+  <h3>三分法を月次で締める</h3>
+
+  <p>3級では、三分法の「仕入／繰越商品」「繰越商品／仕入」を<strong>決算日に1回だけ</strong>切りました。2級では、これを<strong>毎月末に行う</strong>形が出てきます。<mark>やることは3級と同じで、締める間隔が1年から1か月に変わるだけです。</mark></p>
+
+  <p>会社が毎月の利益を知りたいときに、決算日まで売上総利益が分からないのでは経営の判断に使えません。そこで月末ごとに在庫を数え、その月の売上原価を確定させます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>月末 — 三分法を月次で締める（月初商品 320,000円、月末商品 400,000円）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕入</td><td class="d amt">320,000</td><td class="c">繰越商品</td><td class="c amt">320,000</td></tr>
+      <tr><td class="d">繰越商品</td><td class="d amt">400,000</td><td class="c">仕入</td><td class="c amt">400,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>仕訳の形は3級とまったく同じです。違うのは<strong>「期首・期末」ではなく「月初・月末」で読む</strong>ことだけです。</p>
+
+  <p>翌月も同じことをします。<mark>このとき戻すのは「期首商品」ではなく「前月末の商品」です。</mark>上の例の翌月なら、月初商品は 400,000円（前月末の金額がそのまま繰り越されたもの）になります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>翌月末 — 月初商品 400,000円、月末商品 380,000円</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕入</td><td class="d amt">400,000</td><td class="c">繰越商品</td><td class="c amt">400,000</td></tr>
+      <tr><td class="d">繰越商品</td><td class="d amt">380,000</td><td class="c">仕入</td><td class="c amt">380,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>これを12か月くり返せば、年度末には決算整理と同じ状態になります。<strong>各月の売上原価が毎月確定していく</strong>ぶん、年に1回まとめて締める形より情報が早く手に入ります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">問題文の「月次」を読み落とさない</span>
+    <p>「当社は<strong>月次で</strong>売上原価を算定している」と書かれていたら、与えられた在庫の金額は<strong>月初・月末</strong>のものです。これを期首・期末と読むと、1年分と1か月分を取り違えて金額が合わなくなります。<br><mark>問題文が「期首・期末」と書いているか「月初・月末」と書いているかを、資料を読む前に確認してください。</mark>工業簿記では原価計算期間が1か月なので月次が標準ですが、商業簿記では年次が標準で、月次は指示があったときだけです。</p>
+  </div>
+
   <div id="quiz-taritsu"></div>
 
   <!-- ============================================================ -->
@@ -270,6 +309,7 @@
   <div class="callout callout--ok">
     <span class="callout__t">総平均単価の求め方</span>
     <p class="center"><strong>総平均単価 ＝ （期首商品棚卸高 ＋ 当期受入高の合計） ÷ （期首数量 ＋ 当期受入数量の合計）</strong></p>
+    <p class="small muted">期間の単位は問題文が決めます。年次で締めるなら期首・当期、<strong>月次で締めるなら月初・当月</strong>で同じ式を使います（工業簿記の材料費は原価計算期間が1か月なので、月初・当月受入で計算します）。式の形は変わりません。</p>
     <p>分子は金額の合計、分母は数量の合計。<strong>「その期に手元を通った商品の、ならした1個あたりの原価」</strong>を出しているだけです。式を覚えるより、金額の合計を数量の合計で割っているだけだと理解してください。</p>
   </div>
 
@@ -380,6 +420,56 @@
     <p>指示の読み方にも注意が必要です。<strong>「単価を丸める」のか「金額を丸める」のかで答えが変わります。</strong>単価を丸めてから数量を掛けるのと、正確な単価で計算した金額を丸めるのとでは、結果が一致しないことがあるからです。指示された順序どおりに計算してください。</p>
   </div>
 
+  <h3>商品有高帳 — 払出単価の計算をそのまま記録する帳簿</h3>
+
+  <p>いま計算した払出単価と残高を、商品の種類ごとに記録していく補助簿が<span class="term"><span class="term__w">商品有高帳</span><span class="term__r">しょうひんありだかちょう</span></span>です。3級では先入先出法・移動平均法で書きました。<strong>2級ではここに総平均法が加わります。</strong></p>
+
+  <p>様式は3つの欄に分かれます。<mark>受入欄・払出欄・残高欄</mark>で、どの欄にも数量・単価・金額の3列が並びます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th rowspan="2">日付</th><th rowspan="2">摘要</th><th colspan="3">受入</th><th colspan="3">払出</th><th colspan="3">残高</th></tr>
+      <tr><th>数量</th><th>単価</th><th class="amt">金額</th><th>数量</th><th>単価</th><th class="amt">金額</th><th>数量</th><th>単価</th><th class="amt">金額</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>4/1</td><td>前期繰越</td><td>100</td><td>400</td><td class="amt">40,000</td><td></td><td></td><td class="amt"></td><td>100</td><td>400</td><td class="amt">40,000</td></tr>
+      <tr><td>6/10</td><td>仕入</td><td>200</td><td>460</td><td class="amt">92,000</td><td></td><td></td><td class="amt"></td><td>300</td><td>440</td><td class="amt">132,000</td></tr>
+      <tr><td>8/20</td><td>売上</td><td></td><td></td><td class="amt"></td><td>150</td><td>440</td><td class="amt">66,000</td><td>150</td><td>440</td><td class="amt">66,000</td></tr>
+      <tr><td>11/15</td><td>仕入</td><td>300</td><td>560</td><td class="amt">168,000</td><td></td><td></td><td class="amt"></td><td>450</td><td>520</td><td class="amt">234,000</td></tr>
+      <tr><td>2/10</td><td>売上</td><td></td><td></td><td class="amt"></td><td>150</td><td>520</td><td class="amt">78,000</td><td>300</td><td>520</td><td class="amt">156,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">移動平均法で書いた例です。6/10の仕入で残高欄の単価が @440円 に、11/15の仕入で @520円 に更新され、払出はそのつど直前の残高単価を使います。期末残高 156,000円 は、この節の比較表の移動平均法の欄と一致します。</p>
+
+  <p><strong>総平均法で書くと、同じ資料が次のようになります。</strong>単価が決まるのは期末なので、<mark>払出欄と残高欄の単価・金額は、期中は空けておいて期末にまとめて記入します</mark>。数量だけは取引のつど入れます。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th rowspan="2">日付</th><th rowspan="2">摘要</th><th colspan="3">受入</th><th colspan="3">払出</th><th colspan="3">残高</th></tr>
+      <tr><th>数量</th><th>単価</th><th class="amt">金額</th><th>数量</th><th>単価</th><th class="amt">金額</th><th>数量</th><th>単価</th><th class="amt">金額</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>4/1</td><td>前期繰越</td><td>100</td><td>400</td><td class="amt">40,000</td><td></td><td></td><td class="amt"></td><td>100</td><td></td><td class="amt"></td></tr>
+      <tr><td>6/10</td><td>仕入</td><td>200</td><td>460</td><td class="amt">92,000</td><td></td><td></td><td class="amt"></td><td>300</td><td></td><td class="amt"></td></tr>
+      <tr><td>8/20</td><td>売上</td><td></td><td></td><td class="amt"></td><td>150</td><td>500</td><td class="amt">75,000</td><td>150</td><td></td><td class="amt"></td></tr>
+      <tr><td>11/15</td><td>仕入</td><td>300</td><td>560</td><td class="amt">168,000</td><td></td><td></td><td class="amt"></td><td>450</td><td></td><td class="amt"></td></tr>
+      <tr><td>2/10</td><td>売上</td><td></td><td></td><td class="amt"></td><td>150</td><td>500</td><td class="amt">75,000</td><td>300</td><td>500</td><td class="amt">150,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">総平均単価は（40,000 ＋ 92,000 ＋ 168,000）÷（100 ＋ 200 ＋ 300）＝ 300,000 ÷ 600 ＝ <strong>@500円</strong>。この単価が出るまで払出欄の金額は書けません。<mark>移動平均法では 8/20 と 2/10 の払出単価が @440円・@520円 と動くのに対し、総平均法ではどちらも @500円 で揃います。</mark>期末残高 150,000円 も比較表の総平均法の欄と一致します。同じ帳簿の同じ行が、計算方法の指定ひとつで変わります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">商品有高帳に記入するのは原価であって、売価ではない</span>
+    <p>8/20に売価 @700円 で150個売ったとしても、払出欄に書くのは<strong>@440円</strong>です。<mark>この帳簿は「商品がいくらで入って、いくらのものが出ていったか」を原価で追う帳簿</mark>であり、儲けを記録する帳簿ではありません。売価を書くと残高が実際の在庫金額と合わなくなります。</p>
+    <p>また、<strong>仕入戻し（返品）は受入欄に赤書き（マイナス）で記入します</strong>。仕入を取り消す取引なので、入ってきた記録のほうを打ち消します。<mark>払出欄に書いてはいけません。</mark>払出欄は売れた分の原価を集める欄なので、そこへ返品を混ぜると「払出欄の合計＝売上原価」という対応が崩れ、検算に使えなくなります。</p>
+  </div>
+
   <div class="callout callout--ok">
     <span class="callout__t">記帳方法と、払出単価の計算方法は別の話</span>
     <p>ここまでに出てきた言葉を整理します。<strong>三分法・売上原価対立法は「どの勘定科目でどう記帳するか」の話</strong>（§2・§3）、<strong>先入先出法・移動平均法・総平均法は「払い出した商品の原価をいくらとみなすか」の話</strong>（この節）です。</p>
@@ -426,7 +516,7 @@
         <td><strong>仕入割引</strong><br><span class="small muted">しいれわりびき</span></td>
         <td>支払期日より早く払ったので、その見返りに代金を免除してもらう</td>
         <td><strong>変わらない</strong><br><span class="small muted">商品の中身も数量も何も変わっていない</span></td>
-        <td><strong>仕入の減少ではない</strong><br><span class="small muted">§4末の注記を参照</span></td>
+        <td><strong>仕入の減少ではない</strong><br><span class="small muted">この節の末尾の注記を参照</span></td>
       </tr>
     </tbody>
   </table>
@@ -881,6 +971,8 @@
     <li><input type="checkbox" id="c17" data-key="p1u02-w1u2-17"><label for="c17"><span class="cl__t">総平均法の計算式を書け、なぜ「総」平均なのか説明できる</span><span class="cl__d">（期首棚卸高＋当期受入高の合計）÷（期首数量＋当期受入数量の合計）。期間の全体をひとまとめにして期末に一度だけ平均を出すから</span></label></li>
     <li><input type="checkbox" id="c18" data-key="p1u02-w1u2-18"><label for="c18"><span class="cl__t">総平均法と移動平均法の違いを、実務上の差まで含めて言える</span><span class="cl__d">移動平均は仕入のつど単価を更新するので期中でも売上原価が分かる。総平均は期末まで単価が確定しないため、期中に売上原価が分からない</span></label></li>
     <li><input type="checkbox" id="c19" data-key="p1u02-w1u2-19"><label for="c19"><span class="cl__t">同じ資料でも3つの方法で期末棚卸高が変わることを、計算して確かめた</span><span class="cl__d">先入先出法・移動平均法・総平均法。物理的に同じ在庫でも計算ルールで金額が変わる。端数処理は必ず問題文の指示に従う</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u02-w1u2-20"><label for="c20"><span class="cl__t">三分法を月次で締める仕訳を書け、問題文の「月次」を拾える</span><span class="cl__d">仕訳の形は3級と同じ。期首・期末ではなく月初・月末で読む。商業簿記では年次が標準で、月次は指示があったときだけ</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u02-w1u2-21"><label for="c21"><span class="cl__t">商品有高帳の3つの欄を挙げ、記入するのが原価だと言える</span><span class="cl__d">受入欄・払出欄・残高欄。それぞれ数量・単価・金額。売価は書かない。仕入戻しは受入欄に赤書き（払出欄ではない）</span></label></li>
     <li><input type="checkbox" id="c5" data-key="p1u02-w1u2-5"><label for="c5"><span class="cl__t">割戻・値引・割引の3つを、処理が分かれる理由とともに区別できる</span><span class="cl__d">割戻と値引は取得原価が変わるので仕入のマイナス。割引は支払日が早まっただけで商品には何も起きていないので仕入のマイナスではない（2級の範囲外）</span></label></li>
     <li><input type="checkbox" id="c6" data-key="p1u02-w1u2-6"><label for="c6"><span class="cl__t">仕入割戻の仕訳を書ける</span><span class="cl__d">買掛金と相殺するなら「買掛金／仕入」。仕入という費用を貸方で減らす</span></label></li>
     <li><input type="checkbox" id="c7" data-key="p1u02-w1u2-7"><label for="c7"><span class="cl__t">帳簿棚卸数量・実地棚卸数量・原価・正味売却価額の4つを説明できる</span><span class="cl__d">正味売却価額は売却見込額から売るのにかかる費用を引いた後の金額</span></label></li>
