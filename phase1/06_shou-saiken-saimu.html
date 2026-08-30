@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-8-0,商-第二-23-0,商-第二-20-g2">
+<meta name="boki-subject" content="商">
+<title>その他の債権と債務・未決算・繰延資産 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 06 その他の債権と債務・未決算・繰延資産</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W2 商業簿記 ／ UNIT 06 ／ 2時間</p>
+    <h1>その他の債権と債務・未決算・繰延資産<br>— まだ確定していないものを、どう帳簿に置くか</h1>
+    <p class="lead">この単元は独立した3つの小論点の集まりです。共通しているのは<strong>「まだ確定していないもの」をどう扱うか</strong>という視点だけで、処理そのものはつながっていません。3つとも第1問（仕訳）で単発に出る形が中心で、1問4点を取り切れるかどうかがそのまま点差になります。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 2h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算・穴埋め・確認テストつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">3つの論点に共通するもの</a></li>
+      <li><a href="#s2">債務の保証 — 何も起きていないのに記録する</a></li>
+      <li><a href="#s3">対照勘定という仕組み</a></li>
+      <li><a href="#s4">保証が外れたとき／肩代わりしたとき</a></li>
+      <li><a href="#s5">未決算 — 保険金の額が決まるまでの置き場所</a></li>
+      <li><a href="#s6">保険金額が確定したとき — 保険差益と火災損失</a></li>
+      <li><a href="#s7">研究開発費 — 費用にしかできない支出</a></li>
+      <li><a href="#s8">繰延資産 — 換金できないのに資産と呼ぶもの</a></li>
+      <li><a href="#s9">仕訳ドリル 12問</a></li>
+      <li><a href="#s10">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s11">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>3つの論点に共通するもの</h2>
+
+  <p>この単元では次の3つを扱います。互いに関係のない論点なので、<strong>ひとつの流れとして覚えようとしないでください。</strong>3つの独立した引き出しを作るつもりで進めます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>債務の保証</h3>
+      <p class="small">他人の借金の保証人になる。<strong>まだ1円も払っていない</strong>のに仕訳を切る。</p>
+    </div>
+    <div class="card">
+      <h3>未決算</h3>
+      <p class="small">火事で建物が焼けた。保険金がいくら下りるか<strong>まだ分からない</strong>ので、いったん預けておく。</p>
+    </div>
+    <div class="card">
+      <h3>研究開発費・繰延資産</h3>
+      <p class="small">支出は済んでいるが、<strong>将来のもうけにつながるかどうか</strong>が確定していない。</p>
+    </div>
+  </div>
+
+  <p>あえて共通点を挙げるなら、いずれも<mark>「金額または結果が確定していない事象を、それでも帳簿に載せなければならない」</mark>という状況への対処法です。簿記は確定した取引だけを記録する仕組みですが、確定を待っていると記録が手遅れになる場面がいくつかあり、そこに用意されたのがこの3つです。</p>
+
+  <p>3級との接続でいうと、いちばん近いのは<strong>現金過不足</strong>です。原因が分かるまで一時的に置いておく箱、という発想は未決算とまったく同じです。この単元は「3級で1つだけ習った仮置きの箱を、状況別に増やす」回だと考えてください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>債務の保証 — 何も起きていないのに記録する</h2>
+
+  <p>友人が銀行から100万円を借りるとき、あなたが保証人になったとします。この時点で、あなたの財布からは1円も出ていません。友人がきちんと返せば、あなたは最後まで1円も払いません。</p>
+
+  <p>ではなぜ帳簿に書くのでしょうか。理由は<strong>忘れると致命傷になるから</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ記録するのか</span>
+    <p>保証人になった事実を帳簿のどこにも書かないと、会社の記録上は「何も起きていない」ことになります。ところが実際には、<strong>主債務者が返せなくなった瞬間に、会社は100万円を払う義務を負います。</strong></p>
+    <p>財務諸表を見る人（銀行・株主・取引先）にとって、この会社が他人の借金1億円を保証しているかどうかは、貸すか貸さないかを左右する重大な情報です。それが帳簿のどこにもない状態は放置できません。</p>
+  </div>
+
+  <p>ここで生まれた債務を<span class="term"><span class="term__w">偶発債務</span><span class="term__r">ぐうはつさいむ</span></span>と呼びます。<strong>今は債務ではないが、ある出来事が起きたら債務になるもの</strong>です。買掛金や借入金のように「必ず払うもの」とは性質がまったく違います。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">偶発債務は貸借対照表の本体には載らない</span>
+    <p>偶発債務は、負債の部に金額として計上するものではありません。まだ債務が確定していないからです。財務諸表では<strong>注記</strong>——本表の外に文章で書き添える形——で開示します。</p>
+    <p>それでも簿記の帳簿上は仕訳を切ります。仕訳を切っておかないと、注記を書く段階になって「そういえば保証していた」という事実を拾えないからです。この仕訳は金額を集計するためではなく、<strong>忘れないための記録</strong>として存在します。これを<span class="term"><span class="term__w">備忘記録</span><span class="term__r">びぼうきろく</span></span>と呼びます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>対照勘定という仕組み</h2>
+
+  <p>備忘記録を残したい。しかし貸借対照表の資産や負債を本当に増減させたいわけではない。この矛盾を解く道具が<span class="term"><span class="term__w">対照勘定</span><span class="term__r">たいしょうかんじょう</span></span>です。</p>
+
+  <p>やり方は単純で、<strong>金額の等しい借方科目と貸方科目を、専用にペアで用意して両建てで計上する</strong>だけです。使う科目は次の2つです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>勘定科目</th><th>置く側</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td class="d">保証債務見返</td><td class="d">借方</td><td>保証したという事実の記録（相手が返してくれれば消える見込みの側）</td></tr>
+        <tr><td class="c">保証債務</td><td class="c">貸方</td><td>肩代わりする可能性という記録</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>保証人になった時点の仕訳はこうなります。金額は保証した債務の額（＝万一のときに払う額）です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>A社の借入金 1,000,000円について保証人となった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">保証債務見返</td><td class="d amt">1,000,000</td><td class="c">保証債務</td><td class="c amt">1,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ両建てにするのか</span>
+    <p>片方だけを計上すると、貸借が合いません。仕訳の大原則を壊さずに記録だけを残すには、<strong>同額を借方と貸方の両方に置いて打ち消し合わせる</strong>しかないのです。</p>
+    <p>「見返（みかえり）」という耳慣れない語は、<strong>相手方に置いて釣り合いを取るための科目</strong>という意味です。実質的な中身はなく、保証債務を貸方に置くために借方を埋める役目だけを担っています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「保証債務」という名前に引きずられない</span>
+    <p>科目名に「債務」とありますが、これは<strong>買掛金や借入金と同列の負債ではありません。</strong>金額の等しい保証債務見返と必ずペアで存在し、貸借対照表の本体には出てきません。</p>
+    <p>また、対照勘定は<strong>損益にも影響しません。</strong>保証人になっただけでは費用も収益も発生しないからです。保証を設定した年度の当期純利益は、この仕訳によって1円も動きません。</p>
+    <p class="small muted">手形を割り引いたり裏書譲渡したりしたときにも、譲渡した相手が支払えなければ自社が肩代わりする義務が残ります。ただし<strong>その義務を計上・取崩する処理は1級の範囲</strong>です。2級では手形の割引・裏書は<strong>手形売却損</strong>を使う形までを扱います（W3）。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>保証が外れたとき／肩代わりしたとき</h2>
+
+  <p>備忘記録は、覚えておく必要がなくなったら消します。消え方は<strong>2通り</strong>あり、この分岐が試験で問われる中心です。</p>
+
+  <h3>ケース① 主債務者が自分で返済した（何も起きずに終わった）</h3>
+
+  <p>A社が銀行に1,000,000円を返済しました。あなたの会社が肩代わりする可能性は消滅したので、備忘記録も不要になります。<strong>設定時の逆仕訳</strong>を切って消すだけです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>A社が借入金を返済し、保証義務が消滅した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">保証債務</td><td class="d amt">1,000,000</td><td class="c">保証債務見返</td><td class="c amt">1,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>ここでも損益は動きません。<strong>自分の会社は最初から最後まで1円も動かしていない</strong>のですから、当然です。</p>
+
+  <h3>ケース② 主債務者が返せず、保証人として肩代わりした</h3>
+
+  <p>A社が返済できなくなり、あなたの会社が銀行に1,000,000円を小切手で支払いました。ここでは2つのことが同時に起きます。</p>
+
+  <ol class="steps">
+    <li><strong>備忘記録を消す</strong><br>偶発債務は「偶発」ではなくなりました。現実の支払いになった以上、備忘記録として残しておく意味はありません。ケース①と同じ逆仕訳で消します。</li>
+    <li><strong>肩代わりした金額を、A社に対する請求権として立てる</strong><br>肩代わりは<strong>贈与ではありません。</strong>払った1,000,000円は、法律上あとでA社に請求できます。この請求権を<span class="term"><span class="term__w">求償権</span><span class="term__r">きゅうしょうけん</span></span>と呼び、簿記では<strong>未収入金</strong>（資産）として計上します。</li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>A社に代わって銀行へ 1,000,000円を小切手で支払った（2本立て）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">保証債務</td><td class="d amt">1,000,000</td><td class="c">保証債務見返</td><td class="c amt">1,000,000</td></tr>
+        <tr><td class="d">未収入金</td><td class="d amt">1,000,000</td><td class="c">当座預金</td><td class="c amt">1,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">肩代わりした瞬間に「損失」としない</span>
+    <p>1,000,000円を払った時点で費用（貸倒損失など）にしたくなりますが、<strong>この時点では損失は確定していません。</strong>A社から回収できる可能性が残っているからです。まず資産（未収入金）として立てるのが順序です。</p>
+    <p>回収できないことが後で判明したときに、あらためて費用に振り替えます。<strong>支払いと損失の確定は、別の出来事です。</strong></p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ未収入金で、売掛金ではないのか</span>
+    <p>売掛金は<strong>商品やサービスを売った代金</strong>の未回収額に限られます。保証の肩代わりは営業取引ではないので、営業外の未回収額を表す未収入金を使います。3級で習った「備品を売った代金の未回収は未収入金」と同じ区別です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>未決算 — 保険金の額が決まるまでの置き場所</h2>
+
+  <p>倉庫が火事で全焼しました。建物には火災保険をかけてあります。ここで困るのは<strong>時間差</strong>です。</p>
+
+  <ul>
+    <li>建物が焼けてなくなったのは<strong>今日</strong>。帳簿に残っている建物を消さなければならない</li>
+    <li>保険会社が「保険金は◯◯円です」と言ってくるのは<strong>数か月後</strong></li>
+  </ul>
+
+  <p>建物を消した相手科目に何を書けばいいのでしょうか。全額を火災損失にすると、保険金が下りたときに損失を取り消す羽目になります。かといって「保険金がもらえる権利」として未収入金を立てようにも、<strong>金額がまだ決まっていない</strong>ので書けません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">だから「宙ぶらりん」専用の箱を作る</span>
+    <p>損か得かも、金額もまだ決まっていない。それでも建物は今日消さなければならない。この宙ぶらりんの状態を、決着がつくまで預けておく箱が<span class="term"><span class="term__w">未決算</span><span class="term__r">みけっさん</span></span>です。「まだ決算していない＝まだ決着していない」という意味の名前です。</p>
+    <p>3級の<strong>現金過不足</strong>とまったく同じ発想です。原因が分かるまで一時的に置き、判明した時点で正しい科目へ振り替える。未決算も、保険金額が確定した時点で必ず消えます。</p>
+  </div>
+
+  <h3>焼失時の仕訳</h3>
+
+  <p>取得原価 5,000,000円・減価償却累計額 3,200,000円の建物が焼失し、火災保険を付していたとします。焼失時にやることは2つです。</p>
+
+  <ol class="steps">
+    <li><strong>建物を帳簿から消す</strong><br>取得原価 5,000,000円を貸方に。<strong>減価償却累計額 3,200,000円も同時に借方で落とします。</strong>建物が消えた以上、その建物についての累計額だけ残しておく意味がないからです。</li>
+    <li><strong>差額（＝帳簿価額）を未決算に振り替える</strong><br>5,000,000 − 3,200,000 ＝ <strong>1,800,000円</strong>。これが「これから保険会社と話をつける対象の金額」です。</li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>建物（取得原価 5,000,000円・減価償却累計額 3,200,000円）が焼失。保険契約あり</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">建物減価償却累計額</td><td class="d amt">3,200,000</td><td class="c">建物</td><td class="c amt">5,000,000</td></tr>
+        <tr><td class="d">未決算</td><td class="d amt">1,800,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>この時点では<strong>損益が1円も動いていない</strong>ことに注目してください。損か得かがまだ決まっていないのだから、決めないのが正しいのです。未決算は「損か益かの判定を保留にしている金額」そのものです。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">保険をかけていなければ、未決算は使わない</span>
+    <p>未決算という箱が必要なのは、<strong>保険金という不確定要素があるから</strong>です。保険をかけていない資産が焼失した場合、話し合う相手も、変動する余地もありません。<mark>その場で損失が全額確定します。</mark></p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>保険を付していない建物（同条件）が焼失した場合</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">建物減価償却累計額</td><td class="d amt">3,200,000</td><td class="c">建物</td><td class="c amt">5,000,000</td></tr>
+          <tr><td class="d">火災損失</td><td class="d amt">1,800,000</td><td class="c"></td><td class="c amt"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>問題文の「<strong>保険を付していない</strong>」「<strong>保険契約を締結していなかった</strong>」という一文だけがこの分岐を決めます。金額の計算はまったく同じで、行き先の科目だけが違うため、読み飛ばすと確実に落とします。<strong>火災の問題を見たら、まず保険の有無を探してください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>保険金額が確定したとき — 保険差益と火災損失</h2>
+
+  <p>数か月後、保険会社から「保険金は◯◯円」という連絡が来ます。ここで未決算という箱を空にし、<strong>確定額との差額</strong>を損益にします。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 300" style="width:100%;height:auto;min-width:560px" role="img" aria-label="未決算の金額と確定した保険金額を比べ、差額を保険差益または火災損失にする図。">
+      <g font-size="13" fill="var(--text)">
+        <!-- 中央の未決算 -->
+        <rect x="270" y="120" width="160" height="60" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="350" y="145" text-anchor="middle" font-size="14" font-weight="700">未決算</text>
+        <text x="350" y="165" text-anchor="middle" font-size="12.5" fill="var(--muted)">1,800,000</text>
+
+        <!-- 上：益 -->
+        <rect x="470" y="30" width="200" height="80" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="6"/>
+        <text x="570" y="56" text-anchor="middle" font-size="13.5" font-weight="700">確定額のほうが大きい</text>
+        <text x="570" y="76" text-anchor="middle" font-size="12.5" fill="var(--muted)">例 2,000,000</text>
+        <text x="570" y="96" text-anchor="middle" font-size="13.5" font-weight="700">差額 → 保険差益</text>
+        <path d="M430 140 L455 100 L470 82" fill="none" stroke="var(--ok)" stroke-width="2"/>
+        <path d="M470 82 l-11 2 l4 8 z" fill="var(--ok)"/>
+
+        <!-- 下：損 -->
+        <rect x="470" y="190" width="200" height="80" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2" rx="6"/>
+        <text x="570" y="216" text-anchor="middle" font-size="13.5" font-weight="700">確定額のほうが小さい</text>
+        <text x="570" y="236" text-anchor="middle" font-size="12.5" fill="var(--muted)">例 1,500,000</text>
+        <text x="570" y="256" text-anchor="middle" font-size="13.5" font-weight="700">差額 → 火災損失</text>
+        <path d="M430 160 L455 200 L470 218" fill="none" stroke="var(--danger)" stroke-width="2"/>
+        <path d="M470 218 l-11 -2 l4 -8 z" fill="var(--danger)"/>
+
+        <!-- 左：焼失時 -->
+        <rect x="30" y="120" width="200" height="60" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="130" y="145" text-anchor="middle" font-size="13.5" font-weight="700">焼失時の帳簿価額</text>
+        <text x="130" y="165" text-anchor="middle" font-size="12.5" fill="var(--muted)">5,000,000 − 3,200,000</text>
+        <path d="M230 150 L262 150" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M270 150 l-10 -4 l0 8 z" fill="var(--muted)"/>
+
+        <text x="350" y="215" text-anchor="middle" font-size="12.5" fill="var(--muted)">確定した時点で必ず空になる</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">未決算は通過点であり、貸借対照表に残る科目ではありません。左から入った帳簿価額が、右で益か損のどちらかに振り分けられて消えます。<strong>どちらに転ぶかは焼失時点では分からない</strong>——それが未決算を置く理由そのものです。</p>
+  </div>
+
+  <h3>ケース① 確定額が未決算より大きい → 保険差益</h3>
+
+  <p>未決算 1,800,000円に対し、保険金 2,000,000円を受け取ることが確定した場合です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>保険金 2,000,000円の支払いが確定した（未収）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">未収入金</td><td class="d amt">2,000,000</td><td class="c">未決算</td><td class="c amt">1,800,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">保険差益</td><td class="c amt">200,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>差額 2,000,000 − 1,800,000 ＝ <strong>200,000円</strong>が<strong>保険差益</strong>（収益）です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">火事なのに「益」が出るのはおかしくないか</span>
+    <p>感覚に反しますが、簿記の計算としては正しい結果です。保険金は<strong>再調達に必要な金額</strong>をもとに決まるのに対し、帳簿価額は<strong>過去の取得原価から減価償却を引いた残り</strong>です。古い建物ほど帳簿価額は小さくなるので、保険金のほうが大きくなることは普通に起こります。</p>
+    <p>「得をした」という意味ではなく、<strong>帳簿価額として消した金額より多く回収できた分</strong>という意味の益です。</p>
+  </div>
+
+  <h3>ケース② 確定額が未決算より小さい → 火災損失</h3>
+
+  <p>同じ条件で、保険金が 1,500,000円と確定した場合です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>保険金 1,500,000円の支払いが確定した（未収）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">未収入金</td><td class="d amt">1,500,000</td><td class="c">未決算</td><td class="c amt">1,800,000</td></tr>
+        <tr><td class="d">火災損失</td><td class="d amt">300,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>差額 1,800,000 − 1,500,000 ＝ <strong>300,000円</strong>が<strong>火災損失</strong>（費用）です。回収しきれなかった帳簿価額が、ここで初めて損失として確定します。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">仕訳の書き方は1つに決まる</span>
+    <p>どちらのケースでも、機械的な手順は同じです。</p>
+    <ol class="steps">
+      <li><strong>未決算を全額、貸方に書いて消す</strong><br>金額は焼失時に立てた額そのままです。ここは考える余地がありません。</li>
+      <li><strong>確定した保険金額を、借方に未収入金として書く</strong><br>すでに入金されているなら当座預金などになります。</li>
+      <li><strong>貸借の差額を埋める</strong><br>貸方が足りなければ<strong>保険差益</strong>、借方が足りなければ<strong>火災損失</strong>。<mark>どちら側が空いたかで科目が決まる</mark>ので、大小を先に判定する必要すらありません。</li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>研究開発費 — 費用にしかできない支出</h2>
+
+  <p>製薬会社が新薬の研究に10億円を使ったとします。この10億円は、うまくいけば何十年も利益を生み続ける新薬になります。「将来の収益に貢献するのだから資産では」と考えたくなります。</p>
+
+  <p>ところが会計のルールでは、<strong>研究開発のための支出は、発生した期に全額を費用にします。</strong>資産には計上できません。科目は<strong>研究開発費</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ資産にできないのか</span>
+    <p>資産とは「将来の収益をもたらすことが<strong>合理的に見込める</strong>もの」です。研究開発の成果は、この条件を満たしません。10億円かけた研究の大半は<strong>製品にならずに終わります。</strong></p>
+    <p>もし資産計上を認めると、失敗した研究の支出まで貸借対照表に「資産」として並び続けることになります。実態のない資産で財政状態が良く見えてしまうため、<mark>成功するかどうか分からないものは資産にしない</mark>という判断で統一されているのです。</p>
+    <p>この扱いは会社によってばらつきません。研究開発費は<strong>全額費用の一択</strong>で、選択の余地がないことがそのまま試験での問いやすさになっています。</p>
+  </div>
+
+  <p>基本の仕訳はきわめて単純です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>研究開発部門の人件費・材料費など 3,000,000円を現金で支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">研究開発費</td><td class="d amt">3,000,000</td><td class="c">現金</td><td class="c amt">3,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">機械や建物を買っても、研究開発専用なら全額 研究開発費</span>
+    <p>試験で最も狙われるのはここです。<strong>特定の研究開発目的にのみ使用し、他に転用できない</strong>機械装置や設備を購入した場合、それは機械装置（固定資産）にはなりません。<mark>取得時に全額を研究開発費として費用処理します。</mark></p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>特定の研究開発にのみ使用し、他の目的に転用できない機械 4,500,000円を購入し、代金は翌月払いとした</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">研究開発費</td><td class="d amt">4,500,000</td><td class="c">未払金</td><td class="c amt">4,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>形が機械でも、その研究が終われば使い道がない以上、他の収益を生む見込みがありません。だから資産として持ち越さないのです。<strong>減価償却もしません。</strong>資産として計上していないのですから、償却する対象が存在しません。</p>
+    <p>判定の分かれ目は<strong>「他に転用できるかどうか」</strong>です。研究にも生産にも使える汎用の機械なら、通常どおり機械装置（資産）として計上し減価償却します。問題文の「<strong>他の目的に使用できない</strong>」「<strong>当該研究開発にのみ使用する</strong>」という但し書きが決め手になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>繰延資産 — 換金できないのに資産と呼ぶもの</h2>
+
+  <p>会社を設立するには、定款の作成費用、登記の登録免許税、設立事務の費用などがかかります。これらは会社が生まれる前後に一度だけ発生し、<strong>支払いも済み、役務の提供も終わっています。</strong></p>
+
+  <p>普通に考えれば全額が費用です。ところがここには不都合があります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">設立1年目だけが大赤字になるという問題</span>
+    <p>設立費用の効果は、設立した年だけに及ぶものではありません。<strong>会社が存続する限り、その後ずっと恩恵を受け続けます。</strong>にもかかわらず全額を1年目の費用にすると、1年目だけが不自然に重い負担を背負い、2年目以降はまったく負担しないことになります。</p>
+    <p>そこで、<strong>すでに支出も役務の提供も終わっているが、効果が将来に及ぶ支出</strong>について、いったん資産として計上し、効果の及ぶ期間にわたって費用配分することが認められています。これが<span class="term"><span class="term__w">繰延資産</span><span class="term__r">くりのべしさん</span></span>です。</p>
+  </div>
+
+  <h3>原則は費用、容認として繰延資産</h3>
+
+  <p>ここは建て付けを正確に押さえてください。繰延資産は<strong>必ずそうしなければならないものではありません。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>扱い</th><th>処理</th><th>その後</th></tr></thead>
+      <tbody>
+        <tr><td class="d">原則</td><td>支出した期に全額<strong>費用</strong>として処理する</td><td>翌期以降なにも起きない</td></tr>
+        <tr><td class="c">容認</td><td><strong>繰延資産</strong>として資産計上する</td><td>決められた期間にわたって<strong>償却</strong>する</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>どちらも認められているので、<strong>問題文の指示に従います。</strong>自分で判断する場面はありません。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級の答案で書くのは、原則の側だけでよい</span>
+    <p>日商が公表している<strong>商業簿記標準・許容勘定科目表</strong>（2022年度版）を見ると、創立費・開業費・株式交付費・開発費の4つは<mark>すべて「費用」の欄にだけ載っており、資産の欄には繰延資産の科目がありません。</mark>「創立費償却」のような償却費の科目も載っていません。</p>
+    <p>出題区分表の側も同じです。<strong>「繰延資産」という項目そのものは1級の範囲</strong>で、2級にあるのは「収益と費用」の中の<strong>研究開発費、創立費・開業費など</strong>という費用の項目だけです。科目表と区分表の両方が、同じことを言っています。</p>
+    <p>つまり2級の答案で使うことを求められているのは<strong>支出時に費用処理する形</strong>です。この単元の仕訳ドリルもその範囲で組んであります。</p>
+    <p>それでも繰延資産という考え方と償却期間を押さえておく価値はあります。<strong>これらの科目が「費用」であって「資産」ではない理由そのものが、原則が費用処理だという建て付けから来ている</strong>からです。仕組みを知らずに科目だけ覚えると、貸借対照表に載せる論点だと誤解します。</p>
+  </div>
+
+  <h3>4つの科目と、繰り延べる場合の期間</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>科目</th><th>何の支出か</th><th class="amt">繰り延べる場合の期間</th><th>償却方法</th></tr></thead>
+      <tbody>
+        <tr><td class="d">創立費</td><td>会社の<strong>設立</strong>までにかかった費用（定款作成費、設立登記の登録免許税など）</td><td class="amt">5年以内</td><td>定額法</td></tr>
+        <tr><td class="d">開業費</td><td>設立後、<strong>営業を開始するまで</strong>にかかった費用（開業準備の広告費、賃借料など）</td><td class="amt">5年以内</td><td>定額法</td></tr>
+        <tr><td class="d">株式交付費</td><td>会社設立後の<strong>増資</strong>などで株式を発行するためにかかった費用</td><td class="amt">3年以内</td><td>定額法</td></tr>
+        <tr><td class="d">開発費</td><td>新技術・新市場の開拓など、<strong>経常的でない</strong>特別の支出</td><td class="amt">5年以内</td><td>定額法</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>期間は「<strong>◯年以内</strong>」であって「◯年」ではありません。会社がその範囲で自由に決めてよいということです。<strong>株式交付費だけが3年</strong>で、残り3つが5年という点が覚えどころです。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">創立費と開業費の境目は「会社が生まれた瞬間」</span>
+    <p>設立登記が完了した時点で会社は法律上生まれます。<strong>その前が創立費、後で営業開始までが開業費</strong>です。定款作成費や設立登記の登録免許税は会社が生まれる前の支出なので創立費、開店準備のチラシ代は生まれた後の支出なので開業費になります。</p>
+    <p>株式交付費だけは時期ではなく<strong>目的</strong>で決まります。設立後の増資で株式を発行するための費用なので、設立時の支出とは別物です。</p>
+  </div>
+
+  <h3>支出したときの仕訳</h3>
+
+  <p>設立にあたり 1,200,000円を支出した場合です。支出時に費用として処理します。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>会社の設立費用 1,200,000円を小切手を振り出して支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">創立費</td><td class="d amt">1,200,000</td><td class="c">当座預金</td><td class="c amt">1,200,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>仕訳の形は3級で習った広告宣伝費や保険料と変わりません。<strong>迷いどころは金額でも貸借でもなく、創立費・開業費・株式交付費のどれを使うか</strong>という科目の選択だけです。だからこそ、境目を言葉で説明できる状態にしておく必要があります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">繰り延べた場合に何が起きるか</span>
+    <p>繰延資産として計上した場合は、決算で<strong>その科目自体を直接減らす</strong>形で償却します。減価償却累計額のような控除科目は使いません。したがって貸借対照表には「計上額 − 償却済み額」の残高がそのまま載ります。</p>
+    <p>期中に支出した年度は、<strong>支出した月から決算月までの月数</strong>で按分します。減価償却の月割りと考え方は同じですが、<strong>残存価額はありません。</strong>期間が終われば残高はゼロになります。</p>
+  </div>
+
+  <h3>繰延資産は「擬制資産」である</h3>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">売っても1円にもならないのに資産の部にある</span>
+    <p>建物や商品なら、売れば現金になります。ところが創立費は<strong>誰にも売れません。</strong>換金価値はゼロです。それでも資産の部に載っているため、繰延資産は<span class="term"><span class="term__w">擬制資産</span><span class="term__r">ぎせいしさん</span></span>——法律上そう見なしているだけの資産——と呼ばれます。</p>
+    <p>換金価値のないものが資産の部に並ぶのは、債権者にとって危うい状態です。だから<strong>認められる項目は法律で限定列挙</strong>され、償却期間も上限が定められ、そもそも原則は費用処理とされています。「便利だから何でも繰り延べる」ことができないよう、二重三重に縛られているのです。</p>
+    <p>この性質は、次の点でも試験に出ます。<strong>繰延資産は貸借対照表の「繰延資産」という独立した区分に表示され、流動資産にも固定資産にも入りません。</strong></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">研究開発費と繰延資産を混同しない</span>
+    <p>どちらも「将来に効きそうな支出」ですが、扱いは正反対です。<strong>研究開発費は成功するかどうかが不確実なので、資産にする道が最初から閉ざされています。</strong>いっぽう創立費や開業費は、会社が存続する限り効果が及ぶことが確実なので、繰り延べる道が容認されています。</p>
+    <p>不確実だから費用に押し込む、確実だから繰り延べを許す。<mark>判断の軸は「効果が及ぶことが確実かどうか」</mark>です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は4行ありますが、実際に使う行数は問題ごとに違います。<strong>空いた行は無視されます</strong>ので、行数から科目数を推測しないでください。本番の第1問も同じ条件です。</p>
+
+  <div id="drill-honmon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>仕訳を書けることと、金額を出せること、判断の分岐を言葉で説明できることは別の能力です。それぞれ独立に確認します。</p>
+
+  <div id="num-kingaku"></div>
+
+  <div id="quiz-handan"></div>
+
+  <div id="fill-yougo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。3つの論点は互いに独立しているので、<strong>どれか1つが曖昧なまま先に進んでも、他の2つは無傷です。</strong>逆に言えば、曖昧なものを個別に潰せば済みます。</p>
+
+  <div class="progressbar" data-progress-for="#u6check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u6check">0 / 0 完了（0%）</div>
+
+  <div id="u6check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u06-w2u6-1"><label for="c1"><span class="cl__t">保証人になっただけで仕訳を切る理由を説明できる</span><span class="cl__d">主債務者が返せなくなれば会社が払う義務を負う。記録がないと財務諸表の利用者がその可能性を知る手段がない</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u06-w2u6-2"><label for="c2"><span class="cl__t">偶発債務が貸借対照表の本体ではなく注記で開示されると言える</span><span class="cl__d">まだ債務が確定していないため負債として金額計上しない。簿記上は備忘記録として仕訳を切る</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u06-w2u6-3"><label for="c3"><span class="cl__t">対照勘定を両建てで計上する理由を言える</span><span class="cl__d">片方だけでは貸借が合わない。同額を借方と貸方に置いて打ち消し合わせることで、貸借を壊さずに記録だけを残す</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u06-w2u6-4"><label for="c4"><span class="cl__t">保証設定・保証解除・肩代わりの3つの仕訳を書ける</span><span class="cl__d">設定は「保証債務見返／保証債務」、解除はその逆仕訳、肩代わりは逆仕訳＋「未収入金／当座預金など」の2本立て</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u06-w2u6-5"><label for="c5"><span class="cl__t">肩代わりした金額を損失にせず未収入金にする理由を説明できる</span><span class="cl__d">求償権としてあとで請求できるため。回収不能が判明して初めて費用に振り替える</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u06-w2u6-6"><label for="c6"><span class="cl__t">未決算という箱が必要になる状況を言える</span><span class="cl__d">資産は今日消えたのに保険金額の確定は数か月後。損か益かも金額も決まらないので判定を保留する</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u06-w2u6-7"><label for="c7"><span class="cl__t">焼失時の仕訳を、減価償却累計額の処理を含めて書ける</span><span class="cl__d">取得原価を貸方で消し、累計額を借方で落とし、差額の帳簿価額を未決算へ振り替える。損益は動かさない</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u06-w2u6-8"><label for="c8"><span class="cl__t">保険を付していない場合は未決算を経由しないと言える</span><span class="cl__d">確定を待つ相手がいないため、その場で帳簿価額の全額が火災損失として確定する</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u06-w2u6-9"><label for="c9"><span class="cl__t">保険金確定時に保険差益と火災損失を書き分けられる</span><span class="cl__d">未決算を全額消し、確定額を借方に書き、空いた側を埋める。貸方が空けば保険差益、借方が空けば火災損失</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u06-w2u6-10"><label for="c10"><span class="cl__t">火災なのに保険差益が出ることがある理由を説明できる</span><span class="cl__d">保険金は再調達に必要な額をもとに決まるが、帳簿価額は取得原価から減価償却を引いた残り。古い資産ほど差が開く</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u06-w2u6-11"><label for="c11"><span class="cl__t">研究開発費を資産計上しない理由を説明できる</span><span class="cl__d">将来の収益をもたらすかが不確実。資産計上を認めると失敗した研究の支出まで資産として残り続ける</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u06-w2u6-12"><label for="c12"><span class="cl__t">研究開発専用で転用できない機械の処理を書ける</span><span class="cl__d">取得時に全額を研究開発費とする。固定資産にしないので減価償却もしない。判定は「他に転用できるか」</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u06-w2u6-13"><label for="c13"><span class="cl__t">繰延資産が「原則費用・容認資産計上」であることを言える<span class="chip">範囲外の背景</span></span><span class="cl__d">どちらも認められているため問題文の指示に従う。自分で選ぶ場面はない</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u06-w2u6-14"><label for="c14"><span class="cl__t">創立費・開業費・株式交付費を繰り延べる場合の期間と方法を言える</span><span class="cl__d">創立費・開業費・開発費は5年以内、株式交付費は3年以内。いずれも定額法。株式交付費だけ3年である点が引っかけどころ</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u06-w2u6-15"><label for="c15"><span class="cl__t">創立費と開業費の境目を言え、支出を1件ずつ振り分けられる</span><span class="cl__d">設立登記の完了が境。前が創立費、後で営業開始までが開業費。支出の性質ではなく時期で分ける</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u06-w2u6-16"><label for="c16"><span class="cl__t">株式交付費が時期ではなく目的で決まると言える</span><span class="cl__d">設立後の増資などで株式を発行するための費用。設立時の支出ではないので創立費にはならない</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u06-w2u6-17"><label for="c17"><span class="cl__t">繰延資産が擬制資産と呼ばれる理由を説明できる<span class="chip">範囲外の背景</span></span><span class="cl__d">売っても換金できないのに資産の部にあるため。だから項目が限定列挙され、期間に上限があり、原則は費用処理とされる</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u06-w2u6-18"><label for="c18"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この3論点は分量が小さく、<strong>1回やって数週間放置すると確実に抜けます。</strong>特に「保険の有無で未決算を経由するか変わる」「研究開発専用の機械は全額費用」の2つは、判断さえ覚えていれば計算は易しいので、毎週の仕訳ドリル1.5時間の枠に少数ずつ混ぜ続けてください。</p>
+    <p>火災損失と保険差益は、第3問（財務諸表）では<strong>特別損失・特別利益</strong>の区分に載ります。表示区分はW8の第3問独立週でまとめて整理します。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W2 UNIT 06 その他の債権と債務・未決算・繰延資産</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '売掛金', '未収入金', '仮払金',
+    '建物', '備品', '機械装置', '土地', '未決算',
+    '保証債務見返',
+    '買掛金', '未払金', '借入金', '保証債務',
+    '建物減価償却累計額', '備品減価償却累計額',
+    '資本金', '資本準備金',
+    '保険差益', '受取利息',
+    '火災損失', '研究開発費', '創立費', '開業費', '株式交付費', '開発費',
+    '減価償却費', '支払利息', '貸倒損失', '修繕費', '広告宣伝費', '租税公課'
+  ];
+
+  /* ========== 仕訳ドリル 12問 ========== */
+  BokiJournal.mount('#drill-honmon', {
+    title: '仕訳ドリル — 債務の保証・未決算・研究開発費・繰延資産（12問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '取引先A社が銀行から <strong>2,000,000円</strong> を借り入れるにあたり、当社はその債務の<strong>保証人</strong>となった。対照勘定を用いて備忘記録を行う。',
+        debit: [['保証債務見返', 2000000]],
+        credit: [['保証債務', 2000000]],
+        hint: 'この時点で当社の現金は1円も動いていません。それでも記録は残します。',
+        explain: '<p>保証人になっただけでは、当社の資産も負債も実際には動いていません。それでも、A社が返済できなくなれば当社が<strong>2,000,000円を払う義務を負う</strong>という事実は、財務諸表を見る人にとって重大な情報です。</p><p>貸借を壊さずに記録だけを残すため、<strong>同額の対照勘定を両建て</strong>にします。借方に保証債務見返、貸方に保証債務。金額は保証した債務の額そのままです。</p><p>この仕訳では<strong>損益が1円も動きません。</strong>費用も収益も発生していないからです。</p>'
+      },
+      {
+        text: '当社が債務保証をしていたB社の借入金 <strong>3,500,000円</strong> について、B社が銀行に対し<strong>全額を返済した</strong>旨の連絡を受けた。備忘記録を消去する。',
+        debit: [['保証債務', 3500000]],
+        credit: [['保証債務見返', 3500000]],
+        hint: '肩代わりする可能性が消えました。設定時に切った仕訳をどうすればよいでしょうか。',
+        explain: '<p>B社が自分で返済したことで、当社が肩代わりする可能性は完全に消滅しました。備忘記録として残しておく理由がなくなったので、<strong>設定時の逆仕訳</strong>で消します。</p><p>借方に保証債務、貸方に保証債務見返。設定時とちょうど左右が入れ替わります。</p><p>ここでも<strong>損益は動きません。</strong>当社は最初から最後まで1円も動かしていないからです。「無事に終わってよかった」という出来事に、収益は発生しません。</p>'
+      },
+      {
+        text: '当社が債務保証をしていたC社の借入金 <strong>1,500,000円</strong> について、C社が返済不能となったため、<strong>当社が銀行に対し小切手を振り出して支払った</strong>。あわせて備忘記録を消去する。',
+        debit: [['保証債務', 1500000], ['未収入金', 1500000]],
+        credit: [['保証債務見返', 1500000], ['当座預金', 1500000]],
+        hint: '2つのことが同時に起きています。備忘記録の消去と、実際の支払いです。',
+        explain: '<p>この問題では2本の仕訳が同時に必要です。</p><ol><li><strong>備忘記録の消去</strong>：偶発債務は「偶発」ではなくなりました。「保証債務 1,500,000／保証債務見返 1,500,000」で消します。</li><li><strong>実際の支払い</strong>：小切手を振り出したので当座預金が 1,500,000円減ります。相手科目は<strong>未収入金</strong>です。</li></ol><p>肩代わりは贈与ではありません。払った 1,500,000円は法律上あとでC社に請求できます。この請求権を<strong>求償権</strong>といい、簿記では未収入金（資産）として計上します。</p><p><strong>この時点で費用にしてはいけません。</strong>回収できる可能性が残っているためです。回収不能が判明したときに、あらためて費用へ振り替えます。営業取引ではないので売掛金は使いません。</p>'
+      },
+      {
+        text: '当期首に火災が発生し、<strong>建物（取得原価 8,000,000円、減価償却累計額 5,600,000円）</strong>が全焼した。この建物には<strong>火災保険を付している</strong>ため、保険会社に保険金を請求した。なお、保険金額はまだ確定していない。',
+        debit: [['建物減価償却累計額', 5600000], ['未決算', 2400000]],
+        credit: [['建物', 8000000]],
+        hint: '保険金額が決まっていないので、損か益かをまだ決められません。',
+        explain: '<p>やることは2つです。</p><ol><li><strong>建物を帳簿から消す</strong>：取得原価 8,000,000円を貸方に。あわせて<strong>減価償却累計額 5,600,000円も借方で落とします。</strong>建物が消えた以上、その建物についての累計額だけ残す意味がありません。</li><li><strong>差額を未決算へ</strong>：8,000,000 − 5,600,000 ＝ <strong>2,400,000円</strong>。これが帳簿価額であり、これから保険会社と話をつける対象の金額です。</li></ol><p>この時点で<strong>損益は1円も動きません。</strong>保険金がいくら下りるか分からない以上、損なのか益なのかを決められないからです。未決算は「損益の判定を保留にしている金額」そのものです。</p>'
+      },
+      {
+        text: '火災により焼失した建物について、保険会社から <strong>保険金 2,700,000円</strong> を支払う旨の連絡があった。なお、焼失時に <strong>未決算 2,400,000円</strong> を計上している。保険金はまだ受け取っていない。',
+        debit: [['未収入金', 2700000]],
+        credit: [['未決算', 2400000], ['保険差益', 300000]],
+        hint: '未決算は全額消します。確定額との差が、どちら側に空くかを見てください。',
+        explain: '<p>手順は機械的です。</p><ol><li><strong>未決算を全額 貸方に書いて消す</strong>：2,400,000円。焼失時に立てた額そのままです。</li><li><strong>確定した保険金額を借方に</strong>：まだ受け取っていないので<strong>未収入金 2,700,000円</strong>（資産）。</li><li><strong>差額を埋める</strong>：借方 2,700,000 に対し貸方が 2,400,000 なので、貸方が <strong>300,000円</strong> 足りません。ここを<strong>保険差益</strong>（収益）で埋めます。</li></ol><p>2,700,000 − 2,400,000 ＝ 300,000円。火災なのに益が出るのは、保険金が<strong>再調達に必要な額</strong>をもとに決まるのに対し、帳簿価額は<strong>取得原価から減価償却を引いた残り</strong>だからです。古い建物ほどこの差が開きます。</p>'
+      },
+      {
+        text: '火災により焼失した備品について、保険会社から <strong>保険金 900,000円</strong> を支払う旨の連絡があり、同額が<strong>当座預金口座に入金された</strong>。なお、焼失時に <strong>未決算 1,250,000円</strong> を計上している。',
+        debit: [['当座預金', 900000], ['火災損失', 350000]],
+        credit: [['未決算', 1250000]],
+        hint: '今度は入金済みです。そして未決算のほうが大きい場合、空くのはどちら側でしょうか。',
+        explain: '<p>手順は前問とまったく同じです。</p><ol><li><strong>未決算 1,250,000円を貸方で全額消す。</strong></li><li><strong>確定額を借方に</strong>：今回はすでに入金されているので、未収入金ではなく<strong>当座預金 900,000円</strong>です。</li><li><strong>差額を埋める</strong>：貸方 1,250,000 に対し借方が 900,000 なので、借方が <strong>350,000円</strong> 足りません。ここを<strong>火災損失</strong>（費用）で埋めます。</li></ol><p>1,250,000 − 900,000 ＝ 350,000円。回収しきれなかった帳簿価額が、ここで初めて損失として確定します。</p><p><strong>大小を先に判定する必要はありません。</strong>未決算を消して確定額を書けば、空いた側が自動的に答えを教えてくれます。貸方が空けば保険差益、借方が空けば火災損失です。</p>'
+      },
+      {
+        text: '火災が発生し、<strong>建物（取得原価 6,000,000円、減価償却累計額 4,200,000円）</strong>が全焼した。なお、この建物には<strong>火災保険を付していなかった</strong>。',
+        debit: [['建物減価償却累計額', 4200000], ['火災損失', 1800000]],
+        credit: [['建物', 6000000]],
+        hint: '未決算という箱が必要なのは、保険金という不確定要素があるからでした。',
+        explain: '<p>建物を消す部分は保険がある場合とまったく同じです。取得原価 6,000,000円を貸方に、減価償却累計額 4,200,000円を借方に落とします。</p><p>違うのは差額 6,000,000 − 4,200,000 ＝ <strong>1,800,000円</strong> の行き先です。<strong>未決算は使いません。</strong></p><p>未決算という箱が必要なのは、保険金という不確定要素があるからでした。保険をかけていなければ、話し合う相手も変動する余地もありません。<strong>その場で損失が全額確定する</strong>ので、直接 火災損失（費用）にします。</p><p>問題文の「<strong>保険を付していなかった</strong>」という一文だけがこの分岐を決めます。金額の計算はまったく同じで、行き先の科目だけが違うため、読み飛ばすと確実に落とします。</p>'
+      },
+      {
+        text: '研究開発部門において、新製品の研究に従事する従業員の給料 <strong>1,800,000円</strong> と、研究に使用する材料の購入代金 <strong>700,000円</strong> を、あわせて<strong>普通預金口座から支払った</strong>。',
+        debit: [['研究開発費', 2500000]],
+        credit: [['普通預金', 2500000]],
+        hint: '給料と材料費に分けません。研究開発のための支出はひとまとめです。',
+        explain: '<p>1,800,000 ＋ 700,000 ＝ <strong>2,500,000円</strong> を、全額<strong>研究開発費</strong>（費用）とします。給料や材料といった中身で科目を分けません。<strong>研究開発のために使った支出は、性質を問わずまとめて研究開発費です。</strong></p><p>資産計上しないのは、研究開発の成果が将来の収益をもたらすかどうかが<strong>不確実</strong>だからです。資産計上を認めると、失敗した研究の支出まで貸借対照表に「資産」として並び続けることになります。</p><p>この扱いに選択の余地はありません。<strong>発生した期に全額費用の一択</strong>です。</p>'
+      },
+      {
+        text: '<strong>特定の研究開発にのみ使用し、他の目的には転用できない</strong>実験用機械 <strong>5,400,000円</strong> を購入し、代金は<strong>翌月末に支払う</strong>こととした。',
+        debit: [['研究開発費', 5400000]],
+        credit: [['未払金', 5400000]],
+        hint: '形は機械ですが、その研究が終われば使い道がありません。資産として持ち越せるでしょうか。',
+        explain: '<p>形が機械であっても<strong>機械装置（固定資産）にはしません。</strong>取得時に全額を<strong>研究開発費 5,400,000円</strong> として費用処理します。</p><p>その研究が終われば使い道がない以上、他の収益を生む見込みがありません。将来の収益に貢献しないものは資産の定義を満たさないので、資産として持ち越さないのです。</p><p>資産計上していないので、<strong>翌期以降に減価償却もしません。</strong>償却する対象が存在しないからです。</p><p>判定の分かれ目は<strong>「他に転用できるかどうか」</strong>です。研究にも生産にも使える汎用の機械なら、通常どおり機械装置として計上して減価償却します。</p><p>貸方は代金が翌月払いなので<strong>未払金</strong>（負債）です。商品の仕入ではないため買掛金は使いません。</p>'
+      },
+      {
+        text: '会社の設立にあたり、定款の作成費用 <strong>400,000円</strong> および設立登記の登録免許税 <strong>1,100,000円</strong> を、<strong>小切手を振り出して支払った</strong>。',
+        debit: [['創立費', 1500000]],
+        credit: [['当座預金', 1500000]],
+        hint: '設立登記が完了する前の支出です。会社はまだ生まれていません。',
+        explain: '<p>定款の作成費用も設立登記の登録免許税も、<strong>会社が法律上生まれる前</strong>の支出です。したがってどちらも<strong>創立費</strong>で、400,000 ＋ 1,100,000 ＝ <strong>1,500,000円</strong> をまとめて計上します。</p><p>設立登記の完了が境目で、その後から営業開始までの支出であれば開業費になります。</p><p>登録免許税だからといって租税公課にはしません。<strong>会社設立という一度きりの目的のための支出</strong>としてまとめて把握するのが創立費です。</p>'
+      },
+      {
+        text: '会社の設立登記が完了した後、営業開始に先立って、<strong>開店を告知する広告費 350,000円</strong> と <strong>開業準備期間中の店舗賃借料 450,000円</strong> を<strong>普通預金口座から支払った</strong>。',
+        debit: [['開業費', 800000]],
+        credit: [['普通預金', 800000]],
+        hint: '会社はすでに生まれています。営業はまだ始まっていません。',
+        explain: '<p>350,000 ＋ 450,000 ＝ <strong>800,000円</strong> を<strong>開業費</strong>として計上します。</p><p>設立登記が完了しているので創立費ではありません。かといって、まだ営業が始まっていないので通常の広告宣伝費・支払家賃でもありません。<strong>設立後、営業を開始するまで</strong>という期間の支出だけを集める科目が開業費です。</p><p>広告費と賃借料という性質の違う支出をまとめて1科目にする点は、研究開発費と同じ考え方です。<strong>何に使ったかではなく、何のための期間の支出か</strong>で科目が決まります。</p>'
+      },
+      {
+        text: '増資のため新株を発行した。この株式の発行に要した費用 <strong>600,000円</strong> を<strong>現金で支払った</strong>。払込金の処理は済んでいるものとし、この支出の仕訳のみを示しなさい。',
+        debit: [['株式交付費', 600000]],
+        credit: [['現金', 600000]],
+        hint: '設立時の支出ではないので創立費にはなりません。目的で決まる科目です。',
+        explain: '<p>株式を発行するために要した費用は<strong>株式交付費</strong>とします。現金で支払ったので貸方は現金です。</p><p>創立費と混同しやすい科目ですが、判定の軸が違います。創立費・開業費は<strong>時期</strong>（設立登記の前か後か）で決まるのに対し、<strong>株式交付費は目的で決まります</strong>。設立後の増資であっても、株式の発行のための費用ならこの科目です。</p><p>なお、払込金そのものを資本金と資本準備金に振り分ける処理は<strong>W7の株式会社会計</strong>で扱います。ここでは発行費用の科目だけを押さえてください。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-kingaku', {
+    title: '計算ドリル — 差額と区分金額を出す（4問）',
+    unit: '円',
+    questions: [
+      {
+        text: '取得原価 <strong>7,500,000円</strong>、減価償却累計額 <strong>4,800,000円</strong> の建物が火災で全焼した。この建物には火災保険を付しており、後日 <strong>保険金 3,100,000円</strong> の支払いが確定した。焼失時に計上する<strong>未決算の金額</strong>と、保険金確定時に計上する<strong>保険差益の金額</strong>を求めなさい。',
+        labels: ['未決算', '保険差益'],
+        answer: [2700000, 400000],
+        formula: ['7500000-4800000', '3100000-(7500000-4800000)'],
+        hint: '未決算は焼失時点の帳簿価額です。差益は確定額から未決算を引きます。',
+        explain: '<p><strong>未決算</strong>：7,500,000 − 4,800,000 ＝ <strong>2,700,000円</strong>。取得原価から減価償却累計額を引いた帳簿価額が、そのまま未決算になります。</p><p><strong>保険差益</strong>：3,100,000 − 2,700,000 ＝ <strong>400,000円</strong>。確定額のほうが大きいので貸方が空き、保険差益（収益）で埋めます。</p><p>仕訳は「未収入金 3,100,000／未決算 2,700,000・保険差益 400,000」となります。</p>'
+      },
+      {
+        text: '取得原価 <strong>4,000,000円</strong>、減価償却累計額 <strong>1,500,000円</strong> の備品が火災で焼失した。保険金は <strong>1,900,000円</strong> と確定した。焼失時に計上する<strong>未決算の金額</strong>と、保険金確定時に計上する<strong>火災損失の金額</strong>を求めなさい。',
+        labels: ['未決算', '火災損失'],
+        answer: [2500000, 600000],
+        formula: ['4000000-1500000', '(4000000-1500000)-1900000'],
+        hint: '今度は確定額のほうが小さくなります。空くのはどちら側でしょうか。',
+        explain: '<p><strong>未決算</strong>：4,000,000 − 1,500,000 ＝ <strong>2,500,000円</strong>。</p><p><strong>火災損失</strong>：2,500,000 − 1,900,000 ＝ <strong>600,000円</strong>。確定額のほうが小さいので借方が空き、火災損失（費用）で埋めます。</p><p>仕訳は「未収入金 1,900,000・火災損失 600,000／未決算 2,500,000」。<strong>火災損失になるのは 1,900,000円ではなく 600,000円</strong>である点に注意してください。保険で回収できた分は損失ではありません。</p>'
+      },
+      {
+        text: '会社の設立および開業にあたり、次の支出があった。<strong>定款の作成費用 380,000円</strong>、<strong>設立登記の登録免許税 940,000円</strong>、<strong>設立事務に要した費用 180,000円</strong>、<strong>設立登記完了後、営業開始までの開業準備の広告費 520,000円</strong>、<strong>同じく開業準備期間中の店舗賃借料 630,000円</strong>。<strong>創立費</strong>となる金額と<strong>開業費</strong>となる金額をそれぞれ求めなさい。',
+        labels: ['創立費', '開業費'],
+        answer: [1500000, 1150000],
+        formula: ['380000+940000+180000', '520000+630000'],
+        hint: '設立登記が完了した瞬間が境目です。1件ずつ、その前か後かを判定します。',
+        explain: '<p>境目は<strong>設立登記の完了</strong>——会社が法律上生まれた瞬間です。</p><p><strong>創立費</strong>（生まれる前）：定款作成費 380,000 ＋ 登録免許税 940,000 ＋ 設立事務費用 180,000 ＝ <strong>1,500,000円</strong>。</p><p><strong>開業費</strong>（生まれた後、営業開始まで）：広告費 520,000 ＋ 店舗賃借料 630,000 ＝ <strong>1,150,000円</strong>。</p><p>支出の性質（税金・広告・家賃）ではなく<strong>時期</strong>で分ける点がこの問題の要です。開業準備期間の広告費を広告宣伝費に、賃借料を支払家賃にしてしまうと、どちらの科目の金額も合わなくなります。</p>'
+      },
+      {
+        text: '当社は当期に次の支出を行った。<strong>研究開発部門の従業員給料 2,400,000円</strong>、<strong>特定の研究開発にのみ使用し他に転用できない実験装置の購入代金 3,600,000円</strong>、<strong>研究にも生産にも使用できる汎用機械の購入代金 5,000,000円</strong>。当期の<strong>研究開発費</strong>の金額と、<strong>機械装置として資産計上される</strong>金額をそれぞれ求めなさい。',
+        labels: ['研究開発費', '機械装置'],
+        answer: [6000000, 5000000],
+        formula: ['2400000+3600000', '5000000'],
+        hint: '装置が2つあります。分かれ目は「他に転用できるかどうか」です。',
+        explain: '<p><strong>研究開発費</strong>：従業員給料 2,400,000 ＋ 転用できない実験装置 3,600,000 ＝ <strong>6,000,000円</strong>。</p><p>転用できない装置は、形が機械であっても資産にしません。その研究が終われば使い道がなく、<strong>他の収益を生む見込みがない</strong>からです。取得時に全額を費用処理し、減価償却も行いません。</p><p><strong>機械装置</strong>：汎用機械 <strong>5,000,000円</strong>。研究にも生産にも使えるので将来の収益に貢献します。通常どおり固定資産として計上し、減価償却します。</p><p>同じ「研究に使う機械」でも扱いが正反対になります。<mark>判定の分かれ目は用途の限定と転用の可否</mark>であり、金額の大小や購入の目的ではありません。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト（概念判定のみ） ========== */
+  BokiQuiz.mount('#quiz-handan', {
+    title: '確認テスト — 分岐の判断（6問）',
+    questions: [
+      {
+        text: '火災で焼失した資産について、<strong>未決算勘定を経由せず、直接 火災損失とする</strong>のはどのような場合ですか。',
+        choices: [
+          '減価償却累計額が計上されていない場合',
+          '焼失した資産に保険を付していなかった場合',
+          '保険金の入金が決算日をまたぐ場合'
+        ],
+        answer: 1,
+        explain: '<p>未決算という箱が必要なのは、<strong>保険金という不確定要素があるから</strong>です。保険をかけていなければ、話し合う相手も変動する余地もなく、その場で損失が全額確定します。したがって未決算を経由せず、帳簿価額をそのまま火災損失にします。</p><p>減価償却累計額の有無は、消す金額の計算に関わるだけで、未決算を使うかどうかとは無関係です。保険金の入金時期も同様で、保険契約があるかぎり金額が確定するまでは未決算を使います。</p>'
+      },
+      {
+        text: '債務保証をしていた取引先が返済不能となり、当社が保証人として銀行に支払いました。このとき、支払った金額を<strong>最初に計上する科目</strong>として正しいものはどれですか。',
+        choices: [
+          '貸倒損失（費用）',
+          '未収入金（資産）',
+          '保証債務（対照勘定）'
+        ],
+        answer: 1,
+        explain: '<p>肩代わりは贈与ではありません。支払った金額は法律上あとで主債務者に請求できます。この請求権を<strong>求償権</strong>といい、簿記では<strong>未収入金</strong>（資産）として計上します。</p><p>支払った時点では損失は確定していません。回収できる可能性が残っているためで、回収不能が判明したときに初めて費用へ振り替えます。<strong>支払いと損失の確定は別の出来事です。</strong></p><p>保証債務は対照勘定であり、この場面では備忘記録を消すために借方に書いて消滅させる側です。新たに支払額を計上する科目ではありません。</p>'
+      },
+      {
+        text: '特定の研究開発にのみ使用し、他の目的には転用できない実験装置を購入しました。この装置の会計処理として正しいものはどれですか。',
+        choices: [
+          '機械装置（固定資産）として計上し、耐用年数にわたって減価償却する',
+          '繰延資産として計上し、5年以内に定額法で償却する',
+          '取得時に全額を研究開発費として費用処理し、減価償却は行わない'
+        ],
+        answer: 2,
+        explain: '<p>その研究が終われば使い道がない以上、他の収益を生む見込みがありません。将来の収益に貢献しないものは資産の定義を満たさないため、<strong>取得時に全額を研究開発費として費用処理します。</strong></p><p>資産計上していないので、翌期以降に減価償却する対象も存在しません。</p><p>判定の分かれ目は<strong>「他に転用できるかどうか」</strong>です。研究にも生産にも使える汎用の機械であれば、通常どおり固定資産として計上して減価償却します。</p>'
+      },
+      {
+        text: '繰延資産（創立費・開業費・株式交付費など）の<strong>原則的な処理</strong>として正しいものはどれですか。',
+        choices: [
+          '支出時に全額を費用として処理する。繰延資産として計上することも認められている',
+          '必ず繰延資産として計上し、定められた期間にわたって償却しなければならない',
+          '会社の判断で、繰延資産として計上するか固定資産として計上するかを選べる'
+        ],
+        answer: 0,
+        explain: '<p>繰延資産は<strong>原則が費用処理、容認として資産計上</strong>という建て付けです。「資産計上しなければならない」ものではありません。</p><p>換金価値のないものが資産の部に並ぶのは債権者にとって危うい状態なので、認められる項目は法律で限定列挙され、償却期間にも上限が定められ、そもそも原則は費用処理とされています。</p><p>どちらも認められているため、試験では<strong>問題文の指示に従います。</strong>また、繰延資産と固定資産は性質が異なり、どちらにするかを選べるものではありません。</p>'
+      },
+      {
+        text: '債務保証を設定したときの仕訳（保証債務見返／保証債務）が、<strong>当期の損益に与える影響</strong>として正しいものはどれですか。',
+        choices: [
+          '保証債務の分だけ当期純利益が減少する',
+          '当期純利益は増減しない',
+          '保証債務見返の分だけ当期純利益が増加する'
+        ],
+        answer: 1,
+        explain: '<p>保証人になっただけでは、費用も収益も発生していません。この仕訳は<strong>備忘記録</strong>であり、忘れないために記録を残すことだけが目的です。</p><p>保証債務見返と保証債務は金額の等しい<strong>対照勘定</strong>で、必ずペアで存在します。貸借を壊さずに記録だけを残すために両建てにしているのであって、実質的な中身はありません。したがって<strong>当期純利益は1円も動きません。</strong></p><p>科目名に「債務」とありますが、買掛金や借入金と同列の負債ではなく、貸借対照表の本体にも出てきません。偶発債務は注記で開示されます。</p>'
+      },
+      {
+        text: '会社の<strong>設立登記が完了した後</strong>、営業を開始するまでの間に支出した、開業準備のための広告費を処理する科目はどれですか。',
+        choices: [
+          '創立費',
+          '開業費',
+          '株式交付費'
+        ],
+        answer: 1,
+        explain: '<p>創立費と開業費の境目は<strong>「会社が生まれた瞬間」＝設立登記の完了</strong>です。その前の支出（定款作成費、設立登記の登録免許税など）が創立費、その後から営業開始までの支出が<strong>開業費</strong>になります。</p><p>株式交付費は、会社設立後の増資などで株式を発行するためにかかった費用であり、開業準備とは別のものです。償却期間も創立費・開業費が5年以内であるのに対し、株式交付費だけが3年以内です。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-yougo', {
+    title: '穴埋め — 用語を書けるようにする（7問）',
+    questions: [
+      {
+        text: '今は債務ではないが、ある出来事が起きたら債務になるもの。債務の保証によって生じ、貸借対照表の本体ではなく注記で開示される。これを何といいますか。',
+        answer: ['偶発債務', 'ぐうはつさいむ'],
+        explain: '<p>買掛金や借入金のように「必ず払うもの」とは性質が違います。主債務者が返済できなくなったときに初めて現実の債務になるため、負債として金額計上はせず、注記で開示します。</p>'
+      },
+      {
+        text: '金額の等しい借方科目と貸方科目をペアで用意し、両建てで計上することによって、貸借を崩さずに記録だけを残す仕組みを何といいますか。',
+        answer: ['対照勘定', 'たいしょうかんじょう'],
+        explain: '<p>債務の保証では「保証債務見返」と「保証債務」がこれにあたります。片方だけでは貸借が合わないため、同額を両側に置いて打ち消し合わせています。実質的な中身はなく、損益にも影響しません。</p>'
+      },
+      {
+        text: '保証人として肩代わりして支払った金額を、あとで主債務者に請求できる権利のことを何といいますか。',
+        answer: ['求償権', 'きゅうしょうけん'],
+        explain: '<p>肩代わりは贈与ではありません。この権利があるため、支払った時点では損失にせず<strong>未収入金</strong>（資産）として計上します。回収不能が判明したときに初めて費用へ振り替えます。</p>'
+      },
+      {
+        text: '火災などで資産が焼失したものの保険金の額がまだ確定していないとき、決着がつくまで帳簿価額を一時的に置いておく勘定科目は何ですか。',
+        answer: ['未決算', 'みけっさん'],
+        explain: '<p>「まだ決着していない」という意味の名前です。3級の現金過不足と同じ発想で、判明した時点で正しい科目へ振り替えます。保険金額が確定すれば必ず消える通過点であり、貸借対照表に残る科目ではありません。</p><p>なお、保険を付していない資産が焼失した場合はこの勘定を経由せず、直接 火災損失とします。</p>'
+      },
+      {
+        text: '未決算の金額よりも確定した保険金額のほうが大きかったとき、その差額を計上する<strong>収益</strong>の勘定科目は何ですか。',
+        answer: ['保険差益', 'ほけんさえき'],
+        explain: '<p>保険金は再調達に必要な額をもとに決まるのに対し、帳簿価額は取得原価から減価償却を引いた残りです。古い資産ほど差が開くため、火災でも益が出ることがあります。「得をした」という意味ではなく、帳簿価額として消した金額より多く回収できた分という意味です。</p>'
+      },
+      {
+        text: '将来の収益をもたらすかどうかが不確実であるため資産計上が認められず、発生した期に全額を費用として処理しなければならない支出の勘定科目は何ですか。',
+        answer: ['研究開発費', 'けんきゅうかいはつひ'],
+        explain: '<p>資産計上を認めると、失敗した研究の支出まで貸借対照表に資産として並び続けることになります。特定の研究開発にのみ使用し他に転用できない機械を取得した場合も、取得時に全額をこの科目で費用処理し、減価償却は行いません。</p>'
+      },
+      {
+        text: '売却しても換金できないにもかかわらず資産の部に計上されるため、繰延資産は「法律上そう見なしているだけの資産」と呼ばれます。この呼び名を何といいますか。',
+        answer: ['擬制資産', 'ぎせいしさん'],
+        explain: '<p>換金価値のないものが資産の部に並ぶのは債権者にとって危うい状態です。そのため認められる項目は法律で限定列挙され、償却期間にも上限が定められ、原則は費用処理とされています。貸借対照表では流動資産にも固定資産にも入らず、「繰延資産」という独立した区分に表示されます。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

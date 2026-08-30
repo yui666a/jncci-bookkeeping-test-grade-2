@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-10-0,商-第二-10-ア,商-第二-10-イ,商-第二-10-ウ,商-第二-10-カ,商-第二-10-キ,商-第二-4-エ">
+<meta name="boki-subject" content="商">
+<title>収益認識 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 05 収益認識</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W2 商業簿記 ／ UNIT 05 ／ 5時間</p>
+    <h1>収益認識<br>— 「いつ・いくらを売上にするか」を決める</h1>
+    <p class="lead">3級では「商品を引き渡したら売上」で済んでいました。ところが世の中の商売は、それだけでは決まらないものだらけです。1年分のサポート料を先にもらう、商品とその保守をセットで売る、たくさん買った得意先にあとで代金の一部を返す。<strong>いつ売上にするのか、いくらを売上にするのか</strong>を筋道立てて決める仕組みが、この単元です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 5h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 15問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">3級のやり方では決まらない取引がある</a></li>
+      <li><a href="#s2">考え方の骨格 — 約束を果たしたぶんだけ売上にする</a></li>
+      <li><a href="#s3">一時点で果たし終わる約束と、時間をかけて果たす約束</a></li>
+      <li><a href="#s4">検収基準・出荷基準・着荷基準</a></li>
+      <li><a href="#s5">代金を先にもらった — 契約負債</a></li>
+      <li><a href="#s6">売上は立ったが請求できない — 契約資産</a></li>
+      <li><a href="#s7">契約資産と売掛金を、絶対に取り違えない</a></li>
+      <li><a href="#s8">サービスを売る会社の記帳 — 役務収益と役務原価</a></li>
+      <li><a href="#s9">セットで売ったとき — 取引価格を独立販売価格で按分する</a></li>
+      <li><a href="#s10">もらえる金額が確定していない — 変動対価と返金負債</a></li>
+      <li><a href="#s11">仕訳ドリル 15問</a></li>
+      <li><a href="#s12">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s13">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>3級のやり方では決まらない取引がある</h2>
+
+  <p>3級で身につけたルールはひとつでした。<strong>商品を引き渡したら売上を計上する。</strong>代金を後でもらうなら売掛金、先にもらっていたなら前受金。それで全部さばけました。</p>
+
+  <p>ところが、次の3つはこのルールでは答えが出ません。読みながら「自分ならどう仕訳するか」を考えてみてください。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">困りごと ①</div>
+      <p><strong>1年分のサポート料を前払いでもらった</strong></p>
+      <p class="small">4月1日に、1年間の保守サービス代 120,000円を現金で受け取った。まだ何のサービスもしていない。この120,000円は、いつ売上になるのか。全額を4月に売上にしてよいのか。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">困りごと ②</div>
+      <p><strong>商品と保守をセットで売った</strong></p>
+      <p class="small">パソコン本体とその1年保守を合わせて 570,000円で契約した。本体は今日引き渡し、保守はこれから1年かけて提供する。570,000円のうち、いくらが本体分でいくらが保守分なのか。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">困りごと ③</div>
+      <p><strong>あとで代金の一部を返す約束がある</strong></p>
+      <p class="small">今日 1,000,000円分を売ったが、この得意先とは「年間 500万円を超えたら 3%を返す」という取り決めがある。超えるかどうかは今日の時点では分からない。売上はいくらで立てるのか。</p>
+    </div>
+  </div>
+
+  <p>3つに共通しているのは、<mark>「引き渡した」という事実だけでは、いつ・いくらを売上にするかが決まらない</mark>ということです。①はまだ何もしていないのに現金が入っている。②は一部だけ引き渡した。③は金額そのものが未確定です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜルールを整えることになったのか</span>
+    <p>売上高は損益計算書のいちばん上に載る、会社の規模を示す数字です。<strong>それをいつ・いくら計上するかが会社ごとにばらばらだと、決算書を並べて比べられません。</strong>同じ商売をしている2社が、片方は入金時に、もう片方は引渡時に売上を立てていたら、成長しているのかどうかすら判断できません。</p>
+    <p>そこで「どういう場合に、いくらを収益にするのか」の考え方を統一したのが、2021年4月から適用されている収益認識の基準です。2級の出題範囲にもこのときから入りました。<strong>3級のルールが間違いだったのではなく、3級で扱う単純な商品売買では結果が同じになるので省いていた</strong>、というのが正確な理解です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">この単元は用語が抽象的です。必ず具体例と一緒に覚えてください</span>
+    <p>これから出てくる言葉は、日常語からは意味が読み取れません。<strong>言葉だけを暗記すると、本番で問題文の場面に当てはめられなくなります。</strong>各用語には必ず「どの場面のことか」を紐づけて覚えてください。このページはその順序で書いてあります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>考え方の骨格 — 約束を果たしたぶんだけ売上にする</h2>
+
+  <p>3つの困りごとを、いっぺんに解く考え方があります。ひとことで言えばこうです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">収益認識の一行まとめ</span>
+    <p><strong>契約で約束したことを果たしたときに、その果たしたぶんに対応する金額を、収益として計上する。</strong></p>
+  </div>
+
+  <p>お金をもらった時点ではありません。契約を結んだ時点でもありません。<strong>約束したことを実際に果たした時点</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え：定食屋の前払い食券</span>
+    <p>定食屋で 10回分の食券を 10,000円で売ったとします。<strong>この10,000円は、食券を売った日の売上でしょうか。</strong>店の側から見れば、お金は受け取ったけれど、まだ1食も出していません。10回ぶんの「ごはんを出す」という約束を背負っただけです。</p>
+    <p>お客が来て1食出したとき、はじめて10回のうち1回ぶんの約束を果たしました。だから <strong>1,000円だけが売上</strong>になります。残りの 9,000円は、まだ果たしていない約束、つまり<strong>お店が抱えている義務</strong>です。</p>
+    <p>困りごと①の1年分のサポート料は、これとまったく同じ構造です。</p>
+  </div>
+
+  <h3>用語をここで整えます</h3>
+
+  <p>いま「契約で約束したこと」と書いたものに、正式な名前がついています。</p>
+
+  <div class="term">
+    <span class="term__w">履行義務</span><span class="term__r">りこうぎむ</span>
+    <p><strong>契約のなかで、顧客に対して「これをします」と約束したひとつひとつの中身。</strong>「パソコン本体を引き渡す」も履行義務、「1年間保守をする」も履行義務です。ひとつの契約に履行義務が2つ以上入っていることがあります（困りごと②）。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">充足</span><span class="term__r">じゅうそく</span>
+    <p><strong>約束したことを果たし終えること。</strong>「履行義務を充足した」＝「約束を果たした」です。収益を計上するのは、履行義務を充足したときです。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">取引価格</span><span class="term__r">とりひきかかく</span>
+    <p><strong>その契約で最終的にもらえると見込まれる金額。</strong>契約書に書いてある額そのままとは限りません。あとで一部を返す約束があるなら（困りごと③）、返す見込みの額を差し引いた金額が取引価格です。</p>
+  </div>
+
+  <p>この3語を使って一行まとめを書き直すと、こうなります。<strong>履行義務を充足したときに、取引価格のうちその履行義務に配分された額を収益に計上する。</strong>言葉は硬いですが、中身は食券の話と同じです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">2級で問われる形はこの3つに絞られます</span>
+    <p>収益認識の基準そのものは5つの段階を踏む大きな枠組みですが、<strong>2級の試験で問われるのは次の3つの場面だけ</strong>です。このページもその3つに集中します。</p>
+    <ul>
+      <li><strong>いつ収益にするか</strong> — 一時点か、一定の期間にわたってか（§3・§4）。その結果として契約資産・契約負債が出てくる（§5〜§7）</li>
+      <li><strong>いくらを各履行義務に割り振るか</strong> — 独立販売価格による按分（§9）</li>
+      <li><strong>そもそも取引価格がいくらか</strong> — 変動対価と返金負債（§10）</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>一時点で果たし終わる約束と、時間をかけて果たす約束</h2>
+
+  <p>約束の果たし方には2通りあります。ここが収益認識の最初の分かれ道です。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">パターン A</div>
+      <p><strong>一時点で充足される履行義務</strong></p>
+      <p class="small">商品を引き渡す、という約束。<strong>引き渡した瞬間に果たし終わり</strong>で、それ以前は0%、以後は100%です。途中がありません。3級で扱ってきた商品売買はすべてこちらです。</p>
+      <p class="small">収益は<strong>その一時点でまとめて計上</strong>します。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">パターン B</div>
+      <p><strong>一定の期間にわたり充足される履行義務</strong></p>
+      <p class="small">1年間保守をする、という約束。<strong>時間をかけて少しずつ果たしていきます。</strong>4か月経った時点では、3分の1だけ果たした状態です。</p>
+      <p class="small">収益は<strong>果たした進み具合（進捗度）に応じて</strong>、期間にわたって計上します。</p>
+    </div>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 720 300" style="width:100%;height:auto;min-width:600px" role="img" aria-label="一時点で充足される履行義務と一定の期間にわたり充足される履行義務の比較図。前者は引渡日に収益が一段で立ち上がり、後者は期間にわたって斜めに増えていく。">
+      <g font-size="13" fill="var(--text)">
+
+        <!-- 上段：一時点 -->
+        <text x="20" y="30" font-size="14" font-weight="700" fill="var(--accent)">A 一時点で充足 ── 商品の引渡し</text>
+        <line x1="60" y1="110" x2="620" y2="110" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="628" y="114" font-size="12" fill="var(--muted)">時間</text>
+        <!-- 収益ゼロの区間 -->
+        <line x1="60" y1="105" x2="280" y2="105" stroke="var(--border-2)" stroke-width="3"/>
+        <!-- 引渡日で一段に立ち上がる -->
+        <line x1="280" y1="105" x2="280" y2="55" stroke="var(--accent)" stroke-width="3"/>
+        <line x1="280" y1="55" x2="620" y2="55" stroke="var(--accent)" stroke-width="3"/>
+        <line x1="280" y1="100" x2="280" y2="120" stroke="var(--text)" stroke-width="1.5"/>
+        <text x="280" y="138" text-anchor="middle" font-size="12.5" font-weight="700">引渡日</text>
+        <text x="170" y="98" text-anchor="middle" font-size="12" fill="var(--muted)">収益 0</text>
+        <text x="450" y="46" text-anchor="middle" font-size="12" fill="var(--accent)">この日に全額を売上</text>
+
+        <!-- 下段：一定の期間 -->
+        <text x="20" y="190" font-size="14" font-weight="700" fill="var(--ok)">B 一定の期間にわたり充足 ── 1年間の保守サービス</text>
+        <line x1="60" y1="270" x2="620" y2="270" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="628" y="274" font-size="12" fill="var(--muted)">時間</text>
+        <!-- 斜めに増える -->
+        <line x1="120" y1="270" x2="560" y2="215" stroke="var(--ok)" stroke-width="3"/>
+        <line x1="120" y1="264" x2="120" y2="280" stroke="var(--text)" stroke-width="1.5"/>
+        <line x1="340" y1="264" x2="340" y2="280" stroke="var(--text)" stroke-width="1.5"/>
+        <line x1="560" y1="264" x2="560" y2="280" stroke="var(--text)" stroke-width="1.5"/>
+        <text x="120" y="296" text-anchor="middle" font-size="12.5" font-weight="700">契約開始</text>
+        <text x="340" y="296" text-anchor="middle" font-size="12.5" font-weight="700">決算日</text>
+        <text x="560" y="296" text-anchor="middle" font-size="12.5" font-weight="700">契約終了</text>
+        <!-- 決算日までの経過分 -->
+        <path d="M120 270 L340 270 L340 242 Z" fill="var(--ok-bg)" stroke="none"/>
+        <line x1="340" y1="242" x2="340" y2="270" stroke="var(--ok)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="230" y="228" text-anchor="middle" font-size="12" fill="var(--ok)">経過したぶんだけ売上</text>
+        <text x="450" y="200" text-anchor="middle" font-size="12" fill="var(--muted)">残りはまだ売上にしない</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">Aは引渡日に一段で立ち上がります。Bは時間とともに斜めに増えます。<strong>決算日で線を止めたとき、そこまでの高さが当期の収益</strong>です。Bで決算日をまたぐ契約が出てきたら、必ず期間按分が要ります。</p>
+  </div>
+
+  <h3>進捗度をどう測るか</h3>
+
+  <p>Bのとき「いまどれだけ果たしたか」を数字にする必要があります。2級で問われるのは次の2つです。</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>測り方</th><th>計算</th><th>典型的な場面</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>時の経過</strong></td>
+        <td>経過月数 ÷ 契約月数</td>
+        <td>保守サービス、警備、清掃など、時間の経過そのものがサービスになるもの</td>
+      </tr>
+      <tr>
+        <td><strong>原価の進捗</strong></td>
+        <td>発生した原価 ÷ 見積総原価</td>
+        <td>受注制作、請負工事など、かかった費用で進み具合が測れるもの</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>どちらを使うかは<strong>問題文に必ず書いてあります。</strong>「時の経過に応じて」「発生した原価の総見積原価に対する割合により」といった指示を探してください。自分で選ぶ場面はありません。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：入金のタイミングと収益計上のタイミングは無関係</span>
+    <p>1年分の代金を先にもらっていようが、全額を1年後にもらう約束だろうが、<strong>収益をいつ計上するかは変わりません。</strong>約束を果たしたぶんだけ、というルールだけで決まります。</p>
+    <p>お金の動きは相手勘定（現金・売掛金・契約負債）の話であって、収益をいくら立てるかとは別の軸です。問題文を読むとき、この2つを分けて拾う癖をつけてください。<strong>「果たした量 → 収益の額」「お金の動き → 相手勘定」</strong>の2段階です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>検収基準・出荷基準・着荷基準</h2>
+
+  <p>Aの「一時点で充足」に戻ります。商品の引渡しは一時点で果たし終わる、と書きました。ではその<strong>一時点とは、具体的にいつなのか。</strong></p>
+
+  <p>商品が自社の倉庫を出てから相手の手元に収まるまでには、いくつかの段階があります。どの段階をもって「果たし終わった」と見るかで、3つの基準に分かれます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 760 240" style="width:100%;height:auto;min-width:660px" role="img" aria-label="出荷基準・着荷基準・検収基準の比較図。倉庫からの出荷、得意先への到着、得意先の検収完了という3つの時点が横一直線に並び、それぞれがどの基準に対応するかを示している。">
+      <g font-size="13" fill="var(--text)">
+        <!-- 時間軸 -->
+        <line x1="70" y1="120" x2="700" y2="120" stroke="var(--muted)" stroke-width="2"/>
+        <text x="706" y="124" font-size="12" fill="var(--muted)">時間</text>
+
+        <!-- 3つの時点 -->
+        <circle cx="160" cy="120" r="7" fill="var(--accent)"/>
+        <circle cx="390" cy="120" r="7" fill="var(--warn)"/>
+        <circle cx="620" cy="120" r="7" fill="var(--ok)"/>
+
+        <text x="160" y="150" text-anchor="middle" font-size="13" font-weight="700">出荷</text>
+        <text x="160" y="168" text-anchor="middle" font-size="11.5" fill="var(--muted)">自社の倉庫を出た</text>
+        <text x="390" y="150" text-anchor="middle" font-size="13" font-weight="700">着荷</text>
+        <text x="390" y="168" text-anchor="middle" font-size="11.5" fill="var(--muted)">得意先に届いた</text>
+        <text x="620" y="150" text-anchor="middle" font-size="13" font-weight="700">検収</text>
+        <text x="620" y="168" text-anchor="middle" font-size="11.5" fill="var(--muted)">得意先が中身を確認し</text>
+        <text x="620" y="184" text-anchor="middle" font-size="11.5" fill="var(--muted)">問題なしと認めた</text>
+
+        <!-- 対応する基準 -->
+        <rect x="96" y="60" width="128" height="30" rx="6" fill="var(--accent-2)" stroke="var(--accent-br)" stroke-width="1.5"/>
+        <text x="160" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="var(--accent)">出荷基準</text>
+        <rect x="326" y="60" width="128" height="30" rx="6" fill="var(--warn-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="390" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="var(--warn)">着荷基準</text>
+        <rect x="556" y="60" width="128" height="30" rx="6" fill="var(--ok-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="620" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">検収基準</text>
+
+        <line x1="160" y1="90" x2="160" y2="113" stroke="var(--accent)" stroke-width="1.5"/>
+        <line x1="390" y1="90" x2="390" y2="113" stroke="var(--warn)" stroke-width="1.5"/>
+        <line x1="620" y1="90" x2="620" y2="113" stroke="var(--ok)" stroke-width="1.5"/>
+
+        <text x="385" y="30" text-anchor="middle" font-size="13" font-weight="700">同じ1回の販売でも、売上を計上する日が3通りある</text>
+        <text x="385" y="216" text-anchor="middle" font-size="12" fill="var(--muted)">3月末が決算日なら、どの基準を採るかで当期の売上高が変わる</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">3つの基準は<strong>「いつ果たし終わったと見るか」の違い</strong>です。順序は出荷 → 着荷 → 検収で、右へ行くほど売上計上が遅くなります。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>基準</th><th>売上を計上する日</th><th>考え方</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>出荷基準</strong></td>
+        <td>商品を出荷した日</td>
+        <td>自社の手を離れた時点で果たしたと見る。実務では最も早く、手間が少ない</td>
+      </tr>
+      <tr>
+        <td><strong>着荷基準</strong></td>
+        <td>商品が得意先に到着した日</td>
+        <td>相手に届いてはじめて果たしたと見る。輸送中の事故を売り手が負う契約と整合する</td>
+      </tr>
+      <tr>
+        <td><strong>検収基準</strong></td>
+        <td>得意先が検収した日</td>
+        <td>相手が中身を確認して受け入れてはじめて果たしたと見る。<strong>支配が移った時点にいちばん近い</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>原則は「顧客が商品を支配したとき」です。</strong>3つの基準は、その時点をどこで捉えるかの当て方の違いであって、基準そのものに優劣の序列があるわけではありません。</p><p>支配の移転にいちばん近いのは検収の時点です。出荷しただけでは、返品されるかもしれず、まだ相手のものになったとは言い切れません。ただし国内の販売で出荷から支配の移転までが通常の期間であれば、出荷基準や着荷基準も認められています。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">原則を覚えても、問題文の指示に必ず負けます</span>
+    <p>試験では<strong>「当社は出荷基準により売上を計上している」</strong>のように、どの基準を採っているかが問題文に書かれます。書いてあれば、原則が何であろうとその指示に従います。</p>
+    <p>「検収基準がいちばん厳密だから」と自分の判断で検収日に計上すると、決算をまたぐ問題で当期の売上高がまるごとずれます。<strong>この論点で覚えるべきは3つの基準の中身であって、どれを採るかの判断ではありません。</strong>判断は必ず問題文が与えます。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ試験で問われるのか — 決算日をまたぐと差が出るから</span>
+    <p>3月28日に出荷し、3月30日に到着し、4月2日に検収された商品があるとします。決算日が3月31日なら、<strong>出荷基準と着荷基準なら当期の売上、検収基準なら翌期の売上</strong>です。同じ取引で当期の売上高が変わります。</p>
+    <p>だから第3問の決算問題では「決算日直前に出荷した商品が未検収である」といった資料が出て、採用している基準に応じて売上を取り消したり計上したりさせられます。<strong>3つの基準の順序（出荷 → 着荷 → 検収）を頭に入れておけば、どちらへ動かすかは自動的に決まります。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>代金を先にもらった — 契約負債</h2>
+
+  <p>困りごと①に戻ります。4月1日に1年間の保守サービス代 120,000円を現金で受け取りました。まだ何もしていません。</p>
+
+  <p>約束を果たしたぶんだけ収益にする、というルールに照らせば、<strong>この日の収益はゼロ</strong>です。ではもらった 120,000円は何なのか。</p>
+
+  <p>これは<strong>「これから1年間サービスをします」という義務</strong>です。お金を受け取ってしまった以上、サービスを提供するか、できなければ返金するかしかありません。会社にとっての負債です。</p>
+
+  <div class="term">
+    <span class="term__w">契約負債</span><span class="term__r">けいやくふさい</span>
+    <p><strong>顧客から代金を先に受け取ったが、まだ約束を果たしていない部分。</strong>果たすにつれて減っていき、その分だけ収益に振り替わります。負債です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>4月1日 1年分の保守サービス代 120,000円を現金で受け取った</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">現金</td><td class="d amt">120,000</td><td class="c">契約負債</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>決算日が3月31日で、この契約が4月1日から翌年3月31日までなら、決算日には1年ぶんすべてを果たし終えています。全額が収益になります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>3月31日 1年が経過し、約束をすべて果たした</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">契約負債</td><td class="d amt">120,000</td><td class="c">役務収益</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>途中の決算をまたぐ場合は、経過した月数のぶんだけを振り替えます。たとえば<strong>12月1日に1年分 180,000円を受け取り、決算日が3月31日</strong>なら、経過したのは12月・1月・2月・3月の4か月です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>3月31日 決算。12月1日からの4か月分を収益に振り替える</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">契約負債</td><td class="d amt">60,000</td><td class="c">役務収益</td><td class="c amt">60,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">180,000 × 4か月 ÷ 12か月 ＝ 60,000円。契約負債の残高 120,000円が翌期に繰り越されます。</p>
+
+  <h3>前受金との関係</h3>
+
+  <p>「代金を先にもらった」という状況は、3級で<strong>前受金</strong>として習ったはずです。契約負債とどう違うのか。</p>
+
+  <p><strong>指しているものは同じです。</strong>顧客との契約から生じた前受けの金額を、収益認識の用語で呼び直したのが契約負債です。勘定科目表にも「前受金（顧客との契約から生じたものに限る）」と「契約負債」の両方が載っており、どちらを使ってもよいことになっています。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">どちらを使うかは、問題文と答案の指定で決まります</span>
+    <p>試験では<strong>勘定科目の選択肢（勘定科目群）が与えられます。</strong>そこに「契約負債」があれば契約負債、「前受金」しかなければ前受金を使います。両方ある場合は問題文の指示に従います。</p>
+    <p>自分で判断する場面はないので、<strong>「どちらも同じものを指す」ことだけ理解しておけば十分</strong>です。選択肢にない科目を書いて0点になるほうが、はるかに損失が大きい誤りです。</p>
+    <p class="small">このページのドリルでは、勘定科目群に相当する<strong>選択肢の一覧</strong>を各問に用意してあります。本番でも必ず一覧を先に見てください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>売上は立ったが請求できない — 契約資産</h2>
+
+  <p>今度は逆の状況です。<strong>約束は果たしたのに、まだ代金を請求できない。</strong>そんなことが起きるのかというと、起きます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">場面：2つの商品を、別々の日に引き渡す契約</span>
+    <p>得意先と、次の契約を結びました。</p>
+    <ul>
+      <li>商品A（80,000円）と商品B（120,000円）の合計 200,000円を販売する</li>
+      <li>商品Aは 3月10日、商品Bは 4月20日に引き渡す</li>
+      <li><strong>代金は、両方を引き渡した後にまとめて請求する</strong></li>
+    </ul>
+  </div>
+
+  <p>3月10日、商品Aを引き渡しました。「商品Aを引き渡す」という約束は果たし終えたので、<strong>80,000円の売上を計上します。</strong>ここまでは§3のAパターンそのままです。</p>
+
+  <p>ところが、その相手勘定に困ります。<mark>売掛金と書きたくなりますが、まだ請求できません。</mark>契約では「両方を引き渡した後にまとめて請求する」と決めてあり、商品Bを引き渡すまで代金を請求する権利が発生しないからです。</p>
+
+  <p>「収益は計上したが、代金を請求する権利はまだ確定していない」という状態を表すのが、契約資産です。</p>
+
+  <div class="term">
+    <span class="term__w">契約資産</span><span class="term__r">けいやくしさん</span>
+    <p><strong>収益を計上したが、代金を請求する権利がまだ確定していない部分。</strong>他の履行義務を果たすなど、条件が満たされて請求できるようになった時点で売掛金に振り替わります。資産です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>3月10日 商品A（80,000円）を引き渡した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">契約資産</td><td class="d amt">80,000</td><td class="c">売上</td><td class="c amt">80,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>4月20日 商品B（120,000円）を引き渡し、代金 200,000円を請求できるようになった</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売掛金</td><td class="d amt">200,000</td><td class="c">売上</td><td class="c amt">120,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">契約資産</td><td class="c amt">80,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>4月20日の仕訳を分解して読んでください。<strong>2つのことが同時に起きています。</strong></p>
+
+  <ol class="steps">
+    <li><strong>商品Bを引き渡した</strong>「商品Bを引き渡す」という約束を果たしたので、120,000円を売上に計上します。</li>
+    <li><strong>商品A分の請求権が確定した</strong>これで両方を引き渡し終えたので、契約上の請求条件が満たされました。3月に立てた契約資産 80,000円が、請求できる債権＝<strong>売掛金に姿を変えます。</strong>契約資産を貸方で消し、売掛金に振り替えます。</li>
+  </ol>
+
+  <p>結果として借方の売掛金は 80,000 ＋ 120,000 ＝ <strong>200,000円</strong>。契約全体の代金と一致します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">契約資産は「仮の置き場所」</span>
+    <p>契約資産のまま終わることはありません。<strong>いずれ必ず売掛金（または受取手形などの債権）に振り替わります。</strong>売上を計上したのに相手勘定が売掛金と書けない期間だけ、一時的に置いておく箱だと考えてください。</p>
+    <p>だから貸借対照表では流動資産に載ります。売掛金の隣に「契約資産」という行が並ぶ形です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>契約資産と売掛金を、絶対に取り違えない</h2>
+
+  <p>ここがこの単元で最も出題される場所であり、最も間違えられる場所です。節をひとつ使って固めます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">請求できる</div>
+      <p><strong>売掛金</strong></p>
+      <p class="small"><strong>代金を請求する権利が確定している。</strong>あとは支払期日が来れば受け取れます。会社がすべきことはもう何も残っていません。</p>
+      <p class="small">たとえば、単独の商品販売で引き渡しが済んだとき。あるいは、契約上のすべての引渡しが終わったとき。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">まだ請求できない</div>
+      <p><strong>契約資産</strong></p>
+      <p class="small"><strong>収益は計上したが、請求権がまだ確定していない。</strong>他の履行義務を果たすなど、契約で定めた条件が満たされるまで請求できません。</p>
+      <p class="small">たとえば、2つの商品のうち片方だけを引き渡し、契約では「両方引き渡した後にまとめて請求する」と決めているとき。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">この論点で最も多い誤り：契約資産と書くべきところに売掛金と書く</span>
+    <p>商品を引き渡した → 売上を計上する → <strong>反射的に「売掛金／売上」と書いてしまう。</strong>3級から数百回書いてきた形なので、手が勝手に動きます。</p>
+    <p>防ぐ方法はひとつです。<mark>問題文に「代金は両方の商品を引き渡した後にまとめて請求する」「引渡しがすべて完了した時点で請求する」といった一文があるかどうかを、答案を書く前に確認する。</mark>この一文があれば、その時点で請求できない部分は契約資産です。</p>
+    <p>逆に、その一文がないのに契約資産と書くのも誤りです。<strong>ふつうの商品販売は、引き渡せばその場で請求できます。</strong>契約資産が出てくるのは、請求を止める条件が契約に書かれている場合だけです。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ分ける必要があるのか</span>
+    <p>両方とも「将来お金が入ってくる資産」なのに分ける理由は、<strong>回収できないリスクの中身が違う</strong>からです。</p>
+    <p>売掛金が回収できないとしたら、原因は相手の支払能力です。ところが契約資産は、それに加えて<strong>自社が残りの約束を果たせなければ、そもそも請求権が発生しない</strong>というリスクを抱えています。商品Bを引き渡せなければ、商品A分の 80,000円も請求できません。</p>
+    <p>性質の違うものを同じ行にまとめると、決算書を読む人がこのリスクを見分けられなくなります。だから貸借対照表でも別の行に分けて表示します。</p>
+  </div>
+
+  <div id="quiz-shisan"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>サービスを売る会社の記帳 — 役務収益と役務原価</h2>
+
+  <p>ここまで「商品」を前提に話してきましたが、世の中には<strong>形のないものを売る会社</strong>があります。学習塾、ソフトウェアの受託開発、旅行代理店、コンサルティング、警備会社。こうした会社を役務提供業（サービス業）と呼びます。</p>
+
+  <p>サービス業には、商品売買と違う困りごとがあります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え：まだ開講していない講座の、教材印刷代</span>
+    <p>学習塾が、10月開講の講座のために9月中に教材を印刷し、印刷代 60,000円を支払いました。<strong>この 60,000円は9月の費用でしょうか。</strong></p>
+    <p>費用にしてしまうと、9月は収益ゼロで費用 60,000円だけが立ち、10月は収益だけが立ちます。実態は「10月の講座のためにかかった費用」なので、<strong>10月の収益と同じ月に費用を立てたい</strong>。それができないのが困りごとです。</p>
+    <p>そこで、サービスがまだ提供されていないうちにかかった費用は、いったん<strong>資産として持っておきます。</strong>商品を仕入れて倉庫に置いておくのと同じ扱いです。サービスを提供して収益を計上したとき、同時に費用へ振り替えます。</p>
+  </div>
+
+  <h3>使う勘定科目は3つ</h3>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">収益</div>
+      <p><strong>役務収益</strong></p>
+      <p class="small">サービスを提供して得た収益。商品売買でいう「売上」にあたります。<strong>サービスを提供したときに計上</strong>します。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">費用</div>
+      <p><strong>役務原価</strong></p>
+      <p class="small">提供したサービスにかかった費用。商品売買でいう「売上原価」にあたります。<strong>役務収益と同じタイミングで計上</strong>します。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">資産</div>
+      <p><strong>仕掛品</strong></p>
+      <p class="small">まだ提供していないサービスのためにかかった費用を、いったん置いておく箱。<strong>提供したときに役務原価へ振り替えます。</strong></p>
+    </div>
+  </div>
+
+  <h3>流れを3段階で追う</h3>
+
+  <p>ソフトウェアの受託開発会社が、開発案件を 500,000円で受注したとします。この案件のために給料 180,000円と旅費交通費 40,000円がかかり、後日この案件を完成して引き渡し、代金は掛けとしました。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 費用が発生した（この時点ではふつうに費用として記帳する）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">給料</td><td class="d amt">180,000</td><td class="c">当座預金</td><td class="c amt">220,000</td></tr>
+      <tr><td class="d">旅費交通費</td><td class="d amt">40,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② この案件のためにかかった分を、仕掛品へ振り替える</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">220,000</td><td class="c">給料</td><td class="c amt">180,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">旅費交通費</td><td class="c amt">40,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">給料や旅費交通費のうち、特定の案件のためにかかったと分かる分だけを振り替えます。総務部の給料など案件に紐づかない分は、費用のまま残します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ 案件を完成して引き渡した（収益と原価を同時に計上する）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売掛金</td><td class="d amt">500,000</td><td class="c">役務収益</td><td class="c amt">500,000</td></tr>
+      <tr><td class="d">役務原価</td><td class="d amt">220,000</td><td class="c">仕掛品</td><td class="c amt">220,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">売上原価対立法とまったく同じ構造です</span>
+    <p>③の2本立ては、UNIT 02 で学んだ売上原価対立法の販売時の仕訳と同じ形です。</p>
+    <ul>
+      <li>売上原価対立法：<strong>売掛金／売上</strong> と <strong>売上原価／商品</strong></li>
+      <li>役務提供：<strong>売掛金／役務収益</strong> と <strong>役務原価／仕掛品</strong></li>
+    </ul>
+    <p>「収益を計上する1本」と「資産を費用に振り替える1本」の2本立てという骨格が共通しています。<strong>下の1本を忘れると利益が過大になる</strong>という危険も同じです。</p>
+  </div>
+
+  <h3>代金を先にもらう場合</h3>
+
+  <p>サービス業では、代金を先に受け取ることがよくあります。学習塾の授業料、年間のサポート契約など。この場合は§5の契約負債が出てきます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>受講料 300,000円を現金で受け取った（授業はこれから）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">現金</td><td class="d amt">300,000</td><td class="c">契約負債</td><td class="c amt">300,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>全課程の 40%が終了した（役務原価 90,000円が仕掛品に計上済み）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">契約負債</td><td class="d amt">120,000</td><td class="c">役務収益</td><td class="c amt">120,000</td></tr>
+      <tr><td class="d">役務原価</td><td class="d amt">90,000</td><td class="c">仕掛品</td><td class="c amt">90,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">役務収益＝300,000 × 40% ＝ 120,000円。進捗度に応じて収益を計上する（§3のBパターン）例です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：役務原価の金額は、役務収益から計算するのではない</span>
+    <p>上の例で役務原価が 90,000円なのは、<strong>仕掛品にそれだけ積んであったから</strong>です。役務収益 120,000円の何割、という計算ではありません。</p>
+    <p>収益と原価は別々に決まります。収益は取引価格と進捗度から、原価は実際にかかった額から。<strong>この2つを混同すると、利益率が問題文の数値と合わなくなります。</strong>問題文が役務原価の金額を与えていたら、そのまま使ってください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>セットで売ったとき — 取引価格を独立販売価格で按分する</h2>
+
+  <p>困りごと②です。パソコン本体とその1年保守を合わせて 570,000円で契約しました。本体は今日引き渡し、保守はこれから1年かけて提供します。</p>
+
+  <p>この契約には<strong>約束が2つ</strong>入っています。「本体を引き渡す」と「1年間保守をする」。果たすタイミングが違うので、570,000円をひとまとめに扱うことができません。<mark>2つに割り振る必要があります。</mark></p>
+
+  <h3>何で割り振るか — 独立販売価格</h3>
+
+  <div class="term">
+    <span class="term__w">独立販売価格</span><span class="term__r">どくりつはんばいかかく</span>
+    <p><strong>その商品やサービスを単独で売るとしたら、いくらで売るかという価格。</strong>セット割引をする前の、定価にあたる金額です。問題文に必ず与えられます。</p>
+  </div>
+
+  <p>本体を単独で売れば 480,000円、保守だけを単独で契約すれば 120,000円だとします。合計 600,000円ですが、セットにしたので 570,000円で契約しました。30,000円の値引きです。</p>
+
+  <p>この 30,000円の値引きを、どちらか片方に押しつける理由はありません。<strong>独立販売価格の比で、両方に按分します。</strong></p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 720 260" style="width:100%;height:auto;min-width:620px" role="img" aria-label="取引価格570000円を独立販売価格480000円と120000円の比で按分し、456000円と114000円に分ける図。">
+      <g font-size="13" fill="var(--text)">
+
+        <!-- 上段：独立販売価格 -->
+        <text x="20" y="28" font-size="13.5" font-weight="700">独立販売価格（単独で売るならいくらか）</text>
+        <rect x="20" y="42" width="440" height="46" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <rect x="460" y="42" width="110" height="46" fill="var(--ok-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="240" y="63" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">本体</text>
+        <text x="240" y="80" text-anchor="middle" font-size="12.5" fill="var(--muted)">480,000</text>
+        <text x="515" y="63" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">保守</text>
+        <text x="515" y="80" text-anchor="middle" font-size="12" fill="var(--muted)">120,000</text>
+        <text x="586" y="70" font-size="12.5" fill="var(--muted)">合計 600,000</text>
+
+        <!-- 矢印 -->
+        <line x1="295" y1="98" x2="295" y2="130" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M295 138 l-6 -10 l12 0 Z" fill="var(--muted)"/>
+        <text x="310" y="122" font-size="12.5" fill="var(--muted)">同じ比率のまま、取引価格を割り振る</text>
+
+        <!-- 下段：取引価格 -->
+        <text x="20" y="166" font-size="13.5" font-weight="700">取引価格 570,000（セット価格）</text>
+        <rect x="20" y="180" width="418" height="46" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <rect x="438" y="180" width="104" height="46" fill="var(--ok-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="229" y="201" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">本体に配分</text>
+        <text x="229" y="218" text-anchor="middle" font-size="12.5" fill="var(--muted)">570,000 × 480,000 / 600,000 ＝ 456,000</text>
+        <text x="490" y="201" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">保守に配分</text>
+        <text x="490" y="218" text-anchor="middle" font-size="12" fill="var(--muted)">114,000</text>
+
+        <text x="20" y="250" font-size="12.5" fill="var(--muted)">検算：456,000 ＋ 114,000 ＝ 570,000（取引価格の全額が配分され、余りも不足も出ない）</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">上下で<strong>横幅の比が同じ</strong>であることが按分の意味です。値引きは両方に同じ割合でかかります。片方だけを定価のまま置いて残りをもう片方に、としてはいけません。</p>
+  </div>
+
+  <h3>計算</h3>
+
+  <ol class="steps">
+    <li><strong>独立販売価格の合計を出す</strong>480,000 ＋ 120,000 ＝ 600,000円。これが按分計算の分母になります。</li>
+    <li><strong>各履行義務の取り分を計算する</strong>本体：570,000 × 480,000 ÷ 600,000 ＝ <strong>456,000円</strong><br>保守：570,000 × 120,000 ÷ 600,000 ＝ <strong>114,000円</strong></li>
+    <li><strong>合計が取引価格に戻ることを確かめる</strong>456,000 ＋ 114,000 ＝ 570,000円。<strong>この検算を必ずやってください。</strong>合わなければ分母を間違えています。</li>
+  </ol>
+
+  <h3>仕訳</h3>
+
+  <p>本体を引き渡し、保守はこれから提供する状態です。代金 570,000円は全額を現金で受け取りました。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>本体を引き渡し、代金 570,000円を現金で受け取った（保守は未提供）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">現金</td><td class="d amt">570,000</td><td class="c">売上</td><td class="c amt">456,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">契約負債</td><td class="c amt">114,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>本体の履行義務は充足したので 456,000円が売上。保守の履行義務はまだ果たしていないので、114,000円は<strong>契約負債</strong>です。ここで§5がつながります。</p>
+
+  <p>その後、決算日までに保守期間の4か月が経過したとします。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>決算。保守契約12か月のうち4か月が経過した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">契約負債</td><td class="d amt">38,000</td><td class="c">役務収益</td><td class="c amt">38,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">114,000 × 4か月 ÷ 12か月 ＝ 38,000円。契約負債の残高は 114,000 − 38,000 ＝ 76,000円となり、翌期に繰り越されます。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：按分せずに、保守の定価をそのまま契約負債にしてしまう</span>
+    <p>保守の独立販売価格が 120,000円だからといって、<strong>契約負債を 120,000円、売上を 450,000円としてはいけません。</strong></p>
+    <p>実際に受け取ったのは 570,000円であって、600,000円ではありません。<mark>値引きの 30,000円は、本体と保守の両方に及んでいます。</mark>片方だけ定価のまま置くと、その履行義務だけ値引きを受けなかったことになり、根拠がありません。</p>
+    <p><strong>必ず「取引価格 × その履行義務の独立販売価格 ÷ 独立販売価格の合計」の形で計算してください。</strong>分母が独立販売価格の合計（600,000）であって取引価格（570,000）でないことにも注意します。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">値引きがない場合でも、按分の式はそのまま使えます</span>
+    <p>取引価格が 600,000円（＝独立販売価格の合計と同じ）なら、本体 600,000 × 480,000 ÷ 600,000 ＝ 480,000円、保守 120,000円となり、独立販売価格そのものになります。<strong>式は共通で、たまたま値引きがゼロだっただけ</strong>です。</p>
+    <p>だから「値引きがあるときだけ按分する」と覚える必要はありません。<strong>履行義務が2つ以上あれば按分する</strong>、と覚えてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>もらえる金額が確定していない — 変動対価と返金負債</h2>
+
+  <p>困りごと③です。今日 1,000,000円分を売りましたが、「年間 500万円を超えたら 3%を返す」という取り決めがあります。超えるかどうかは今日の時点では分かりません。</p>
+
+  <div class="term">
+    <span class="term__w">変動対価</span><span class="term__r">へんどうたいか</span>
+    <p><strong>顧客と約束した対価のうち、金額が変わりうる部分。</strong>売上割戻（リベート）、値引き、返品の見込みなどがこれにあたります。2級では主に売上割戻の形で出ます。</p>
+  </div>
+
+  <h3>考え方 — 返す見込みの分は、はじめから収益にしない</h3>
+
+  <p>1,000,000円を売ったとき、そのうち3%＝30,000円を後で返す見込みがあるなら、<strong>会社が最終的に手にする金額は 970,000円</strong>です。</p>
+
+  <p>ならば収益も 970,000円とすべきです。1,000,000円を売上にしてしまうと、<mark>返すことが分かっている 30,000円まで売上に含めることになり、収益が過大になります。</mark></p>
+
+  <p>では返す見込みの 30,000円は何かというと、<strong>顧客に返す義務</strong>です。これを返金負債といいます。</p>
+
+  <div class="term">
+    <span class="term__w">返金負債</span><span class="term__r">へんきんふさい</span>
+    <p><strong>受け取った（または受け取る予定の）対価のうち、顧客に返すと見込まれる金額。</strong>負債です。実際に返したときや、返さないことが確定したときに消えます。</p>
+  </div>
+
+  <h3>仕訳 — 返す見込みの分は、はじめから売上に含めない</h3>
+
+  <p>答案に書くのは、次の<strong>1本の形</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>商品 1,000,000円を掛けで販売した（うち 30,000円は割戻の見込み）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売掛金</td><td class="d amt">1,000,000</td><td class="c">売上</td><td class="c amt">970,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">返金負債</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>取引価格は「最終的にもらえると見込まれる金額」でした。返すと見込んでいる 30,000円は<strong>はじめから収益ではない</strong>ので、売上は 970,000円で立てます。</p>
+
+  <h3>なぜその金額になるのか — 2段階に分けて見る</h3>
+
+  <p>上の1本は、次の2つを合わせたものです。仕組みを確認するためのもので、答案にこの形で書くわけではありません。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 商品 1,000,000円を掛けで販売した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売掛金</td><td class="d amt">1,000,000</td><td class="c">売上</td><td class="c amt">1,000,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 割戻の見込額 30,000円を、売上から返金負債へ振り替える</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上</td><td class="d amt">30,000</td><td class="c">返金負債</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>①②を合わせると、売上は 1,000,000 − 30,000 ＝ <strong>970,000円</strong>、売掛金は 1,000,000円、返金負債は 30,000円。最初に示した1本の形と同じ結果になります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：売掛金は減らさない</span>
+    <p>②で減らすのは<strong>売上だけ</strong>です。売掛金は 1,000,000円のままにします。</p>
+    <p>この時点ではまだ割戻の条件を満たしておらず、相手に請求する金額は 1,000,000円だからです。<mark>相手が実際に払う義務を負っているのは 1,000,000円で、返すのはその後</mark>という順序になっています。</p>
+    <p>「返す見込みだから債権も減らす」としてしまうと、請求額と帳簿が食い違います。<strong>減らすのは収益の側だけ</strong>と覚えてください。</p>
+  </div>
+
+  <h3>実際に割戻を行ったとき</h3>
+
+  <p>後日、条件を満たして割戻 30,000円を売掛金から控除したとします。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ 割戻 30,000円を、売掛金から控除した</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">返金負債</td><td class="d amt">30,000</td><td class="c">売掛金</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>返す義務を果たしたので返金負債が消え、売掛金が 970,000円に減ります。<strong>③では売上が動きません。</strong>減額はすでに②で済ませてあるからです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ見積りの段階で減らすのか</span>
+    <p>割戻の条件を満たすかどうかは、期末になるまで確定しません。だからといって<strong>確定するまで何もしないでいると、決算日をまたいだときに売上が過大なまま決算書に載ります。</strong></p>
+    <p>収益は「最終的にもらえると見込まれる金額」で計上する、というのが取引価格の考え方でした（§2）。<strong>見込みの段階で減らすのは、その考え方をそのまま適用した結果</strong>です。見積りに幅があっても、無視するよりは見積もったほうが実態に近い、という判断です。</p>
+    <p>なお、見積額が後から変わったら、その期に修正します。過去の決算をさかのぼって直すことはしません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">「売上割戻」という勘定科目を使う形もあります</span>
+    <p>問題文の勘定科目群に「売上割戻」があれば、売上を直接減らす代わりにこの科目を使うことがあります。売上のマイナスを表す科目で、損益計算書では売上高から控除されます。</p>
+    <p><strong>どちらを使うかは与えられた勘定科目群で決まります。</strong>「売上」しかなければ売上を直接減額し、「売上割戻」があればそちらを使う。返金負債の側は変わりません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>仕訳ドリル 15問</h2>
+
+  <p>ここまでの5つの論点を、順序をばらして出します。<strong>解答欄は常に4行あります。</strong>行数から正解の科目数は読めません。</p>
+
+  <p class="small muted">各問の勘定科目の選択肢は、本番の勘定科目群にあたります。答案を書く前に一覧を見る癖をつけてください。</p>
+
+  <div id="drill-shueki"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>仕訳が書けることと、按分や進捗度の金額を正しく出せること、用語を正確に言えることは別の能力です。それぞれ独立に確認します。</p>
+
+  <div id="num-hairun"></div>
+
+  <div id="quiz-jiten"></div>
+
+  <div id="fill-yougo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。契約資産と売掛金の区別、独立販売価格による按分の2つは、第1問・第2問のどちらでも出ます。ここで曖昧なまま先へ進めないでください。</p>
+
+  <div class="progressbar" data-progress-for="#u5check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u5check">0 / 0 完了（0%）</div>
+
+  <div id="u5check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u05-1"><label for="c1"><span class="cl__t">3級のルールでは決まらない取引を、3つ挙げられる</span><span class="cl__d">代金を先にもらった契約、複数の約束が入った契約、金額が確定していない契約</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u05-2"><label for="c2"><span class="cl__t">収益認識の骨格を一行で言える</span><span class="cl__d">契約で約束したことを果たしたときに、その果たしたぶんに対応する金額を収益に計上する。入金時でも契約時でもない</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u05-3"><label for="c3"><span class="cl__t">履行義務・充足・取引価格の3語を、具体例つきで説明できる</span><span class="cl__d">履行義務＝契約のなかの個々の約束。充足＝果たし終えること。取引価格＝最終的にもらえると見込まれる金額</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u05-4"><label for="c4"><span class="cl__t">一時点で充足される履行義務と、一定の期間にわたり充足される履行義務を区別できる</span><span class="cl__d">商品の引渡しは一時点。保守サービスや受注制作は一定の期間にわたり、進捗度に応じて収益を計上する</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u05-5"><label for="c5"><span class="cl__t">進捗度の測り方を2つ挙げ、どちらを使うかは問題文が決めると言える</span><span class="cl__d">時の経過（経過月数÷契約月数）と原価の進捗（発生原価÷見積総原価）。自分で選ぶ場面はない</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u05-6"><label for="c6"><span class="cl__t">検収基準・出荷基準・着荷基準の3つを、時間順に並べて説明できる</span><span class="cl__d">出荷 → 着荷 → 検収の順に遅くなる。原則は「支配が移った時点」で、採用する基準は問題文の指示が最優先</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u05-7"><label for="c7"><span class="cl__t">契約負債がどういう状態を表すか説明できる</span><span class="cl__d">代金を先に受け取ったが、まだ約束を果たしていない部分。果たすにつれて収益に振り替わる負債</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u05-8"><label for="c8"><span class="cl__t">契約負債と前受金の関係を言える</span><span class="cl__d">指しているものは同じ。どちらを使うかは与えられた勘定科目群と問題文の指示で決まる</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u05-9"><label for="c9"><span class="cl__t">契約資産がどういう状態を表すか説明できる</span><span class="cl__d">収益は計上したが、代金を請求する権利がまだ確定していない部分。条件が満たされれば売掛金に振り替わる</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u05-10"><label for="c10"><span class="cl__t">契約資産と売掛金の違いを、請求権の確定という観点で説明できる</span><span class="cl__d">売掛金は請求権が確定していてあとは期日を待つだけ。契約資産は他の履行義務を果たすまで請求できない</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u05-11"><label for="c11"><span class="cl__t">契約資産を使うかどうかを、問題文のどこで判断するか言える</span><span class="cl__d">「両方の商品を引き渡した後にまとめて請求する」という趣旨の一文があるかどうか。なければふつうに売掛金</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u05-12"><label for="c12"><span class="cl__t">役務収益・役務原価・仕掛品の3つの使い分けを説明できる</span><span class="cl__d">提供前の費用は仕掛品（資産）。提供したときに役務収益と役務原価を同時に計上し、仕掛品を役務原価へ振り替える</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u05-13"><label for="c13"><span class="cl__t">役務提供の仕訳が、売上原価対立法と同じ2本立てだと理解している</span><span class="cl__d">収益を計上する1本と、資産を費用に振り替える1本。下の1本を忘れると利益が過大になる</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u05-14"><label for="c14"><span class="cl__t">独立販売価格による按分の式を、何も見ずに書ける</span><span class="cl__d">取引価格 × その履行義務の独立販売価格 ÷ 独立販売価格の合計。分母は取引価格ではない</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u05-15"><label for="c15"><span class="cl__t">按分の検算を習慣にしている</span><span class="cl__d">配分額の合計が取引価格に戻るか。戻らなければ分母を間違えている</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u05-16"><label for="c16"><span class="cl__t">セット販売で、未提供のサービス分が契約負債になることを説明できる</span><span class="cl__d">充足済みの履行義務の配分額だけが売上。未充足の分は代金を受け取っていれば契約負債</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u05-17"><label for="c17"><span class="cl__t">変動対価とは何かを、例を挙げて説明できる</span><span class="cl__d">対価のうち金額が変わりうる部分。売上割戻（リベート）、値引き、返品の見込みなど</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u05-18"><label for="c18"><span class="cl__t">返金負債を使う仕訳を書ける</span><span class="cl__d">売上を全額計上してから、割戻見込額を「売上／返金負債」で振り替える。売掛金は減らさない</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u05-19"><label for="c19"><span class="cl__t">実際に割戻を行ったときの仕訳で、売上が動かない理由を言える</span><span class="cl__d">「返金負債／売掛金」。減額はすでに見積りの段階で済ませてあるため</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u05-20"><label for="c20"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>収益認識は<strong>第1問の仕訳と第2問の個別論点の両方で出ます。</strong>特に契約資産・契約負債は、決算をまたぐ形で第3問の資料に混ぜられることもあります。</p>
+    <p>この単元を一度通したら、毎週の仕訳ドリル1.5時間の枠に<strong>「契約資産か売掛金か」を判断させる問題を必ず1問混ぜてください。</strong>反射で売掛金と書く癖は、意識して上書きしないと消えません。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W2 UNIT 05 収益認識</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  /* ========== 確認テスト：契約資産か売掛金か ========== */
+  BokiQuiz.mount('#quiz-shisan', {
+    title: '理解チェック — 契約資産か、売掛金か',
+    questions: [
+      {
+        text: '商品を1個だけ販売する契約を結び、本日その商品を引き渡した。契約には請求を止める条件はなく、代金は翌月末に受け取る。売上の相手勘定はどれですか。',
+        choices: ['契約資産', '売掛金', '契約負債'],
+        answer: 1,
+        explain: '<p><strong>売掛金</strong>です。引き渡した時点で契約上の約束をすべて果たしており、代金を請求する権利が確定しています。あとは期日が来れば受け取れる状態です。</p><p>契約資産を使うのは、請求を止める条件が契約に書かれている場合だけです。ふつうの商品販売で契約資産が出てくることはありません。</p>'
+      },
+      {
+        text: '商品Aと商品Bを販売する契約を結び、代金は<strong>両方を引き渡した後にまとめて請求する</strong>と定めている。本日、商品Aだけを引き渡した。商品A分の売上の相手勘定はどれですか。',
+        choices: ['売掛金', '契約資産', '契約負債'],
+        answer: 1,
+        explain: '<p><strong>契約資産</strong>です。商品Aを引き渡したので「商品Aを引き渡す」という約束は果たし終えており、収益は計上します。しかし契約が請求を止めているため、まだ請求権が確定していません。</p><p>判断の決め手は「両方を引き渡した後にまとめて請求する」という一文です。<strong>答案を書く前にこの一文を探してください。</strong></p>'
+      },
+      {
+        text: '前問の契約について、後日、商品Bを引き渡した。このとき、商品Aの引渡し時に計上した契約資産はどうなりますか。',
+        choices: [
+          'そのまま契約資産として残る',
+          '売掛金に振り替わる',
+          '契約負債に振り替わる'
+        ],
+        answer: 1,
+        explain: '<p><strong>売掛金に振り替わります。</strong>両方の引渡しが終わったことで契約上の請求条件が満たされ、代金全額を請求できるようになったからです。</p><p>仕訳では、商品Bの売上計上と契約資産の振替が同時に起きます。借方の売掛金は契約全体の代金と一致します。</p><p>契約資産のまま終わることはありません。必ずいずれ売掛金などの債権に振り替わります。</p>'
+      },
+      {
+        text: '1年間の保守サービスを契約し、代金を全額前受けした。サービスはこれから提供する。この前受けした金額を表す勘定科目はどれですか。',
+        choices: ['契約資産', '契約負債', '役務収益'],
+        answer: 1,
+        explain: '<p><strong>契約負債</strong>です。代金は受け取ったが、まだ約束を果たしていません。会社は「これから1年間サービスをする」という義務を負っており、これは負債です。</p><p>サービスを提供するにつれて契約負債が減り、その分だけ役務収益に振り替わります。</p>'
+      },
+      {
+        text: '契約資産と売掛金を貸借対照表で別の行に分けて表示する理由として、正しいものはどれですか。',
+        choices: [
+          '契約資産は流動資産ではなく固定資産だから',
+          '契約資産は回収できないリスクの中身が売掛金と違うから',
+          '契約資産は貸倒引当金の対象にならないから'
+        ],
+        answer: 1,
+        explain: '<p>選択肢2が正解です。売掛金が回収できないリスクは相手の支払能力によるものですが、<strong>契約資産はそれに加えて「自社が残りの約束を果たせなければ、そもそも請求権が発生しない」というリスク</strong>を抱えています。性質が違うものを同じ行にまとめると、決算書を読む人がこの違いを見分けられません。</p><p>選択肢1は誤りです。契約資産はいずれ売掛金に振り替わる短期のものなので、流動資産に載ります。</p>'
+      },
+      {
+        text: '商品の引渡しという履行義務は、一時点で充足されるものと、一定の期間にわたり充足されるもののどちらですか。',
+        choices: ['一時点で充足される', '一定の期間にわたり充足される'],
+        answer: 0,
+        explain: '<p><strong>一時点で充足されます。</strong>引き渡す前は0%、引き渡した後は100%で、途中がありません。だから収益もその一時点でまとめて計上します。</p><p>一定の期間にわたり充足されるのは、保守サービスや受注制作のように、時間をかけて少しずつ果たしていくものです。こちらは進捗度に応じて収益を計上します。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト：計上時点の判定 ========== */
+  BokiQuiz.mount('#quiz-jiten', {
+    title: '理解チェック — いつ収益にするか',
+    questions: [
+      {
+        text: '当社は<strong>出荷基準</strong>により売上を計上している。決算日の直前に出荷した商品が、決算日時点でまだ得意先に到着していない。この商品の売上は当期・翌期のどちらに計上されますか。',
+        choices: ['当期', '翌期', '半分ずつ'],
+        answer: 0,
+        explain: '<p><strong>当期</strong>です。出荷基準では出荷した日に売上を計上するため、到着や検収を待ちません。</p><p>3つの基準に優劣の序列はなく、<strong>問題文が採用している基準を指定していれば、その指示が最優先</strong>です。「原則は検収基準だから」と自分の判断で動かすと、当期の売上高がまるごとずれます。</p>'
+      },
+      {
+        text: '当社は<strong>検収基準</strong>により売上を計上している。決算日の3日前に出荷し、決算日の翌日に得意先に到着、その2日後に検収された商品がある。この商品の売上はいつ計上されますか。',
+        choices: ['出荷した日（当期）', '到着した日（翌期）', '検収された日（翌期）'],
+        answer: 2,
+        explain: '<p><strong>検収された日</strong>、つまり翌期です。検収基準では、得意先が中身を確認して問題なしと認めた時点をもって履行義務を充足したと見ます。</p><p>3つの基準は出荷 → 着荷 → 検収の順に遅くなります。この順序を頭に入れておけば、決算をまたぐ問題でどちらへ動かすかは自動的に決まります。</p>'
+      },
+      {
+        text: 'サービス業で、まだ提供していないサービスのためにかかった費用を、いったん計上しておく勘定科目はどれですか。',
+        choices: ['役務原価', '仕掛品', '契約資産'],
+        answer: 1,
+        explain: '<p><strong>仕掛品</strong>（資産）です。商品を仕入れて倉庫に置いておくのと同じ扱いで、サービスを提供したときに役務原価へ振り替えます。</p><p>提供前に役務原価としてしまうと、収益のない月に費用だけが立ち、収益と費用の対応が崩れます。</p>'
+      },
+      {
+        text: '得意先との間に「年間の購入額が一定を超えたら代金の一部を返す」という取り決めがある取引を販売した。この取引で、返す見込みの金額はどの勘定科目で処理しますか。',
+        choices: ['契約負債', '返金負債', '前受金'],
+        answer: 1,
+        explain: '<p><strong>返金負債</strong>です。受け取った（または受け取る予定の）対価のうち、顧客に返すと見込まれる金額を表します。</p><p>契約負債は「代金を先に受け取ったが、まだ約束を果たしていない部分」で、意味が違います。返金負債は約束を果たしたうえで、その対価の一部を返す義務です。</p>'
+      },
+      {
+        text: '変動対価がある取引で、割戻の見込額を売上から減額する仕訳を書いた。このとき、売掛金の金額はどうなりますか。',
+        choices: [
+          '見込額だけ減らす',
+          '減らさず、販売額の全額のままにする',
+          '販売額の全額を取り消す'
+        ],
+        answer: 1,
+        explain: '<p>選択肢2が正解です。<strong>減らすのは売上だけ</strong>で、売掛金は販売額の全額のままにします。</p><p>この時点ではまだ割戻の条件を満たしておらず、相手に請求する金額は販売額の全額だからです。実際に割戻を行ったときに「返金負債／売掛金」として、そこではじめて売掛金が減ります。</p>'
+      },
+      {
+        text: '取引価格を複数の履行義務に按分するとき、按分の基準になるものはどれですか。',
+        choices: [
+          '各履行義務の独立販売価格の比',
+          '各履行義務にかかった原価の比',
+          '各履行義務を充足するのにかかる期間の比'
+        ],
+        answer: 0,
+        explain: '<p>選択肢1が正解です。<strong>独立販売価格</strong>、つまり単独で売るとしたらいくらかという価格の比で按分します。問題文に必ず与えられます。</p><p>原価や期間で按分するのではありません。値引きは各履行義務に同じ割合で及ぶ、という考え方に立っています。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-hairun', {
+    title: '計算ドリル — 按分・進捗度・変動対価',
+    badge: '計算ドリル',
+    unit: '円',
+    questions: [
+      {
+        text: '商品本体と1年間の保守サービスをセットで販売する契約を、<strong>取引価格 570,000円</strong> で結んだ。独立販売価格は本体 <strong>480,000円</strong>、保守 <strong>120,000円</strong> である。それぞれに配分される取引価格はいくらか。',
+        answer: [456000, 114000],
+        labels: ['本体に配分される額', '保守に配分される額'],
+        formula: ['570000 * 480000 / 600000', '570000 * 120000 / 600000'],
+        hint: '分母は独立販売価格の合計です。取引価格ではありません。',
+        explain: '<ul><li>独立販売価格の合計＝480,000 ＋ 120,000 ＝ <strong>600,000円</strong></li><li>本体＝570,000 × 480,000 ÷ 600,000 ＝ <strong>456,000円</strong></li><li>保守＝570,000 × 120,000 ÷ 600,000 ＝ <strong>114,000円</strong></li></ul><p>検算：456,000 ＋ 114,000 ＝ 570,000円で取引価格に戻ります。<strong>この検算を必ずやってください。</strong></p><p>保守を独立販売価格そのままの 120,000円としてはいけません。セットで 30,000円の値引きをしており、その値引きは本体と保守の両方に同じ割合で及んでいるからです。</p>'
+      },
+      {
+        text: '商品Xと1年間のサポートをセットで販売し、<strong>取引価格 900,000円</strong> を現金で受け取った。独立販売価格は商品X <strong>800,000円</strong>、サポート <strong>200,000円</strong> である。商品Xは即日引き渡し、サポートはこれから1年間提供する。この日に計上される売上の額と、契約負債の額はいくらか。',
+        answer: [720000, 180000],
+        labels: ['売上の額', '契約負債の額'],
+        formula: ['900000 * 800000 / 1000000', '900000 * 200000 / 1000000'],
+        hint: '先に按分してから、充足済みの分だけを売上にします。',
+        explain: '<ul><li>独立販売価格の合計＝800,000 ＋ 200,000 ＝ <strong>1,000,000円</strong></li><li>商品Xへの配分＝900,000 × 800,000 ÷ 1,000,000 ＝ <strong>720,000円</strong> … 引渡し済みなので<strong>売上</strong></li><li>サポートへの配分＝900,000 × 200,000 ÷ 1,000,000 ＝ <strong>180,000円</strong> … 未提供なので<strong>契約負債</strong></li></ul><p>仕訳は「現金 900,000 ／ 売上 720,000・契約負債 180,000」となります。</p><p>手順は必ず<strong>按分が先、充足の判定が後</strong>です。順序を逆にすると、充足済みの履行義務に取引価格の全額を割り当ててしまいます。</p>'
+      },
+      {
+        text: '前問のサポート契約（配分額 180,000円、期間12か月）について、契約開始から <strong>5か月</strong> が経過して決算日を迎えた。時の経過に応じて収益を計上する。当期に計上する役務収益の額と、決算日に残る契約負債の残高はいくらか。',
+        answer: [75000, 105000],
+        labels: ['当期の役務収益', '契約負債の残高'],
+        formula: ['180000 * 5 / 12', '180000 - 180000 * 5 / 12'],
+        hint: '経過月数 ÷ 契約月数 が進捗度です。残高は配分額から収益計上額を引いた分です。',
+        explain: '<ul><li>役務収益＝180,000 × 5か月 ÷ 12か月 ＝ <strong>75,000円</strong></li><li>契約負債の残高＝180,000 − 75,000 ＝ <strong>105,000円</strong></li></ul><p>決算整理仕訳は「契約負債 75,000 ／ 役務収益 75,000」。残った 105,000円は、まだ果たしていない7か月分の義務として翌期に繰り越されます。</p><p>按分で決まった 180,000円が、ここでさらに期間按分されています。<strong>2段階の按分</strong>になっていることに注意してください。</p>'
+      },
+      {
+        text: '受注制作の案件を <strong>取引価格 4,000,000円</strong> で受注した。見積総原価は <strong>2,500,000円</strong> である。決算日までに発生した原価は <strong>1,000,000円</strong> であった。原価の進捗に応じて収益を計上する。当期に計上する役務収益の額はいくらか。',
+        answer: 1600000,
+        formula: '4000000 * 1000000 / 2500000',
+        hint: '進捗度＝発生した原価 ÷ 見積総原価。それを取引価格に掛けます。',
+        explain: '<p>進捗度＝1,000,000 ÷ 2,500,000 ＝ <strong>40%</strong></p><p>役務収益＝4,000,000 × 40% ＝ <strong>1,600,000円</strong></p><p>掛ける相手は<strong>取引価格</strong>であって、見積総原価でも発生原価でもありません。1,000,000円を役務収益にしてしまう誤りが多い場所です。</p><p>この案件の役務原価は、発生した 1,000,000円がそのまま計上されます。<strong>収益は取引価格 × 進捗度、原価は実際にかかった額</strong>で、別々に決まります。</p>'
+      },
+      {
+        text: '得意先に商品 <strong>2,400,000円</strong> を掛けで販売した。この得意先とは「年間の購入額が一定を超えた場合、代金の <strong>4%</strong> を返金する」という取り決めがあり、条件を満たす見込みが高い。返金負債に計上する額と、最終的に計上される売上の額はいくらか。',
+        answer: [96000, 2304000],
+        labels: ['返金負債の額', '売上の額'],
+        formula: ['2400000 * 4 / 100', '2400000 - 2400000 * 4 / 100'],
+        hint: '返す見込みの分は、はじめから収益にしません。',
+        explain: '<ul><li>返金負債＝2,400,000 × 4% ＝ <strong>96,000円</strong></li><li>売上＝2,400,000 − 96,000 ＝ <strong>2,304,000円</strong></li></ul><p>仕訳は「売掛金 2,400,000 ／ 売上 2,400,000」と「売上 96,000 ／ 返金負債 96,000」の2段階、あるいは1つにまとめて「売掛金 2,400,000 ／ 売上 2,304,000・返金負債 96,000」となります。</p><p><strong>売掛金は 2,400,000円のままです。</strong>この時点ではまだ割戻の条件を満たしておらず、相手に請求する金額は全額だからです。</p>'
+      },
+      {
+        text: '商品A（独立販売価格 <strong>300,000円</strong>）と商品B（独立販売価格 <strong>200,000円</strong>）を <strong>取引価格 450,000円</strong> で販売する契約を結んだ。代金は<strong>両方を引き渡した後にまとめて請求する</strong>。商品Aだけを引き渡した時点で計上される売上の額と、契約資産の額はいくらか。',
+        answer: [270000, 270000],
+        labels: ['売上の額', '契約資産の額'],
+        formula: ['450000 * 300000 / 500000', '450000 * 300000 / 500000'],
+        hint: '按分してから、引き渡した分だけを売上にします。請求できないので相手勘定は売掛金ではありません。',
+        explain: '<ul><li>独立販売価格の合計＝300,000 ＋ 200,000 ＝ <strong>500,000円</strong></li><li>商品Aへの配分＝450,000 × 300,000 ÷ 500,000 ＝ <strong>270,000円</strong></li></ul><p>仕訳は「契約資産 270,000 ／ 売上 270,000」。売上と契約資産が同額になります。</p><p><strong>相手勘定が売掛金でないことが要点です。</strong>「両方を引き渡した後にまとめて請求する」と定めているため、商品Aを引き渡しただけでは請求権が確定していません。</p><p>商品Bを引き渡したとき、商品Bへの配分額 450,000 × 200,000 ÷ 500,000 ＝ 180,000円を売上に計上し、同時に契約資産 270,000円を売掛金に振り替えます。借方の売掛金は 270,000 ＋ 180,000 ＝ 450,000円で取引価格と一致します。</p>'
+      },
+      {
+        text: '1年間の保守サービス契約を <strong>240,000円</strong> で結び、代金を全額現金で受け取った。契約は <strong>11月1日</strong> に始まり、決算日は <strong>3月31日</strong> である。時の経過に応じて収益を計上する。当期の役務収益と、翌期に繰り越す契約負債の残高はいくらか。',
+        answer: [100000, 140000],
+        labels: ['当期の役務収益', '翌期に繰り越す契約負債'],
+        formula: ['240000 * 5 / 12', '240000 - 240000 * 5 / 12'],
+        hint: '11月1日から3月31日までは何か月でしょうか。11月も含めて数えます。',
+        explain: '<p>経過期間は11月・12月・1月・2月・3月の<strong>5か月</strong>です。契約開始の月を含めて数えます。</p><ul><li>役務収益＝240,000 × 5 ÷ 12 ＝ <strong>100,000円</strong></li><li>契約負債の残高＝240,000 − 100,000 ＝ <strong>140,000円</strong></li></ul><p>決算整理仕訳は「契約負債 100,000 ／ 役務収益 100,000」です。</p><p>月数の数え違いが最も多い誤りです。<strong>11月1日開始なら11月がまるまる1か月分</strong>で、4か月ではありません。カレンダーを思い浮かべて、開始月から決算月までを指で数えてください。</p>'
+      }
+    ]
+  });
+
+  /* ========== 穴埋め ========== */
+  BokiFill.mount('#fill-yougo', {
+    title: '穴埋め — 収益認識の用語',
+    questions: [
+      {
+        text: '契約のなかで顧客に対して「これをします」と約束したひとつひとつの中身を何といいますか。漢字4文字で答えなさい。',
+        answer: ['履行義務'],
+        explain: '<p><strong>履行義務</strong>です。「パソコン本体を引き渡す」も履行義務、「1年間保守をする」も履行義務です。ひとつの契約に履行義務が2つ以上入っていることがあり、その場合は取引価格を独立販売価格の比で按分します。</p>'
+      },
+      {
+        text: '約束したことを果たし終えることを、収益認識では何といいますか。漢字2文字で答えなさい。',
+        answer: ['充足'],
+        explain: '<p><strong>充足</strong>です。「履行義務を充足した」＝「約束を果たした」。収益を計上するのは履行義務を充足したときで、入金したときでも契約したときでもありません。</p>'
+      },
+      {
+        text: 'その契約で最終的にもらえると見込まれる金額を何といいますか。漢字4文字で答えなさい。',
+        answer: ['取引価格'],
+        explain: '<p><strong>取引価格</strong>です。契約書に書いてある額そのままとは限りません。あとで一部を返す約束（変動対価）があるなら、返す見込みの額を差し引いた金額が取引価格になります。</p>'
+      },
+      {
+        text: '代金を先に受け取ったが、まだ約束を果たしていない部分を表す負債の勘定科目は何ですか。',
+        answer: ['契約負債'],
+        explain: '<p><strong>契約負債</strong>です。約束を果たすにつれて減っていき、その分だけ収益に振り替わります。3級で習った前受金と指しているものは同じで、どちらを使うかは与えられた勘定科目群と問題文の指示で決まります。</p>'
+      },
+      {
+        text: '収益は計上したが、代金を請求する権利がまだ確定していない部分を表す資産の勘定科目は何ですか。',
+        answer: ['契約資産'],
+        explain: '<p><strong>契約資産</strong>です。他の履行義務を果たすなど、契約で定めた条件が満たされて請求できるようになった時点で売掛金に振り替わります。契約資産のまま終わることはありません。</p>'
+      },
+      {
+        text: '顧客と約束した対価のうち、金額が変わりうる部分のことを何といいますか。漢字4文字で答えなさい。',
+        answer: ['変動対価'],
+        explain: '<p><strong>変動対価</strong>です。売上割戻（リベート）、値引き、返品の見込みなどがこれにあたります。2級では主に売上割戻の形で問われます。</p>'
+      },
+      {
+        text: '受け取った対価のうち、顧客に返すと見込まれる金額を表す負債の勘定科目は何ですか。',
+        answer: ['返金負債'],
+        explain: '<p><strong>返金負債</strong>です。売上を全額計上してから、割戻見込額を「売上／返金負債」で振り替えます。このとき<strong>売掛金は減らしません。</strong>まだ割戻の条件を満たしておらず、相手に請求する金額は全額だからです。</p>'
+      },
+      {
+        text: 'その商品やサービスを単独で売るとしたらいくらか、という価格を何といいますか。取引価格を複数の履行義務に按分するときの基準になります。',
+        answer: ['独立販売価格'],
+        explain: '<p><strong>独立販売価格</strong>です。按分の式は「取引価格 × その履行義務の独立販売価格 ÷ 独立販売価格の合計」。<strong>分母は独立販売価格の合計であって、取引価格ではありません。</strong>配分額の合計が取引価格に戻るかを必ず検算してください。</p>'
+      },
+      {
+        text: '商品を得意先に出荷した日に売上を計上する基準を何といいますか。',
+        answer: ['出荷基準'],
+        explain: '<p><strong>出荷基準</strong>です。3つの基準は出荷 → 着荷 → 検収の順に売上計上が遅くなります。<strong>採用する基準は問題文の指示が最優先</strong>で、自分で判断する場面はありません。</p>'
+      },
+      {
+        text: '得意先が商品の中身を確認し、問題なしと認めた日に売上を計上する基準を何といいますか。支配が移った時点にいちばん近い基準です。',
+        answer: ['検収基準'],
+        explain: '<p><strong>検収基準</strong>です。顧客が商品を支配したときに収益を計上するという考え方に最も近いため、原則的な取扱いとされます。出荷しただけでは返品されるかもしれず、まだ相手のものになったとは言い切れません。</p>'
+      },
+      {
+        text: 'サービス業で、提供したサービスにかかった費用を表す勘定科目は何ですか。商品売買でいう「売上原価」にあたります。',
+        answer: ['役務原価'],
+        explain: '<p><strong>役務原価</strong>です。役務収益と同じタイミングで計上します。提供前にかかった費用はいったん仕掛品（資産）に置いておき、提供したときに役務原価へ振り替えます。</p>'
+      },
+      {
+        text: 'サービス業で、まだ提供していないサービスのためにかかった費用をいったん計上しておく資産の勘定科目は何ですか。',
+        answer: ['仕掛品'],
+        explain: '<p><strong>仕掛品</strong>です。商品を仕入れて倉庫に置いておくのと同じ扱いで、サービスを提供したときに役務原価へ振り替えます。提供前に費用としてしまうと、収益のない期間に費用だけが立ち、収益と費用の対応が崩れます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 仕訳ドリル 15問 ========== */
+  var ACC = [
+    '現金', '当座預金', '普通預金', '売掛金', '受取手形', '契約資産', '仕掛品', '商品',
+    '買掛金', '未払金', '前受金', '契約負債', '返金負債',
+    '売上', '役務収益', '売上割戻',
+    '仕入', '役務原価', '給料', '旅費交通費', '水道光熱費', '支払手数料'
+  ];
+
+  BokiJournal.mount('#drill-shueki', {
+    title: '仕訳ドリル — 収益認識 14問',
+    accounts: ACC,
+    questions: [
+      /* --- 契約負債 3問 --- */
+      {
+        text: '当社は保守サービス業を営んでいる。本日、得意先と <strong>1年間の保守サービス契約</strong> を <strong>120,000円</strong> で結び、代金の全額を現金で受け取った。サービスの提供はこれから開始する。',
+        debit: [['現金', 120000]],
+        credit: [['契約負債', 120000]],
+        hint: 'まだ何のサービスもしていません。この時点の収益はいくらでしょうか。',
+        explain: '<p>収益は<strong>ゼロ</strong>です。代金は受け取りましたが、「これから1年間サービスをします」という約束をまだ何ひとつ果たしていません。</p><p>受け取った 120,000円は、サービスを提供するか返金するかしかない<strong>義務</strong>です。だから貸方は<strong>契約負債</strong>（負債）になります。</p><p>入金のタイミングと収益計上のタイミングは無関係です。「お金が入ったから売上」と書かないでください。</p>'
+      },
+      {
+        text: '当社は保守サービス業を営んでいる。<strong>12月1日</strong> に得意先と1年間の保守サービス契約を <strong>180,000円</strong> で結び、代金の全額を現金で受け取って契約負債として処理していた。本日 <strong>3月31日</strong>（決算日）、時の経過に応じて収益を計上する。',
+        debit: [['契約負債', 60000]],
+        credit: [['役務収益', 60000]],
+        hint: '12月1日から3月31日までは何か月でしょうか。12月も含めて数えます。',
+        explain: '<p>経過期間は12月・1月・2月・3月の<strong>4か月</strong>です。契約開始の月を含めて数えます。</p><p>役務収益＝180,000 × 4か月 ÷ 12か月 ＝ <strong>60,000円</strong>。果たしたぶんだけを収益に振り替えます。</p><p>借方の<strong>契約負債</strong>は、負債を減らすので借方に書きます。残高 180,000 − 60,000 ＝ 120,000円が翌期に繰り越されます。</p><p>月数の数え違いが最も多い誤りです。12月1日開始なら12月がまるまる1か月分で、3か月ではありません。</p>'
+      },
+      {
+        text: '当社は学習塾を経営している。本日、受講料 <strong>300,000円</strong> を現金で受け取った。授業はこれから提供する。また、この講座のためにすでに支出した費用 <strong>90,000円</strong> は仕掛品として計上済みである。<br><span class="small muted">本日の入金に関する仕訳のみを答えなさい。</span>',
+        debit: [['現金', 300000]],
+        credit: [['契約負債', 300000]],
+        hint: '仕掛品はまだ動きません。授業を提供していないからです。',
+        explain: '<p><strong>現金 300,000 ／ 契約負債 300,000</strong> の1本だけです。</p><p>仕掛品 90,000円は動かしません。<mark>仕掛品を役務原価に振り替えるのは、サービスを提供して役務収益を計上したときです。</mark>まだ授業をしていないので、そのタイミングが来ていません。</p><p>「仕掛品があるから何か振り替えなければ」と考えてしまうと、収益がない期間に費用だけを計上することになり、収益と費用の対応が崩れます。</p>'
+      },
+
+      /* --- 契約資産・売掛金 4問 --- */
+      {
+        text: '得意先と、商品A（<strong>80,000円</strong>）と商品B（<strong>120,000円</strong>）を販売する契約を結んだ。契約では <strong>両方の商品を引き渡した後に、代金 200,000円をまとめて請求する</strong> と定めている。本日、<strong>商品Aのみ</strong> を引き渡した。',
+        debit: [['契約資産', 80000]],
+        credit: [['売上', 80000]],
+        hint: '商品Aの引渡しという約束は果たしました。では、いま代金を請求できるでしょうか。',
+        explain: '<p>「商品Aを引き渡す」という履行義務は充足したので、<strong>80,000円の売上を計上します。</strong>ここまでは通常の商品販売と同じです。</p><p>問題は相手勘定です。<strong>売掛金と書いてはいけません。</strong>契約が「両方を引き渡した後にまとめて請求する」と定めているため、商品Bを引き渡すまで代金を請求する権利が発生していないからです。</p><p>「収益は計上したが請求権がまだ確定していない」状態を表すのが<strong>契約資産</strong>です。判断の決め手は問題文の「両方の商品を引き渡した後に〜まとめて請求する」という一文で、答案を書く前にこの一文を探してください。</p>'
+      },
+      {
+        text: '前問の契約について、本日 <strong>商品B（120,000円）</strong> を引き渡し、代金 <strong>200,000円</strong> を請求できるようになった。なお、商品A分については契約資産 <strong>80,000円</strong> を計上済みである。',
+        debit: [['売掛金', 200000]],
+        credit: [['売上', 120000], ['契約資産', 80000]],
+        hint: '2つのことが同時に起きています。商品Bの売上計上と、もうひとつは何でしょうか。',
+        explain: '<p>2つのことが同時に起きます。</p><ul><li><strong>商品Bを引き渡した</strong> … 120,000円を売上に計上します</li><li><strong>商品A分の請求権が確定した</strong> … 両方の引渡しが終わり契約上の請求条件が満たされたので、契約資産 80,000円が<strong>売掛金に振り替わります</strong>。契約資産を貸方で消します</li></ul><p>借方の売掛金は 80,000 ＋ 120,000 ＝ <strong>200,000円</strong>で、契約全体の代金と一致します。</p><p>契約資産のまま終わることはありません。<strong>いずれ必ず売掛金などの債権に振り替わる、仮の置き場所</strong>だと考えてください。</p>'
+      },
+      {
+        text: '得意先に商品 <strong>350,000円</strong> を販売し、本日引き渡した。代金は翌月末に受け取る。なお、この契約には他の履行義務はなく、請求を止める条件も定められていない。',
+        debit: [['売掛金', 350000]],
+        credit: [['売上', 350000]],
+        hint: '請求を止める条件がありません。引き渡した時点で請求できるでしょうか。',
+        explain: '<p><strong>売掛金</strong>です。契約資産ではありません。</p><p>引き渡した時点で契約上の約束をすべて果たしており、代金を請求する権利が確定しています。あとは期日が来れば受け取れる状態です。</p><p><mark>契約資産が出てくるのは、請求を止める条件が契約に書かれている場合だけです。</mark>収益認識を学んだ直後は「契約資産と書くべきでは」と迷いがちですが、ふつうの商品販売はこれまでどおり売掛金です。問題文に請求を止める一文があるかどうかだけで判断してください。</p>'
+      },
+      {
+        text: '得意先と、商品C（独立販売価格 <strong>300,000円</strong>）と商品D（独立販売価格 <strong>200,000円</strong>）を <strong>取引価格 450,000円</strong> で販売する契約を結んだ。代金は <strong>両方の商品を引き渡した後にまとめて請求する</strong>。本日、<strong>商品Cのみ</strong> を引き渡した。取引価格は独立販売価格の比で各履行義務に配分する。',
+        debit: [['契約資産', 270000]],
+        credit: [['売上', 270000]],
+        hint: 'まず按分してから、引き渡した分だけを売上にします。相手勘定は前問と同じ理由で決まります。',
+        explain: '<p>手順は<strong>按分が先、充足の判定が後</strong>です。</p><ul><li>独立販売価格の合計＝300,000 ＋ 200,000 ＝ 500,000円</li><li>商品Cへの配分＝450,000 × 300,000 ÷ 500,000 ＝ <strong>270,000円</strong></li></ul><p>商品Cを引き渡したので 270,000円を売上に計上します。相手勘定は<strong>契約資産</strong>です。「両方を引き渡した後にまとめて請求する」と定めているため、まだ請求権が確定していません。</p><p>商品Cの独立販売価格 300,000円をそのまま売上にしてはいけません。セットで 50,000円の値引きをしており、値引きは両方に同じ割合で及んでいます。</p>'
+      },
+
+      /* --- 役務収益・役務原価 3問 --- */
+      {
+        text: '当社はソフトウェアの受託開発業を営んでいる。開発案件のために発生した費用のうち、<strong>給料 180,000円</strong> と <strong>旅費交通費 40,000円</strong> が特定の案件に直接かかったものと判明した。これらを適切な勘定に振り替える。',
+        debit: [['仕掛品', 220000]],
+        credit: [['給料', 180000], ['旅費交通費', 40000]],
+        hint: 'まだ案件は完成していません。この費用は当期の費用にしてよいでしょうか。',
+        explain: '<p>案件がまだ完成しておらず収益も計上していないため、この費用を当期の費用のままにすると、<strong>収益のない期間に費用だけが立ちます。</strong></p><p>そこで、いったん資産である<strong>仕掛品</strong>に振り替えて持っておきます。商品を仕入れて倉庫に置いておくのと同じ扱いです。</p><p>給料と旅費交通費は費用でホームポジションが借方なので、減らすには<strong>貸方</strong>に書きます。借方の仕掛品は合計 180,000 ＋ 40,000 ＝ <strong>220,000円</strong>。</p><p>案件に紐づかない総務部の給料などは、費用のまま残します。振り替えるのは特定の案件のためにかかったと分かる分だけです。</p>'
+      },
+      {
+        text: '当社はソフトウェアの受託開発業を営んでいる。前問の案件（受注額 <strong>500,000円</strong>）が完成し、本日、得意先に引き渡した。代金は掛けとした。なお、この案件について <strong>仕掛品 220,000円</strong> が計上されている。',
+        debit: [['売掛金', 500000], ['役務原価', 220000]],
+        credit: [['役務収益', 500000], ['仕掛品', 220000]],
+        hint: '2本立てです。収益を計上する1本と、資産を費用に振り替える1本。',
+        explain: '<p>2本立てで書きます。</p><ul><li><strong>売掛金 500,000 ／ 役務収益 500,000</strong> … サービスを提供して履行義務を充足したので、収益を計上します</li><li><strong>役務原価 220,000 ／ 仕掛品 220,000</strong> … 資産として持っていた仕掛品を、費用である役務原価へ振り替えます</li></ul><p>UNIT 02 の売上原価対立法とまったく同じ構造です。「収益を計上する1本」と「資産を費用に振り替える1本」。<strong>下の1本を忘れると利益が過大になり</strong>、しかも完成した案件の原価が仕掛品に残ったままになります。</p><p>この案件の利益は 500,000 − 220,000 ＝ 280,000円と帳簿から直接読めます。</p>'
+      },
+      {
+        text: '当社は学習塾を経営している。受講料 <strong>300,000円</strong> を全額前受けし契約負債として処理していた講座について、本日、<strong>全課程の40%</strong> が終了した。進捗度に応じて収益を計上する。なお、この講座について計上されている仕掛品のうち <strong>90,000円</strong> が、提供済みの部分に対応する。',
+        debit: [['契約負債', 120000], ['役務原価', 90000]],
+        credit: [['役務収益', 120000], ['仕掛品', 90000]],
+        hint: '収益は 300,000円の40%。原価は問題文が与えている額をそのまま使います。',
+        explain: '<p>2本立てです。</p><ul><li><strong>契約負債 120,000 ／ 役務収益 120,000</strong> … 300,000 × 40% ＝ 120,000円。果たした40%分の義務が収益に振り替わります</li><li><strong>役務原価 90,000 ／ 仕掛品 90,000</strong> … 提供済み部分に対応する原価を費用へ振り替えます</li></ul><p><strong>役務原価の 90,000円は、役務収益から計算したものではありません。</strong>仕掛品にそれだけ積んであったからです。収益は取引価格と進捗度から、原価は実際にかかった額から、別々に決まります。</p><p>120,000円の40%といった計算をすると、問題文の与えた数値と合わなくなります。原価の額が与えられていたらそのまま使ってください。</p>'
+      },
+
+      /* --- 複数の履行義務 2問 --- */
+      {
+        text: '商品本体と <strong>1年間の保守サービス</strong> をセットで販売する契約を、<strong>取引価格 570,000円</strong> で結び、代金の全額を現金で受け取った。独立販売価格は本体 <strong>480,000円</strong>、保守 <strong>120,000円</strong> である。本日、本体を引き渡した。保守はこれから1年間提供する。取引価格は独立販売価格の比で各履行義務に配分する。',
+        debit: [['現金', 570000]],
+        credit: [['売上', 456000], ['契約負債', 114000]],
+        hint: '独立販売価格の合計が分母です。充足済みの分だけが売上になります。',
+        explain: '<ul><li>独立販売価格の合計＝480,000 ＋ 120,000 ＝ <strong>600,000円</strong></li><li>本体＝570,000 × 480,000 ÷ 600,000 ＝ <strong>456,000円</strong> … 引渡し済みなので<strong>売上</strong></li><li>保守＝570,000 × 120,000 ÷ 600,000 ＝ <strong>114,000円</strong> … 未提供なので<strong>契約負債</strong></li></ul><p>検算：456,000 ＋ 114,000 ＝ 570,000円で取引価格に戻ります。</p><p><strong>保守を独立販売価格そのままの 120,000円としてはいけません。</strong>実際に受け取ったのは 570,000円であって 600,000円ではなく、値引き 30,000円は本体と保守の両方に同じ割合で及んでいます。分母が独立販売価格の合計であることにも注意してください。</p>'
+      },
+      {
+        text: '前問の保守サービス（配分額 <strong>114,000円</strong>、期間12か月）について、本日決算日を迎えた。契約開始から <strong>4か月</strong> が経過している。時の経過に応じて収益を計上する。',
+        debit: [['契約負債', 38000]],
+        credit: [['役務収益', 38000]],
+        hint: '按分で決まった 114,000円を、さらに期間で按分します。',
+        explain: '<p>役務収益＝114,000 × 4か月 ÷ 12か月 ＝ <strong>38,000円</strong>。</p><p>契約負債の残高は 114,000 − 38,000 ＝ <strong>76,000円</strong>となり、翌期に繰り越されます。</p><p>ここでは<strong>2段階の按分</strong>が行われています。まず取引価格 570,000円を独立販売価格の比で保守に配分して 114,000円、次にその 114,000円を経過月数で按分して 38,000円。</p><p>元の取引価格 570,000円に 4/12 を掛けてはいけません。本体分はすでに全額が売上になっており、期間按分の対象ではないからです。</p>'
+      },
+
+      /* --- 変動対価・返金負債 2問 --- */
+      {
+        text: '得意先に商品 <strong>1,000,000円</strong> を掛けで販売した。この得意先とは「年間の購入額が一定を超えた場合、代金の <strong>3%</strong> を返金する」という取り決めがあり、条件を満たす見込みが高い。<strong>売上を販売額の全額で計上したうえで、割戻の見込額を振り替える形</strong>で処理する。<br><span class="small muted">2本の仕訳をまとめて記入しなさい。</span>',
+        debit: [['売掛金', 1000000], ['売上', 30000]],
+        credit: [['売上', 1000000], ['返金負債', 30000]],
+        hint: '減らすのは収益の側だけです。売掛金はいくら請求できるでしょうか。',
+        explain: '<p>2本の仕訳をまとめて記入します。</p><ul><li><strong>売掛金 1,000,000 ／ 売上 1,000,000</strong> … まず販売額の全額で売上を計上します</li><li><strong>売上 30,000 ／ 返金負債 30,000</strong> … 1,000,000 × 3% ＝ 30,000円。返す見込みの分を収益から取り除きます</li></ul><p>結果として売上は 1,000,000 − 30,000 ＝ <strong>970,000円</strong>、売掛金は 1,000,000円、返金負債は 30,000円になります。</p><p><strong>売掛金は減らしません。</strong>この時点ではまだ割戻の条件を満たしておらず、相手に請求する金額は 1,000,000円だからです。「返す見込みだから債権も減らす」としてしまうと、請求額と帳簿が食い違います。</p>'
+      },
+      {
+        text: '得意先に商品 <strong>800,000円</strong> を掛けで販売した。この得意先とは「年間の購入額が一定を超えた場合、代金の <strong>5%</strong> を返金する」という取り決めがあり、条件を満たす見込みが高い。<strong>返すと見込まれる分を除いた金額で売上を計上する。</strong>',
+        debit: [['売掛金', 800000]],
+        credit: [['売上', 760000], ['返金負債', 40000]],
+        hint: '取引価格は「最終的にもらえると見込まれる金額」です。売掛金はいくら請求できるでしょうか。',
+        explain: '<p><strong>売掛金 800,000 ／ 売上 760,000・返金負債 40,000</strong> です。</p><p>割戻の見込額は 800,000 × 5% ＝ <strong>40,000円</strong>。これは最終的にもらえない見込みなので、<strong>はじめから収益に含めません</strong>。売上は 800,000 − 40,000 ＝ 760,000円です。</p><p><strong>売掛金は 800,000円のまま</strong>です。いま相手に請求できるのは満額であり、返すのは条件を満たした後だからです。前問と結果は同じで、書き方が1本か2本かの違いだけです。答案でどちらを書くかは問題文の指示で決まります。</p>'
+      },
+      {
+        text: '前問の得意先について、本日、年間の購入額が条件を満たしたため、割戻 <strong>30,000円</strong> を売掛金から控除した。なお、この割戻については <strong>返金負債 30,000円</strong> を計上済みである。',
+        debit: [['返金負債', 30000]],
+        credit: [['売掛金', 30000]],
+        hint: '売上は動くでしょうか。減額はいつ済ませたか思い出してください。',
+        explain: '<p><strong>返金負債 30,000 ／ 売掛金 30,000</strong> です。返す義務を果たしたので返金負債が消え、売掛金が 1,000,000 − 30,000 ＝ 970,000円に減ります。</p><p><strong>ここで売上は動きません。</strong>減額はすでに販売時の見積りの段階で済ませてあるからです。ここでもう一度売上を減らすと、<mark>同じ割戻について二重に収益を減らす</mark>ことになります。</p><p>見積りの段階で減らしておくのは、割戻の条件を満たすかどうかが確定するまで待つと、決算日をまたいだときに売上が過大なまま決算書に載ってしまうからです。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

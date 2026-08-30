@@ -54,8 +54,8 @@ YAMLは原本のPDFから生成したもので、**手で編集しない。**
 ## 公開前に必ず通す
 
 ```
-npm run check       # 品質ゲート1〜7（機械的検査）
-npm run coverage    # 論点カバレッジ
+npm run check       # 品質ゲート1〜6・9・10（機械的検査）
+npm run coverage    # 品質ゲート7（論点カバレッジ）
 ```
 
 `npm run check` が落ちている状態で「完了した」と報告しない。

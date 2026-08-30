@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第六-1-0,工-第六-2-0,工-第六-3-0,工-第六-4-0,工-第六-5-0,工-第七-1-0,工-第七-2-0,工-第七-3-0">
+<title>労務費・経費 — 日商簿記2級 Phase 1 W2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 07 労務費・経費</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 07 ／ 4時間 ／ 工業簿記</p>
+    <h1>労務費・経費<br>— 費目別計算の2つ目と3つ目</h1>
+    <p class="lead">材料費で費目別計算の1つ目を終えました。残りは<strong>労務費</strong>と<strong>経費</strong>の2つで、これで費目別計算はひととおり出そろいます。材料費で作った型——「分類して行き先を決める」「予定で回してズレを差異で受け止める」——は、労務費でもそのまま使えます。労務費に固有の難しさは<strong>時間</strong>にあります。人は材料と違って、働いた時間の全部が製品に化けるわけではないからです。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算ドリル 9問</span>
+      <span class="chip">確認テスト 10問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">材料費で作った型が、そのまま使える</a></li>
+      <li><a href="#s2">労務費の分類 — 人か、時間か</a></li>
+      <li><a href="#s3">作業時間の計算 — 就業時間を割っていく</a></li>
+      <li><a href="#s4">証ひょうと帳簿 — 時間はどこから来るのか</a></li>
+      <li><a href="#s5">消費賃金の計算 — 予定賃率と賃率差異</a></li>
+      <li><a href="#s6">支払賃金と消費賃金 — 期間がずれている</a></li>
+      <li><a href="#s7">賃金勘定を通して全体を見る</a></li>
+      <li><a href="#s8">経費の分類 — 4つの類型</a></li>
+      <li><a href="#s9">経費の計算と仕訳</a></li>
+      <li><a href="#s10">仕訳ドリル 12問</a></li>
+      <li><a href="#s11">計算ドリル 9問</a></li>
+      <li><a href="#s12">確認テスト 10問</a></li>
+      <li><a href="#s13">用語の穴埋め 7問</a></li>
+      <li><a href="#s14">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>材料費で作った型が、そのまま使える</h2>
+
+  <p>費目別計算は、工場で使ったお金を材料費・労務費・経費の3つに分けて金額を確定する手続でした。この単元でその<strong>2つ目と3つ目</strong>を扱います。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 860 300" style="width:100%;height:auto;min-width:680px" role="img" aria-label="勘定連絡図における賃金・給料勘定と経費勘定の位置。それぞれ直接分が仕掛品へ、間接分が製造間接費へ流れる">
+      <g font-size="14" fill="var(--text)">
+        <rect x="20" y="20" width="140" height="62" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="90" y="50" text-anchor="middle" font-size="16" font-weight="700" fill="var(--muted)">材　料</text>
+        <text x="90" y="70" text-anchor="middle" font-size="11.5" fill="var(--muted)">UNIT 04 で完了</text>
+
+        <rect x="20" y="105" width="140" height="70" rx="6" fill="var(--debit-bg)" stroke="var(--accent-br)" stroke-width="2"/>
+        <text x="90" y="136" text-anchor="middle" font-size="16" font-weight="700" fill="var(--debit)">賃金・給料</text>
+        <text x="90" y="158" text-anchor="middle" font-size="11.5" fill="var(--muted)">この単元 2〜7章</text>
+
+        <rect x="20" y="198" width="140" height="70" rx="6" fill="var(--debit-bg)" stroke="var(--accent-br)" stroke-width="2"/>
+        <text x="90" y="229" text-anchor="middle" font-size="16" font-weight="700" fill="var(--debit)">経　費</text>
+        <text x="90" y="251" text-anchor="middle" font-size="11.5" fill="var(--muted)">この単元 8〜9章</text>
+
+        <path d="M165 118 L 445 92" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#u7a1)"/>
+        <path d="M165 213 L 445 105" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#u7a1)"/>
+        <text x="300" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--debit)">直接労務費・直接経費</text>
+
+        <path d="M165 165 L 330 218" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#u7a2)"/>
+        <path d="M165 245 L 330 235" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#u7a2)"/>
+        <text x="248" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--credit)">間接労務費・間接経費</text>
+
+        <rect x="335" y="200" width="150" height="66" rx="6" fill="var(--credit-bg)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="410" y="230" text-anchor="middle" font-size="15" font-weight="700" fill="var(--credit)">製造間接費</text>
+        <text x="410" y="251" text-anchor="middle" font-size="11.5" fill="var(--muted)">あとで配賦する</text>
+
+        <path d="M410 197 L 410 150 L 525 150" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#u7a2)"/>
+        <text x="448" y="142" text-anchor="middle" font-size="11.5" fill="var(--muted)">配賦</text>
+
+        <rect x="450" y="60" width="140" height="80" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="520" y="105" text-anchor="middle" font-size="16" font-weight="700">仕掛品</text>
+
+        <path d="M595 100 L 650 100" stroke="var(--muted)" stroke-width="2.5" fill="none" marker-end="url(#u7a3)"/>
+
+        <rect x="655" y="60" width="110" height="80" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="710" y="105" text-anchor="middle" font-size="16" font-weight="700">製品</text>
+
+        <rect x="12" y="96" width="156" height="180" rx="10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 4"/>
+      </g>
+      <defs>
+        <marker id="u7a1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/>
+        </marker>
+        <marker id="u7a2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/>
+        </marker>
+        <marker id="u7a3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">3つの入口が並んでいて、どれも出口は仕掛品か製造間接費の2つ。矢印の形は材料費とまったく同じ。</p>
+  </div>
+
+  <p>図を見れば分かるとおり、<mark>賃金・給料勘定と経費勘定は、材料勘定と横並びの位置にいます</mark>。出口も同じ2つです。したがって材料費で身につけた次の3つは、そのまま持ち込めます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">持ち込める型 ①</div>
+      <p><strong>分類とは行き先を決めること</strong></p>
+      <p class="small">直接◯◯費なら仕掛品へ直課、間接◯◯費なら製造間接費へ集めて後で配賦。分類のための分類ではない。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">持ち込める型 ②</div>
+      <p><strong>予定で回して差異で受け止める</strong></p>
+      <p class="small">材料の予定価格が、労務費では<strong>予定賃率</strong>になる。理由も計算式もそっくり同じ。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">持ち込める型 ③</div>
+      <p><strong>予定＜実際なら借方＝不利</strong></p>
+      <p class="small">差異のボックス図も同じ形。縦軸が価格から賃率に変わるだけ。</p>
+    </div>
+  </div>
+
+  <h3>では、新しく学ぶことは何か</h3>
+
+  <p>型が同じなら、この単元で本当に新しいのは何でしょうか。2つあります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">新しいこと① 「使った量」が時間で測られ、しかも全部が製品に化けない</span>
+    <p>材料は、倉庫から出た1kgがそのまま製品の一部になります。ところが人はそうではありません。<mark>8時間会社にいても、そのうち製品を加工していたのが6時間で、残り2時間は材料待ちと後片付けだった</mark>ということが起こります。<br>「働いた時間」と「製品に直接ひもづく時間」がズレる。このズレの管理こそが労務費計算の中核であり、3章で扱います。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">新しいこと② 「払った金額」と「当月の原価になる金額」がズレる</span>
+    <p>材料は買った月に材料勘定へ入り、使った月に出ていきます。倉庫がクッションになるので、支払いと消費の関係で混乱することはありませんでした。<br>賃金は違います。給与は「20日締めの25日払い」のような会社独自のサイクルで支払われる一方、<strong>原価計算は必ず月初から月末までの1か月で締めます</strong>。この2つの期間がズレているために、<mark>当月に払った金額と当月の原価になる金額が一致しません</mark>。ここが労務費の最頻出の混同で、6章で扱います。</p>
+  </div>
+
+  <p class="small muted">上の見出しに出てくる「働いた時間」と「払った金額」、この2つのズレだけがこの単元の新しい中身です。ほかは材料費の焼き直しだと思って構いません。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>労務費の分類 — 人か、時間か</h2>
+
+  <p>工場には、いろいろな立場の人が働いています。家具工場を続けて考えます。</p>
+
+  <ul>
+    <li>木材を切り、組み立て、塗装する<strong>職人</strong></li>
+    <li>機械が壊れたら直しに来る<strong>保全担当</strong></li>
+    <li>倉庫から現場へ材料を運ぶ<strong>運搬係</strong></li>
+    <li>工場全体を見ている<strong>工場長</strong>や事務所の<strong>事務員</strong></li>
+  </ul>
+
+  <p>職人は製品を作っています。「このテーブルに何時間かけたか」を記録すれば、製品ごとにひもづけられます。ところが保全担当や運搬係は、特定の1台のためだけに働いているわけではありません。工場長に至っては製品に触れてすらいません。</p>
+
+  <div class="term">
+    <span class="term__w">直接工</span><span class="term__r">ちょくせつこう</span>
+    <p>製品の製造作業そのものに従事する工員。上の例では職人。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">間接工</span><span class="term__r">かんせつこう</span>
+    <p>製造作業を支える仕事に従事する工員。修繕・運搬・検査・清掃など。上の例では保全担当と運搬係。</p>
+  </div>
+
+  <h3>労務費に含まれるもの</h3>
+
+  <p>労務費は賃金だけではありません。人を雇うことで発生する費用は、幅広く労務費に入ります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>種類</th><th>中身</th><th>分類</th></tr></thead>
+    <tbody>
+      <tr><td><strong>賃金</strong></td><td>工員に支払う給与。基本給と加給金（残業手当など、作業に直接関係する割増）からなる</td><td><strong>直接工の直接作業ぶんだけ直接労務費</strong>。それ以外は間接労務費</td></tr>
+      <tr><td><strong>給料</strong></td><td>工場長・工場事務員・技師など、工員以外の従業員に支払う給与</td><td>間接労務費</td></tr>
+      <tr><td><strong>従業員賞与手当</strong></td><td>賞与、および通勤手当・住宅手当・家族手当など、作業と直接関係のない手当</td><td>間接労務費</td></tr>
+      <tr><td><strong>退職給付費用</strong></td><td>工場の従業員に対する退職給付引当金の当期繰入額</td><td>間接労務費</td></tr>
+      <tr><td><strong>法定福利費</strong></td><td>健康保険料・厚生年金保険料などの<strong>会社負担分</strong></td><td>間接労務費</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">直接労務費になり得るのは、この表の1行目の一部だけ</span>
+    <p>5種類あるうち、<strong>直接労務費になる可能性があるのは「賃金」だけ</strong>です。しかもその全額ではありません。<mark>直接工が直接作業をしていた時間ぶんの賃金</mark>だけが直接労務費になります。<br>逆に言えば、<strong>それ以外はすべて間接労務費</strong>です。給料・従業員賞与手当・退職給付費用・法定福利費に、直接分はありません。この線引きが分かっていれば、分類問題はほぼ機械的に処理できます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「直接工の賃金＝直接労務費」ではない</span>
+    <p>最も多い取り違えがこれです。直接工の賃金であっても、<strong>直接作業をしていなかった時間ぶんは間接労務費</strong>になります。<br>職人が朝から夕方まで工場にいた8時間のうち、実際にテーブルを加工していたのが6時間、機械の掃除をしていたのが1時間、材料が届かず待っていたのが1時間だったとします。このとき<mark>直接労務費になるのは6時間ぶんだけ</mark>で、残り2時間ぶんは間接労務費です。<br>掃除の1時間も待っていた1時間も、どちらも「どのテーブルのための時間か」と聞かれたら答えられません。だから製品に直課できず、いったん製造間接費に集めるしかないのです。<br>試験では<strong>直接工の賃金を金額でひとまとめに与えておいて、時間の内訳から直接分と間接分に割らせる</strong>形で問われます。次の章がそのための道具です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">間接工の賃金は、時間で割らない</span>
+    <p>直接工の賃金は時間の内訳で割りますが、<strong>間接工の賃金は全額が間接労務費</strong>です。割る必要がありません。<br>間接工がどれだけ長く働いても、その時間は特定の製品にひもづかないからです。したがって間接工については作業時間の内訳を集計する必要すらなく、<mark>「当月の間接工賃金はいくらか」という金額だけが分かればよい</mark>ことになります。この非対称に気づくと、問題文で何を読むべきかがはっきりします。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>作業時間の計算 — 就業時間を割っていく</h2>
+
+  <p>前の章で「直接工の賃金は時間の内訳で割る」と書きました。では、その内訳はどう整理されているのでしょうか。工場に来てから帰るまでの時間を、順に切り分けていきます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 820 400" style="width:100%;height:auto;min-width:680px" role="img" aria-label="就業時間の階層図。就業時間は直接作業時間・間接作業時間・手待時間に分かれ、直接作業時間はさらに加工時間と段取時間に分かれる。直接労務費になるのは直接作業時間だけ">
+      <g font-size="13" fill="var(--text)">
+        <!-- 第1層：勤務時間 -->
+        <rect x="30" y="20" width="760" height="52" rx="5" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="410" y="43" text-anchor="middle" font-size="15" font-weight="700">勤務時間（工場にいた時間）</text>
+        <text x="410" y="62" text-anchor="middle" font-size="11.5" fill="var(--muted)">休憩時間・組合活動など、就業していない時間を含む</text>
+
+        <path d="M410 74 L 410 92" stroke="var(--border-2)" stroke-width="1.5"/>
+
+        <!-- 第2層：就業時間 -->
+        <rect x="30" y="94" width="640" height="50" rx="5" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="350" y="117" text-anchor="middle" font-size="15" font-weight="700" fill="var(--accent)">就業時間</text>
+        <text x="350" y="136" text-anchor="middle" font-size="11.5" fill="var(--muted)">実際に働くために拘束されていた時間。労務費の計算対象はここ</text>
+        <rect x="676" y="94" width="114" height="50" rx="5" fill="none" stroke="var(--border-2)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="733" y="118" text-anchor="middle" font-size="12" fill="var(--muted)">定時休憩など</text>
+        <text x="733" y="134" text-anchor="middle" font-size="11" fill="var(--muted)">原価にしない</text>
+
+        <path d="M180 146 L 180 168" stroke="var(--border-2)" stroke-width="1.5"/>
+        <path d="M420 146 L 420 168" stroke="var(--border-2)" stroke-width="1.5"/>
+        <path d="M585 146 L 585 168" stroke="var(--border-2)" stroke-width="1.5"/>
+
+        <!-- 第3層：就業時間の内訳 -->
+        <rect x="30" y="170" width="300" height="58" rx="5" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2.5"/>
+        <text x="180" y="194" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">直接作業時間</text>
+        <text x="180" y="215" text-anchor="middle" font-size="11.5" fill="var(--debit)">製造指図書ごとに記録される</text>
+
+        <rect x="336" y="170" width="168" height="58" rx="5" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="2.5"/>
+        <text x="420" y="194" text-anchor="middle" font-size="14" font-weight="700" fill="var(--credit)">間接作業時間</text>
+        <text x="420" y="214" text-anchor="middle" font-size="11" fill="var(--credit)">運搬・掃除・修繕</text>
+
+        <rect x="510" y="170" width="160" height="58" rx="5" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="2.5"/>
+        <text x="590" y="194" text-anchor="middle" font-size="14" font-weight="700" fill="var(--credit)">手待時間</text>
+        <text x="590" y="214" text-anchor="middle" font-size="11" fill="var(--credit)">待たされていた時間</text>
+
+        <path d="M105 230 L 105 250" stroke="var(--border-2)" stroke-width="1.5"/>
+        <path d="M255 230 L 255 250" stroke="var(--border-2)" stroke-width="1.5"/>
+
+        <!-- 第4層：直接作業時間の内訳 -->
+        <rect x="30" y="252" width="146" height="54" rx="5" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2"/>
+        <text x="103" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">加工時間</text>
+        <text x="103" y="295" text-anchor="middle" font-size="11" fill="var(--debit)">実際に手を動かす</text>
+
+        <rect x="184" y="252" width="146" height="54" rx="5" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2"/>
+        <text x="257" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">段取時間</text>
+        <text x="257" y="295" text-anchor="middle" font-size="11" fill="var(--debit)">機械の準備・型の交換</text>
+
+        <!-- 帰属先の帯 -->
+        <rect x="30" y="330" width="300" height="46" rx="5" fill="none" stroke="var(--debit)" stroke-width="2.5"/>
+        <text x="180" y="350" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">直接労務費 → 仕掛品へ直課</text>
+        <text x="180" y="369" text-anchor="middle" font-size="11.5" fill="var(--muted)">どの製造指図書のためかが分かる</text>
+
+        <rect x="336" y="330" width="334" height="46" rx="5" fill="none" stroke="var(--credit)" stroke-width="2.5"/>
+        <text x="503" y="350" text-anchor="middle" font-size="14" font-weight="700" fill="var(--credit)">間接労務費 → 製造間接費へ集める</text>
+        <text x="503" y="369" text-anchor="middle" font-size="11.5" fill="var(--muted)">どの製造指図書のためかが分からない</text>
+
+        <path d="M180 308 L 180 328" stroke="var(--debit)" stroke-width="2" stroke-dasharray="4 3"/>
+        <path d="M420 230 L 420 328" stroke="var(--credit)" stroke-width="2" stroke-dasharray="4 3"/>
+        <path d="M590 230 L 590 328" stroke="var(--credit)" stroke-width="2" stroke-dasharray="4 3"/>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">青が直接労務費、オレンジが間接労務費。同じ直接工の同じ1日の中で、色が分かれている点が要。</p>
+  </div>
+
+  <h3>2本の式に落とす</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">覚えるのはこの2本だけ</span>
+    <p><strong>就業時間 ＝ 直接作業時間 ＋ 間接作業時間 ＋ 手待時間</strong><br><strong>直接作業時間 ＝ 加工時間 ＋ 段取時間</strong><br>上の式が就業時間を3つに割り、下の式がそのうち直接作業時間をさらに2つに割ります。<mark>直接労務費になるのは、下の式の左辺（直接作業時間）だけ</mark>です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>時間</th><th>中身</th><th>行き先</th></tr></thead>
+    <tbody>
+      <tr><td><strong>加工時間</strong></td><td>製品そのものに手を加えている時間。切る、削る、組む、塗る</td><td class="d">直接労務費</td></tr>
+      <tr><td><strong>段取時間</strong></td><td>その製造指図書の作業に取りかかるための準備時間。機械の型の付け替え、治具の調整</td><td class="d">直接労務費</td></tr>
+      <tr><td><strong>間接作業時間</strong></td><td>製品の製造そのものではない作業の時間。運搬、清掃、機械の点検、材料の受け取り</td><td class="c">間接労務費</td></tr>
+      <tr><td><strong>手待時間</strong></td><td>材料が届かない、機械が故障した、停電したなどの理由で、働きたくても働けなかった時間</td><td class="c">間接労務費</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>なぜ段取時間は直接労務費なのか</h3>
+
+  <p>段取時間は製品に手を加えていません。それでも直接労務費です。理由は単純で、<mark>その準備が「どの製造指図書のためのものか」が特定できる</mark>からです。</p>
+
+  <p>製造指図書No.101のテーブルを作るために機械の型を付け替えたのなら、その30分はNo.101のためだけに費やされました。ほかのどの製品とも共有していません。<strong>直接費か間接費かを分けるのは「製品に触れたか」ではなく「特定の製品にひもづけられるか」です</strong>。この基準は材料費と共通です。</p>
+
+  <h3>なぜ手待時間は間接労務費なのか</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">待たされた時間の責任は、製品の側にない</span>
+    <p>職人が材料の到着を1時間待たされたとします。この1時間ぶんの賃金も会社は支払います。では、この1時間を「次に作る予定だったテーブルNo.101の原価」に入れてよいでしょうか。</p>
+    <p><strong>入れるべきではありません。</strong>待たされた原因はNo.101にはなく、<mark>材料の手配や工程の組み方といった、工場の管理側にあるから</mark>です。それをNo.101に負わせると、たまたま材料の遅れた日に作られた製品だけが高い原価を背負うことになり、製品同士の原価を比べられなくなります。</p>
+    <p>そこで手待時間ぶんは、いったん製造間接費に集めます。集めてしまえば、その月に作った製品全体で薄く負担することになり、特定の製品だけが不当に重くなることを避けられます。<br>さらに、手待時間を独立の区分として集計しておけば、<strong>「今月は手待が何時間発生した」という数字が残ります</strong>。これは工場の管理上、減らすべき無駄として真っ先に見るべき数字です。分類の中に埋もれさせず、わざわざ独立させているのはそのためです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「働いていない時間だから原価にしない」ではない</span>
+    <p>手待時間は製品に直課しないだけであって、<strong>原価にはなります</strong>。間接労務費として製造間接費に入り、配賦を通じて製品原価の一部になります。<br>原価にならないのは、就業時間の外側にある<mark>定時休憩や組合活動の時間</mark>です。図の右上、破線で囲んだ部分がそれにあたります。「手待時間＝原価にしない」と覚えると、間接労務費の集計から手待ぶんが丸ごと抜け落ちます。</p>
+  </div>
+
+  <h3>設例で数える</h3>
+
+  <div class="card">
+    <div class="card__label">設例 — 当月の直接工の作業時間</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>区分</th><th class="amt">時間</th></tr></thead>
+      <tbody>
+        <tr><td>加工時間</td><td class="amt">1,120時間</td></tr>
+        <tr><td>段取時間</td><td class="amt">180時間</td></tr>
+        <tr><td>間接作業時間</td><td class="amt">90時間</td></tr>
+        <tr><td>手待時間</td><td class="amt">50時間</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li>直接作業時間 ＝ 加工 1,120 ＋ 段取 180 ＝ <strong>1,300時間</strong></li>
+      <li>就業時間 ＝ 直接作業 1,300 ＋ 間接作業 90 ＋ 手待 50 ＝ <strong>1,440時間</strong></li>
+      <li>直接労務費になるのは <strong>1,300時間</strong> ぶん、間接労務費になるのは <strong>140時間</strong> ぶん</li>
+    </ol>
+  </div>
+
+  <p class="small muted">この設例の時間は、5章と6章でも使い続けます。ここで出した 1,300時間 と 140時間 の2つが、そのまま仕訳の借方2行に化けます。</p>
+
+  <h3>作業量による計算</h3>
+
+  <p>時間ではなく<strong>作業量</strong>で労務費を計算する場合もあります。「1個作るごとに@80円」という出来高払いの賃金がこれにあたります。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">出来高払いの場合</span>
+    <p><strong>消費賃金 ＝ 出来高単価 × 完成した作業量</strong><br>時間を数える代わりに個数を数えるだけで、考え方は同じです。特定の製造指図書のために作った個数なら直接労務費になります。<br>2級では時間による計算が中心で、出来高払いは補助的に出る程度です。ただし、UNIT 03 で見たとおり<mark>出来高払いの賃金は変動費、月給制の賃金は固定費</mark>という区別に関わるため、存在は押さえておいてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>証ひょうと帳簿 — 時間はどこから来るのか</h2>
+
+  <p>前の章の 1,120時間 や 50時間 という数字は、誰かが数えなければ存在しません。材料の数量が材料出庫伝票から来たのと同じように、時間にもそれを記録する紙があります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>名称</th><th>何を記録するか</th><th>何に使うか</th></tr></thead>
+    <tbody>
+      <tr><td><strong>出勤票</strong><br><span class="small muted">タイムカード</span></td><td>出社・退社の時刻。<strong>工場にいた時間の全体</strong>を押さえる</td><td>勤務時間・就業時間の把握。<strong>支払賃金</strong>の計算のもとになる</td></tr>
+      <tr><td><strong>作業時間報告書</strong><br><span class="small muted">作業時間票・作業票</span></td><td>就業時間の内訳。どの製造指図書に何時間、間接作業に何時間、手待が何時間</td><td>直接作業時間と間接作業時間の区分。<strong>消費賃金</strong>の計算と製品への割り当て</td></tr>
+      <tr><td><strong>賃金支払帳</strong><br><span class="small muted">賃金台帳</span></td><td>従業員ごとの支給額・控除額・差引支給額</td><td>賃金の支払いの記録。給与計算期間ごとに締める</td></tr>
+      <tr><td><strong>労務費計算表</strong></td><td>費目別・部門別に集計した労務費</td><td>賃金・給料勘定から仕掛品・製造間接費への振替額の算定</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">出勤票と作業時間報告書は、別のことを測っている</span>
+    <p>2つとも時間を記録しますが、役割が違います。<br><strong>出勤票</strong>は「会社にいた時間の総枠」を測ります。この人にいくら払うかを決めるための資料です。<br><strong>作業時間報告書</strong>は「その総枠の中身をどう使ったか」を測ります。払った金額を製品にどう割り当てるかを決めるための資料です。<br><mark>出勤票が支払額を、作業時間報告書が配分を決めている</mark>と整理してください。この2枚の役割の違いが、そのまま6章の「支払賃金と消費賃金は別物」という話につながります。</p>
+  </div>
+
+  <p class="small muted">作業時間報告書に書かれた時間の合計は、出勤票から計算した就業時間と一致するのが本来です。一致しない場合は記録漏れがあり、実務では突き合わせて調整します。試験では、両者が整合した状態で数字が与えられます。</p>
+
+  <h3>経費のほうの証ひょう</h3>
+
+  <p>経費については専用の帳簿というより、<strong>支払いや発生を裏づける外部の書類</strong>がそのまま証ひょうになります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>証ひょう・帳簿</th><th>対応する経費の例</th></tr></thead>
+    <tbody>
+      <tr><td><strong>請求書・領収証</strong></td><td>外注加工賃、修繕料、旅費交通費</td>
+      </tr>
+      <tr><td><strong>電力・ガス・水道の検針票</strong><br><span class="small muted">メーターの記録</span></td><td>電力料、ガス代、水道料</td></tr>
+      <tr><td><strong>固定資産台帳</strong></td><td>減価償却費（年額を12で割る）</td></tr>
+      <tr><td><strong>棚卸表</strong></td><td>棚卸減耗費</td></tr>
+      <tr><td><strong>経費帳</strong></td><td>費目ごとの発生額を記録する補助簿。上の証ひょうを受けて記入する</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>この一覧は、8章で扱う<strong>経費の4類型</strong>と対応しています。請求書があるものは支払経費、検針票があるものは測定経費、固定資産台帳から来るものは月割経費、棚卸表から来るものは発生経費です。<mark>どの紙から数字が来るかで、経費の類型がほぼ決まる</mark>と考えてください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>消費賃金の計算 — 予定賃率と賃率差異</h2>
+
+  <p>時間の内訳が分かったので、金額に直します。式の形は材料費とまったく同じです。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 720 200" style="width:100%;height:auto;min-width:600px" role="img" aria-label="材料費と労務費の計算式の対応。単価が賃率に、数量が時間に置き換わるだけであることを示す図">
+      <g font-size="14" fill="var(--text)">
+        <rect x="20" y="30" width="320" height="62" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="180" y="55" text-anchor="middle" font-size="13" fill="var(--muted)">材料費（UNIT 04）</text>
+        <text x="180" y="80" text-anchor="middle" font-size="15" font-weight="700">消費額 ＝ 消費単価 × 消費量</text>
+
+        <rect x="20" y="108" width="320" height="62" rx="6" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2"/>
+        <text x="180" y="133" text-anchor="middle" font-size="13" fill="var(--debit)">労務費（この単元）</text>
+        <text x="180" y="158" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">消費額 ＝ 賃率 × 作業時間</text>
+
+        <path d="M350 62 L 390 62" stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#u7a4)"/>
+        <path d="M350 139 L 390 139" stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#u7a4)"/>
+
+        <rect x="398" y="30" width="300" height="140" rx="6" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="548" y="58" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--accent)">対応しているもの</text>
+        <text x="548" y="86" text-anchor="middle" font-size="13.5">消費単価　←→　賃率</text>
+        <text x="548" y="112" text-anchor="middle" font-size="13.5">消費量　　←→　作業時間</text>
+        <text x="548" y="140" text-anchor="middle" font-size="13.5">予定価格　←→　予定賃率</text>
+        <text x="548" y="162" text-anchor="middle" font-size="12" fill="var(--muted)">材料消費価格差異　←→　賃率差異</text>
+      </g>
+      <defs>
+        <marker id="u7a4" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">名前が変わっているだけで、構造は同一。材料費で理解した内容は書き換えなしで通用する。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">賃率</span><span class="term__r">ちんりつ</span>
+    <p>作業時間1時間あたりの労務費。材料費でいう単価にあたります。実際の賃金支払額から計算したものを実際賃率、あらかじめ決めておいたものを予定賃率といいます。</p>
+  </div>
+
+  <h3>実際賃率で計算すると何が困るか</h3>
+
+  <p>実際賃率は次の式で出ます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">実際賃率</span>
+    <p><strong>実際賃率 ＝ 当月の実際賃金消費額 ÷ 当月の実際就業時間</strong><br>分子が金額、分母が時間です。どちらも月末に締めなければ確定しません。</p>
+  </div>
+
+  <p>ここで困ることは、材料費のときとまったく同じ2つです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">理由① 実際賃率は月末まで確定せず、計算が遅れる</span>
+    <p>実際賃率の分子も分母も、月が終わるまで確定しません。すると<mark>製品が完成しても、その製品にいくらの労務費がかかったのかを月末まで計算できない</mark>ことになります。<br>受注生産の工場で「この製品はいくらでできましたか」と聞かれて「来月にならないと分かりません」では商売になりません。予定賃率なら、作業時間報告書が上がってきた時点で金額が出ます。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">理由② 実際賃率には賃率変動が混ざり、現場の能率が見えなくなる</span>
+    <p>こちらが本質です。実際賃率は、その月に誰が何時間働いたかで動きます。<strong>ベテランが多く出勤した月は賃率が上がり、新人が多い月は下がります</strong>。残業が増えれば割増賃金で賃率が上がります。<br>すると、まったく同じ作り方で同じ時間をかけて同じテーブルを作っても、月によって製品原価が変わります。数字を見た人は「今月は原価が悪化した」と考えますが、<mark>変わったのは人員構成であって、現場の作業能率ではありません</mark>。<br>予定賃率を使えば賃率が固定されるので、労務費が動く原因は<strong>かけた時間だけ</strong>になります。「余計に時間をかけたのか、早く仕上げたのか」という、工場が責任を負うべき部分だけが数字に現れます。</p>
+  </div>
+
+  <p class="small muted">材料費の8章で読んだ2つの理由と、言葉が「価格」から「賃率」に変わっただけで論理は同一です。両方を読み比べて、同じことを言っていると確認できれば、この構造は身についています。</p>
+
+  <h3>予定賃率による消費額</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">予定消費賃金の計算</span>
+    <p><strong>予定消費額 ＝ 予定賃率 × <mark>実際</mark>作業時間</strong><br>予定するのは<strong>賃率だけ</strong>で、時間は実際のものを使います。<br>予定賃率は期首に「年間の予定賃金総額 ÷ 年間の予定就業時間」として設定されます。</p>
+  </div>
+
+  <p>なぜ時間まで予定しないのか。理由②を読み返せば分かります。<strong>かけた時間の長短こそが、工場の能率そのもの</strong>だからです。そこを予定に置き換えたら、原価計算から現場の情報が消えてしまいます。切り離したいのは賃率の変動だけです。</p>
+
+  <p class="small muted">時間についても標準を設定して、時間の差も分析対象にするのが標準原価計算（W6）の直接労務費差異です。この単元の予定賃率は、そこへ向かう途中にあります。</p>
+
+  <h3>設例 — 予定賃率で消費額を出す</h3>
+
+  <p>3章の設例を引き継ぎます。直接作業時間 1,300時間、間接作業時間 90時間、手待時間 50時間、就業時間 1,440時間。予定賃率は @1,200円 とします。</p>
+
+  <div class="steps">
+    <ol>
+      <li>直接労務費 ＝ @1,200 × 1,300時間 ＝ <strong>1,560,000円</strong> → 仕掛品へ</li>
+      <li>間接労務費 ＝ @1,200 ×（90 ＋ 50）時間 ＝ @1,200 × 140時間 ＝ <strong>168,000円</strong> → 製造間接費へ</li>
+      <li>予定消費額の合計 ＝ @1,200 × 1,440時間 ＝ <strong>1,728,000円</strong></li>
+    </ol>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">1,560,000</td><td class="c">賃金・給料</td><td class="c amt">1,728,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">168,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>材料の消費仕訳とまったく同じ形です。<strong>貸方がひとまとまりで減り、借方が直接分と間接分に割れる</strong>。3章の図で色が2つに分かれていたことが、この2行に対応しています。</p>
+
+  <h3>賃率差異</h3>
+
+  <p>予定賃率で計算した金額と、実際賃率で計算した金額はズレます。このズレを<strong>賃率差異</strong>といいます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">賃率差異</span>
+    <p><strong>賃率差異 ＝（予定賃率 − 実際賃率）× 実際作業時間</strong><br>符号つきで計算すると、結果がそのまま差異の性格を示します。<strong>マイナスなら借方差異（不利差異）、プラスなら貸方差異（有利差異）</strong>です。<br>材料消費価格差異の式と、名前以外に違うところがありません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">掛ける時間は「就業時間」であって「直接作業時間」ではない</span>
+    <p>賃率差異を出すときに掛ける時間は、<strong>予定賃率で振り替えた時間の全体</strong>です。設例なら就業時間 1,440時間 であって、直接作業時間の 1,300時間 ではありません。<br>賃率差異は<mark>賃金・給料勘定の貸方に予定で振り替えた額と、借方に入っている実際額との差</mark>です。貸方には直接分も間接分も両方が予定賃率で入っているのですから、差異も両方ぶんについて生じます。<br>1,300時間 だけで計算すると、間接分 140時間 ぶんの差異が消えて金額が合いません。試験で直接作業時間と就業時間の両方が与えられたら、この取り違えを狙われていると考えてください。</p>
+  </div>
+
+  <h3>差異をボックス図で見る</h3>
+
+  <p>予定賃率 @1,200円、実際賃率 @1,250円、実際就業時間 1,440時間 の場合です。<strong>材料費で描いた面積図と同じ形になります。</strong>縦軸のラベルが単価から賃率に、横軸が数量から時間に変わるだけです。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 660 340" style="width:100%;height:auto;min-width:560px" role="img" aria-label="賃率差異の面積図。実際賃率が予定賃率を上回るため不利差異となる">
+      <g font-size="13" fill="var(--text)">
+        <rect x="110" y="150" width="380" height="130" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2"/>
+        <rect x="110" y="90" width="380" height="60" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+
+        <path d="M110 60 L 110 300" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M110 280 L 560 280" stroke="var(--border-2)" stroke-width="2"/>
+
+        <text x="100" y="95" text-anchor="end" font-size="13" fill="var(--danger)" font-weight="700">実際 @1,250</text>
+        <text x="100" y="155" text-anchor="end" font-size="13" fill="var(--debit)" font-weight="700">予定 @1,200</text>
+        <text x="100" y="285" text-anchor="end" font-size="12" fill="var(--muted)">0</text>
+        <text x="42" y="45" font-size="12.5" fill="var(--muted)">賃率</text>
+
+        <text x="300" y="303" text-anchor="middle" font-size="13" font-weight="700">実際就業時間 1,440時間</text>
+        <text x="540" y="303" text-anchor="middle" font-size="12.5" fill="var(--muted)">時間</text>
+
+        <text x="300" y="212" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">予定消費額</text>
+        <text x="300" y="236" text-anchor="middle" font-size="14" fill="var(--debit)">@1,200 × 1,440 ＝ 1,728,000</text>
+        <text x="300" y="118" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--danger)">賃率差異 △72,000（借方＝不利）</text>
+        <text x="300" y="138" text-anchor="middle" font-size="12" fill="var(--danger)">(1,200 − 1,250) × 1,440</text>
+
+        <path d="M500 90 L 530 90 L 530 280 L 500 280" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="545" y="180" font-size="12" fill="var(--muted)">実際</text>
+        <text x="545" y="196" font-size="12" fill="var(--muted)">1,800,000</text>
+
+        <path d="M110 90 L 490 90" stroke="var(--danger)" stroke-width="1" stroke-dasharray="4 3"/>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">材料消費価格差異の図と見比べてほしい。輪郭は完全に同じで、軸のラベルだけが違う。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li>下の長方形（予定消費額 1,728,000円）が、<strong>仕掛品と製造間接費に振り替えた金額</strong>。製品原価はこの金額で計算される。</li>
+      <li>全体の長方形（実際消費額 1,800,000円）が、<strong>実際に賃金・給料勘定から出ていくべき金額</strong>。</li>
+      <li>その差の帯 72,000円 が、<strong>製品原価に含めきれなかった分</strong>。会社にとって都合が悪いので不利差異、借方に立つので借方差異。</li>
+    </ol>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">賃率差異</td><td class="d amt">72,000</td><td class="c">賃金・給料</td><td class="c amt">72,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>逆に予定 @1,300円 に対して実際が @1,280円 だった場合、実際就業時間が 1,500時間 なら差異は（1,300 − 1,280）× 1,500 ＝ ＋30,000円。<strong>製品原価に多めに入れておいたのに実際には少なくて済んだ</strong>ので有利差異、貸方差異です。仕訳は借方に賃金・給料、貸方に賃率差異となり、上と借方・貸方がそっくり入れ替わります。</p>
+
+  <p class="small muted">賃率差異も、月ごとにはいったん差異勘定へ積み上げておき、<strong>会計年度末に売上原価へ賦課します</strong>。不利差異なら売上原価を増やし（借方）、有利差異なら減らします（貸方）。材料消費価格差異と同じ扱いです。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>支払賃金と消費賃金 — 期間がずれている</h2>
+
+  <p>ここが労務費で最も間違えやすいところです。1章で予告した「払った金額と当月の原価になる金額がズレる」という話に入ります。</p>
+
+  <h3>まず、ズレの原因を押さえる</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">給与計算期間と原価計算期間は、始まりも終わりも違う</span>
+    <p>会社は給与を「毎月20日締め、25日払い」のようなサイクルで支払います。締め日を月末にしない理由は単純で、<strong>月末に締めたら計算する時間がなく、月内に支払えないから</strong>です。<br>一方、<strong>原価計算期間は必ず月初から月末までの1か月</strong>です。財務諸表を月次で作る以上、ここは動かせません。<br>この2つが重なっていないため、<mark>当月に支払った金額の中には先月分が混ざっており、当月に働いた分の一部はまだ支払われていない</mark>という状態が常に生じます。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 780 320" style="width:100%;height:auto;min-width:660px" role="img" aria-label="給与計算期間と原価計算期間のずれを示す図。当月支払額から前月未払額を引き当月未払額を足すと当月消費額になる">
+      <g font-size="13" fill="var(--text)">
+        <!-- 時間軸 -->
+        <path d="M40 60 L 740 60" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="120" y="48" text-anchor="middle" font-size="12" fill="var(--muted)">前月21日</text>
+        <text x="300" y="48" text-anchor="middle" font-size="12" fill="var(--muted)">当月1日</text>
+        <text x="500" y="48" text-anchor="middle" font-size="12" fill="var(--muted)">当月20日</text>
+        <text x="690" y="48" text-anchor="middle" font-size="12" fill="var(--muted)">当月末日</text>
+        <path d="M120 54 L 120 66" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M300 54 L 300 66" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M500 54 L 500 66" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M690 54 L 690 66" stroke="var(--border-2)" stroke-width="2"/>
+
+        <!-- 給与計算期間の帯 -->
+        <rect x="120" y="86" width="380" height="52" rx="4" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2"/>
+        <text x="310" y="108" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--warn)">給与計算期間（前月21日〜当月20日）</text>
+        <text x="310" y="128" text-anchor="middle" font-size="12" fill="var(--warn)">当月25日に支払う金額 2,400,000</text>
+
+        <!-- 原価計算期間の帯 -->
+        <rect x="300" y="158" width="390" height="52" rx="4" fill="var(--accent-2)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="495" y="180" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--accent)">原価計算期間（当月1日〜当月末日）</text>
+        <text x="495" y="200" text-anchor="middle" font-size="12" fill="var(--accent)">当月の原価になる金額 2,450,000</text>
+
+        <!-- 前月未払 -->
+        <rect x="120" y="228" width="180" height="46" rx="4" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="210" y="248" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--danger)">前月未払 380,000</text>
+        <text x="210" y="266" text-anchor="middle" font-size="11.5" fill="var(--danger)">前月の原価 → 引く</text>
+
+        <!-- 重なり -->
+        <rect x="300" y="228" width="200" height="46" rx="4" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2"/>
+        <text x="400" y="248" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">重なっている部分</text>
+        <text x="400" y="266" text-anchor="middle" font-size="11.5" fill="var(--ok)">払いも原価も当月</text>
+
+        <!-- 当月未払 -->
+        <rect x="500" y="228" width="190" height="46" rx="4" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="2"/>
+        <text x="595" y="248" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--debit)">当月未払 430,000</text>
+        <text x="595" y="266" text-anchor="middle" font-size="11.5" fill="var(--debit)">当月の原価 → 足す</text>
+
+        <text x="390" y="300" text-anchor="middle" font-size="14" font-weight="700">2,400,000 − 380,000 ＋ 430,000 ＝ 2,450,000</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">2本の帯がずれている。左のはみ出しを引き、右のはみ出しを足すと、原価計算期間の帯に一致する。</p>
+  </div>
+
+  <h3>式にする</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">当月消費額の計算</span>
+    <p><strong>当月消費額 ＝ 当月支払額 − 前月未払額 ＋ 当月未払額</strong><br>前月未払額を<strong>引き</strong>、当月未払額を<strong>足す</strong>。図と対応させると、左にはみ出した部分を切り落とし、右に足りない部分を継ぎ足している形です。</p>
+  </div>
+
+  <p>符号を丸暗記しようとすると、試験中に必ず迷います。<mark>「前月未払額は、当月に払っているが前月に働いた分だから当月の原価ではない。だから引く」</mark>と、そのつど言葉で説明できるようにしてください。当月未払額は逆に「当月に働いたがまだ払っていない分だから当月の原価である。だから足す」となります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">当月支払額をそのまま当月の労務費にしない</span>
+    <p>これが労務費で最も多い誤答です。当月に 2,400,000円 支払ったからといって、当月の労務費が 2,400,000円 になるわけではありません。<br>支払額の中には<strong>前月21日から前月末日までに働いた分（前月未払 380,000円）が混ざっており</strong>、逆に<strong>当月21日から当月末日までに働いた分（当月未払 430,000円）は含まれていません</strong>。<br>当月の原価は 2,400,000 − 380,000 ＋ 430,000 ＝ <strong>2,450,000円</strong> です。支払額より多くなることも少なくなることもあります。<mark>支払額と消費額を混同していないか、問題文の「支払」「消費」の2語を必ず読み分けてください。</mark></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">前払いがある場合は符号が逆になる</span>
+    <p>まれに、賃金を先に支払っている（前払額がある）場合が出ます。未払いの逆なので、符号も逆です。<br><strong>当月消費額 ＝ 当月支払額 ＋ 前月前払額 − 当月前払額</strong><br>覚え直す必要はありません。「当月に働いた分だけを拾う」という原則から、そのつど組み立ててください。前月に前払いした分は前月に払ってあるが働いたのは当月なので足す、当月に前払いした分は払ったが働くのは来月なので引く、という順です。</p>
+  </div>
+
+  <h3>控除額があっても消費額は変わらない</h3>
+
+  <p>賃金の支払いでは、所得税の源泉徴収額や社会保険料の従業員負担分が差し引かれ、手取り額だけが現金で渡されます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">賃金・給料</td><td class="d amt">2,400,000</td><td class="c">預り金</td><td class="c amt">310,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">当座預金</td><td class="c amt">2,090,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">労務費になるのは、控除前の総支給額</span>
+    <p>賃金・給料勘定の借方に入るのは<strong>控除前の 2,400,000円</strong>であって、現金で渡した 2,090,000円 ではありません。<br>源泉所得税も社会保険料の従業員負担分も、<mark>会社が従業員に代わって預かって納めているだけで、従業員が受け取るべき金額の一部</mark>です。会社が労働の対価として負担した金額は総額のほうなので、原価も総額で計算します。<br>手取り額を労務費にすると、預り金の分だけ原価が過少になります。</p>
+  </div>
+
+  <p class="small muted">社会保険料の<strong>会社負担分</strong>は、預り金ではなく<strong>法定福利費</strong>として、間接労務費に計上します。従業員負担分（預り金）と会社負担分（法定福利費）は別物です。同じ社会保険料という言葉で出てくるため、どちらの話かを問題文で確かめてください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>賃金勘定を通して全体を見る</h2>
+
+  <p>ここまでの内容を、賃金・給料勘定の上で1つにまとめます。この勘定が読めれば労務費は終わりです。</p>
+
+  <p>設例をそろえます。当月支払額 2,400,000円、前月未払額 380,000円、当月未払額 430,000円。予定賃率 @1,200円、就業時間 1,440時間（直接作業 1,300時間、間接作業 90時間、手待 50時間）。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">賃金・給料</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>当月支払額</span><span>2,400,000</span></div>
+          <div class="l"><span>当月未払額</span><span>430,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>前月未払額</span><span>380,000</span></div>
+          <div class="l"><span>仕掛品（直接労務費）</span><span>1,560,000</span></div>
+          <div class="l"><span>製造間接費（間接労務費）</span><span>168,000</span></div>
+          <div class="l"><span><strong>賃率差異</strong></span><span><strong>72,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>借方合計 2,830,000円、貸方合計 380,000 ＋ 1,560,000 ＋ 168,000 ＋ 72,000 ＝ 2,180,000円。まだ合いません。<strong>合わないのは正常です</strong>。読み方を順に確認します。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>借方の 2,400,000円</strong>は当月に支払った金額。<strong>借方の 430,000円</strong>は当月に働いたがまだ払っていない分で、月末に未払賃金として計上したもの。</li>
+      <li><strong>貸方の 380,000円</strong>は前月末に未払計上してあった分の振り戻し。前月の原価なので、当月から取り除く。</li>
+      <li>ここまでで<strong>当月の実際消費額</strong>が確定する。2,400,000 ＋ 430,000 − 380,000 ＝ <strong>2,450,000円</strong>。</li>
+      <li>一方、貸方には予定賃率で計算した <strong>1,728,000円</strong>（＝1,560,000 ＋ 168,000）が振り替えられている。</li>
+      <li>実際消費額 2,450,000円 と予定消費額 1,728,000円 の差 722,000円 が、<mark>この設例では賃率差異と一致しません</mark>。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">直接工の消費額と、賃金・給料勘定の全体を混同しない</span>
+    <p>上の設例の 2,450,000円 は、<strong>直接工・間接工を含めた賃金・給料の実際消費額の合計</strong>です。一方 1,728,000円 は<strong>直接工についてだけ</strong>予定賃率で計算した金額です。<mark>母集団が違うので、この2つの差は賃率差異になりません</mark>。<br>賃率差異は「同じ範囲について、予定賃率で計算した額」と「同じ範囲について、実際賃率で計算した額」の差です。直接工の実際消費額が 1,800,000円 なら、賃率差異は 1,800,000 − 1,728,000 ＝ 72,000円 の借方差異になり、残りの 650,000円（＝2,450,000 − 1,800,000）は間接工の賃金として全額が間接労務費に振り替えられます。<br>試験では<strong>直接工と間接工を分けて資料が与えられます</strong>。混ぜて計算しないでください。</p>
+  </div>
+
+  <h3>直接工と間接工を分けた完全な形</h3>
+
+  <p>混乱を避けるため、勘定を分けて示します。直接工の実際消費額を 1,800,000円（＝実際賃率 @1,250 × 1,440時間）、間接工の実際消費額を 650,000円 とすると、合計 2,450,000円 で上と一致します。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">賃金・給料（直接工分 ＋ 間接工分）</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>当月支払額</span><span>2,400,000</span></div>
+          <div class="l"><span>当月未払額</span><span>430,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>前月未払額</span><span>380,000</span></div>
+          <div class="l"><span>仕掛品（直接工の直接作業分）</span><span>1,560,000</span></div>
+          <div class="l"><span>製造間接費（直接工の間接作業・手待分）</span><span>168,000</span></div>
+          <div class="l"><span>製造間接費（間接工分）</span><span>650,000</span></div>
+          <div class="l"><span>賃率差異</span><span>72,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">検算：借方合計 2,830,000円。貸方合計 380,000 ＋ 1,560,000 ＋ 168,000 ＋ 650,000 ＋ 72,000 ＝ 2,830,000円。一致します。<strong>賃金・給料勘定は、この5つの貸方項目で必ず閉じます。</strong>閉じない場合、どこかを落としています。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">勘定の左右の意味を一言で</span>
+    <p><strong>借方 ＝ 実際にいくら会社が負担したか</strong>（支払額と、まだ払っていないが当月に発生した額）<br><strong>貸方 ＝ その負担をどこへ配ったか</strong>（前月分の取り消し、仕掛品、製造間接費、差異）<br>材料勘定で「借方は実際額、貸方は予定額と差異」と読んだのと同じ構造です。<mark>実際額で入ってきたものを、予定額で出していくから差異が出る</mark>。この一文が工業簿記の差異全体を貫いています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>経費の分類 — 4つの類型</h2>
+
+  <p>費目別計算の3つ目、経費に入ります。</p>
+
+  <div class="term">
+    <span class="term__w">経費</span><span class="term__r">けいひ</span>
+    <p>製造原価のうち、材料費と労務費以外のすべて。減価償却費、電力料、外注加工賃、保険料、修繕料、賃借料、水道料、棚卸減耗費など。</p>
+  </div>
+
+  <p>定義が「残り全部」になっているのは、それが実態だからです。材料でもなく人件費でもないものが、まとめてここに入ります。</p>
+
+  <h3>直接経費はごく少ない</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">直接経費は外注加工賃と特許権使用料がほぼすべて</span>
+    <p><strong>直接経費 ＝ 外注加工賃 ＋ 特許権使用料</strong>。2級で問われる直接経費は実質この2つだけです。<mark>それ以外の経費はすべて間接経費</mark>と考えて構いません。<br>この2つが直接経費になる理由も同じです。外注加工賃は「製造指図書No.101の部品をメッキ加工に出した」ように、どの製品のためかがはっきりしています。特許権使用料も「この製品を1個作るごとに◯円」という形で製品にひもづきます。<br>減価償却費・電力料・保険料・修繕料などは、工場全体のために発生していて特定の製品にひもづきません。だから間接経費です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">外注加工賃は経費であって、材料費ではない</span>
+    <p>外注加工賃は「材料を外に出して加工してもらう」ものなので材料費に見えますが、<strong>支払っているのは加工という役務の対価</strong>です。材料でも人件費でもないので経費に分類されます。<br>なお、<strong>加工を依頼するために無償で材料を渡した場合、その材料の払出は直接材料費</strong>として別に処理します。外注加工賃はあくまで加工代だけです。2つを混ぜないでください。</p>
+  </div>
+
+  <h3>4つの類型 — どうやって金額を掴むか</h3>
+
+  <p>経費の分類でもう1つ重要なのが、<strong>その月の金額をどうやって確定するか</strong>による分類です。ここが計算問題に直結します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>類型</th><th>当月発生額の求め方</th><th>例</th><th>数字の出どころ</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>支払経費</strong></td>
+        <td>当月の<strong>支払額</strong>。ただし前払・未払があれば調整して当月分にする</td>
+        <td>外注加工賃、修繕料、旅費交通費、通信費、雑費</td>
+        <td>請求書・領収証</td>
+      </tr>
+      <tr>
+        <td><strong>月割経費</strong></td>
+        <td><strong>年額（または数か月分）÷ 該当する月数</strong></td>
+        <td>減価償却費、保険料、賃借料、租税公課、特許権使用料</td>
+        <td>固定資産台帳・契約書</td>
+      </tr>
+      <tr>
+        <td><strong>測定経費</strong></td>
+        <td>当月の<strong>メーターの測定値</strong>にもとづく金額</td>
+        <td>電力料、ガス代、水道料</td>
+        <td>検針票</td>
+      </tr>
+      <tr>
+        <td><strong>発生経費</strong></td>
+        <td>当月の<strong>発生額</strong>。支払いを伴わない</td>
+        <td>棚卸減耗費、仕損費</td>
+        <td>棚卸表</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ4つに分けるのか — 「当月分」の掴み方が違うから</span>
+    <p>4つの類型は、経費の性質を分類するためのものではありません。<mark>「今月の原価はいくらか」を確定する手順が、それぞれ違うから分けています。</mark></p>
+    <p>支払経費は、支払った金額をそのまま使えるとは限りません。3か月分をまとめて払っていれば当月分だけを取り出す必要があります。<br>月割経費は、そもそも1か月単位の請求書が来ません。年間の保険料や1年分の減価償却費として与えられるので、こちらで割るしかありません。<br>測定経費は、使った量だけが分かり、請求は後から来ます。<strong>支払っていなくてもメーターの値で当月分が確定します。</strong><br>発生経費に至っては、誰にも支払いません。物が消えたという事実だけがあります。</p>
+    <p>つまりこの分類は、<strong>問題文に与えられた数字を見て「これは当月分か、加工が要るか」を判断するための道具</strong>です。「年額 3,600,000円」と書いてあれば月割経費だから12で割る、と直結させてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">減価償却費を年額のまま当月の原価に入れない</span>
+    <p>計算問題で最も多い誤りです。「機械の年間減価償却費 3,600,000円」と与えられたら、当月の間接経費は <strong>3,600,000 ÷ 12 ＝ 300,000円</strong> です。年額のまま入れると12倍の誤答になり、それ以降の製造間接費・製品原価・売上原価が全部ずれます。<br>保険料・賃借料・租税公課も同様です。<mark>年額で与えられている経費を見たら、その場で12で割る</mark>のを手順にしてください。<br>逆に「当月の減価償却費」と書かれていればすでに月額なので、割ってはいけません。問題文が年額か月額かを必ず確認します。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">測定経費は「支払額」ではなく「測定値」で計上する</span>
+    <p>電力料の請求書が当月に届いて 180,000円 を支払ったとしても、それが当月の原価とは限りません。請求は前月の使用分であることが多いからです。<br>測定経費は<strong>当月のメーターの測定値から計算した金額</strong>を当月の原価にします。「当月の電力使用量 24,000kWh、1kWhあたり 22円」と与えられたら、支払いの有無にかかわらず 528,000円 が当月の経費です。<br>問題文で支払額と測定値の両方が与えられたら、<mark>測定値のほうを使う</mark>と判断してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>経費の計算と仕訳</h2>
+
+  <h3>支払経費の当月発生額</h3>
+
+  <p>支払経費は、支払額を当月分に直す必要があります。考え方は6章の賃金と同じで、<strong>当月に発生した分だけを拾います</strong>。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">支払経費の当月発生額</span>
+    <p><strong>当月発生額 ＝ 当月支払額 − 前月未払額 ＋ 当月未払額</strong><br>前払いがある場合は<strong>当月発生額 ＝ 当月支払額 ＋ 前月前払額 − 当月前払額</strong>。<br>賃金の当月消費額とまったく同じ式です。「当月に発生した分だけを拾う」という原則が同じだからです。</p>
+  </div>
+
+  <p>修繕料について、当月支払額 240,000円、前月未払額 35,000円、当月未払額 50,000円 とします。当月発生額は 240,000 − 35,000 ＋ 50,000 ＝ <strong>255,000円</strong> です。</p>
+
+  <h3>4類型それぞれの計算例</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>類型</th><th>与えられる資料</th><th>当月発生額</th></tr></thead>
+    <tbody>
+      <tr><td>支払経費（修繕料）</td><td>当月支払 240,000円／前月未払 35,000円／当月未払 50,000円</td><td class="amt"><strong>255,000円</strong></td></tr>
+      <tr><td>月割経費（減価償却費）</td><td>機械の年間減価償却費 3,600,000円</td><td class="amt"><strong>300,000円</strong></td></tr>
+      <tr><td>月割経費（保険料）</td><td>工場建物の1年分の火災保険料 540,000円</td><td class="amt"><strong>45,000円</strong></td></tr>
+      <tr><td>測定経費（電力料）</td><td>当月使用量 24,000kWh／1kWhあたり 22円</td><td class="amt"><strong>528,000円</strong></td></tr>
+      <tr><td>発生経費（棚卸減耗費）</td><td>帳簿棚卸 500個／実地棚卸 488個／@1,500円</td><td class="amt"><strong>18,000円</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">保険料 540,000 ÷ 12 ＝ 45,000円。電力料 24,000 × 22 ＝ 528,000円。棚卸減耗費（500 − 488）× 1,500 ＝ 18,000円。上の5つはすべて間接経費なので、合計 1,146,000円 が製造間接費に入ります。</p>
+
+  <h3>経費の仕訳 — 2つの書き方</h3>
+
+  <p>経費の仕訳には、経費勘定を経由する書き方と、経由せず直接振り替える書き方があります。<strong>どちらでも結果は同じ</strong>で、問題の指示に従います。</p>
+
+  <p><strong>書き方A — 経費勘定を経由する</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">経費</td><td class="d amt">1,146,000</td><td class="c">当座預金など</td><td class="c amt">1,146,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">1,146,000</td><td class="c">経費</td><td class="c amt">1,146,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>書き方B — 費目ごとの勘定を使い、製造間接費へ直接振り替える</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製造間接費</td><td class="d amt">300,000</td><td class="c">機械減価償却累計額</td><td class="c amt">300,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">2級の第4問(1)では、書き方Bのように<strong>個々の経費を直接に製造間接費へ振り替える</strong>形が多く出ます。減価償却費なら貸方は減価償却累計額、電力料なら未払電力料や当座預金、といった具合です。問題文の指定する勘定科目を使ってください。</p>
+
+  <h3>直接経費の仕訳</h3>
+
+  <p>外注加工賃 420,000円 を小切手を振り出して支払い、全額が特定の製造指図書のためのものだった場合です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">外注加工賃</td><td class="d amt">420,000</td><td class="c">当座預金</td><td class="c amt">420,000</td></tr>
+      <tr><td class="d">仕掛品</td><td class="d amt">420,000</td><td class="c">外注加工賃</td><td class="c amt">420,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>直接経費なので、製造間接費を通らずに仕掛品へ直接入ります。</strong>ここを製造間接費にしてしまうと、直接経費として分類した意味がなくなります。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">経費に予定計算はあるか</span>
+    <p>材料費には予定価格、労務費には予定賃率がありました。経費にも予定額を使う場合はありますが、<strong>2級では経費だけを取り出して差異を計算させることはまずありません</strong>。<br>経費は間接経費が大部分を占め、それらは製造間接費に集められます。<mark>予定と実際のズレは、W3で学ぶ製造間接費の予定配賦のところでまとめて扱われる</mark>からです。したがってこの単元では、経費は実際発生額を正しく掴むことに集中してください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">本社の費用は経費に入らない</span>
+    <p>減価償却費・保険料・電力料といった費目は、工場にも本社にもあります。<strong>製造原価になるのは工場で発生した分だけ</strong>です。<br>本社建物の減価償却費、営業所の電力料、本社事務員の給料は、いずれも<mark>販売費及び一般管理費</mark>であって製造原価ではありません。UNIT 03 で扱った非製造原価の話がここでも効きます。<br>問題文が「工場の」「本社の」とわざわざ書いているときは、この振り分けを問われています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-romuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>計算ドリル 9問</h2>
+
+  <p>電卓を使って構いません。<strong>紙に途中式を書いてから電卓を叩いてください。</strong>差異の問題は、必ず面積図を描いてから符号を判断します。</p>
+
+  <div id="num-romuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>確認テスト 10問</h2>
+
+  <div id="quiz-romuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>用語の穴埋め 7問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-romuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u07check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u07check">0 / 0 完了（0%）</div>
+
+  <div id="u07check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u07-1"><label for="k1"><span class="cl__t">労務費のうち直接労務費になり得るのは「直接工の直接作業時間ぶんの賃金」だけだと言える</span><span class="cl__d">給料・従業員賞与手当・退職給付費用・法定福利費、間接工の賃金は全額が間接労務費</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u07-2"><label for="k2"><span class="cl__t">就業時間の階層を、何も見ずに図に描ける</span><span class="cl__d">就業時間＝直接作業時間＋間接作業時間＋手待時間／直接作業時間＝加工時間＋段取時間</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u07-3"><label for="k3"><span class="cl__t">段取時間が直接労務費、手待時間が間接労務費になる理由をそれぞれ言える</span><span class="cl__d">段取はどの製造指図書のためかが特定できる。手待は待たされた原因が製品側になく特定できない</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u07-4"><label for="k4"><span class="cl__t">手待時間は原価にならないのではなく、間接労務費として原価になると説明できる</span><span class="cl__d">原価にならないのは就業時間の外側にある定時休憩など。手待は製造間接費を通って製品原価になる</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u07-5"><label for="k5"><span class="cl__t">出勤票と作業時間報告書が測っているものの違いを言える</span><span class="cl__d">出勤票は支払額を決めるための総枠、作業時間報告書はその総枠を製品にどう配分するかを決める内訳</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u07-6"><label for="k6"><span class="cl__t">予定賃率を使う理由を2つとも言え、材料の予定価格と同じ理由だと分かる</span><span class="cl__d">①実際賃率は月末まで確定せず計算が遅れる ②実際賃率には人員構成や残業による賃率変動が混ざり、現場の能率が見えなくなる</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u07-7"><label for="k7"><span class="cl__t">予定消費額は「予定賃率×実際作業時間」であり、時間は予定しないと説明できる</span><span class="cl__d">かけた時間の長短こそ工場の能率そのもの。切り離したいのは賃率変動だけ</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u07-8"><label for="k8"><span class="cl__t">賃率差異の面積図を描け、掛ける時間が就業時間であることを外さない</span><span class="cl__d">賃率差異＝（予定賃率−実際賃率）×実際就業時間。直接作業時間だけで計算すると間接分の差異が消える</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u07-9"><label for="k9"><span class="cl__t">当月消費額＝当月支払額−前月未払額＋当月未払額 を、符号の理由つきで言える</span><span class="cl__d">前月未払は当月に払ったが前月に働いた分なので引く。当月未払は当月に働いたがまだ払っていない分なので足す</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u07-10"><label for="k10"><span class="cl__t">支払賃金と消費賃金がずれる原因を、期間の違いとして説明できる</span><span class="cl__d">給与計算期間（20日締めなど）と原価計算期間（月初〜月末）が重なっていないため</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u07-11"><label for="k11"><span class="cl__t">労務費になるのは控除前の総支給額だと分かる</span><span class="cl__d">源泉所得税・社会保険料の従業員負担分は預り金。手取り額を労務費にすると原価が過少になる</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u07-12"><label for="k12"><span class="cl__t">賃金・給料勘定の借方2項目・貸方5項目を挙げ、貸借を一致させられる</span><span class="cl__d">借方＝当月支払額・当月未払額／貸方＝前月未払額・仕掛品・製造間接費（直接工の間接作業分）・製造間接費（間接工分）・賃率差異</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u07-13"><label for="k13"><span class="cl__t">直接経費は外注加工賃と特許権使用料がほぼすべてだと言える</span><span class="cl__d">それ以外の経費は間接経費。外注加工賃は材料費ではなく経費</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u07-14"><label for="k14"><span class="cl__t">経費の4類型を、当月発生額の求め方つきで挙げられる</span><span class="cl__d">支払経費＝支払額（前払・未払を調整）／月割経費＝年額÷12／測定経費＝メーターの測定値／発生経費＝発生額</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u07-15"><label for="k15"><span class="cl__t">年額で与えられた減価償却費・保険料を、必ず12で割ってから当月の原価にできる</span><span class="cl__d">年額のまま入れると12倍の誤答になり、製造間接費以降がすべてずれる</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u07-16"><label for="k16"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u07-17"><label for="k17"><span class="cl__t">計算ドリル9問・確認テスト10問を全問正解した</span><span class="cl__d">特に賃率差異の有利・不利判定と、当月消費額の符号を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>これで費目別計算の3費目がそろいました。材料費・労務費・経費のうち、間接分はすべて<strong>製造間接費</strong>という1つの箱に集まっています。<br>次はその箱の中身を製品に配る手続、つまり<strong>製造間接費の配賦</strong>（W3）です。そこでも<mark>予定で回して差異で受け止める</mark>という同じ型が出てきますが、差異が予算差異と操業度差異の2つに割れる点だけが新しくなります。<br>この単元を終える前に、賃金・給料勘定を白紙に描き、借方2項目・貸方5項目を埋められるか確かめてください。第4問(1)の仕訳3題は、ここが書けるかどうかで決まります。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次</a></span>
+    <span>日商簿記2級 Phase 1 W2 ／ UNIT 07 労務費・経費</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var ROMU_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '賃率差異', '外注加工賃', '電力料', '修繕料', '保険料', '減価償却費',
+  '棚卸減耗費', '従業員賞与手当', '退職給付費用', '法定福利費',
+  '現金', '当座預金', '普通預金', '未払金', '未払費用', '前払費用',
+  '預り金', '所得税預り金', '社会保険料預り金', '買掛金',
+  '機械減価償却累計額', '建物減価償却累計額', '販売費', '一般管理費'
+];
+
+BokiJournal.mount('#drill-romuhi', {
+  title: '仕訳ドリル — 労務費・経費',
+  accounts: ROMU_ACCOUNTS,
+  questions: [
+    {
+      text: '当月の賃金 2,400,000円について、所得税の源泉徴収額 190,000円と社会保険料の従業員負担額 120,000円を差し引いた残額を当座預金から支払った。',
+      debit: [['賃金・給料', 2400000]],
+      credit: [['預り金', 310000], ['当座預金', 2090000]],
+      hint: '賃金・給料勘定の借方に入るのは、控除前の金額でしょうか、手取り額でしょうか。',
+      explain: '<p>賃金・給料勘定の借方に入るのは<strong>控除前の総支給額 2,400,000円</strong>です。源泉所得税 190,000円 と社会保険料の従業員負担額 120,000円 の合計 310,000円 は<strong>預り金</strong>、残り 2,090,000円 が当座預金からの支払額になります。</p><p>源泉所得税も社会保険料の従業員負担分も、<mark>会社が従業員に代わって預かって納めているだけ</mark>で、従業員が受け取るべき金額の一部です。手取り額 2,090,000円 を労務費にすると、預り金の分だけ原価が過少になります。</p>'
+    },
+    {
+      text: '当月の直接工の作業時間は、加工時間 1,120時間、段取時間 180時間、間接作業時間 90時間、手待時間 50時間であった。予定賃率は @1,200円である。当月の直接工の賃金消費額を計上しなさい。',
+      debit: [['仕掛品', 1560000], ['製造間接費', 168000]],
+      credit: [['賃金・給料', 1728000]],
+      hint: '直接作業時間 ＝ 加工時間 ＋ 段取時間。手待時間はどちらに入るでしょうか。',
+      explain: '<p>直接作業時間 ＝ 加工 1,120 ＋ 段取 180 ＝ <strong>1,300時間</strong>。<br>直接労務費 ＝ @1,200 × 1,300 ＝ <strong>1,560,000円</strong> → 仕掛品へ<br>間接労務費 ＝ @1,200 ×（間接作業 90 ＋ 手待 50）＝ @1,200 × 140 ＝ <strong>168,000円</strong> → 製造間接費へ<br>合計 @1,200 × 1,440時間 ＝ 1,728,000円。</p><p><mark>段取時間は直接労務費</mark>です。製品には触れていませんが、その準備がどの製造指図書のためかが特定できるからです。逆に<mark>手待時間は間接労務費</mark>で、待たされた原因が製品の側にないためどの製品にも直課できません。</p>'
+    },
+    {
+      text: '当月の間接工の賃金消費額は 650,000円であった。この消費額を計上しなさい。',
+      debit: [['製造間接費', 650000]],
+      credit: [['賃金・給料', 650000]],
+      hint: '間接工の作業時間の内訳は問われていません。なぜでしょうか。',
+      explain: '<p><strong>間接工の賃金は全額が間接労務費</strong>なので、時間の内訳で割る必要がありません。全額を製造間接費へ振り替えます。</p><p>間接工がどれだけ長く働いても、その時間は特定の製品にひもづきません。だから作業時間報告書で内訳を集計する必要すらなく、<mark>「当月の間接工賃金はいくらか」という金額だけが分かればよい</mark>ことになります。直接工とのこの非対称を押さえてください。</p>'
+    },
+    {
+      text: '月末に、直接工の賃金について実際賃率が判明した。予定賃率は @1,200円、実際賃率は @1,250円、当月の実際就業時間は 1,440時間であった。賃率差異を計上する仕訳を示しなさい。',
+      debit: [['賃率差異', 72000]],
+      credit: [['賃金・給料', 72000]],
+      hint: '掛ける時間は直接作業時間ではありません。予定賃率で振り替えた時間の全体です。',
+      explain: '<p>賃率差異 ＝（@1,200 − @1,250）× 1,440時間 ＝ <strong>△72,000円</strong>。マイナスなので<strong>借方差異（不利差異）</strong>です。</p><p>掛ける時間は<mark>就業時間 1,440時間</mark>であって、直接作業時間 1,300時間 ではありません。賃金・給料勘定の貸方には直接分も間接分も両方が予定賃率で振り替えられているので、差異も両方ぶんについて生じます。<br>予定消費額 1,728,000円 に対し実際消費額は @1,250 × 1,440 ＝ 1,800,000円。72,000円 だけ製品原価に含めきれていません。</p>'
+    },
+    {
+      text: '月末に、直接工の賃金について実際賃率が判明した。予定賃率は @1,300円、実際賃率は @1,280円、当月の実際就業時間は 1,500時間であった。賃率差異を計上する仕訳を示しなさい。',
+      debit: [['賃金・給料', 30000]],
+      credit: [['賃率差異', 30000]],
+      hint: '今度は予定より実際のほうが低くなっています。前問と借方・貸方が逆になります。',
+      explain: '<p>賃率差異 ＝（@1,300 − @1,280）× 1,500時間 ＝ <strong>＋30,000円</strong>。プラスなので<strong>貸方差異（有利差異）</strong>です。</p><p>予定消費額 1,950,000円 を賃金・給料勘定の貸方に振り替えたのに、実際消費額は 1,920,000円 でした。30,000円 だけ減らしすぎているので、賃金・給料勘定の<strong>借方</strong>に戻し、差異勘定の貸方に立てます。前問と借方・貸方がそっくり入れ替わることを確認してください。</p>'
+    },
+    {
+      text: '月末に、当月分の未払賃金 430,000円を計上した。なお、前月末に計上した未払賃金 380,000円は当月の支払時に処理済みであるものとし、当月分の未払計上のみを行う。',
+      debit: [['賃金・給料', 430000]],
+      credit: [['未払費用', 430000]],
+      hint: '当月に働いたがまだ払っていない分は、当月の原価になります。',
+      explain: '<p>給与計算期間の締め日（20日など）から月末までに働いた分は、まだ支払われていませんが<strong>当月の原価</strong>です。賃金・給料勘定の借方に加えて当月の消費額に含めます。</p><p>当月消費額 ＝ 当月支払額 2,400,000 − 前月未払 380,000 ＋ 当月未払 430,000 ＝ <strong>2,450,000円</strong>。<mark>支払額 2,400,000円 とは一致しません。</mark></p>'
+    },
+    {
+      text: '工場の従業員に対する当月分の賞与引当金の繰入額 240,000円と、社会保険料の会社負担額 130,000円を計上した。賞与の見積額は従業員賞与手当勘定、社会保険料の会社負担額は法定福利費勘定で処理し、貸方はいずれも未払金とする。',
+      debit: [['従業員賞与手当', 240000], ['法定福利費', 130000]],
+      credit: [['未払金', 370000]],
+      hint: '賞与も社会保険料の会社負担分も労務費です。直接分はあるでしょうか。',
+      explain: '<p>従業員賞与手当も法定福利費も<strong>労務費</strong>ですが、いずれも<mark>全額が間接労務費</mark>です。直接労務費になり得るのは直接工の直接作業時間ぶんの賃金だけで、賞与・手当・法定福利費に直接分はありません。</p><p>社会保険料の<strong>会社負担分</strong>は法定福利費です。従業員負担分（給与から差し引いて預かる分）は預り金であり、別物です。同じ「社会保険料」という言葉で出てくるため、どちらの話かを問題文で確かめてください。</p>'
+    },
+    {
+      text: '上記の従業員賞与手当 240,000円と法定福利費 130,000円を、当月の労務費として振り替えた。',
+      debit: [['製造間接費', 370000]],
+      credit: [['従業員賞与手当', 240000], ['法定福利費', 130000]],
+      hint: 'どちらも間接労務費です。行き先は1つに決まります。',
+      explain: '<p>従業員賞与手当も法定福利費も間接労務費なので、<strong>全額が製造間接費</strong>へ集まります。合計 240,000 ＋ 130,000 ＝ <strong>370,000円</strong>。</p><p>間接労務費が仕掛品に直課されることはありません。製品ごとにひもづけられないからこそ間接労務費に分類されているのであって、直課できるならそもそも直接労務費です。</p>'
+    },
+    {
+      text: '製造指図書No.201の部品加工を外部に依頼し、外注加工賃 420,000円を小切手を振り出して支払った。外注加工賃勘定で処理する。',
+      debit: [['外注加工賃', 420000]],
+      credit: [['当座預金', 420000]],
+      hint: '外注加工賃は材料費でしょうか、経費でしょうか。',
+      explain: '<p>外注加工賃は<strong>経費</strong>です。材料を外に出して加工してもらうため材料費に見えますが、支払っているのは<mark>加工という役務の対価</mark>なので、材料でも人件費でもない経費に分類されます。</p><p>加工を依頼するために無償で材料を渡した場合、その材料の払出は直接材料費として別に処理します。外注加工賃はあくまで加工代だけです。</p>'
+    },
+    {
+      text: '上記の外注加工賃 420,000円は、全額が製造指図書No.201のためのものである。当月の消費額として振り替えなさい。',
+      debit: [['仕掛品', 420000]],
+      credit: [['外注加工賃', 420000]],
+      hint: '直接経費は製造間接費を通りません。',
+      explain: '<p>外注加工賃は<strong>直接経費</strong>なので、製造間接費を経由せず<mark>仕掛品へ直接振り替えます</mark>。どの製造指図書のためかがはっきりしているからです。</p><p>2級の直接経費は<strong>外注加工賃と特許権使用料</strong>がほぼすべてです。これを製造間接費にしてしまうと、直接経費として分類した意味がなくなります。</p>'
+    },
+    {
+      text: '当月の経費として、工場機械の減価償却費（年間 3,600,000円）の当月分と、工場建物の火災保険料（1年分 540,000円）の当月分を計上した。減価償却費の貸方は機械減価償却累計額、保険料の貸方は前払費用とし、借方はいずれも製造間接費とする。',
+      debit: [['製造間接費', 345000]],
+      credit: [['機械減価償却累計額', 300000], ['前払費用', 45000]],
+      hint: 'どちらも年額で与えられています。当月分はいくらでしょうか。',
+      explain: '<p>減価償却費 ＝ 3,600,000 ÷ 12 ＝ <strong>300,000円</strong>／保険料 ＝ 540,000 ÷ 12 ＝ <strong>45,000円</strong>。合計 345,000円 が製造間接費に入ります。</p><p>どちらも<strong>月割経費</strong>です。<mark>年額のまま計上すると12倍の誤答になり</mark>、製造間接費・製品原価・売上原価がすべてずれます。年額で与えられた経費を見たら、その場で12で割るのを手順にしてください。</p>'
+    },
+    {
+      text: '当月の工場の電力料を計上した。当月の使用量はメーターの測定により 24,000kWhであり、1kWhあたりの料金は 22円である。なお、当月中に前月分の電力料 480,000円を当座預金から支払っているが、その処理は済んでいる。当月分の電力料の計上のみを行い、貸方は未払金とする。',
+      debit: [['製造間接費', 528000]],
+      credit: [['未払金', 528000]],
+      hint: '測定経費は支払額ではなく測定値で計上します。',
+      explain: '<p>当月分 ＝ 24,000kWh × @22円 ＝ <strong>528,000円</strong>。</p><p>電力料は<strong>測定経費</strong>なので、<mark>当月のメーターの測定値から計算した金額</mark>を当月の原価にします。当月中に支払った 480,000円 は前月の使用分であり、当月の原価ではありません。<br>問題文で支払額と測定値の両方が与えられたら、測定値のほうを使うと判断してください。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-romuhi', {
+  title: '計算ドリル — 労務費・経費',
+  badge: '計算ドリル 9問',
+  questions: [
+    {
+      text: '当月の直接工の作業時間は、加工時間 1,120時間、段取時間 180時間、間接作業時間 90時間、手待時間 50時間であった。① 直接作業時間、② 就業時間、③ 間接労務費となる時間を求めなさい。',
+      answer: [1300, 1440, 140],
+      formula: ['1120 + 180', '1120 + 180 + 90 + 50', '90 + 50'],
+      labels: ['① 直接作業時間', '② 就業時間', '③ 間接労務費となる時間'],
+      unit: '時間',
+      hint: '直接作業時間 ＝ 加工時間 ＋ 段取時間。手待時間は直接作業時間に含まれません。',
+      explain: '<p>① 直接作業時間 ＝ 加工 1,120 ＋ 段取 180 ＝ <strong>1,300時間</strong><br>② 就業時間 ＝ 直接作業 1,300 ＋ 間接作業 90 ＋ 手待 50 ＝ <strong>1,440時間</strong><br>③ 間接労務費になるのは、間接作業 90 ＋ 手待 50 ＝ <strong>140時間</strong></p><p><mark>段取時間は直接作業時間に含まれ、手待時間は含まれません。</mark>段取はどの製造指図書のためかが特定できますが、手待は待たされた原因が製品の側にないためです。</p>'
+    },
+    {
+      text: '前問と同じ作業時間について、予定賃率 @1,200円により消費額を計算する。① 直接労務費、② 間接労務費、③ 予定消費額の合計を求めなさい。',
+      answer: [1560000, 168000, 1728000],
+      formula: ['1200 * 1300', '1200 * 140', '1200 * 1440'],
+      labels: ['① 直接労務費', '② 間接労務費', '③ 予定消費額の合計'],
+      unit: '円',
+      hint: '予定するのは賃率だけ。時間は実際のものを使います。',
+      explain: '<p>① 直接労務費 ＝ @1,200 × 1,300時間 ＝ <strong>1,560,000円</strong> → 仕掛品へ<br>② 間接労務費 ＝ @1,200 × 140時間 ＝ <strong>168,000円</strong> → 製造間接費へ<br>③ 合計 ＝ @1,200 × 1,440時間 ＝ <strong>1,728,000円</strong></p><p><mark>予定賃率 × <strong>実際</strong>作業時間</mark>です。時間は予定に置き換えません。かけた時間の長短こそ工場の能率そのものであり、そこを予定にすると原価計算から現場の情報が消えるからです。</p>'
+    },
+    {
+      text: '当月の直接工について、予定賃率は @1,200円、実際賃率は @1,250円、実際就業時間は 1,440時間であった。① 予定消費額、② 実際消費額、③ 賃率差異の金額（絶対値）を求めなさい。また、有利差異なら 1、不利差異なら 2 を④に入力しなさい。',
+      answer: [1728000, 1800000, 72000, 2],
+      formula: ['1200 * 1440', '1250 * 1440', '1250 * 1440 - 1200 * 1440', '2'],
+      labels: ['① 予定消費額', '② 実際消費額', '③ 賃率差異（絶対値）', '④ 有利なら1・不利なら2'],
+      hint: '掛ける時間は就業時間です。面積図を描いてから符号を判断してください。',
+      explain: '<p>① 予定消費額 ＝ @1,200 × 1,440時間 ＝ <strong>1,728,000円</strong>（仕掛品・製造間接費に振り替えた額）<br>② 実際消費額 ＝ @1,250 × 1,440時間 ＝ <strong>1,800,000円</strong><br>③ 賃率差異 ＝（@1,200 − @1,250）× 1,440 ＝ △72,000 → 金額は <strong>72,000円</strong><br>④ マイナスなので<strong>借方差異（不利差異）＝ 2</strong></p><p>予定より実際の賃率が高かったので、その分を製品原価に入れきれていません。<mark>掛ける時間は就業時間 1,440時間</mark>であって、直接作業時間 1,300時間 ではないことに注意してください。</p>'
+    },
+    {
+      text: '当月の直接工について、予定賃率は @1,300円、実際賃率は @1,280円、実際就業時間は 1,500時間であった。① 予定消費額、② 賃率差異の金額（絶対値）を求めなさい。また、有利差異なら 1、不利差異なら 2 を③に入力しなさい。',
+      answer: [1950000, 30000, 1],
+      formula: ['1300 * 1500', '1300 * 1500 - 1280 * 1500', '1'],
+      labels: ['① 予定消費額', '② 賃率差異（絶対値）', '③ 有利なら1・不利なら2'],
+      hint: '予定より実際のほうが低くなっています。',
+      explain: '<p>① 予定消費額 ＝ @1,300 × 1,500時間 ＝ <strong>1,950,000円</strong><br>② 実際消費額 ＝ @1,280 × 1,500時間 ＝ 1,920,000円。賃率差異 ＝（@1,300 − @1,280）× 1,500 ＝ ＋30,000 → <strong>30,000円</strong><br>③ プラスなので<strong>貸方差異（有利差異）＝ 1</strong></p><p>製品原価に多めに入れておいたのに、実際には少なくて済んだ形です。年度末には売上原価を<strong>減らす</strong>方向（貸方）で賦課します。</p>'
+    },
+    {
+      text: '当月の賃金の支払額は 2,400,000円であった。前月末の未払賃金は 380,000円、当月末の未払賃金は 430,000円である。当月の賃金消費額を求めなさい。',
+      answer: 2450000,
+      formula: '2400000 - 380000 + 430000',
+      unit: '円',
+      hint: '前月未払は当月に払ったが前月に働いた分。当月未払は当月に働いたがまだ払っていない分。',
+      explain: '<p>当月消費額 ＝ 当月支払額 2,400,000 − 前月未払額 380,000 ＋ 当月未払額 430,000 ＝ <strong>2,450,000円</strong></p><p>給与計算期間（20日締めなど）と原価計算期間（月初〜月末）がずれているために生じます。<mark>支払額 2,400,000円 をそのまま当月の労務費にしてはいけません。</mark><br>前月未払額は「当月に払っているが前月に働いた分だから当月の原価ではない。だから引く」、当月未払額は「当月に働いたがまだ払っていない分だから当月の原価である。だから足す」と、そのつど言葉で説明できるようにしてください。</p>'
+    },
+    {
+      text: '当月の賃金の支払額は 1,895,000円であった。前月末の未払賃金は 240,000円、当月末の未払賃金は 195,000円である。① 当月の賃金消費額を求めなさい。また、この会社の当月の実際就業時間が 1,480時間であったとして、② 実際賃率を求めなさい（円未満の端数は生じない）。',
+      answer: [1850000, 1250],
+      formula: ['1895000 - 240000 + 195000', '(1895000 - 240000 + 195000) / 1480'],
+      labels: ['① 当月の賃金消費額', '② 実際賃率'],
+      unit: '円',
+      hint: '実際賃率 ＝ 実際賃金消費額 ÷ 実際就業時間。分子は支払額ではありません。',
+      explain: '<p>① 当月消費額 ＝ 1,895,000 − 240,000 ＋ 195,000 ＝ <strong>1,850,000円</strong><br>② 実際賃率 ＝ 1,850,000 ÷ 1,480時間 ＝ <strong>@1,250円</strong></p><p>実際賃率の分子は<mark>支払額ではなく消費額</mark>です。支払額 1,895,000円 をそのまま割ると @1,280.4円 となり、正しい賃率になりません。<br>実際賃率は、分子（消費額）と分母（就業時間）の両方が月末まで確定しません。これが予定賃率を使う理由の1つ目です。</p>'
+    },
+    {
+      text: '当月の経費に関する資料は次のとおりである。① 修繕料の当月発生額、② 機械減価償却費の当月分、③ 電力料の当月発生額を求めなさい。<br>修繕料：当月支払額 240,000円、前月未払額 35,000円、当月未払額 50,000円<br>機械減価償却費：年間 3,600,000円<br>電力料：当月使用量 24,000kWh、1kWhあたり 22円',
+      answer: [255000, 300000, 528000],
+      formula: ['240000 - 35000 + 50000', '3600000 / 12', '24000 * 22'],
+      labels: ['① 修繕料（支払経費）', '② 機械減価償却費（月割経費）', '③ 電力料（測定経費）'],
+      unit: '円',
+      hint: '3つとも類型が違います。支払経費・月割経費・測定経費のどれにあたるか、まず判定してください。',
+      explain: '<p>① 修繕料は<strong>支払経費</strong>。当月支払 240,000 − 前月未払 35,000 ＋ 当月未払 50,000 ＝ <strong>255,000円</strong>。賃金の当月消費額と同じ式です。<br>② 機械減価償却費は<strong>月割経費</strong>。3,600,000 ÷ 12 ＝ <strong>300,000円</strong>。<mark>年額のまま入れると12倍の誤答</mark>になります。<br>③ 電力料は<strong>測定経費</strong>。24,000kWh × @22円 ＝ <strong>528,000円</strong>。支払額ではなくメーターの測定値で計上します。</p>'
+    },
+    {
+      text: '当月の経費に関する資料は次のとおりである。すべて工場で発生した間接経費である。① 工場建物の火災保険料の当月分、② 材料の棚卸減耗費、③ この2つを含めた当月の間接経費の合計を求めなさい。<br>火災保険料：1年分 540,000円<br>材料の棚卸：帳簿棚卸数量 500個、実地棚卸数量 488個、単価 @1,500円<br>その他の間接経費：修繕料 255,000円、機械減価償却費 300,000円、電力料 528,000円',
+      answer: [45000, 18000, 1146000],
+      formula: ['540000 / 12', '(500 - 488) * 1500', '540000 / 12 + (500 - 488) * 1500 + 255000 + 300000 + 528000'],
+      labels: ['① 火災保険料（月割経費）', '② 棚卸減耗費（発生経費）', '③ 当月の間接経費の合計'],
+      unit: '円',
+      hint: '保険料は年額。棚卸減耗費は誰にも支払いませんが、発生額が当月の原価になります。',
+      explain: '<p>① 火災保険料は<strong>月割経費</strong>。540,000 ÷ 12 ＝ <strong>45,000円</strong>。<br>② 棚卸減耗費は<strong>発生経費</strong>。（500個 − 488個）× @1,500 ＝ <strong>18,000円</strong>。支払いを伴わず、物が減ったという事実だけがあります。<br>③ 合計 ＝ 45,000 ＋ 18,000 ＋ 255,000 ＋ 300,000 ＋ 528,000 ＝ <strong>1,146,000円</strong>。すべて間接経費なので、全額が製造間接費に入ります。</p>'
+    },
+    {
+      text: '当月の直接工の作業時間は、加工時間 940時間、段取時間 110時間、間接作業時間 80時間、手待時間 70時間であった。予定賃率は @1,150円、実際賃率は @1,180円である。① 直接労務費、② 間接労務費、③ 賃率差異の金額（絶対値）を求めなさい。また、有利差異なら 1、不利差異なら 2 を④に入力しなさい。',
+      answer: [1207500, 172500, 36000, 2],
+      formula: ['1150 * (940 + 110)', '1150 * (80 + 70)', '1180 * (940 + 110 + 80 + 70) - 1150 * (940 + 110 + 80 + 70)', '2'],
+      labels: ['① 直接労務費', '② 間接労務費', '③ 賃率差異（絶対値）', '④ 有利なら1・不利なら2'],
+      hint: '賃率差異に掛けるのは就業時間です。直接作業時間で計算すると間接分の差異が消えます。',
+      explain: '<p>直接作業時間 ＝ 940 ＋ 110 ＝ 1,050時間。間接労務費となる時間 ＝ 80 ＋ 70 ＝ 150時間。就業時間 ＝ 1,050 ＋ 150 ＝ 1,200時間。</p><p>① 直接労務費 ＝ @1,150 × 1,050 ＝ <strong>1,207,500円</strong><br>② 間接労務費 ＝ @1,150 × 150 ＝ <strong>172,500円</strong><br>③ 賃率差異 ＝（@1,150 − @1,180）× 1,200時間 ＝ △36,000 → <strong>36,000円</strong><br>④ マイナスなので<strong>借方差異（不利差異）＝ 2</strong></p><p>検算：予定消費額 1,207,500 ＋ 172,500 ＝ 1,380,000円（＝@1,150 × 1,200）。実際消費額 @1,180 × 1,200 ＝ 1,416,000円。差 36,000円 で一致します。<mark>直接作業時間 1,050時間 で計算すると 31,500円 となり誤答</mark>です。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-romuhi', {
+  title: '確認テスト — 労務費・経費',
+  questions: [
+    {
+      text: '直接工が製品の加工作業をしていた時間、その製造指図書のために機械の型を付け替えていた時間、材料が届かず待っていた時間があります。このうち直接労務費になるものの組み合わせとして正しいものはどれですか。',
+      choices: [
+        '加工していた時間のみ',
+        '加工していた時間と、機械の型を付け替えていた時間',
+        '加工していた時間と、材料を待っていた時間',
+        '3つとも直接労務費になる'
+      ],
+      answer: 1,
+      explain: '<p>加工していた時間が<strong>加工時間</strong>、機械の型を付け替えていた時間が<strong>段取時間</strong>で、この2つを合わせたものが<strong>直接作業時間</strong>です。直接労務費になるのはここまでです。</p><p>段取時間が直接労務費になるのは、その準備が<mark>どの製造指図書のためかを特定できる</mark>からです。製品に触れていなくても構いません。<br>材料を待っていた時間は<strong>手待時間</strong>で、間接労務費です。待たされた原因は製品の側になく、どの製品にも直課できません。</p>'
+    },
+    {
+      text: '次のうち、間接労務費に分類されないものはどれですか。',
+      choices: [
+        '工場長の給料',
+        '直接工の直接作業時間ぶんの賃金',
+        '間接工（運搬係）の賃金',
+        '工場の従業員にかかる法定福利費'
+      ],
+      answer: 1,
+      explain: '<p>直接工の直接作業時間ぶんの賃金は<strong>直接労務費</strong>です。労務費のうち直接労務費になり得るのは、これだけです。</p><p>工場長の給料、間接工の賃金、法定福利費はいずれも間接労務費です。<mark>給料・従業員賞与手当・退職給付費用・法定福利費、そして間接工の賃金には、直接分がありません。</mark><br>なお、同じ直接工の賃金でも、間接作業時間ぶんと手待時間ぶんは間接労務費になります。「直接工の賃金＝直接労務費」ではありません。</p>'
+    },
+    {
+      text: '手待時間の取り扱いについて、正しい記述はどれですか。',
+      choices: [
+        '働いていない時間なので、原価には含めない',
+        '直接工に生じたものなので、直接労務費として仕掛品に直課する',
+        '間接労務費として製造間接費に集め、配賦を通じて製品原価の一部となる',
+        '非原価項目として営業外費用に計上する'
+      ],
+      answer: 2,
+      explain: '<p>手待時間は<strong>間接労務費</strong>です。製品に直課しないだけであって、<mark>原価にはなります</mark>。製造間接費に集められ、配賦を通じて製品原価の一部になります。</p><p>原価にならないのは、就業時間の外側にある<strong>定時休憩や組合活動の時間</strong>です。「手待時間＝原価にしない」と覚えると、間接労務費の集計から手待ぶんが丸ごと抜け落ちます。<br>直課しない理由は、待たされた原因が製品の側ではなく工場の管理側にあるためです。特定の製品に負わせると、たまたま材料の遅れた日に作られた製品だけが高い原価を背負うことになります。</p>'
+    },
+    {
+      text: '予定賃率を用いる理由として、賃率の変動に関わるものはどれですか。',
+      choices: [
+        '実際賃率を使うと、人員構成や残業の増減によって同じ作り方をしていても製品原価が月ごとに変わり、現場の作業能率が見えなくなるから',
+        '実際賃率を使うと、従業員に支払う賃金の総額が変わってしまうから',
+        '予定賃率を使えば、実際の賃金支払額を記録しなくてよくなるから',
+        '予定賃率のほうが実際賃率より必ず低く設定されるから'
+      ],
+      answer: 0,
+      explain: '<p>実際賃率は、その月に誰が何時間働いたかで動きます。ベテランが多い月は上がり、残業が増えれば割増賃金で上がります。すると同じ作り方で同じ時間をかけても製品原価が変わりますが、<mark>変わったのは人員構成であって現場の作業能率ではありません</mark>。</p><p>予定賃率なら賃率が固定されるので、労務費が動く原因は<strong>かけた時間だけ</strong>になり、工場が責任を負うべき部分だけが数字に現れます。<br>選択肢3は誤りです。賃金・給料勘定の借方には実際の支払額と未払額が記録され続けます。だからこそ予定額との差が賃率差異として出てきます。</p>'
+    },
+    {
+      text: '予定賃率により消費賃金を計算するときの式として正しいものはどれですか。',
+      choices: [
+        '予定賃率 × 予定作業時間',
+        '予定賃率 × 実際作業時間',
+        '実際賃率 × 予定作業時間',
+        '実際賃率 × 実際作業時間'
+      ],
+      answer: 1,
+      explain: '<p><strong>予定消費額 ＝ 予定賃率 × 実際作業時間</strong>。<mark>予定するのは賃率だけで、時間は実際のものを使います。</mark></p><p>時間まで予定にしない理由は、かけた時間の長短こそが工場の能率そのものだからです。そこを予定に置き換えたら、原価計算から現場の情報が消えてしまいます。切り離したいのは工場の責任外である賃率の変動だけです。<br>材料費の「予定価格 × 実際消費量」とまったく同じ構造で、単価が賃率に、数量が時間に置き換わっているだけです。</p>'
+    },
+    {
+      text: '賃率差異を計算するときに予定賃率と実際賃率の差に掛ける時間として、正しいものはどれですか。',
+      choices: [
+        '直接作業時間',
+        '加工時間',
+        '実際就業時間',
+        '勤務時間'
+      ],
+      answer: 2,
+      explain: '<p>掛けるのは<strong>実際就業時間</strong>です。賃率差異は「賃金・給料勘定の貸方に予定賃率で振り替えた額」と「実際賃率で計算した額」との差であり、<mark>貸方には直接作業分も間接作業分も手待分も、すべて予定賃率で振り替えられています</mark>。したがって差異も就業時間の全体について生じます。</p><p>直接作業時間だけで計算すると、間接作業時間と手待時間ぶんの差異が消えて金額が合いません。試験で直接作業時間と就業時間の両方が与えられたら、この取り違えを狙われていると考えてください。<br>勤務時間には定時休憩などの就業していない時間が含まれており、そもそも労務費の計算対象ではありません。</p>'
+    },
+    {
+      text: '当月の賃金の支払額と当月の賃金消費額が一致しないのはなぜですか。最も適切なものを選んでください。',
+      choices: [
+        '源泉所得税や社会保険料が給与から差し引かれるから',
+        '給与計算期間と原価計算期間が重なっていないため、支払額には前月に働いた分が混ざり、当月に働いた分の一部はまだ支払われていないから',
+        '予定賃率で計算しているから',
+        '間接工の賃金が支払額に含まれていないから'
+      ],
+      answer: 1,
+      explain: '<p>給与は「20日締め、25日払い」のようなサイクルで支払われる一方、<strong>原価計算期間は必ず月初から月末まで</strong>です。この2つが重なっていないため、<mark>当月の支払額には前月21日〜前月末に働いた分が混ざり、当月21日〜当月末に働いた分は含まれていません</mark>。</p><p>だから <strong>当月消費額 ＝ 当月支払額 − 前月未払額 ＋ 当月未払額</strong> という調整が必要になります。<br>選択肢1について、控除があっても賃金・給料勘定の借方に入るのは控除前の総支給額なので、支払額と消費額がずれる原因にはなりません。</p>'
+    },
+    {
+      text: '賃金の支払時に、総支給額から源泉所得税と社会保険料の従業員負担分が差し引かれました。労務費として計上すべき金額はどれですか。',
+      choices: [
+        '実際に現金で渡した手取り額',
+        '控除前の総支給額',
+        '総支給額から社会保険料の会社負担分を差し引いた額',
+        '手取り額に社会保険料の会社負担分を加えた額'
+      ],
+      answer: 1,
+      explain: '<p>労務費になるのは<strong>控除前の総支給額</strong>です。源泉所得税も社会保険料の従業員負担分も、<mark>会社が従業員に代わって預かって納めているだけ</mark>で、従業員が受け取るべき金額の一部です。会社が労働の対価として負担したのは総額のほうなので、原価も総額で計算します。</p><p>手取り額を労務費にすると、預り金の分だけ原価が過少になります。<br>なお社会保険料の<strong>会社負担分</strong>は、これとは別に<strong>法定福利費</strong>として間接労務費に計上します。従業員負担分（預り金）と会社負担分（法定福利費）は別物です。</p>'
+    },
+    {
+      text: '工場建物の火災保険料が1年分としてまとめて与えられている場合、この経費はどの類型にあたり、当月分をどう計算しますか。',
+      choices: [
+        '支払経費 — 当月に支払った金額をそのまま計上する',
+        '測定経費 — メーターの測定値から計算する',
+        '月割経費 — 年額を12で割って当月分を計算する',
+        '発生経費 — 当月に発生した金額を計上する'
+      ],
+      answer: 2,
+      explain: '<p>保険料は<strong>月割経費</strong>です。年額を12で割って当月分にします。減価償却費・賃借料・租税公課も同じ類型です。</p><p>月割経費は、そもそも1か月単位の請求書が来ません。年間の金額として与えられるので、こちらで割るしかないのです。<mark>年額のまま当月の原価に入れると12倍の誤答になり</mark>、製造間接費・製品原価・売上原価がすべてずれます。<br>逆に「当月の保険料」と書かれていればすでに月額なので、割ってはいけません。</p>'
+    },
+    {
+      text: '製造指図書No.301の部品加工を外部業者に依頼したときの外注加工賃について、正しい分類はどれですか。',
+      choices: [
+        '直接材料費',
+        '直接労務費',
+        '直接経費',
+        '間接経費'
+      ],
+      answer: 2,
+      explain: '<p>外注加工賃は<strong>直接経費</strong>です。材料でも人件費でもないので経費に分類され、かつ<mark>どの製造指図書のためかがはっきりしている</mark>ので直接経費になります。製造間接費を経由せず、仕掛品へ直接振り替えます。</p><p>材料を外に出して加工してもらうため材料費に見えますが、支払っているのは加工という役務の対価です。外部業者の従業員の人件費でもありません。<br>2級で問われる直接経費は<strong>外注加工賃と特許権使用料</strong>がほぼすべてで、それ以外の経費は間接経費と考えて構いません。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-romuhi', {
+  title: '用語の穴埋め — 労務費・経費',
+  questions: [
+    {
+      text: '直接工の就業時間のうち、材料の到着待ちや機械の故障などで働けなかった時間を何といいますか。',
+      answer: ['手待時間', 'てまちじかん'],
+      explain: '<p><strong>手待時間</strong>。間接労務費になります。待たされた原因が製品の側になく、どの製造指図書にも直課できないためです。原価にならないわけではなく、製造間接費を通って製品原価の一部になります。</p>'
+    },
+    {
+      text: '直接作業時間のうち、その製造指図書の作業に取りかかるために機械の型を付け替えたり治具を調整したりする時間を何といいますか。',
+      answer: ['段取時間', 'だんどりじかん'],
+      explain: '<p><strong>段取時間</strong>。直接作業時間 ＝ 加工時間 ＋ 段取時間 であり、<strong>直接労務費</strong>になります。製品に触れていなくても、どの製造指図書のためかが特定できるからです。</p>'
+    },
+    {
+      text: '作業時間1時間あたりの労務費のうち、あらかじめ期首に決めておくものを何といいますか。',
+      answer: ['予定賃率', 'よていちんりつ'],
+      explain: '<p><strong>予定賃率</strong>。年間の予定賃金総額 ÷ 年間の予定就業時間 で設定します。材料費の予定価格に対応する概念で、使う理由も同じです。予定消費額 ＝ 予定賃率 × <strong>実際</strong>作業時間。</p>'
+    },
+    {
+      text: '予定賃率で計算した消費額と、実際賃率で計算した消費額との差額を処理する勘定を何といいますか。',
+      answer: ['賃率差異', 'ちんりつさい'],
+      explain: '<p><strong>賃率差異</strong> ＝（予定賃率 − 実際賃率）× <strong>実際就業時間</strong>。マイナスなら借方差異（不利差異）、プラスなら貸方差異（有利差異）です。掛けるのは直接作業時間ではなく就業時間である点に注意してください。</p>'
+    },
+    {
+      text: '就業時間の内訳として、どの製造指図書に何時間かかったか、間接作業や手待が何時間あったかを記録する証ひょうを何といいますか。',
+      answer: ['作業時間報告書', '作業時間票', '作業票'],
+      explain: '<p><strong>作業時間報告書</strong>（作業時間票・作業票とも）。払った金額を製品にどう割り当てるかを決める資料です。これに対し<strong>出勤票（タイムカード）</strong>は会社にいた時間の総枠を測り、いくら払うかを決める資料になります。2枚の役割が違います。</p>'
+    },
+    {
+      text: '減価償却費や保険料のように、年額などで与えられた金額を月数で割って当月分を計算する経費の類型を何といいますか。',
+      answer: ['月割経費', 'げつわりけいひ'],
+      explain: '<p><strong>月割経費</strong>。減価償却費・保険料・賃借料・租税公課・特許権使用料が該当します。年額 ÷ 12 で当月分にします。年額のまま計上すると12倍の誤答になり、以降の計算がすべてずれます。</p>'
+    },
+    {
+      text: '電力料・ガス代・水道料のように、当月のメーターの測定値にもとづいて当月発生額を計算する経費の類型を何といいますか。',
+      answer: ['測定経費', 'そくていけいひ'],
+      explain: '<p><strong>測定経費</strong>。支払額ではなく<strong>当月の測定値</strong>で計上します。請求は後から来るため、支払っていなくてもメーターの値で当月分が確定します。問題文で支払額と測定値の両方が与えられたら、測定値を使ってください。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>
