@@ -133,6 +133,16 @@ export async function withPage(browser, htmlPath, fn) {
   page.on('pageerror', (e) => errors.push(String(e)));
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   await page.addInitScript(CAPTURE);
+  // 復習ページは設問バンクを XHR で読む。file:// では CORS に阻まれて
+  // 案内文だけが出るため、そのまま検査すると再出題のコードが一度も
+  // 動かないまま「指摘なし」になる。ローカルのファイルを返して、
+  // 実際に描画させたうえで検査する。
+  await page.route('**/assets/drills.json', (route) => {
+    try {
+      route.fulfill({ status: 200, contentType: 'application/json',
+                      body: readFileSync('assets/drills.json', 'utf8') });
+    } catch (e) { route.abort(); }
+  });
   await page.goto('file://' + resolve(htmlPath), { waitUntil: 'load' });
   try {
     return await fn(page, errors);
@@ -151,9 +161,11 @@ function targets(args) {
     }
   }
   found.sort();
-  // ダッシュボードはフェーズ配下にないが、JSエラーと壊れた記録への耐性を
-  // 見る必要があるため対象に含める。
-  if (existsSync('progress.html')) found.push('progress.html');
+  // ダッシュボードと復習ページはフェーズ配下にないが、JSエラーと壊れた
+  // 記録への耐性を見る必要があるため対象に含める。
+  for (const f of ['progress.html', 'review.html']) {
+    if (existsSync(f)) found.push(f);
+  }
   return found;
 }
 
@@ -673,16 +685,147 @@ CHECKS.push(async function checkProgressWiring(page, file) {
 // 壊れた記録でもダッシュボードが開けることを確かめる。ここで例外が出ると、
 // 記録が壊れたときに復旧の入口ごと失われる。
 CHECKS.push(async function checkDashboardRobust(page, file, errors) {
-  if (!/(^|\/)progress\.html$/.test(file)) return;
-  await page.evaluate(() => {
-    localStorage.setItem('boki2:progress', '{壊れた JSON');
-  });
-  errors.length = 0;
-  await page.reload({ waitUntil: 'load' });
-  const fatal = errors.filter((e) => !/favicon/i.test(e));
-  if (fatal.length) {
-    report(file, '(robust)', '例外なし', fatal[0],
-      '壊れた記録があるとダッシュボードが開けない');
+  if (!/(^|\/)(progress|review)\.html$/.test(file)) return;
+
+  // 壊れ方を1種類しか試さないと、JSON として読めない場合しか通らない。
+  // 実際に描画を止めるのは「読めるが形が違う」記録のほうで、こちらは
+  // 画面上「記録がない」ようにしか見えず、壊れたことに気づけない。
+  const BROKEN = [
+    ['壊れたJSON', '{壊れた JSON'],
+    ['drills が配列', '{"version":1,"drills":[]}'],
+    ['drill値が null', '{"version":1,"drills":{"phase0/x#d/q1":null}}'],
+    ['attempts が無い', '{"version":1,"drills":{"phase0/x#d/q1":{}}}'],
+    ['attempts が配列でない', '{"version":1,"drills":{"phase0/x#d/q1":{"attempts":1}}}'],
+    ['attempts に null 要素', '{"version":1,"drills":{"phase0/x#d/q1":{"attempts":[null]}}}'],
+    ['sessions が配列でない', '{"version":1,"sessions":3}'],
+  ];
+
+  // 実在する設問への誤答を1件混ぜた、正常な記録も試す。壊れた記録だけを
+  // 見ていると、復習ページは常に「復習する設問はありません」で終わり、
+  // 再出題のコードが一度も動かないまま素通りする。
+  const bank = existsSync('assets/drills.json')
+    ? JSON.parse(readFileSync('assets/drills.json', 'utf8')) : { units: {} };
+  const unit = Object.keys(bank.units)[0];
+  const root = unit && Object.keys(bank.units[unit].drills)[0];
+  if (root) {
+    BROKEN.push(['正常な要復習', JSON.stringify({
+      version: 1, sessions: [], checks: {}, notes: [],
+      drills: { [unit + '#' + root + '/q1']:
+        { attempts: [{ at: '2026-01-01T00:00:00+09:00', ok: false }] } },
+    })]);
+  }
+
+  for (const [label, raw] of BROKEN) {
+    await page.evaluate((v) => localStorage.setItem('boki2:progress', v), raw);
+    errors.length = 0;
+    await page.reload({ waitUntil: 'load' });
+    // 復習ページは設問バンクを非同期に読む。読み終わる前に見ると、
+    // 描画中に投げる例外を取りこぼす。
+    await page.waitForTimeout(300);
+    const fatal = errors.filter((e) => !/favicon/i.test(e));
+    if (fatal.length) {
+      report(file, '(robust)', '例外なし', fatal[0],
+        '壊れた記録（' + label + '）があると画面が開けない');
+    }
+
+    // 例外が出なくても、集計が丸ごと描かれないなら壊れている。
+    // progress.html は記録が空でも「まだ記録がありません」を出す。
+    const blank = await page.evaluate(() => {
+      const ids = ['total', 'units', 'notes', 'review'];
+      return ids.filter((id) => {
+        const n = document.getElementById(id);
+        return n && !n.textContent.trim();
+      });
+    });
+    if (blank.length) {
+      report(file, '(robust)', '空でも案内を出す', blank.join(','),
+        '壊れた記録（' + label + '）で節が白紙になる');
+    }
+
+    // 復習ページは、要復習が1件あるなら実際に出題されなければならない。
+    // 何も描かれないまま例外も出ない状態は、検査としては通ってしまう。
+    if (label === '正常な要復習' && /review\.html$/.test(file)) {
+      const n = await page.evaluate(
+        () => document.querySelectorAll('#drills .q').length);
+      if (n !== 1) {
+        report(file, '(robust)', '1問出題', n + '問',
+          '要復習が1件あるのに再出題されない');
+      }
+    }
+  }
+});
+
+// ゲート11：設問バンクが単元HTMLと一致しているか。
+//
+// assets/drills.json は単元HTMLから生成する。復習ドリルはこれを読んで
+// 再出題するため、古いままだと、教材で直した設問が復習では直っていない、
+// という食い違いが起きる。設問を直した本人には見えない壊れ方をする。
+CHECKS.push(async function checkDrillBank(page, file) {
+  // ページごとではなく一度だけ走らせる。他のゲートと違い、検査の対象が
+  // 単元HTMLではなく生成物そのものであるため。
+  if (checkDrillBank.done) return;
+  checkDrillBank.done = true;
+
+  if (!existsSync('assets/drills.json')) {
+    report('assets/drills.json', '(bank)', 'あり', 'なし',
+      '設問バンクがない（npm run build:drills で生成する）');
+    return;
+  }
+  const { build } = await import('./build-drill-bank.mjs');
+  const r = await build({ write: false });
+  if (!r.ok) {
+    report('assets/drills.json', '(bank)', '生成できる', '失敗',
+      '設問バンクを生成できない');
+    return;
+  }
+  if (readFileSync('assets/drills.json', 'utf8') !== r.text) {
+    report('assets/drills.json', '(bank)', '単元HTMLと一致', '古い',
+      '設問バンクが古い（npm run build:drills で再生成してコミットする）');
+  }
+});
+
+// ゲート13：記録IDと設問の対応が動いていないか。
+//
+// 記録IDの q番号は設問配列の添字である。途中に設問を挿す・消す・並べ替えると
+// 以降の番号が1つずつずれるが、番号としては有効なままなので何も壊れて
+// 見えない。学習者の localStorage には古い番号で誤答が残っており、復習
+// ドリルは「間違えた覚えのない設問」を出したうえ、その正解を元の設問IDに
+// 積んで一覧から消す。実際に間違えた設問は復習されないまま消滅する。
+//
+// 設問を足すときは末尾に足す。文言の推敲で指紋が変わったときは
+// reference/drill-ids.json を更新してコミットする（その設問の記録は
+// 引き継がれる。中身が同じ設問だという判断は人間が下す）。
+CHECKS.push(async function checkDrillIds(page, file) {
+  if (checkDrillIds.done) return;
+  checkDrillIds.done = true;
+
+  const BASE = 'reference/drill-ids.json';
+  if (!existsSync(BASE) || !existsSync('assets/drills.json')) return;
+
+  const base = JSON.parse(readFileSync(BASE, 'utf8'));
+  const bank = JSON.parse(readFileSync('assets/drills.json', 'utf8'));
+
+  for (const [unit, u] of Object.entries(bank.units)) {
+    for (const [root, d] of Object.entries(u.drills)) {
+      const key = unit + '#' + root;
+      const was = base[key];
+      // 新しいドリルには過去の記録がない。ずれようがないので通す。
+      if (!was) continue;
+      const now = d.fingerprints || [];
+      // 末尾への追加は既存の番号を動かさない。先頭からの一致だけを見る。
+      const n = Math.min(was.length, now.length);
+      for (let i = 0; i < n; i++) {
+        if (was[i] !== now[i]) {
+          report(u.href, root + '/q' + (i + 1), was[i], now[i],
+            '設問の並びが変わり、過去の記録が別の設問を指している');
+          break;
+        }
+      }
+      if (now.length < was.length) {
+        report(u.href, root, was.length + '問', now.length + '問',
+          '設問が減り、末尾の記録が行き場を失った');
+      }
+    }
   }
 });
 
