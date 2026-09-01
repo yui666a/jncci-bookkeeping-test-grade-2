@@ -4,6 +4,7 @@
   "packageManager": "pnpm@11.16.0",
   "type": "module",
   "scripts": {
+    "build:drills": "node tools/build-drill-bank.mjs",
     "check": "node tools/check.mjs",
     "coverage": "node tools/coverage.mjs",
     "test": "node tools/test-formula.mjs && node tools/test-progress.mjs"

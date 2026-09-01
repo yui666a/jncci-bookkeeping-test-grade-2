@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="なし">
+<title>復習ドリル — 日商簿記2級</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <span class="topbar__title">日商簿記2級 ／ 復習ドリル</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">REVIEW</p>
+    <h1>復習ドリル</h1>
+    <p class="lead">一度でも間違えた設問だけが、単元をまたいでここに集まります。
+      <strong>3回続けて正解すると消えます。</strong>途中で間違えると連続は振り出しに戻ります。
+      並び順は<strong>最後に間違えてから時間が経った順</strong>。忘れかけているものが先に来ます。</p>
+  </div>
+
+  <div id="summary"></div>
+  <div id="drills"></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 教材トップに戻る</a> ／ <a href="progress.html">学習の記録</a></span>
+    <span>日商簿記2級 復習ドリル</span>
+  </div>
+
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var P = window.BokiProgress;
+  var CLEAR_STREAK = P.CLEAR_STREAK;
+
+  function el(t, c, x) {
+    var n = document.createElement(t);
+    if (c) n.className = c;
+    if (x !== undefined) n.textContent = x;
+    return n;
+  }
+
+  var summary = document.getElementById('summary');
+  var host = document.getElementById('drills');
+
+  function say(msg) {
+    summary.appendChild(el('p', 'small muted', msg));
+  }
+
+  // 記録IDは「単元キー#マウント先のid/q番号」。
+  function parseId(id) {
+    var m = /^(.+)#([^/]+)\/q(\d+)$/.exec(id);
+    if (!m) return null;
+    return { unit: m[1], root: m[2], q: Number(m[3]) };
+  }
+
+  // 要復習の判定は BokiProgress.due() が持つ。progress.html の一覧と
+  // 同じものを使わないと、一覧に出ているのに出題されない設問ができる。
+  //
+  // 壊れた記録でもページは開けなければならない。ここで例外が出ると、
+  // 復習の入口ごと失われる。
+  var due;
+  try { due = P.due(); }
+  catch (e) { due = []; }
+
+  due = due.map(function (r) {
+    var ref = parseId(r.id);
+    if (!ref) return null;
+    ref.id = r.id;
+    ref.streak = r.streak;
+    ref.wrong = r.wrong;
+    ref.total = r.total;
+    ref.last = r.last;
+    return ref;
+  }).filter(Boolean);
+
+  if (!due.length) {
+    say('復習する設問はありません。間違えた設問がここに集まります。');
+    return;
+  }
+
+  // 間違いが古い順。直近の誤答が新しい順にすると、さっき間違えた問題が
+  // 毎回先頭に来て、放置された問題がいつまでも後ろに残る。
+  due.sort(function (a, b) { return a.last < b.last ? -1 : (a.last > b.last ? 1 : 0); });
+
+  var req = new XMLHttpRequest();
+  req.open('GET', 'assets/drills.json', true);
+  req.onload = function () {
+    // onload は 404 でも発火する。status を見ないと、サーバの返した
+    // エラーページを設問として読もうとする。
+    if (req.status !== 200 && req.status !== 0) return fail();
+    var bank;
+    try { bank = JSON.parse(req.responseText); }
+    catch (e) { bank = null; }
+    if (!bank || !bank.units) return fail();
+    render(bank);
+  };
+  // file:// では XHR がブロックされる。単元HTMLは file:// で直接開いて
+  // 動くが、このページだけは設問バンクを読むため配信が要る。詰まった
+  // ときに何をすればよいか分からないと、復習そのものが止まる。
+  req.onerror = fail;
+  req.send();
+
+  function fail() {
+    say('設問データ（assets/drills.json）を読み込めませんでした。' +
+      'file:// で開いている場合は、教材のフォルダで次を実行し、' +
+      'http://localhost:8000/review.html を開いてください：  python3 -m http.server');
+  }
+
+  function render(bank) {
+    // 同じドリルの設問はまとめて出す。1問ずつ別の枠にすると、同じ
+    // 見出しと勘定科目プールが何度も現れて、どこまで進んだか読めない。
+    // 並び順は「そのドリルで最も古い誤答」で決める。
+    var groups = [];
+    var byKey = {};
+    due.forEach(function (r) {
+      var key = r.unit + '#' + r.root;
+      if (!byKey[key]) {
+        byKey[key] = { unit: r.unit, root: r.root, items: [] };
+        groups.push(byKey[key]);
+      }
+      byKey[key].items.push(r);
+    });
+
+    var shown = 0, missing = 0, mounted = 0;
+
+    groups.forEach(function (g, gi) {
+      var unit = bank.units[g.unit];
+      var src = unit && unit.drills[g.root];
+      // 設問が見つからないのは、教材から削除・改名された設問の記録が
+      // 残っているとき。飛ばして続ける。1件のために復習全体を止めない。
+      if (!src) { missing += g.items.length; return; }
+
+      // 設問は q番号（1始まり）で引く。並び順ではなく番号で引かないと、
+      // 設問を1つ挿しただけで別の問題が出る。
+      var picked = [], numbers = [], meta = [];
+      g.items.forEach(function (r) {
+        var q = (src.cfg.questions || [])[r.q - 1];
+        if (!q) { missing++; return; }
+        picked.push(q);
+        numbers.push(r.q);
+        meta.push(r);
+      });
+      if (!picked.length) return;
+
+      var api = { journal: window.BokiJournal, quiz: window.BokiQuiz,
+                  num: window.BokiNum, fill: window.BokiFill }[src.kind];
+      // 見出しを先に足してから種類を確かめると、出題できないドリルの
+      // 見出しだけが残る。描画の前に確かめる。
+      if (!api) { missing += picked.length; return; }
+
+      shown += picked.length;
+      mounted++;
+
+      var head = el('div', 'reviewgroup');
+      var a = el('a', 'reviewgroup__unit', g.unit);
+      a.href = unit.href + '#' + g.root;
+      head.appendChild(a);
+      head.appendChild(el('span', 'reviewgroup__meta',
+        picked.length + '問 ／ ' + meta.map(function (r) {
+          return '第' + r.q + '問（' +
+            (r.streak ? '連続正解 ' + r.streak + '/' + CLEAR_STREAK : '未正解') + '）';
+        }).join('、')));
+      host.appendChild(head);
+
+      var mountId = 'rv' + gi;
+      var box = el('div');
+      box.id = mountId;
+      host.appendChild(box);
+
+      // 単元での設定をそのまま使い、出題する設問と記録先だけ差し替える。
+      // 使う項目を選び直すと、単元と復習で設問の見た目や挙動がずれる。
+      var cfg = {};
+      for (var k in src.cfg) cfg[k] = src.cfg[k];
+      cfg.questions = picked;
+      // 記録は元の単元の設問IDに向ける。このページのURLから決めると、
+      // やり直した正解が元の設問に届かず、いつまでも一覧から消えない。
+      cfg.recordAs = g.unit + '#' + g.root;
+      cfg.qNumbers = numbers;
+      api.mount('#' + mountId, cfg);
+    });
+
+    var s = el('p', 'lead');
+    s.appendChild(el('strong', null, shown + '問'));
+    s.appendChild(document.createTextNode(' が復習待ちです（' + mounted + 'ドリル）。'));
+    summary.appendChild(s);
+    if (missing) {
+      say(missing + '件は教材側に設問が見つからず、飛ばしました。' +
+        '設問が削除・改名されたか、assets/drills.json が古い可能性があります。');
+    }
+    summary.appendChild(el('p', 'small muted',
+      '採点するとその場で記録されます。3回続けて正解した設問は、次にこのページを開いたときに消えます。'));
+  }
+})();
+</script>
+</body>
+</html>
