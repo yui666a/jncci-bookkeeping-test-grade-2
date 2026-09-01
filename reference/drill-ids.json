@@ -1,0 +1,427 @@
+{
+ "phase0/01_3kyu-review#drill-main": [
+  "cd01b460",
+  "630ceb36",
+  "7acd3d67",
+  "a6876513",
+  "f2c81d02",
+  "b9f5d513",
+  "9cf5ac39",
+  "478f358f",
+  "340d870f",
+  "3ed09612",
+  "ce95b9e3",
+  "87c257bd",
+  "2cebe85a",
+  "8f0a9aa3",
+  "0c7ec746",
+  "1319f244",
+  "d5eb3928",
+  "8600b7cf",
+  "ff4160e6",
+  "5d52818c",
+  "4b03cdbf",
+  "6ed54a0b",
+  "29d5df4b",
+  "7eabbac4",
+  "c0f7cf58",
+  "d51be419",
+  "6a2cf954",
+  "016efb5c",
+  "267e084a",
+  "93aff018"
+ ],
+ "phase0/01_3kyu-review#num-kessan": [
+  "30a3871b",
+  "d7eb834d",
+  "09933ff4",
+  "03c9461c"
+ ],
+ "phase0/01_3kyu-review#num-seisanhyo": [
+  "5d4ca396",
+  "15caaa4c",
+  "afea5eba"
+ ],
+ "phase0/01_3kyu-review#quiz-denpyo": [
+  "140679ed",
+  "4cab1b2d",
+  "6c7846c6"
+ ],
+ "phase0/01_3kyu-review#quiz-shimekiri": [
+  "ad1f2d3b",
+  "434dd2ca",
+  "f9a4b292",
+  "ab81d306"
+ ],
+ "phase0/01_3kyu-review#quiz-shiwake": [
+  "b83a87ee",
+  "59d87657",
+  "a0b7e0a4",
+  "7c68c3d6"
+ ],
+ "phase0/02_kanjo-renrakuzu#fill1": [
+  "e6410081",
+  "4d055d20",
+  "a9ba7c9b",
+  "bbd72f09"
+ ],
+ "phase0/02_kanjo-renrakuzu#num1": [
+  "08408658",
+  "f404a7bb",
+  "b2cdff96",
+  "73bd2176",
+  "91d87aab"
+ ],
+ "phase0/02_kanjo-renrakuzu#quiz1": [
+  "cdd59073",
+  "95c04dac",
+  "3cfba3f0",
+  "fe7d8d1c",
+  "8d0c870f",
+  "aaac432f",
+  "2f223ff8",
+  "6c3cab93"
+ ],
+ "phase0/03_dentaku#num1": [
+  "476c35b8",
+  "4d416199",
+  "832f8f21",
+  "695ca602",
+  "8fd9ea84",
+  "0635adbf",
+  "cee36058",
+  "7b6c9fe7",
+  "2b5d5502",
+  "9b87b074",
+  "f9451d08",
+  "e75c7565"
+ ],
+ "phase0/03_dentaku#quiz1": [
+  "64d52910",
+  "86f87f47",
+  "be7532e1",
+  "10ddfe1c"
+ ],
+ "phase0/04_junbi#quiz1": [
+  "0d1826e7",
+  "60310804",
+  "b2de9b1d",
+  "c76d9064",
+  "e09e1be3"
+ ],
+ "phase1/01_shou-junshisan-genkin#drill-ginko": [
+  "195470cd",
+  "094f395a",
+  "ab0c9c76",
+  "51fe7483",
+  "23492418",
+  "15c75ba5",
+  "7236594d",
+  "18867879"
+ ],
+ "phase1/01_shou-junshisan-genkin#fill-junshisan": [
+  "cb4dc1d8",
+  "35c038a6",
+  "e1a00ccf",
+  "0d380fd6",
+  "8fff9b48",
+  "c62cd7cf"
+ ],
+ "phase1/01_shou-junshisan-genkin#num-chosei": [
+  "65035ffc",
+  "08a9f13e"
+ ],
+ "phase1/01_shou-junshisan-genkin#quiz-chosei": [
+  "9bb8c804",
+  "0a24937c",
+  "1d47bf2e",
+  "9de05e46",
+  "c2c3af81",
+  "b4de0753",
+  "bbe417df",
+  "7c0c04c2",
+  "a9c8b7d1",
+  "91c7788f"
+ ],
+ "phase1/02_shou-shohin#drill-shohin": [
+  "d4ecd23c",
+  "eb3a736d",
+  "464296bf",
+  "96930fb2",
+  "17d87d96",
+  "a6397be4",
+  "1a769b07",
+  "93a9680d",
+  "17f457dc",
+  "12dbacff",
+  "344ff514",
+  "3af6c254"
+ ],
+ "phase1/02_shou-shohin#fill-yougo": [
+  "5897ff9c",
+  "93fd205b",
+  "f4703d53",
+  "291ef851",
+  "2161f3e3",
+  "c0493309"
+ ],
+ "phase1/02_shou-shohin#num-box": [
+  "10ce2951",
+  "c4ca6745",
+  "bb5eeaa8",
+  "c7e739e1"
+ ],
+ "phase1/02_shou-shohin#num-kessan": [
+  "a30bcfc6",
+  "13bafc2c",
+  "556e0c2e",
+  "e74a00f4"
+ ],
+ "phase1/02_shou-shohin#num-sohei": [
+  "ad07d9ca",
+  "9dd21ff3",
+  "9cb8a8e3",
+  "046fce17"
+ ],
+ "phase1/02_shou-shohin#quiz-hyoji": [
+  "48a58200",
+  "bad74b65",
+  "74d137c7",
+  "cf9d40d4",
+  "ba27bd88",
+  "73de4460"
+ ],
+ "phase1/02_shou-shohin#quiz-taritsu": [
+  "5cdc4615",
+  "2f4bdd05",
+  "9e46e3e4",
+  "800d83e5"
+ ],
+ "phase1/02_shou-shohin#quiz-warimodoshi": [
+  "6e4d746f",
+  "955235bc",
+  "e0ea0f78",
+  "3a5ff38d"
+ ],
+ "phase1/03_kou-genka-bunrui#drill-kihon-shiwake": [
+  "4873bd19",
+  "b172d4af",
+  "e80e1423",
+  "a669a3a9"
+ ],
+ "phase1/03_kou-genka-bunrui#fill-yougo": [
+  "57b156ca",
+  "89b650df",
+  "c5ebdbb3",
+  "17ad5f97",
+  "c77bf0b1",
+  "465123b9",
+  "aab83046",
+  "17eebaee",
+  "0a7eca34",
+  "91601eca"
+ ],
+ "phase1/03_kou-genka-bunrui#num-shukei": [
+  "b423b064",
+  "4056f732",
+  "47d3555e",
+  "56d174c0"
+ ],
+ "phase1/03_kou-genka-bunrui#quiz-genka-bunrui": [
+  "7f3f28b7",
+  "7516d05a",
+  "06c619ea",
+  "624a7506",
+  "3a1c2eab",
+  "d4bf7dfe",
+  "e253c3bf",
+  "6365954b",
+  "a3eb42ca",
+  "6b38b9e1",
+  "2196fa64",
+  "1607add5",
+  "9dd1c6fa",
+  "a16ce257"
+ ],
+ "phase1/04_kou-zairyohi#drill-zairyohi": [
+  "568f523f",
+  "80f91915",
+  "62638a7b",
+  "15b71175",
+  "90fc9a68",
+  "27bc533f",
+  "9d4b3809",
+  "d5fca970",
+  "e6d82907",
+  "d5fb3ef1"
+ ],
+ "phase1/04_kou-zairyohi#fill-zairyohi": [
+  "2df2ebee",
+  "59675a42",
+  "dd711084",
+  "d1bc2c66",
+  "18da4ffc",
+  "19b093e9"
+ ],
+ "phase1/04_kou-zairyohi#num-zairyohi": [
+  "b678b367",
+  "5b952589",
+  "7ef2a8d0",
+  "02a8e574",
+  "ee9813e9",
+  "33d8660d",
+  "f08f18ef",
+  "47e209b9"
+ ],
+ "phase1/04_kou-zairyohi#quiz-zairyohi": [
+  "791b64a1",
+  "a1e4a754",
+  "bb450896",
+  "72db7a88",
+  "0c414079",
+  "2b63b5da",
+  "76d62661",
+  "b4f0d2d2",
+  "38d82b1c",
+  "344daf6e"
+ ],
+ "phase1/05_shou-shueki-ninshiki#drill-shueki": [
+  "71311b7d",
+  "07694554",
+  "4c55d693",
+  "ecaff11c",
+  "b220da7c",
+  "d0435f0e",
+  "74de9b4e",
+  "11cf05f7",
+  "9919d1c0",
+  "8db5dffa",
+  "f7beed55",
+  "a458ea2e",
+  "bb9c61e7",
+  "9c17679c",
+  "0e765948"
+ ],
+ "phase1/05_shou-shueki-ninshiki#fill-yougo": [
+  "2f0f1104",
+  "88c7ab5d",
+  "6aebc409",
+  "e02b22ce",
+  "0e7907ac",
+  "aadddf94",
+  "b2a8662f",
+  "9b7e2b4a",
+  "b4c134b7",
+  "e950e283",
+  "745da003",
+  "a18a3261"
+ ],
+ "phase1/05_shou-shueki-ninshiki#num-hairun": [
+  "9897bc23",
+  "1819a60e",
+  "8b2e3ff5",
+  "c1690ce0",
+  "08e5108e",
+  "277fceb5",
+  "932cc269"
+ ],
+ "phase1/05_shou-shueki-ninshiki#quiz-jiten": [
+  "f033e441",
+  "1d920769",
+  "db5aa7fa",
+  "01c581ef",
+  "f637e3ff",
+  "c725624d"
+ ],
+ "phase1/05_shou-shueki-ninshiki#quiz-shisan": [
+  "655033af",
+  "5214f6c6",
+  "55331992",
+  "da21c235",
+  "8d9301b4",
+  "b1bbdd16"
+ ],
+ "phase1/06_shou-saiken-saimu#drill-honmon": [
+  "10b0eeb9",
+  "e7869e9e",
+  "fb710655",
+  "dda8863e",
+  "ce86b31a",
+  "0e246506",
+  "a2be23b3",
+  "73a3d273",
+  "ddb8f84a",
+  "bfe7be7f",
+  "c13279b9",
+  "8ef5039d"
+ ],
+ "phase1/06_shou-saiken-saimu#fill-yougo": [
+  "3b9c4bf3",
+  "6bcc2544",
+  "d30baf18",
+  "f9d071e2",
+  "495e16c2",
+  "80469802",
+  "2a30bf59"
+ ],
+ "phase1/06_shou-saiken-saimu#num-kingaku": [
+  "ca81913d",
+  "0c796191",
+  "6b51e43b",
+  "7a29d08c"
+ ],
+ "phase1/06_shou-saiken-saimu#quiz-handan": [
+  "9c3b20d4",
+  "ef032fe3",
+  "03fa6bc5",
+  "1917c5f0",
+  "f989772e",
+  "4639c469"
+ ],
+ "phase1/07_kou-romuhi-keihi#drill-romuhi": [
+  "1da37465",
+  "b36114ab",
+  "c9709761",
+  "e7424d3a",
+  "5e769373",
+  "499985a0",
+  "7ffb2b9b",
+  "023f18f6",
+  "47cc256a",
+  "c7726900",
+  "8ebfb12b",
+  "bae031ff"
+ ],
+ "phase1/07_kou-romuhi-keihi#fill-romuhi": [
+  "47900560",
+  "0e42a14e",
+  "d4cdbdec",
+  "30bb497c",
+  "d2a4b8b3",
+  "eff16497",
+  "5aa2134e"
+ ],
+ "phase1/07_kou-romuhi-keihi#num-romuhi": [
+  "df1d53e5",
+  "6bbb692c",
+  "d72a508e",
+  "3d98147f",
+  "8e93f251",
+  "50c60850",
+  "2822a4c7",
+  "b6098e26",
+  "61635a60"
+ ],
+ "phase1/07_kou-romuhi-keihi#quiz-romuhi": [
+  "b34d341e",
+  "7ed36019",
+  "3f0f7f74",
+  "532dd2c3",
+  "7fbab438",
+  "b52f1e52",
+  "ead8dc23",
+  "e9b996b0",
+  "95eb1cfd",
+  "17667bc7"
+ ]
+}

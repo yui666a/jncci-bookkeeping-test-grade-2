@@ -174,6 +174,43 @@ try {
        [1, '按分が分からない', 'phase0/02_kanjo-renrakuzu', 'string'],
        '空メモを捨て、単元を紐づける');
   });
+  // 要復習の判定。progress.html の一覧と review.html の出題対象が
+  // 同じ規則で決まることを、両ページに依存せずここで固定する。
+  await withApp(browser, 'phase0/x.html', async (page) => {
+    const seed = (drills) => page.evaluate((d) => {
+      BokiProgress._reset();
+      const p = BokiProgress.dump();
+      for (const [id, oks] of Object.entries(d)) {
+        p.drills[id] = { attempts: oks.map((ok, i) => ({ at: '2026-01-0' + (i + 1), ok })) };
+      }
+      localStorage.setItem('boki2:progress', JSON.stringify(p));
+      return BokiProgress.due().map((r) => r.id + ':' + r.streak).sort();
+    }, drills);
+
+    eq(await seed({ a: [true], b: [false], c: [false, true] }),
+       ['b:0', 'c:1'], '誤答のない設問は要復習にならない');
+
+    eq(await seed({ a: [false, true, true], b: [false, true, true, true] }),
+       ['a:2'], '3回続けて正解すると要復習から外れる');
+
+    eq(await seed({ a: [false, true, true, false] }),
+       ['a:0'], '途中で間違えると連続は振り出しに戻る');
+
+    // 通算で数えると、正解の貯金が誤答で消えず、直前に間違えた設問が
+    // 復習から落ちる。連続で数えていることを固定する。
+    eq(await seed({ a: [true, true, true, true, true, false] }),
+       ['a:0'], '正解の貯金では卒業しない');
+
+    eq(await page.evaluate(() => BokiProgress.CLEAR_STREAK), 3, '卒業に要する連続正解数');
+
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      const p = BokiProgress.dump();
+      p.drills['a'] = { attempts: [{ at: '2026-01-02', ok: false }, { at: '2026-01-05', ok: false }] };
+      localStorage.setItem('boki2:progress', JSON.stringify(p));
+      return BokiProgress.due()[0].last; }),
+       '2026-01-05', 'last は最後に間違えた日時');
+  });
 } finally {
   await browser.close();
 }

@@ -11,11 +11,12 @@
 |---|---|
 | `index.html` | 公開サイトのトップページ |
 | `progress.html` | 学習の記録。集計とエクスポート |
+| `review.html` | 復習ドリル。一度でも間違えた設問を単元をまたいで再出題する |
 | `進捗ログ.md` | 学習記録の書き出し先 |
 | `学習カリキュラム.md` | 11週間の学習計画。週次の論点配分 |
 | `教材制作ルール.md` | 教材の出力形式・執筆方針・品質ゲート |
 | `出題範囲_最新確認メモ.md` | 出題範囲の確認結果 |
-| `assets/` | 共通のスタイルとスクリプト（全フェーズで共有） |
+| `assets/` | 共通のスタイルとスクリプト（全フェーズで共有）。`drills.json` は生成物 |
 | `phase0/` `phase1/` | 単元教材（HTML1枚／単元） |
 | `reference/` | 出題区分表・勘定科目表の原本と構造化データ |
 | `tools/` | 検証スクリプト |
@@ -41,6 +42,10 @@ open phase0/index.html     # Phase 0 の目次
 ドリルは `BokiJournal` / `BokiQuiz` / `BokiNum` / `BokiFill` の4種類。
 ドリルの正誤・学習時間・メモは、教材を使うだけで自動的に記録される。
 
+一度でも間違えた設問は `review.html` に集まり、3回続けて正解するまで
+出続ける。設問は単元HTMLの `mount()` 引数の中にあり外から読めないため、
+`assets/drills.json` に写して配る。設問を変えたら再生成する（ゲート12）。
+
 ## 公開
 
 `main` への push で GitHub Actions が `npm run check` を通し、成功した
@@ -52,6 +57,7 @@ open phase0/index.html     # Phase 0 の目次
 npm install         # 初回のみ。Playwright を入れる
 npx playwright install chromium
 
+npm run build:drills   # 設問を変えたときだけ。assets/drills.json を再生成
 npm run check       # 機械的な品質ゲート（全ページ）
 npm run check phase0/01_3kyu-review.html   # 単一ページ
 npm run coverage    # 出題区分表に対する論点カバレッジ

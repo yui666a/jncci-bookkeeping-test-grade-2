@@ -43,7 +43,19 @@
     if (typeof raw.version === 'number') base.version = raw.version;
     if (Array.isArray(raw.sessions)) base.sessions = raw.sessions;
     if (Array.isArray(raw.notes)) base.notes = raw.notes;
-    if (raw.drills && typeof raw.drills === 'object') base.drills = raw.drills;
+    // drills は形を整えてから渡す。集計する側は設問ごとに attempts を
+    // 走査するため、null や配列でない値が1つ混じるだけでそこから先の
+    // 描画が丸ごと止まる。画面には「記録がない」ようにしか見えず、
+    // 壊れていることに気づけない。
+    if (raw.drills && typeof raw.drills === 'object' && !Array.isArray(raw.drills)) {
+      for (var id in raw.drills) {
+        var d = raw.drills[id];
+        var at = d && Array.isArray(d.attempts) ? d.attempts : [];
+        base.drills[id] = { attempts: at.filter(function (a) {
+          return a && typeof a === 'object';
+        }) };
+      }
+    }
     if (raw.checks && typeof raw.checks === 'object') base.checks = raw.checks;
     return base;
   }
@@ -117,6 +129,34 @@
       var p = loadProgress();
       p.notes.push({ at: nowISO(), unit: PAGE, text: text });
       saveProgress(p);
+    },
+    // 要復習の判定。progress.html（一覧）と review.html（再出題）の
+    // 両方が使う。片方だけに書くと、一覧に出ているのに出題されない、
+    // という食い違いが起きる。どちらの画面を見ても気づけない。
+    CLEAR_STREAK: 3,
+    // 連続正解で数える。通算にすると、正解の貯金が誤答で消えないため、
+    // 直前に間違えた設問まで復習から落ちてしまう。
+    streakOf: function (attempts) {
+      var at = attempts || [], n = 0;
+      for (var i = at.length - 1; i >= 0 && at[i].ok; i--) n++;
+      return n;
+    },
+    // 誤答を含み、まだ連続正解が足りていない設問を、最後に間違えた
+    // 日時つきで返す。並び順は呼び出し側が決める。
+    due: function () {
+      var p = loadProgress(), out = [];
+      for (var id in p.drills) {
+        var at = (p.drills[id] || {}).attempts || [];
+        var wrong = at.filter(function (a) { return !a.ok; });
+        if (!wrong.length) continue;
+        var streak = BokiProgress.streakOf(at);
+        if (streak >= BokiProgress.CLEAR_STREAK) continue;
+        out.push({
+          id: id, streak: streak, wrong: wrong.length, total: at.length,
+          last: wrong[wrong.length - 1].at
+        });
+      }
+      return out;
     },
     _reset: function () { saveProgress(emptyProgress()); }
   };
@@ -323,7 +363,11 @@
   }
   // 記録先を決めるにはマウント先の id が要る。id がない設問は記録しない
   // （品質ゲート9がこれを検出する）。
-  function drillBaseOf(root) {
+  // cfg.recordAs は、設問を出題しているページと、記録すべき単元が食い違う
+  // ときに使う。復習ページは他単元の設問を再出題するため、開いている
+  // ページから記録先を決めると、やり直した正解が元の設問に届かない。
+  function drillBaseOf(root, cfg) {
+    if (cfg && cfg.recordAs) return cfg.recordAs;
     return root && root.id ? PAGE + '#' + root.id : null;
   }
   // 設問1問ごとに id を振る。学習の記録の「要復習」は設問単位で記録して
@@ -336,11 +380,15 @@
   // 採点の確定点は4種のドリルで共通してここを通る。記録をここに置けば、
   // 単元HTMLの著者が記録用のコードを書く必要がなくなる。書き忘れが
   // 起きうる場所に記録を置くと、失われたデータは後から復元できない。
-  function makeScorer(scoreEl, total, drillBase) {
+  // qNo は cfg.qNumbers で差し替えられる。復習ページは1つのドリルから
+  // 間違えた設問だけを抜いて並べるため、並び順の番号で記録すると、
+  // 元の設問とは別のIDが増えていく。
+  function makeScorer(scoreEl, total, drillBase, qNumbers) {
     var state = {};
     return function (id, ok) {
       state[id] = ok;
-      if (drillBase) BokiProgress.record(drillBase + '/q' + (id + 1), ok);
+      var qNo = qNumbers ? qNumbers[id] : id + 1;
+      if (drillBase) BokiProgress.record(drillBase + '/q' + qNo, ok);
       var done = 0, right = 0;
       for (var k in state) { done++; if (state[k]) right++; }
       scoreEl.textContent = '正解 ' + right + ' / 解答済 ' + done + '（全' + total + '問）';
@@ -635,7 +683,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '仕訳ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
         var accounts = q.accounts || cfg.accounts;
@@ -750,7 +798,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '確認テスト');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
@@ -810,7 +858,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, cfg.badge || '計算ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
         var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
@@ -888,7 +936,7 @@
       var root = document.querySelector(sel);
       if (!root) return;
       var ui = shell(root, cfg, '穴埋め');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root));
+      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
         var wrapQ = el('div', 'q');
