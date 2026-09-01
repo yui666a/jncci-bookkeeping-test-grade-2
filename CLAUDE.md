@@ -40,6 +40,8 @@
 | 原本と出典 | `reference/SOURCES.md`、`reference/*.pdf` |
 | 手元の電卓の仕様 | `reference/casio_jw-122cl_manual.pdf`（カシオ JW-122CL） |
 | 学習の進捗 | `progress.html`（ブラウザの localStorage）。`進捗ログ.md` はその書き出し |
+| 間違えた設問の再出題 | `review.html`。設問は `assets/drills.json`（`npm run build:drills` の生成物） |
+| 設問と記録IDの対応 | `reference/drill-ids.json`。設問の並びが動いたことをゲート13が検出する |
 
 YAMLは原本のPDFから生成したもので、**手で編集しない。**
 直すときは `tools/parse-syllabus.py` / `tools/parse-accounts.py` を直して再生成する。
@@ -54,8 +56,9 @@ YAMLは原本のPDFから生成したもので、**手で編集しない。**
 ## 公開前に必ず通す
 
 ```
-npm run check       # 品質ゲート1〜6・9・10（機械的検査）
-npm run coverage    # 品質ゲート7（論点カバレッジ）
+npm run build:drills  # 設問を足す・直す・消したときだけ。assets/drills.json を再生成する
+npm run check         # 品質ゲート1〜6・9〜13（機械的検査）
+npm run coverage      # 品質ゲート7（論点カバレッジ）
 ```
 
 `npm run check` が落ちている状態で「完了した」と報告しない。
