@@ -580,7 +580,10 @@
 
     // 未確定の入力は捨てて、確定済みの科目名に戻す。空欄のまま閉じたときに
     // 打ちかけの文字列が残ると、選択済みに見えて実際は未選択になる。
+    // ただし全部消してあるときは取り消しとみなす。戻してしまうと、選び
+    // 直す以外に未選択へ戻す手段がなくなる。
     function revert() {
+      if (value && !inp.value) { commit(''); return; }
       inp.value = value;
       close();
     }
@@ -653,6 +656,7 @@
         if (list.classList.contains('open')) {
           e.preventDefault();
           if (active >= 0) commit(shown[active]);
+          else if (!inp.value) commit('');
           else if (shown.length === 1) commit(shown[0]);
         }
       } else if (e.key === 'Escape') { revert(); }
