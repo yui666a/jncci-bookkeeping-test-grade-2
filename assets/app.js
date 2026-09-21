@@ -30,7 +30,8 @@
   var PROGRESS_VERSION = 1;
 
   function emptyProgress() {
-    return { version: PROGRESS_VERSION, sessions: [], drills: {}, checks: {}, notes: [] };
+    return { version: PROGRESS_VERSION, sessions: [], drills: {}, checks: {}, notes: [],
+             dismissed: {} };
   }
 
   // 保存された値が壊れていても、そこで学習が止まらないようにする。
@@ -57,6 +58,9 @@
       }
     }
     if (raw.checks && typeof raw.checks === 'object') base.checks = raw.checks;
+    if (raw.dismissed && typeof raw.dismissed === 'object' && !Array.isArray(raw.dismissed)) {
+      base.dismissed = raw.dismissed;
+    }
     return base;
   }
 
@@ -141,11 +145,23 @@
       for (var i = at.length - 1; i >= 0 && at[i].ok; i--) n++;
       return n;
     },
+    // 復習の対象から外す・戻す。解答の記録そのものは消さない。誤答した
+    // 事実は正解率の分母であり、消すと progress.html の集計が実際に
+    // 解いた回数と食い違う。外した設問は dismissed で覆うだけにして、
+    // いつでも戻せるようにする。
+    dismiss: function (drillId, on) {
+      var p = loadProgress();
+      if (on === false) delete p.dismissed[drillId];
+      else p.dismissed[drillId] = nowISO();
+      saveProgress(p);
+    },
+    dismissedIds: function () { return loadProgress().dismissed; },
     // 誤答を含み、まだ連続正解が足りていない設問を、最後に間違えた
     // 日時つきで返す。並び順は呼び出し側が決める。
     due: function () {
       var p = loadProgress(), out = [];
       for (var id in p.drills) {
+        if (p.dismissed[id]) continue;
         var at = (p.drills[id] || {}).attempts || [];
         var wrong = at.filter(function (a) { return !a.ok; });
         if (!wrong.length) continue;

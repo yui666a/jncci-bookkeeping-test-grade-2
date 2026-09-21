@@ -534,3 +534,23 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   font-size: 13px; word-break: break-all;
 }
 .reviewgroup__meta { color: var(--muted); font-size: 12px; }
+
+/* 復習ページの単元絞り込みと、設問を外すボタン */
+.rvfilter { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; }
+.rvfilter__btn {
+  font: inherit; font-size: 12px; cursor: pointer;
+  padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--border-2); background: var(--surface); color: var(--text);
+}
+.rvfilter__btn:hover { border-color: var(--accent-br); }
+.rvfilter__btn.is-on {
+  background: var(--accent-2); border-color: var(--accent-br);
+  color: var(--accent); font-weight: 700;
+}
+.rvdrop { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.rvdrop__btn {
+  font: inherit; font-size: 12px; cursor: pointer;
+  padding: 4px 10px; border-radius: 6px;
+  border: 1px dashed var(--border-2); background: transparent; color: var(--muted);
+}
+.rvdrop__btn:hover { border-style: solid; border-color: var(--accent-br); color: var(--accent); }
