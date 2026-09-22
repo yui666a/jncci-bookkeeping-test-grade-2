@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第三-3-0,商-第一-4-イ">
+<meta name="boki-subject" content="商">
+<title>決算整理の総ざらい — 日商簿記2級 Phase 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 2 目次</a>
+    <span class="topbar__title">UNIT 01 決算整理の総ざらい</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W8 商業簿記 ／ UNIT 01 ／ 4時間</p>
+    <h1>決算整理の総ざらい<br>— 一つずつは解けるのに、まとめて来ると崩れる</h1>
+    <p class="lead">この単元では新しい処理を習いません。<strong>W1〜W7ですでに学んだ決算整理を、第3問という1枚の答案に同時に並べたとき</strong>に、どういう順番で、何を手がかりに処理していくかだけを扱います。第3問で失点する原因の大半は、知らないことではなく、<mark>知っている処理を取りこぼすこと</mark>です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">計算・判断テストつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">第3問で落とすのは「知らない処理」ではない</a></li>
+      <li><a href="#s2">決算整理の地図 — どの単元で何を学んだか</a></li>
+      <li><a href="#s3">解く順番を固定する</a></li>
+      <li><a href="#s4">売上原価と棚卸 — 3つの数字を1回で出す</a></li>
+      <li><a href="#s5">貸倒引当金 — 差額補充法と「どの債権に何％か」</a></li>
+      <li><a href="#s6">減価償却 — 期中取得と期中売却だけが難所</a></li>
+      <li><a href="#s7">有価証券 — 保有目的で評価が決まる</a></li>
+      <li><a href="#s8">無形固定資産とその他の引当金</a></li>
+      <li><a href="#s9">外貨建ての換算 — 決算日に換算し直すもの・しないもの</a></li>
+      <li><a href="#s10">経過勘定と、最後に来る税金3点セット</a></li>
+      <li><a href="#s11">税効果会計 — 決算整理の最後に一度だけ</a></li>
+      <li><a href="#s12">補助簿から決算整理の材料を拾う</a></li>
+      <li><a href="#s13">仕訳ドリル 14問</a></li>
+      <li><a href="#s14">計算ドリル・判断テスト・穴埋め</a></li>
+      <li><a href="#s15">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>第3問で落とすのは「知らない処理」ではない</h2>
+
+  <p>第3問の決算整理は、たいてい8項目から12項目が並びます。一つひとつを取り出せば、W1〜W7でどれも解けるようになっているはずのものばかりです。それでも点が伸びないとしたら、原因は次のどれかです。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>取りこぼし</h3>
+      <p class="small">整理事項の(8)まで処理したところで時間切れ。<strong>処理できたはずの項目に手が届かなかった。</strong></p>
+    </div>
+    <div class="card">
+      <h3>連鎖崩れ</h3>
+      <p class="small">売上原価の計算を間違えたせいで、<strong>その下の利益がすべてずれる。</strong>1つのミスが10点に膨らむ。</p>
+    </div>
+    <div class="card">
+      <h3>置き場所を間違える</h3>
+      <p class="small">金額は正しいのに、<strong>損益計算書のどの区分に書くかを誤る。</strong>仕訳は合っていても点にならない。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">だから「総ざらい」が独立した週になる</span>
+    <p>個別論点の学習は「その処理を知っているか」を問います。第3問は違います。問われるのは<strong>複数の処理を、限られた時間で、抜けなく、正しい場所に置き切れるか</strong>という別の能力です。</p>
+    <p>この能力は個別論点を何周しても付きません。<mark>「並んだ状態で解く」練習だけが効きます。</mark>この単元は処理を教え直す場ではなく、<strong>並んだときの手順を固定する場</strong>です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">この単元は「思い出せない」を検出するためにある</span>
+    <p>以下の各節は、処理の説明を最小限にとどめ、<strong>判断の分かれ目と、間違いやすい点だけ</strong>を並べてあります。読んでいて「これは何の話だったか」と詰まったら、そこが穴です。該当する単元に戻ってから先に進んでください。各節の冒頭にどの単元かを書いてあります。</p>
+    <p>逆に、すらすら読める節は飛ばして構いません。<strong>全部を均等に復習する時間はありません。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>決算整理の地図 — どの単元で何を学んだか</h2>
+
+  <p>第3問に出る決算整理を一覧にします。<strong>「どこで学んだか」を思い出せるかどうかが、この表の使い方</strong>です。思い出せない行に印を付けてください。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>決算整理項目</th><th>主に使う科目</th><th>学んだところ</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売上原価の算定</td><td>仕入・繰越商品（または売上原価）</td><td>3級／Phase 1 UNIT 02</td></tr>
+        <tr><td class="d">棚卸減耗損・商品評価損</td><td>棚卸減耗損・商品評価損</td><td>Phase 1 UNIT 02</td></tr>
+        <tr><td class="d">貸倒引当金の設定</td><td>貸倒引当金繰入・貸倒引当金</td><td>3級／Phase 1</td></tr>
+        <tr><td class="d">減価償却（定額法・定率法・生産高比例法）</td><td>減価償却費・各減価償却累計額</td><td>3級／Phase 1</td></tr>
+        <tr><td class="d">無形固定資産の償却</td><td>のれん償却・特許権償却・ソフトウェア償却</td><td>Phase 1</td></tr>
+        <tr><td class="d">有価証券の評価替</td><td>有価証券評価損益・その他有価証券評価差額金・有価証券利息</td><td>Phase 1</td></tr>
+        <tr><td class="d">引当金の設定（退職給付・賞与・修繕・保証）</td><td>退職給付費用・各引当金</td><td>Phase 1</td></tr>
+        <tr><td class="d">外貨建債権債務の換算</td><td>為替差損益</td><td>Phase 1</td></tr>
+        <tr><td class="d">経過勘定（前払・前受・未払・未収）</td><td>前払費用・未払費用・前受収益・未収収益</td><td>3級</td></tr>
+        <tr><td class="d">貯蔵品への振替</td><td>貯蔵品・租税公課・通信費</td><td>3級／Phase 0 UNIT 01</td></tr>
+        <tr><td class="d">消費税の精算（税抜方式）</td><td>仮受消費税・仮払消費税・未払消費税</td><td>3級／Phase 0 UNIT 01</td></tr>
+        <tr><td class="d">法人税等の計上</td><td>法人税、住民税及び事業税・未払法人税等</td><td>3級／Phase 0 UNIT 01</td></tr>
+        <tr><td class="d">税効果会計</td><td>繰延税金資産・繰延税金負債・法人税等調整額</td><td>Phase 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">3級で習った項目ほど危ない</span>
+    <p>表の下のほうに固まっている<strong>貯蔵品・消費税・法人税等</strong>は、すべて3級の論点です。2級のテキストには載っていません。ところが<mark>第3問ではほぼ毎回出ます。</mark></p>
+    <p>2級の学習に入ってから一度も触れていない期間が長いほど、本番で「これは何だったか」と止まります。しかも処理自体は単純なので、思い出せさえすれば確実に取れる項目です。<strong>難しいから落とすのではなく、視界に入っていないから落とす</strong>タイプの失点で、いちばん割に合いません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>解く順番を固定する</h2>
+
+  <p>整理事項は(1)から番号順に並んでいますが、<strong>上から順に解くのが最適とは限りません。</strong>決算整理には依存関係があるからです。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 330" style="width:100%;height:auto;min-width:560px" role="img" aria-label="決算整理の依存関係。独立して解ける項目群から始め、売上原価、次に貸倒引当金と減価償却、最後に税引前当期純利益が確定してから法人税等と税効果へ進む流れの図。">
+      <g font-size="13" fill="var(--text)">
+        <rect x="20" y="20" width="200" height="90" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="6"/>
+        <text x="120" y="45" text-anchor="middle" font-size="13.5" font-weight="700">第1群 独立して解ける</text>
+        <text x="120" y="66" text-anchor="middle" font-size="12" fill="var(--muted)">経過勘定・貯蔵品</text>
+        <text x="120" y="84" text-anchor="middle" font-size="12" fill="var(--muted)">有価証券・外貨換算</text>
+        <text x="120" y="102" text-anchor="middle" font-size="12" fill="var(--muted)">消費税の精算</text>
+
+        <rect x="250" y="20" width="200" height="90" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="350" y="45" text-anchor="middle" font-size="13.5" font-weight="700">第2群 商品まわり</text>
+        <text x="350" y="66" text-anchor="middle" font-size="12" fill="var(--muted)">売上原価の算定</text>
+        <text x="350" y="84" text-anchor="middle" font-size="12" fill="var(--muted)">棚卸減耗損</text>
+        <text x="350" y="102" text-anchor="middle" font-size="12" fill="var(--muted)">商品評価損</text>
+
+        <rect x="480" y="20" width="200" height="90" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="580" y="45" text-anchor="middle" font-size="13.5" font-weight="700">第3群 残高が要るもの</text>
+        <text x="580" y="66" text-anchor="middle" font-size="12" fill="var(--muted)">貸倒引当金</text>
+        <text x="580" y="84" text-anchor="middle" font-size="12" fill="var(--muted)">減価償却・償却</text>
+        <text x="580" y="102" text-anchor="middle" font-size="12" fill="var(--muted)">各種引当金</text>
+
+        <path d="M120 115 L120 145" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M120 153 l-4 -10 l8 0 z" fill="var(--muted)"/>
+        <path d="M350 115 L350 145" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M350 153 l-4 -10 l8 0 z" fill="var(--muted)"/>
+        <path d="M580 115 L580 145" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M580 153 l-4 -10 l8 0 z" fill="var(--muted)"/>
+
+        <rect x="20" y="160" width="660" height="50" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="350" y="182" text-anchor="middle" font-size="13.5" font-weight="700">ここまでで 税引前当期純利益 が確定する</text>
+        <text x="350" y="200" text-anchor="middle" font-size="12" fill="var(--muted)">この金額が出るまで、下の2つは計算しようがない</text>
+
+        <path d="M350 215 L350 245" fill="none" stroke="var(--danger)" stroke-width="2"/>
+        <path d="M350 253 l-4 -10 l8 0 z" fill="var(--danger)"/>
+
+        <rect x="120" y="260" width="200" height="55" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2" rx="6"/>
+        <text x="220" y="283" text-anchor="middle" font-size="13.5" font-weight="700">法人税等の計上</text>
+        <text x="220" y="302" text-anchor="middle" font-size="12" fill="var(--muted)">税引前利益 × 税率</text>
+
+        <rect x="380" y="260" width="200" height="55" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2" rx="6"/>
+        <text x="480" y="283" text-anchor="middle" font-size="13.5" font-weight="700">税効果会計</text>
+        <text x="480" y="302" text-anchor="middle" font-size="12" fill="var(--muted)">法人税等調整額</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">第1群から第3群までは互いに独立していて、どの順でも解けます。決まっているのは<strong>「法人税等と税効果は最後」</strong>という一点だけです。税引前当期純利益が確定しないと計算できないためで、この順序だけは動かせません。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">実務上の解き方 — 第1群から手を付ける</span>
+    <p>時間が足りなくなったときに何を捨てるかを、最初に決めておきます。<strong>第1群は1項目あたり1〜2分で終わり、他の項目に影響しません。</strong>先に片付けておけば、たとえ売上原価でつまずいても、その項目の点は確保されています。</p>
+    <p>逆に、売上原価から始めてそこで詰まると、<mark>簡単な項目に手を付けないまま時間を失います。</mark>難しい項目を先にやる理由はどこにもありません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">法人税等を飛ばすと、その下が全部空欄になる</span>
+    <p>法人税等は、損益計算書の最後から2行目です。ここが空欄だと<strong>当期純利益も書けません。</strong>さらに貸借対照表の未払法人税等と繰越利益剰余金も書けなくなります。1項目の取りこぼしが、答案の4〜5か所を巻き込みます。</p>
+    <p>だからこそ<strong>順番は「最後」でも、優先度は高い</strong>のです。時間が残り少なくなったら、細かい項目より先に法人税等へ進んでください。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>第3問では、同じ数字に何度も触ります。売上原価の計算結果は棚卸減耗損の計算に、税引前当期純利益は法人税等の計算に使います。<strong>メモリー機能（M+ / MR）に置いておくと、書き写す往復が消えます。</strong></p>
+    <p>この機種は <strong>GT（グランドトータル）</strong>キーを持っています。「＝」を押すたびに結果が GT メモリーに積算されるので、区分ごとの合計を出すのに向いています。たとえば販売費及び一般管理費に属する科目をそれぞれ確定させながら計算し、最後に GT を押せば区分合計が出ます。</p>
+    <p>メモリーに値が残っていると次の計算が狂うため、<strong>1つの整理事項が終わるたびに MC でメモリーを消す</strong>癖をつけてください。GT メモリーも同様に、区分が変わるところで GT を2回押してクリアします。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>売上原価と棚卸 — 3つの数字を1回で出す</h2>
+
+  <p class="small muted">Phase 1 UNIT 02 で学んだ内容です。思い出せない場合はそちらへ。</p>
+
+  <p>商品まわりの決算整理では、<strong>売上原価・棚卸減耗損・商品評価損の3つ</strong>を同時に求めます。ばらばらに計算するのではなく、ボックス図を1つ描いて3つとも読み取るのが速さと正確さの両方を満たします。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 640 300" style="width:100%;height:auto;min-width:540px" role="img" aria-label="商品のボックス図。縦軸に単価、横軸に数量を取り、帳簿棚卸数量と実地棚卸数量、原価と正味売却価額の差で棚卸減耗損と商品評価損の面積を示す図。">
+      <g font-size="12.5" fill="var(--text)">
+        <!-- 全体枠 -->
+        <rect x="90" y="50" width="400" height="180" fill="none" stroke="var(--border-2)" stroke-width="1.5"/>
+        <!-- 評価損部分 -->
+        <rect x="90" y="50" width="320" height="50" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="1.5"/>
+        <!-- 減耗部分 -->
+        <rect x="410" y="50" width="80" height="180" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="1.5"/>
+        <!-- 期末商品 -->
+        <rect x="90" y="100" width="320" height="130" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="1.5"/>
+
+        <text x="250" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="var(--danger)">商品評価損</text>
+        <text x="450" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="var(--warn)">棚卸</text>
+        <text x="450" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="var(--warn)">減耗損</text>
+        <text x="250" y="165" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">貸借対照表の商品</text>
+        <text x="250" y="185" text-anchor="middle" font-size="12" fill="var(--muted)">実地数量 × 正味売却価額</text>
+
+        <!-- 縦軸 -->
+        <text x="80" y="55" text-anchor="end" font-size="12" fill="var(--muted)">原価</text>
+        <text x="80" y="105" text-anchor="end" font-size="12" fill="var(--muted)">正味売却価額</text>
+        <path d="M70 50 L70 230" fill="none" stroke="var(--muted)" stroke-width="1"/>
+        <!-- 横軸 -->
+        <text x="250" y="255" text-anchor="middle" font-size="12" fill="var(--muted)">実地棚卸数量</text>
+        <text x="450" y="255" text-anchor="middle" font-size="12" fill="var(--muted)">減耗</text>
+        <text x="290" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">帳簿棚卸数量</text>
+        <path d="M90 240 L410 240" fill="none" stroke="var(--muted)" stroke-width="1"/>
+        <path d="M410 240 L490 240" fill="none" stroke="var(--muted)" stroke-width="1"/>
+        <path d="M90 265 L490 265" fill="none" stroke="var(--muted)" stroke-width="1"/>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap"><strong>棚卸減耗損は縦いっぱい</strong>（原価で計算）、<strong>商品評価損は実地数量の幅だけ</strong>（減った分には評価損を計算しない）。この2つの形の違いが、そのまま「どちらの数量に掛けるか」の答えになっています。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">3つの金額はこの順で出す</span>
+    <ol class="steps">
+      <li><strong>棚卸減耗損 ＝（帳簿棚卸数量 − 実地棚卸数量）× 原価</strong><br>単価は<strong>原価</strong>です。正味売却価額ではありません。なくなった商品について値下がりを考える意味がないからです。</li>
+      <li><strong>商品評価損 ＝（原価 − 正味売却価額）× 実地棚卸数量</strong><br>数量は<strong>実地</strong>です。帳簿ではありません。手元にない商品は値下がりのしようがないからです。</li>
+      <li><strong>貸借対照表の商品 ＝ 実地棚卸数量 × 正味売却価額</strong><br>上の2つを引いた残りです。図の緑の面積がこれにあたります。</li>
+    </ol>
+    <p class="small muted">正味売却価額が原価以上のときは商品評価損が発生しません。<strong>値上がりしても評価益は計上しない</strong>ため、このときは0として扱います。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">売上原価の計算に、減耗と評価損を含めるかは問題文が決める</span>
+    <p>棚卸減耗損と商品評価損を<strong>売上原価の内訳に含めるかどうか</strong>は、会社の方針によって変わります。問題文に「<strong>棚卸減耗損および商品評価損は売上原価の内訳項目とする</strong>」といった指示が必ずあります。</p>
+    <p>含める場合は仕入勘定へ振り替えるため、売上原価の金額そのものが変わります。含めない場合は販売費及び一般管理費（減耗損）や、独立の表示になります。<mark>金額が同じでも置き場所が変わり、売上総利益が変わります。</mark>表示区分の詳しい扱いは UNIT 02 で扱います。</p>
+    <p>指示が見つからないまま自分で決めると、売上総利益から下の利益がすべてずれます。<strong>商品の整理事項を読んだら、この一文を探してから計算を始めてください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>貸倒引当金 — 差額補充法と「どの債権に何％か」</h2>
+
+  <p class="small muted">3級および Phase 1 で学んだ内容です。</p>
+
+  <p>処理そのものは3級と同じ<strong>差額補充法</strong>です。設定額から決算整理前の残高を引いた差額だけを繰り入れます。2級で難しくなるのは金額の計算ではなく、<strong>どの債権にいくらの率を掛けるか</strong>という区分けのほうです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>論点</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td class="d">対象になる債権</td><td>受取手形・売掛金・電子記録債権・貸付金・未収入金など。<strong>前払金や仮払金は債権ではあっても貸倒引当金の対象にしない</strong>のが通常で、問題文の指示に従う</td></tr>
+        <tr><td class="d">率が複数あるとき</td><td>「一般債権には2%、貸倒懸念債権には50%」のように分かれる。<strong>該当する債権を先に除いてから</strong>、残りに一般の率を掛ける</td></tr>
+        <tr><td class="d">営業債権と営業外債権</td><td>繰入額の<strong>表示区分が違う</strong>。営業債権（売掛金・受取手形）分は販売費及び一般管理費、貸付金など営業外債権分は営業外費用</td></tr>
+        <tr><td class="d">設定額 &lt; 残高のとき</td><td>差額を<strong>貸倒引当金戻入</strong>として収益に計上する</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">決算整理前残高をそのまま使わない</span>
+    <p>貸倒引当金の計算で最も多い誤りは、<strong>他の整理事項で債権残高が動いているのに気づかないこと</strong>です。</p>
+    <ul>
+      <li>外貨建売掛金の換算替え（この単元の第9節）で売掛金が増減する</li>
+      <li>売掛金の回収が未処理だった、という整理事項が別にある</li>
+      <li>当期に発生した売掛金が貸し倒れた、という処理が先にある</li>
+    </ul>
+    <p>いずれも<mark>貸倒引当金の設定は、これらを反映した後の残高に対して行います。</mark>だから貸倒引当金は「第3群 残高が要るもの」なのです。整理事項の番号順に上から解くと、まだ動いていない残高で計算してしまいます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>減価償却 — 期中取得と期中売却だけが難所</h2>
+
+  <p class="small muted">3級および Phase 1 で学んだ内容です。定率法・生産高比例法は2級の範囲です。</p>
+
+  <p>期首から期末まで丸1年保有していた資産の減価償却は、計算式に当てはめるだけです。第3問で時間を取られるのは<strong>月割りが必要なケース</strong>に限られます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>方法</th><th>計算式</th><th>注意点</th></tr></thead>
+      <tbody>
+        <tr><td class="d">定額法</td><td>（取得原価 − 残存価額）÷ 耐用年数</td><td>残存価額ゼロの問題が多い。<strong>ゼロと書いてあるか必ず見る</strong></td></tr>
+        <tr><td class="d">定率法</td><td>期首帳簿価額 × 償却率</td><td>取得原価ではなく<strong>期首帳簿価額</strong>（取得原価 − 期首の減価償却累計額）に掛ける</td></tr>
+        <tr><td class="d">生産高比例法</td><td>（取得原価 − 残存価額）× 当期利用量 ÷ 総利用可能量</td><td>時の経過ではなく<strong>使った量</strong>で配分するので、月割りしない</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">定率法で取得原価に償却率を掛けない</span>
+    <p>定額法に慣れていると、定率法でも取得原価に掛けてしまいます。<strong>定率法が掛けるのは期首帳簿価額</strong>です。取得原価から期首時点の減価償却累計額を引いた残りを先に出してください。</p>
+    <p>ただし<strong>当期に取得した資産は、期首帳簿価額＝取得原価</strong>です。まだ償却していないので累計額がありません。ここは引き算が不要になります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">月割りの数え方</span>
+    <p>期中に取得した資産は、<strong>取得した月から決算月までの月数</strong>で按分します。取得した月自体を1か月として数えるのが通常です。</p>
+    <p>たとえば決算日が3月31日、11月1日に取得した備品なら、11月・12月・1月・2月・3月の<strong>5か月</strong>です。「11月から3月まで」を引き算で 3 − 11 と考えると混乱するので、<mark>指を折って数えるほうが確実です。</mark></p>
+    <p>期中に売却・除却した資産も同じで、<strong>期首から売却した月まで</strong>の減価償却費を計上してから売却の処理をします。なお第3問で売却・除却が整理事項として出た場合は、その資産の減価償却費と減価償却累計額を期末の一覧から除くことを忘れないでください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>有価証券 — 保有目的で評価が決まる</h2>
+
+  <p class="small muted">Phase 1 で学んだ内容です。</p>
+
+  <p>有価証券の決算整理は、<strong>保有目的を確定させれば処理が一意に決まります。</strong>迷うとすれば、目的の読み取りのほうです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>保有目的</th><th>貸借対照表の科目と価額</th><th>評価差額の行き先</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売買目的有価証券</td><td>売買目的有価証券（<strong>時価</strong>）</td><td><strong>有価証券評価損益</strong>（営業外収益または営業外費用）</td></tr>
+        <tr><td class="d">満期保有目的債券</td><td>満期保有目的債券（<strong>取得原価</strong>、または償却原価）</td><td>償却原価法による加減額は<strong>有価証券利息</strong>（営業外収益）</td></tr>
+        <tr><td class="d">子会社株式・関連会社株式</td><td>関係会社株式（<strong>取得原価</strong>）</td><td><strong>評価替えしない</strong></td></tr>
+        <tr><td class="d">その他有価証券</td><td>投資有価証券（<strong>時価</strong>）</td><td><strong>その他有価証券評価差額金</strong>（純資産）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ その他有価証券の差額だけ純資産に行くのか</span>
+    <p>売買目的有価証券は、値上がりしたらすぐ売って利益を実現させる前提で持っています。時価の変動がそのまま成果なので、<strong>損益計算書に載せる</strong>のが理にかないます。</p>
+    <p>その他有価証券は違います。取引関係の維持などが目的で、<strong>すぐ売るつもりがありません。</strong>売らないものの値動きを当期の利益に混ぜると、実際には手にしていない利益で利益が上下します。</p>
+    <p>かといって時価を貸借対照表に載せないのも実態に合わない。そこで<mark>貸借対照表は時価にするが、差額は損益を通さず純資産に直接入れる</mark>という扱いになりました。これが<span class="term"><span class="term__w">全部純資産直入法</span><span class="term__r">ぜんぶじゅんしさんちょくにゅうほう</span></span>です。2級ではこの方法だけを扱います。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">その他有価証券評価差額金は、翌期首に振り戻す</span>
+    <p>その他有価証券の評価替えは<strong>洗替法</strong>です。決算で時価に評価替えしたあと、翌期首に取得原価へ戻す仕訳を切ります。売買目的有価証券も2級では洗替法で扱うのが原則です。</p>
+    <p>第3問では当期の決算整理だけを問われることが多いので振り戻しが直接出るとは限りませんが、<strong>決算整理前残高試算表の有価証券が取得原価のまま載っている理由</strong>がこれです。前期末に時価評価したはずなのに取得原価に戻っている、という状態を不審に思わないために知っておく必要があります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">税効果会計が絡むのは その他有価証券</span>
+    <p>その他有価証券の評価差額には、通常<strong>税効果会計を適用します。</strong>評価差額金を税引後の金額にするためです。第11節で扱います。</p>
+    <p>売買目的有価証券の評価損益にも理屈のうえでは税効果が生じますが、<strong>2級の第3問で税効果の対象として示されるのは、その他有価証券の評価差額・貸倒引当金の繰入限度超過額・減価償却の償却限度超過額が中心</strong>です。問題文が指定した項目だけを処理してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>無形固定資産とその他の引当金</h2>
+
+  <p class="small muted">Phase 1 で学んだ内容です。</p>
+
+  <h3>無形固定資産の償却</h3>
+
+  <p>のれん・特許権・商標権・ソフトウェアは、いずれも<strong>残存価額ゼロの定額法・直接法</strong>で償却します。有形固定資産との違いを押さえてください。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>項目</th><th>有形固定資産</th><th>無形固定資産</th></tr></thead>
+      <tbody>
+        <tr><td class="d">記帳方法</td><td>間接法（減価償却累計額を使う）</td><td><strong>直接法</strong>（科目自体を減らす）</td></tr>
+        <tr><td class="d">残存価額</td><td>問題文の指定による</td><td><strong>常にゼロ</strong></td></tr>
+        <tr><td class="d">貸借対照表の表示</td><td>取得原価と累計額を両方示す形もある</td><td><strong>未償却残高だけ</strong></td></tr>
+        <tr><td class="d">償却科目</td><td>減価償却費</td><td>のれん償却・特許権償却・ソフトウェア償却</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">のれんの償却期間は20年以内。ただし問題文が優先</span>
+    <p>のれんは<strong>20年以内</strong>に定額法その他の合理的な方法で償却します。問題文はたいてい「10年で償却」のように具体的に指定してくるので、<strong>20年という上限を答案に使う場面はほとんどありません。</strong>覚えておくべきは「必ず償却する」ことのほうです。</p>
+    <p>また、のれんが<strong>期中に生じた</strong>場合は月割りになります。「当期首に取得した」と書いてあれば12か月分、「当期10月1日に吸収合併」なら3月決算で6か月分です。</p>
+  </div>
+
+  <h3>引当金の設定</h3>
+
+  <p>貸倒引当金以外の引当金も、決算整理で設定します。いずれも<strong>当期の費用として繰り入れ、負債として計上する</strong>という形は共通です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>引当金</th><th>費用の科目</th><th>貸借対照表の区分</th></tr></thead>
+      <tbody>
+        <tr><td class="d">退職給付引当金</td><td>退職給付費用</td><td><strong>固定負債</strong></td></tr>
+        <tr><td class="d">賞与引当金</td><td>賞与引当金繰入</td><td>流動負債</td></tr>
+        <tr><td class="d">修繕引当金</td><td>修繕引当金繰入</td><td>流動負債</td></tr>
+        <tr><td class="d">商品保証引当金</td><td>商品保証引当金繰入</td><td>流動負債</td></tr>
+        <tr><td class="d">貸倒引当金</td><td>貸倒引当金繰入</td><td><strong>資産から控除</strong>（負債ではない）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">退職給付引当金だけが固定負債</span>
+    <p>退職給付引当金は、従業員が退職するときに支払う見積額です。<strong>支払いが1年以内に来るとは限らない</strong>ので固定負債に置きます。</p>
+    <p>他の引当金は翌期中に支払いや履行が見込まれるため流動負債です。<strong>貸倒引当金だけは負債ですらありません。</strong>債権の回収不能見込額なので、貸借対照表では該当する債権から控除する形で表示します。この違いは UNIT 02 の表示区分で繰り返し扱います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>外貨建ての換算 — 決算日に換算し直すもの・しないもの</h2>
+
+  <p class="small muted">Phase 1 で学んだ内容です。</p>
+
+  <p>外貨建取引は、取引時の為替相場で円に換算して記帳します。問題は決算日です。<strong>期末に持っている外貨建ての項目のうち、決算日の相場に換算し直すものと、しないものがあります。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">換算し直す基準は「将来、外貨で決済するかどうか」</span>
+    <p>売掛金 1,000ドルを持っているとします。この 1,000ドルは、いずれドルで入金されます。<strong>入金される日の相場が円換算額を決める</strong>ので、決算日時点の相場で見直すのが実態に近い。だから換算し直します。</p>
+    <p>いっぽう、前払金 1,000ドルはすでに払い終わっています。あとは商品を受け取るだけで、<strong>お金のやり取りは残っていません。</strong>為替相場が動いても受け取る商品は変わらないので、換算し直す理由がありません。取引時の円換算額のまま据え置きます。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>期末に持っているもの</th><th>決算日に換算し直すか</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td class="d">外貨建の売掛金・受取手形</td><td><strong>する</strong></td><td>将来ドルで入金される</td></tr>
+        <tr><td class="d">外貨建の買掛金・支払手形</td><td><strong>する</strong></td><td>将来ドルで支払う</td></tr>
+        <tr><td class="d">外貨建の電子記録債権・電子記録債務</td><td><strong>する</strong></td><td>将来ドルで決済する</td></tr>
+        <tr><td class="d">外貨預金</td><td><strong>する</strong></td><td>外貨そのもの</td></tr>
+        <tr><td class="c">前払金・前受金</td><td><strong>しない</strong></td><td>決済が済んでおり、残るのは商品の受け渡しだけ</td></tr>
+        <tr><td class="c">棚卸資産・固定資産</td><td><strong>しない</strong></td><td>お金ではなくモノ。取得時の円換算額が取得原価</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>換算し直した結果生じる差額は、<strong>為替差損益</strong>として処理します。損か益かで科目名が分かれる教材もありますが、日商の勘定科目表には「為替差損益」という1つの科目があり、これで処理できます。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で扱う外貨建取引は「営業取引」に限られる</span>
+    <p>出題区分表で2級の範囲とされているのは<strong>外貨建の営業取引</strong>です。商品を売って生じた売掛金、商品を仕入れて生じた買掛金がこれにあたります。</p>
+    <p>外貨建の<strong>貸付金・借入金</strong>のような資金の調達・運用に係る取引は<strong>1級の範囲</strong>です。決算整理の論点としても、区分表は<mark>「外貨建売上債権・仕入債務などの換算」</mark>と書いています。2級の第3問で換算の対象として示されるのは、売上債権と仕入債務が中心だと考えてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">為替予約が付いている債権債務は換算しない</span>
+    <p>為替予約（振当処理）が付いている外貨建債権債務は、<strong>予約時の先物相場で固定されている</strong>ため、決算日の相場で換算し直しません。予約によって将来の円換算額がすでに確定しているからです。</p>
+    <p>問題文に「この売掛金には為替予約が付されている」とあれば、<mark>決算整理の対象から外します。</mark>他の外貨建債権と一緒に換算してしまう誤りが起きやすいので、外貨建ての整理事項では予約の有無を先に確認してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>経過勘定と、最後に来る税金3点セット</h2>
+
+  <p class="small muted">3級で学んだ内容です。2級のテキストには載っていませんが、第3問ではほぼ毎回出ます。</p>
+
+  <h3>経過勘定</h3>
+
+  <p>4つの科目の向きを取り違えないことがすべてです。<strong>「払ったか／これから払うか」と「費用か収益か」の2軸</strong>で決まります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>費用</th><th>収益</th></tr></thead>
+      <tbody>
+        <tr><td class="d">すでにお金が動いた（前払い・前受け）</td><td><strong>前払費用</strong>（資産）</td><td><strong>前受収益</strong>（負債）</td></tr>
+        <tr><td class="d">まだお金が動いていない（未払い・未収）</td><td><strong>未払費用</strong>（負債）</td><td><strong>未収収益</strong>（資産）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>覚え方は「<strong>前払・未収は資産、前受・未払は負債</strong>」です。前払いは「まだサービスを受けられる権利」、未収は「もらえる権利」なので資産。前受けは「サービスを提供する義務」、未払いは「払う義務」なので負債になります。</p>
+
+  <h3>貯蔵品への振替</h3>
+
+  <p>収入印紙や郵便切手は、購入時に<strong>租税公課・通信費</strong>として費用処理しています。決算日に未使用分が残っていれば、<strong>貯蔵品</strong>（資産）へ振り替えます。翌期首に再振替します。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算日に未使用の収入印紙 18,000円、郵便切手 7,000円が残っていた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">貯蔵品</td><td class="d amt">25,000</td><td class="c">租税公課</td><td class="c amt">18,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">通信費</td><td class="c amt">7,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>消費税の精算（税抜方式）</h3>
+
+  <p>期中に積み上がった<strong>仮受消費税</strong>と<strong>仮払消費税</strong>を相殺し、差額を<strong>未払消費税</strong>とします。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>仮受消費税 840,000円、仮払消費税 560,000円を相殺し、差額を未払消費税とした</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">仮受消費税</td><td class="d amt">840,000</td><td class="c">仮払消費税</td><td class="c amt">560,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">未払消費税</td><td class="c amt">280,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>仮払のほうが大きければ、差額は<strong>未収還付消費税</strong>（資産）になります。税抜方式では消費税が損益計算書にまったく出てこない点も押さえてください。<strong>売上も仕入も税抜きの金額</strong>です。</p>
+
+  <h3>法人税等の計上</h3>
+
+  <p>税引前当期純利益が確定してから計算します。期中に中間納付していれば<strong>仮払法人税等</strong>が残高にあるので、それを差し引いた残りが<strong>未払法人税等</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>当期の法人税、住民税及び事業税を 1,350,000円と算定した。中間納付額 600,000円は仮払法人税等に計上されている</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">法人税、住民税及び事業税</td><td class="d amt">1,350,000</td><td class="c">仮払法人税等</td><td class="c amt">600,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">未払法人税等</td><td class="c amt">750,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">仮払法人税等を無視して全額を未払法人税等にしない</span>
+    <p>決算整理前残高試算表の借方に<strong>仮払法人税等</strong>が載っていたら、それは中間納付の記録です。<strong>これを消さずに残すと、貸借対照表に存在しない資産が残り、未払法人税等も過大になります。</strong></p>
+    <p>損益計算書に載る「法人税、住民税及び事業税」は<mark>年間の総額 1,350,000円</mark>であり、未払額の 750,000円ではありません。損益計算書と貸借対照表で違う金額が載る、という点が混乱のもとです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>税効果会計 — 決算整理の最後に一度だけ</h2>
+
+  <p class="small muted">Phase 1 で学んだ内容です。</p>
+
+  <p>会計上の費用と、税務上の損金は、認められる時期が食い違うことがあります。たとえば貸倒引当金を会計上100万円繰り入れても、税務上は60万円までしか損金に算入されないことがあります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">何が困るのか</span>
+    <p>法人税は<strong>税務上の所得</strong>に対して課されます。ところが損益計算書に載る「税引前当期純利益」は<strong>会計上の利益</strong>です。この2つがずれていると、<mark>税引前当期純利益と法人税等の金額が対応しなくなります。</mark></p>
+    <p>税引前利益が 1,000万円で税率30%なら、法人税等は300万円であってほしい。ところが損金にならない部分があると、実際の納税額は312万円といった額になります。読む人は「利益に対して税金が重すぎないか」と首をかしげます。</p>
+    <p>この差を調整し、<strong>税引前当期純利益に対応した税額を損益計算書に見せる</strong>のが税効果会計です。<strong>納税額そのものは1円も変わりません。</strong>損益計算書の見え方を整えるためだけの処理です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>状況</th><th>計上する科目</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td class="d">会計上の費用が税務上まだ認められない<br><span class="small muted">貸倒引当金の繰入限度超過額、減価償却の償却限度超過額など</span></td><td><strong>繰延税金資産</strong>（借方）<br><strong>法人税等調整額</strong>（貸方）</td><td>いま税金を多く払っているが、将来認められたときに減る。<strong>税金の前払い</strong></td></tr>
+        <tr><td class="d">その他有価証券の評価差益</td><td><strong>その他有価証券評価差額金</strong>を税引後にし、<strong>繰延税金負債</strong>を計上</td><td>損益を通さないので<strong>法人税等調整額を使わない</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">その他有価証券の税効果だけ、法人税等調整額を使わない</span>
+    <p>ここが2級の税効果でいちばん間違えやすい点です。</p>
+    <ul>
+      <li><strong>貸倒引当金や減価償却の税効果</strong>：相手科目は<strong>法人税等調整額</strong>。損益計算書の法人税等の下に出る</li>
+      <li><strong>その他有価証券の税効果</strong>：相手科目は<strong>その他有価証券評価差額金</strong>。損益計算書には一切出ない</li>
+    </ul>
+    <p>理由は単純で、<mark>その他有価証券の評価差額はそもそも損益を通っていない</mark>からです。損益を通っていないものに対して、損益計算書の税額を調整する意味がありません。評価差額金の側を税引後の金額に直すだけです。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>その他有価証券（取得原価 2,000,000円）の期末時価が 2,400,000円。実効税率30%として全部純資産直入法で処理する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">投資有価証券</td><td class="d amt">400,000</td><td class="c">繰延税金負債</td><td class="c amt">120,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">その他有価証券評価差額金</td><td class="c amt">280,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>評価差額 400,000円のうち、税金相当分 400,000 × 30% ＝ 120,000円を繰延税金負債とし、残りの <strong>280,000円</strong>が純資産に載る評価差額金です。<strong>時価と取得原価の差額がそのまま評価差額金になるわけではありません。</strong></p>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>補助簿から決算整理の材料を拾う</h2>
+
+  <p>第3問の資料は、決算整理前残高試算表だけではありません。<strong>補助簿の記帳内容が資料として添えられ、そこから決算整理に必要な数字を読み取らせる</strong>形があります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>補助簿</th><th>そこから何を拾うか</th></tr></thead>
+      <tbody>
+        <tr><td class="d">商品有高帳</td><td>期末商品の<strong>帳簿棚卸数量と単価</strong>。先入先出法・移動平均法・総平均法のどれで記帳しているかで単価が変わる</td></tr>
+        <tr><td class="d">固定資産台帳</td><td>資産ごとの<strong>取得日・取得原価・耐用年数・期首減価償却累計額</strong>。期中取得の月割りはここから読む</td></tr>
+        <tr><td class="d">得意先元帳（売掛金元帳）</td><td>得意先別の<strong>売掛金残高</strong>。特定の得意先だけ貸倒懸念債権として扱う指示に対応する</td></tr>
+        <tr><td class="d">当座預金出納帳</td><td>銀行勘定調整の材料。<strong>未渡小切手・未取付小切手</strong>などの未処理事項を拾う</td></tr>
+        <tr><td class="d">受取手形記入帳・支払手形記入帳</td><td>期末の手形残高と<strong>割引・裏書の有無</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ補助簿を読ませるのか</span>
+    <p>総勘定元帳には<strong>合計金額しか載りません。</strong>売掛金 4,500,000円と書いてあっても、その内訳がどの得意先にいくらかは分かりません。</p>
+    <p>ところが決算整理では内訳が必要になる場面があります。「A社への売掛金は貸倒懸念債権として50%の引当金を設定する」という指示を処理するには、<mark>A社分がいくらかを知らなければ計算できません。</mark>その情報を持っているのが補助簿です。</p>
+    <p>補助簿は「総勘定元帳の一部を詳しく記録した帳簿」であり、<strong>合計は必ず総勘定元帳の残高と一致します。</strong>この一致は検算に使えます。補助簿の内訳を足して試算表の残高と合わなければ、どこかを読み落としています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">固定資産台帳の「期首減価償却累計額」と当期の償却を混同しない</span>
+    <p>固定資産台帳には、期首時点の減価償却累計額が載っています。<strong>当期の減価償却費は、そこから自分で計算する数字</strong>であって、台帳に書いてある数字ではありません。</p>
+    <p>定率法の場合はとくに注意が要ります。期首帳簿価額 ＝ 取得原価 − <strong>期首</strong>減価償却累計額 であり、期末の累計額を使うと循環してしまいます。台帳の累計額がどの時点のものかを、必ず見出しで確認してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 14問</h2>
+
+  <p>解答欄は常に4行です。実際に使う行数は問題ごとに違い、<strong>空いた行は採点で無視されます。</strong>行数から科目数を推測しないでください。本番の第1問も同じ条件です。</p>
+
+  <div id="drill-seiri"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル・判断テスト・穴埋め</h2>
+
+  <p>第3問では、仕訳を書く前に金額を確定させる作業が大半を占めます。金額を出す力と、分岐を判断する力を別々に確認します。</p>
+
+  <div id="num-seiri"></div>
+
+  <div id="quiz-seiri"></div>
+
+  <div id="fill-seiri"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。この単元は復習が目的なので、<strong>チェックが付かない項目がそのまま、戻るべき単元を示しています。</strong></p>
+
+  <div class="progressbar" data-progress-for="#u1check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u1check">0 / 0 完了（0%）</div>
+
+  <div id="u1check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p2u01-w8u1-1"><label for="c1"><span class="cl__t">第3問で失点する3つの型を言える</span><span class="cl__d">取りこぼし・連鎖崩れ・置き場所の誤り。いずれも「知らない処理」が原因ではない</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p2u01-w8u1-2"><label for="c2"><span class="cl__t">決算整理項目を13項目、見ずに挙げられる</span><span class="cl__d">売上原価／棚卸減耗・評価損／貸倒引当金／減価償却／無形固定資産の償却／有価証券の評価替／その他の引当金／外貨換算／経過勘定／貯蔵品／消費税／法人税等／税効果</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p2u01-w8u1-3"><label for="c3"><span class="cl__t">法人税等と税効果を最後に回す理由を説明できる</span><span class="cl__d">税引前当期純利益が確定しないと計算できない。それ以外の項目に順序の制約はない</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p2u01-w8u1-4"><label for="c4"><span class="cl__t">第1群（独立して解ける項目）から手を付ける理由を言える</span><span class="cl__d">1〜2分で終わり他に影響しない。難しい項目で詰まっても、その点は確保されている</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p2u01-w8u1-5"><label for="c5"><span class="cl__t">棚卸減耗損と商品評価損の掛ける相手を間違えない</span><span class="cl__d">減耗損は「減った数量 × 原価」、評価損は「単価の下落幅 × 実地数量」。ボックス図の形がそのまま答え</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p2u01-w8u1-6"><label for="c6"><span class="cl__t">貸倒引当金を他の整理事項の後で計算する理由を言える</span><span class="cl__d">外貨換算や未処理の回収で債権残高が動く。決算整理前残高のまま計算すると誤る</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p2u01-w8u1-7"><label for="c7"><span class="cl__t">定率法が掛ける相手を取得原価と取り違えない</span><span class="cl__d">期首帳簿価額（取得原価 − 期首減価償却累計額）に償却率を掛ける。当期取得なら累計額がないので取得原価と一致する</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p2u01-w8u1-8"><label for="c8"><span class="cl__t">有価証券4分類の評価額と差額の行き先を表で書ける</span><span class="cl__d">売買目的は時価・損益へ、満期保有は取得原価または償却原価、子会社・関連会社は取得原価で評価替えなし、その他有価証券は時価・純資産へ</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p2u01-w8u1-9"><label for="c9"><span class="cl__t">その他有価証券の差額が純資産に入る理由を説明できる</span><span class="cl__d">すぐ売る前提がないため、手にしていない値動きを当期の利益に混ぜない。貸借対照表は時価にする</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p2u01-w8u1-10"><label for="c10"><span class="cl__t">無形固定資産が直接法・残存価額ゼロであると言える</span><span class="cl__d">累計額科目を使わず科目自体を減らす。貸借対照表には未償却残高だけが載る</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p2u01-w8u1-11"><label for="c11"><span class="cl__t">退職給付引当金だけが固定負債である理由を言える</span><span class="cl__d">支払いが1年以内に来るとは限らない。他の引当金は翌期中に履行が見込まれるため流動負債</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p2u01-w8u1-12"><label for="c12"><span class="cl__t">外貨建てで換算し直すもの・しないものを分けられる</span><span class="cl__d">将来外貨で決済するものは換算する。前払金・前受金や棚卸資産・固定資産は換算しない</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p2u01-w8u1-13"><label for="c13"><span class="cl__t">為替予約付きの債権債務を決算整理の対象から外せる</span><span class="cl__d">予約時の先物相場で将来の円換算額が確定しているため、決算日の相場で換算し直さない</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p2u01-w8u1-14"><label for="c14"><span class="cl__t">経過勘定4科目の資産・負債の別を即答できる</span><span class="cl__d">前払費用と未収収益が資産、前受収益と未払費用が負債。権利か義務かで決まる</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p2u01-w8u1-15"><label for="c15"><span class="cl__t">仮払法人税等を差し引いて未払法人税等を出せる</span><span class="cl__d">損益計算書に載るのは年間総額、貸借対照表に載るのは中間納付を引いた残り。2つは違う金額になる</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p2u01-w8u1-16"><label for="c16"><span class="cl__t">税効果会計が納税額を変えないと言える</span><span class="cl__d">税引前当期純利益に対応した税額を損益計算書に見せるための処理。実際に納める金額は1円も動かない</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p2u01-w8u1-17"><label for="c17"><span class="cl__t">その他有価証券の税効果で法人税等調整額を使わない理由を言える</span><span class="cl__d">評価差額がそもそも損益を通っていないため。評価差額金の側を税引後の金額に直す</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p2u01-w8u1-18"><label for="c18"><span class="cl__t">補助簿の合計が総勘定元帳の残高と一致することを検算に使える</span><span class="cl__d">内訳を足して試算表の残高と合わなければ、どこかを読み落としている</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p2u01-w8u1-19"><label for="c19"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>決算整理の処理を思い出せたら、次は<strong>その金額をどこに書くか</strong>です。第3問で問われるのは仕訳そのものではなく、損益計算書と貸借対照表の完成形です。UNIT 02 で表示区分をまとめて扱います。</p>
+    <p>この単元のドリルは、W8 の6日間にわたって<strong>毎日少しずつ回す</strong>のが効きます。まとめて1日で解くと、解いた記憶だけが残って判断は定着しません。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 2 教材 ／ W8 UNIT 01 決算整理の総ざらい</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '受取手形', '売掛金', '電子記録債権',
+    '繰越商品', '商品', '貯蔵品', '前払費用', '未収収益', '未収入金',
+    '仮払消費税', '仮払法人税等', '繰延税金資産',
+    '売買目的有価証券', '満期保有目的債券', '投資有価証券', '関係会社株式',
+    '建物', '備品', '機械装置', '土地', 'のれん', '特許権', 'ソフトウェア',
+    '貸倒引当金', '建物減価償却累計額', '備品減価償却累計額', '減価償却累計額',
+    '支払手形', '買掛金', '電子記録債務', '借入金', '未払金', '未払費用', '前受収益',
+    '仮受消費税', '未払消費税', '未払法人税等', '繰延税金負債',
+    '退職給付引当金',
+    '資本金', '繰越利益剰余金', 'その他有価証券評価差額金',
+    '売上', '受取利息', '有価証券利息', '受取配当金', '貸倒引当金戻入', '為替差損益',
+    '仕入', '売上原価', '棚卸減耗損', '商品評価損', '給料', '広告宣伝費', '支払家賃', '保険料',
+    '通信費', '租税公課', '減価償却費', 'のれん償却', '特許権償却', 'ソフトウェア償却',
+    '貸倒引当金繰入', '退職給付費用', '有価証券評価損益',
+    '支払利息', '法人税、住民税及び事業税', '法人税等調整額'
+  ];
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  BokiJournal.mount('#drill-seiri', {
+    title: '仕訳ドリル — 決算整理の総ざらい（14問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '決算にあたり、売上原価を仕入勘定で算定する。期首商品棚卸高は <strong>480,000円</strong>、期末商品棚卸高（帳簿）は <strong>530,000円</strong> である。なお、棚卸減耗および商品評価損は生じていない。',
+        debit: [['仕入', 480000], ['繰越商品', 530000]],
+        credit: [['繰越商品', 480000], ['仕入', 530000]],
+        hint: '「しいれ・くりしょう／くりしょう・しいれ」の2本です。',
+        explain: '<p>3級で習った<strong>売上原価を仕入勘定で算定する</strong>形です。2本の仕訳を切ります。</p><ol><li><strong>期首商品を仕入へ</strong>：仕入 480,000／繰越商品 480,000。期首にあった商品は当期に売られたと考え、売上原価に加えます。</li><li><strong>期末商品を仕入から抜く</strong>：繰越商品 530,000／仕入 530,000。売れ残った分は売上原価ではないので取り除き、資産として次期に繰り越します。</li></ol><p>結果として仕入勘定の残高が<strong>期首 ＋ 当期仕入 − 期末</strong>、つまり売上原価になります。繰越商品の残高は期末商品棚卸高 530,000円になります。</p><p>第3問では、この2本の処理が終わってから棚卸減耗損・商品評価損を計算する順序になります。</p>'
+      },
+      {
+        text: '期末商品について、帳簿棚卸数量 <strong>500個</strong>・原価 <strong>@800円</strong>、実地棚卸数量 <strong>480個</strong>・正味売却価額 <strong>@750円</strong> であった。<strong>棚卸減耗損と商品評価損</strong>を計上する仕訳を示しなさい。なお、いずれも売上原価の内訳項目とはしない。',
+        debit: [['棚卸減耗損', 16000], ['商品評価損', 24000]],
+        credit: [['繰越商品', 40000]],
+        hint: '減耗損の単価は原価、評価損の数量は実地です。',
+        explain: '<p><strong>棚卸減耗損</strong>：（500 − 480）× 800 ＝ <strong>16,000円</strong>。単価は<strong>原価 800円</strong>です。なくなった商品について値下がりを考える意味がありません。</p><p><strong>商品評価損</strong>：（800 − 750）× 480 ＝ <strong>24,000円</strong>。数量は<strong>実地 480個</strong>です。手元にない20個は値下がりのしようがありません。</p><p>貸方はどちらも<strong>繰越商品</strong>で、合計 16,000 ＋ 24,000 ＝ 40,000円を減らします。</p><p>結果として繰越商品の残高は 500 × 800 − 40,000 ＝ <strong>360,000円</strong>となり、これは 480個 × @750円 と一致します。貸借対照表に載る商品の金額です。</p>'
+      },
+      {
+        text: '売掛金 <strong>3,200,000円</strong> および受取手形 <strong>1,800,000円</strong> の期末残高に対し、<strong>2%</strong>の貸倒引当金を差額補充法により設定する。貸倒引当金の決算整理前残高は <strong>36,000円</strong> である。',
+        debit: [['貸倒引当金繰入', 64000]],
+        credit: [['貸倒引当金', 64000]],
+        hint: '設定額を先に出し、すでにある残高を引きます。',
+        explain: '<p><strong>設定額</strong>：(3,200,000 ＋ 1,800,000) × 2% ＝ 5,000,000 × 2% ＝ <strong>100,000円</strong>。</p><p><strong>繰入額</strong>：100,000 − 36,000 ＝ <strong>64,000円</strong>。差額補充法なので、不足分だけを繰り入れます。</p><p>全額の 100,000円を繰り入れてしまうと、貸倒引当金の残高が 136,000円になり、設定額を超えます。<strong>差額補充法では、決算整理後の貸倒引当金残高が設定額と一致する</strong>ことを確認してください。</p><p>なお、設定額より残高のほうが大きい場合は、差額を<strong>貸倒引当金戻入</strong>（収益）として処理します。</p>'
+      },
+      {
+        text: '備品（取得原価 <strong>2,400,000円</strong>、期首減価償却累計額 <strong>960,000円</strong>）について、<strong>定率法・償却率20%</strong>により減価償却を行う。記帳方法は間接法による。',
+        debit: [['減価償却費', 288000]],
+        credit: [['備品減価償却累計額', 288000]],
+        hint: '定率法が掛ける相手は取得原価ではありません。',
+        explain: '<p><strong>期首帳簿価額</strong>：2,400,000 − 960,000 ＝ <strong>1,440,000円</strong>。</p><p><strong>減価償却費</strong>：1,440,000 × 20% ＝ <strong>288,000円</strong>。</p><p>定率法が掛けるのは<strong>期首帳簿価額</strong>であって取得原価ではありません。取得原価 2,400,000 × 20% ＝ 480,000円としてしまうのが最も多い誤りです。</p><p>定額法に慣れていると取得原価に掛ける癖が出ます。<strong>定率法を見たら、まず取得原価から期首の減価償却累計額を引く</strong>という手順を固定してください。</p><p>間接法なので貸方は備品減価償却累計額です。備品そのものは減らしません。</p>'
+      },
+      {
+        text: '当期の <strong>11月1日</strong> に取得した機械装置 <strong>3,600,000円</strong> について、<strong>定額法・耐用年数6年・残存価額ゼロ・月割計算</strong>により減価償却を行う。決算日は <strong>3月31日</strong>、記帳方法は間接法による。',
+        debit: [['減価償却費', 250000]],
+        credit: [['減価償却累計額', 250000]],
+        hint: '11月・12月・1月・2月・3月。指を折って数えてください。',
+        explain: '<p><strong>年間の減価償却費</strong>：3,600,000 ÷ 6年 ＝ <strong>600,000円</strong>。残存価額がゼロなので取得原価をそのまま耐用年数で割ります。</p><p><strong>月数</strong>：11月・12月・1月・2月・3月の<strong>5か月</strong>。取得した月自体を1か月として数えます。</p><p><strong>当期の減価償却費</strong>：600,000 × 5 ÷ 12 ＝ <strong>250,000円</strong>。</p><p>月数を「3 − 11」のような引き算で出そうとすると年をまたぐところで混乱します。<strong>指を折って数えるほうが確実</strong>です。</p><p>なお、当期に取得したので期首減価償却累計額はゼロです。定率法の問題であっても、この場合は取得原価がそのまま期首帳簿価額になります。</p>'
+      },
+      {
+        text: 'のれん <strong>4,800,000円</strong>（当期首から数えて償却3年目、決算整理前残高は <strong>3,840,000円</strong>）について、<strong>取得年度から10年間の定額法</strong>により償却を行う。',
+        debit: [['のれん償却', 480000]],
+        credit: [['のれん', 480000]],
+        hint: '無形固定資産に累計額の科目はありません。',
+        explain: '<p><strong>償却額</strong>：4,800,000 ÷ 10年 ＝ <strong>480,000円</strong>。無形固定資産は<strong>残存価額ゼロの定額法</strong>なので、取得原価を償却年数で割るだけです。</p><p>注意点は貸方です。無形固定資産は<strong>直接法</strong>で記帳するため、「のれん減価償却累計額」のような科目は使わず、<mark>のれんという科目自体を直接減らします。</mark></p><p>決算整理前残高 3,840,000円は、取得原価 4,800,000円から2年分（960,000円）を償却した後の未償却残高です。<strong>償却額はこの残高からではなく、取得原価から計算します。</strong>定額法なので毎期同額です。</p><p>この仕訳の後ののれん残高は 3,840,000 − 480,000 ＝ 3,360,000円となり、これがそのまま貸借対照表に載ります。</p>'
+      },
+      {
+        text: '売買目的で保有する株式（取得原価 <strong>1,500,000円</strong>）の期末時価は <strong>1,370,000円</strong> であった。切放法ではなく洗替法によるものとして、決算整理仕訳を示しなさい。',
+        debit: [['有価証券評価損益', 130000]],
+        credit: [['売買目的有価証券', 130000]],
+        hint: '売買目的の評価差額は、損益計算書に出ます。',
+        explain: '<p><strong>評価差額</strong>：1,370,000 − 1,500,000 ＝ <strong>△130,000円</strong>。時価が取得原価を下回っているので評価損です。</p><p>売買目的有価証券は<strong>時価で評価し、差額を損益に計上</strong>します。すぐ売って利益を実現させる前提で持っているため、時価の変動がそのまま当期の成果だからです。</p><p>科目は<strong>有価証券評価損益</strong>を使います。借方に置けば損、貸方に置けば益を表します。損益計算書では営業外費用（または営業外収益）に表示されます。</p><p>貸方は売買目的有価証券そのものを 130,000円減らします。評価後の帳簿価額は 1,370,000円となり、貸借対照表にはこの金額が<strong>有価証券</strong>として流動資産に載ります。</p>'
+      },
+      {
+        text: 'その他有価証券として保有する株式（取得原価 <strong>2,500,000円</strong>）の期末時価は <strong>2,900,000円</strong> であった。<strong>全部純資産直入法</strong>により処理する。なお、<strong>法定実効税率30%</strong>として税効果会計を適用する。',
+        debit: [['投資有価証券', 400000]],
+        credit: [['繰延税金負債', 120000], ['その他有価証券評価差額金', 280000]],
+        hint: '時価と取得原価の差額が、そのまま評価差額金になるわけではありません。',
+        explain: '<p><strong>評価差額</strong>：2,900,000 − 2,500,000 ＝ <strong>400,000円</strong>の評価益です。</p><p>その他有価証券は時価で評価しますが、差額は<strong>損益を通しません。</strong>すぐ売る前提がないため、手にしていない値動きを当期の利益に混ぜないという考え方です。</p><p>税効果を適用するので、評価差額 400,000円を2つに分けます。</p><ol><li><strong>繰延税金負債</strong>：400,000 × 30% ＝ <strong>120,000円</strong></li><li><strong>その他有価証券評価差額金</strong>：400,000 − 120,000 ＝ <strong>280,000円</strong></li></ol><p>ここで<strong>法人税等調整額を使わない</strong>点が最大の注意点です。評価差額がそもそも損益を通っていないため、損益計算書の税額を調整する意味がありません。純資産に載る評価差額金の側を税引後の金額に直すだけです。</p><p>貸借対照表では、投資有価証券 2,900,000円が投資その他の資産に、その他有価証券評価差額金 280,000円が純資産の評価・換算等差額等に載ります。</p>'
+      },
+      {
+        text: '外貨建ての売掛金 <strong>10,000ドル</strong>（取引時の為替相場 1ドル <strong>142円</strong> で換算し、<strong>1,420,000円</strong> で計上済み）について、決算日の為替相場 1ドル <strong>136円</strong> により換算替えを行う。',
+        debit: [['為替差損益', 60000]],
+        credit: [['売掛金', 60000]],
+        hint: '円高になると、ドル建ての債権の円換算額は減ります。',
+        explain: '<p><strong>決算日の円換算額</strong>：10,000ドル × 136円 ＝ <strong>1,360,000円</strong>。</p><p><strong>差額</strong>：1,360,000 − 1,420,000 ＝ <strong>△60,000円</strong>。帳簿の売掛金を 60,000円減らします。</p><p>売掛金は将来ドルで入金されるため、<strong>決算日の相場で換算し直します。</strong>1ドル142円から136円へ円高が進んだので、同じ10,000ドルでも受け取れる円が減りました。</p><p>差額は<strong>為替差損益</strong>で処理します。借方に置いているので損失を表し、損益計算書では営業外費用に表示されます。</p><p>なお、この処理によって<strong>売掛金の残高が動いています。</strong>貸倒引当金を設定するときは、換算替え後の残高 1,360,000円に対して計算してください。先に貸倒引当金を計算すると誤ります。</p>'
+      },
+      {
+        text: '決算にあたり、<strong>保険料の前払分 84,000円</strong> と <strong>支払家賃の未払分 150,000円</strong> を計上する。なお、保険料は「支払家賃」以外の費用科目として処理されており、前払分は<strong>前払費用</strong>、未払分は<strong>未払費用</strong>で処理すること。',
+        debit: [['前払費用', 84000], ['支払家賃', 150000]],
+        credit: [['保険料', 84000], ['未払費用', 150000]],
+        hint: '前払いは資産、未払いは負債です。',
+        explain: '<p><strong>前払分</strong>：すでに払ったが、まだサービスを受けていない分です。<strong>翌期にサービスを受けられる権利</strong>なので資産になります。当期の費用から取り除くため、貸方を保険料とします。</p><p><strong>未払分</strong>：まだ払っていないが、すでにサービスを受けた分です。<strong>払う義務</strong>なので負債になります。当期の費用として計上するため、借方を支払家賃とします。</p><p>4科目の向きは「<strong>前払・未収は資産、前受・未払は負債</strong>」で覚えます。前払いは受けられる権利、未収はもらえる権利。前受けは提供する義務、未払いは払う義務です。</p><p>いずれの科目も、翌期首に<strong>再振替仕訳</strong>で元の費用・収益科目へ戻します。</p>'
+      },
+      {
+        text: '決算にあたり、未使用の<strong>収入印紙 32,000円</strong> と <strong>郵便切手 9,000円</strong> が残っていることが判明した。購入時にそれぞれ<strong>租税公課</strong>・<strong>通信費</strong>として処理している。',
+        debit: [['貯蔵品', 41000]],
+        credit: [['租税公課', 32000], ['通信費', 9000]],
+        hint: '未使用分は当期の費用ではありません。',
+        explain: '<p>収入印紙も郵便切手も、購入した時点で全額を費用にしています。ところが決算日に未使用分が残っているなら、<strong>その分はまだ消費していない</strong>ので当期の費用ではありません。</p><p>未使用分を費用から取り除き、<strong>貯蔵品</strong>（資産）へ振り替えます。32,000 ＋ 9,000 ＝ <strong>41,000円</strong>です。</p><p>貸方は購入時に使った科目へ戻します。収入印紙は<strong>租税公課</strong>、郵便切手は<strong>通信費</strong>です。この対応を取り違えると、損益計算書の販売費及び一般管理費の内訳が合わなくなります。</p><p>翌期首に再振替仕訳を行い、貯蔵品を元の費用科目へ戻します。3級の論点ですが、第3問ではほぼ毎回出ます。</p>'
+      },
+      {
+        text: '決算にあたり、消費税の処理を行う。<strong>仮受消費税 1,260,000円</strong>、<strong>仮払消費税 890,000円</strong> が計上されている。税抜方式による。',
+        debit: [['仮受消費税', 1260000]],
+        credit: [['仮払消費税', 890000], ['未払消費税', 370000]],
+        hint: '預かった税から、支払った税を引いた残りを納めます。',
+        explain: '<p>税抜方式では、売上に含まれる消費税を<strong>仮受消費税</strong>（預かったもの）、仕入や経費に含まれる消費税を<strong>仮払消費税</strong>（支払ったもの）として期中に積み上げています。</p><p>決算で両者を相殺し、差額を納付額とします。</p><p>1,260,000 − 890,000 ＝ <strong>370,000円</strong>が<strong>未払消費税</strong>（流動負債）です。</p><p>借方に仮受消費税、貸方に仮払消費税を置いて、両方の残高をゼロにする点が要点です。<strong>どちらの科目も貸借対照表には残りません。</strong></p><p>仮払のほうが大きい場合は、差額が<strong>未収還付消費税</strong>（資産）になります。また、税抜方式では消費税が損益計算書にまったく出てきません。売上も仕入も税抜きの金額です。</p>'
+      },
+      {
+        text: '当期の法人税、住民税及び事業税を <strong>2,180,000円</strong> と算定した。なお、中間申告により <strong>950,000円</strong> を納付しており、<strong>仮払法人税等</strong>として処理している。',
+        debit: [['法人税、住民税及び事業税', 2180000]],
+        credit: [['仮払法人税等', 950000], ['未払法人税等', 1230000]],
+        hint: '中間納付した分は、すでに払い終わっています。',
+        explain: '<p><strong>損益計算書に載る金額</strong>：年間の総額 <strong>2,180,000円</strong>です。</p><p><strong>貸借対照表に載る金額</strong>：2,180,000 − 950,000 ＝ <strong>1,230,000円</strong>。中間納付済みの分を差し引いた、これから納める額です。</p><p>この2つが違う金額になる点が混乱のもとです。損益計算書は<strong>当期に負担した税金の総額</strong>を示し、貸借対照表は<strong>決算日時点の未払残高</strong>を示します。役割が違います。</p><p>決算整理前残高試算表の借方に仮払法人税等が載っていたら、それは中間納付の記録です。<strong>これを消さずに残すと、存在しない資産が貸借対照表に残り、未払法人税等も過大になります。</strong></p><p>なお、法人税等は税引前当期純利益が確定してからでないと計算できないため、決算整理の最後に処理します。</p>'
+      },
+      {
+        text: '貸倒引当金の繰入額のうち <strong>400,000円</strong> が税務上損金に算入されなかった。<strong>法定実効税率30%</strong>として税効果会計を適用する。なお、期首における一時差異はなかったものとする。',
+        debit: [['繰延税金資産', 120000]],
+        credit: [['法人税等調整額', 120000]],
+        hint: 'いま税金を多く払っていますが、将来認められたときに減ります。',
+        explain: '<p><strong>繰延税金資産</strong>：400,000 × 30% ＝ <strong>120,000円</strong>。</p><p>会計上は 400,000円を費用にしたのに、税務上は損金として認められませんでした。その結果、<strong>いま納める税金が 120,000円多くなっています。</strong></p><p>しかしこの 400,000円は、将来（実際に貸し倒れたときなど）に損金として認められます。そのとき税金が 120,000円減ります。つまり<mark>いま多く払っている分は、税金の前払いにあたります。</mark>これを資産として計上するのが<strong>繰延税金資産</strong>です。</p><p>相手科目は<strong>法人税等調整額</strong>です。貸方に置くことで、損益計算書上の法人税等が 120,000円減ったように見せ、税引前当期純利益と対応させます。</p><p><strong>実際に納める税額は1円も変わりません。</strong>損益計算書の見え方を整えるためだけの処理です。</p><p>なお、その他有価証券の評価差額に税効果を適用する場合は、相手科目が法人税等調整額ではなく<strong>その他有価証券評価差額金</strong>になります。損益を通っていないためです。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-seiri', {
+    title: '計算ドリル — 決算整理の金額を出す（8問）',
+    unit: '円',
+    questions: [
+      {
+        text: '期末商品について、帳簿棚卸数量 <strong>600個</strong>・原価 <strong>@1,200円</strong>、実地棚卸数量 <strong>570個</strong>・正味売却価額 <strong>@1,050円</strong> であった。<strong>棚卸減耗損</strong>・<strong>商品評価損</strong>・<strong>貸借対照表に載る商品の金額</strong>をそれぞれ求めなさい。',
+        labels: ['棚卸減耗損', '商品評価損', '貸借対照表の商品'],
+        answer: [36000, 85500, 598500],
+        formula: ['(600-570)*1200', '(1200-1050)*570', '570*1050'],
+        hint: '減耗損の単価は原価、評価損の数量は実地。残りが貸借対照表の商品です。',
+        explain: '<p><strong>棚卸減耗損</strong>：(600 − 570) × 1,200 ＝ <strong>36,000円</strong>。単価は原価です。</p><p><strong>商品評価損</strong>：(1,200 − 1,050) × 570 ＝ <strong>85,500円</strong>。数量は実地です。</p><p><strong>貸借対照表の商品</strong>：570 × 1,050 ＝ <strong>598,500円</strong>。</p><p>検算します。帳簿上の金額は 600 × 1,200 ＝ 720,000円。ここから 36,000 ＋ 85,500 ＝ 121,500円を引くと 598,500円となり、実地数量 × 正味売却価額と一致します。<strong>この検算が合わなければ、どちらかの掛ける相手を間違えています。</strong></p>'
+      },
+      {
+        text: '決算整理前の売掛金残高は <strong>4,800,000円</strong> であるが、このうち <strong>600,000円</strong> は得意先A社に対するもので、<strong>貸倒懸念債権</strong>として <strong>50%</strong> の貸倒引当金を設定する。残りの売掛金には <strong>3%</strong> を設定する。貸倒引当金の決算整理前残高は <strong>95,000円</strong> である。<strong>貸倒引当金の設定額</strong>と<strong>繰入額</strong>を求めなさい。',
+        labels: ['設定額', '繰入額'],
+        answer: [426000, 331000],
+        formula: ['600000*0.5+(4800000-600000)*0.03', '600000*0.5+(4800000-600000)*0.03-95000'],
+        hint: '該当する債権を先に除いてから、残りに一般の率を掛けます。',
+        explain: '<p><strong>貸倒懸念債権</strong>：600,000 × 50% ＝ <strong>300,000円</strong>。</p><p><strong>一般債権</strong>：(4,800,000 − 600,000) × 3% ＝ 4,200,000 × 3% ＝ <strong>126,000円</strong>。</p><p><strong>設定額</strong>：300,000 ＋ 126,000 ＝ <strong>426,000円</strong>。</p><p><strong>繰入額</strong>：426,000 − 95,000 ＝ <strong>331,000円</strong>。差額補充法なので不足分だけを繰り入れます。</p><p>よくある誤りは、A社分 600,000円を除かずに 4,800,000円全額に3%を掛けてしまうことです。<mark>個別に率が指定された債権は、先に取り除く</mark>という順序を固定してください。</p>'
+      },
+      {
+        text: '備品（取得原価 <strong>3,000,000円</strong>、期首減価償却累計額 <strong>1,080,000円</strong>）について、<strong>定率法・償却率25%</strong>で減価償却を行う。また、当期 <strong>9月1日</strong> に取得した備品 <strong>1,440,000円</strong> についても同じ定率法・償却率25%・<strong>月割計算</strong>で償却する。決算日は <strong>3月31日</strong> である。<strong>既存分の減価償却費</strong>と<strong>当期取得分の減価償却費</strong>を求めなさい。',
+        labels: ['既存分', '当期取得分'],
+        answer: [480000, 210000],
+        formula: ['(3000000-1080000)*0.25', '1440000*0.25*7/12'],
+        hint: '当期取得分には期首減価償却累計額がありません。月数は9月から3月まで。',
+        explain: '<p><strong>既存分</strong>：期首帳簿価額 3,000,000 − 1,080,000 ＝ 1,920,000円。これに 25% を掛けて <strong>480,000円</strong>。</p><p><strong>当期取得分</strong>：当期に取得したので期首減価償却累計額はゼロ、つまり<strong>期首帳簿価額 ＝ 取得原価 1,440,000円</strong>です。</p><p>1,440,000 × 25% ＝ 360,000円が年間の償却額。月数は9月・10月・11月・12月・1月・2月・3月の<strong>7か月</strong>なので、360,000 × 7 ÷ 12 ＝ <strong>210,000円</strong>。</p><p>当期の減価償却費の合計は 480,000 ＋ 210,000 ＝ 690,000円です。<strong>同じ備品という科目でも、取得時期が違えば別々に計算します。</strong></p>'
+      },
+      {
+        text: '外貨建ての債権債務が次のとおりある。<strong>売掛金 20,000ドル</strong>（取引時 1ドル <strong>145円</strong>）、<strong>買掛金 12,000ドル</strong>（取引時 1ドル <strong>150円</strong>）、<strong>前払金 5,000ドル</strong>（取引時 1ドル <strong>148円</strong>）。決算日の為替相場は 1ドル <strong>140円</strong> である。<strong>売掛金の換算差額</strong>（減少額）と<strong>買掛金の換算差額</strong>（減少額）を求めなさい。なお前払金は換算替えの対象外である。',
+        labels: ['売掛金の減少額', '買掛金の減少額'],
+        answer: [100000, 120000],
+        formula: ['20000*145-20000*140', '12000*150-12000*140'],
+        hint: '前払金は決済が済んでいるので換算しません。',
+        explain: '<p><strong>売掛金</strong>：20,000 × 145 ＝ 2,900,000円 → 20,000 × 140 ＝ 2,800,000円。<strong>100,000円の減少</strong>です。受け取れる円が減ったので為替差損になります。</p><p><strong>買掛金</strong>：12,000 × 150 ＝ 1,800,000円 → 12,000 × 140 ＝ 1,680,000円。<strong>120,000円の減少</strong>です。払う円が減ったので為替差益になります。</p><p><strong>前払金</strong>：換算替えしません。すでに支払いが済んでおり、残るのは商品を受け取ることだけです。為替相場が動いても受け取る商品は変わらないので、換算し直す理由がありません。</p><p>この設問の為替差損益は、差損 100,000円と差益 120,000円が相殺されて<strong>差益 20,000円</strong>となります。損益計算書には相殺後の純額を営業外収益として表示します。</p>'
+      },
+      {
+        text: '税引前当期純利益が <strong>8,400,000円</strong>、法定実効税率は <strong>30%</strong> である。当期において、減価償却の償却限度超過額 <strong>500,000円</strong> が損金に算入されなかった。他に一時差異はなく、期首の一時差異もない。この場合の<strong>損益計算書に載る法人税、住民税及び事業税</strong>と<strong>法人税等調整額</strong>を求めなさい。',
+        labels: ['法人税、住民税及び事業税', '法人税等調整額'],
+        answer: [2670000, 150000],
+        formula: ['(8400000+500000)*0.3', '500000*0.3'],
+        hint: '課税所得は、会計上の利益に損金不算入額を足したものです。',
+        explain: '<p><strong>課税所得</strong>：8,400,000 ＋ 500,000 ＝ 8,900,000円。会計上は費用にしたが税務上は損金にならない 500,000円を足し戻します。</p><p><strong>法人税、住民税及び事業税</strong>：8,900,000 × 30% ＝ <strong>2,670,000円</strong>。これが実際に納める金額であり、損益計算書に載る金額です。</p><p><strong>法人税等調整額</strong>：500,000 × 30% ＝ <strong>150,000円</strong>。繰延税金資産を同額計上し、法人税等調整額を貸方に立てます。</p><p>損益計算書では 2,670,000 − 150,000 ＝ 2,520,000円が差し引かれ、当期純利益は 8,400,000 − 2,520,000 ＝ 5,880,000円になります。</p><p>これは 8,400,000 × (1 − 30%) と一致します。<mark>税引前当期純利益に税率を掛けた額が、そのまま税負担として見える</mark>——これが税効果会計の目的です。</p>'
+      },
+      {
+        text: 'その他有価証券として保有する株式の取得原価は <strong>6,000,000円</strong>、期末時価は <strong>5,400,000円</strong> である。<strong>全部純資産直入法</strong>により処理し、<strong>法定実効税率30%</strong>で税効果会計を適用する。計上される<strong>繰延税金資産</strong>の金額と、<strong>その他有価証券評価差額金</strong>の金額（借方残高としての絶対額）を求めなさい。',
+        labels: ['繰延税金資産', 'その他有価証券評価差額金'],
+        answer: [180000, 420000],
+        formula: ['(6000000-5400000)*0.3', '(6000000-5400000)*0.7'],
+        hint: '評価差損のときは、税効果が資産側に出ます。',
+        explain: '<p><strong>評価差額</strong>：5,400,000 − 6,000,000 ＝ △600,000円の評価損です。</p><p><strong>繰延税金資産</strong>：600,000 × 30% ＝ <strong>180,000円</strong>。評価損のときは将来の税負担が減る方向なので、資産側に出ます。</p><p><strong>その他有価証券評価差額金</strong>：600,000 × 70% ＝ <strong>420,000円</strong>。純資産の部にマイナス（借方残高）として表示されます。</p><p>仕訳は「繰延税金資産 180,000・その他有価証券評価差額金 420,000／投資有価証券 600,000」となります。</p><p>評価益のときと借方・貸方が入れ替わるだけで、<strong>税率を掛ける対象は同じく評価差額の総額</strong>です。ここでも法人税等調整額は登場しません。</p>'
+      },
+      {
+        text: '決算整理前残高試算表の<strong>仕入</strong>は <strong>18,600,000円</strong>、<strong>繰越商品</strong>は <strong>1,450,000円</strong> である。期末商品の帳簿棚卸高は <strong>1,720,000円</strong>、棚卸減耗損は <strong>80,000円</strong>、商品評価損は <strong>130,000円</strong> であった。<strong>棚卸減耗損と商品評価損をともに売上原価の内訳項目とする</strong>場合の<strong>売上原価</strong>と、<strong>ともに売上原価に含めない</strong>場合の<strong>売上原価</strong>をそれぞれ求めなさい。',
+        labels: ['内訳項目とする場合', '含めない場合'],
+        answer: [18540000, 18330000],
+        formula: ['1450000+18600000-1720000+80000+130000', '1450000+18600000-1720000'],
+        hint: '基本の売上原価を出してから、2つの損失を足すか足さないかです。',
+        explain: '<p><strong>基本の売上原価</strong>：期首 1,450,000 ＋ 当期仕入 18,600,000 − 期末（帳簿）1,720,000 ＝ <strong>18,330,000円</strong>。</p><p><strong>内訳項目とする場合</strong>：18,330,000 ＋ 80,000 ＋ 130,000 ＝ <strong>18,540,000円</strong>。</p><p><strong>含めない場合</strong>：<strong>18,330,000円</strong>のままです。減耗損と評価損は売上原価の外に、独立の科目として表示されます。</p><p>差は 210,000円で、そのまま<strong>売上総利益の差</strong>になります。金額はどちらも正しく計算されているのに、置き場所が違うだけで利益が変わるのです。</p><p><mark>どちらにするかは問題文の指示が決めます。</mark>「棚卸減耗損および商品評価損は売上原価の内訳項目として表示する」といった一文を必ず探してください。指示を読み落とすと、売上総利益から下の利益がすべてずれます。</p>'
+      },
+      {
+        text: '決算整理前残高試算表の<strong>仮払法人税等</strong>は <strong>1,140,000円</strong>、<strong>仮受消費税</strong>は <strong>2,450,000円</strong>、<strong>仮払消費税</strong>は <strong>1,780,000円</strong> である。当期の法人税、住民税及び事業税は <strong>2,600,000円</strong> と算定された。貸借対照表に流動負債として載る<strong>未払法人税等</strong>と<strong>未払消費税</strong>を求めなさい。',
+        labels: ['未払法人税等', '未払消費税'],
+        answer: [1460000, 670000],
+        formula: ['2600000-1140000', '2450000-1780000'],
+        hint: 'どちらも「すでに払った分を引く」という同じ形です。',
+        explain: '<p><strong>未払法人税等</strong>：2,600,000 − 1,140,000 ＝ <strong>1,460,000円</strong>。年間の税額から中間納付済みの額を引いた残りです。</p><p><strong>未払消費税</strong>：2,450,000 − 1,780,000 ＝ <strong>670,000円</strong>。預かった消費税から支払った消費税を引いた残りです。</p><p>2つとも<strong>流動負債</strong>に表示されます。翌期の早い時期に納付するためです。</p><p>なお、損益計算書に載る「法人税、住民税及び事業税」は <strong>2,600,000円</strong>であって 1,460,000円ではありません。<mark>損益計算書は当期に負担した総額、貸借対照表は決算日時点の未払残高</mark>という役割の違いを押さえてください。</p><p>消費税は税抜方式なので、損益計算書にはまったく出てきません。</p>'
+      }
+    ]
+  });
+
+  /* ========== 判断テスト ========== */
+  BokiQuiz.mount('#quiz-seiri', {
+    title: '判断テスト — 決算整理の分岐を決める（8問）',
+    questions: [
+      {
+        text: '第3問の決算整理を解くとき、<strong>最後に回さなければならない</strong>項目はどれですか。',
+        choices: [
+          '売上原価の算定と棚卸減耗損・商品評価損の計上',
+          '貸倒引当金の設定と減価償却',
+          '法人税等の計上と税効果会計'
+        ],
+        answer: 2,
+        explain: '<p>法人税等は<strong>税引前当期純利益 × 税率</strong>で計算します。税引前当期純利益は、他のすべての決算整理を終えなければ確定しません。したがって最後に回すしかありません。税効果会計も同様です。</p><p>売上原価・棚卸・貸倒引当金・減価償却は、互いに順序の制約がありません。貸倒引当金だけは「債権残高を動かす整理事項の後」という制約がありますが、それは第1群の外貨換算などとの関係であって、損益全体が確定している必要はありません。</p><p>順序が決まっているのはこの一点だけなので、<strong>残りは自由に並べ替えてよい</strong>ということでもあります。簡単な項目から先に片付けるのが得策です。</p>'
+      },
+      {
+        text: '商品評価損の計算で、<strong>単価の下落幅に掛ける数量</strong>として正しいものはどれですか。',
+        choices: [
+          '帳簿棚卸数量',
+          '実地棚卸数量',
+          '帳簿棚卸数量と実地棚卸数量の差'
+        ],
+        answer: 1,
+        explain: '<p>商品評価損は<strong>（原価 − 正味売却価額）× 実地棚卸数量</strong>で計算します。値下がりしたのは<strong>手元に実際にある商品</strong>だけだからです。</p><p>帳簿にはあるが実地にはない商品（減耗した分）は、すでに存在しません。存在しないものが値下がりすることはないので、評価損の対象にはなりません。</p><p>帳簿棚卸数量と実地棚卸数量の差に掛けるのは<strong>棚卸減耗損</strong>で、しかも掛ける単価は正味売却価額ではなく<strong>原価</strong>です。2つの計算は、掛ける数量も単価も違います。</p><p>ボックス図を描くと、減耗損は縦いっぱいの細長い長方形、評価損は実地数量の幅だけの横長の長方形になります。<strong>形の違いがそのまま計算式の違い</strong>です。</p>'
+      },
+      {
+        text: '決算整理前残高試算表に <strong>仮払法人税等</strong> が計上されている場合、この金額は何を表していますか。',
+        choices: [
+          '当期に納付すべき法人税等の総額',
+          '中間申告により、すでに納付した法人税等',
+          '税効果会計によって将来減額される税金'
+        ],
+        answer: 1,
+        explain: '<p>仮払法人税等は、<strong>中間申告により期中にすでに納付した法人税等</strong>を表します。年度の途中で概算額を前払いする制度で、決算で年税額が確定したときに精算します。</p><p>決算整理では、年税額を「法人税、住民税及び事業税」として借方に計上し、仮払法人税等を貸方で消し、差額を未払法人税等とします。<strong>仮払法人税等を消し忘れると、存在しない資産が貸借対照表に残り、未払法人税等も過大になります。</strong></p><p>当期に納付すべき総額は損益計算書に載る「法人税、住民税及び事業税」であり、仮払額を含んだ金額です。また、将来減額される税金を表すのは<strong>繰延税金資産</strong>という別の科目です。</p>'
+      },
+      {
+        text: '<strong>その他有価証券</strong>の評価差額に税効果会計を適用するとき、相手科目として使うものはどれですか。',
+        choices: [
+          '法人税等調整額',
+          'その他有価証券評価差額金',
+          '有価証券評価損益'
+        ],
+        answer: 1,
+        explain: '<p>その他有価証券の評価差額は、全部純資産直入法により<strong>損益を通さずに純資産へ直接入れます。</strong>損益を通っていないものについて、損益計算書の税額を調整する意味はありません。</p><p>したがって税効果の相手科目は<strong>その他有価証券評価差額金</strong>であり、評価差額金の側を税引後の金額に直します。損益計算書には一切現れません。</p><p>法人税等調整額を使うのは、<strong>貸倒引当金の繰入限度超過額や減価償却の償却限度超過額</strong>のように、損益を通った費用について税務上の取扱いがずれる場合です。</p><p>有価証券評価損益は売買目的有価証券の評価差額に使う科目で、税効果の相手科目ではありません。</p>'
+      },
+      {
+        text: '外貨建ての項目のうち、<strong>決算日の為替相場で換算し直さない</strong>ものはどれですか。',
+        choices: [
+          '外貨建の売掛金',
+          '外貨建の買掛金',
+          '外貨建の前払金'
+        ],
+        answer: 2,
+        explain: '<p>換算し直すかどうかの基準は<strong>「将来、外貨で決済するかどうか」</strong>です。</p><p>前払金はすでに支払いが完了しており、残っているのは<strong>商品を受け取ること</strong>だけです。為替相場が動いても受け取る商品は変わらないので、換算し直す理由がありません。取引時の円換算額のまま据え置きます。前受金も同じ理由で換算しません。</p><p>売掛金は将来ドルで入金され、買掛金は将来ドルで支払います。どちらも<strong>決済する日の相場が円換算額を左右する</strong>ので、決算日の相場で見直します。</p><p>なお、棚卸資産や固定資産も換算しません。お金ではなくモノであり、取得時の円換算額がそのまま取得原価になるためです。</p>'
+      },
+      {
+        text: '<strong>貸倒引当金の設定</strong>を、外貨建売掛金の換算替えより<strong>後に</strong>行うべき理由として正しいものはどれですか。',
+        choices: [
+          '換算替えによって売掛金の残高が変わり、引当金の計算基礎が動くため',
+          '為替差損益を貸倒引当金繰入と相殺する必要があるため',
+          '換算替えを先に行わないと、適用する貸倒実績率が変わるため'
+        ],
+        answer: 0,
+        explain: '<p>外貨建売掛金を決算日の相場で換算し直すと、<strong>売掛金の円換算額そのものが変わります。</strong>貸倒引当金は期末の債権残高に率を掛けて設定するので、換算替え前の残高で計算すると設定額が誤ります。</p><p>同じ理由で、「売掛金の回収が未記帳だった」「当期発生の売掛金が貸し倒れた」といった整理事項がある場合も、それらを処理した後の残高に対して引当金を設定します。</p><p>為替差損益と貸倒引当金繰入は別々の科目であり、相殺しません。損益計算書でも区分が違います（為替差損益は営業外、営業債権に対する貸倒引当金繰入は販売費及び一般管理費）。</p><p>また、貸倒実績率は問題文が与える条件であり、換算替えによって変わるものではありません。</p>'
+      },
+      {
+        text: '無形固定資産（のれん・特許権・ソフトウェア）の償却について、<strong>有形固定資産の減価償却と異なる</strong>点はどれですか。',
+        choices: [
+          '月割計算を行わない',
+          '残存価額をゼロとし、直接法で記帳する',
+          '定率法を使うことができる'
+        ],
+        answer: 1,
+        explain: '<p>無形固定資産は<strong>残存価額ゼロの定額法</strong>で償却し、<strong>直接法</strong>で記帳します。「のれん減価償却累計額」のような累計額科目は使わず、科目自体を直接減らします。その結果、貸借対照表には<strong>未償却残高だけ</strong>が載ります。</p><p>月割計算は有形固定資産と同じく行います。期中に取得したソフトウェアや期中に生じたのれんは、取得した月から決算月までの月数で按分します。</p><p>定率法は有形固定資産で使う方法であり、無形固定資産では使いません。無形固定資産の償却は定額法に限られます。</p>'
+      },
+      {
+        text: '第3問の資料に<strong>補助簿</strong>が添えられている場合、その使い方として正しいものはどれですか。',
+        choices: [
+          '補助簿の残高は総勘定元帳とは独立しているため、試算表の金額とは別に集計する',
+          '補助簿の合計は総勘定元帳の残高と一致するので、読み落としの検算に使える',
+          '補助簿は参考情報であり、決算整理の計算には使わない'
+        ],
+        answer: 1,
+        explain: '<p>補助簿は<strong>総勘定元帳の一部を詳しく記録した帳簿</strong>です。売掛金元帳の得意先別残高を全部足せば、総勘定元帳の売掛金残高と必ず一致します。</p><p>この一致は検算に使えます。<strong>内訳を足して試算表の残高と合わなければ、どこかを読み落としている</strong>という信号になります。</p><p>補助簿は参考情報どころか、決算整理に不可欠な材料です。総勘定元帳には合計金額しか載らないため、「A社への売掛金だけ50%の引当金を設定する」といった指示を処理するには、得意先別の内訳が要ります。固定資産台帳からは取得日・取得原価・期首減価償却累計額を、商品有高帳からは期末の帳簿棚卸数量と単価を読み取ります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-seiri', {
+    title: '穴埋め — 決算整理の用語（6問）',
+    questions: [
+      {
+        text: 'その他有価証券を時価で評価したときの評価差額を、損益計算書を通さずに純資産の部へ直接計上する方法を何といいますか。2級で扱うのはこの方法だけです。',
+        answer: ['全部純資産直入法', 'ぜんぶじゅんしさんちょくにゅうほう'],
+        explain: '<p>その他有価証券はすぐ売る前提がないため、手にしていない値動きを当期の利益に混ぜません。かといって時価を貸借対照表に載せないのも実態に合わないので、貸借対照表は時価にしつつ、差額は純資産へ直接入れます。</p><p>評価差額の一部だけを損益に計上する部分純資産直入法は1級の範囲です。</p>'
+      },
+      {
+        text: '会計上の費用と税務上の損金が認められる時期のずれを調整し、税引前当期純利益に対応した税額を損益計算書に示すための会計処理を何といいますか。',
+        answer: ['税効果会計', 'ぜいこうかかいけい'],
+        explain: '<p>納める税額そのものは1円も変わりません。損益計算書の見え方を整えるためだけの処理です。</p><p>相手科目は原則として法人税等調整額ですが、その他有価証券の評価差額に適用する場合だけは、評価差額がそもそも損益を通っていないため、その他有価証券評価差額金を相手科目とします。</p>'
+      },
+      {
+        text: '会計上は費用にしたが税務上まだ損金に算入されていない分について、将来の税金が減ることを表す資産の勘定科目は何ですか。',
+        answer: ['繰延税金資産', 'くりのべぜいきんしさん'],
+        explain: '<p>いま納める税金が多くなっている分は、将来その費用が損金として認められたときに減ります。つまり税金の前払いにあたるため、資産として計上します。</p><p>逆に、その他有価証券の評価差益のように将来の税負担が増える場合は、繰延税金負債を計上します。</p>'
+      },
+      {
+        text: '決算日に未使用のまま残っている収入印紙や郵便切手を、費用から振り替えて資産として計上するときに使う勘定科目は何ですか。',
+        answer: ['貯蔵品', 'ちょぞうひん'],
+        explain: '<p>購入時に租税公課・通信費として費用処理していますが、未使用分はまだ消費していないので当期の費用ではありません。収入印紙は租税公課へ、郵便切手は通信費へ戻す形で振り替えます。</p><p>3級の論点ですが第3問ではほぼ毎回出ます。翌期首に再振替仕訳を行います。</p>'
+      },
+      {
+        text: '外貨建の債権債務を決算日の為替相場で換算し直したときに生じる差額を処理する勘定科目は何ですか。',
+        answer: ['為替差損益', 'かわせさそんえき'],
+        explain: '<p>借方に置けば損失、貸方に置けば利益を表します。損益計算書では、差損と差益を相殺した純額を営業外費用または営業外収益に表示します。</p><p>なお、為替予約が付されている債権債務は予約時の先物相場で円換算額が確定しているため、決算日の相場で換算し直しません。</p>'
+      },
+      {
+        text: '総勘定元帳の特定の勘定について、得意先別や資産別といった内訳を詳しく記録する帳簿をまとめて何といいますか。売掛金元帳・固定資産台帳・商品有高帳などがこれにあたります。',
+        answer: ['補助簿', 'ほじょぼ'],
+        explain: '<p>総勘定元帳には合計金額しか載らないため、決算整理で内訳が必要になる場面では補助簿から読み取ります。</p><p>補助簿の合計は総勘定元帳の残高と必ず一致するので、内訳を足して試算表の残高と合うかを検算に使えます。合わなければどこかを読み落としています。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>
