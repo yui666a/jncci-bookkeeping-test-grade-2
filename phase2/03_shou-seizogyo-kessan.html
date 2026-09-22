@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="なし">
+<meta name="boki-subject" content="商">
+<title>製造業を営む会社の決算 — 日商簿記2級 Phase 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 2 目次</a>
+    <span class="topbar__title">UNIT 03 製造業を営む会社の決算</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W8 商業簿記 ／ UNIT 03 ／ 2時間</p>
+    <h1>製造業を営む会社の決算<br>— 商業簿記の第3問に、工業簿記の勘定が混ざる</h1>
+    <p class="lead">第3問はふだん商品売買業の決算ですが、<strong>製造業を営む会社</strong>が出題されることがあります。見慣れない勘定が並ぶので身構えがちですが、<mark>違うのは売上原価の中身だけ</mark>です。この単元では、第3問で問われる範囲に絞って、その違いだけを押さえます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 2h</span>
+      <span class="chip">商業簿記×工業簿記</span>
+      <span class="chip">計算ドリル 6問</span>
+      <span class="chip">判断テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">何が違い、何が同じなのか</a></li>
+      <li><a href="#s2">売上原価の計算が二段構えになる</a></li>
+      <li><a href="#s3">貸借対照表に並ぶ3つの棚卸資産</a></li>
+      <li><a href="#s4">減価償却費と労務費の行き先が分かれる</a></li>
+      <li><a href="#s5">原価差異の期末処理</a></li>
+      <li><a href="#s6">製造原価報告書という別の表</a></li>
+      <li><a href="#s7">解く順番</a></li>
+      <li><a href="#s8">計算ドリル・判断テスト・穴埋め</a></li>
+      <li><a href="#s9">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>何が違い、何が同じなのか</h2>
+
+  <p>製造業の第3問を前にして最初にやるべきことは、<strong>「どこが変わらないか」を確認すること</strong>です。変わらない部分のほうが圧倒的に多いからです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>そのまま同じもの</h3>
+      <ul class="small">
+        <li>貸倒引当金の設定</li>
+        <li>有価証券の評価替</li>
+        <li>経過勘定・貯蔵品</li>
+        <li>消費税・法人税等・税効果</li>
+        <li>損益計算書の7区分と5つの利益</li>
+        <li>貸借対照表の流動・固定分類</li>
+        <li>純資産の部の構造</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>変わるもの</h3>
+      <ul class="small">
+        <li><strong>売上原価の計算が二段構え</strong>になる</li>
+        <li>棚卸資産が<strong>材料・仕掛品・製品</strong>の3つになる</li>
+        <li>減価償却費と労務費が<strong>製造分と販管分に分かれる</strong></li>
+        <li><strong>原価差異</strong>を期末に処理する</li>
+        <li>問題によっては<strong>製造原価報告書</strong>も作る</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ売上原価だけが変わるのか</span>
+    <p>商品売買業は、<strong>買ってきたものをそのまま売ります。</strong>だから売上原価は「いくらで買ったか」で決まり、仕入という1つの勘定で足ります。</p>
+    <p>製造業は違います。<strong>材料を買い、加工し、製品にしてから売ります。</strong>売った製品の原価は、材料費・労務費・経費を足し合わせて計算しなければ分かりません。</p>
+    <p>つまり<mark>製造業の決算で増えるのは「売った製品の原価を計算する手間」だけ</mark>です。それ以外の決算整理は商品売買業とまったく同じことをします。W8 UNIT 01 と UNIT 02 で学んだことは、そのまま全部使えます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">原価計算の手続そのものは、この単元では扱わない</span>
+    <p>個別原価計算・総合原価計算・標準原価計算・部門別計算といった原価計算の手続は、W3〜W7の工業簿記で扱います。<strong>第4問・第5問の領域</strong>です。</p>
+    <p>第3問に製造業が出るときは、原価計算の手続そのものを問うことはしません。<strong>勘定の残高や当期の発生額が資料として与えられ、それを組み立てて財務諸表を作る</strong>という形になります。この単元はその組み立てだけを扱います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>売上原価の計算が二段構えになる</h2>
+
+  <p>商品売買業の売上原価は1回の計算で出ます。製造業では<strong>2回</strong>必要です。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 680 330" style="width:100%;height:auto;min-width:560px" role="img" aria-label="製造業の売上原価の計算が二段構えであることを示す図。上段で当期製品製造原価を計算し、下段でそれを使って売上原価を計算する。">
+      <g font-size="12.5" fill="var(--text)">
+        <text x="30" y="26" font-size="13.5" font-weight="700" fill="var(--warn)">第1段 当期製品製造原価を出す（仕掛品の計算）</text>
+
+        <rect x="30" y="38" width="190" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="125" y="60" text-anchor="middle" font-size="12.5">期首仕掛品棚卸高</text>
+
+        <text x="232" y="60" font-size="14" font-weight="700">＋</text>
+
+        <rect x="252" y="38" width="190" height="34" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="1.5" rx="4"/>
+        <text x="347" y="60" text-anchor="middle" font-size="12.5">当期総製造費用</text>
+
+        <text x="454" y="60" font-size="14" font-weight="700">−</text>
+
+        <rect x="474" y="38" width="190" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="569" y="60" text-anchor="middle" font-size="12.5">期末仕掛品棚卸高</text>
+
+        <path d="M347 76 L347 100" fill="none" stroke="var(--warn)" stroke-width="2"/>
+        <path d="M347 108 l-4 -10 l8 0 z" fill="var(--warn)"/>
+
+        <rect x="222" y="110" width="250" height="38" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="347" y="134" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--warn)">当期製品製造原価</text>
+
+        <text x="30" y="190" font-size="13.5" font-weight="700" fill="var(--ok)">第2段 売上原価を出す（製品の計算）</text>
+
+        <rect x="30" y="202" width="190" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="125" y="224" text-anchor="middle" font-size="12.5">期首製品棚卸高</text>
+
+        <text x="232" y="224" font-size="14" font-weight="700">＋</text>
+
+        <rect x="252" y="202" width="190" height="34" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="1.5" rx="4"/>
+        <text x="347" y="224" text-anchor="middle" font-size="12.5" font-weight="700">当期製品製造原価</text>
+
+        <text x="454" y="224" font-size="14" font-weight="700">−</text>
+
+        <rect x="474" y="202" width="190" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="569" y="224" text-anchor="middle" font-size="12.5">期末製品棚卸高</text>
+
+        <path d="M347 240 L347 264" fill="none" stroke="var(--ok)" stroke-width="2"/>
+        <path d="M347 272 l-4 -10 l8 0 z" fill="var(--ok)"/>
+
+        <rect x="222" y="274" width="250" height="38" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="6"/>
+        <text x="347" y="298" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ok)">売上原価</text>
+
+        <path d="M148 130 L60 130 L60 218" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <path d="M222 130 L210 126 L210 134 z" fill="none"/>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">第1段の答え（<strong>当期製品製造原価</strong>）が、そのまま第2段の真ん中に入ります。商品売買業の「当期商品仕入高」の位置に入る、と考えると対応が見えます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">商品売買業との対応を1対1でつかむ</span>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>商品売買業</th><th>製造業</th></tr></thead>
+        <tbody>
+          <tr><td class="d">期首商品棚卸高</td><td class="c">期首製品棚卸高</td></tr>
+          <tr><td class="d"><strong>当期商品仕入高</strong></td><td class="c"><strong>当期製品製造原価</strong></td></tr>
+          <tr><td class="d">期末商品棚卸高</td><td class="c">期末製品棚卸高</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>第2段の形は、商品売買業の売上原価とまったく同じです。<strong>「仕入高」が「製造原価」に置き換わっただけ</strong>で、買ってきたか自分で作ったかの違いにすぎません。</p>
+    <p>そして第1段は、その「製造原価」を求めるために増えた計算です。<mark>製造業で増えたのは第1段だけ</mark>だと理解すれば、覚える量は一気に減ります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「当期総製造費用」と「当期製品製造原価」を混同しない</span>
+    <p>名前が似ていますが別物です。</p>
+    <ul>
+      <li><strong>当期総製造費用</strong>：当期に製造のために投入した金額の合計（材料費 ＋ 労務費 ＋ 経費）。<strong>まだ完成していないものも含む</strong></li>
+      <li><strong>当期製品製造原価</strong>：当期に<strong>完成した</strong>製品の原価。仕掛品の増減を調整した後の金額</li>
+    </ul>
+    <p>売上原価の計算（第2段）に入れるのは<strong>当期製品製造原価</strong>です。完成していないものは売れないので、当期総製造費用をそのまま使うと誤ります。</p>
+    <p>期首仕掛品と期末仕掛品が同額なら、たまたま両者が一致します。<mark>一致したからといって同じ概念だと思わないでください。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>貸借対照表に並ぶ3つの棚卸資産</h2>
+
+  <p>商品売買業の棚卸資産は「商品」の1つだけですが、製造業では<strong>3つ</strong>になります。いずれも<strong>流動資産</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>科目</th><th>中身</th><th>区分</th></tr></thead>
+      <tbody>
+        <tr><td class="d">材料</td><td>まだ製造に投入していない原材料</td><td>流動資産</td></tr>
+        <tr><td class="d">仕掛品</td><td>製造に着手したが、<strong>まだ完成していない</strong>もの</td><td>流動資産</td></tr>
+        <tr><td class="d">製品</td><td>完成したが、<strong>まだ売れていない</strong>もの</td><td>流動資産</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">3つとも流動資産である理由</span>
+    <p>どれも<strong>正常営業循環基準</strong>で流動資産になります。材料 → 仕掛品 → 製品 → 売上債権 → 現金 という一連の流れが、この会社の本業のサイクルそのものだからです。</p>
+    <p>仕掛品が完成するまでに1年以上かかる場合でも、<strong>サイクルの中にある以上は流動資産</strong>です。1年基準を先に当ててはいけない、という UNIT 02 の原則がそのまま効いています。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">貸借対照表に載るのは「期末」の残高</span>
+    <p>売上原価の計算には期首と期末の両方の残高を使いますが、貸借対照表に載るのは<strong>期末の残高だけ</strong>です。</p>
+    <p>計算の途中で期首の数字を何度も使うため、最後に貸借対照表を書くとき期首の金額を書いてしまう取り違えが起きます。<strong>計算用紙の上で期首・期末に印を付けておく</strong>と防げます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>減価償却費と労務費の行き先が分かれる</h2>
+
+  <p>製造業の決算で最も判断を要するのがここです。<strong>同じ「減価償却費」「給料」でも、工場のものか本社のものかで行き先が変わります。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>何に係るものか</th><th>行き先</th><th>損益計算書のどこに出るか</th></tr></thead>
+      <tbody>
+        <tr><td class="d"><strong>工場</strong>の建物・機械の減価償却費</td><td>製造原価（経費）</td><td>売上原価<span class="small muted">（製造原価 → 製品 → 売上原価と流れる）</span></td></tr>
+        <tr><td class="d"><strong>本社・営業所</strong>の建物・備品の減価償却費</td><td>販売費及び一般管理費</td><td>販売費及び一般管理費</td></tr>
+        <tr><td class="c"><strong>工場の従業員</strong>の賃金</td><td>製造原価（労務費）</td><td>売上原価</td></tr>
+        <tr><td class="c"><strong>本社の事務員・営業担当</strong>の給料</td><td>販売費及び一般管理費</td><td>販売費及び一般管理費</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ行き先で表示が変わるのか — 費用になるタイミングが違う</span>
+    <p>販売費及び一般管理費に入ったものは、<strong>その期の費用としてすぐ損益計算書に出ます。</strong></p>
+    <p>製造原価に入ったものは違います。いったん<strong>仕掛品や製品という資産の金額に含まれます。</strong>そして<mark>その製品が売れて初めて、売上原価として費用になります。</mark>売れ残っていれば、期末の棚卸資産の中に埋まったまま翌期へ繰り越されます。</p>
+    <p>つまり工場の減価償却費 100万円を計上しても、製品が半分しか売れていなければ、<strong>当期の費用になるのは50万円だけ</strong>です。残りは貸借対照表の製品の中にあります。</p>
+    <p>本社の減価償却費 100万円なら、全額がその期の費用です。<strong>振り分けを間違えると、当期純利益そのものが変わります。</strong></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">問題文は「工場」「本社」という言葉でしか区別を示さない</span>
+    <p>資料には「建物（工場用）」「建物（本社用）」「賃金（工場従業員）」「給料（本社事務員）」のように、かっこ書きで用途が示されます。<strong>このかっこ書きが振り分けのすべてです。</strong></p>
+    <p>金額の計算はどちらも同じなので、読み飛ばしても計算は最後まで進んでしまいます。<mark>間違いに気づくきっかけがありません。</mark>資料を読む段階で、工場分に印を付けてください。</p>
+    <p>なお、<strong>工場の機械の減価償却費であっても、決算整理で計算する手順は商業簿記と同じ</strong>です。定額法なら（取得原価 − 残存価額）÷ 耐用年数、定率法なら期首帳簿価額 × 償却率。行き先が違うだけです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>原価差異の期末処理</h2>
+
+  <p>予定価格や予定配賦率を使っていると、実際額との差が<strong>原価差異</strong>として残ります。この差異を期末にどうするかが、製造業の決算に固有の論点です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ差異が出るのか、なぜ期末に処理するのか</span>
+    <p>材料の消費額や製造間接費の配賦額は、<strong>実際額が確定するのを待っていると製品の原価が計算できません。</strong>そこであらかじめ決めた予定価格・予定配賦率を使います。</p>
+    <p>当然、実際額とはずれます。このずれが原価差異です。期中は差異として別に積んでおきますが、<mark>財務諸表に「差異」という科目を載せるわけにはいきません。</mark>だから期末に処理して消します。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2級の第3問で問われる処理は1つ</span>
+    <p>原価差異が<strong>比較的少額である</strong>場合、その全額を<strong>売上原価に賦課</strong>します。</p>
+    <ul>
+      <li><strong>不利差異（借方差異）</strong>：予定より実際のほうが高くついた → <strong>売上原価に加算</strong></li>
+      <li><strong>有利差異（貸方差異）</strong>：予定より実際のほうが安く済んだ → <strong>売上原価から減算</strong></li>
+    </ul>
+    <p>損益計算書では、売上原価の区分の最後に「原価差異」という行を設けて加減する形になります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">不利差異を売上原価から引かない</span>
+    <p>「差異」という言葉に引きずられて、符号を逆にする誤りが起きます。意味から考えれば迷いません。</p>
+    <p><strong>不利差異</strong>は、実際にかかったコストが予定より<strong>多かった</strong>ということです。予定で計算した製品原価は<mark>実際より安く見積もられている</mark>ので、その分を<strong>足して</strong>実際の水準に近づけます。</p>
+    <p>有利差異はその逆で、予定で計算した原価が実際より高く見積もられているので<strong>引きます</strong>。</p>
+    <p>「不利＝損＝費用が増える＝売上原価に加算」と、<strong>損得の向きで覚えるのが確実</strong>です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>製造原価報告書という別の表</h2>
+
+  <p>問題によっては、損益計算書・貸借対照表に加えて<span class="term"><span class="term__w">製造原価報告書</span><span class="term__r">せいぞうげんかほうこくしょ</span></span>を作らせます。これは<strong>当期製品製造原価がどう計算されたかを示す明細表</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>製造原価報告書の骨格（金額の単位は円）</caption>
+      <thead><tr><th>行</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">Ⅰ 材料費</td><td class="amt">8,400,000</td></tr>
+        <tr><td class="d">Ⅱ 労務費</td><td class="amt">5,200,000</td></tr>
+        <tr><td class="d">Ⅲ 経費</td><td class="amt">3,100,000</td></tr>
+        <tr><td class="d">　　当期総製造費用</td><td class="amt">16,700,000</td></tr>
+        <tr><td class="d">　　期首仕掛品棚卸高</td><td class="amt">1,300,000</td></tr>
+        <tr><td class="d">　　　　合計</td><td class="amt">18,000,000</td></tr>
+        <tr><td class="d">　　期末仕掛品棚卸高</td><td class="amt">1,600,000</td></tr>
+        <tr><td class="c">　　当期製品製造原価</td><td class="amt">16,400,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>検算します。8,400,000 ＋ 5,200,000 ＋ 3,100,000 ＝ <strong>16,700,000円</strong>。16,700,000 ＋ 1,300,000 ＝ <strong>18,000,000円</strong>。18,000,000 − 1,600,000 ＝ <strong>16,400,000円</strong>。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">材料費の計算だけ、もうひと手間ある</span>
+    <p>材料費は「当期材料仕入高」ではありません。<strong>当期に消費した金額</strong>です。</p>
+    <p><strong>材料費 ＝ 期首材料棚卸高 ＋ 当期材料仕入高 − 期末材料棚卸高</strong></p>
+    <p>形は売上原価の計算と同じです。<mark>買った額ではなく使った額</mark>を求める、という点で共通しています。製造原価報告書の様式によっては、この内訳も表の中に書かせます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">製造原価報告書と損益計算書のつながり</span>
+    <p>製造原価報告書の最終行「当期製品製造原価」が、そのまま<strong>損益計算書の売上原価の区分に現れます。</strong>2つの表は1本の線でつながっています。</p>
+    <p>したがって<strong>製造原価報告書を間違えると、損益計算書の売上原価から下がすべてずれます。</strong>先に製造原価報告書を完成させ、その答えを損益計算書へ持ち込む順序で解いてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>解く順番</h2>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">製造業の第3問を解く手順</span>
+    <ol class="steps">
+      <li><strong>資料を読みながら、工場分に印を付ける</strong><br>減価償却費・労務費・経費のどれが工場のものかを、計算を始める前に確定させます。ここを後回しにすると、計算の途中で戻ることになります。</li>
+      <li><strong>工場に関係しない決算整理を片付ける</strong><br>貸倒引当金・有価証券・経過勘定・貯蔵品・消費税。UNIT 01 の「第1群」と同じ考え方で、独立して解けるものを先に終わらせます。</li>
+      <li><strong>材料費・労務費・経費を確定させる</strong><br>材料費は消費額（期首 ＋ 仕入 − 期末）。工場分の減価償却費もここに入れます。</li>
+      <li><strong>当期製品製造原価を出す</strong><br>当期総製造費用 ＋ 期首仕掛品 − 期末仕掛品。製造原価報告書を作る問題なら、この表を先に完成させます。</li>
+      <li><strong>売上原価を出す</strong><br>期首製品 ＋ 当期製品製造原価 − 期末製品。原価差異があればここで加減します。</li>
+      <li><strong>損益計算書を上から埋め、最後に法人税等</strong><br>ここから先は商品売買業とまったく同じです。</li>
+      <li><strong>貸借対照表を埋める</strong><br>棚卸資産は<strong>期末</strong>の材料・仕掛品・製品の3つ。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">製造業だからといって身構えない</span>
+    <p>手順のうち、製造業に固有なのは<strong>3・4・5の3つだけ</strong>です。残りは商品売買業と同じことをしています。</p>
+    <p>見慣れない勘定名が並ぶと全体が難しく見えますが、<mark>実際に増えている作業は「売った製品の原価を求める」という一点だけ</mark>です。この見立てを持っているかどうかで、解き始めるまでの時間が変わります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>計算ドリル・判断テスト・穴埋め</h2>
+
+  <div id="num-seizo"></div>
+
+  <div id="quiz-seizo"></div>
+
+  <div id="fill-seizo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u3check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u3check">0 / 0 完了（0%）</div>
+
+  <div id="u3check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p2u03-w8u3-1"><label for="c1"><span class="cl__t">製造業の決算で変わるのは売上原価まわりだけだと言える</span><span class="cl__d">貸倒引当金・有価証券・経過勘定・税金・表示区分はすべて商品売買業と同じ</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p2u03-w8u3-2"><label for="c2"><span class="cl__t">売上原価の計算が二段構えであることを説明できる</span><span class="cl__d">第1段で当期製品製造原価、第2段でそれを使って売上原価。商品売買業の「当期商品仕入高」の位置に製造原価が入る</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p2u03-w8u3-3"><label for="c3"><span class="cl__t">当期総製造費用と当期製品製造原価の違いを言える</span><span class="cl__d">総製造費用は投入した金額の合計で未完成分を含む。製品製造原価は完成した分だけ。仕掛品の増減で調整する</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p2u03-w8u3-4"><label for="c4"><span class="cl__t">材料・仕掛品・製品がいずれも流動資産だと言える</span><span class="cl__d">正常営業循環基準による。完成に1年以上かかってもサイクルの中にあれば流動</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p2u03-w8u3-5"><label for="c5"><span class="cl__t">工場分と本社分で減価償却費の行き先が変わる理由を説明できる</span><span class="cl__d">製造原価に入ると資産（仕掛品・製品）に埋まり、売れて初めて費用になる。本社分は当期の費用として全額すぐ出る</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p2u03-w8u3-6"><label for="c6"><span class="cl__t">材料費が仕入高ではなく消費額であると言える</span><span class="cl__d">期首材料 ＋ 当期仕入 − 期末材料。売上原価と同じ形で「買った額ではなく使った額」を出す</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p2u03-w8u3-7"><label for="c7"><span class="cl__t">原価差異を売上原価に加減する向きを間違えない</span><span class="cl__d">不利差異は実際のほうが高くついたので加算、有利差異は減算。損得の向きで覚える</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p2u03-w8u3-8"><label for="c8"><span class="cl__t">製造原価報告書と損益計算書のつながりを言える</span><span class="cl__d">製造原価報告書の最終行「当期製品製造原価」が損益計算書の売上原価の区分に現れる。先に報告書を完成させる</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p2u03-w8u3-9"><label for="c9"><span class="cl__t">解く順番のうち製造業に固有なのは3ステップだけだと言える</span><span class="cl__d">材料費・労務費・経費の確定、当期製品製造原価の算定、売上原価の算定。残りは商品売買業と同じ</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p2u03-w8u3-10"><label for="c10"><span class="cl__t">計算ドリル6問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>W8 の3単元で、第3問に必要な知識はひととおり揃いました。残りは<strong>反復です。</strong>カリキュラムが第3問形式の演習に6セット以上を割いているのは、この領域が<mark>知識より手順の定着で決まる</mark>ためです。</p>
+    <p>演習では、解き終わるたびに<strong>どの整理事項に何分かかったか</strong>を記録してください。時間を食っている項目が、次に埋めるべき穴です。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 2 教材 ／ W8 UNIT 03 製造業を営む会社の決算</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-seizo', {
+    title: '計算ドリル — 製造業の決算の金額を出す（6問）',
+    unit: '円',
+    questions: [
+      {
+        text: '次の資料から<strong>当期の材料費</strong>を求めなさい。期首材料棚卸高 <strong>620,000円</strong>、当期材料仕入高 <strong>8,900,000円</strong>、期末材料棚卸高 <strong>740,000円</strong>。',
+        labels: ['材料費'],
+        answer: [8780000],
+        formula: ['620000+8900000-740000'],
+        hint: '買った額ではなく、使った額を求めます。',
+        explain: '<p><strong>材料費</strong>：620,000 ＋ 8,900,000 − 740,000 ＝ <strong>8,780,000円</strong>。</p><p>材料費は「当期材料仕入高」ではなく<strong>当期に消費した金額</strong>です。買ったもののうち期末に残っている分は、まだ製造に投入していないので材料費ではありません。</p><p>計算の形は売上原価とまったく同じです。<mark>期首 ＋ 当期増加 − 期末</mark>という形で「使った額」を出す、という発想が共通しています。</p><p>期末に残った 740,000円は、貸借対照表に<strong>材料</strong>として流動資産に載ります。</p>'
+      },
+      {
+        text: '当期の材料費 <strong>8,780,000円</strong>、労務費 <strong>5,400,000円</strong>、経費 <strong>2,950,000円</strong> である。期首仕掛品棚卸高は <strong>1,180,000円</strong>、期末仕掛品棚卸高は <strong>1,530,000円</strong> であった。<strong>当期総製造費用</strong>と<strong>当期製品製造原価</strong>を求めなさい。',
+        labels: ['当期総製造費用', '当期製品製造原価'],
+        answer: [17130000, 16780000],
+        formula: ['8780000+5400000+2950000', '8780000+5400000+2950000+1180000-1530000'],
+        hint: '総製造費用には未完成分も含まれます。仕掛品で調整します。',
+        explain: '<p><strong>当期総製造費用</strong>：8,780,000 ＋ 5,400,000 ＋ 2,950,000 ＝ <strong>17,130,000円</strong>。当期に製造のために投入した金額の合計であり、<strong>まだ完成していないものも含みます。</strong></p><p><strong>当期製品製造原価</strong>：17,130,000 ＋ 1,180,000 − 1,530,000 ＝ <strong>16,780,000円</strong>。</p><p>期首仕掛品 1,180,000円は前期から持ち越した未完成品で、当期に完成した分に含まれます。期末仕掛品 1,530,000円はまだ完成していないので差し引きます。</p><p>今回は期末仕掛品のほうが大きいため、<mark>当期製品製造原価は当期総製造費用より 350,000円小さく</mark>なりました。2つが別物であることがこの差に表れています。</p>'
+      },
+      {
+        text: '当期製品製造原価は <strong>16,780,000円</strong> である。期首製品棚卸高は <strong>2,240,000円</strong>、期末製品棚卸高は <strong>1,960,000円</strong> であった。また、当期に生じた原価差異は <strong>不利差異 180,000円</strong> であり、全額を売上原価に賦課する。<strong>原価差異賦課前の売上原価</strong>と<strong>賦課後の売上原価</strong>を求めなさい。',
+        labels: ['賦課前の売上原価', '賦課後の売上原価'],
+        answer: [17060000, 17240000],
+        formula: ['2240000+16780000-1960000', '2240000+16780000-1960000+180000'],
+        hint: '不利差異は、実際のほうが高くついたということです。',
+        explain: '<p><strong>賦課前の売上原価</strong>：2,240,000 ＋ 16,780,000 − 1,960,000 ＝ <strong>17,060,000円</strong>。形は商品売買業の売上原価と同じで、「当期商品仕入高」の位置に当期製品製造原価が入っています。</p><p><strong>賦課後の売上原価</strong>：17,060,000 ＋ 180,000 ＝ <strong>17,240,000円</strong>。</p><p>不利差異は<strong>実際にかかったコストが予定より多かった</strong>ということです。予定で計算した製品原価は実際より安く見積もられているので、差異を<strong>足して</strong>実際の水準に近づけます。</p><p>有利差異の場合は逆に<strong>引きます</strong>。「不利＝損＝費用が増える＝売上原価に加算」と、損得の向きで覚えるのが確実です。</p>'
+      },
+      {
+        text: '減価償却費が次のとおり計算された。<strong>工場建物 840,000円</strong>、<strong>工場機械 1,260,000円</strong>、<strong>本社建物 520,000円</strong>、<strong>営業所備品 310,000円</strong>。<strong>製造原価（経費）に含める金額</strong>と<strong>販売費及び一般管理費に計上する金額</strong>をそれぞれ求めなさい。',
+        labels: ['製造原価に含める金額', '販売費及び一般管理費'],
+        answer: [2100000, 830000],
+        formula: ['840000+1260000', '520000+310000'],
+        hint: '工場のものか、本社・営業所のものかで分かれます。',
+        explain: '<p><strong>製造原価（経費）</strong>：工場建物 840,000 ＋ 工場機械 1,260,000 ＝ <strong>2,100,000円</strong>。</p><p><strong>販売費及び一般管理費</strong>：本社建物 520,000 ＋ 営業所備品 310,000 ＝ <strong>830,000円</strong>。</p><p>振り分けの基準は<strong>「工場か、それ以外か」</strong>だけです。資料のかっこ書きがすべてを決めます。</p><p>行き先で<strong>費用になるタイミングが変わります。</strong>製造原価に入った 2,100,000円は、いったん仕掛品・製品という資産の金額に含まれ、<mark>その製品が売れて初めて売上原価として費用になります。</mark>売れ残っていれば期末の棚卸資産の中に埋まったまま翌期へ繰り越されます。</p><p>販売費及び一般管理費に入った 830,000円は、全額がその期の費用です。<strong>振り分けを間違えると当期純利益そのものが変わります。</strong></p>'
+      },
+      {
+        text: '製造業を営む会社の当期の資料は次のとおりである。売上高 <strong>28,500,000円</strong>、売上原価 <strong>17,240,000円</strong>、本社・営業所の減価償却費 <strong>830,000円</strong>、本社事務員および営業担当者の給料 <strong>4,300,000円</strong>、広告宣伝費 <strong>680,000円</strong>、貸倒引当金繰入（売掛金に対するもの）<strong>95,000円</strong>。<strong>売上総利益</strong>と<strong>営業利益</strong>を求めなさい。',
+        labels: ['売上総利益', '営業利益'],
+        answer: [11260000, 5355000],
+        formula: ['28500000-17240000', '28500000-17240000-830000-4300000-680000-95000'],
+        hint: '本社・営業所の費用だけが販売費及び一般管理費に入ります。',
+        explain: '<p><strong>売上総利益</strong>：28,500,000 − 17,240,000 ＝ <strong>11,260,000円</strong>。</p><p><strong>販売費及び一般管理費</strong>：830,000 ＋ 4,300,000 ＋ 680,000 ＋ 95,000 ＝ 5,905,000円。いずれも工場に関係しない費用です。</p><p><strong>営業利益</strong>：11,260,000 − 5,905,000 ＝ <strong>5,355,000円</strong>。</p><p>ここから先は商品売買業の第3問とまったく同じです。営業外損益を加減して経常利益、特別損益を加減して税引前当期純利益、法人税等を引いて当期純利益。</p><p><mark>製造業で変わったのは売上原価を出すまでの部分だけ</mark>で、損益計算書の構造そのものは変わりません。</p>'
+      },
+      {
+        text: '決算整理後の残高が次のとおりである。材料 <strong>740,000円</strong>、仕掛品 <strong>1,530,000円</strong>、製品 <strong>1,960,000円</strong>、貯蔵品 <strong>38,000円</strong>、繰延税金資産 <strong>210,000円</strong>、長期貸付金 <strong>3,000,000円</strong>。貸借対照表の<strong>流動資産に載る棚卸資産の合計</strong>（貯蔵品を含む）と、<strong>投資その他の資産に載る合計</strong>を求めなさい。なお、繰延税金資産は投資その他の資産に表示する。',
+        labels: ['棚卸資産の合計', '投資その他の資産の合計'],
+        answer: [4268000, 3210000],
+        formula: ['740000+1530000+1960000+38000', '210000+3000000'],
+        hint: '材料・仕掛品・製品はいずれも流動資産です。',
+        explain: '<p><strong>棚卸資産の合計</strong>：材料 740,000 ＋ 仕掛品 1,530,000 ＋ 製品 1,960,000 ＋ 貯蔵品 38,000 ＝ <strong>4,268,000円</strong>。</p><p>材料・仕掛品・製品はいずれも<strong>正常営業循環基準</strong>により流動資産です。材料 → 仕掛品 → 製品 → 売上債権 → 現金 という流れが、この会社の本業のサイクルそのものだからです。仕掛品の完成に1年以上かかる場合でも流動資産です。</p><p><strong>投資その他の資産</strong>：繰延税金資産 210,000 ＋ 長期貸付金 3,000,000 ＝ <strong>3,210,000円</strong>。長期貸付金は1年基準により固定、繰延税金資産も投資その他の資産に表示します。</p><p>なお、貸借対照表に載るのは<strong>期末</strong>の残高だけです。売上原価の計算では期首の数字も何度も使うため、期首の金額を書いてしまう取り違えに注意してください。</p>'
+      }
+    ]
+  });
+
+  /* ========== 判断テスト ========== */
+  BokiQuiz.mount('#quiz-seizo', {
+    title: '判断テスト — 製造業の決算の分岐（6問）',
+    questions: [
+      {
+        text: '製造業を営む会社の損益計算書において、<strong>売上原価の区分に「当期商品仕入高」の代わりに入る</strong>ものはどれですか。',
+        choices: ['当期総製造費用', '当期製品製造原価', '当期材料仕入高', '当期材料費'],
+        answer: 1,
+        explain: '<p>売上原価は<strong>期首製品棚卸高 ＋ 当期製品製造原価 − 期末製品棚卸高</strong>で計算します。商品売買業の「当期商品仕入高」の位置に入るのが<strong>当期製品製造原価</strong>です。</p><p>買ってきたか自分で作ったかの違いにすぎず、形はまったく同じです。</p><p><strong>当期総製造費用</strong>は当期に投入した金額の合計であり、まだ完成していないものも含みます。完成していないものは売れないので、これをそのまま使うと誤ります。仕掛品の増減で調整した後の金額が当期製品製造原価です。</p>'
+      },
+      {
+        text: '<strong>工場建物の減価償却費</strong>は、最終的に損益計算書のどこに現れますか。',
+        choices: [
+          '販売費及び一般管理費',
+          '売上原価（製造原価 → 製品 → 売上原価と流れる）',
+          '営業外費用',
+          '特別損失'
+        ],
+        answer: 1,
+        explain: '<p>工場の建物・機械の減価償却費は<strong>製造原価（経費）</strong>に入り、仕掛品・製品を経て、その製品が売れたときに<strong>売上原価</strong>として損益計算書に現れます。</p><p>重要なのは<strong>費用になるタイミング</strong>です。製造原価に入ったものは、いったん仕掛品や製品という資産の金額に含まれます。<mark>売れ残っていれば、期末の棚卸資産の中に埋まったまま翌期へ繰り越されます。</mark></p><p>本社・営業所の減価償却費は<strong>販売費及び一般管理費</strong>で、全額がその期の費用になります。同じ減価償却費でも振り分けを間違えると当期純利益そのものが変わります。</p>'
+      },
+      {
+        text: '製造原価報告書における<strong>材料費</strong>の計算として正しいものはどれですか。',
+        choices: [
+          '当期材料仕入高そのもの',
+          '期首材料棚卸高 ＋ 当期材料仕入高 − 期末材料棚卸高',
+          '当期材料仕入高 ＋ 期末材料棚卸高',
+          '期首材料棚卸高 ＋ 期末材料棚卸高'
+        ],
+        answer: 1,
+        explain: '<p>材料費は<strong>当期に消費した金額</strong>です。買ったもののうち期末に残っている分は、まだ製造に投入していないので材料費ではありません。</p><p><strong>期首材料棚卸高 ＋ 当期材料仕入高 − 期末材料棚卸高</strong>で計算します。形は売上原価とまったく同じで、<mark>買った額ではなく使った額を出す</mark>という発想が共通しています。</p><p>期末に残った材料は、貸借対照表に<strong>材料</strong>として流動資産に載ります。</p>'
+      },
+      {
+        text: '当期に生じた原価差異が<strong>不利差異</strong>であり、全額を売上原価に賦課する場合、売上原価はどうなりますか。',
+        choices: [
+          '差異の金額だけ増加する',
+          '差異の金額だけ減少する',
+          '売上原価は変わらず、営業外費用に計上する',
+          '売上原価は変わらず、特別損失に計上する'
+        ],
+        answer: 0,
+        explain: '<p>不利差異は<strong>実際にかかったコストが予定より多かった</strong>ということです。予定価格や予定配賦率で計算した製品原価は<strong>実際より安く見積もられている</strong>ので、その分を<strong>足して</strong>実際の水準に近づけます。したがって売上原価は増加します。</p><p>有利差異はその逆で、予定で計算した原価が実際より高く見積もられているので<strong>引きます</strong>。</p><p>「不利＝損＝費用が増える＝売上原価に加算」と、<strong>損得の向きで覚えるのが確実</strong>です。</p><p>なお、差異が比較的少額である場合に全額を売上原価に賦課するのが2級で問われる処理です。営業外費用や特別損失に計上するものではありません。</p>'
+      },
+      {
+        text: '製造業を営む会社の貸借対照表において、<strong>仕掛品</strong>はどの区分に表示しますか。なお、完成までに1年を超えるものが含まれているとします。',
+        choices: [
+          '完成まで1年以内のものは流動資産、1年を超えるものは固定資産',
+          '全額を流動資産',
+          '全額を投資その他の資産',
+          '全額を繰延資産'
+        ],
+        answer: 1,
+        explain: '<p>仕掛品は<strong>正常営業循環基準</strong>により、完成までに1年を超えても<strong>全額が流動資産</strong>です。</p><p>材料 → 仕掛品 → 製品 → 売上債権 → 現金 という流れが、この会社の<strong>本業のサイクルそのもの</strong>だからです。</p><p>流動・固定の判定は、<mark>まず正常営業循環基準を当て、それに該当しないものだけを1年基準で判定します。</mark>この順番を逆にすると、本業に投じている資産を「長期に寝ている資産」として固定資産に置いてしまいます。</p><p>材料・製品も同じ理由で流動資産です。</p>'
+      },
+      {
+        text: '製造業の第3問を解くとき、<strong>製造原価報告書と損益計算書のどちらを先に完成させるべき</strong>ですか。またその理由は何ですか。',
+        choices: [
+          '損益計算書を先に作る。売上高が確定しないと製造原価が計算できないため',
+          '製造原価報告書を先に作る。その最終行の当期製品製造原価が損益計算書の売上原価に入るため',
+          'どちらからでもよい。2つの表は独立しているため',
+          '同時に埋めていく。両者の合計が一致することを確認しながら進めるため'
+        ],
+        answer: 1,
+        explain: '<p><strong>製造原価報告書を先に完成させます。</strong>その最終行である<strong>当期製品製造原価</strong>が、そのまま損益計算書の売上原価の区分に入るからです。2つの表は1本の線でつながっています。</p><p>したがって<strong>製造原価報告書を間違えると、損益計算書の売上原価から下がすべてずれます。</strong>売上総利益・営業利益・経常利益・税引前当期純利益・当期純利益が連鎖的に誤ります。</p><p>売上高は製造原価の計算に関係しません。また、2つの表は独立しておらず、同時に埋める必要もありません。<strong>先に製造原価報告書を完成させ、その答えを損益計算書へ持ち込む</strong>という一方向の流れで解いてください。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-seizo', {
+    title: '穴埋め — 製造業の決算の用語（5問）',
+    questions: [
+      {
+        text: '当期に製造のために投入した材料費・労務費・経費の合計額を何といいますか。まだ完成していないものも含まれます。',
+        answer: ['当期総製造費用', 'とうきそうせいぞうひよう', '総製造費用'],
+        explain: '<p>当期に投入した金額の合計であり、期末に未完成のまま残っている分も含まれます。</p><p>ここから仕掛品の増減を調整した金額が当期製品製造原価です。期首仕掛品と期末仕掛品が同額ならたまたま両者が一致しますが、別の概念です。</p>'
+      },
+      {
+        text: '当期に完成した製品の原価であり、製造原価報告書の最終行に示され、損益計算書の売上原価の区分に入る金額を何といいますか。',
+        answer: ['当期製品製造原価', 'とうきせいひんせいぞうげんか', '製品製造原価'],
+        explain: '<p>当期総製造費用 ＋ 期首仕掛品棚卸高 − 期末仕掛品棚卸高 で計算します。</p><p>商品売買業の「当期商品仕入高」の位置に入る金額であり、買ってきたか自分で作ったかの違いにすぎません。この金額を間違えると、損益計算書の売上原価から下がすべてずれます。</p>'
+      },
+      {
+        text: '製造に着手したものの、決算日時点でまだ完成していない製造途中のものを表す勘定科目は何ですか。',
+        answer: ['仕掛品', 'しかかりひん'],
+        explain: '<p>正常営業循環基準により、完成までに1年を超えても全額が流動資産に表示されます。</p><p>売上原価の計算では期首と期末の両方の残高を使いますが、貸借対照表に載るのは期末の残高だけです。</p>'
+      },
+      {
+        text: '当期製品製造原価がどのように計算されたかを、材料費・労務費・経費の内訳とともに示す明細表を何といいますか。',
+        answer: ['製造原価報告書', 'せいぞうげんかほうこくしょ', '製造原価明細書'],
+        explain: '<p>最終行の当期製品製造原価が、そのまま損益計算書の売上原価の区分に現れます。2つの表は1本の線でつながっているため、先にこの表を完成させ、その答えを損益計算書へ持ち込む順序で解きます。</p>'
+      },
+      {
+        text: '予定価格や予定配賦率を用いて計算した原価と、実際に発生した原価との差額を何といいますか。比較的少額であれば期末に全額を売上原価に賦課します。',
+        answer: ['原価差異', 'げんかさい'],
+        explain: '<p>実際額の確定を待っていると製品の原価が計算できないため予定を使いますが、当然ずれが生じます。財務諸表に「差異」という科目を載せるわけにはいかないので、期末に処理して消します。</p><p>不利差異なら売上原価に加算、有利差異なら減算します。「不利＝損＝費用が増える＝加算」と損得の向きで覚えるのが確実です。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>
