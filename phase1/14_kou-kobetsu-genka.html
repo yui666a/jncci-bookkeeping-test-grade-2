@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第十-1-0,工-第十-2-0,工-第十-3-0,工-第十-4-0,工-第十-4-ア,工-第十-5-0,工-第十-5-ア">
+<title>個別原価計算 — 日商簿記2級 Phase 1 W4</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 14 個別原価計算</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 14 ／ 3時間 ／ 工業簿記</p>
+    <h1>個別原価計算<br>— 製造指図書・原価計算表・仕損費</h1>
+    <p class="lead">ここまでの単元で、材料費・労務費・経費を集め、製造間接費を予定配賦率で配り、その配賦率を部門ごとに分けるところまで来ました。<mark>配る先は毎回「製品」と書いてきましたが、その製品とは具体的に何だったのか</mark>を、この単元ではじめて確定させます。答えは<strong>製造指図書</strong>です。1枚の指図書が1つの原価の入れ物になり、その入れ物を横に並べた表が原価計算表で、原価計算表の縦の合計がそのまま仕掛品勘定になります。<strong>費目別計算・部門別計算が、ここで1本につながります。</strong></p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算ドリル 10問</span>
+      <span class="chip">確認テスト 12問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">注文を受けて作る工場と、同じものを作り続ける工場</a></li>
+      <li><a href="#s2">製造指図書 — 原価を入れる箱の正体</a></li>
+      <li><a href="#s3">原価計算表 — 箱を横に並べた表</a></li>
+      <li><a href="#s4">賦課と配賦 — 表の4行はどこから来るか</a></li>
+      <li><a href="#s5">原価計算表と仕掛品勘定は同じもの</a></li>
+      <li><a href="#s6">完成・未完成の判定と製品勘定への振替</a></li>
+      <li><a href="#s7">記帳の全体像 — 1か月分を通しで見る</a></li>
+      <li><a href="#s8">仕損 — 作り損じたときに何が困るか</a></li>
+      <li><a href="#s9">仕損費の計算 — 補修指図書を発行する場合</a></li>
+      <li><a href="#s10">仕損費の処理 — 当該指図書に賦課する</a></li>
+      <li><a href="#s11">仕損を含む原価計算表を通しで解く</a></li>
+      <li><a href="#s12">仕訳ドリル 12問</a></li>
+      <li><a href="#s13">計算ドリル 10問</a></li>
+      <li><a href="#s14">確認テスト 12問</a></li>
+      <li><a href="#s15">用語の穴埋め 8問</a></li>
+      <li><a href="#s16">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>注文を受けて作る工場と、同じものを作り続ける工場</h2>
+
+  <p>オーダーメイドのスーツを仕立てる店を考えます。客が採寸し、生地を選び、店は<strong>その人のためだけに</strong>1着を縫います。このとき「1着あたりの原価はいくらか」は迷いません。<mark>その客のために使った生地代と、その客のために働いた職人の手間賃を足せば、それがその1着の原価です。</mark></p>
+
+  <p>一方、同じ型のTシャツを毎月10万枚刷るプリント工場を考えます。ここで「この1枚の原価はいくらか」と聞かれても、1枚ごとに追いかけることはできません。<strong>1か月にかかった総額を、1か月に作った枚数で割る</strong>しかありません。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">この単元</div>
+      <p><strong>個別原価計算</strong></p>
+      <p class="small">注文ごとに1つずつ違うものを作る<strong>受注生産</strong>で使う。<br>造船、産業機械、建設、特注家具、印刷、ソフトウェア受託開発。<br>原価は<mark>注文ごと</mark>に集計する。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">W5で扱う</div>
+      <p><strong>総合原価計算</strong></p>
+      <p class="small">同じ規格品を連続して大量に作る<strong>大量見込生産</strong>で使う。<br>食品、飲料、製紙、化学、セメント、汎用部品。<br>原価は<mark>期間ごと</mark>に集計して数量で割る。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ2つの計算方法が要るのか</span>
+    <p>原価計算の目的は「製品1個あたりいくらか」を知ることで、そこは両者とも変わりません。違うのは<strong>製品を1個ずつ見分けられるかどうか</strong>です。<br>受注生産では、目の前の仕掛品が「A社から受けた3号機」だと分かります。だから伝票に「3号機用」と書けて、その伝票を集めれば3号機の原価が出ます。<mark>製品を見分けられるから、製品ごとに集められるのです。</mark><br>大量見込生産では、ライン上の半分できあがったジュースに「これは誰のぶん」という区別がありません。区別がない以上、個別に集めようがない。だから<strong>集めることを諦めて、総額を数量で割る</strong>という別の道を採ります。<br>つまり<strong>個別原価計算は「集めて出す」、総合原価計算は「割って出す」</strong>です。この差がそのまま計算手順の差になります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「個別」は製品1個ごとという意味ではない</span>
+    <p>個別原価計算の「個別」は<strong>製造指図書ごと</strong>という意味です。1枚の指図書で機械を5台まとめて作ることもあり、その場合は5台分の原価が1つの箱に入ります。1台あたりの原価が要るなら、箱の合計を5で割ります。<br><mark>指図書ごとに集計する、という一点だけが個別原価計算の定義です。</mark>「1個ずつ作る」と覚えていると、この5台まとめて作る形の問題で手が止まります。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">見分けが付くかどうかは、工場の形ではなく指図書の出し方で決まる</span>
+    <p>同じ製品でも、企業が「A社向け特注ロット」として指図書を切れば個別原価計算になり、「今月の生産分」としてまとめれば総合原価計算になります。<strong>工場の設備が決めるのではなく、原価を追いかける単位をどう決めたかが決めます。</strong><br>試験では問題文が「製造指図書別に原価を集計している」「注文を受けて製造している」と書いてあれば個別、「同一規格品を連続生産している」と書いてあれば総合です。<mark>自分で判断する場面はほとんどなく、問題文が必ず教えてくれます。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>製造指図書 — 原価を入れる箱の正体</h2>
+
+  <p>受注生産の工場では、注文が入ると<strong>製造指図書</strong>という紙（いまは社内システムの画面であることが多い）が1枚発行されます。「No.101の製品を、この仕様で、この納期までに作れ」という製造現場への命令書です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">製造指図書は命令書であり、同時に原価の集計単位である</span>
+    <p>製造指図書には2つの顔があります。<br><strong>現場にとっては作業命令書</strong>です。何を何台、いつまでに作るかが書いてあります。<br><strong>経理にとっては原価の入れ物</strong>です。出庫伝票にも作業時間報告書にも「No.101」と書かせておけば、あとで No.101 の伝票だけ集めれば、その注文にいくらかかったかが分かります。<br><mark>この2つが同じ番号で結ばれていることが、個別原価計算の仕掛けのすべてです。</mark>現場が命令に従って作業した記録が、そのまま原価の集計資料になります。経理のために現場に余分な記録を書かせていない、という点が重要です。</p>
+  </div>
+
+  <p>W1の材料費、W2の労務費で、伝票にこう書いてあったのを思い出してください。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>伝票・帳票</th><th>指図書番号が書かれるか</th><th>その結果</th></tr></thead>
+    <tbody>
+      <tr><td><strong>材料出庫票</strong></td><td>「No.101用」と書かれていれば <strong>あり</strong><br>「工場共通」なら <strong>なし</strong></td><td>ありなら直接材料費、なしなら間接材料費</td></tr>
+      <tr><td><strong>作業時間報告書</strong></td><td>直接作業時間には「No.101に何時間」と <strong>あり</strong><br>間接作業時間・手待時間には <strong>なし</strong></td><td>ありなら直接労務費、なしなら間接労務費</td></tr>
+      <tr><td><strong>外注加工の請求書</strong></td><td>「No.101のメッキ加工」と <strong>あり</strong></td><td>直接経費</td></tr>
+      <tr><td><strong>電力会社の請求書</strong></td><td>工場全体の使用量なので <strong>なし</strong></td><td>間接経費</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">直接費と間接費の分かれ目は、ここで定義が完成する</span>
+    <p>W1で「直接費とは特定の製品にひもづけられる原価」と書きました。その「ひもづけられる」の正体が、<mark>伝票に製造指図書番号が書けるかどうか</mark>です。<br>書けるものは直接費として、その指図書の箱に直接入れます（<strong>賦課</strong>＝直課）。書けないものは製造間接費という共通の箱にいったん集め、あとで基準を決めて各指図書に配ります（<strong>配賦</strong>）。<br>UNIT 10 で「配賦という割り切りが要るのはなぜか」を説明しましたが、その答えがここで具体的な帳票の形を持ちました。</p>
+  </div>
+
+  <h3>指図書の番号の付け方</h3>
+
+  <p>試験では <strong>No.101、No.102、#1、#2</strong> のような番号で出ます。番号そのものに意味はありませんが、<mark>枝番が付いた番号（No.101-2、#1-2）が出てきたら、それは本体の指図書に付随する別の指図書</mark>です。この単元の後半で扱う補修指図書がその典型です。番号を見た瞬間に「本体とは別の箱で集計して、あとで本体に足すのだな」と読めるようにしておいてください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>原価計算表 — 箱を横に並べた表</h2>
+
+  <p>指図書1枚につき原価の箱が1つできます。その箱をすべて横に並べ、中身を費目別に縦に積んだ表が<strong>原価計算表</strong>です。工場の原価の全体が1枚に収まります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">No.101</th><th class="amt">No.102</th><th class="amt">No.103</th><th class="amt">合計</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品原価</td><td class="amt">380,000</td><td class="amt">—</td><td class="amt">—</td><td class="amt">380,000</td></tr>
+      <tr><td>直接材料費</td><td class="amt">240,000</td><td class="amt">620,000</td><td class="amt">450,000</td><td class="amt">1,310,000</td></tr>
+      <tr><td>直接労務費</td><td class="amt">300,000</td><td class="amt">540,000</td><td class="amt">360,000</td><td class="amt">1,200,000</td></tr>
+      <tr><td>製造間接費</td><td class="amt">360,000</td><td class="amt">648,000</td><td class="amt">432,000</td><td class="amt">1,440,000</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>1,280,000</strong></td><td class="amt"><strong>1,808,000</strong></td><td class="amt"><strong>1,242,000</strong></td><td class="amt"><strong>4,330,000</strong></td></tr>
+      <tr><td>備考</td><td class="amt">完成</td><td class="amt">完成</td><td class="amt">仕掛中</td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">製造間接費は予定配賦率 @900円 × 各指図書の直接作業時間（No.101 400時間、No.102 720時間、No.103 480時間）で計算しています。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">表は縦にも横にも合う</span>
+    <p><strong>縦</strong>　各指図書の列を上から足すと、その指図書にかかった原価の総額になります。No.101 なら 380,000 ＋ 240,000 ＋ 300,000 ＋ 360,000 ＝ 1,280,000円。<br><strong>横</strong>　各費目の行を右へ足すと、工場全体でその費目にいくらかかったかになります。直接材料費なら 240,000 ＋ 620,000 ＋ 450,000 ＝ 1,310,000円。<br><mark>どちらから足しても総計は 4,330,000円 で一致します。</mark>表を埋め終わったら、この二方向の検算を必ずしてください。第4問(2)は解答欄が連動するので、途中の1つの誤りが何箇所にも波及します。縦横の検算は、それを配点のある欄に届く前に止める唯一の手段です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">月初仕掛品原価は「前月までにこの指図書に積んだ額」であって当月の費用ではない</span>
+    <p>No.101 の 380,000円 は先月の作業でかかった原価です。指図書が先月発行され、先月中に完成しなかったため、月末に仕掛品として繰り越されました。<br><mark>当月の材料費・労務費・製造間接費の集計には含めません。</mark>含めると二重計上になります。当月の直接材料費は 1,310,000円 であって 1,690,000円 ではありません。<br>この行があるかどうかは問題文の「月初仕掛品」「前月繰越」「前月より繰越」という語で判断します。<strong>指図書の発行日が当月より前なら、その指図書には必ず月初仕掛品原価があります。</strong></p>
+  </div>
+
+  <h3>原価計算表と製造間接費配賦表の関係</h3>
+
+  <p>UNIT 10 で<strong>製造間接費配賦表</strong>という帳票を挙げました。指図書ごとの配賦基準量と配賦額が並ぶ表です。その表の「配賦額」の行が、そのまま原価計算表の製造間接費の行になります。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 860 250" style="width:100%;height:auto;min-width:660px" role="img" aria-label="製造間接費配賦表の配賦額の行が原価計算表の製造間接費の行に入る関係">
+      <g font-size="13" fill="var(--text)">
+        <rect x="20" y="30" width="330" height="120" rx="6" fill="var(--credit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="185" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="var(--credit)">製造間接費配賦表</text>
+        <text x="185" y="80" text-anchor="middle" font-size="12" fill="var(--muted)">予定配賦率 @900円</text>
+        <text x="60" y="106" font-size="12">配賦基準量</text>
+        <text x="200" y="106" font-size="12">400h</text>
+        <text x="255" y="106" font-size="12">720h</text>
+        <text x="310" y="106" font-size="12">480h</text>
+        <text x="60" y="132" font-size="12" font-weight="700" fill="var(--credit)">配賦額</text>
+        <text x="180" y="132" font-size="12" font-weight="700" fill="var(--credit)">360,000</text>
+        <text x="245" y="132" font-size="12" font-weight="700" fill="var(--credit)">648,000</text>
+        <text x="310" y="132" font-size="12" font-weight="700" fill="var(--credit)">432,000</text>
+
+        <path d="M355 120 L 425 120" stroke="var(--accent)" stroke-width="2.5" fill="none" marker-end="url(#a1)"/>
+        <text x="390" y="110" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--accent)">そのまま</text>
+
+        <rect x="435" y="20" width="405" height="200" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="637" y="44" text-anchor="middle" font-size="14" font-weight="700">原価計算表</text>
+        <text x="460" y="70" font-size="12">月初仕掛品</text>
+        <text x="460" y="94" font-size="12">直接材料費</text>
+        <text x="460" y="118" font-size="12">直接労務費</text>
+        <text x="460" y="142" font-size="12" font-weight="700" fill="var(--credit)">製造間接費</text>
+        <text x="460" y="176" font-size="12" font-weight="700">合計</text>
+        <text x="570" y="70" font-size="12">380,000</text>
+        <text x="570" y="94" font-size="12">240,000</text>
+        <text x="570" y="118" font-size="12">300,000</text>
+        <text x="570" y="142" font-size="12" font-weight="700" fill="var(--credit)">360,000</text>
+        <text x="563" y="176" font-size="12" font-weight="700">1,280,000</text>
+        <text x="680" y="70" font-size="12">—</text>
+        <text x="670" y="94" font-size="12">620,000</text>
+        <text x="670" y="118" font-size="12">540,000</text>
+        <text x="670" y="142" font-size="12" font-weight="700" fill="var(--credit)">648,000</text>
+        <text x="663" y="176" font-size="12" font-weight="700">1,808,000</text>
+        <text x="780" y="70" font-size="12">—</text>
+        <text x="770" y="94" font-size="12">450,000</text>
+        <text x="770" y="118" font-size="12">360,000</text>
+        <text x="770" y="142" font-size="12" font-weight="700" fill="var(--credit)">432,000</text>
+        <text x="763" y="176" font-size="12" font-weight="700">1,242,000</text>
+        <line x1="450" y1="156" x2="825" y2="156" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="570" y="202" text-anchor="middle" font-size="11.5" fill="var(--muted)">No.101</text>
+        <text x="670" y="202" text-anchor="middle" font-size="11.5" fill="var(--muted)">No.102</text>
+        <text x="770" y="202" text-anchor="middle" font-size="11.5" fill="var(--muted)">No.103</text>
+      </g>
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--accent)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">配賦表で出した金額が、原価計算表の1行として着地する。UNIT 10 で計算した予定配賦額の行き先が、ここで見える。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>賦課と配賦 — 表の4行はどこから来るか</h2>
+
+  <p>原価計算表の各行が、どの計算から来るのかを整理します。<strong>ここまでの4単元がすべてこの表に流れ込みます。</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>行</th><th>入れ方</th><th>金額の出どころ</th><th>学んだ単元</th></tr></thead>
+    <tbody>
+      <tr><td><strong>直接材料費</strong></td><td><strong>賦課</strong>（直課）</td><td>材料出庫票の指図書番号ごとに、消費単価 × 消費量を集計する</td><td>UNIT 04</td></tr>
+      <tr><td><strong>直接労務費</strong></td><td><strong>賦課</strong>（直課）</td><td>作業時間報告書の指図書番号ごとに、（予定）賃率 × 直接作業時間を集計する</td><td>UNIT 07</td></tr>
+      <tr><td><strong>直接経費</strong></td><td><strong>賦課</strong>（直課）</td><td>外注加工賃・特許権使用料の請求書を指図書番号ごとに集計する</td><td>UNIT 07</td></tr>
+      <tr><td><strong>製造間接費</strong></td><td><strong>配賦</strong></td><td>予定配賦率（または部門別の予定配賦率）× 各指図書の配賦基準量</td><td>UNIT 10・UNIT 13</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">賦課と配賦は「計算がいるかどうか」の違い</span>
+    <p><strong>賦課</strong>は伝票に書かれた指図書番号どおりに金額を置くだけです。どの指図書にいくら、が伝票の時点で決まっているので、配り方を決める余地がありません。<br><strong>配賦</strong>は伝票に指図書番号が書かれていないので、配賦率と配賦基準量を掛けて金額を作り出します。<mark>金額を「置く」のが賦課、金額を「作る」のが配賦です。</mark><br>だから配賦にだけ差異が生じます。作った金額（予定配賦額）と本当にかかった金額（実際発生額）がずれるからです。賦課した金額は実際額そのものなので、差異が生じる余地がありません。</p>
+  </div>
+
+  <h3>部門別配賦率を使う場合（UNIT 13 の続き）</h3>
+
+  <p>部門別計算を採っている工場では、製造間接費の配賦率が部門ごとに違います。原価計算表の製造間接費の行が、<strong>部門の数だけ分かれます。</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">No.201</th><th class="amt">No.202</th><th class="amt">合計</th></tr></thead>
+    <tbody>
+      <tr><td>直接材料費</td><td class="amt">520,000</td><td class="amt">780,000</td><td class="amt">1,300,000</td></tr>
+      <tr><td>直接労務費</td><td class="amt">390,000</td><td class="amt">600,000</td><td class="amt">990,000</td></tr>
+      <tr><td>製造間接費 — 切削部門 @900円</td><td class="amt">270,000</td><td class="amt">378,000</td><td class="amt">648,000</td></tr>
+      <tr><td>製造間接費 — 組立部門 @675円</td><td class="amt">168,750</td><td class="amt">270,000</td><td class="amt">438,750</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>1,348,750</strong></td><td class="amt"><strong>2,028,000</strong></td><td class="amt"><strong>3,376,750</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">切削部門の配賦基準は機械運転時間（No.201 300時間、No.202 420時間）、組立部門の配賦基準は直接作業時間（No.201 250時間、No.202 400時間）としています。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">部門が増えても、原価計算表の作り方は変わらない</span>
+    <p>行が1本増えるだけです。<mark>部門ごとに配賦率も配賦基準も違うので、掛け算を部門の数だけ繰り返す</mark>という、それだけの変化です。<br>間違えるとしたら、切削部門の配賦率に組立部門の時間を掛ける取り違えです。問題文には「切削部門は機械運転時間、組立部門は直接作業時間を基準とする」のように書いてあり、<strong>部門ごとに基準が違うのがふつう</strong>です。基準がそろっていると思い込んで表を読むと、時間の欄を1つ取り違えます。部門別配賦率を使う問題では、配賦率と配賦基準量を線で結んでから電卓を叩いてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>原価計算表と仕掛品勘定は同じもの</h2>
+
+  <p>この単元でいちばん大事な対応関係です。<strong>原価計算表の「合計」の列が、仕掛品勘定の借方そのものです。</strong></p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 860 340" style="width:100%;height:auto;min-width:680px" role="img" aria-label="原価計算表の行合計が仕掛品勘定の借方になり、完成した指図書が製品へ、未完成が次月繰越になる対応図">
+      <g font-size="13" fill="var(--text)">
+        <rect x="15" y="30" width="360" height="230" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="195" y="54" text-anchor="middle" font-size="14" font-weight="700">原価計算表</text>
+        <text x="35" y="84" font-size="12">月初仕掛品</text>
+        <text x="35" y="110" font-size="12">直接材料費</text>
+        <text x="35" y="136" font-size="12">直接労務費</text>
+        <text x="35" y="162" font-size="12">製造間接費</text>
+        <text x="35" y="196" font-size="12" font-weight="700">合計</text>
+        <text x="160" y="84" font-size="11.5">380,000</text>
+        <text x="160" y="110" font-size="11.5">240,000</text>
+        <text x="160" y="136" font-size="11.5">300,000</text>
+        <text x="160" y="162" font-size="11.5">360,000</text>
+        <text x="152" y="196" font-size="11.5" font-weight="700">1,280,000</text>
+        <text x="240" y="84" font-size="11.5">—</text>
+        <text x="235" y="110" font-size="11.5">620,000</text>
+        <text x="235" y="136" font-size="11.5">540,000</text>
+        <text x="235" y="162" font-size="11.5">648,000</text>
+        <text x="227" y="196" font-size="11.5" font-weight="700">1,808,000</text>
+        <text x="320" y="84" font-size="11.5">—</text>
+        <text x="315" y="110" font-size="11.5">450,000</text>
+        <text x="315" y="136" font-size="11.5">360,000</text>
+        <text x="315" y="162" font-size="11.5">432,000</text>
+        <text x="307" y="196" font-size="11.5" font-weight="700">1,242,000</text>
+        <line x1="30" y1="176" x2="360" y2="176" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="180" y="222" text-anchor="middle" font-size="11.5" fill="var(--muted)">No.101 完成</text>
+        <text x="180" y="242" text-anchor="middle" font-size="11.5" fill="var(--muted)">No.102 完成　No.103 仕掛中</text>
+
+        <rect x="28" y="70" width="345" height="102" rx="5" fill="none" stroke="var(--debit)" stroke-width="2" stroke-dasharray="5 3"/>
+        <path d="M378 120 L 430 120" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#b1)"/>
+        <text x="404" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="var(--debit)">行の合計</text>
+
+        <rect x="28" y="182" width="345" height="26" rx="4" fill="none" stroke="var(--credit)" stroke-width="2" stroke-dasharray="5 3"/>
+        <path d="M378 240 L 430 240" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#b2)"/>
+        <text x="404" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="var(--credit)">列の合計</text>
+
+        <rect x="440" y="30" width="400" height="230" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="640" y="54" text-anchor="middle" font-size="14" font-weight="700">仕掛品</text>
+        <line x1="640" y1="64" x2="640" y2="246" stroke="var(--border-2)" stroke-width="2"/>
+        <line x1="455" y1="64" x2="825" y2="64" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="462" y="86" font-size="11.5" fill="var(--debit)">前月繰越</text>
+        <text x="570" y="86" font-size="11.5" fill="var(--debit)">380,000</text>
+        <text x="462" y="110" font-size="11.5" fill="var(--debit)">材料</text>
+        <text x="558" y="110" font-size="11.5" fill="var(--debit)">1,310,000</text>
+        <text x="462" y="134" font-size="11.5" fill="var(--debit)">賃金・給料</text>
+        <text x="558" y="134" font-size="11.5" fill="var(--debit)">1,200,000</text>
+        <text x="462" y="158" font-size="11.5" fill="var(--debit)">製造間接費</text>
+        <text x="558" y="158" font-size="11.5" fill="var(--debit)">1,440,000</text>
+        <text x="558" y="190" font-size="11.5" font-weight="700">4,330,000</text>
+        <line x1="455" y1="172" x2="632" y2="172" stroke="var(--border-2)" stroke-width="1.5"/>
+
+        <text x="650" y="86" font-size="11.5" fill="var(--credit)">製品</text>
+        <text x="750" y="86" font-size="11.5" fill="var(--credit)">3,088,000</text>
+        <text x="650" y="110" font-size="11.5" fill="var(--credit)">次月繰越</text>
+        <text x="750" y="110" font-size="11.5" fill="var(--credit)">1,242,000</text>
+        <text x="750" y="190" font-size="11.5" font-weight="700">4,330,000</text>
+        <line x1="648" y1="172" x2="822" y2="172" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="737" y="222" text-anchor="middle" font-size="11" fill="var(--muted)">No.101 ＋ No.102</text>
+        <text x="737" y="240" text-anchor="middle" font-size="11" fill="var(--muted)">No.103</text>
+      </g>
+      <defs>
+        <marker id="b1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/>
+        </marker>
+        <marker id="b2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">原価計算表を横に足すと仕掛品勘定の借方になり、縦に足して完成・未完成で分けると貸方になる。同じ 4,330,000円 を2方向から切っている。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ2つの表現が要るのか</span>
+    <p>仕掛品勘定は<strong>費目の方向</strong>で切った姿です。材料からいくら、賃金からいくら入ってきたかが分かります。勘定連絡図に載るのはこちらです。<br>原価計算表は<strong>指図書の方向</strong>で切った姿です。No.101 にいくらかかったかが分かります。<mark>仕掛品勘定を見ても、その 4,330,000円 が何号機のものかは分かりません。</mark>それを見えるようにしたのが原価計算表であり、原価計算表は仕掛品勘定の<strong>内訳明細</strong>にあたります。<br>だから原価計算表の合計と仕掛品勘定の借方合計は、必ず一致します。一致しないなら、どちらかで計算を間違えています。第4問(2)では<strong>原価計算表を埋めさせてから仕掛品勘定を書かせる</strong>出題が多く、この一致が答案の自己検算になります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">製造間接費の行に入るのは予定配賦額であり、実際発生額ではない</span>
+    <p>予定配賦をしている以上、仕掛品勘定の借方に入る製造間接費は<strong>予定配賦額 1,440,000円</strong>です。当月の実際発生額がいくらであっても、原価計算表にも仕掛品勘定にもそれは現れません。<br>実際発生額との差は<mark>製造間接費勘定の中に残り、製造間接費配賦差異として処理されます</mark>（UNIT 10）。<strong>仕掛品勘定には流れ込みません。</strong><br>問題文に実際発生額が書いてあると、つい原価計算表に書きたくなります。しかし原価計算表に書くのは常に配賦額です。実際発生額は差異の計算にだけ使います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>完成・未完成の判定と製品勘定への振替</h2>
+
+  <p>月末に、各指図書が完成したかどうかを見ます。判定は<strong>備考欄</strong>が教えてくれます。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>完成した指図書</strong>　その列の合計が完成品原価になる。仕掛品勘定から<strong>製品勘定</strong>へ振り替える</li>
+      <li><strong>未完成の指図書</strong>　その列の合計が月末仕掛品原価になる。仕掛品勘定に<strong>残る</strong>（次月繰越）</li>
+      <li><strong>完成して引き渡した指図書</strong>　製品勘定から<strong>売上原価</strong>へ振り替える</li>
+    </ol>
+  </div>
+
+  <p>先の例では No.101 と No.102 が完成し、No.103 が仕掛中でした。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製品</td><td class="d amt">3,088,000</td><td class="c">仕掛品</td><td class="c amt">3,088,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>1,280,000 ＋ 1,808,000 ＝ 3,088,000円。<strong>完成した指図書の列を足すだけ</strong>です。No.103 の 1,242,000円 は仕掛品勘定に残ります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「完成」と「引渡し」は別の日付で起きる</span>
+    <p>個別原価計算の問題では、指図書の備考欄に<strong>3種類</strong>の状態が現れます。<br><strong>仕掛中</strong>　仕掛品勘定に残る<br><strong>完成・未引渡</strong>　製品勘定に残る（月末の製品有高）<br><strong>完成・引渡済</strong>　売上原価勘定へ行く<br><mark>完成した指図書を全部まとめて売上原価に振り替えてはいけません。</mark>完成しても倉庫にあるだけなら、まだ製品です。売れて初めて売上原価になります。<br>問題文が「引き渡した」「販売した」「納品した」と書いているかどうかを、指図書ごとに確認してください。備考欄に「完成」としか書いていなければ、製品勘定で止まります。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">3つの勘定に、3つの状態が対応する</span>
+    <p><strong>仕掛品勘定の残高</strong>＝ 未完成の指図書の合計<br><strong>製品勘定の残高</strong>＝ 完成したが引き渡していない指図書の合計<br><strong>売上原価勘定</strong>＝ 引き渡した指図書の合計<br>個別原価計算の残高は、<mark>すべて「指図書の合計を足したもの」で説明が付きます。</mark>総合原価計算のように進捗度を掛けて按分する必要がありません。これが個別原価計算の計算上の気楽さです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>記帳の全体像 — 1か月分を通しで見る</h2>
+
+  <p>ここまでの流れを仕訳で通します。先の例（予定配賦率 @900円、No.101・No.102 完成、No.101 は引渡済、No.103 仕掛中）を使います。</p>
+
+  <h3>① 直接材料費の賦課と間接材料費の振替</h3>
+
+  <p>当月の材料消費額は 1,690,000円、うち指図書番号の付いた出庫が 1,310,000円、工場共通の出庫が 380,000円でした。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">1,310,000</td><td class="c">材料</td><td class="c amt">1,690,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">380,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>② 直接労務費の賦課と間接労務費の振替</h3>
+
+  <p>当月の賃金消費額は 1,560,000円、うち直接作業時間分が 1,200,000円でした。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">1,200,000</td><td class="c">賃金・給料</td><td class="c amt">1,560,000</td></tr>
+      <tr><td class="d">製造間接費</td><td class="d amt">360,000</td><td class="c"></td><td class="c amt"></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>③ 製造間接費の予定配賦</h3>
+
+  <p>@900円 × 当月の直接作業時間合計 1,600時間（400 ＋ 720 ＋ 480）＝ 1,440,000円。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">1,440,000</td><td class="c">製造間接費</td><td class="c amt">1,440,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">①〜③の借方は、すべて原価計算表の1行に対応する</span>
+    <p>①の 1,310,000円 が直接材料費の行、②の 1,200,000円 が直接労務費の行、③の 1,440,000円 が製造間接費の行です。<mark>仕訳の金額を書いたら、原価計算表の行合計と一致するかを見てください。</mark>一致しなければ、指図書ごとの振り分けか、費目の集計のどちらかを間違えています。</p>
+  </div>
+
+  <h3>④ 完成品の製品勘定への振替</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製品</td><td class="d amt">3,088,000</td><td class="c">仕掛品</td><td class="c amt">3,088,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>⑤ 引き渡した製品の売上原価への振替</h3>
+
+  <p>No.101（1,280,000円）を得意先に引き渡しました。No.102 は完成しましたが倉庫にあります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">1,280,000</td><td class="c">製品</td><td class="c amt">1,280,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">仕掛品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前月繰越</span><span>380,000</span></div>
+          <div class="l"><span>材料</span><span>1,310,000</span></div>
+          <div class="l"><span>賃金・給料</span><span>1,200,000</span></div>
+          <div class="l"><span>製造間接費</span><span>1,440,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>4,330,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品</span><span>3,088,000</span></div>
+          <div class="l"><span>次月繰越</span><span>1,242,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>4,330,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">製品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>仕掛品</span><span>3,088,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>3,088,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>売上原価</span><span>1,280,000</span></div>
+          <div class="l"><span>次月繰越</span><span>1,808,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>3,088,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">仕掛品の貸借は 4,330,000円 で一致します（380,000 ＋ 1,310,000 ＋ 1,200,000 ＋ 1,440,000 ＝ 3,088,000 ＋ 1,242,000）。製品の貸借は 3,088,000円 で一致します（1,280,000 ＋ 1,808,000 ＝ 3,088,000）。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>仕損 — 作り損じたときに何が困るか</h2>
+
+  <p>特注の機械を組み上げている途中で、部品の取り付けを誤って一部が使い物にならなくなったとします。作り直しではなく、悪い箇所を直して使える状態に戻すことにしました。この<strong>作り損じ</strong>を <span class="term">仕損<span class="term__r">しそんじ</span></span> といい、直すための作業を<strong>補修</strong>といいます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">補修にかかった原価を、どこにも入れないわけにいかない</span>
+    <p>補修には材料も要れば、職人の手間も要ります。そのぶん工場のお金は出ていきます。<mark>この原価をどこにも入れないと、工場全体の原価が実際より少なく計算されてしまいます。</mark>どこかに入れなければなりません。<br>では、どこに入れるか。素直に考えれば<strong>その失敗が起きた製品の原価</strong>です。No.102 を作っている最中に No.102 を損じたのだから、直すための原価も No.102 の原価だ、という考え方です。この注文を受けなければ、その補修は起きなかったからです。<br>ところが、補修の原価を直接 No.102 の指図書に書き込むと、<strong>いくら補修にかかったのかが分からなくなります。</strong>直接材料費の行に紛れ込み、正常な作業でかかった材料費と区別が付かなくなるからです。仕損は<mark>減らすべきコスト</mark>なので、いくら発生したかを見えるようにしておかなければ、減らす努力の効果が測れません。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">だから、いったん別の箱で集めてから本体に移す</span>
+    <p>補修のために<strong>もう1枚の指図書</strong>を発行します。これが<strong>補修指図書</strong>です。補修のための材料出庫も作業時間も、この補修指図書の番号で記録させます。<br>こうすれば補修指図書の列の合計が、そのまま<mark>「この仕損にいくらかかったか」という金額</mark>になります。それを <span class="term">仕損費<span class="term__r">しそんひ</span></span> といいます。<br>金額が確定したら、それを本体の指図書へ移します。<strong>集めるときは別の箱、着地するのは本体の箱</strong>という2段構えです。金額を見えるようにすることと、正しい製品の原価にすることを、両方満たすための工夫です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">仕損は「不良品が出た」ではなく「作り損じが起きた」</span>
+    <p>仕損とは<strong>製造の過程で作り損じること</strong>であり、できあがった製品の品質検査で落ちることではありません。完成後に見つかる品質不良は、売った後なら製品保証引当金の話（UNIT 09）になります。<br>また、仕損と<strong>減損</strong>は別の言葉です。仕損は<mark>作り損じた「モノ」が残る</mark>ケース、減損は蒸発・粉散で<mark>モノが消えてなくなる</mark>ケースを指します。減損は総合原価計算（W5）で出てきます。個別原価計算では、仕損だけを扱います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>仕損費の計算 — 補修指図書を発行する場合</h2>
+
+  <p>2級で扱うのは<strong>補修指図書を発行する場合</strong>だけです。この場合の仕損費の求め方は1行で言えます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">仕損費の計算</span>
+    <p><strong>仕損費 ＝ 補修指図書に集計された原価の合計</strong><br>補修のために使った直接材料費 ＋ 直接労務費 ＋ 直接経費 ＋ 製造間接費配賦額。<mark>補修指図書も1枚の指図書なので、集計のしかたは本体の指図書とまったく同じです。</mark></p>
+  </div>
+
+  <p>No.102 の補修のために No.102-2 という補修指図書を発行し、次のように原価が集まったとします。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">No.102-2（補修指図書）</th><th>計算</th></tr></thead>
+    <tbody>
+      <tr><td>直接材料費</td><td class="amt">30,000</td><td>補修に使った部品の出庫額</td></tr>
+      <tr><td>直接労務費</td><td class="amt">45,000</td><td>補修作業 60時間 × 予定賃率 @750円</td></tr>
+      <tr><td>製造間接費</td><td class="amt">54,000</td><td>予定配賦率 @900円 × 60時間</td></tr>
+      <tr><td><strong>合計 ＝ 仕損費</strong></td><td class="amt"><strong>129,000</strong></td><td>30,000 ＋ 45,000 ＋ 54,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">補修指図書にも製造間接費を配賦する</span>
+    <p>いちばん落としやすいのがこれです。補修作業にも機械を動かし、電気を使い、工場長の監督を受けています。<mark>補修指図書は原価の集計単位として本体の指図書と対等であり、製造間接費の配賦対象からも外れません。</mark><br>補修指図書の直接作業時間は、直接作業時間の合計に入ります。だから配賦基準が直接作業時間なら、その時間分の配賦を受けます。<br>「補修は余計な作業だから間接費は配らない」というルールはありません。<strong>直接材料費と直接労務費だけを足して仕損費とすると、上の例なら 75,000円 になり、54,000円 足りません。</strong>試験ではここを狙って、補修作業時間を明記した問題文が出ます。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ補修指図書を「発行する」ことが条件に書かれているのか</span>
+    <p>出題区分表は「補修指図書を発行する場合」という見出しで論点を立てています。<strong>指図書を発行しないと、補修にかかった原価を集める箱ができない</strong>からです。箱がなければ材料出庫票にも作業時間報告書にも書く番号がなく、補修分だけを抜き出せません。<br>逆に言えば、<mark>補修指図書があるという記述は「仕損費を別建てで集計する問題だ」という合図</mark>です。問題文に「補修指図書 No.102-2 を発行した」と書かれていたら、その列を独立に集計してから本体に移す、と反射的に手が動くようにしてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕損費の処理 — 当該指図書に賦課する</h2>
+
+  <p>集計した仕損費 129,000円 を、どこへ着地させるか。<strong>2級で扱うのは「当該指図書に賦課する方法」の1つだけです。</strong></p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">当該指図書に賦課する</span>
+    <p><strong>その仕損が発生した製造指図書（本体）の原価に加える。</strong><br>No.102-2 の 129,000円 は、No.102 の原価に足します。<mark>「当該指図書」とは、補修指図書のことではなく、補修の対象になった本体の指図書のことです。</mark></p>
+  </div>
+
+  <p>原価計算表の上では、<strong>仕損費という行が1行増えます。</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">No.101</th><th class="amt">No.102</th><th class="amt">No.102-2</th><th class="amt">No.103</th><th class="amt">合計</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品原価</td><td class="amt">380,000</td><td class="amt">—</td><td class="amt">—</td><td class="amt">—</td><td class="amt">380,000</td></tr>
+      <tr><td>直接材料費</td><td class="amt">240,000</td><td class="amt">620,000</td><td class="amt">30,000</td><td class="amt">450,000</td><td class="amt">1,340,000</td></tr>
+      <tr><td>直接労務費</td><td class="amt">300,000</td><td class="amt">540,000</td><td class="amt">45,000</td><td class="amt">360,000</td><td class="amt">1,245,000</td></tr>
+      <tr><td>製造間接費</td><td class="amt">360,000</td><td class="amt">648,000</td><td class="amt">54,000</td><td class="amt">432,000</td><td class="amt">1,494,000</td></tr>
+      <tr><td>小計</td><td class="amt">1,280,000</td><td class="amt">1,808,000</td><td class="amt">129,000</td><td class="amt">1,242,000</td><td class="amt">4,459,000</td></tr>
+      <tr><td><strong>仕損費</strong></td><td class="amt">—</td><td class="amt">＋129,000</td><td class="amt">△129,000</td><td class="amt">—</td><td class="amt">0</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>1,280,000</strong></td><td class="amt"><strong>1,937,000</strong></td><td class="amt"><strong>0</strong></td><td class="amt"><strong>1,242,000</strong></td><td class="amt"><strong>4,459,000</strong></td></tr>
+      <tr><td>備考</td><td class="amt">完成</td><td class="amt">完成</td><td class="amt">No.102へ</td><td class="amt">仕掛中</td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">仕損費の行は、合計すると必ずゼロになる</span>
+    <p>片方に ＋129,000、もう片方に △129,000 と書くので、行の合計は 0円 です。<mark>お金が新たに生まれたのではなく、箱から箱へ移し替えただけだからです。</mark><br>だから<strong>総計は仕損費の処理前後で変わりません</strong>（4,459,000円 のまま）。仕損費を足したぶん総計が増えた、という答案になったら、補修指図書の列を差し引き忘れています。<br>これは強力な検算になります。仕損費の処理をしたあと、必ず<strong>横（合計列が 0 か）と縦（総計が変わっていないか）</strong>を見てください。</p>
+  </div>
+
+  <h3>仕訳</h3>
+
+  <p>仕訳としては、<strong>仕掛品勘定の中での振替なので仕訳を書かないこともあります</strong>が、仕損費勘定を経由する形を問われることがあります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th colspan="4">① 補修指図書に集計された原価を仕損費勘定へ振り替える</th></tr>
+    <tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕損費</td><td class="d amt">129,000</td><td class="c">仕掛品</td><td class="c amt">129,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th colspan="4">② 仕損費を No.102 の原価に賦課する</th></tr>
+    <tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">129,000</td><td class="c">仕損費</td><td class="c amt">129,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">①と②を通すと、仕掛品勘定の残高は動かない</span>
+    <p>貸方に 129,000円 出して、借方に 129,000円 戻しています。<mark>仕掛品勘定の残高は 1円も変わりません。</mark>変わったのは原価計算表の中での所属（No.102-2 から No.102 へ）だけです。<br>だから<strong>この2本をまとめて「仕訳なし」とする処理も実務にはあります</strong>が、試験では仕損費勘定を使う形で問われます。答案用紙の勘定科目欄に「仕損費」があれば、その形で書きます。<br>仕損費勘定は、①で借方に入り②で貸方に出るので、<strong>月末には必ず残高ゼロ</strong>になります。残高が残ったら、賦課先を書き忘れています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">仕損費を製造間接費にしてはいけない（2級の範囲では）</span>
+    <p>仕損費を各指図書に配賦するため<strong>間接費として扱う方法</strong>も原価計算の理論にはありますが、<mark>それは1級の範囲です。</mark>出題区分表で2級に置かれているのは「当該指図書に賦課する方法」だけです。<br>2級の答案では、仕損費は必ず<strong>特定の1つの指図書</strong>に行きます。迷う余地はありません。「どの指図書で仕損が起きたか」だけを問題文から読み取れば、行き先は決まります。<br>同じ理由で、<strong>代品の製造指図書を発行する場合</strong>と<strong>補修も代品も発行しない場合</strong>の仕損費の計算も、2級の範囲外です。この単元で覚えるのは補修指図書のケース1つだけです。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">作業屑の処理も2級では扱わない</span>
+    <p>製造の過程で出る<strong>作業屑</strong>（金属の切削屑など、売れば多少の値が付くもの）の処理は、出題区分表では1級に置かれています。2級の答案で作業屑の評価額を仕損費や製造原価から控除する計算は問われません。<br>問題文に切削屑の話が出てきても、<mark>2級の範囲では金額の扱いを求められません。</mark>ここに時間を使わないでください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>仕損を含む原価計算表を通しで解く</h2>
+
+  <p>ここまでを1本の手順にまとめます。第4問(2)で個別原価計算が出たときの手順そのものです。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>指図書の列を作る</strong>　補修指図書も1列として立てる。本体と並べて書く</li>
+      <li><strong>月初仕掛品原価を置く</strong>　前月から繰り越した指図書だけ。当月発行の指図書にはない</li>
+      <li><strong>直接費を賦課する</strong>　指図書番号のついた材料費・労務費・経費をそのまま置く</li>
+      <li><strong>製造間接費を配賦する</strong>　予定配賦率 × 各指図書の配賦基準量。補修指図書にも配る。部門別なら部門の数だけ行を作る</li>
+      <li><strong>小計を出す</strong>　ここで縦横の検算をする</li>
+      <li><strong>仕損費を振り替える</strong>　補修指図書の小計を、本体の指図書に ＋ で、補修指図書に △ で書く。行の合計は 0</li>
+      <li><strong>合計を出す</strong>　総計が小計の総計と一致することを確かめる</li>
+      <li><strong>備考で完成・未完成・引渡しを分ける</strong>　完成品原価・月末仕掛品原価・売上原価を集計する</li>
+    </ol>
+  </div>
+
+  <p>先の表で、No.101 は完成して引渡済、No.102 は完成して未引渡、No.103 は仕掛中でした。集計します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>求めるもの</th><th>内訳</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td><strong>当月完成品原価</strong></td><td>No.101 1,280,000 ＋ No.102 1,937,000</td><td class="amt">3,217,000</td></tr>
+      <tr><td><strong>月末仕掛品原価</strong></td><td>No.103 1,242,000</td><td class="amt">1,242,000</td></tr>
+      <tr><td><strong>当月売上原価</strong></td><td>No.101 1,280,000（引渡済のみ）</td><td class="amt">1,280,000</td></tr>
+      <tr><td><strong>月末製品原価</strong></td><td>No.102 1,937,000（完成・未引渡）</td><td class="amt">1,937,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>検算：完成品原価 3,217,000 ＋ 月末仕掛品原価 1,242,000 ＝ 4,459,000円。原価計算表の総計と一致します。また、売上原価 1,280,000 ＋ 月末製品原価 1,937,000 ＝ 3,217,000円 で、完成品原価と一致します。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">仕掛品（仕損費の処理を含む）</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前月繰越</span><span>380,000</span></div>
+          <div class="l"><span>材料</span><span>1,340,000</span></div>
+          <div class="l"><span>賃金・給料</span><span>1,245,000</span></div>
+          <div class="l"><span>製造間接費</span><span>1,494,000</span></div>
+          <div class="l"><span>仕損費</span><span>129,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>4,588,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕損費</span><span>129,000</span></div>
+          <div class="l"><span>製品</span><span>3,217,000</span></div>
+          <div class="l"><span>次月繰越</span><span>1,242,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>4,588,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">仕損費</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>仕掛品</span><span>129,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>129,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品</span><span>129,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>129,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">仕掛品勘定の借方合計 4,588,000円（380,000 ＋ 1,340,000 ＋ 1,245,000 ＋ 1,494,000 ＋ 129,000）と貸方合計 4,588,000円（129,000 ＋ 3,217,000 ＋ 1,242,000）は一致します。仕損費の 129,000円 が貸借の両方に立っているため合計が膨らんで見えますが、<strong>差引きすれば原価計算表の総計 4,459,000円 と同じです</strong>（4,588,000 − 129,000 ＝ 4,459,000）。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">完成品原価に仕損費を足し忘れない</span>
+    <p>No.102 の完成品原価は 1,808,000円 ではなく <strong>1,937,000円</strong> です。仕損費 129,000円 が賦課されているからです。<br><mark>小計で計算を止めて完成品原価を答えてしまう誤りが、この論点でいちばん多く出ます。</mark>補修指図書の列がある問題では、必ず「仕損費の行を通したあとの合計」を読んでください。<br>手順6と手順7を飛ばして手順8に進むと、この誤りが起きます。表の上に仕損費の行を実際に書くことが、飛ばさないための一番の対策です。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>原価計算表の縦横の検算は、GTキーを使うと電卓だけで完結します。<br>列合計を出すたびに <strong>＝</strong> で確定させると、その結果が自動的にGTメモリに積まれます。全列を計算し終えてから <strong>GT</strong> を押せば、総計が出ます。行合計を別に足した値と突き合わせれば、二方向の検算が1回の操作で済みます。<br>GTメモリは <strong>GT</strong> を2回押すとクリアされます。<mark>次の問題に移る前に必ずクリアしてください。</mark>前の問題の合計が残ったまま積み上がると、総計だけが合わないという形で現れ、原因の切り分けに時間を取られます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-kobetsu"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>計算ドリル 10問</h2>
+
+  <p>電卓を使って構いません。<strong>仕損費が絡む問題では、必ず原価計算表を下書きに書いてから集計してください。</strong>頭の中で足すと、補修指図書の列を差し引き忘れます。</p>
+
+  <div id="num-kobetsu"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>確認テスト 12問</h2>
+
+  <div id="quiz-kobetsu"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>用語の穴埋め 8問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-kobetsu"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s16"><span class="num">16</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u14check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u14check">0 / 0 完了（0%）</div>
+
+  <div id="u14check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u14-1"><label for="k1"><span class="cl__t">個別原価計算と総合原価計算の使い分けを、生産形態の違いから説明できる</span><span class="cl__d">個別は受注生産（造船・産業機械・建設・特注家具）、総合は大量見込生産（食品・製紙・化学）。製品を1つずつ見分けられるかどうかが分かれ目</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u14-2"><label for="k2"><span class="cl__t">個別は「集めて出す」、総合は「割って出す」という違いを言える</span><span class="cl__d">見分けが付くから指図書ごとに集められる。見分けが付かないから総額を数量で割るしかない</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u14-3"><label for="k3"><span class="cl__t">「個別」が製品1個ごとではなく製造指図書ごとの意味だと分かっている</span><span class="cl__d">1枚の指図書で5台まとめて作ることもある。1台あたりが要るなら箱の合計を5で割る</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u14-4"><label for="k4"><span class="cl__t">製造指図書が命令書と原価の集計単位を兼ねていることを説明できる</span><span class="cl__d">現場には作業命令書、経理には原価の入れ物。出庫票と作業時間報告書に同じ番号を書かせることで両者がつながる</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u14-5"><label for="k5"><span class="cl__t">直接費と間接費の分かれ目を、伝票に指図書番号が書けるかどうかで言える</span><span class="cl__d">書けるものは賦課（直課）、書けないものは製造間接費に集めて配賦</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u14-6"><label for="k6"><span class="cl__t">原価計算表の縦横の検算ができる</span><span class="cl__d">縦は指図書ごとの原価総額、横は費目ごとの工場全体の発生額。どちらから足しても総計は一致する</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u14-7"><label for="k7"><span class="cl__t">月初仕掛品原価を当月の費目別集計に含めてはいけない理由を言える</span><span class="cl__d">前月までにその指図書に積んだ額であり、当月の消費額ではない。含めると二重計上になる</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u14-8"><label for="k8"><span class="cl__t">原価計算表が仕掛品勘定の内訳明細にあたることを説明できる</span><span class="cl__d">仕掛品勘定は費目の方向、原価計算表は指図書の方向で同じ金額を切っている。合計は必ず一致する</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u14-9"><label for="k9"><span class="cl__t">原価計算表の製造間接費の行に入るのは予定配賦額だと分かっている</span><span class="cl__d">実際発生額は製造間接費勘定に残り、配賦差異として処理される。仕掛品勘定には流れ込まない</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u14-10"><label for="k10"><span class="cl__t">仕掛中・完成未引渡・完成引渡済の3状態を、3つの勘定に対応づけられる</span><span class="cl__d">仕掛品勘定の残高／製品勘定の残高／売上原価。完成しただけでは売上原価にならない</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u14-11"><label for="k11"><span class="cl__t">1か月分の記帳を5本の仕訳で通せる</span><span class="cl__d">直接材料費の賦課と間接材料費の振替／直接労務費の賦課と間接労務費の振替／製造間接費の予定配賦／完成品の製品勘定への振替／引渡分の売上原価への振替</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u14-12"><label for="k12"><span class="cl__t">部門別配賦率を使う場合に原価計算表がどう変わるか言える</span><span class="cl__d">製造間接費の行が部門の数だけ増える。部門ごとに配賦率も配賦基準も違うので、掛け合わせる相手を取り違えない</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u14-13"><label for="k13"><span class="cl__t">補修指図書を発行する理由を、金額の見える化と製品原価の正しさの両立として説明できる</span><span class="cl__d">本体に直接書き込むと仕損にいくらかかったか分からなくなる。別の箱で集めてから本体へ移す</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u14-14"><label for="k14"><span class="cl__t">仕損費＝補修指図書に集計された原価の合計 だと言え、製造間接費の配賦額を含めて計算できる</span><span class="cl__d">直接材料費・直接労務費・直接経費に加えて、補修作業時間に対する製造間接費の予定配賦額も入る</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u14-15"><label for="k15"><span class="cl__t">2級で扱う仕損費の処理が「当該指図書に賦課する方法」だけだと分かっている</span><span class="cl__d">間接費として配賦する方法、代品の指図書を発行する場合、補修も代品も発行しない場合は1級の範囲</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u14-16"><label for="k16"><span class="cl__t">「当該指図書」が補修指図書ではなく本体の指図書を指すと分かっている</span><span class="cl__d">仕損が発生した製造指図書に賦課する。No.102-2 の仕損費は No.102 へ</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u14-17"><label for="k17"><span class="cl__t">原価計算表の仕損費の行が合計ゼロになる理由を説明できる</span><span class="cl__d">本体に＋、補修指図書に△。箱から箱への移し替えなので総計は変わらない。これが検算になる</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u14-18"><label for="k18"><span class="cl__t">仕損費勘定を経由する2本の仕訳を書け、月末に残高ゼロになると言える</span><span class="cl__d">借方 仕損費／貸方 仕掛品 のあと、借方 仕掛品／貸方 仕損費。仕掛品勘定の残高は動かない</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u14-19"><label for="k19"><span class="cl__t">完成品原価を答えるとき、小計ではなく仕損費賦課後の合計を読める</span><span class="cl__d">補修指図書のある問題で最も多い誤り。表に仕損費の行を実際に書いて飛ばさないようにする</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u14-20"><label for="k20"><span class="cl__t">仕損と減損の違いを言え、減損は総合原価計算の論点だと分かっている</span><span class="cl__d">仕損は作り損じたモノが残る、減損は蒸発・粉散でモノが消える。個別原価計算で扱うのは仕損だけ</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u14-21"><label for="k21"><span class="cl__t">作業屑の処理が2級の範囲外だと分かっている</span><span class="cl__d">出題区分表では1級。問題文に切削屑が出てきても金額の扱いは問われない</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u14-22"><label for="k22"><span class="cl__t">仕損を含む原価計算表を、8つの手順で最後まで埋められる</span><span class="cl__d">列を作る→月初を置く→直接費を賦課→製造間接費を配賦→小計と検算→仕損費を振替→合計→完成と引渡しで集計</span></label></li>
+    <li><input type="checkbox" id="k23" data-key="p1u14-23"><label for="k23"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k24" data-key="p1u14-24"><label for="k24"><span class="cl__t">計算ドリル10問・確認テスト12問を全問正解した</span><span class="cl__d">特に補修指図書への製造間接費の配賦と、仕損費賦課後の完成品原価を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元で、<strong>費目別計算 → 部門別計算 → 製品別計算</strong>という原価計算の3ステップが、製品別計算の片側（個別原価計算）まで通りました。W1から積み上げてきたものが、原価計算表という1枚の表にすべて着地します。<br>次のW5では、製品別計算のもう片側である<strong>総合原価計算</strong>に進みます。指図書という箱がなくなるので、原価を集める代わりに<mark>完成品と月末仕掛品に按分する</mark>という別の計算が中心になります。このとき進捗度・平均法・先入先出法という新しい道具が出てきますが、<strong>仕掛品勘定の形は変わりません。</strong>借方に費目別の原価が入り、貸方から完成品原価が出て残りが次月繰越、という構造は同じです。<br>W5に入る前に、この単元の原価計算表と仕掛品勘定の対応を、何も見ずに描けるようにしておいてください。総合原価計算はその仕掛品勘定の中身を別の方法で割り振る話なので、土台がぐらつくと全部が崩れます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W4 ／ UNIT 14 個別原価計算</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var KOBETSU_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '仕損費', '製造間接費配賦差異', '予算差異', '操業度差異',
+  '材料消費価格差異', '賃率差異',
+  '外注加工賃', '電力料', '修繕料', '保険料', '減価償却費', '棚卸減耗費',
+  '売上', '売掛金', '現金', '当座預金', '買掛金', '未払金'
+];
+
+BokiJournal.mount('#drill-kobetsu', {
+  title: '仕訳ドリル — 個別原価計算',
+  accounts: KOBETSU_ACCOUNTS,
+  questions: [
+    {
+      text: '当月の材料消費額は 1,690,000円であった。このうち特定の製造指図書向けの出庫が 1,310,000円、工場共通の出庫が 380,000円である。',
+      debit: [['仕掛品', 1310000], ['製造間接費', 380000]],
+      credit: [['材料', 1690000]],
+      hint: '出庫票に製造指図書番号が書けたかどうかで行き先が分かれます。',
+      explain: '<p>指図書番号のついた出庫は<strong>直接材料費</strong>なので、そのまま各指図書へ賦課されます。原価計算表の直接材料費の行に入り、勘定としては<strong>仕掛品</strong>の借方です。</p><p>工場共通の出庫は<strong>間接材料費</strong>で、どの指図書のものか伝票に書けません。いったん<strong>製造間接費</strong>に集め、あとで予定配賦率を通して各指図書へ配ります。</p><p>貸方の材料は 1,690,000円 の1行です。<mark>材料勘定から出ていく総額は変わらず、行き先が2つに割れるだけ</mark>という形を覚えてください。</p>'
+    },
+    {
+      text: '当月の賃金消費額は 1,560,000円であった。このうち直接作業時間に対応する分が 1,200,000円、間接作業時間および手待時間に対応する分が 360,000円である。',
+      debit: [['仕掛品', 1200000], ['製造間接費', 360000]],
+      credit: [['賃金・給料', 1560000]],
+      hint: '作業時間報告書に指図書番号が書かれるのは、どの時間でしょうか。',
+      explain: '<p>直接作業時間には「No.101に何時間」と指図書番号が書かれるため、<strong>直接労務費</strong>として仕掛品へ賦課します。</p><p>間接作業時間（材料の運搬、機械の清掃など）と手待時間（材料待ち、停電）には書く番号がありません。<strong>間接労務費</strong>として製造間接費に集めます。</p><p>UNIT 07 で学んだ直接工の時間の分け方が、そのままこの仕訳の金額の分け方になります。<mark>時間の分類が原価の分類を決めています。</mark></p>'
+    },
+    {
+      text: '当月の製造間接費を予定配賦率 @900円により各製造指図書に配賦した。当月の直接作業時間は No.101 が 400時間、No.102 が 720時間、No.103 が 480時間である。',
+      debit: [['仕掛品', 1440000]],
+      credit: [['製造間接費', 1440000]],
+      hint: '指図書ごとに配賦額を計算しても、仕訳の金額は合計です。',
+      explain: '<p>配賦額は No.101 が @900 × 400 ＝ 360,000円、No.102 が @900 × 720 ＝ 648,000円、No.103 が @900 × 480 ＝ 432,000円。合計 <strong>1,440,000円</strong> です（@900 × 1,600時間 としても同じです）。</p><p>指図書ごとの内訳は<strong>原価計算表</strong>に書きます。<mark>仕訳に現れるのは合計だけです。</mark>勘定には指図書の区別がないためです。</p><p>借方が仕掛品、貸方が製造間接費。製造間接費という箱から出て、仕掛品という箱へ移ります。</p>'
+    },
+    {
+      text: '当月に完成した製造指図書は No.101（原価 1,280,000円）と No.102（原価 1,808,000円）である。完成品を製品勘定に振り替えた。',
+      debit: [['製品', 3088000]],
+      credit: [['仕掛品', 3088000]],
+      hint: '完成した指図書の列を足すだけです。',
+      explain: '<p>1,280,000 ＋ 1,808,000 ＝ <strong>3,088,000円</strong>。完成した指図書の合計がそのまま完成品原価です。</p><p><mark>総合原価計算のように進捗度を掛けて按分する必要はありません。</mark>指図書ごとに原価が確定しているので、完成したものを足すだけで済みます。これが個別原価計算の計算上の気楽さです。</p><p>未完成の指図書（この例では No.103）の原価は仕掛品勘定に残り、月末仕掛品原価になります。</p>'
+    },
+    {
+      text: '製造指図書 No.101（原価 1,280,000円）の製品を得意先に引き渡した。売上原価を計上する仕訳を示しなさい。なお、売上の計上は別途行っている。',
+      debit: [['売上原価', 1280000]],
+      credit: [['製品', 1280000]],
+      hint: '完成しただけの指図書と、引き渡した指図書を区別します。',
+      explain: '<p>製品勘定にある 1,280,000円 を<strong>売上原価</strong>へ振り替えます。</p><p>同じ月に完成した No.102 は倉庫にあるだけなので、<mark>製品勘定に残ったままです。</mark>完成した指図書を全部まとめて売上原価にしてはいけません。</p><p>問題文が「引き渡した」「販売した」「納品した」と書いているかどうかを、指図書ごとに確認してください。備考欄に「完成」としか書いていなければ、製品勘定で止まります。</p>'
+    },
+    {
+      text: '製造指図書 No.102 の一部に仕損が生じたため補修指図書 No.102-2 を発行し、補修を行った。No.102-2 に集計された原価は直接材料費 30,000円、直接労務費 45,000円、製造間接費配賦額 54,000円である。この仕損費を仕損費勘定に振り替えた。',
+      debit: [['仕損費', 129000]],
+      credit: [['仕掛品', 129000]],
+      hint: '補修指図書に集まった原価の合計が仕損費です。製造間接費配賦額も含めます。',
+      explain: '<p>仕損費 ＝ 30,000 ＋ 45,000 ＋ 54,000 ＝ <strong>129,000円</strong>。</p><p>補修のための材料も労務も、いったん仕掛品勘定に入っています（補修指図書も1枚の指図書だからです）。それを<strong>仕損費勘定へ取り出す</strong>のがこの仕訳です。</p><p><mark>製造間接費配賦額 54,000円 を忘れないでください。</mark>補修作業にも機械を動かし電気を使っているので、補修指図書も製造間接費の配賦対象です。直接材料費と直接労務費だけを足して 75,000円 とするのが、この論点で最も多い誤りです。</p>'
+    },
+    {
+      text: '補修指図書 No.102-2 に集計された仕損費 129,000円 を、仕損が発生した製造指図書 No.102 に賦課した。',
+      debit: [['仕掛品', 129000]],
+      credit: [['仕損費', 129000]],
+      hint: '「当該指図書」とは、補修指図書ではなくどちらの指図書でしょうか。',
+      explain: '<p>2級で扱う仕損費の処理は<strong>当該指図書に賦課する方法</strong>だけです。「当該指図書」とは<mark>仕損が発生した本体の指図書（No.102）</mark>であって、補修指図書ではありません。</p><p>仕損費勘定から出して、仕掛品勘定へ戻します。前問と合わせると、仕掛品勘定の残高は 1円も動いていません。動いたのは<strong>原価計算表の中での所属</strong>（No.102-2 から No.102 へ）だけです。</p><p>この2本を通すと仕損費勘定は借方 129,000・貸方 129,000 となり、<strong>月末残高はゼロ</strong>になります。残高が残ったら賦課先を書き忘れています。</p>'
+    },
+    {
+      text: '当月の製造間接費を部門別予定配賦率により配賦した。切削部門は機械運転時間を基準とし予定配賦率 @900円、当月の機械運転時間は 720時間であった。組立部門は直接作業時間を基準とし予定配賦率 @675円、当月の直接作業時間は 650時間であった。なお<strong>部門費勘定は設けておらず、製造間接費勘定から直接配賦している。</strong>',
+      debit: [['仕掛品', 1086750]],
+      credit: [['製造間接費', 1086750]],
+      hint: '部門ごとに配賦率も配賦基準も違います。掛け合わせる相手を取り違えないでください。',
+      explain: '<p>切削部門 ＝ @900 × 720時間 ＝ 648,000円<br>組立部門 ＝ @675 × 650時間 ＝ 438,750円<br>合計 <strong>1,086,750円</strong>。</p><p><mark>部門が増えても仕訳の形は変わりません。</mark>借方 仕掛品／貸方 製造間接費 の1行のままで、金額が部門ごとの合計になるだけです。部門ごとの内訳は原価計算表に行として現れます。</p><p>間違えるとしたら、切削部門の配賦率に組立部門の時間を掛ける取り違えです。配賦率と配賦基準量を線で結んでから電卓を叩いてください。</p>'
+    },
+    {
+      text: '当月の製造間接費の実際発生額は 1,512,000円であった。予定配賦額は 1,440,000円である。月末に製造間接費勘定の残高を製造間接費配賦差異勘定に振り替えた。',
+      debit: [['製造間接費配賦差異', 72000]],
+      credit: [['製造間接費', 72000]],
+      hint: '予定より実際が多いとき、製造間接費勘定にはどちら側の残高が残るでしょうか。',
+      explain: '<p>製造間接費勘定は借方に実際発生額 1,512,000円、貸方に予定配賦額 1,440,000円。<strong>借方残高 72,000円</strong>が残ります。</p><p>借方残高は<mark>予定より実際のほうが多かった</mark>ことを意味し、不利差異（借方差異）です。これを貸方に置いて消し、相手科目を製造間接費配賦差異とします。</p><p><strong>この差異は仕掛品勘定にも原価計算表にも入りません。</strong>原価計算表に書くのは常に予定配賦額の 1,440,000円 です。実際発生額は差異の計算にだけ使います。</p>'
+    },
+    {
+      text: '製造指図書 No.205 について、外注先に依頼していたメッキ加工が完了し、加工賃 180,000円の請求を受けた。代金は翌月末に支払う。なお、当社は外注加工賃を直接経費として処理している。',
+      debit: [['外注加工賃', 180000]],
+      credit: [['未払金', 180000]],
+      hint: '請求を受けた段階です。消費額の振替はこの次の仕訳になります。',
+      explain: '<p>まず外注加工賃の発生を記録します。<strong>請求を受けただけで、まだ仕掛品へ振り替えていません。</strong>UNIT 07 で見たとおり、外注加工賃はいったん自分の勘定で受けてから消費額を振り替える2本立てで処理します。</p><p>貸方は代金の未払いです。<mark>買掛金は商品の仕入れに限る科目</mark>なので、役務（加工）の購入には使いません。未払金で処理します。</p><p>この次に「仕掛品 180,000／外注加工賃 180,000」と振り替えると、直接経費として No.205 に賦課されます。外注加工賃は請求書に「No.205のメッキ加工」と書けるため<strong>直接経費</strong>で、製造間接費を経由しません。</p>'
+    },
+    {
+      text: '製造指図書 No.206 の製品が完成した。同指図書に集計された原価は直接材料費 640,000円、直接労務費 480,000円、製造間接費配賦額 576,000円、および仕損費 96,000円である。完成品を製品勘定に振り替えた。',
+      debit: [['製品', 1792000]],
+      credit: [['仕掛品', 1792000]],
+      hint: '仕損費を賦課したあとの合計が完成品原価です。',
+      explain: '<p>640,000 ＋ 480,000 ＋ 576,000 ＝ 1,696,000円（小計）。これに仕損費 96,000円 を加えて <strong>1,792,000円</strong> が完成品原価です。</p><p><mark>小計で計算を止めて 1,696,000円 と答える誤りが、この論点でいちばん多く出ます。</mark>補修指図書のある問題では、必ず「仕損費の行を通したあとの合計」を読んでください。</p><p>原価計算表の上に仕損費の行を実際に書いておくことが、飛ばさないための一番の対策です。</p>'
+    },
+    {
+      text: '製造指図書 No.207（原価 2,340,000円）の製品を 3,200,000円で得意先に掛け販売し、引き渡した。売上と売上原価の両方を計上しなさい。',
+      debit: [['売掛金', 3200000], ['売上原価', 2340000]],
+      credit: [['売上', 3200000], ['製品', 2340000]],
+      hint: '販売の仕訳と原価の振替の仕訳を、1つの仕訳にまとめます。',
+      explain: '<p>販売の仕訳（借方 売掛金／貸方 売上 3,200,000円）と、原価の振替（借方 売上原価／貸方 製品 2,340,000円）を同時に書きます。</p><p>3級で学んだ<strong>売上原価対立法</strong>と同じ形です。商業簿記では商品勘定から売上原価へ振り替えましたが、工業簿記では<mark>製品勘定から売上原価へ振り替えます。</mark>箱の名前が違うだけで構造は同じです。</p><p>売上総利益は 3,200,000 − 2,340,000 ＝ 860,000円。個別原価計算では指図書ごとに原価が確定しているため、<strong>1件の注文ごとの利益が直接わかります。</strong>これが受注生産の企業にとって個別原価計算が有用な理由です。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-kobetsu', {
+  title: '計算ドリル — 個別原価計算',
+  badge: '計算ドリル 10問',
+  questions: [
+    {
+      text: '製造指図書 No.301 に、月初仕掛品原価 380,000円、当月の直接材料費 240,000円、直接労務費 300,000円が集計されている。製造間接費は予定配賦率 @900円、No.301 の当月直接作業時間は 400時間である。① 製造間接費配賦額、② No.301 の原価合計を求めなさい。',
+      answer: [360000, 1280000],
+      formula: ['900 * 400', '380000 + 240000 + 300000 + 900 * 400'],
+      labels: ['① 製造間接費配賦額（円）', '② 原価合計（円）'],
+      hint: '月初仕掛品原価も指図書の原価の一部です。合計から外さないでください。',
+      explain: '<p>① @900 × 400時間 ＝ <strong>360,000円</strong><br>② 380,000 ＋ 240,000 ＋ 300,000 ＋ 360,000 ＝ <strong>1,280,000円</strong></p><p>月初仕掛品原価 380,000円 は、前月までにこの指図書に積んだ額です。<mark>当月の費目別集計には含めませんが、指図書の原価合計には含めます。</mark>この区別が付かないと、原価計算表の縦の合計と横の合計が合わなくなります。</p>'
+    },
+    {
+      text: '当月の原価計算表に No.301、No.302、No.303 の3列がある。直接材料費は順に 240,000円、620,000円、450,000円。直接労務費は順に 300,000円、540,000円、360,000円。製造間接費の予定配賦率は @900円で、直接作業時間は順に 400時間、720時間、480時間である。① 直接材料費の合計、② 直接労務費の合計、③ 製造間接費の合計を求めなさい。',
+      answer: [1310000, 1200000, 1440000],
+      formula: ['240000 + 620000 + 450000', '300000 + 540000 + 360000', '900 * (400 + 720 + 480)'],
+      labels: ['① 直接材料費合計（円）', '② 直接労務費合計（円）', '③ 製造間接費合計（円）'],
+      hint: '製造間接費は、時間を先に合計してから配賦率を掛けても同じです。',
+      explain: '<p>① 240,000 ＋ 620,000 ＋ 450,000 ＝ <strong>1,310,000円</strong><br>② 300,000 ＋ 540,000 ＋ 360,000 ＝ <strong>1,200,000円</strong><br>③ @900 ×（400 ＋ 720 ＋ 480 ＝ 1,600時間）＝ <strong>1,440,000円</strong></p><p>これが原価計算表を<strong>横に</strong>足した値であり、そのまま<mark>仕掛品勘定の借方の各行</mark>になります。仕訳で書く金額もこれです。</p><p>③は指図書ごとに 360,000 ＋ 648,000 ＋ 432,000 と計算しても同じ 1,440,000円 になります。時間を先に足すほうが電卓の操作が1回少なくて済みます。</p>'
+    },
+    {
+      text: '前問と同じ原価計算表について、No.301 には月初仕掛品原価 380,000円があり、No.302・No.303 にはない。月末に No.301 と No.302 が完成し、No.303 は仕掛中である。① 原価計算表の総計、② 当月完成品原価、③ 月末仕掛品原価を求めなさい。',
+      answer: [4330000, 3088000, 1242000],
+      formula: [
+        '380000 + 1310000 + 1200000 + 1440000',
+        '(380000 + 240000 + 300000 + 900 * 400) + (620000 + 540000 + 900 * 720)',
+        '450000 + 360000 + 900 * 480'
+      ],
+      labels: ['① 総計（円）', '② 当月完成品原価（円）', '③ 月末仕掛品原価（円）'],
+      hint: '完成品原価と月末仕掛品原価を足すと、総計になるはずです。',
+      explain: '<p>① 380,000 ＋ 1,310,000 ＋ 1,200,000 ＋ 1,440,000 ＝ <strong>4,330,000円</strong><br>② No.301（1,280,000）＋ No.302（620,000 ＋ 540,000 ＋ 648,000 ＝ 1,808,000）＝ <strong>3,088,000円</strong><br>③ No.303 ＝ 450,000 ＋ 360,000 ＋ 432,000 ＝ <strong>1,242,000円</strong></p><p>検算：3,088,000 ＋ 1,242,000 ＝ 4,330,000円。①と一致します。<mark>この検算が合わないなら、どこかの列を足し忘れているか、完成・未完成の判定を取り違えています。</mark>第4問(2)は答案が連動するので、必ずここで止めてください。</p>'
+    },
+    {
+      text: '製造指図書 No.305 の補修のため補修指図書 No.305-2 を発行した。No.305-2 に集計されたのは直接材料費 85,000円、直接労務費 120,000円である。補修作業の直接作業時間は 90時間、製造間接費の予定配賦率は @900円である。この仕損の仕損費を求めなさい。',
+      answer: 286000,
+      formula: '85000 + 120000 + 900 * 90',
+      labels: ['仕損費（円）'],
+      hint: '補修指図書も1枚の指図書です。製造間接費の配賦対象から外れません。',
+      explain: '<p>製造間接費配賦額 ＝ @900 × 90時間 ＝ 81,000円。<br>仕損費 ＝ 85,000 ＋ 120,000 ＋ 81,000 ＝ <strong>286,000円</strong></p><p><mark>直接材料費と直接労務費だけを足して 205,000円 とするのが、この論点で最も多い誤りです。</mark>補修作業にも機械を動かし、電気を使い、工場長の監督を受けています。補修指図書は原価の集計単位として本体の指図書と対等であり、製造間接費の配賦を受けます。</p><p>問題文がわざわざ「補修作業の直接作業時間は 90時間」と書いているのは、この配賦計算をさせるためです。<strong>時間の記述があれば、必ず配賦額を計算します。</strong></p>'
+    },
+    {
+      text: '製造指図書 No.310 に集計された原価は、直接材料費 780,000円、直接労務費 600,000円、製造間接費配賦額 720,000円である。No.310 の補修のために発行した補修指図書 No.310-2 には、直接材料費 42,000円、直接労務費 75,000円、製造間接費配賦額 63,000円が集計された。No.310 は当月に完成している。① 仕損費、② No.310 の完成品原価を求めなさい。',
+      answer: [180000, 2280000],
+      formula: ['42000 + 75000 + 63000', '780000 + 600000 + 720000 + (42000 + 75000 + 63000)'],
+      labels: ['① 仕損費（円）', '② 完成品原価（円）'],
+      hint: '完成品原価は、小計ではなく仕損費を賦課したあとの合計です。',
+      explain: '<p>① 42,000 ＋ 75,000 ＋ 63,000 ＝ <strong>180,000円</strong><br>② 小計 780,000 ＋ 600,000 ＋ 720,000 ＝ 2,100,000円。これに仕損費 180,000円 を加えて <strong>2,280,000円</strong></p><p>2級で扱う仕損費の処理は<strong>当該指図書に賦課する方法</strong>だけです。「当該指図書」は<mark>仕損が発生した本体の指図書（No.310）</mark>であり、補修指図書ではありません。</p><p>小計 2,100,000円 で止めて答えると 180,000円 不足します。補修指図書のある問題では、必ず仕損費の行を書いてから合計を読んでください。</p>'
+    },
+    {
+      text: '原価計算表に No.401（完成・引渡済）、No.402（完成・未引渡）、No.403（仕掛中）の3列がある。仕損費賦課後の合計は順に 1,450,000円、2,080,000円、960,000円である。① 当月完成品原価、② 当月売上原価、③ 月末製品原価、④ 月末仕掛品原価を求めなさい。',
+      answer: [3530000, 1450000, 2080000, 960000],
+      formula: ['1450000 + 2080000', '1450000', '2080000', '960000'],
+      labels: ['① 完成品原価（円）', '② 売上原価（円）', '③ 月末製品原価（円）', '④ 月末仕掛品原価（円）'],
+      hint: '完成した指図書は2つありますが、売上原価になるのはそのうち1つだけです。',
+      explain: '<p>① 完成したのは No.401 と No.402 なので 1,450,000 ＋ 2,080,000 ＝ <strong>3,530,000円</strong><br>② 引き渡したのは No.401 だけなので <strong>1,450,000円</strong><br>③ 完成して倉庫にあるのは No.402 なので <strong>2,080,000円</strong><br>④ 仕掛中は No.403 なので <strong>960,000円</strong></p><p><mark>完成した指図書を全部まとめて売上原価にしてはいけません。</mark>完成しても倉庫にあるだけなら、まだ製品です。</p><p>検算：売上原価 ＋ 月末製品原価 ＝ 1,450,000 ＋ 2,080,000 ＝ 3,530,000円 で完成品原価と一致します。個別原価計算の残高は、すべて「指図書の合計を足したもの」で説明が付きます。</p>'
+    },
+    {
+      text: '部門別予定配賦率を採用している。切削部門は機械運転時間を基準とし、年間予算額 32,400,000円、年間基準操業度 36,000時間である。組立部門は直接作業時間を基準とし、年間予算額 25,920,000円、年間基準操業度 38,400時間である。① 切削部門の予定配賦率、② 組立部門の予定配賦率を求めなさい。',
+      answer: [900, 675],
+      formula: ['32400000 / 36000', '25920000 / 38400'],
+      labels: ['① 切削部門の予定配賦率（円）', '② 組立部門の予定配賦率（円）'],
+      hint: '部門ごとに、その部門の予算額をその部門の基準操業度で割ります。',
+      explain: '<p>① 32,400,000 ÷ 36,000 ＝ <strong>@900円</strong>（機械運転時間1時間あたり）<br>② 25,920,000 ÷ 38,400 ＝ <strong>@675円</strong>（直接作業時間1時間あたり）</p><p><mark>部門ごとに配賦基準そのものが違います。</mark>切削部門は機械が主役なので機械運転時間、組立部門は人が主役なので直接作業時間、という使い分けです（UNIT 13）。</p><p>この2つの率は<strong>単位が違うので足せません。</strong>「@900 ＋ @675 ＝ @1,575」という計算には意味がありません。指図書ごとに、それぞれの部門での時間を掛けてから足します。</p>'
+    },
+    {
+      text: '前問の部門別予定配賦率（切削部門 @900円・機械運転時間基準、組立部門 @675円・直接作業時間基準）による。製造指図書 No.501 の当月の機械運転時間は 300時間、直接作業時間は 250時間である。① 切削部門からの配賦額、② 組立部門からの配賦額、③ No.501 への配賦額合計を求めなさい。',
+      answer: [270000, 168750, 438750],
+      formula: ['900 * 300', '675 * 250', '900 * 300 + 675 * 250'],
+      labels: ['① 切削部門（円）', '② 組立部門（円）', '③ 合計（円）'],
+      hint: '切削部門の率に掛けるのは機械運転時間です。直接作業時間ではありません。',
+      explain: '<p>① @900 × 300時間（機械運転時間）＝ <strong>270,000円</strong><br>② @675 × 250時間（直接作業時間）＝ <strong>168,750円</strong><br>③ 270,000 ＋ 168,750 ＝ <strong>438,750円</strong></p><p>原価計算表の上では、<strong>製造間接費の行が2行になります。</strong>「製造間接費 — 切削部門」と「製造間接費 — 組立部門」です。</p><p><mark>取り違えの誘いは、切削部門の @900円 に直接作業時間 250時間 を掛けること</mark>です（225,000円 になり、答えが 45,000円 ずれます）。配賦率と配賦基準量を線で結んでから電卓を叩いてください。</p>'
+    },
+    {
+      text: '当月の原価計算表は次のとおりである。No.601 は直接材料費 520,000円・直接労務費 390,000円・直接作業時間 260時間、No.602 は直接材料費 780,000円・直接労務費 600,000円・直接作業時間 400時間、No.603 は直接材料費 460,000円・直接労務費 340,000円・直接作業時間 230時間。製造間接費の予定配賦率は @900円である。① No.601 の合計、② No.602 の合計、③ No.603 の合計、④ 総計を求めなさい。',
+      answer: [1144000, 1740000, 1007000, 3891000],
+      formula: [
+        '520000 + 390000 + 900 * 260',
+        '780000 + 600000 + 900 * 400',
+        '460000 + 340000 + 900 * 230',
+        '(520000 + 780000 + 460000) + (390000 + 600000 + 340000) + 900 * (260 + 400 + 230)'
+      ],
+      labels: ['① No.601（円）', '② No.602（円）', '③ No.603（円）', '④ 総計（円）'],
+      hint: '④は横に足した値です。①〜③を縦に足した値と一致するか確かめてください。',
+      explain: '<p>① 520,000 ＋ 390,000 ＋ 234,000 ＝ <strong>1,144,000円</strong><br>② 780,000 ＋ 600,000 ＋ 360,000 ＝ <strong>1,740,000円</strong><br>③ 460,000 ＋ 340,000 ＋ 207,000 ＝ <strong>1,007,000円</strong><br>④ 直接材料費 1,760,000 ＋ 直接労務費 1,330,000 ＋ 製造間接費 801,000 ＝ <strong>3,891,000円</strong></p><p>検算：1,144,000 ＋ 1,740,000 ＋ 1,007,000 ＝ 3,891,000円。<mark>縦から足しても横から足しても同じ値になります。</mark></p><p>この二方向の検算が、原価計算表を埋め終わったあとにやるべき唯一かつ最強の確認です。一致しなければ、その先の完成品原価も月末仕掛品原価も必ず間違えます。</p>'
+    },
+    {
+      text: '当月の原価計算表に No.701、No.702、補修指図書 No.702-2、No.703 の4列がある。仕損費賦課前の小計は順に 1,280,000円、1,808,000円、129,000円、1,242,000円である。No.702-2 は No.702 の補修のために発行されたものである。No.701 と No.702 が完成し、No.703 は仕掛中である。① 小計の総計、② 仕損費賦課後の No.702 の合計、③ 当月完成品原価、④ 月末仕掛品原価を求めなさい。',
+      answer: [4459000, 1937000, 3217000, 1242000],
+      formula: [
+        '1280000 + 1808000 + 129000 + 1242000',
+        '1808000 + 129000',
+        '1280000 + 1808000 + 129000',
+        '1242000'
+      ],
+      labels: ['① 小計の総計（円）', '② No.702 の合計（円）', '③ 当月完成品原価（円）', '④ 月末仕掛品原価（円）'],
+      hint: '仕損費の振替で総計は変わりません。箱から箱へ移しただけだからです。',
+      explain: '<p>① 1,280,000 ＋ 1,808,000 ＋ 129,000 ＋ 1,242,000 ＝ <strong>4,459,000円</strong><br>② 1,808,000 ＋ 129,000 ＝ <strong>1,937,000円</strong>（No.702-2 の列は 0 になる）<br>③ No.701 1,280,000 ＋ No.702 1,937,000 ＝ <strong>3,217,000円</strong><br>④ No.703 ＝ <strong>1,242,000円</strong></p><p>検算：完成品原価 3,217,000 ＋ 月末仕掛品原価 1,242,000 ＝ 4,459,000円。<mark>①の小計の総計と一致します。</mark>仕損費の行は ＋129,000 と △129,000 で合計 0 なので、総計は処理の前後で動きません。</p><p>これが仕損を含む問題での最良の検算です。総計が増えていたら、補修指図書の列を差し引き忘れています。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-kobetsu', {
+  title: '確認テスト — 個別原価計算',
+  questions: [
+    {
+      text: '個別原価計算が適用される生産形態として、最も適切なものはどれですか。',
+      choices: [
+        '同一規格の清涼飲料水を連続して大量生産している工場',
+        '顧客の仕様に合わせた産業用機械を、注文ごとに製造している工場',
+        '毎月一定量の汎用ねじを見込みで生産している工場',
+        '原料を連続投入してセメントを製造している工場'
+      ],
+      answer: 1,
+      explain: '<p>個別原価計算は<strong>受注生産</strong>で使います。注文ごとに製造指図書を発行し、その指図書ごとに原価を集計します。造船、産業機械、建設、特注家具、印刷、ソフトウェア受託開発が典型です。</p><p>選択肢1・3・4はいずれも<strong>大量見込生産</strong>で、総合原価計算（W5）の対象です。ライン上の仕掛品に「これは誰のぶん」という区別がないため、個別に集めようがありません。総額を数量で割ります。</p><p><mark>見分けが付くから集められる、付かないから割る。</mark>この差が2つの計算方法を分けています。</p>'
+    },
+    {
+      text: '製造指図書について、正しい説明はどれですか。',
+      choices: [
+        '1枚の製造指図書は必ず製品1個に対応する',
+        '製造指図書は経理部が原価計算のためだけに作成する帳票である',
+        '製造指図書は現場への作業命令書であると同時に、原価の集計単位でもある',
+        '製造指図書には金額を記入するため、製造開始前には発行できない'
+      ],
+      answer: 2,
+      explain: '<p>製造指図書には2つの顔があります。<strong>現場にとっては「何を何台、いつまでに作れ」という作業命令書</strong>であり、<strong>経理にとっては原価の入れ物</strong>です。<mark>この2つが同じ番号で結ばれていることが、個別原価計算の仕掛けのすべてです。</mark></p><p>選択肢1は誤りです。1枚の指図書で機械を5台まとめて作ることもあります。「個別」は製品1個ごとではなく<strong>製造指図書ごと</strong>という意味です。</p><p>選択肢2も誤りです。経理のために現場に余分な記録を書かせているのではなく、現場が命令に従って作業した記録が、そのまま原価の集計資料になっています。選択肢4も誤りで、指図書は製造開始時に発行され、原価はその後に集計されていきます。</p>'
+    },
+    {
+      text: '原価計算表と仕掛品勘定の関係として、正しい説明はどれですか。',
+      choices: [
+        '原価計算表は仕掛品勘定の内訳明細であり、両者の合計は必ず一致する',
+        '原価計算表には完成した指図書だけを載せ、仕掛品勘定には未完成のものだけを載せる',
+        '原価計算表は製造間接費の実際発生額を、仕掛品勘定は予定配賦額を記録する',
+        '原価計算表は材料費のみを、仕掛品勘定は全費目を記録する'
+      ],
+      answer: 0,
+      explain: '<p>仕掛品勘定は<strong>費目の方向</strong>（材料からいくら、賃金からいくら）、原価計算表は<strong>指図書の方向</strong>（No.101にいくら）で、同じ金額を切っています。<mark>仕掛品勘定を見てもその金額が何号機のものか分からないので、それを見えるようにしたのが原価計算表です。</mark></p><p>だから両者の合計は必ず一致します。一致しないなら、どちらかで計算を間違えています。第4問(2)では原価計算表を埋めさせてから仕掛品勘定を書かせる出題が多く、この一致が答案の自己検算になります。</p><p>選択肢3は逆でもなく、どちらも予定配賦額を記録します。実際発生額は製造間接費勘定に残り、配賦差異として処理されます。</p>'
+    },
+    {
+      text: '原価計算表の製造間接費の行に記入すべき金額は、次のうちどれですか。',
+      choices: [
+        '当月の製造間接費の実際発生額を、各指図書の直接材料費の比で按分した額',
+        '予定配賦率に各指図書の配賦基準量を掛けた、予定配賦額',
+        '製造間接費の実際発生額から製造間接費配賦差異を差し引いた額',
+        '各指図書について実際に測定した間接材料の消費額'
+      ],
+      answer: 1,
+      explain: '<p>予定配賦をしている以上、原価計算表にも仕掛品勘定にも入るのは<strong>予定配賦額</strong>です。当月の実際発生額がいくらであっても、そこには現れません。</p><p>実際発生額との差は<mark>製造間接費勘定の中に残り、製造間接費配賦差異として処理されます。</mark>仕掛品勘定には流れ込みません。</p><p>問題文に実際発生額が書いてあると、つい原価計算表に書きたくなります。しかし原価計算表に書くのは常に配賦額です。<strong>実際発生額は差異の計算にだけ使います。</strong></p>'
+    },
+    {
+      text: '月末に、製造指図書 No.101 は完成して得意先に引き渡され、No.102 は完成したが倉庫にあり、No.103 は仕掛中である。月末時点で各指図書の原価が計上されている勘定の組み合わせとして正しいものはどれですか。',
+      choices: [
+        'No.101 は製品、No.102 は製品、No.103 は仕掛品',
+        'No.101 は売上原価、No.102 は製品、No.103 は仕掛品',
+        'No.101 は売上原価、No.102 は売上原価、No.103 は仕掛品',
+        'No.101 は売上原価、No.102 は仕掛品、No.103 は仕掛品'
+      ],
+      answer: 1,
+      explain: '<p>3つの状態が3つの勘定に対応します。<br><strong>仕掛中</strong>　仕掛品勘定の残高（No.103）<br><strong>完成・未引渡</strong>　製品勘定の残高（No.102）<br><strong>完成・引渡済</strong>　売上原価（No.101）</p><p><mark>完成した指図書を全部まとめて売上原価にしてはいけません。</mark>完成しても倉庫にあるだけなら、まだ製品です。売れて初めて売上原価になります。</p><p>問題文が「引き渡した」「販売した」「納品した」と書いているかどうかを、指図書ごとに確認してください。備考欄に「完成」としか書いていなければ、製品勘定で止まります。</p>'
+    },
+    {
+      text: '補修指図書を発行して仕損の補修を行う理由として、最も適切なものはどれですか。',
+      choices: [
+        '補修の原価を製品原価に含めないようにするため',
+        '補修にかかった原価を独立に集計し、金額を把握できるようにするため',
+        '補修の原価を販売費及び一般管理費として処理するため',
+        '補修が税務上の損金になることを証明するため'
+      ],
+      answer: 1,
+      explain: '<p>補修の原価を本体の指図書に直接書き込むと、<mark>いくら補修にかかったのかが分からなくなります。</mark>直接材料費の行に紛れ込み、正常な作業でかかった材料費と区別が付かなくなるからです。</p><p>仕損は<strong>減らすべきコスト</strong>なので、いくら発生したかを見えるようにしておかなければ、減らす努力の効果が測れません。そこで別の指図書という箱で集め、金額が確定してから本体へ移します。</p><p>選択肢1は誤りです。補修の原価は<strong>製品原価に含めます</strong>。この注文を受けなければその補修は起きなかったので、その製品の原価です。集めるときだけ別の箱を使うのであって、最終的な着地点は本体の指図書です。</p>'
+    },
+    {
+      text: '補修指図書 No.202-2 の原価を集計している。次のうち、仕損費に含めるべきでないものはどれですか。',
+      choices: [
+        '補修のために出庫した部品の消費額',
+        '補修作業に従事した直接工の賃金',
+        '補修作業の直接作業時間に対する製造間接費の予定配賦額',
+        '補修の対象となった製造指図書 No.202 の月初仕掛品原価'
+      ],
+      answer: 3,
+      explain: '<p>仕損費とは<strong>補修指図書に集計された原価の合計</strong>です。補修のために使った直接材料費・直接労務費・直接経費に、補修作業時間に対する製造間接費配賦額を加えたものです。</p><p>選択肢4の月初仕掛品原価は、<mark>本体の指図書に前月までに積まれた原価</mark>であって、補修とは無関係です。仕損費に含める余地がありません。</p><p>落としやすいのは選択肢3です。<strong>補修指図書も1枚の指図書であり、製造間接費の配賦対象から外れません。</strong>補修作業にも機械を動かし電気を使っているからです。直接材料費と直接労務費だけを足して仕損費とするのが、この論点で最も多い誤りです。</p>'
+    },
+    {
+      text: '補修指図書 No.202-2 に集計された原価は 180,000円である。日商簿記2級の範囲における仕損費の処理として、正しいものはどれですか。',
+      choices: [
+        '製造間接費に振り替え、当月のすべての製造指図書に配賦する',
+        '補修の対象となった製造指図書 No.202 の原価に賦課する',
+        '当月の売上原価に直接加算する',
+        '仕損の発生した製造部門の部門費に賦課し、部門別配賦率を通じて配分する'
+      ],
+      answer: 1,
+      explain: '<p>出題区分表で2級に置かれているのは<strong>当該指図書に賦課する方法</strong>だけです。「当該指図書」とは<mark>仕損が発生した本体の指図書（No.202）</mark>であって、補修指図書ではありません。</p><p>選択肢1・4のように<strong>間接費として扱う方法</strong>も原価計算の理論にはありますが、1級の範囲です。2級の答案では、仕損費は必ず特定の1つの指図書に行きます。</p><p>同じ理由で、代品の製造指図書を発行する場合と、補修も代品も発行しない場合の仕損費の計算も2級の範囲外です。<strong>この単元で覚えるのは補修指図書のケース1つだけです。</strong></p>'
+    },
+    {
+      text: '原価計算表に仕損費の行を設けて処理したとき、その行について正しい説明はどれですか。',
+      choices: [
+        '仕損費の行の合計は、当月に発生した仕損費の総額になる',
+        '仕損費の行の合計はゼロになり、表の総計は処理の前後で変わらない',
+        '仕損費の行の合計は、製造間接費配賦差異と一致する',
+        '仕損費の行は完成した指図書にだけ記入するので、合計は完成品原価に等しい'
+      ],
+      answer: 1,
+      explain: '<p>本体の指図書に ＋129,000、補修指図書に △129,000 と書くので、<strong>行の合計はゼロ</strong>です。<mark>お金が新たに生まれたのではなく、箱から箱へ移し替えただけだからです。</mark></p><p>だから総計は仕損費の処理前後で変わりません。仕損費を足したぶん総計が増えた、という答案になったら、補修指図書の列を差し引き忘れています。</p><p>これは強力な検算になります。仕損費の処理をしたあと、必ず<strong>横（合計列がゼロか）と縦（総計が変わっていないか）</strong>を確かめてください。</p>'
+    },
+    {
+      text: '仕損費勘定を用いて仕損費を処理したとき、月末の仕損費勘定の残高はどうなりますか。',
+      choices: [
+        '借方残高として、当月に発生した仕損費の総額が残る',
+        '貸方残高として、当月に発生した仕損費の総額が残る',
+        '借方と貸方に同額が計上されるため、残高はゼロになる',
+        '仕損の対象となった製品が販売されるまで、借方残高として繰り越される'
+      ],
+      answer: 2,
+      explain: '<p>仕損費勘定は2本の仕訳で通過します。<br>① 借方 仕損費／貸方 仕掛品（補修指図書の原価を取り出す）<br>② 借方 仕掛品／貸方 仕損費（本体の指図書に賦課する）<br>借方と貸方に同額が立つので、<strong>月末には必ず残高ゼロ</strong>になります。</p><p>残高が残ったら、<mark>賦課先を書き忘れています。</mark>仕損費勘定は集計のために一時的に通るだけの勘定で、そこに原価が留まることはありません。</p><p>①と②を通しても仕掛品勘定の残高は1円も動きません。動いたのは原価計算表の中での所属（補修指図書から本体へ）だけです。</p>'
+    },
+    {
+      text: '製造指図書 No.410 の仕損費賦課前の小計は 1,650,000円、同指図書の補修のために発行した補修指図書 No.410-2 の集計額は 210,000円である。No.410 は当月に完成した。No.410 の完成品原価はいくらですか。',
+      choices: [
+        '1,440,000円',
+        '1,650,000円',
+        '1,860,000円',
+        '2,070,000円'
+      ],
+      answer: 2,
+      invariant: [
+        ['1650000 + 210000', 'answer'],
+        ['1650000 + 210000', '1860000']
+      ],
+      explain: '<p>1,650,000 ＋ 210,000 ＝ <strong>1,860,000円</strong>。仕損費 210,000円 が No.410 に賦課されます。</p><p>選択肢2（1,650,000円）は<mark>小計で計算を止めた誤り</mark>で、この論点でいちばん多く出ます。選択肢1（1,440,000円）は仕損費を差し引いてしまった誤りです。仕損費は<strong>加える</strong>ものであって、差し引くものではありません。</p><p>選択肢4（2,070,000円）は仕損費を2回足しています。補修指図書のある問題では、表の上に仕損費の行を実際に書いてから合計を読んでください。</p>'
+    },
+    {
+      text: '個別原価計算に関する次の記述のうち、日商簿記2級の出題範囲として正しいものはどれですか。',
+      choices: [
+        '作業屑の評価額を仕損費から控除する計算',
+        '代品の製造指図書を発行した場合の仕損費の計算',
+        '補修指図書を発行した場合の仕損費を、当該指図書に賦課する処理',
+        '仕損費を間接費として仕損の発生部門に賦課する処理'
+      ],
+      answer: 2,
+      explain: '<p>出題区分表で2級に置かれているのは、仕損費の計算では<strong>補修指図書を発行する場合</strong>だけ、仕損費の処理では<strong>当該指図書に賦課する方法</strong>だけです。</p><p>選択肢1の作業屑の処理、選択肢2の代品の製造指図書を発行する場合、選択肢4の間接費として発生部門に賦課する方法は、いずれも<mark>1級の範囲です。</mark></p><p>学習カリキュラムや市販テキストの見出しに作業屑が載っていることがありますが、<strong>級の判定は出題区分表が正</strong>です。2級の答案で作業屑の評価額を製造原価から控除する計算は問われません。ここに時間を使わないでください。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-kobetsu', {
+  title: '用語の穴埋め — 個別原価計算',
+  questions: [
+    {
+      text: '顧客の注文ごとに異なる製品を製造する受注生産で用いられ、製造指図書ごとに原価を集計する原価計算の方法を何といいますか。',
+      answer: ['個別原価計算', 'こべつげんかけいさん'],
+      explain: '<p><strong>個別原価計算</strong>。造船・産業機械・建設・特注家具・印刷・ソフトウェア受託開発のように、注文ごとに違うものを作る生産形態で使います。<mark>製品を1つずつ見分けられるから、指図書ごとに集められる</mark>のが成り立ちの理由です。</p>'
+    },
+    {
+      text: '製造現場への作業命令書であると同時に、原価の集計単位としても機能する帳票を何といいますか。',
+      answer: ['製造指図書', 'せいぞうさしずしょ'],
+      explain: '<p><strong>製造指図書</strong>。材料出庫票にも作業時間報告書にもこの番号を書かせておけば、あとで番号ごとに伝票を集めるだけで、その注文にいくらかかったかが分かります。<mark>現場の作業記録がそのまま原価の集計資料になる</mark>という点が重要です。</p>'
+    },
+    {
+      text: '製造指図書ごとに直接材料費・直接労務費・直接経費・製造間接費配賦額を集計した、仕掛品勘定の内訳明細にあたる表を何といいますか。',
+      answer: ['原価計算表', 'げんかけいさんひょう'],
+      explain: '<p><strong>原価計算表</strong>。縦に足せば指図書ごとの原価総額、横に足せば費目ごとの工場全体の発生額になり、<mark>どちらから足しても総計は一致します。</mark>この二方向の検算が、第4問(2)で答案の連動誤りを食い止める唯一の手段です。</p>'
+    },
+    {
+      text: '伝票に製造指図書番号が書けるため、特定の指図書の原価として直接に割り当てる手続を何といいますか。配賦と対になる語です。',
+      answer: ['賦課', 'ふか', '直課', 'ちょっか'],
+      explain: '<p><strong>賦課</strong>（直課ともいいます）。伝票に書かれた指図書番号どおりに金額を置くだけで、配り方を決める余地がありません。<mark>金額を「置く」のが賦課、金額を「作る」のが配賦です。</mark>だから配賦にだけ差異が生じます。</p>'
+    },
+    {
+      text: '製造の過程で作り損じることを何といいますか。総合原価計算で扱う「減損」と区別される語です。',
+      answer: ['仕損', 'しそんじ', 'しそん'],
+      explain: '<p><strong>仕損</strong>。作り損じた「モノ」が残るケースを指します。蒸発・粉散でモノが消えてなくなる<strong>減損</strong>とは別の言葉で、減損は総合原価計算（W5）の論点です。個別原価計算で扱うのは仕損だけです。</p>'
+    },
+    {
+      text: '仕損の補修にかかる原価を独立に集計するために発行される指図書を何といいますか。',
+      answer: ['補修指図書', 'ほしゅうさしずしょ'],
+      explain: '<p><strong>補修指図書</strong>。本体の指図書に直接書き込むと<mark>いくら補修にかかったか分からなくなる</mark>ので、いったん別の箱で集めます。問題文に「補修指図書を発行した」とあれば、その列を独立に集計してから本体に移す、と反射的に手が動くようにしてください。</p>'
+    },
+    {
+      text: '補修指図書に集計された原価の合計、すなわち仕損によって追加的に発生した原価を何といいますか。',
+      answer: ['仕損費', 'しそんひ', 'しそんじひ'],
+      explain: '<p><strong>仕損費</strong>。直接材料費 ＋ 直接労務費 ＋ 直接経費 ＋ <mark>製造間接費配賦額</mark>で計算します。補修指図書も1枚の指図書なので製造間接費の配賦対象から外れません。配賦額を落とすのが、この論点で最も多い誤りです。</p>'
+    },
+    {
+      text: '2級で扱う仕損費の処理は、仕損が発生した製造指図書の原価に加える方法です。この方法を、出題区分表の表現では「◯◯◯◯に賦課する方法」といいます。◯に入る語を答えなさい。',
+      answer: ['当該指図書', 'とうがいさしずしょ'],
+      explain: '<p><strong>当該指図書</strong>に賦課する方法。「当該指図書」とは<mark>仕損が発生した本体の指図書</mark>であって、補修指図書ではありません。間接費として各指図書に配賦する方法は1級の範囲なので、2級の答案では仕損費は必ず特定の1つの指図書に行きます。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>
