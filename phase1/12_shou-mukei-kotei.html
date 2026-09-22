@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-13-0,商-第二-13-ア,商-第二-13-イ,商-第二-13-ウ,商-第二-13-エ,商-第二-13-オ">
+<meta name="boki-subject" content="商">
+<title>無形固定資産 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 12 無形固定資産</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W4 商業簿記 ／ UNIT 12 ／ 3時間</p>
+    <h1>無形固定資産<br>— のれん・ソフトウェア・固定資産台帳</h1>
+    <p class="lead">建物や備品は目で見て触れますが、<strong>特許権にも「のれん」にも実体がありません。</strong>それでも資産として貸借対照表に載ります。なぜ形の無いものを資産にできるのか、そして償却の仕方が有形固定資産とどこで食い違うのか。この2点を押さえれば、あとは科目名を入れ替えるだけで解けます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">形の無いものを、なぜ資産にできるのか</a></li>
+      <li><a href="#s2">有形固定資産と3か所だけ違う</a></li>
+      <li><a href="#s3">のれん — 買収額が純資産を上回る部分</a></li>
+      <li><a href="#s4">のれんの償却 — 20年以内に定額法</a></li>
+      <li><a href="#s5">負ののれん発生益 — 償却しない収益</a></li>
+      <li><a href="#s6">ソフトウェア — 2級は自社利用に限る</a></li>
+      <li><a href="#s7">ソフトウェア仮勘定 — 制作途中の受け皿</a></li>
+      <li><a href="#s8">その他の無形固定資産と、償却しない借地権</a></li>
+      <li><a href="#s9">固定資産台帳を読む</a></li>
+      <li><a href="#s10">損益計算書・貸借対照表のどこに載るか</a></li>
+      <li><a href="#s11">仕訳ドリル 14問</a></li>
+      <li><a href="#s12">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s13">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>形の無いものを、なぜ資産にできるのか</h2>
+
+  <p>商店街に2軒のパン屋があるとします。設備も立地も同じ、原材料の仕入先も同じ。それでも一方は毎日行列ができ、もう一方は閑古鳥が鳴いている。</p>
+
+  <p>この2軒を買い取るとしたら、同じ値段を払うでしょうか。<strong>行列のできる店には、設備の値段より高い金額を払ってでも欲しい</strong>はずです。長年かけて積み上げた評判や、常連客との関係が、そこに乗っているからです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">お金を払ったのに、載せる資産が無い</span>
+    <p>仮にその店の設備・商品・土地を全部足して 5,000万円、借入金が 1,000万円だとします。差し引き <strong>4,000万円</strong> が、目に見える財産の正味の金額です。</p>
+    <p>ところが実際には <strong>5,000万円</strong> を払って買い取った。差額の 1,000万円は、どこへ行くのでしょうか。</p>
+    <p>費用にしてしまうと、<mark>買った瞬間に 1,000万円の損が出たことになります。</mark>しかし損をしたわけではありません。行列を生み出す「評判」という、これから何年も稼いでくれるものを買ったのです。だから<strong>資産として計上し、稼いでくれる年数にわたって費用にしていく</strong>——これが無形固定資産の発想です。</p>
+  </div>
+
+  <p><span class="term"><span class="term__w">無形固定資産</span><span class="term__r">むけいこていしさん</span></span>とは、<strong>形は無いが、長期にわたって会社の収益に貢献する権利や価値</strong>のことです。2級で扱うのは次の3グループです。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>のれん</h3>
+      <p class="small">他の会社や事業を買収したとき、<strong>払った金額が受け入れた純資産を上回った部分</strong>。上の例の 1,000万円。</p>
+    </div>
+    <div class="card">
+      <h3>ソフトウェア</h3>
+      <p class="small">業務用に購入・制作したプログラム。<strong>2級では自社で使うものだけ</strong>を扱う。</p>
+    </div>
+    <div class="card">
+      <h3>法律上の権利など</h3>
+      <p class="small">特許権・商標権・借地権。<strong>法律に裏づけられた権利</strong>そのものを買ったもの。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">自分で育てた評判は、資産にならない</span>
+    <p>上のパン屋が、<strong>自分の店の評判を「のれん 1,000万円」として自分の帳簿に載せることはできません。</strong>載せられるのは、その店を<mark>買った側</mark>だけです。</p>
+    <p>理由は単純で、<strong>いくらと評価すべきかを誰も決められない</strong>からです。自分で「うちの評判は1,000万円」と言い出せるなら、どの会社も好きなだけ資産と利益を作れてしまいます。</p>
+    <p>買収のときだけ計上できるのは、<strong>売り手と買い手が交渉して合意した金額という、動かせない証拠がある</strong>からです。この「自己創設のれんは計上しない」という原則は、確認テストで問われます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>有形固定資産と3か所だけ違う</h2>
+
+  <p>無形固定資産も、買ったときに取得原価で計上し、毎期償却していく点は建物や備品と同じです。<strong>違うのは3か所だけ</strong>なので、そこだけ覚えます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>項目</th><th>有形固定資産</th><th>無形固定資産</th></tr></thead>
+      <tbody>
+        <tr><td class="d">償却方法</td><td>定額法・定率法・生産高比例法</td><td><strong>定額法のみ</strong></td></tr>
+        <tr><td class="d">残存価額</td><td>ゼロのことが多いが、与えられる場合もある</td><td><strong>必ずゼロ</strong></td></tr>
+        <tr><td class="d">記帳方法</td><td><strong>間接法</strong>（減価償却累計額を使う）</td><td><strong>直接法</strong>（資産を直接減らす）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ累計額を使わないのか</span>
+    <p>建物で間接法を使うのは、<strong>取得原価がいくらで、これまでにいくら償却したかを貸借対照表で見せたい</strong>からです。中古の建物は下取りに出せますし、取得原価と現在価値の差が意味を持ちます。</p>
+    <p>いっぽう特許権やのれんは<strong>売り買いできる中古市場がありません。</strong>「取得原価 500万円、償却済み 300万円」と見せても、読む側に使い道がない。残り 200万円という未償却の金額だけが、これから費用になる分として意味を持ちます。</p>
+    <p>だから累計額という勘定を置かず、<mark>償却のたびに資産科目そのものを減らします。</mark>貸借対照表に出る金額は、常に未償却残高です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>比較：備品（間接法）と特許権（直接法）の償却仕訳</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">減価償却費</td><td class="d amt">200,000</td><td class="c">備品減価償却累計額</td><td class="c amt">200,000</td></tr>
+        <tr><td class="d">特許権償却</td><td class="d amt">200,000</td><td class="c">特許権</td><td class="c amt">200,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「ソフトウェア減価償却累計額」という科目は存在しない</span>
+    <p>有形固定資産の癖で累計額を書いてしまう誤りが起きます。勘定科目表に<strong>無形固定資産の減価償却累計額という科目はありません。</strong>貸方に書くのは資産科目そのもの（ソフトウェア・のれん・特許権）です。</p>
+    <p>また借方の費用科目も「減価償却費」ではなく、<strong>のれん償却・ソフトウェア償却・特許権償却</strong>のように科目ごとに名前が決まっています。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">月割計算は有形固定資産と同じ</span>
+    <p>期の途中で取得した場合、<strong>取得した月から決算日までの月数で按分します。</strong>年間の償却額 ÷ 12 × 経過月数。この扱いは建物や備品とまったく同じです。</p>
+    <p>無形固定資産だけの特別ルールではないので、「10月1日に取得、決算は3月31日」なら6か月分、と機械的に処理してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>のれん — 買収額が純資産を上回る部分</h2>
+
+  <p>第1節のパン屋の話を、簿記の言葉に置き換えます。会社や事業をまるごと買い取ることを<strong>合併・買収</strong>といい、このとき相手の資産と負債をすべて自分の帳簿に受け入れます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">のれんは「差額」であって、単独で計算するものではない</span>
+    <p>のれんの金額は、<mark>受け入れた資産と負債を先に全部書いてしまえば、貸借差額として自動的に出てきます。</mark></p>
+    <p>借方に受け入れた資産、貸方に引き受けた負債と支払った対価を書く。これで借方が足りなければ、その不足分がのれんです。<strong>「評判をいくらと評価するか」を自分で計算する場面はありません。</strong></p>
+  </div>
+
+  <h3>計算の形</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>手順</th><th>計算</th></tr></thead>
+      <tbody>
+        <tr><td class="d">① 受け入れた純資産</td><td>受け入れた資産の時価 − 引き受けた負債の時価</td></tr>
+        <tr><td class="d">② のれん</td><td><strong>取得対価 − ①</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">受け入れる金額は帳簿価額ではなく時価</span>
+    <p>相手の帳簿に「土地 3,000,000円」と書いてあっても、<strong>受け入れるのは時価</strong>です。問題文が「土地の時価は 4,500,000円である」と与えてきたら、そちらを使います。</p>
+    <p>買収とは相手の財産を買う行為であり、<mark>いま買うならいくらか（時価）が支払った対価に対応する金額</mark>だからです。相手が何十年前にいくらで買ったかは、こちらの支払額とは無関係です。</p>
+    <p>帳簿価額を使ってしまうと、<strong>差額であるのれんが丸ごと誤った金額になります。</strong>問題文に時価が書かれていたら、必ずそちらを拾ってください。</p>
+  </div>
+
+  <h3>具体例</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>受け入れた資産・引き受けた負債（すべて時価）</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売掛金</td><td class="amt">1,800,000</td></tr>
+        <tr><td class="d">商品（繰越商品）</td><td class="amt">2,200,000</td></tr>
+        <tr><td class="d">建物</td><td class="amt">6,000,000</td></tr>
+        <tr><td class="c">買掛金</td><td class="amt">1,500,000</td></tr>
+        <tr><td class="c">長期借入金</td><td class="amt">2,500,000</td></tr>
+        <tr><td class="d">支払った対価（小切手）</td><td class="amt">7,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>受け入れた資産の合計</strong>：1,800,000 ＋ 2,200,000 ＋ 6,000,000 ＝ <strong>10,000,000円</strong></li>
+    <li><strong>引き受けた負債の合計</strong>：1,500,000 ＋ 2,500,000 ＝ <strong>4,000,000円</strong></li>
+    <li><strong>受け入れた純資産</strong>：10,000,000 − 4,000,000 ＝ <strong>6,000,000円</strong></li>
+    <li><strong>のれん</strong>：7,000,000 − 6,000,000 ＝ <strong>1,000,000円</strong></li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>事業を譲り受け、対価 7,000,000円を小切手を振り出して支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売掛金</td><td class="d amt">1,800,000</td><td class="c">買掛金</td><td class="c amt">1,500,000</td></tr>
+        <tr><td class="d">繰越商品</td><td class="d amt">2,200,000</td><td class="c">長期借入金</td><td class="c amt">2,500,000</td></tr>
+        <tr><td class="d">建物</td><td class="d amt">6,000,000</td><td class="c">当座預金</td><td class="c amt">7,000,000</td></tr>
+        <tr><td class="d">のれん</td><td class="d amt">1,000,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>借方合計 11,000,000円、貸方合計 11,000,000円。<strong>のれんは最後に貸借を合わせるために置いた差額</strong>です。「評判の値段」を自分で見積もったわけではありません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">受け入れた商品は「仕入」ではない</span>
+    <p>買収で受け入れた商品を仕入としないでください。仕入は<strong>販売するために商品を買った</strong>という取引ですが、ここで起きているのは<mark>事業をまるごと引き受けた結果、たまたま在庫も付いてきた</mark>という状態です。</p>
+    <p>資産として受け入れるので、借方は<strong>繰越商品</strong>（または問題文の指定する商品の科目）になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>のれんの償却 — 20年以内に定額法</h2>
+
+  <p>買い取った「評判」は、いつまでも同じ力を持ち続けるわけではありません。店の顔ぶれが変わり、常連客が入れ替わり、<strong>買収時の評判の効果はいずれ薄れます。</strong>だから資産に置きっぱなしにせず、毎年少しずつ費用にしていきます。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">償却期間は「20年以内」。ここは数字で問われる</span>
+    <p>のれんは、<strong>取得後 20年以内に、定額法その他の合理的な方法で規則的に償却</strong>します。2級の問題では「20年間で償却する」「10年間で償却する」と問題文が指定してきます。</p>
+    <p>指定が無いまま「何年で償却するか」を自分で決める場面はありませんが、<mark>上限が20年である</mark>ことは確認テストで直接問われます。10年でも30年でもありません。</p>
+  </div>
+
+  <p>さきほどの 1,000,000円ののれんを、<strong>20年で定額償却</strong>する場合を見ます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、のれん 1,000,000円を20年にわたり定額法で償却する（1年目・期首に取得）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">のれん償却</td><td class="d amt">50,000</td><td class="c">のれん</td><td class="c amt">50,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>1,000,000 ÷ 20年 ＝ <strong>50,000円</strong>。残存価額はゼロなので、取得原価をそのまま年数で割ります。貸方は累計額ではなく、<strong>のれんという資産科目そのもの</strong>です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">期中に取得したのれんは、取得月から決算日までの月割</span>
+    <p>「×1年7月1日に事業を譲り受けた。決算日は×2年3月31日、のれんは20年で償却する」という場合、<strong>初年度の償却は12か月分ではなく9か月分</strong>です。</p>
+    <p>1,000,000 ÷ 20年 × 9か月 ÷ 12か月 ＝ <strong>37,500円</strong>。7月・8月・……・3月で9か月と数えます。<mark>取得した月を1か月目に含める</mark>のは有形固定資産と同じです。</p>
+    <p>問題文が期首取得と明示していないときは、必ず取得日を確認してください。年額をそのまま書くと1年目だけ大きくずれます。</p>
+  </div>
+
+  <h3>のれん償却は、販売費及び一般管理費</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ特別損失ではないのか</span>
+    <p>のれん償却は損益計算書の<strong>販売費及び一般管理費</strong>に表示します。つまり<mark>営業利益を計算する段階で差し引かれます。</mark></p>
+    <p>買い取った評判は、本業で商品を売るために働いている資産です。その資産が目減りしていく費用は、<strong>本業を回すために毎期かかるコスト</strong>であって、臨時・異常な損失ではありません。だから営業利益の計算に含めます。</p>
+    <p>建物の減価償却費が販売費及び一般管理費に入るのと、まったく同じ理屈です。ソフトウェア償却・特許権償却も同じ区分です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>負ののれん発生益 — 償却しない収益</h2>
+
+  <p>逆のことも起こります。受け入れた純資産が 6,000,000円なのに、<strong>対価が 5,200,000円で済んだ</strong>場合です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ安く買えるのか、そしてなぜ資産にしないのか</span>
+    <p>相手が資金繰りに窮して早く手放したい、あるいは買い手がその会社しかいなかった、といった事情で、純資産より安く買えることがあります。</p>
+    <p>このとき差額の 800,000円は、<strong>買った時点で得をした分</strong>です。将来にわたって何かが働いてくれるわけではなく、<mark>取引が成立した瞬間に利益が確定している</mark>ので、資産に置いて何年もかけて収益にする理由がありません。</p>
+    <p>だから<strong>その期の収益として、いっぺんに計上します。</strong>科目は<strong>負ののれん発生益</strong>です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>純資産 6,000,000円の事業を、対価 5,200,000円（小切手）で譲り受けた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売掛金</td><td class="d amt">1,800,000</td><td class="c">買掛金</td><td class="c amt">1,500,000</td></tr>
+        <tr><td class="d">繰越商品</td><td class="d amt">2,200,000</td><td class="c">長期借入金</td><td class="c amt">2,500,000</td></tr>
+        <tr><td class="d">建物</td><td class="d amt">6,000,000</td><td class="c">当座預金</td><td class="c amt">5,200,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">負ののれん発生益</td><td class="c amt">800,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>借方合計 10,000,000円、貸方合計 10,000,000円。差額が<strong>貸方</strong>に出たので収益になります。のれんのときと、差額が出る側が逆になっているだけです。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">負ののれん発生益は償却しない</span>
+    <p>「のれんの逆だから、20年かけて収益にしていくのだろう」と考えると誤ります。<strong>負ののれん発生益は発生した期の収益として、その場で全額を計上して終わりです。</strong>翌期以降に何も残りません。</p>
+    <p>のれんが償却されるのは、<mark>それが資産として貸借対照表に残り続けるから</mark>です。負ののれん発生益は収益の勘定であって、貸借対照表には残りません。償却しようにも対象がありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">表示区分は特別利益</span>
+    <p>負ののれん発生益は、損益計算書の<strong>特別利益</strong>に表示します。のれん償却が販売費及び一般管理費なのと対照的です。</p>
+    <p>買収で安く買えたという出来事は、<strong>毎期繰り返し起こるものではない</strong>からです。経常的な営業活動の成果ではないので、経常利益を計算し終えたあとに加えます。</p>
+    <p class="small muted">「のれん償却＝販管費、負ののれん発生益＝特別利益」という非対称は覚えにくいところですが、<strong>のれん償却は毎年起こる／負ののれん発生益は買収時の1回きり</strong>という違いで説明がつきます。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 300" style="width:100%;height:auto;min-width:560px" role="img" aria-label="取得対価が受け入れた純資産を上回る場合はのれん（資産）、下回る場合は負ののれん発生益（収益）になることを示す図。">
+      <g font-size="13" fill="var(--text)">
+        <text x="20" y="26" font-size="14" font-weight="700">取得対価と受け入れた純資産の大小</text>
+
+        <!-- 左：のれん -->
+        <rect x="20" y="45" width="310" height="235" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="175" y="70" text-anchor="middle" font-size="13.5" font-weight="700">対価 ＞ 純資産</text>
+        <rect x="55" y="88" width="90" height="120" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="100" y="152" text-anchor="middle" font-size="12">純資産</text>
+        <text x="100" y="172" text-anchor="middle" font-size="12" fill="var(--muted)">6,000,000</text>
+        <rect x="205" y="88" width="90" height="120" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <rect x="205" y="88" width="90" height="20" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="3"/>
+        <text x="250" y="152" text-anchor="middle" font-size="12">対価</text>
+        <text x="250" y="172" text-anchor="middle" font-size="12" fill="var(--muted)">7,000,000</text>
+        <text x="175" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="var(--warn)">のれん 1,000,000（資産）</text>
+        <text x="175" y="254" text-anchor="middle" font-size="12" fill="var(--muted)">20年以内に定額法で償却する</text>
+        <text x="175" y="272" text-anchor="middle" font-size="12" fill="var(--muted)">償却額は販売費及び一般管理費</text>
+
+        <!-- 右：負ののれん -->
+        <rect x="360" y="45" width="320" height="235" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="520" y="70" text-anchor="middle" font-size="13.5" font-weight="700">対価 ＜ 純資産</text>
+        <rect x="395" y="88" width="90" height="120" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <rect x="395" y="88" width="90" height="16" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="3"/>
+        <text x="440" y="152" text-anchor="middle" font-size="12">純資産</text>
+        <text x="440" y="172" text-anchor="middle" font-size="12" fill="var(--muted)">6,000,000</text>
+        <rect x="545" y="104" width="90" height="104" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="590" y="152" text-anchor="middle" font-size="12">対価</text>
+        <text x="590" y="172" text-anchor="middle" font-size="12" fill="var(--muted)">5,200,000</text>
+        <text x="520" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">負ののれん発生益 800,000（収益）</text>
+        <text x="520" y="254" text-anchor="middle" font-size="12" fill="var(--muted)">償却せず、その期に全額を計上する</text>
+        <text x="520" y="272" text-anchor="middle" font-size="12" fill="var(--muted)">表示区分は特別利益</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">どちらも<strong>差額が借方に出るか貸方に出るか</strong>の違いです。借方に出れば資産（のれん）、貸方に出れば収益（負ののれん発生益）。仕訳を先に書いてしまえば、どちらになるかは自動的に決まります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>ソフトウェア — 2級は自社利用に限る</h2>
+
+  <p>会計システムや在庫管理システムを導入すると、数百万円から数千万円かかります。この支出は、<strong>買った年だけの費用でしょうか。</strong></p>
+
+  <p>導入したシステムは、5年でも10年でも使い続けます。建物と同じように、<strong>長期にわたって業務を支える資産</strong>です。だから資産に計上し、使える期間にわたって償却します。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で扱うのは「自社利用のソフトウェア」だけ</span>
+    <p>出題区分表は、ソフトウェアについて<strong>「2級では自社利用の場合に限る」</strong>と明記しています。</p>
+    <p>ソフトウェアには他に「顧客から注文を受けて作るもの（受注制作）」「パッケージとして不特定多数に売るもの（市場販売目的）」がありますが、<mark>これらは1級の範囲です。</mark>見込販売収益や見込販売数量による償却といった計算は、2級では出ません。</p>
+    <p>したがって、この単元で「ソフトウェア」と言えば<strong>自分の会社で使うために買った・作ったもの</strong>を指します。</p>
+  </div>
+
+  <h3>資産にできる条件</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「将来の収益獲得または費用削減が確実」であること</span>
+    <p>自社利用のソフトウェアを資産計上できるのは、それを使うことで<strong>将来の収益が増えるか、費用が減ることが確実</strong>な場合です。</p>
+    <p>在庫管理システムを入れれば欠品が減って売上が増える、経理システムを入れれば残業代が減る——こうした効果が見込めるから、将来の収益に貢献する資産だと言えます。</p>
+    <p>逆に、効果があるかどうか分からない段階の支出は資産になりません。ここで <strong>UNIT 06 の研究開発費</strong> とつながります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">研究開発にあたる部分は、資産にせず研究開発費（費用）</span>
+    <p>ソフトウェアの制作にかけた金額でも、<strong>研究開発の段階にあたる部分は資産計上できません。</strong>UNIT 06 で扱ったとおり、研究開発費は<mark>支出した期の費用</mark>として処理します。</p>
+    <p>新しい技術を探索している段階では、そもそも完成するかどうか分かりません。将来の収益獲得が確実とは言えないので、資産の条件を満たさないのです。</p>
+    <p>試験では「制作費 8,000,000円のうち 2,000,000円は<strong>研究開発費に該当する</strong>」という形で、問題文が分けてくれます。自分で線を引く必要はありませんが、<strong>指示を読み飛ばして全額をソフトウェアにすると2科目が同時に誤ります。</strong></p>
+  </div>
+
+  <h3>償却 — 利用可能期間で定額法</h3>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">償却期間は利用可能期間。通常5年以内</span>
+    <p>自社利用のソフトウェアは、<strong>利用可能期間にわたって定額法で償却</strong>します。この期間は<mark>通常5年以内</mark>とされており、問題文も「5年間で償却する」と指定してくることがほとんどです。</p>
+    <p>のれんの20年と混同しないでください。<strong>のれんは20年以内、ソフトウェアは通常5年以内</strong>です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>自社利用目的のソフトウェアを 3,000,000円で購入し、代金は月末に支払うこととした</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">ソフトウェア</td><td class="d amt">3,000,000</td><td class="c">未払金</td><td class="c amt">3,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、上記ソフトウェアを利用可能期間5年で定額償却する（期首に取得）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">ソフトウェア償却</td><td class="d amt">600,000</td><td class="c">ソフトウェア</td><td class="c amt">600,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>3,000,000 ÷ 5年 ＝ <strong>600,000円</strong>。残存価額ゼロ、直接法。のれんとまったく同じ形で、科目名と年数が違うだけです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">ソフトウェアの購入代金は「買掛金」ではない</span>
+    <p>代金を後払いにしたときの貸方は<strong>未払金</strong>です。買掛金は<mark>商品を仕入れた代金</mark>の未払額にだけ使う科目で、ソフトウェアは販売用の商品ではありません。</p>
+    <p>備品や建物を掛けで買ったときと同じ扱いです。3級で習った「商品なら買掛金、それ以外なら未払金」の線引きがそのまま効きます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>ソフトウェア仮勘定 — 制作途中の受け皿</h2>
+
+  <p>システムの制作を外部に委託すると、完成まで1年以上かかることがあります。その間、<strong>契約時・中間・完成時</strong>と何回かに分けて代金を支払うのが普通です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">まだ使えないものを償却できない</span>
+    <p>×1年10月に着手金 4,000,000円を払ったとします。この 4,000,000円を「ソフトウェア」として計上すると、×2年3月の決算で<strong>償却の対象になってしまいます。</strong></p>
+    <p>しかしシステムはまだ完成しておらず、1日も使っていません。<mark>使える期間にわたって費用にするのが償却</mark>なのに、使い始めてもいないものを償却するのは筋が通りません。</p>
+    <p>そこで、完成するまでは<strong>ソフトウェア仮勘定</strong>という別の資産科目に集めておきます。完成して使い始めた時点で、まとめて「ソフトウェア」に振り替え、そこから償却を始めます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">建設仮勘定とまったく同じ考え方</span>
+    <p>建物を建てている途中の支出を<strong>建設仮勘定</strong>に集め、完成・引渡しの時点で「建物」に振り替える処理があります（2級の範囲ですが、この教材では Phase 0 の3級総復習で扱いました）。ソフトウェア仮勘定はその無形固定資産版です。</p>
+    <p>「まだ使えないものは、使えるようになるまで仮の科目で待たせておく」という構造が共通しています。<strong>仮勘定のままでは償却しない</strong>点も同じです。</p>
+  </div>
+
+  <h3>3つの場面を通しで見る</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>① ×1年10月1日　自社利用のシステムの開発を外部に委託し、着手金 4,000,000円を当座預金から支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">ソフトウェア仮勘定</td><td class="d amt">4,000,000</td><td class="c">当座預金</td><td class="c amt">4,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="small muted">×2年3月31日の決算では、このシステムはまだ完成していません。<strong>ソフトウェア仮勘定 4,000,000円は償却せず、そのまま貸借対照表に残します。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>② ×2年7月1日　システムが完成して使用を開始し、残額 5,000,000円を当座預金から支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">ソフトウェア</td><td class="d amt">9,000,000</td><td class="c">ソフトウェア仮勘定</td><td class="c amt">4,000,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">当座預金</td><td class="c amt">5,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>借方のソフトウェアは、<strong>すでに払った 4,000,000円と、今回払う 5,000,000円の合計</strong>です。貸方でソフトウェア仮勘定を消すのを忘れると、同じ 4,000,000円が2つの科目に二重で残ります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>③ ×3年3月31日　決算にあたり、上記ソフトウェアを利用可能期間5年で定額償却する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">ソフトウェア償却</td><td class="d amt">1,350,000</td><td class="c">ソフトウェア</td><td class="c amt">1,350,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">償却の起点は「完成して使い始めた日」</span>
+    <p>9,000,000 ÷ 5年 ＝ 年 1,800,000円。しかし使い始めたのは×2年7月1日なので、×3年3月期の償却は<strong>7月から3月までの9か月分</strong>です。</p>
+    <p>1,800,000 × 9か月 ÷ 12か月 ＝ <strong>1,350,000円</strong>。</p>
+    <p><mark>着手金を払った×1年10月からではありません。</mark>償却は「使える期間にわたって費用にする」手続きなので、使い始める前の期間は含みません。制作期間が年度をまたぐ問題では、この起点をどちらに取るかで答えが変わります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>その他の無形固定資産と、償却しない借地権</h2>
+
+  <p>のれんとソフトウェアのほかに、<strong>法律上の権利</strong>を買ったものが無形固定資産になります。2級の勘定科目表にあるのは次の3つです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>科目</th><th>内容</th><th>償却</th></tr></thead>
+      <tbody>
+        <tr><td class="d">特許権</td><td>発明を独占的に使える権利を買い取ったもの</td><td><strong>する</strong>（特許権償却）</td></tr>
+        <tr><td class="d">商標権</td><td>商品名やロゴを独占的に使える権利</td><td><strong>する</strong>（科目表に専用の償却科目がない。答案用紙の科目欄に従う）</td></tr>
+        <tr><td class="d">借地権</td><td>他人の土地を借りて建物を建てる権利</td><td><strong>しない</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">借地権は償却しない</span>
+    <p>特許権も商標権も法律で存続期間が決まっており、<strong>期限が来れば権利が消えます。</strong>価値がゼロに向かって確実に減っていくので、その年数にわたって償却します。</p>
+    <p>ところが借地権には、<mark>権利が消滅する期限が定められていません。</mark>契約を更新しながら使い続けられ、価値が目減りしていく性質がありません。減る根拠が無いものを償却することはできないので、<strong>取得原価のまま貸借対照表に残り続けます。</strong></p>
+    <p>これは<strong>土地を減価償却しないのと同じ理由</strong>です。土地も使っても減らないから償却しません。借地権は「土地を使う権利」であり、土地の性質を引き継いでいると考えれば覚えやすくなります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">償却期間は問題文が与える</span>
+    <p>特許権の法律上の存続期間は出願から一定年数と定められていますが、<strong>2級の答案でその年数を自分で持ち出す場面はありません。</strong>問題文が「8年間で償却する」といった形で必ず指定します。</p>
+    <p>覚えるべき年数は<strong>のれんの20年以内</strong>と<strong>自社利用ソフトウェアの通常5年以内</strong>の2つだけです。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、期首に 4,800,000円で取得した特許権を8年間で定額償却する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">特許権償却</td><td class="d amt">600,000</td><td class="c">特許権</td><td class="c amt">600,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>4,800,000 ÷ 8年 ＝ <strong>600,000円</strong>。直接法・残存価額ゼロ・定額法という3点は、のれんともソフトウェアとも共通です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>固定資産台帳を読む</h2>
+
+  <p>固定資産が10も20もあると、総勘定元帳の「備品」勘定を見ても<strong>どの備品がいくら残っているか分かりません。</strong>1つの勘定に全部の備品の金額が合算されているからです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">1物件ごとの内訳を管理する補助簿</span>
+    <p><span class="term"><span class="term__w">固定資産台帳</span><span class="term__r">こていしさんだいちょう</span></span>は、固定資産を<strong>1件ずつ、取得日・取得原価・償却額・帳簿価額で管理する補助簿</strong>です。</p>
+    <p>どれがいつ買ったもので、あといくら償却が残っているか。<mark>売却や除却をするときに必要な金額は、この台帳から引きます。</mark>総勘定元帳の合計額からは取り出せません。</p>
+    <p>第2問・第3問では、この台帳を資料として渡され、<strong>台帳から当期の償却額や期末残高を読み取って財務諸表を作る</strong>形で出題されます。</p>
+  </div>
+
+  <h3>4つの欄の関係</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>欄</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td class="d">取得原価</td><td>買ったときの金額。償却しても<strong>この欄は動かない</strong></td></tr>
+        <tr><td class="d">期首帳簿価額</td><td>期首の時点で残っている未償却の金額</td></tr>
+        <tr><td class="d">当期償却額</td><td>当期に費用として計上する金額</td></tr>
+        <tr><td class="d">期末帳簿価額</td><td><strong>期首帳簿価額 − 当期償却額</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">縦にも横にも計算が通る</span>
+    <ul>
+      <li><strong>横方向</strong>：期首帳簿価額 − 当期償却額 ＝ 期末帳簿価額。1行の中で必ず成立する</li>
+      <li><strong>縦方向</strong>：当期償却額の列を全部足すと、損益計算書に載る償却費の合計になる</li>
+    </ul>
+    <p>どちらか一方でも合わなければ、読み取りかどこかの計算が誤っています。<mark>台帳は検算の道具としても使えます。</mark></p>
+  </div>
+
+  <h3>無形固定資産の台帳の読み方</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>固定資産台帳（無形固定資産・×3年3月31日現在）</caption>
+      <thead><tr><th>種類</th><th>取得日</th><th>償却期間</th><th class="amt">取得原価</th><th class="amt">期首帳簿価額</th><th class="amt">当期償却額</th><th class="amt">期末帳簿価額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">のれん</td><td>×1年4月1日</td><td>20年</td><td class="amt">6,000,000</td><td class="amt">5,700,000</td><td class="amt">300,000</td><td class="amt">5,400,000</td></tr>
+        <tr><td class="d">ソフトウェア</td><td>×1年4月1日</td><td>5年</td><td class="amt">2,500,000</td><td class="amt">2,000,000</td><td class="amt">500,000</td><td class="amt">1,500,000</td></tr>
+        <tr><td class="d">特許権</td><td>×2年10月1日</td><td>8年</td><td class="amt">4,800,000</td><td class="amt">—</td><td class="amt">300,000</td><td class="amt">4,500,000</td></tr>
+        <tr><td class="d">借地権</td><td>×1年4月1日</td><td>—</td><td class="amt">8,000,000</td><td class="amt">8,000,000</td><td class="amt">0</td><td class="amt">8,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>この表から、いくつも読み取れることがあります。</p>
+
+  <ol class="steps">
+    <li><strong>のれん</strong>：6,000,000 ÷ 20年 ＝ 年 300,000円。×1年4月1日から数えて当期は2年目なので、期首帳簿価額は 6,000,000 − 300,000 ＝ 5,700,000円。期末は 5,700,000 − 300,000 ＝ <strong>5,400,000円</strong></li>
+    <li><strong>ソフトウェア</strong>：2,500,000 ÷ 5年 ＝ 年 500,000円。同じく2年目で期首 2,000,000円、期末 <strong>1,500,000円</strong></li>
+    <li><strong>特許権</strong>：当期の×2年10月1日に取得したので期首帳簿価額は存在しません。4,800,000 ÷ 8年 × 6か月 ÷ 12か月 ＝ <strong>300,000円</strong>。期末は 4,800,000 − 300,000 ＝ <strong>4,500,000円</strong></li>
+    <li><strong>借地権</strong>：償却しないので当期償却額は 0円、期末帳簿価額は取得原価のまま <strong>8,000,000円</strong></li>
+  </ol>
+
+  <p>当期償却額の列を縦に足すと、300,000 ＋ 500,000 ＋ 300,000 ＋ 0 ＝ <strong>1,100,000円</strong>。これが損益計算書の販売費及び一般管理費に載る、無形固定資産の償却費の合計です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">当期取得の行は「期首帳簿価額」が空欄になる</span>
+    <p>特許権の行の期首帳簿価額が「—」なのは、<strong>期首にはまだその資産が存在しなかった</strong>からです。ここを 4,800,000円 と読んでしまうと、取得原価と混同したことになります。</p>
+    <p>同時に、<mark>当期取得の行は必ず月割になる</mark>点にも注意してください。年額をそのまま書くと、当期分だけが過大になります。台帳に取得日が書いてあるのは、この月割のためです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>損益計算書・貸借対照表のどこに載るか</h2>
+
+  <p>第3問で財務諸表を作らされるとき、表示位置を間違えると科目名と金額が合っていても失点します。無形固定資産まわりの表示は次のとおりです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>科目</th><th>財務諸表</th><th>区分</th></tr></thead>
+      <tbody>
+        <tr><td class="d">のれん・ソフトウェア・特許権・商標権・借地権</td><td>貸借対照表</td><td>固定資産の<strong>無形固定資産</strong></td></tr>
+        <tr><td class="d">ソフトウェア仮勘定</td><td>貸借対照表</td><td>固定資産の<strong>無形固定資産</strong></td></tr>
+        <tr><td class="d">のれん償却・ソフトウェア償却・特許権償却</td><td>損益計算書</td><td><strong>販売費及び一般管理費</strong></td></tr>
+        <tr><td class="c">負ののれん発生益</td><td>損益計算書</td><td><strong>特別利益</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">無形固定資産は、有形固定資産の次に並べる</span>
+    <p>貸借対照表の固定資産は、<strong>有形固定資産 → 無形固定資産 → 投資その他の資産</strong>の順に並べます。無形固定資産は有形固定資産の内訳ではなく、<mark>並列の区分</mark>です。</p>
+    <p>そして、この区分には<strong>減価償却累計額の行が現れません。</strong>直接法で償却しているため、書く金額はすでに未償却残高だからです。有形固定資産の区分に累計額の行があるのと対照的です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">ソフトウェア仮勘定も無形固定資産に載せる</span>
+    <p>まだ完成していなくても、<strong>ソフトウェア仮勘定は無形固定資産の区分</strong>に表示します。建設仮勘定が有形固定資産の区分に載るのと同じです。</p>
+    <p>仮の科目だからといって「その他の資産」や流動資産に入れないでください。完成すれば同じ区分のソフトウェアに振り替わるだけで、資産としての性格は最初から変わりません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>仕訳ドリル 14問</h2>
+
+  <p>解答欄は4行ありますが、実際に使う行数は問題ごとに違います。<strong>空いた行は無視されます</strong>ので、行数から科目数を推測しないでください。本番の第1問も同じ条件です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">償却の3点セットを毎回そろえる</span>
+    <p>償却の仕訳を書くときは、<strong>①定額法 ②残存価額ゼロ ③直接法（貸方は資産科目そのもの）</strong>の3点を毎回確認してください。有形固定資産の癖で累計額を書く誤りが、この単元で最も多く起こります。</p>
+  </div>
+
+  <div id="drill-mukei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>のれんの算定と償却額の月割は、<strong>仕訳を書く前の段階で金額を作る作業</strong>です。ここが崩れると仕訳の科目が合っていても点になりません。分けて確認します。</p>
+
+  <div id="num-mukei"></div>
+
+  <div id="quiz-mukei"></div>
+
+  <div id="fill-mukei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。無形固定資産は<strong>第2問（固定資産）と第3問（決算）の両方</strong>で出ます。特にのれんは、W7の合併とW9の連結でも同じ科目が出てくるので、ここで償却の型を固めておくと後が楽になります。</p>
+
+  <div class="progressbar" data-progress-for="#u12check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u12check">0 / 0 完了（0%）</div>
+
+  <div id="u12check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u12-w4u12-1"><label for="c1"><span class="cl__t">形の無いものを資産にする理由を説明できる</span><span class="cl__d">長期にわたって収益に貢献するものへの支出だから。買った期の費用にすると、その期だけが損を背負い、貢献する各期に費用が載らない</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u12-w4u12-2"><label for="c2"><span class="cl__t">自己創設のれんを計上できない理由を言える</span><span class="cl__d">いくらと評価すべきかを誰も決められず、好きなだけ資産と利益を作れてしまう。買収のときだけ計上できるのは、交渉で合意した金額という証拠があるから</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u12-w4u12-3"><label for="c3"><span class="cl__t">有形固定資産との違いを3つ挙げられる</span><span class="cl__d">償却方法は定額法のみ／残存価額は必ずゼロ／記帳は直接法（累計額を使わない）</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u12-w4u12-4"><label for="c4"><span class="cl__t">直接法で償却する理由を説明できる</span><span class="cl__d">中古市場がなく、取得原価と償却済額を見せても読む側に使い道がない。これから費用になる未償却残高だけが意味を持つ</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u12-w4u12-5"><label for="c5"><span class="cl__t">のれんを貸借差額として算定できる</span><span class="cl__d">取得対価 −（受け入れた資産の時価 − 引き受けた負債の時価）。受け入れる金額は帳簿価額ではなく時価</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u12-w4u12-6"><label for="c6"><span class="cl__t">のれんの償却期間が20年以内だと言える</span><span class="cl__d">取得後20年以内に定額法その他の合理的な方法で規則的に償却する。10年でも30年でもない</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u12-w4u12-7"><label for="c7"><span class="cl__t">のれん償却の表示区分を言える</span><span class="cl__d">販売費及び一般管理費。本業を回すために毎期かかるコストなので、営業利益の計算に含める</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u12-w4u12-8"><label for="c8"><span class="cl__t">負ののれん発生益を償却しない理由を説明できる</span><span class="cl__d">取引が成立した瞬間に利益が確定しており、資産として貸借対照表に残らない。償却する対象がない</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u12-w4u12-9"><label for="c9"><span class="cl__t">負ののれん発生益の表示区分を言える</span><span class="cl__d">特別利益。買収で安く買えたという出来事は毎期繰り返し起こるものではない</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u12-w4u12-10"><label for="c10"><span class="cl__t">2級のソフトウェアが自社利用に限られると言える</span><span class="cl__d">受注制作・市場販売目的のソフトウェアは1級。見込販売収益や見込販売数量による償却は2級では出ない</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u12-w4u12-11"><label for="c11"><span class="cl__t">研究開発にあたる部分を資産にしないと言える</span><span class="cl__d">完成するか分からない段階では将来の収益獲得が確実と言えない。該当部分は研究開発費として支出した期の費用にする</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u12-w4u12-12"><label for="c12"><span class="cl__t">自社利用ソフトウェアの償却期間を言える</span><span class="cl__d">利用可能期間にわたる定額法で、通常5年以内。のれんの20年以内と混同しない</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u12-w4u12-13"><label for="c13"><span class="cl__t">ソフトウェア仮勘定を使う理由を説明できる</span><span class="cl__d">完成前は1日も使っていないので償却できない。完成して使い始めた時点でソフトウェアに振り替える。建設仮勘定と同じ構造</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u12-w4u12-14"><label for="c14"><span class="cl__t">完成時の振替仕訳を書ける</span><span class="cl__d">借方ソフトウェア（既払分＋今回分の合計）／貸方ソフトウェア仮勘定と当座預金など。仮勘定を消し忘れると同じ金額が二重に残る</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u12-w4u12-15"><label for="c15"><span class="cl__t">償却の起点を使用開始日に取れる</span><span class="cl__d">着手金を払った日ではなく、完成して使い始めた日から月割で償却する</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u12-w4u12-16"><label for="c16"><span class="cl__t">借地権を償却しない理由を説明できる</span><span class="cl__d">権利が消滅する期限が定められておらず、価値が目減りする性質がない。土地を減価償却しないのと同じ理由</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u12-w4u12-17"><label for="c17"><span class="cl__t">特許権を償却できる</span><span class="cl__d">存続期間が決まっており期限が来れば権利が消える。年数は問題文が与える。商標権も同じ理由で償却の対象だが、科目表に独立した償却科目がないため答案用紙の科目欄に従う</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u12-w4u12-18"><label for="c18"><span class="cl__t">期中取得の償却額を月割で出せる</span><span class="cl__d">年額 ÷ 12 × 経過月数。取得した月を1か月目に含める。有形固定資産と同じ扱い</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u12-w4u12-19"><label for="c19"><span class="cl__t">固定資産台帳の4つの欄の関係を言える</span><span class="cl__d">期首帳簿価額 − 当期償却額 ＝ 期末帳簿価額。取得原価は償却しても動かない。当期償却額の列を縦に足すとP/Lの償却費合計になる</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u12-w4u12-20"><label for="c20"><span class="cl__t">当期取得の行の期首帳簿価額が空欄になると言える</span><span class="cl__d">期首にはまだその資産が存在しない。取得原価と読み違えない。同時に当期償却額は必ず月割になる</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u12-w4u12-21"><label for="c21"><span class="cl__t">貸借対照表での表示位置を言える</span><span class="cl__d">固定資産の中で、有形固定資産の次に並列の区分として無形固定資産を置く。直接法なので減価償却累計額の行は現れない。ソフトウェア仮勘定もこの区分</span></label></li>
+    <li><input type="checkbox" id="c22" data-key="p1u12-w4u12-22"><label for="c22"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>のれんはこの単元で終わりではありません。<strong>W7の合併</strong>では株式を発行して対価とする形で、<strong>W9の連結</strong>では子会社株式の取得原価と子会社の純資産の差額として、同じ「のれん」が再び出てきます。どちらも<mark>差額として出し、20年以内に定額償却する</mark>という骨格は変わりません。</p>
+    <p>ここで身につけるべきは、のれんの金額を<strong>貸借差額として出す手つき</strong>です。先に受け入れた資産と負債をすべて書き、最後に貸借を合わせる。この順番を体に入れておくと、連結の資本連結でも同じ動きで処理できます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W4 UNIT 12 無形固定資産</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '売掛金', '受取手形', '電子記録債権',
+    '繰越商品', '未収入金', '貸付金',
+    '建物', '備品', '機械装置', '車両運搬具', '土地', '建設仮勘定',
+    'のれん', 'ソフトウェア', 'ソフトウェア仮勘定', '特許権', '商標権', '借地権',
+    '買掛金', '支払手形', '未払金', '借入金', '長期借入金',
+    '資本金', '資本準備金',
+    '負ののれん発生益', '固定資産売却益',
+    'のれん償却', 'ソフトウェア償却', '特許権償却',
+    '減価償却費', '研究開発費', '修繕費', '支払手数料', '固定資産売却損',
+    '備品減価償却累計額', '建物減価償却累計額'
+  ];
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  BokiJournal.mount('#drill-mukei', {
+    title: '仕訳ドリル — 無形固定資産の取得・振替・償却（14問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '自社で利用する目的で、業務管理ソフトウェアを <strong>3,600,000円</strong> で購入し、代金は<strong>翌月末に支払う</strong>こととした。',
+        debit: [['ソフトウェア', 3600000]],
+        credit: [['未払金', 3600000]],
+        hint: '後払いの貸方科目は、買ったものが商品かどうかで分かれます。',
+        explain: '<p>自社で利用するソフトウェアは、長期にわたって業務を支える資産なので<strong>ソフトウェア</strong>（無形固定資産）として計上します。</p><p>貸方は<strong>未払金</strong>です。買掛金は<mark>商品を仕入れた代金</mark>の未払額にだけ使う科目であり、ソフトウェアは販売用の商品ではありません。備品や建物を掛けで買ったときと同じ扱いです。</p>'
+      },
+      {
+        text: '決算にあたり、<strong>当期首</strong>に <strong>3,600,000円</strong> で取得した自社利用のソフトウェアについて、利用可能期間 <strong>5年</strong> で定額法により償却する。',
+        debit: [['ソフトウェア償却', 720000]],
+        credit: [['ソフトウェア', 720000]],
+        hint: '残存価額はゼロ、記帳は直接法です。',
+        explain: '<p>3,600,000 ÷ 5年 ＝ <strong>720,000円</strong>。無形固定資産の残存価額は必ずゼロなので、取得原価をそのまま年数で割ります。</p><p>貸方は<strong>ソフトウェア</strong>という資産科目そのものです。「ソフトウェア減価償却累計額」という科目は勘定科目表に存在しません。<strong>無形固定資産は直接法</strong>で償却し、貸借対照表に出る金額は常に未償却残高になります。</p><p>借方の費用科目も「減価償却費」ではなく<strong>ソフトウェア償却</strong>です。損益計算書の<strong>販売費及び一般管理費</strong>に表示されます。</p>'
+      },
+      {
+        text: '×1年<strong>10月1日</strong>、自社で利用する目的のソフトウェアを <strong>2,400,000円</strong> で購入し、代金は小切手を振り出して支払った。なお、決算日は×2年3月31日である。この<strong>購入時</strong>の仕訳を示しなさい。',
+        debit: [['ソフトウェア', 2400000]],
+        credit: [['当座預金', 2400000]],
+        hint: '購入した時点では、まだ償却は関係ありません。',
+        explain: '<p>購入時は取得原価をそのまま資産に計上するだけです。小切手を振り出したので貸方は<strong>当座預金</strong>。</p><p>取得日が期中であることは、<strong>決算で償却するときに月割が必要になる</strong>という意味を持ちますが、購入時の仕訳には影響しません。ここで按分を始めないでください。</p>'
+      },
+      {
+        text: '×2年3月31日、決算にあたり、×1年<strong>10月1日</strong>に <strong>2,400,000円</strong> で取得した自社利用のソフトウェアを、利用可能期間 <strong>5年</strong> で定額償却する（月割計算による）。',
+        debit: [['ソフトウェア償却', 240000]],
+        credit: [['ソフトウェア', 240000]],
+        hint: '10月から3月まで、何か月でしょうか。',
+        explain: '<p>年間の償却額は 2,400,000 ÷ 5年 ＝ 480,000円。</p><p>取得は×1年10月1日なので、決算日までに経過したのは<strong>10月・11月・12月・1月・2月・3月の6か月</strong>です。</p><p>480,000 × 6か月 ÷ 12か月 ＝ <strong>240,000円</strong>。<mark>取得した月を1か月目に含める</mark>数え方は有形固定資産と同じです。</p><p>年額 480,000円をそのまま書くと、初年度だけ倍の金額になります。問題文が期首取得と明示していないときは、必ず取得日を確認してください。</p>'
+      },
+      {
+        text: '×1年9月1日、自社で利用するシステムの開発を外部に委託し、<strong>着手金 5,000,000円</strong> を当座預金から支払った。なお、このシステムは翌期に完成する予定である。',
+        debit: [['ソフトウェア仮勘定', 5000000]],
+        credit: [['当座預金', 5000000]],
+        hint: 'まだ完成しておらず、1日も使っていません。',
+        explain: '<p>完成前の支出を「ソフトウェア」に計上すると、<strong>決算で償却の対象になってしまいます。</strong>しかしシステムはまだ使い始めていません。使える期間にわたって費用にするのが償却なのに、使ってもいないものを償却するのは筋が通りません。</p><p>そこで、完成するまでは<strong>ソフトウェア仮勘定</strong>に集めておきます。<mark>仮勘定のままでは償却しません。</mark></p><p>建物を建てている途中の支出を建設仮勘定に集めるのと、まったく同じ考え方です。</p>'
+      },
+      {
+        text: '×2年7月1日、外部に委託していた自社利用のシステムが<strong>完成して使用を開始</strong>し、残額 <strong>7,000,000円</strong> を当座預金から支払った。なお、<strong>ソフトウェア仮勘定の残高は 5,000,000円</strong> である。',
+        debit: [['ソフトウェア', 12000000]],
+        credit: [['ソフトウェア仮勘定', 5000000], ['当座預金', 7000000]],
+        hint: '借方の金額は、これまでに払った分と今回払う分の合計です。',
+        explain: '<p>完成して使い始めたので、ここで本勘定へ振り替えます。</p><ul><li><strong>借方 ソフトウェア 12,000,000円</strong>：すでに払った 5,000,000円 ＋ 今回の 7,000,000円</li><li><strong>貸方 ソフトウェア仮勘定 5,000,000円</strong>：役目を終えたので全額を消す</li><li><strong>貸方 当座預金 7,000,000円</strong>：今回の支払い</li></ul><p>貸方でソフトウェア仮勘定を消し忘れると、<strong>同じ 5,000,000円がソフトウェアと仮勘定の2か所に二重で残ります。</strong>貸借は合ってしまうため、検算では気づけません。</p>'
+      },
+      {
+        text: '×3年3月31日、決算にあたり、×2年<strong>7月1日</strong>に使用を開始した取得原価 <strong>12,000,000円</strong> の自社利用ソフトウェアを、利用可能期間 <strong>5年</strong> で定額償却する（月割計算による）。',
+        debit: [['ソフトウェア償却', 1800000]],
+        credit: [['ソフトウェア', 1800000]],
+        hint: '償却の起点は、着手金を払った日ではありません。',
+        explain: '<p>年間の償却額は 12,000,000 ÷ 5年 ＝ 2,400,000円。</p><p>使用を開始したのは×2年7月1日なので、当期に経過したのは<strong>7月から3月までの9か月</strong>です。</p><p>2,400,000 × 9か月 ÷ 12か月 ＝ <strong>1,800,000円</strong>。</p><p><mark>着手金を払った日から数えるのではありません。</mark>償却は「使える期間にわたって費用にする」手続きなので、使い始める前の期間は含みません。制作期間が年度をまたぐ問題では、この起点をどちらに取るかで答えが変わります。</p>'
+      },
+      {
+        text: '自社で利用するソフトウェアの制作費 <strong>9,000,000円</strong> を当座預金から支払った。なお、このうち <strong>2,500,000円</strong> は<strong>研究開発費に該当する</strong>ものである。',
+        debit: [['ソフトウェア', 6500000], ['研究開発費', 2500000]],
+        credit: [['当座預金', 9000000]],
+        hint: '支出の全額が資産になるわけではありません。',
+        explain: '<p>支出を2つに分けます。</p><ul><li><strong>研究開発費 2,500,000円</strong>：新しい技術を探索している段階の支出。完成するかどうか分からず、<mark>将来の収益獲得が確実とは言えない</mark>ので資産の条件を満たしません。支出した期の費用です</li><li><strong>ソフトウェア 6,500,000円</strong>：9,000,000 − 2,500,000。将来の収益獲得または費用削減が確実な部分だけを資産に計上します</li></ul><p>UNIT 06 で扱った研究開発費の考え方がそのまま効いています。<strong>指示を読み飛ばして全額をソフトウェアにすると、2つの科目が同時に誤ります。</strong></p>'
+      },
+      {
+        text: 'A社の事業を譲り受け、対価 <strong>9,000,000円</strong> を小切手を振り出して支払った。受け入れた資産と引き受けた負債の<strong>時価</strong>は、売掛金 <strong>2,500,000円</strong>、商品 <strong>1,500,000円</strong>、建物 <strong>7,000,000円</strong>、買掛金 <strong>2,000,000円</strong>、長期借入金 <strong>3,000,000円</strong> であった。なお、商品は繰越商品として処理する。',
+        debit: [['売掛金', 2500000], ['繰越商品', 1500000], ['建物', 7000000], ['のれん', 3000000]],
+        credit: [['買掛金', 2000000], ['長期借入金', 3000000], ['当座預金', 9000000]],
+        hint: '受け入れた資産と負債を先に全部書けば、のれんは貸借差額として出てきます。',
+        explain: '<p><strong>受け入れた資産</strong>：2,500,000 ＋ 1,500,000 ＋ 7,000,000 ＝ 11,000,000円。</p><p><strong>引き受けた負債</strong>：2,000,000 ＋ 3,000,000 ＝ 5,000,000円。</p><p><strong>受け入れた純資産</strong>：11,000,000 − 5,000,000 ＝ 6,000,000円。</p><p><strong>のれん</strong>：9,000,000 − 6,000,000 ＝ <strong>3,000,000円</strong>。借方合計 14,000,000円、貸方合計 14,000,000円で一致します。</p><p>のれんは<mark>最後に貸借を合わせるために置いた差額</mark>であって、「評判の値段」を自分で見積もったものではありません。</p><p>受け入れた商品を<strong>仕入</strong>としないでください。仕入は販売するために商品を買った取引ですが、ここでは事業をまるごと引き受けた結果として在庫が付いてきただけです。</p>'
+      },
+      {
+        text: 'B社の事業を譲り受け、対価 <strong>4,200,000円</strong> を小切手を振り出して支払った。受け入れた資産と引き受けた負債の<strong>時価</strong>は、売掛金 <strong>1,200,000円</strong>、備品 <strong>2,800,000円</strong>、土地 <strong>3,000,000円</strong>、買掛金 <strong>900,000円</strong>、借入金 <strong>1,300,000円</strong> であった。',
+        debit: [['売掛金', 1200000], ['備品', 2800000], ['土地', 3000000]],
+        credit: [['買掛金', 900000], ['借入金', 1300000], ['当座預金', 4200000], ['負ののれん発生益', 600000]],
+        hint: '差額が借方と貸方のどちらに出るかで、科目が変わります。',
+        explain: '<p><strong>受け入れた資産</strong>：1,200,000 ＋ 2,800,000 ＋ 3,000,000 ＝ 7,000,000円。</p><p><strong>引き受けた負債</strong>：900,000 ＋ 1,300,000 ＝ 2,200,000円。</p><p><strong>受け入れた純資産</strong>：7,000,000 − 2,200,000 ＝ 4,800,000円。</p><p>対価 4,200,000円は純資産 4,800,000円より <strong>600,000円 少ない</strong>ので、差額は<strong>貸方</strong>に出ます。貸方に出た差額は収益で、科目は<strong>負ののれん発生益</strong>です。</p><p>借方合計 7,000,000円、貸方合計 900,000 ＋ 1,300,000 ＋ 4,200,000 ＋ 600,000 ＝ 7,000,000円。</p><p>負ののれん発生益は<strong>償却しません。</strong>取引が成立した瞬間に利益が確定しており、貸借対照表に残らないからです。表示区分は<strong>特別利益</strong>です。</p>'
+      },
+      {
+        text: '決算にあたり、<strong>当期首</strong>に事業を譲り受けた際に計上した<strong>のれん 8,000,000円</strong> を、<strong>20年</strong>にわたり定額法により償却する。',
+        debit: [['のれん償却', 400000]],
+        credit: [['のれん', 400000]],
+        hint: '貸方に累計額は使いません。',
+        explain: '<p>8,000,000 ÷ 20年 ＝ <strong>400,000円</strong>。</p><p>のれんは<strong>取得後20年以内に定額法その他の合理的な方法で規則的に償却</strong>します。10年でも30年でもなく、上限が20年です。</p><p>貸方は<strong>のれん</strong>という資産科目そのもの（直接法）。借方の<strong>のれん償却</strong>は、損益計算書の<strong>販売費及び一般管理費</strong>に表示されます。買い取った評判は本業で働いている資産なので、その目減りは本業を回すためのコストです。特別損失ではありません。</p>'
+      },
+      {
+        text: '×2年3月31日、決算にあたり、×1年<strong>7月1日</strong>に事業を譲り受けた際に計上した<strong>のれん 4,800,000円</strong> を、<strong>20年</strong>にわたり定額法により償却する（月割計算による）。',
+        debit: [['のれん償却', 180000]],
+        credit: [['のれん', 180000]],
+        hint: '7月から3月まで、何か月でしょうか。',
+        explain: '<p>年間の償却額は 4,800,000 ÷ 20年 ＝ 240,000円。</p><p>取得は×1年7月1日なので、決算日までに経過したのは<strong>7月から3月までの9か月</strong>です。</p><p>240,000 × 9か月 ÷ 12か月 ＝ <strong>180,000円</strong>。</p><p>のれんも期中に取得すれば月割になります。<mark>年額をそのまま書くと1年目だけ大きくずれます。</mark>問題文が期首取得と明示していないときは、必ず取得日を確認してください。</p>'
+      },
+      {
+        text: '決算にあたり、<strong>当期首</strong>に <strong>5,600,000円</strong> で取得した特許権を、<strong>8年</strong>にわたり定額法により償却する。',
+        debit: [['特許権償却', 700000]],
+        credit: [['特許権', 700000]],
+        hint: '償却の3点セットは、のれんやソフトウェアと同じです。',
+        explain: '<p>5,600,000 ÷ 8年 ＝ <strong>700,000円</strong>。</p><p>特許権は法律で存続期間が決まっており、<strong>期限が来れば権利が消えます。</strong>価値がゼロに向かって確実に減っていくので償却します。</p><p>定額法・残存価額ゼロ・直接法という3点は、のれんともソフトウェアとも共通です。<strong>科目名と年数が変わるだけ</strong>で、仕訳の形は毎回同じです。</p><p>償却年数は問題文が与えます。法律上の存続期間を自分で持ち出す場面はありません。</p>'
+      },
+      {
+        text: '決算にあたり、当期の無形固定資産の償却を行う。当期首に保有しているのは、<strong>特許権 2,400,000円</strong>（当期首に取得、<strong>8年</strong>で償却）と、<strong>借地権 6,000,000円</strong>（当期首に取得）である。償却額は各勘定を直接減額する。',
+        debit: [['特許権償却', 300000]],
+        credit: [['特許権', 300000]],
+        hint: '2つの権利のうち、償却するのはどちらでしょうか。償却しないほうには理由があります。',
+        explain: '<p><strong>特許権</strong>：2,400,000 ÷ 8年 ＝ <strong>300,000円</strong> を償却します。特許権は法律で存続期間が決まっており、期限が来れば権利が消えるので償却の対象です。</p><p><strong>借地権</strong>：<mark>償却しません。</mark>仕訳は不要です。借地権には権利が消滅する期限が定められておらず、契約を更新しながら使い続けられるため、価値が目減りしていく性質がありません。減る根拠の無いものを償却することはできません。</p><p>これは<strong>土地を減価償却しないのと同じ理由</strong>です。借地権は「土地を使う権利」であり、土地の性質を引き継いでいると考えると覚えやすくなります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-mukei', {
+    title: '計算ドリル — のれんの算定と償却額（6問）',
+    unit: '円',
+    questions: [
+      {
+        text: 'C社の事業を譲り受けた。受け入れた資産の時価は、売掛金 <strong>3,200,000円</strong>、商品 <strong>1,800,000円</strong>、建物 <strong>9,000,000円</strong>、引き受けた負債の時価は、買掛金 <strong>2,400,000円</strong>、長期借入金 <strong>4,600,000円</strong> である。対価として <strong>8,500,000円</strong> を支払った。<strong>受け入れた資産の合計</strong>、<strong>受け入れた純資産</strong>、および<strong>のれんの金額</strong>を求めなさい。',
+        labels: ['受け入れた資産の合計', '受け入れた純資産', 'のれん'],
+        answer: [14000000, 7000000, 1500000],
+        formula: ['3200000+1800000+9000000', '3200000+1800000+9000000-2400000-4600000', '8500000-(3200000+1800000+9000000-2400000-4600000)'],
+        hint: '資産の合計を出し、負債を引き、そこから対価との差を取ります。',
+        explain: '<p><strong>受け入れた資産の合計</strong>：3,200,000 ＋ 1,800,000 ＋ 9,000,000 ＝ <strong>14,000,000円</strong>。</p><p><strong>受け入れた純資産</strong>：14,000,000 −（2,400,000 ＋ 4,600,000）＝ 14,000,000 − 7,000,000 ＝ <strong>7,000,000円</strong>。</p><p><strong>のれん</strong>：8,500,000 − 7,000,000 ＝ <strong>1,500,000円</strong>。対価のほうが純資産より大きいので、差額は借方に出て資産になります。</p><p>受け入れる金額は<mark>帳簿価額ではなく時価</mark>です。相手の帳簿にいくらと書いてあっても、問題文が時価を与えてきたらそちらを使います。時価を使い損ねると、差額であるのれんが丸ごと誤った金額になります。</p>'
+      },
+      {
+        text: 'D社の事業を譲り受けた。受け入れた資産の時価の合計は <strong>10,500,000円</strong>、引き受けた負債の時価の合計は <strong>4,300,000円</strong> であり、対価として <strong>5,800,000円</strong> を支払った。<strong>受け入れた純資産</strong>と、計上される<strong>負ののれん発生益</strong>の金額を求めなさい。',
+        labels: ['受け入れた純資産', '負ののれん発生益'],
+        answer: [6200000, 400000],
+        formula: ['10500000-4300000', '10500000-4300000-5800000'],
+        hint: '対価と純資産の大小を確かめてから、差額を取ります。',
+        explain: '<p><strong>受け入れた純資産</strong>：10,500,000 − 4,300,000 ＝ <strong>6,200,000円</strong>。</p><p>対価 5,800,000円は純資産 6,200,000円より少ないので、差額は<strong>貸方</strong>に出ます。</p><p><strong>負ののれん発生益</strong>：6,200,000 − 5,800,000 ＝ <strong>400,000円</strong>。</p><p>この 400,000円は<mark>取引が成立した瞬間に確定した利益</mark>なので、その期の収益として一度に計上します。<strong>償却しません。</strong>資産として貸借対照表に残らないため、償却する対象がないからです。表示区分は<strong>特別利益</strong>です。</p>'
+      },
+      {
+        text: '×1年4月1日に事業を譲り受け、のれん <strong>7,200,000円</strong> を計上した。<strong>20年</strong>にわたり定額法で償却する場合の、<strong>1年あたりの償却額</strong>と、<strong>×3年3月31日（2期目の決算）における のれんの期末帳簿価額</strong>を求めなさい。なお、決算日は毎年3月31日である。',
+        labels: ['1年あたりの償却額', '2期目末の帳簿価額'],
+        answer: [360000, 6480000],
+        formula: ['7200000/20', '7200000-7200000/20*2'],
+        hint: '期首取得なので月割は不要です。2期分を引きます。',
+        explain: '<p><strong>1年あたりの償却額</strong>：7,200,000 ÷ 20年 ＝ <strong>360,000円</strong>。残存価額はゼロなので、取得原価をそのまま年数で割ります。</p><p><strong>2期目末の帳簿価額</strong>：×2年3月期と×3年3月期の2期分を償却済みなので、7,200,000 − 360,000 × 2 ＝ <strong>6,480,000円</strong>。</p><p>直接法なので、この 6,480,000円が<mark>貸借対照表の「のれん」の欄にそのまま書かれる金額</mark>です。有形固定資産のように取得原価と累計額を並べて書くことはありません。</p>'
+      },
+      {
+        text: '×1年<strong>11月1日</strong>に、自社利用のソフトウェアを <strong>4,500,000円</strong> で取得し、直ちに使用を開始した。利用可能期間 <strong>5年</strong>、定額法、月割計算により償却する。決算日は3月31日である。<strong>1年あたりの償却額</strong>、<strong>×2年3月期（1期目）の償却額</strong>、および<strong>×2年3月期末の帳簿価額</strong>を求めなさい。',
+        labels: ['1年あたりの償却額', '1期目の償却額', '1期目末の帳簿価額'],
+        answer: [900000, 375000, 4125000],
+        formula: ['4500000/5', '4500000/5*5/12', '4500000-4500000/5*5/12'],
+        hint: '11月から3月までを数えてください。取得した月を含めます。',
+        explain: '<p><strong>1年あたりの償却額</strong>：4,500,000 ÷ 5年 ＝ <strong>900,000円</strong>。</p><p><strong>1期目の償却額</strong>：×1年11月1日に使用を開始したので、決算日までに経過したのは<strong>11月・12月・1月・2月・3月の5か月</strong>です。900,000 × 5 ÷ 12 ＝ <strong>375,000円</strong>。</p><p><strong>1期目末の帳簿価額</strong>：4,500,000 − 375,000 ＝ <strong>4,125,000円</strong>。</p><p>年額 900,000円をそのまま計上すると、1期目だけ 525,000円 も過大になります。<mark>取得した月を1か月目に含めて数える</mark>点は有形固定資産と同じです。</p>'
+      },
+      {
+        text: '×1年8月1日に自社利用システムの開発を委託し、着手金 <strong>3,500,000円</strong> を支払った（ソフトウェア仮勘定で処理）。×2年<strong>10月1日</strong>にシステムが完成して使用を開始し、残額 <strong>6,100,000円</strong> を支払った。利用可能期間 <strong>5年</strong>、定額法、月割計算による。決算日は3月31日である。<strong>ソフトウェアの取得原価</strong>、<strong>1年あたりの償却額</strong>、および<strong>×3年3月期の償却額</strong>を求めなさい。',
+        labels: ['取得原価', '1年あたりの償却額', '×3年3月期の償却額'],
+        answer: [9600000, 1920000, 960000],
+        formula: ['3500000+6100000', '(3500000+6100000)/5', '(3500000+6100000)/5*6/12'],
+        hint: '償却の起点は、着手金を払った日ではなく使用を開始した日です。',
+        explain: '<p><strong>取得原価</strong>：3,500,000 ＋ 6,100,000 ＝ <strong>9,600,000円</strong>。完成時に、仮勘定に集めてあった 3,500,000円と今回の 6,100,000円を合わせてソフトウェアに振り替えます。</p><p><strong>1年あたりの償却額</strong>：9,600,000 ÷ 5年 ＝ <strong>1,920,000円</strong>。</p><p><strong>×3年3月期の償却額</strong>：使用開始は×2年10月1日なので、当期に経過したのは<strong>10月から3月までの6か月</strong>です。1,920,000 × 6 ÷ 12 ＝ <strong>960,000円</strong>。</p><p><mark>着手金を払った×1年8月から数えるのではありません。</mark>×2年3月期の決算では、まだ完成していないので<strong>償却額はゼロ</strong>で、ソフトウェア仮勘定 3,500,000円がそのまま貸借対照表に残っていました。</p>'
+      },
+      {
+        text: '決算（×3年3月31日）にあたり、無形固定資産の償却を行う。保有しているのは、<strong>のれん</strong>（取得原価 <strong>9,000,000円</strong>、×1年4月1日取得、<strong>20年</strong>償却）、<strong>ソフトウェア</strong>（取得原価 <strong>3,500,000円</strong>、×1年4月1日取得、<strong>5年</strong>償却）、<strong>借地権</strong>（取得原価 <strong>5,000,000円</strong>、×1年4月1日取得）である。<strong>のれん償却</strong>、<strong>ソフトウェア償却</strong>、<strong>当期の償却額の合計</strong>、および<strong>のれんの期末帳簿価額</strong>を求めなさい。',
+        labels: ['のれん償却', 'ソフトウェア償却', '当期の償却額の合計', 'のれんの期末帳簿価額'],
+        answer: [450000, 700000, 1150000, 8100000],
+        formula: ['9000000/20', '3500000/5', '9000000/20+3500000/5', '9000000-9000000/20*2'],
+        hint: '3つのうち1つは償却しません。合計に含めないでください。',
+        explain: '<p><strong>のれん償却</strong>：9,000,000 ÷ 20年 ＝ <strong>450,000円</strong>。</p><p><strong>ソフトウェア償却</strong>：3,500,000 ÷ 5年 ＝ <strong>700,000円</strong>。</p><p><strong>借地権</strong>：<mark>償却しないので 0円</mark>です。権利が消滅する期限が定められておらず、価値が目減りする性質がありません。土地を減価償却しないのと同じ理由です。</p><p><strong>合計</strong>：450,000 ＋ 700,000 ＝ <strong>1,150,000円</strong>。これが損益計算書の販売費及び一般管理費に載ります。借地権を 5,000,000 ÷ 何年 として計算に混ぜないでください。</p><p><strong>のれんの期末帳簿価額</strong>：×1年4月1日から当期末まで2期分を償却済みなので、9,000,000 − 450,000 × 2 ＝ <strong>8,100,000円</strong>。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-mukei', {
+    title: '確認テスト — 区分と期間の判断（8問）',
+    questions: [
+      {
+        text: '無形固定資産の償却について、<strong>有形固定資産と異なる点</strong>として正しいものはどれですか。',
+        choices: [
+          '残存価額をゼロとし、定額法により、資産の帳簿価額を直接減額する',
+          '残存価額を取得原価の10％とし、定率法により、減価償却累計額を用いて記帳する',
+          '残存価額をゼロとし、生産高比例法により、減価償却累計額を用いて記帳する'
+        ],
+        answer: 0,
+        explain: '<p>無形固定資産の償却には3つの特徴があります。<strong>①定額法のみ ②残存価額は必ずゼロ ③直接法</strong>です。</p><p>直接法をとるのは、無形固定資産には<mark>中古市場がなく、取得原価と償却済額を並べて見せても読む側に使い道がない</mark>からです。これから費用になる未償却残高だけが意味を持ちます。</p><p>そのため勘定科目表には<strong>無形固定資産の減価償却累計額という科目が存在しません。</strong>償却の仕訳で貸方に書くのは、のれん・ソフトウェア・特許権といった資産科目そのものです。</p>'
+      },
+      {
+        text: '長年の営業により築いた自社の評判について、経営者が「当社ののれんは1億円の価値がある」と判断しました。この評価額を貸借対照表に「のれん」として計上できますか。',
+        choices: [
+          '計上できる。将来の収益に貢献することが明らかだから',
+          '計上できない。のれんは有償で取得した場合にのみ計上する',
+          '計上できる。ただし金額を20年で償却することを条件とする'
+        ],
+        answer: 1,
+        explain: '<p>自分で育てた評判（<strong>自己創設のれん</strong>）は計上できません。</p><p>理由は、<mark>いくらと評価すべきかを誰も決められない</mark>からです。経営者が自分で「1億円の価値がある」と言い出せるなら、どの会社も好きなだけ資産と利益を作れてしまいます。</p><p>買収や合併のときだけ計上できるのは、<strong>売り手と買い手が交渉して合意した対価という、動かせない証拠がある</strong>からです。のれんは取得対価と受け入れた純資産の差額として、自動的に金額が決まります。</p>'
+      },
+      {
+        text: 'のれんの償却について、正しいものはどれですか。',
+        choices: [
+          '取得後5年以内に、定額法により償却する',
+          '取得後20年以内に、定額法その他の合理的な方法により規則的に償却する',
+          '償却せず、毎期末に時価と比較して評価替えを行う'
+        ],
+        answer: 1,
+        explain: '<p>のれんは<strong>取得後20年以内</strong>に、定額法その他の合理的な方法により規則的に償却します。</p><p>選択肢1の「5年以内」は、<strong>自社利用のソフトウェア</strong>の利用可能期間（通常5年以内）と取り違えたものです。<mark>のれんは20年以内、ソフトウェアは通常5年以内</mark>と、2つの数字を対で覚えてください。</p><p>選択肢3の評価替えは行いません。なお、固定資産の<strong>減損</strong>は1級の範囲であり、2級では扱いません。2級ののれんは、取得時に差額として計上し、規則的に償却していくだけです。</p>'
+      },
+      {
+        text: '<strong>負ののれん発生益</strong>の会計処理として正しいものはどれですか。',
+        choices: [
+          '負債に計上し、20年以内に規則的に取り崩して収益とする',
+          '発生した期の収益として全額を計上し、償却はしない',
+          '純資産の部に計上し、償却も取崩しもしない'
+        ],
+        answer: 1,
+        explain: '<p>負ののれん発生益は、<strong>発生した期の収益として全額を計上します。</strong>翌期以降には何も残りません。</p><p>のれんが償却されるのは、<mark>それが資産として貸借対照表に残り続けるから</mark>です。負ののれん発生益は収益の勘定であって貸借対照表には残らないため、償却しようにも対象がありません。</p><p>純資産より安く買えたという差額は、<strong>取引が成立した瞬間に利益が確定している</strong>ものです。将来にわたって何かが働いてくれるわけではないので、資産や負債に置いて何年もかけて処理する理由がありません。</p>'
+      },
+      {
+        text: '<strong>のれん償却</strong>と<strong>負ののれん発生益</strong>の、損益計算書における表示区分の組み合わせとして正しいものはどれですか。',
+        choices: [
+          'のれん償却＝特別損失、負ののれん発生益＝特別利益',
+          'のれん償却＝販売費及び一般管理費、負ののれん発生益＝特別利益',
+          'のれん償却＝販売費及び一般管理費、負ののれん発生益＝営業外収益'
+        ],
+        answer: 1,
+        explain: '<p><strong>のれん償却は販売費及び一般管理費</strong>です。買い取った評判は本業で商品を売るために働いている資産であり、その目減りは<mark>本業を回すために毎期かかるコスト</mark>です。建物の減価償却費が販管費に入るのと同じ理屈で、営業利益の計算に含めます。</p><p><strong>負ののれん発生益は特別利益</strong>です。買収で安く買えたという出来事は毎期繰り返し起こるものではないので、経常的な成果ではありません。経常利益を計算し終えたあとに加えます。</p><p>この非対称は覚えにくいところですが、<strong>のれん償却は毎年起こる／負ののれん発生益は買収時の1回きり</strong>という違いで説明がつきます。</p>'
+      },
+      {
+        text: '日商簿記2級で出題されるソフトウェアの範囲について、正しいものはどれですか。',
+        choices: [
+          '自社利用のソフトウェアに限られる',
+          '市場販売目的のソフトウェアについて、見込販売数量にもとづく償却まで問われる',
+          '受注制作のソフトウェアについて、工事進行基準による収益認識まで問われる'
+        ],
+        answer: 0,
+        explain: '<p>出題区分表は、ソフトウェアについて<strong>「2級では自社利用の場合に限る」</strong>と明記しています。</p><p>受注制作のソフトウェア、市場販売目的のソフトウェア（見込販売収益および見込販売数量の見積りの変更を含む）は、いずれも<mark>1級の範囲</mark>です。</p><p>したがって2級で問われるのは、自社で使うために購入・制作したソフトウェアを資産計上し、<strong>利用可能期間（通常5年以内）にわたって定額法で償却する</strong>という処理だけです。</p>'
+      },
+      {
+        text: '×1年9月1日に自社利用システムの開発を委託して着手金を支払い、ソフトウェア仮勘定で処理しました。システムは×2年7月1日に完成し、使用を開始しました。決算日は3月31日です。<strong>×2年3月31日の決算</strong>における処理として正しいものはどれですか。',
+        choices: [
+          'ソフトウェア仮勘定を9月から3月までの7か月で月割償却する',
+          'ソフトウェア仮勘定をソフトウェアに振り替えたうえで、1年分を償却する',
+          '償却は行わず、ソフトウェア仮勘定のまま貸借対照表に計上する'
+        ],
+        answer: 2,
+        explain: '<p>×2年3月31日の時点で、システムはまだ完成しておらず<strong>1日も使っていません。</strong></p><p>償却とは<mark>使える期間にわたって費用にする</mark>手続きです。使い始めてもいないものを償却するのは筋が通りません。だから<strong>ソフトウェア仮勘定のまま、償却せずに貸借対照表に残します。</strong></p><p>本勘定への振替は、完成して使用を開始した×2年7月1日に行います。償却が始まるのもその日からで、×3年3月期の償却額は7月から3月までの9か月分になります。</p><p>建設仮勘定を償却しないのとまったく同じ構造です。</p>'
+      },
+      {
+        text: '無形固定資産のうち、<strong>償却しないもの</strong>はどれですか。',
+        choices: [
+          '特許権',
+          '商標権',
+          '借地権'
+        ],
+        answer: 2,
+        explain: '<p><strong>借地権は償却しません。</strong></p><p>特許権も商標権も法律で存続期間が決まっており、<mark>期限が来れば権利が消えます。</mark>価値がゼロに向かって確実に減っていくので、その年数にわたって償却します。</p><p>ところが借地権には、権利が消滅する期限が定められていません。契約を更新しながら使い続けられ、価値が目減りしていく性質がないため、<strong>取得原価のまま貸借対照表に残り続けます。</strong></p><p>これは<strong>土地を減価償却しないのと同じ理由</strong>です。借地権は「土地を使う権利」であり、土地の性質を引き継いでいると考えると覚えやすくなります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-mukei', {
+    title: '穴埋め — 用語を書けるようにする（7問）',
+    questions: [
+      {
+        text: '他の会社や事業を買収したとき、支払った対価が受け入れた純資産を上回る部分を計上する資産の科目を何といいますか。20年以内に定額法で償却します。',
+        answer: ['のれん'],
+        explain: '<p>長年かけて積み上げた評判や顧客との関係など、<strong>個別に評価できないが収益を生み出す力</strong>に対して払った金額です。仕訳では、受け入れた資産と負債をすべて書いたあとの<mark>貸借差額</mark>として自動的に出てきます。自分で評価額を見積もる場面はありません。</p>'
+      },
+      {
+        text: '受け入れた純資産より安い対価で事業を譲り受けたときに計上する、収益の科目を何といいますか。償却せず、発生した期に全額を計上します。',
+        answer: ['負ののれん発生益', 'ふののれんはっせいえき'],
+        explain: '<p>差額が<strong>貸方</strong>に出た場合の科目です。取引が成立した瞬間に利益が確定しており、資産として貸借対照表に残らないため償却しません。表示区分は<strong>特別利益</strong>で、のれん償却が販売費及び一般管理費なのと対照的です。</p>'
+      },
+      {
+        text: '制作中で、まだ完成・使用開始に至っていないソフトウェアへの支出を集めておく資産の科目を何といいますか。完成して使用を開始した時点で「ソフトウェア」に振り替えます。',
+        answer: ['ソフトウェア仮勘定', 'そふとうぇあかりかんじょう'],
+        explain: '<p>完成前の支出を「ソフトウェア」に計上すると決算で償却の対象になってしまいますが、<mark>まだ1日も使っていないものを償却するのは筋が通りません。</mark>そこで完成までは仮勘定に集めておき、償却しません。</p><p>建物を建てている途中の支出を<strong>建設仮勘定</strong>に集めるのと同じ考え方です。貸借対照表では、建設仮勘定と同様にその資産の区分（無形固定資産）に表示します。</p>'
+      },
+      {
+        text: '無形固定資産の償却で用いる、減価償却累計額を使わずに資産の帳簿価額をその分だけ減らす記帳方法を何といいますか。',
+        answer: ['直接法', 'ちょくせつほう'],
+        explain: '<p>無形固定資産には中古市場がなく、取得原価と償却済額を並べて見せても読む側に使い道がありません。これから費用になる<strong>未償却残高</strong>だけが意味を持つため、累計額の勘定を置かず資産科目そのものを減らします。</p><p>貸借対照表の無形固定資産の区分に<strong>減価償却累計額の行が現れない</strong>のは、このためです。</p>'
+      },
+      {
+        text: '自社利用のソフトウェアを資産計上できるのは、それによって将来の収益獲得または何が確実であると認められる場合ですか。漢字4文字で答えなさい。',
+        answer: ['費用削減', 'ひようさくげん'],
+        explain: '<p>在庫管理システムで欠品が減って売上が増える（収益獲得）、経理システムで残業代が減る（費用削減）——こうした効果が確実に見込めるから、将来の収益に貢献する資産だと言えます。</p><p>逆に、効果があるかどうか分からない段階の支出は資産になりません。ソフトウェアの制作費のうち<strong>研究開発にあたる部分は研究開発費（費用）</strong>として処理するのは、この条件を満たさないからです。</p>'
+      },
+      {
+        text: '他人の土地を借りて建物を建てる権利を表す無形固定資産の科目を何といいますか。この科目は償却しません。',
+        answer: ['借地権', 'しゃくちけん'],
+        explain: '<p>権利が消滅する期限が定められておらず、契約を更新しながら使い続けられるため、価値が目減りしていく性質がありません。減る根拠の無いものを償却することはできないので、<strong>取得原価のまま貸借対照表に残り続けます。</strong></p><p><mark>土地を減価償却しないのと同じ理由</mark>です。借地権は「土地を使う権利」であり、土地の性質を引き継いでいると考えると覚えやすくなります。</p>'
+      },
+      {
+        text: '固定資産を1件ずつ、取得日・取得原価・当期償却額・期末帳簿価額などの欄を設けて管理する補助簿を何といいますか。第2問・第3問では、ここから当期の償却額を読み取って財務諸表を作ります。',
+        answer: ['固定資産台帳', 'こていしさんだいちょう'],
+        explain: '<p>総勘定元帳の「備品」勘定には全部の備品の金額が合算されているため、<strong>どれがいつ買ったもので、あといくら償却が残っているかが分かりません。</strong>売却や除却に必要な金額は、この台帳から引きます。</p><p>1行の中で<strong>期首帳簿価額 − 当期償却額 ＝ 期末帳簿価額</strong>が必ず成立し、当期償却額の列を縦に足すと損益計算書に載る償却費の合計になります。<mark>どちらか一方でも合わなければ、読み取りかどこかの計算が誤っています。</mark></p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-12-a,商-第二-12-b,商-第二-12-ウ,商-第二-12-オ">
+<meta name="boki-subject" content="商">
+<title>有形固定資産 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 11 有形固定資産</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W4 商業簿記 ／ UNIT 11 ／ 3時間</p>
+    <h1>有形固定資産<br>— 定率法・割賦購入・圧縮記帳・除却廃棄</h1>
+    <p class="lead">3級で習った固定資産は「買って、定額法で償却して、売る」の3場面でした。2級ではその<strong>前後に場面が足されます</strong>。買うときに分割払いにしたらどうなるか、国から補助金をもらって買ったらどうなるか、売れずに使うのをやめたらどうなるか。償却の方法も定額法だけでなく<strong>200%定率法</strong>と<strong>生産高比例法</strong>が加わります。どれも「取得原価をいくらにするか」「帳簿価額をどう消すか」という1本の軸の上に乗っています。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">3級の固定資産に、2級は何を足すのか</a></li>
+      <li><a href="#s2">減価償却の3つの方法 — 何を基準に価値が減ると見るか</a></li>
+      <li><a href="#s3">200%定率法 — 償却率のつくられ方</a></li>
+      <li><a href="#s4">保証率と改定償却率 — 定率法が最後まで償却しきれない問題</a></li>
+      <li><a href="#s5">生産高比例法 — 使った量で減らす</a></li>
+      <li><a href="#s6">直接法 — 累計額を使わない記帳</a></li>
+      <li><a href="#s7">期中取得・期中売却の月割計算</a></li>
+      <li><a href="#s8">割賦購入 — 分割払いに含まれる利息を切り出す</a></li>
+      <li><a href="#s9">圧縮記帳 — 補助金でもらった分を取得原価から削る</a></li>
+      <li><a href="#s10">除却と廃棄 — 売らずに使用をやめる</a></li>
+      <li><a href="#s11">仕訳ドリル 14問</a></li>
+      <li><a href="#s12">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s13">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>3級の固定資産に、2級は何を足すのか</h2>
+
+  <p>3級で扱った固定資産の一生は、次の3場面でした。</p>
+
+  <ol class="steps">
+    <li><strong>取得</strong>：買った金額に付随費用を足して取得原価とする</li>
+    <li><strong>決算</strong>：定額法で減価償却し、間接法（減価償却累計額）で記帳する</li>
+    <li><strong>売却</strong>：帳簿価額と売却額の差を固定資産売却損益とする</li>
+  </ol>
+
+  <p>2級はこの3場面を否定しません。骨格はそのままで、<strong>それぞれの場面に枝が生えます。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>場面</th><th>3級で習ったこと</th><th>2級で足されること</th></tr></thead>
+      <tbody>
+        <tr><td class="d">取得</td><td>代金＋付随費用＝取得原価</td><td><strong>割賦購入</strong>（利息を切り出す）／<strong>圧縮記帳</strong>（補助金の分を削る）</td></tr>
+        <tr><td class="d">決算</td><td>定額法・間接法</td><td><strong>200%定率法</strong>／<strong>生産高比例法</strong>／<strong>直接法</strong></td></tr>
+        <tr><td class="d">手放す</td><td>売却</td><td><strong>除却</strong>（使用をやめる）／<strong>廃棄</strong>（捨てる）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">枝はすべて「取得原価」と「帳簿価額」に帰る</span>
+    <p>新しい論点が4つも5つも並ぶと別々のものに見えますが、やっていることは2つしかありません。</p>
+    <ul>
+      <li><strong>取得原価をいくらにするか</strong> — 割賦購入は利息を除き、圧縮記帳は補助金を削る。どちらも「この資産に本当にかかった額はいくらか」という1つの問いへの答えです</li>
+      <li><strong>帳簿価額をどう消すか</strong> — 定率法も生産高比例法も、毎期いくら削るかの計算方法が違うだけ。除却・廃棄・売却は、残った帳簿価額をどう精算するかの違いです</li>
+    </ul>
+    <p><mark>取得原価が決まれば償却が決まり、償却が決まれば帳簿価額が決まり、帳簿価額が決まれば手放すときの損益が決まる。</mark>この連鎖を追えていれば、個々の論点は暗記するまでもありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">建設仮勘定はPhase 0 で扱った</span>
+    <p>建物を建ててもらう途中に払う手付金・中間金を<strong>建設仮勘定</strong>で受け、完成引渡し時に建物へ振り替える処理は<strong>2級の範囲</strong>ですが、この教材では Phase 0 の3級総復習で扱っています。</p>
+    <p>この単元では、圧縮記帳の対象が建設中の資産である場合など、必要な範囲でのみ触れます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>減価償却の3つの方法 — 何を基準に価値が減ると見るか</h2>
+
+  <p>減価償却とは、固定資産の取得原価を<strong>使用する各期に費用として割り振る手続き</strong>です。ここまでは3級と同じです。問題は「どういう割り振り方が実態に合うか」であり、<mark>資産の種類によって答えが違います</mark>。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>定額法</h3>
+      <p class="small"><strong>時間</strong>の経過で等しく価値が減ると見る。<br>毎期の償却費が一定。</p>
+      <p class="small muted">建物など、使っても使わなくても古くなる資産。</p>
+    </div>
+    <div class="card">
+      <h3>定率法</h3>
+      <p class="small"><strong>初期ほど大きく</strong>価値が減ると見る。<br>期首の帳簿価額に一定率を掛ける。</p>
+      <p class="small muted">機械・備品など、新しいうちが働き盛りの資産。</p>
+    </div>
+    <div class="card">
+      <h3>生産高比例法</h3>
+      <p class="small"><strong>使った量</strong>だけ価値が減ると見る。<br>総利用可能量に対する当期利用量で按分。</p>
+      <p class="small muted">車両・航空機など、走行距離で寿命が決まる資産。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ定率法では初期に多く償却するのか</span>
+    <p>新車を買って1年乗った車を売ると、値段はがくんと落ちます。ところが5年目の車を6年目まで乗って売っても、下がり幅はわずかです。<strong>価値の減り方は一定ではなく、初めのほうが急</strong>だからです。</p>
+    <p>もうひとつ理由があります。機械は古くなるほど修繕費がかさみます。<mark>償却費が初期に大きく後期に小さいと、修繕費と合計した年あたりの負担が平準化されます。</mark>定額法だと、後半は償却費が変わらないまま修繕費だけ増え、年々負担が重くなります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">どの方法を使うかは自分で決めない</span>
+    <p>「機械だから定率法」と決めつけないでください。企業は資産ごとに償却方法を選べます。建物を定率法で償却している会社も、備品を定額法で償却している会社もあります。</p>
+    <p>試験では<strong>問題文が「備品：定率法（償却率 年20％）」のように必ず指定します。</strong>指定を読み落とさないことだけが、受験上やるべきことです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>200%定率法 — 償却率のつくられ方</h2>
+
+  <p>定率法は<strong>期首の帳簿価額に償却率を掛ける</strong>方法です。</p>
+
+  <p class="center"><strong>減価償却費 ＝ 期首帳簿価額 ×  償却率</strong></p>
+
+  <p>期首帳簿価額とは、取得原価から<strong>前期末までの減価償却累計額を引いた額</strong>です。取得原価に掛けるのではありません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「200％」とは、定額法の償却率の2倍という意味</span>
+    <p>定率法の償却率は、どこからか降ってくる数字ではありません。<strong>定額法の償却率を2倍した値</strong>です。これを<span class="term"><span class="term__w">200％定率法</span><span class="term__r">にひゃくパーセントていりつほう</span></span>といいます。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>耐用年数</th><th>定額法の償却率（1 ÷ 年数）</th><th>200％定率法の償却率</th></tr></thead>
+        <tbody>
+          <tr><td class="d">5年</td><td>1 ÷ 5 ＝ 0.200</td><td>0.200 × 2 ＝ <strong>0.400</strong></td></tr>
+          <tr><td class="d">8年</td><td>1 ÷ 8 ＝ 0.125</td><td>0.125 × 2 ＝ <strong>0.250</strong></td></tr>
+          <tr><td class="d">10年</td><td>1 ÷ 10 ＝ 0.100</td><td>0.100 × 2 ＝ <strong>0.200</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>かつては250％定率法（2.5倍）が使われていた時期があり、そのときとの区別のために「200％」と呼び分けます。<strong>現在の制度は200％</strong>です。</p>
+  </div>
+
+  <h3>具体例 — 取得原価 2,000,000円・耐用年数5年</h3>
+
+  <p>償却率は 1 ÷ 5 × 2 ＝ <strong>0.400</strong>。毎期の計算を並べます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>年度</th><th class="amt">期首帳簿価額</th><th class="amt">× 0.400</th><th class="amt">期末帳簿価額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">1年目</td><td class="amt">2,000,000</td><td class="amt">800,000</td><td class="amt">1,200,000</td></tr>
+        <tr><td class="d">2年目</td><td class="amt">1,200,000</td><td class="amt">480,000</td><td class="amt">720,000</td></tr>
+        <tr><td class="d">3年目</td><td class="amt">720,000</td><td class="amt">288,000</td><td class="amt">432,000</td></tr>
+        <tr><td class="d">4年目</td><td class="amt">432,000</td><td class="amt">172,800</td><td class="amt">259,200</td></tr>
+        <tr><td class="d">5年目</td><td class="amt">259,200</td><td class="amt">103,680</td><td class="amt">155,520</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>償却費が 800,000 → 480,000 → 288,000 と、年々小さくなっていくのが定率法の姿です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">掛ける相手は「期首帳簿価額」。累計額を引き忘れない</span>
+    <p>定率法でいちばん多い誤りは、<strong>取得原価に償却率を掛けてしまう</strong>ことです。2年目に 2,000,000 × 0.400 ＝ 800,000 としてしまうと、定額法と区別がつかなくなります。</p>
+    <p>2年目に掛けるのは 2,000,000 − 800,000 ＝ <strong>1,200,000円</strong> です。問題文が「減価償却累計額 800,000円」という形で与えてくるので、<mark>取得原価から累計額を引いてから率を掛ける</mark>という順序を固定してください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">償却率は問題文が与える</span>
+    <p>200％定率法の償却率は 1 ÷ 耐用年数 × 2 で計算できますが、<strong>試験では「償却率 年0.400」という形で与えられるのが普通</strong>です。次節の保証率・改定償却率も同様に与えられます。</p>
+    <p>自分で率の表を暗記する必要はありません。<strong>与えられた率を、どの金額に掛けるのかを間違えないこと</strong>が問われています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>保証率と改定償却率 — 定率法が最後まで償却しきれない問題</h2>
+
+  <p>前節の表をもう一度見てください。5年で償却し終えるはずなのに、5年目の期末で <strong>155,520円</strong> が残っています。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">帳簿価額に率を掛け続けても、ゼロにならない</span>
+    <p>定率法は<strong>残っている額に率を掛ける</strong>方法です。残高の40％を削るということは、<mark>毎年60％が必ず残る</mark>ということでもあります。60％の60％の60％……といくら掛けても、ゼロにはなりません。</p>
+    <p>ところが減価償却は、耐用年数が来たら<strong>備忘価額1円まで償却し終えている</strong>のが建前です。定率法をそのまま続けると、この建前が守れません。</p>
+  </div>
+
+  <p>そこで、途中から<strong>定額法に切り替える</strong>仕組みが組み込まれています。使うのが<span class="term"><span class="term__w">償却保証額</span><span class="term__r">しょうきゃくほしょうがく</span></span>と<span class="term"><span class="term__w">改定償却率</span><span class="term__r">かいていしょうきゃくりつ</span></span>です。</p>
+
+  <ol class="steps">
+    <li><strong>償却保証額を出す</strong><br>取得原価 × <strong>保証率</strong>。これが「1年あたり最低でもこれだけは償却したい」という下限額です</li>
+    <li><strong>毎期、通常の定率法で計算した額と比べる</strong><br>期首帳簿価額 × 償却率 が償却保証額<strong>以上</strong>なら、その額をそのまま償却費にします</li>
+    <li><strong>下回った年から、計算を切り替える</strong><br>その年の<strong>期首帳簿価額</strong>（これを改定取得価額といいます）に<strong>改定償却率</strong>を掛けた額を、以後毎期そのまま償却します</li>
+  </ol>
+
+  <div class="callout callout--why">
+    <span class="callout__t">切り替えたあとは、実質的に定額法になっている</span>
+    <p>改定償却率は、<strong>残りの年数で割り切れるように作られた率</strong>です。耐用年数5年なら改定償却率は 0.500、つまり残り2年で半分ずつ。8年なら 0.334、残り3年でおよそ3分の1ずつ。</p>
+    <p>しかも掛ける相手は毎年変わらず<strong>切り替えた年の期首帳簿価額に固定</strong>されます。だから<mark>切り替え後は毎期同額</mark>になり、定額法と同じ形で最後まで償却しきれます。</p>
+  </div>
+
+  <h3>具体例 — 取得原価 2,000,000円・耐用年数5年・償却率 0.400・保証率 0.10800・改定償却率 0.500</h3>
+
+  <p><strong>償却保証額</strong>：2,000,000 × 0.10800 ＝ <strong>216,000円</strong>。毎期、通常計算の額をこれと比べます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>年度</th><th class="amt">期首帳簿価額</th><th class="amt">× 0.400（調整前）</th><th>216,000と比べる</th><th class="amt">減価償却費</th></tr></thead>
+      <tbody>
+        <tr><td class="d">1年目</td><td class="amt">2,000,000</td><td class="amt">800,000</td><td>以上</td><td class="amt">800,000</td></tr>
+        <tr><td class="d">2年目</td><td class="amt">1,200,000</td><td class="amt">480,000</td><td>以上</td><td class="amt">480,000</td></tr>
+        <tr><td class="d">3年目</td><td class="amt">720,000</td><td class="amt">288,000</td><td>以上</td><td class="amt">288,000</td></tr>
+        <tr><td class="d">4年目</td><td class="amt">432,000</td><td class="amt">172,800</td><td><strong>下回る → 切替</strong></td><td class="amt"><strong>216,000</strong></td></tr>
+        <tr><td class="d">5年目</td><td class="amt">216,000</td><td class="amt">—</td><td>切替後</td><td class="amt"><strong>215,999</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>4年目に 172,800円 &lt; 216,000円 となったので、ここで切り替えます。<strong>改定取得価額は4年目の期首帳簿価額 432,000円</strong>。これに改定償却率 0.500 を掛けて 432,000 × 0.500 ＝ <strong>216,000円</strong>。5年目も同じ 216,000円 ですが、<strong>最終年度は備忘価額1円を残す</strong>ため 216,000 − 1 ＝ 215,999円 となります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">比べるのは「調整前の償却額」と「償却保証額」。帳簿価額ではない</span>
+    <p>償却保証額 216,000円 と比べるのは、その年の<strong>期首帳簿価額 × 償却率</strong>で出した額です。期首帳簿価額そのものと比べるのではありません。</p>
+    <p>4年目でいえば、比べるのは 172,800円（＝432,000 × 0.400）であって 432,000円 ではありません。<mark>「もし通常どおり計算したら、下限を割ってしまうか」</mark>を見ています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">切替後に掛ける相手は毎年同じ金額のまま</span>
+    <p>切り替えたあと、5年目にもう一度「期首帳簿価額 216,000 × 0.500 ＝ 108,000」としないでください。<strong>掛ける相手は切り替えた年の期首帳簿価額 432,000円に固定</strong>されます。</p>
+    <p>これを毎年更新してしまうと、また残高に率を掛ける形に戻ってしまい、<mark>切り替えた意味がなくなります</mark>（償却しきれないという元の問題がそのまま再発します）。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で問われるのは、切り替えの判定と計算まで</span>
+    <p>保証率・改定償却率の値そのものは<strong>問題文が与えます</strong>。表を暗記する必要はありません。</p>
+    <p>問われるのは、<strong>①償却保証額を出せるか ②通常計算の額と比べて切り替えを判定できるか ③切替後の改定取得価額を取り違えないか</strong>の3点です。切替が起きない年だけを問う出題も多く、その場合はただの定率法です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">残存価額は10％ではない</span>
+    <p>古いテキストには「残存価額は取得原価の10％」という記述が残っていることがありますが、<strong>2007年4月1日以後に取得した資産の残存価額はゼロ</strong>で、備忘価額として1円だけ残します。</p>
+    <p>2級の問題文は「残存価額ゼロ」または「備忘価額1円を残す」と明記します。<strong>指示がない限り10％を勝手に置かないでください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>生産高比例法 — 使った量で減らす</h2>
+
+  <p>営業用トラックの価値を減らしているのは、時間の経過というより<strong>走った距離</strong>です。車庫に置きっぱなしの1年と、10万km走った1年とで、同じだけ価値が減るというのは実態に合いません。</p>
+
+  <p>そこで、<strong>総利用可能量に対する当期の利用量の割合</strong>で償却します。</p>
+
+  <p class="center"><strong>減価償却費 ＝（取得原価 − 残存価額）× 当期の利用量 ÷ 総利用可能量</strong></p>
+
+  <h3>具体例</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>条件</th><th class="amt">数値</th></tr></thead>
+      <tbody>
+        <tr><td class="d">車両運搬具の取得原価</td><td class="amt">6,000,000</td></tr>
+        <tr><td class="d">残存価額</td><td class="amt">ゼロ</td></tr>
+        <tr><td class="d">総走行可能距離</td><td class="amt">300,000 km</td></tr>
+        <tr><td class="d">当期の走行距離</td><td class="amt">42,000 km</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>6,000,000 × 42,000 ÷ 300,000 ＝ <strong>840,000円</strong>。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ月割計算が要らないのか</span>
+    <p>定額法・定率法では、期中に取得した資産は<strong>使った月数で按分</strong>します。年間の償却費が「1年使ったらいくら」という前提で計算されているからです。</p>
+    <p>生産高比例法にはこの手間がありません。<mark>当期の利用量そのものが、いつからどれだけ使ったかを織り込んでいる</mark>からです。期の途中に買った車なら、当期の走行距離はもともと少なくなっています。そこへさらに月割をかけると、二重に減らすことになります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">生産高比例法に月割はしない</span>
+    <p>期中取得と聞くと反射的に「× 何か月 ÷ 12」を書きたくなりますが、<strong>生産高比例法では月割をしません。</strong>与えられた当期利用量をそのまま使います。</p>
+    <p>逆に、定額法・定率法で期中取得なのに月割を忘れる誤りも同じくらい多く起きます。<mark>「その方法が何を基準に減らしているか」</mark>を考えれば、どちらも迷いません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>直接法 — 累計額を使わない記帳</h2>
+
+  <p>3級では、減価償却の記帳をすべて<strong>間接法</strong>で行いました。減価償却累計額という科目を使い、資産の勘定そのものには手を触れない方法です。2級では<strong>直接法</strong>も出題されます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>間接法</h3>
+      <div class="tablewrap">
+        <table class="jnl">
+          <tbody>
+            <tr><td class="d">減価償却費</td><td class="d amt">800,000</td><td class="c">備品減価償却累計額</td><td class="c amt">800,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">備品の勘定は取得原価 2,000,000円 のまま動かない。</p>
+    </div>
+    <div class="card">
+      <h3>直接法</h3>
+      <div class="tablewrap">
+        <table class="jnl">
+          <tbody>
+            <tr><td class="d">減価償却費</td><td class="d amt">800,000</td><td class="c">備品</td><td class="c amt">800,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">備品の勘定が 1,200,000円 に減る。累計額の科目は登場しない。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">間接法が原則なのは、取得原価が残るから</span>
+    <p>直接法では、備品の残高 1,200,000円 を見ても<strong>いくらで買った資産なのか分かりません。</strong>新品を 1,200,000円 で買ったのか、2,000,000円 の備品を4割償却した後なのか、区別がつかないのです。</p>
+    <p>間接法なら、備品 2,000,000円と備品減価償却累計額 800,000円が両方残るので、<mark>取得原価・償却の進み具合・帳簿価額の3つが同時に読めます。</mark>だから有形固定資産は間接法が原則です。</p>
+    <p class="small muted">直接法が使われるのは主に無形固定資産（ソフトウェアやのれん）です。無形固定資産には物理的な実体がなく、取得原価を残しておく意味が薄いためです。有形固定資産で直接法が指示されることもあり、そのときは指示に従います。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">直接法のときの帳簿価額は、資産の残高そのもの</span>
+    <p>売却や除却の仕訳を書くとき、間接法なら「取得原価 − 累計額」で帳簿価額を出します。<strong>直接法では資産の残高がそのまま帳簿価額</strong>です。</p>
+    <p>直接法で記帳している資産を売却する仕訳に、<mark>存在しない減価償却累計額を書いてしまう</mark>誤りが起きます。問題文が「直接法により記帳している」と言っていたら、累計額の科目は答案に出てきません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>期中取得・期中売却の月割計算</h2>
+
+  <p>期の途中で資産を取得したり手放したりした場合、その期の償却費は<strong>使った月数分だけ</strong>計上します。定額法・定率法に共通する扱いです。</p>
+
+  <p class="center"><strong>その期の償却費 ＝ 1年分の償却費 × 使った月数 ÷ 12</strong></p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">期中に手放すときは、手放す直前までの償却を先に計上する</span>
+    <p>期首に売ったなら当期の償却はゼロですが、期の途中に売ったなら<strong>期首から売却日までの分を償却してから</strong>売却損益を計算します。この一手間を飛ばすと、帳簿価額がずれて売却損益も必ずずれます。</p>
+    <p>手順は必ずこの順です。</p>
+    <ol class="steps">
+      <li><strong>期首から手放す日までの減価償却費を計算する</strong>（月割）</li>
+      <li><strong>その分を加えた帳簿価額を出す</strong>（取得原価 − 期首累計額 − 当期分償却費）</li>
+      <li><strong>帳簿価額と受取額の差を売却損益とする</strong></li>
+    </ol>
+  </div>
+
+  <h3>具体例 — 期中売却</h3>
+
+  <p>決算日は3月31日。取得原価 900,000円の備品（耐用年数6年・残存価額ゼロ・定額法・間接法）を、7月31日に 380,000円で売却し代金は現金で受け取った。期首の減価償却累計額は 450,000円である。</p>
+
+  <ol class="steps">
+    <li><strong>1年分の償却費</strong>：900,000 ÷ 6 ＝ 150,000円</li>
+    <li><strong>当期分</strong>：4月・5月・6月・7月の<strong>4か月</strong>。150,000 × 4 ÷ 12 ＝ <strong>50,000円</strong></li>
+    <li><strong>帳簿価額</strong>：900,000 − 450,000 − 50,000 ＝ <strong>400,000円</strong></li>
+    <li><strong>売却損益</strong>：380,000 − 400,000 ＝ <strong>△20,000円</strong>（固定資産売却損）</li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>7月31日に備品を 380,000円で売却し、代金を現金で受け取った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">備品減価償却累計額</td><td class="d amt">450,000</td><td class="c">備品</td><td class="c amt">900,000</td></tr>
+        <tr><td class="d">減価償却費</td><td class="d amt">50,000</td><td class="c"></td><td class="c amt"></td></tr>
+        <tr><td class="d">現金</td><td class="d amt">380,000</td><td class="c"></td><td class="c amt"></td></tr>
+        <tr><td class="d">固定資産売却損</td><td class="d amt">20,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">月数の数え方は「使った月を含める」</span>
+    <p>4月1日開始の会計期間で7月31日に売却したなら、4月・5月・6月・7月の<strong>4か月</strong>です。7月中に手放したからといって3か月とはしません。</p>
+    <p>取得のときも同様で、<strong>9月15日に取得して3月31日が決算日なら、9月から3月までの7か月</strong>です。日割りはせず、その月に1日でも使っていれば1か月と数えます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>割賦購入 — 分割払いに含まれる利息を切り出す</h2>
+
+  <p>備品を 3,000,000円で買えるところ、手元に現金がないので「毎月 265,000円 × 12回」の分割払いで買ったとします。支払総額は 265,000 × 12 ＝ <strong>3,180,000円</strong>。現金で買えば 3,000,000円 だったのに、180,000円 多く払うことになります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この 180,000円は、備品の値段ではない</span>
+    <p>同じ備品を買ったのに、分割にしただけで 180,000円 高くなるのはなぜでしょうか。<strong>その差額は備品の対価ではなく、代金の支払いを待ってもらったことへの利息</strong>だからです。</p>
+    <p>備品の価値は 3,000,000円 のままです。ここで取得原価を 3,180,000円 にしてしまうと、<mark>存在しない 180,000円 分の資産が帳簿に載り、その 180,000円 が減価償却を通じて何年もかけて費用化されていく</mark>ことになります。利息は借りていた期間の費用であって、備品を使う期間の費用ではありません。</p>
+    <p>だから利息部分を切り出し、<strong>取得原価は現金正価 3,000,000円</strong>とします。</p>
+  </div>
+
+  <h3>取得時の仕訳</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>備品（現金正価 3,000,000円）を割賦で購入した。支払いは毎月末 265,000円ずつ12回。利息相当額は前払費用として処理する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">備品</td><td class="d amt">3,000,000</td><td class="c">未払金</td><td class="c amt">3,180,000</td></tr>
+        <tr><td class="d">前払費用</td><td class="d amt">180,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>貸方の未払金は<strong>これから払う総額 3,180,000円</strong>です。借方の内訳が「備品 3,000,000円」と「まだ費用になっていない利息 180,000円」に分かれている、という形です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">分割払いの債務は未払金、手形を振り出したら営業外支払手形</span>
+    <p>商品以外のものを買った代金の未払いは<strong>未払金</strong>です（買掛金ではありません。買掛金は商品の仕入れに限ります）。支払期限が決算日の翌日から1年を超えるものは<strong>長期未払金</strong>で表示します。</p>
+    <p>代金の支払いのために<strong>約束手形を振り出した</strong>場合は、商品売買以外の取引から生じた手形なので<strong>営業外支払手形</strong>を使います。支払手形ではありません。</p>
+  </div>
+
+  <h3>支払時の仕訳</h3>
+
+  <p>1回目の支払日。265,000円を当座預金から支払いました。同時に、<strong>1か月経過した分の利息を費用にします。</strong>利息は12回に均等配分するので、180,000 ÷ 12 ＝ <strong>15,000円</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>第1回の割賦金 265,000円を当座預金から支払い、経過した1か月分の利息を計上した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">未払金</td><td class="d amt">265,000</td><td class="c">当座預金</td><td class="c amt">265,000</td></tr>
+        <tr><td class="d">支払利息</td><td class="d amt">15,000</td><td class="c">前払費用</td><td class="c amt">15,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>上段で債務が減り、下段で「まだ費用になっていない利息」が1か月分だけ費用に振り替わります。12回払い終えると、未払金も前払費用もちょうどゼロになります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">2級で利息を配分する方法は定額法だけ</span>
+    <p>利息を期間に配分する方法には、毎期同額を配分する<strong>定額法</strong>と、残っている債務の大きさに応じて配分する<strong>利息法</strong>があります。実態に近いのは利息法です（元本が減れば利息も減るのが自然だからです）。</p>
+    <p>しかし<strong>2級で出題されるのは定額法に限られます。</strong>利息法は1級の範囲です。したがって「支払総額 − 現金正価」で出した利息を、<mark>回数または月数で均等に割る</mark>だけで足ります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">利息を区分しない指示のときは、支払総額が取得原価になる</span>
+    <p>問題文が「利息相当額を区分しない」と指示することがあります。その場合は<strong>支払総額 3,180,000円 をそのまま取得原価</strong>とし、前払費用も支払利息も登場しません。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>利息相当額を区分しない場合の取得時の仕訳</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">備品</td><td class="d amt">3,180,000</td><td class="c">未払金</td><td class="c amt">3,180,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>どちらの処理になるかは<strong>問題文が必ず指示します。</strong>「現金正価」「利息相当額」という語が出てきたら区分する処理、出てこなければ区分しない処理、と考えて構いません。自分で選ぶ場面ではありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">前払費用を使うか、支払利息を使うかも問題文次第</span>
+    <p>取得時に利息を<strong>前払費用</strong>（資産）として置き、支払いのたびに支払利息へ振り替えるのが本教材の基本形です。ただし取得時に<strong>支払利息の総額を一度に借方へ置き、決算で未経過分を前払費用へ振り替える</strong>という書き方を指示する問題もあります。</p>
+    <p>どちらでも、決算時点で費用になっているのは経過した分だけで一致します。<strong>問題文の指定する科目に従ってください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>圧縮記帳 — 補助金でもらった分を取得原価から削る</h2>
+
+  <p>国や自治体が、設備投資を後押しするために<strong>国庫補助金</strong>を出すことがあります。電力会社などが、利用者から設備建設の負担金（<strong>工事負担金</strong>）を受け取ることもあります。</p>
+
+  <p>5,000,000円の補助金を受け取り、8,000,000円の機械を買ったとしましょう。素直に仕訳すると、こうなります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>国庫補助金 5,000,000円を受け取り、機械 8,000,000円を購入した（圧縮記帳を行わない場合）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">5,000,000</td><td class="c">国庫補助金受贈益</td><td class="c amt">5,000,000</td></tr>
+        <tr><td class="d">機械装置</td><td class="d amt">8,000,000</td><td class="c">当座預金</td><td class="c amt">8,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">補助金をもらった年に、税金を払う羽目になる</span>
+    <p>国庫補助金受贈益 5,000,000円 は<strong>収益</strong>です。収益が立てば利益が増え、利益が増えれば<strong>法人税がかかります。</strong>仮に税率30％なら 1,500,000円 です。</p>
+    <p>設備投資を後押しするために出した補助金なのに、<mark>受け取った年に税金として1,500,000円 が出ていく</mark>——これでは補助金の目的が果たせません。手元に残るのは 3,500,000円 だけになってしまいます。</p>
+    <p>そこで、<strong>受贈益と同額の損失を同じ年度に計上して、利益をゼロに戻す</strong>という処理が認められています。これが<span class="term"><span class="term__w">圧縮記帳</span><span class="term__r">あっしゅくきちょう</span></span>です。</p>
+  </div>
+
+  <h3>直接控除方式の仕訳</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>国庫補助金 5,000,000円を当座預金で受け取った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">5,000,000</td><td class="c">国庫補助金受贈益</td><td class="c amt">5,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>機械 8,000,000円を購入し、代金を当座預金から支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">機械装置</td><td class="d amt">8,000,000</td><td class="c">当座預金</td><td class="c amt">8,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>国庫補助金に相当する額について、直接控除方式により圧縮記帳を行った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">固定資産圧縮損</td><td class="d amt">5,000,000</td><td class="c">機械装置</td><td class="c amt">5,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>結果、<strong>受贈益 5,000,000円 と圧縮損 5,000,000円 が相殺され、この取引による当期の利益はゼロ</strong>になります。課税もされません。そして機械装置の残高は 8,000,000 − 5,000,000 ＝ <strong>3,000,000円</strong> になりました。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 250" style="width:100%;height:auto;min-width:560px" role="img" aria-label="取得原価8,000,000円の機械から国庫補助金5,000,000円を直接控除し、圧縮後の帳簿価額が3,000,000円になることを示す図。">
+      <g font-size="13" fill="var(--text)">
+        <text x="20" y="26" font-size="13.5" font-weight="700">購入した機械の取得原価</text>
+        <rect x="20" y="38" width="530" height="42" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="5"/>
+        <text x="285" y="65" text-anchor="middle" font-size="13.5" font-weight="700">8,000,000</text>
+
+        <text x="20" y="112" font-size="13.5" font-weight="700">圧縮記帳（固定資産圧縮損 ／ 機械装置）</text>
+        <rect x="20" y="124" width="331" height="42" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="5"/>
+        <text x="185" y="151" text-anchor="middle" font-size="13" font-weight="700" fill="var(--warn)">△ 5,000,000（補助金の分を削る）</text>
+
+        <text x="20" y="198" font-size="13.5" font-weight="700">圧縮後の帳簿価額 ＝ これから減価償却する額</text>
+        <rect x="20" y="206" width="199" height="34" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="5"/>
+        <text x="119" y="229" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">3,000,000</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">取得原価を直接削るので<strong>直接控除方式</strong>といいます。削ったあとの 3,000,000円 が、以後の減価償却の計算基礎になります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">圧縮後の取得原価で減価償却する</span>
+    <p>いちばん狙われるのがここです。圧縮記帳を行った資産の減価償却は、<strong>圧縮後の 3,000,000円を基礎に計算します。</strong>8,000,000円ではありません。</p>
+    <p>耐用年数10年・残存価額ゼロ・定額法なら、毎期の償却費は 3,000,000 ÷ 10 ＝ <strong>300,000円</strong>です。8,000,000 ÷ 10 ＝ 800,000円 としてしまうと、補助金でもらった分まで償却することになり、<mark>圧縮記帳で消したはずの利益が、償却費の形で毎年減っていく</mark>という矛盾が起きます。</p>
+    <p>期中取得なら、この 300,000円 をさらに月割します。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">税金が消えたわけではなく、先送りされている</span>
+    <p>圧縮記帳は減税ではありません。取得原価を削ったぶん<strong>毎期の減価償却費が小さくなる</strong>ので、その年度の費用が減り、利益が増え、税金も増えます。</p>
+    <p>受け取った年に一度に払うはずだった税を、<mark>資産を使う各年度に少しずつ払う形に均した</mark>だけです。これを<strong>課税の繰延べ</strong>といいます。補助金を設備投資に回せるようにするのが目的であって、税を免除する制度ではありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級の圧縮記帳は、国庫補助金・工事負担金の直接控除方式に限る</span>
+    <p>圧縮記帳には、取得原価を削らずに純資産の部で調整する<strong>積立金方式</strong>もありますが、<strong>2級の範囲は直接控除方式だけ</strong>です。積立金方式は1級で扱います。</p>
+    <p>対象も<strong>国庫補助金と工事負担金</strong>に限られます。保険金で代替資産を取得した場合の圧縮記帳（保険差益に対するもの）は2級の範囲外です。</p>
+    <p class="small muted">工事負担金の場合は、受け取ったときの収益が<strong>工事負担金受贈益</strong>になります。圧縮損の科目は国庫補助金のときと同じ<strong>固定資産圧縮損</strong>です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">補助金の受取りと資産の取得が期をまたぐことがある</span>
+    <p>補助金を受け取った期と、実際に資産を取得した期が違う場合があります。<strong>圧縮記帳は資産を取得したときに行います。</strong>受け取っただけの年度に圧縮損を計上する相手（資産）はまだ存在しません。</p>
+    <p>建設中の建物について補助金を受けた場合は、完成して<strong>建設仮勘定から建物に振り替えたあと</strong>に圧縮記帳を行います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>除却と廃棄 — 売らずに使用をやめる</h2>
+
+  <p>固定資産を手放す方法は売却だけではありません。買い手がつかない古い機械は、<strong>使うのをやめて倉庫に置いておく</strong>か、<strong>費用をかけて捨てる</strong>ことになります。前者が除却、後者が廃棄です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>処分の形</th><th>何をしたのか</th><th>残るもの</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売却</td><td>他人に売って代金を受け取った</td><td>現金・未収入金など</td></tr>
+        <tr><td class="d">除却</td><td>事業で使うのをやめた。まだ手元にある</td><td><strong>貯蔵品</strong>（スクラップとしての価値）</td></tr>
+        <tr><td class="c">廃棄</td><td>捨てた。手元に何も残らない</td><td>なし</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>除却 — 処分価値を貯蔵品に振り替える</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ貯蔵品という資産に振り替えるのか</span>
+    <p>使うのをやめた機械でも、<strong>鉄くずとして売れば 100,000円にはなる</strong>としましょう。手元にその価値のあるモノが残っているのに、帳簿から全部消してしまうのは実態に合いません。</p>
+    <p>そこで、<mark>スクラップとしての価値の分だけを「貯蔵品」という資産に付け替えて残し、残りを損失にします。</mark>のちに実際に売れたら、貯蔵品を減らして代金を受け取る処理をします。</p>
+    <p>処分価値がなければ貯蔵品は登場せず、帳簿価額の全額が損失になります。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>取得原価 1,200,000円の備品（減価償却累計額 840,000円）を除却した。処分価値は 100,000円と見積もられる。なお、当期分の減価償却費は計上済みである</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">備品減価償却累計額</td><td class="d amt">840,000</td><td class="c">備品</td><td class="c amt">1,200,000</td></tr>
+        <tr><td class="d">貯蔵品</td><td class="d amt">100,000</td><td class="c"></td><td class="c amt"></td></tr>
+        <tr><td class="d">固定資産除却損</td><td class="d amt">260,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>帳簿価額は 1,200,000 − 840,000 ＝ 360,000円。そのうち 100,000円 が貯蔵品として残り、差額の 360,000 − 100,000 ＝ <strong>260,000円</strong> が固定資産除却損です。</p>
+
+  <h3>廃棄 — 手元に何も残らない</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>取得原価 1,200,000円の備品（減価償却累計額 840,000円）を廃棄し、撤去費用 40,000円を現金で支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">備品減価償却累計額</td><td class="d amt">840,000</td><td class="c">備品</td><td class="c amt">1,200,000</td></tr>
+        <tr><td class="d">固定資産除却損</td><td class="d amt">400,000</td><td class="c">現金</td><td class="c amt">40,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>捨ててしまったので貯蔵品は残りません。帳簿価額 360,000円 に撤去費用 40,000円 を加えた <strong>400,000円</strong> が損失です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">廃棄の科目名は、標準科目では「固定資産除却損」</span>
+    <p>廃棄したときの損失を<strong>固定資産廃棄損</strong>と書きたくなりますが、商業簿記標準・許容勘定科目表で<strong>A欄（標準科目）に載っているのは「固定資産除却損」</strong>です。「固定資産廃棄損」はB欄（採点上許容される科目）にあります。</p>
+    <p>答案に固定資産廃棄損と書いても正解になりますが、<strong>迷ったら固定資産除却損</strong>を書いてください。本教材はA欄の表記に統一します。</p>
+    <p class="small muted">問題文に勘定科目の指定一覧があるときは、そこに載っている科目を使います。指定一覧に「固定資産廃棄損」があれば、それが出題者の求める答えです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">除却・廃棄の前に、当期分の減価償却を忘れない</span>
+    <p>期中に除却・廃棄した場合、<strong>期首からその日までの減価償却費を先に計上します。</strong>売却のときと同じ手順です。</p>
+    <p>問題文が「なお当期分の減価償却費は計上済みである」と断っていれば不要ですが、断っていなければ<mark>自分で月割して計上したうえで帳簿価額を出します。</mark>この一手間を飛ばすと、除却損の金額が必ずずれます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">売却・除却・廃棄は、同じ1つの形の変形にすぎない</span>
+    <ol class="steps">
+      <li><strong>貸方に資産を取得原価で置き、借方に減価償却累計額を置く</strong>（直接法なら累計額はなく、資産の残高がそのまま帳簿価額）</li>
+      <li><strong>期中なら、当期分の減価償却費を借方に足す</strong></li>
+      <li><strong>受け取ったもの・残ったものを借方に置く</strong>（売却なら現金・未収入金、除却なら貯蔵品、廃棄なら何もなし）</li>
+      <li><strong>貸借の差額を損益にする</strong>（売却なら固定資産売却損益、除却・廃棄なら固定資産除却損）</li>
+    </ol>
+    <p>違いは③だけです。<mark>「何を受け取ったか」を置き換えるだけで、残りの行はまったく同じ</mark>だと分かれば、3つを別々に覚える必要はありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>仕訳ドリル 14問</h2>
+
+  <p>解答欄は4行ありますが、実際に使う行数は問題ごとに違います。<strong>空いた行は無視されます</strong>ので、行数から科目数を推測しないでください。本番の第1問も同じ条件です。</p>
+
+  <div id="drill-kotei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>有形固定資産は、<strong>金額を出す段階でつまずくと仕訳の形が正しくても点にならない</strong>論点です。特に200%定率法の切り替え判定は、計算過程に矛盾が出ないため自分では気づけません。独立に確認します。</p>
+
+  <div id="num-shokyaku"></div>
+
+  <div id="quiz-kotei"></div>
+
+  <div id="fill-kotei"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。有形固定資産は<strong>第2問の個別論点として単独で出るうえ、第3問（決算）の減価償却でも必ず問われます。</strong>取得原価の決定と償却計算が一続きで動くので、途中で止まらない状態にしてください。</p>
+
+  <div class="progressbar" data-progress-for="#u11check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u11check">0 / 0 完了（0%）</div>
+
+  <div id="u11check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u11-w4u11-1"><label for="c1"><span class="cl__t">2級で足される論点が「取得原価」と「帳簿価額」の2本に帰ると言える</span><span class="cl__d">割賦購入と圧縮記帳は取得原価をいくらにするかの話、定率法・生産高比例法・除却廃棄は帳簿価額をどう消すかの話</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u11-w4u11-2"><label for="c2"><span class="cl__t">定額法・定率法・生産高比例法が何を基準にしているか言える</span><span class="cl__d">定額法は時間の経過、定率法は初期ほど大きく減る実態、生産高比例法は使った量。どれを使うかは問題文が指定する</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u11-w4u11-3"><label for="c3"><span class="cl__t">200％定率法の償却率の作られ方を説明できる</span><span class="cl__d">定額法の償却率（1 ÷ 耐用年数）を2倍した値。かつての250％定率法と区別するために200％と呼ぶ</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u11-w4u11-4"><label for="c4"><span class="cl__t">定率法で掛ける相手が期首帳簿価額だと分かっている</span><span class="cl__d">取得原価 − 期首の減価償却累計額。取得原価に掛けると定額法と区別がつかなくなる</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u11-w4u11-5"><label for="c5"><span class="cl__t">定率法が最後まで償却しきれない理由を説明できる</span><span class="cl__d">残高に率を掛ける方法なので毎年一定割合が必ず残る。掛け続けてもゼロにならない</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u11-w4u11-6"><label for="c6"><span class="cl__t">償却保証額を計算できる</span><span class="cl__d">取得原価 × 保証率。1年あたり最低でもこれだけは償却したいという下限額</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u11-w4u11-7"><label for="c7"><span class="cl__t">切り替えの判定で何と何を比べるか言える</span><span class="cl__d">その年の「期首帳簿価額 × 償却率」と償却保証額を比べる。期首帳簿価額そのものと比べるのではない</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u11-w4u11-8"><label for="c8"><span class="cl__t">切替後は改定取得価額に改定償却率を掛け続けられる</span><span class="cl__d">改定取得価額は切り替えた年の期首帳簿価額で固定。毎年更新すると切り替えた意味がなくなる</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u11-w4u11-9"><label for="c9"><span class="cl__t">生産高比例法の式を書ける</span><span class="cl__d">（取得原価 − 残存価額）× 当期利用量 ÷ 総利用可能量</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u11-w4u11-10"><label for="c10"><span class="cl__t">生産高比例法に月割をしない理由を説明できる</span><span class="cl__d">当期の利用量そのものが、いつからどれだけ使ったかを織り込んでいる。月割すると二重に減らすことになる</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u11-w4u11-11"><label for="c11"><span class="cl__t">直接法と間接法の仕訳を書き分けられる</span><span class="cl__d">間接法は貸方が減価償却累計額、直接法は貸方が資産そのもの。直接法では資産の残高がそのまま帳簿価額になる</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u11-w4u11-12"><label for="c12"><span class="cl__t">間接法が原則である理由を説明できる</span><span class="cl__d">取得原価・償却の進み具合・帳簿価額の3つが同時に読める。直接法では残高を見ても取得原価が分からない</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u11-w4u11-13"><label for="c13"><span class="cl__t">期中売却・期中除却で当期分の償却を先に計上できる</span><span class="cl__d">期首から手放す日までを月割で償却し、それを引いた帳簿価額と受取額の差を損益にする。この一手間を飛ばすと損益が必ずずれる</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u11-w4u11-14"><label for="c14"><span class="cl__t">月数の数え方を間違えない</span><span class="cl__d">その月に1日でも使っていれば1か月と数える。日割りはしない。7月31日売却なら4月〜7月の4か月</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u11-w4u11-15"><label for="c15"><span class="cl__t">割賦購入で利息を取得原価に含めない理由を説明できる</span><span class="cl__d">支払総額と現金正価の差は、代金の支払いを待ってもらったことへの利息。備品の対価ではないので資産にしない</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u11-w4u11-16"><label for="c16"><span class="cl__t">割賦購入の取得時と支払時の仕訳を書ける</span><span class="cl__d">取得時は「資産（現金正価）・前払費用（利息）／未払金（支払総額）」、支払時は「未払金／当座預金」と「支払利息／前払費用」の2本</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u11-w4u11-17"><label for="c17"><span class="cl__t">2級で利息を配分する方法が定額法に限られると言える</span><span class="cl__d">利息を回数または月数で均等に割る。利息法は1級の範囲</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u11-w4u11-18"><label for="c18"><span class="cl__t">分割払いの債務に使う科目を選べる</span><span class="cl__d">商品以外の購入なので未払金（買掛金ではない）。1年を超えるものは長期未払金、約束手形を振り出したら営業外支払手形</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u11-w4u11-19"><label for="c19"><span class="cl__t">圧縮記帳を行う理由を、課税のタイミングから説明できる</span><span class="cl__d">受贈益に課税されると、設備投資を後押しするための補助金が受取年度に税金として出ていく。同額の圧縮損を計上して利益をゼロに戻す</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u11-w4u11-20"><label for="c20"><span class="cl__t">直接控除方式の3本の仕訳を書ける</span><span class="cl__d">受取（当座預金／国庫補助金受贈益）、取得（資産／当座預金）、圧縮（固定資産圧縮損／資産）。工事負担金なら収益は工事負担金受贈益</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u11-w4u11-21"><label for="c21"><span class="cl__t">圧縮後の取得原価で減価償却できる</span><span class="cl__d">圧縮して削ったあとの金額が償却の計算基礎。元の取得原価で償却すると、圧縮で消したはずの利益が償却費の形で毎年減っていく</span></label></li>
+    <li><input type="checkbox" id="c22" data-key="p1u11-w4u11-22"><label for="c22"><span class="cl__t">圧縮記帳が減税ではなく課税の繰延べだと言える</span><span class="cl__d">取得原価が小さくなるぶん毎期の償却費も小さくなり、各年度の利益と税が増える。受取年度に一度に払う税を各年度に均しただけ</span></label></li>
+    <li><input type="checkbox" id="c23" data-key="p1u11-w4u11-23"><label for="c23"><span class="cl__t">2級の圧縮記帳の範囲を言える</span><span class="cl__d">国庫補助金・工事負担金を直接控除方式で記帳する場合に限る。積立金方式は1級、保険金による圧縮記帳も範囲外</span></label></li>
+    <li><input type="checkbox" id="c24" data-key="p1u11-w4u11-24"><label for="c24"><span class="cl__t">除却と廃棄の違いを言える</span><span class="cl__d">除却は使用をやめただけでモノは手元にあるので処分価値を貯蔵品に振り替える。廃棄は捨てるので何も残らず、撤去費用があれば損失に加える</span></label></li>
+    <li><input type="checkbox" id="c25" data-key="p1u11-w4u11-25"><label for="c25"><span class="cl__t">除却損の金額を計算できる</span><span class="cl__d">帳簿価額 − 処分価値。処分価値がなければ帳簿価額の全額が損失になる</span></label></li>
+    <li><input type="checkbox" id="c26" data-key="p1u11-w4u11-26"><label for="c26"><span class="cl__t">売却・除却・廃棄が同じ形の変形だと説明できる</span><span class="cl__d">資産を取得原価で消し、累計額と当期分償却を置き、受け取ったもの（現金・貯蔵品・なし）を置いて、差額を損益にする。違うのは「何を受け取ったか」だけ</span></label></li>
+    <li><input type="checkbox" id="c27" data-key="p1u11-w4u11-27"><label for="c27"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>同じW4で<strong>無形固定資産・のれん・ソフトウェア</strong>を扱います。無形固定資産の償却は原則として直接法・残存価額ゼロの定額法なので、この単元の第6節が前提になります。</p>
+    <p>有形固定資産は<strong>第2問で単独の大問として出ることがある</strong>論点です。固定資産台帳と絡めて期中取得・期中売却を何件も処理させる形が典型で、1件ごとの計算は易しくても件数で時間を削られます。毎週の仕訳ドリルの枠に、<strong>月割の絡む償却計算</strong>を混ぜ続けてください。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W4 UNIT 11 有形固定資産</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '未収入金', '貯蔵品', '前払費用', '長期前払費用',
+    '建物', '機械装置', '備品', '車両運搬具', '土地', '建設仮勘定',
+    '建物減価償却累計額', '備品減価償却累計額', '車両運搬具減価償却累計額', '減価償却累計額',
+    '買掛金', '未払金', '長期未払金', '営業外支払手形', '支払手形',
+    '固定資産売却益', '国庫補助金受贈益', '工事負担金受贈益', '固定資産受贈益',
+    '減価償却費', '支払利息', '修繕費',
+    '固定資産売却損', '固定資産除却損', '固定資産圧縮損'
+  ];
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  BokiJournal.mount('#drill-kotei', {
+    title: '仕訳ドリル — 減価償却・割賦購入・圧縮記帳・除却廃棄（14問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '決算（3月31日）にあたり、備品について<strong>200％定率法</strong>により減価償却を行う（間接法）。この備品は<strong>取得原価 2,000,000円</strong>、<strong>減価償却累計額 800,000円</strong> であり、<strong>償却率は年 0.400</strong> である。なお、当期は期首から期末まで全期間使用している。',
+        debit: [['減価償却費', 480000]],
+        credit: [['備品減価償却累計額', 480000]],
+        hint: '償却率を掛ける相手は取得原価ではありません。',
+        explain: '<p><strong>期首帳簿価額</strong>：2,000,000 − 800,000 ＝ <strong>1,200,000円</strong>。定率法で率を掛ける相手はこの金額です。</p><p><strong>減価償却費</strong>：1,200,000 × 0.400 ＝ <strong>480,000円</strong>。</p><p>取得原価 2,000,000円 に掛けて 800,000円 としないでください。それでは1年目と同じ額になり、定額法と区別がつかなくなります。<mark>取得原価から累計額を引いてから率を掛ける</mark>という順序を固定してください。</p>'
+      },
+      {
+        text: '決算（3月31日）にあたり、機械装置について<strong>200％定率法</strong>により減価償却を行う（間接法）。<strong>取得原価 2,000,000円</strong>、<strong>期首の減価償却累計額 1,568,000円</strong>、<strong>償却率 年0.400</strong>、<strong>保証率 0.10800</strong>、<strong>改定償却率 0.500</strong> である。',
+        debit: [['減価償却費', 216000]],
+        credit: [['減価償却累計額', 216000]],
+        hint: '通常どおり計算した額と償却保証額を比べてください。下回ったら計算方法が変わります。',
+        explain: '<p><strong>① 償却保証額</strong>：2,000,000 × 0.10800 ＝ <strong>216,000円</strong>。</p><p><strong>② 期首帳簿価額</strong>：2,000,000 − 1,568,000 ＝ <strong>432,000円</strong>。</p><p><strong>③ 通常どおり計算した額</strong>：432,000 × 0.400 ＝ <strong>172,800円</strong>。これは償却保証額 216,000円を<strong>下回ります</strong>。</p><p><strong>④ 切り替える</strong>：この年の期首帳簿価額 432,000円（改定取得価額）に改定償却率 0.500 を掛けて、432,000 × 0.500 ＝ <strong>216,000円</strong>。</p><p>比べる相手は「期首帳簿価額 × 償却率」であって、期首帳簿価額 432,000円 そのものではありません。<strong>「もし通常どおり計算したら下限を割ってしまうか」</strong>を見ています。</p>'
+      },
+      {
+        text: '決算（3月31日）にあたり、車両運搬具について<strong>生産高比例法</strong>により減価償却を行う（間接法）。<strong>取得原価 6,000,000円</strong>、<strong>残存価額ゼロ</strong>、<strong>総走行可能距離 300,000km</strong>、<strong>当期の走行距離 42,000km</strong> である。なお、この車両は当期の8月1日に取得したものである。',
+        debit: [['減価償却費', 840000]],
+        credit: [['車両運搬具減価償却累計額', 840000]],
+        hint: '期中取得ですが、生産高比例法に月割は必要でしょうか。',
+        explain: '<p>6,000,000 × 42,000 ÷ 300,000 ＝ <strong>840,000円</strong>。</p><p><strong>月割はしません。</strong>期中取得と聞くと反射的に「× 8 ÷ 12」を書きたくなりますが、生産高比例法が基準にしているのは<mark>使った量</mark>です。8月から使い始めた車の当期走行距離は、もともとその分だけ少なくなっています。そこへ月割を重ねると二重に減らすことになります。</p><p>月割が必要なのは定額法・定率法です。年間の償却費が「1年使ったらいくら」という前提で出ているため、使った月数で按分する必要があります。</p>'
+      },
+      {
+        text: '決算（3月31日）にあたり、備品について定額法により減価償却を行う。この備品は<strong>当期の11月1日に 1,800,000円で取得</strong>したもので、<strong>耐用年数6年・残存価額ゼロ</strong>、記帳は<strong>直接法</strong>による。',
+        debit: [['減価償却費', 125000]],
+        credit: [['備品', 125000]],
+        hint: '記帳方法の指示と、使用した月数の両方を読んでください。',
+        explain: '<p><strong>1年分</strong>：1,800,000 ÷ 6 ＝ 300,000円。</p><p><strong>当期分</strong>：11月・12月・1月・2月・3月の<strong>5か月</strong>。300,000 × 5 ÷ 12 ＝ <strong>125,000円</strong>。</p><p><strong>直接法</strong>なので、貸方は減価償却累計額ではなく<strong>備品そのもの</strong>です。備品の残高が 1,800,000 − 125,000 ＝ 1,675,000円 に減ります。</p><p>直接法では資産の残高がそのまま帳簿価額になります。そのかわり、残高を見ても<mark>いくらで買った資産なのか分からなくなる</mark>ため、有形固定資産では間接法が原則です。</p>'
+      },
+      {
+        text: '<strong>7月31日</strong>、取得原価 <strong>900,000円</strong> の備品（耐用年数6年・残存価額ゼロ・定額法・間接法）を <strong>380,000円</strong> で売却し、代金は現金で受け取った。決算日は3月31日であり、<strong>期首の減価償却累計額は 450,000円</strong> である。当期分の減価償却費も月割で計上する。',
+        debit: [['備品減価償却累計額', 450000], ['減価償却費', 50000], ['現金', 380000], ['固定資産売却損', 20000]],
+        credit: [['備品', 900000]],
+        hint: '売却損益を出す前に、期首から売却日までの償却を計上します。',
+        explain: '<p><strong>① 当期分の減価償却費</strong>：1年分は 900,000 ÷ 6 ＝ 150,000円。4月・5月・6月・7月の<strong>4か月</strong>なので 150,000 × 4 ÷ 12 ＝ <strong>50,000円</strong>。</p><p><strong>② 帳簿価額</strong>：900,000 − 450,000 − 50,000 ＝ <strong>400,000円</strong>。</p><p><strong>③ 売却損益</strong>：380,000 − 400,000 ＝ <strong>△20,000円</strong>。帳簿価額より安く売ったので<strong>固定資産売却損</strong>です。</p><p>当期分の償却を飛ばすと帳簿価額が 450,000円 になり、売却損が 70,000円 になってしまいます。<strong>期中に手放すときは必ず、その日までの償却を先に計上してください。</strong></p>'
+      },
+      {
+        text: '備品を割賦により購入した。<strong>現金正価は 3,000,000円</strong> であり、代金は<strong>毎月末 265,000円ずつ12回</strong>で支払う。利息相当額は<strong>前払費用</strong>として処理する。',
+        debit: [['備品', 3000000], ['前払費用', 180000]],
+        credit: [['未払金', 3180000]],
+        hint: '支払総額と現金正価の差は何でしょうか。取得原価はどちらですか。',
+        explain: '<p><strong>支払総額</strong>：265,000 × 12 ＝ <strong>3,180,000円</strong>。<strong>利息相当額</strong>：3,180,000 − 3,000,000 ＝ <strong>180,000円</strong>。</p><p>備品の価値は 3,000,000円 のままです。多く払う 180,000円 は<mark>代金の支払いを待ってもらったことへの利息</mark>であり、備品の対価ではありません。取得原価を 3,180,000円 にすると、存在しない 180,000円 分の資産が帳簿に載り、それが減価償却を通じて何年もかけて費用化されてしまいます。</p><p>貸方の<strong>未払金</strong>はこれから払う総額 3,180,000円。商品以外のものを買った代金の未払いなので、買掛金ではありません。</p>'
+      },
+      {
+        text: '上記の備品について、<strong>第1回の割賦金 265,000円</strong> を当座預金から支払った。同時に、経過した<strong>1か月分の利息</strong>を支払利息に振り替える。利息相当額 <strong>180,000円</strong> は12回に均等に配分する。',
+        debit: [['未払金', 265000], ['支払利息', 15000]],
+        credit: [['当座預金', 265000], ['前払費用', 15000]],
+        hint: '仕訳は2本立てになります。債務の減少と、利息の費用化です。',
+        explain: '<p><strong>① 債務の支払い</strong>：未払金 265,000／当座預金 265,000。これから払う総額が 265,000円 減ります。</p><p><strong>② 利息の費用化</strong>：180,000 ÷ 12 ＝ <strong>15,000円</strong>。支払利息 15,000／前払費用 15,000。取得時に「まだ費用になっていない利息」として置いた前払費用から、経過した1か月分を費用に振り替えます。</p><p>12回払い終えると、未払金も前払費用もちょうどゼロになります。</p><p>2級で利息を配分する方法は<strong>定額法に限られます。</strong>残っている債務の大きさに応じて配分する利息法は1級の範囲なので、回数または月数で均等に割るだけです。</p>'
+      },
+      {
+        text: '機械装置を割賦により購入した。<strong>現金正価 4,800,000円</strong>、代金は<strong>6か月後から毎月末 850,000円ずつ6回</strong>支払うこととし、同額の<strong>約束手形6枚</strong>を振り出した。利息相当額は前払費用として処理する。',
+        debit: [['機械装置', 4800000], ['前払費用', 300000]],
+        credit: [['営業外支払手形', 5100000]],
+        hint: '手形を振り出していますが、商品を仕入れたわけではありません。',
+        explain: '<p><strong>支払総額</strong>：850,000 × 6 ＝ <strong>5,100,000円</strong>。<strong>利息相当額</strong>：5,100,000 − 4,800,000 ＝ <strong>300,000円</strong>。</p><p>取得原価は現金正価の <strong>4,800,000円</strong>。利息 300,000円 は前払費用に置きます。</p><p>貸方は<strong>営業外支払手形</strong>です。約束手形を振り出しているので未払金ではありませんが、<mark>商品売買以外の取引から生じた手形</mark>なので支払手形でもありません。機械装置は商品ではないため、営業外の手形として区別します。</p>'
+      },
+      {
+        text: '国から<strong>国庫補助金 5,000,000円</strong> を受け取り、当座預金に入金された。',
+        debit: [['当座預金', 5000000]],
+        credit: [['国庫補助金受贈益', 5000000]],
+        hint: 'この段階ではまだ資産を買っていません。',
+        explain: '<p>受け取った補助金は<strong>国庫補助金受贈益</strong>（収益）です。返す必要のない金銭を受け取ったので、純資産が増えます。</p><p><strong>この時点では圧縮記帳をしません。</strong>圧縮記帳は取得原価を削る処理なので、削る相手の資産がまだ存在しないからです。補助金を受け取った期と資産を取得した期がずれることもあります。</p><p class="small muted">電力会社などが利用者から設備建設の負担金を受け取った場合は、収益の科目が<strong>工事負担金受贈益</strong>になります。</p>'
+      },
+      {
+        text: '上記の補助金を用いて<strong>機械装置 8,000,000円</strong> を購入し、代金を当座預金から支払った。',
+        debit: [['機械装置', 8000000]],
+        credit: [['当座預金', 8000000]],
+        hint: '取得の仕訳そのものです。補助金の有無で変わりません。',
+        explain: '<p>取得の仕訳は補助金があってもなくても変わりません。<strong>機械装置 8,000,000円</strong> をそのまま計上します。</p><p>補助金の分を差し引くのは次の圧縮記帳の仕訳であって、<mark>取得の仕訳で 3,000,000円 と書くのではありません。</mark>取得原価がいったん立ってから、それを削る、という2段階です。</p>'
+      },
+      {
+        text: '上記の機械装置について、受け入れた国庫補助金 <strong>5,000,000円</strong> に相当する額を、<strong>直接控除方式</strong>により圧縮記帳した。',
+        debit: [['固定資産圧縮損', 5000000]],
+        credit: [['機械装置', 5000000]],
+        hint: '受贈益と同額の損失を、同じ年度に計上します。',
+        explain: '<p>借方は<strong>固定資産圧縮損</strong>（費用）、貸方は<strong>機械装置</strong>。取得原価を直接削るので<strong>直接控除方式</strong>といいます。</p><p>これにより受贈益 5,000,000円 と圧縮損 5,000,000円 が相殺され、<strong>この取引による当期の利益はゼロ</strong>になります。設備投資を後押しするために出した補助金が、受け取った年に税金として出ていくのを防ぐのが目的です。</p><p>機械装置の残高は 8,000,000 − 5,000,000 ＝ <strong>3,000,000円</strong>。<strong>以後の減価償却はこの金額を基礎に計算します。</strong></p><p class="small muted">2級の圧縮記帳は<strong>国庫補助金・工事負担金を直接控除方式で記帳する場合に限られます。</strong>純資産の部で調整する積立金方式は1級です。</p>'
+      },
+      {
+        text: '決算（3月31日）にあたり、上記の機械装置について減価償却を行う（間接法）。<strong>耐用年数10年・残存価額ゼロ・定額法</strong>であり、この機械は<strong>当期の10月1日から使用を開始</strong>している。圧縮記帳は使用開始前に行われている。',
+        debit: [['減価償却費', 150000]],
+        credit: [['減価償却累計額', 150000]],
+        hint: '償却の計算基礎になるのは、圧縮する前と後のどちらの金額でしょうか。',
+        explain: '<p><strong>圧縮後の取得原価</strong>：8,000,000 − 5,000,000 ＝ <strong>3,000,000円</strong>。償却の計算基礎はこちらです。</p><p><strong>1年分</strong>：3,000,000 ÷ 10 ＝ 300,000円。<strong>当期分</strong>：10月から3月までの<strong>6か月</strong>なので 300,000 × 6 ÷ 12 ＝ <strong>150,000円</strong>。</p><p>8,000,000 ÷ 10 ＝ 800,000円 を基礎にすると、補助金でもらった分まで償却することになります。そうすると<mark>圧縮記帳で消したはずの利益が、償却費の形で毎年減っていく</mark>という矛盾が起きます。</p><p>圧縮記帳は減税ではなく<strong>課税の繰延べ</strong>です。取得原価が小さくなるぶん毎期の償却費も小さくなり、各年度の利益と税金は増えます。受取年度に一度に払う税を、資産を使う各年度に均しただけです。</p>'
+      },
+      {
+        text: '取得原価 <strong>1,200,000円</strong> の備品（減価償却累計額 <strong>840,000円</strong>、間接法）を<strong>除却</strong>した。この備品の<strong>処分価値は 100,000円</strong> と見積もられる。なお、当期分の減価償却費は計上済みである。',
+        debit: [['備品減価償却累計額', 840000], ['貯蔵品', 100000], ['固定資産除却損', 260000]],
+        credit: [['備品', 1200000]],
+        hint: '使うのをやめただけで、モノは手元にあります。',
+        explain: '<p><strong>帳簿価額</strong>：1,200,000 − 840,000 ＝ <strong>360,000円</strong>。</p><p>除却は「事業で使うのをやめた」だけで、<mark>スクラップとしての価値のあるモノが手元に残っています。</mark>その 100,000円 分を<strong>貯蔵品</strong>（資産）に振り替えます。</p><p><strong>固定資産除却損</strong>：360,000 − 100,000 ＝ <strong>260,000円</strong>。帳簿価額のうち、価値として残らなかった部分が損失です。</p><p>処分価値がゼロなら貯蔵品は登場せず、帳簿価額 360,000円 の全額が除却損になります。</p>'
+      },
+      {
+        text: '取得原価 <strong>1,200,000円</strong> の備品（減価償却累計額 <strong>840,000円</strong>、間接法）を<strong>廃棄</strong>し、<strong>撤去費用 40,000円</strong> を現金で支払った。なお、当期分の減価償却費は計上済みである。',
+        debit: [['備品減価償却累計額', 840000], ['固定資産除却損', 400000]],
+        credit: [['備品', 1200000], ['現金', 40000]],
+        hint: '捨ててしまったので、手元には何も残りません。',
+        explain: '<p><strong>帳簿価額</strong>：1,200,000 − 840,000 ＝ <strong>360,000円</strong>。捨ててしまったので<strong>貯蔵品は残りません。</strong></p><p>さらに、捨てるために 40,000円 を支払っています。これも資産を手放すために生じた損失なので、<strong>損失に含めます。</strong></p><p><strong>損失の額</strong>：360,000 ＋ 40,000 ＝ <strong>400,000円</strong>。</p><p>科目は<strong>固定資産除却損</strong>です。「固定資産廃棄損」は勘定科目表のB欄（許容科目）にあり答案に書いても正解になりますが、A欄（標準科目）は固定資産除却損なので、迷ったらこちらを書いてください。問題文に勘定科目の指定一覧があれば、そこに載っている科目を使います。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-shokyaku', {
+    title: '計算ドリル — 償却額と取得原価を出す（6問）',
+    unit: '円',
+    questions: [
+      {
+        text: '<strong>取得原価 2,000,000円</strong>、<strong>耐用年数5年</strong>の備品を、<strong>200％定率法</strong>（償却率 年0.400）で償却する。期首に取得し、以後ずっと使用しているものとして、<strong>1年目・2年目・3年目</strong>の減価償却費をそれぞれ求めなさい。いずれの年も償却保証額を下回らないものとする。',
+        labels: ['1年目', '2年目', '3年目'],
+        answer: [800000, 480000, 288000],
+        formula: ['2000000*0.400', '(2000000-800000)*0.400', '(2000000-800000-480000)*0.400'],
+        hint: '2年目以降に掛ける相手は、取得原価ではありません。',
+        explain: '<p><strong>1年目</strong>：2,000,000 × 0.400 ＝ <strong>800,000円</strong>。1年目だけは期首帳簿価額＝取得原価です。</p><p><strong>2年目</strong>：期首帳簿価額は 2,000,000 − 800,000 ＝ 1,200,000円。1,200,000 × 0.400 ＝ <strong>480,000円</strong>。</p><p><strong>3年目</strong>：期首帳簿価額は 2,000,000 − 800,000 − 480,000 ＝ 720,000円。720,000 × 0.400 ＝ <strong>288,000円</strong>。</p><p>800,000 → 480,000 → 288,000 と年々小さくなるのが定率法の姿です。毎年すべて 800,000円 になったら、取得原価に掛けてしまっています。</p>'
+      },
+      {
+        text: '<strong>取得原価 2,000,000円</strong>、<strong>耐用年数5年</strong>の機械装置を、<strong>200％定率法</strong>（償却率 年0.400、<strong>保証率 0.10800</strong>、<strong>改定償却率 0.500</strong>）で償却する。期首に取得している。<strong>償却保証額</strong>、<strong>4年目の期首帳簿価額</strong>、および<strong>4年目の減価償却費</strong>を求めなさい。',
+        labels: ['償却保証額', '4年目の期首帳簿価額', '4年目の減価償却費'],
+        answer: [216000, 432000, 216000],
+        formula: ['2000000*0.10800', '2000000-800000-480000-288000', '(2000000-800000-480000-288000)*0.500'],
+        hint: '4年目に通常どおり計算するといくらになるか、それを償却保証額と比べてください。',
+        explain: '<p><strong>償却保証額</strong>：2,000,000 × 0.10800 ＝ <strong>216,000円</strong>。1年あたり最低でもこれだけは償却したい、という下限額です。</p><p><strong>4年目の期首帳簿価額</strong>：1〜3年目の償却費は 800,000・480,000・288,000。2,000,000 − 1,568,000 ＝ <strong>432,000円</strong>。</p><p><strong>4年目の減価償却費</strong>：通常どおり計算すると 432,000 × 0.400 ＝ 172,800円 で、償却保証額 216,000円を<strong>下回ります</strong>。そこで切り替え、この年の期首帳簿価額 432,000円（改定取得価額）に改定償却率 0.500 を掛けて <strong>216,000円</strong>。</p><p>比べるのは 172,800円 と 216,000円 であって、432,000円 と 216,000円 ではありません。<strong>「もし通常どおり計算したら下限を割るか」</strong>を判定しています。</p>'
+      },
+      {
+        text: '前問の機械装置について、<strong>5年目の減価償却費</strong>を求めなさい。最終年度であるため<strong>備忘価額1円を残す</strong>。また、5年目終了時点の<strong>減価償却累計額</strong>も求めなさい。',
+        labels: ['5年目の減価償却費', '5年目末の減価償却累計額'],
+        answer: [215999, 1999999],
+        formula: ['432000*0.500-1', '800000+480000+288000+216000+215999'],
+        hint: '切り替えたあと、改定償却率を掛ける相手は毎年変わりますか。',
+        explain: '<p><strong>5年目の減価償却費</strong>：改定取得価額は<strong>切り替えた年（4年目）の期首帳簿価額 432,000円に固定</strong>されます。432,000 × 0.500 ＝ 216,000円。ただし最終年度なので備忘価額1円を残し、216,000 − 1 ＝ <strong>215,999円</strong>。</p><p><strong>累計額</strong>：800,000 ＋ 480,000 ＝ 1,280,000、＋ 288,000 ＝ 1,568,000、＋ 216,000 ＝ 1,784,000、＋ 215,999 ＝ <strong>1,999,999円</strong>。取得原価 2,000,000円 との差はちょうど1円で、帳簿価額は備忘価額の1円になります。</p><p>5年目に「期首帳簿価額 216,000 × 0.500 ＝ 108,000」としないでください。<mark>掛ける相手を毎年更新すると、また残高に率を掛ける形に戻り、償却しきれないという元の問題が再発します。</mark></p>'
+      },
+      {
+        text: '<strong>現金正価 3,000,000円</strong> の備品を、<strong>毎月末 265,000円ずつ12回</strong>の割賦で購入した。利息相当額は定額法により配分する。<strong>支払総額</strong>、<strong>利息相当額</strong>、および<strong>1回の支払いで費用となる利息の額</strong>を求めなさい。',
+        labels: ['支払総額', '利息相当額', '1回あたりの利息'],
+        answer: [3180000, 180000, 15000],
+        formula: ['265000*12', '265000*12-3000000', '(265000*12-3000000)/12'],
+        hint: '取得原価は現金正価です。差額が何なのかを考えてください。',
+        explain: '<p><strong>支払総額</strong>：265,000 × 12 ＝ <strong>3,180,000円</strong>。</p><p><strong>利息相当額</strong>：3,180,000 − 3,000,000 ＝ <strong>180,000円</strong>。同じ備品を買ったのに分割にしただけで多く払う分であり、<mark>備品の対価ではなく代金の支払いを待ってもらったことへの利息</mark>です。</p><p><strong>1回あたり</strong>：180,000 ÷ 12 ＝ <strong>15,000円</strong>。2級で利息を配分するのは<strong>定額法に限られる</strong>ので、回数で均等に割ります。</p><p>取得原価は 3,000,000円 です。3,180,000円 にすると、存在しない 180,000円 分の資産が減価償却を通じて何年もかけて費用化されてしまいます。</p>'
+      },
+      {
+        text: '<strong>国庫補助金 5,000,000円</strong> を受け取り、これを用いて<strong>機械装置 8,000,000円</strong> を購入した。直接控除方式により圧縮記帳を行う。耐用年数は<strong>10年・残存価額ゼロ・定額法</strong>である。<strong>圧縮記帳後の取得原価</strong>と<strong>1年分の減価償却費</strong>を求めなさい。また、この機械を<strong>当期の10月1日から使用開始</strong>し決算日が3月31日である場合の<strong>当期の減価償却費</strong>も求めなさい。',
+        labels: ['圧縮後の取得原価', '1年分の減価償却費', '当期の減価償却費'],
+        answer: [3000000, 300000, 150000],
+        formula: ['8000000-5000000', '(8000000-5000000)/10', '(8000000-5000000)/10*6/12'],
+        hint: '償却の計算基礎になるのは、圧縮する前と後のどちらでしょうか。',
+        explain: '<p><strong>圧縮後の取得原価</strong>：8,000,000 − 5,000,000 ＝ <strong>3,000,000円</strong>。</p><p><strong>1年分の減価償却費</strong>：3,000,000 ÷ 10 ＝ <strong>300,000円</strong>。8,000,000 ÷ 10 ＝ 800,000円 としないでください。補助金でもらった分まで償却することになり、<mark>圧縮記帳で消したはずの利益が償却費の形で毎年減っていく</mark>という矛盾が起きます。</p><p><strong>当期の減価償却費</strong>：10月から3月までの<strong>6か月</strong>。300,000 × 6 ÷ 12 ＝ <strong>150,000円</strong>。</p><p>圧縮記帳は減税ではなく<strong>課税の繰延べ</strong>です。償却費が小さくなるぶん各年度の利益と税が増え、受取年度に一度に払うはずだった税が各年度に均されます。</p>'
+      },
+      {
+        text: '決算日は3月31日。取得原価 <strong>1,500,000円</strong> の備品（耐用年数5年・残存価額ゼロ・定額法・間接法）を<strong>9月30日に除却</strong>した。<strong>期首の減価償却累計額は 900,000円</strong> であり、除却時の<strong>処分価値は 80,000円</strong> と見積もられる。<strong>当期分の減価償却費</strong>、<strong>除却時の帳簿価額</strong>、<strong>固定資産除却損</strong>を求めなさい。',
+        labels: ['当期分の減価償却費', '除却時の帳簿価額', '固定資産除却損'],
+        answer: [150000, 450000, 370000],
+        formula: ['1500000/5*6/12', '1500000-900000-1500000/5*6/12', '1500000-900000-1500000/5*6/12-80000'],
+        hint: '除却の前に、期首から除却日までの償却を計上します。',
+        explain: '<p><strong>当期分の減価償却費</strong>：1年分は 1,500,000 ÷ 5 ＝ 300,000円。4月から9月までの<strong>6か月</strong>なので 300,000 × 6 ÷ 12 ＝ <strong>150,000円</strong>。</p><p><strong>除却時の帳簿価額</strong>：1,500,000 − 900,000 − 150,000 ＝ <strong>450,000円</strong>。</p><p><strong>固定資産除却損</strong>：450,000 − 80,000 ＝ <strong>370,000円</strong>。処分価値 80,000円 は<strong>貯蔵品</strong>として資産に残るので、損失にはなりません。</p><p>当期分の償却を飛ばすと帳簿価額が 600,000円 になり、除却損が 520,000円 になります。<strong>期中に手放すときは必ず、その日までの償却を先に計上してください。</strong></p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-kotei', {
+    title: '確認テスト — 分岐の判断（8問）',
+    questions: [
+      {
+        text: '200％定率法の「200％」とは何を意味しますか。',
+        choices: [
+          '定額法の償却率を2倍した率を用いること',
+          '取得原価の2倍まで償却できること',
+          '耐用年数を半分にして計算すること'
+        ],
+        answer: 0,
+        explain: '<p>200％定率法の償却率は、<strong>定額法の償却率（1 ÷ 耐用年数）を2倍した値</strong>です。耐用年数5年なら 1 ÷ 5 × 2 ＝ 0.400、8年なら 1 ÷ 8 × 2 ＝ 0.250 となります。</p><p>かつて250％定率法（2.5倍）が使われていた時期があり、そのときと区別するために「200％」と呼び分けます。現在の制度は200％です。</p><p>試験では償却率が「年0.400」という形で与えられるのが普通なので、率の表を暗記する必要はありません。<strong>与えられた率をどの金額に掛けるのかを間違えないこと</strong>が問われています。</p>'
+      },
+      {
+        text: '定率法で減価償却費を計算するとき、償却率を掛ける相手はどれですか。',
+        choices: [
+          '取得原価',
+          '期首の帳簿価額（取得原価 − 期首の減価償却累計額）',
+          '取得原価から残存価額を差し引いた額'
+        ],
+        answer: 1,
+        explain: '<p>定率法は<strong>期首の帳簿価額に償却率を掛けます。</strong>取得原価から期首の減価償却累計額を引いた額です。</p><p>取得原価に掛けてしまうと毎年同じ額になり、定額法と区別がつかなくなります。定率法が「初期ほど大きく、年々小さく」という形になるのは、<mark>掛ける相手が毎年小さくなっていく</mark>からです。</p><p>なお選択肢3の「取得原価 − 残存価額」は定額法・生産高比例法の計算基礎です。2007年4月1日以後に取得した資産の残存価額はゼロなので、実際には取得原価と同額になります。</p>'
+      },
+      {
+        text: '200％定率法において、<strong>償却保証額と比べる金額</strong>はどれですか。',
+        choices: [
+          'その年の期首帳簿価額',
+          'その年の期首帳簿価額に償却率を掛けた額',
+          '前年までの減価償却累計額'
+        ],
+        answer: 1,
+        explain: '<p>比べるのは<strong>その年に通常どおり計算した償却額</strong>、つまり「期首帳簿価額 × 償却率」です。</p><p>この判定は<mark>「もし通常どおり計算したら、1年あたりの下限額（償却保証額）を割ってしまうか」</mark>を見ています。期首帳簿価額そのものと比べるのではありません。</p><p>取得原価 2,000,000円・償却率 0.400・保証率 0.10800 の4年目（期首帳簿価額 432,000円）なら、比べるのは 432,000 × 0.400 ＝ 172,800円 と 216,000円 です。172,800円が下回るので切り替えが起きます。</p>'
+      },
+      {
+        text: '200％定率法で改定償却率による計算に切り替えたあと、改定償却率を掛ける相手はどれですか。',
+        choices: [
+          '毎年、その年の期首帳簿価額',
+          '切り替えた年の期首帳簿価額（改定取得価額）で固定する',
+          '元の取得原価'
+        ],
+        answer: 1,
+        explain: '<p>掛ける相手は<strong>切り替えた年の期首帳簿価額に固定</strong>されます。この金額を<strong>改定取得価額</strong>といいます。</p><p>毎年更新してしまうと、また残高に率を掛ける形に戻ってしまい、<mark>いくら掛けてもゼロにならないという元の問題が再発します。</mark>切り替えた意味がなくなるのです。</p><p>相手が固定され率も固定なので、<strong>切替後の償却費は毎期同額</strong>になります。改定償却率は残りの年数で割り切れるように作られており、実質的に定額法へ移行している形です。</p>'
+      },
+      {
+        text: '期の途中で取得した車両を<strong>生産高比例法</strong>で償却するとき、月割計算は必要ですか。',
+        choices: [
+          '必要である。使用した月数で按分する',
+          '不要である。当期の利用量をそのまま用いる',
+          '取得月が期の前半なら不要、後半なら必要である'
+        ],
+        answer: 1,
+        explain: '<p><strong>生産高比例法に月割はしません。</strong>当期の利用量そのものが、いつからどれだけ使ったかを織り込んでいるからです。</p><p>期の途中に買った車なら、当期の走行距離はもともとその分だけ少なくなっています。そこへさらに月割をかけると、<mark>二重に減らすことになります。</mark></p><p>月割が必要なのは<strong>定額法と定率法</strong>です。年間の償却費が「1年使ったらいくら」という前提で計算されているため、使った月数で按分しないと合いません。<strong>その方法が何を基準に減らしているか</strong>を考えれば迷いません。</p>'
+      },
+      {
+        text: '有形固定資産の減価償却を<strong>間接法</strong>で記帳することが原則とされる理由はどれですか。',
+        choices: [
+          '間接法のほうが減価償却費の金額が正確になるため',
+          '取得原価・償却の進み具合・帳簿価額の3つが帳簿から同時に読めるため',
+          '直接法では減価償却費を費用として計上できないため'
+        ],
+        answer: 1,
+        explain: '<p>間接法なら、備品 2,000,000円 と備品減価償却累計額 800,000円 が両方残るので、<strong>取得原価・どれだけ償却が進んだか・現在の帳簿価額</strong>の3つが同時に読めます。</p><p>直接法では備品の残高 1,200,000円 しか残らず、<mark>新品を 1,200,000円 で買ったのか、2,000,000円 の備品を4割償却した後なのか区別がつきません。</mark></p><p>償却費の金額はどちらの方法でも同じです（選択肢1）。費用計上も直接法で行われます（選択肢3）。違うのは貸方に何を書くかだけです。</p><p class="small muted">直接法が使われるのは主に無形固定資産です。物理的な実体がなく、取得原価を残しておく意味が薄いためです。</p>'
+      },
+      {
+        text: '国庫補助金を受け入れて取得した固定資産について、直接控除方式で圧縮記帳を行いました。その後の減価償却の計算基礎となる金額はどれですか。',
+        choices: [
+          '圧縮記帳を行う前の取得原価',
+          '圧縮記帳後の取得原価（補助金相当額を控除した額）',
+          '受け入れた国庫補助金の額'
+        ],
+        answer: 1,
+        explain: '<p>減価償却の計算基礎は<strong>圧縮後の取得原価</strong>です。取得原価 8,000,000円 から補助金 5,000,000円 を控除した 3,000,000円 が基礎になります。</p><p>圧縮前の 8,000,000円 で償却すると、<strong>補助金でもらった分まで償却する</strong>ことになります。そうすると<mark>圧縮記帳で消したはずの利益が、償却費の形で毎年減っていく</mark>という矛盾が起きます。</p><p>圧縮記帳は減税ではなく<strong>課税の繰延べ</strong>です。取得原価を削ったぶん毎期の償却費が小さくなり、各年度の利益と税金は増えます。受取年度に一度に払うはずだった税を、資産を使う各年度に均したにすぎません。</p>'
+      },
+      {
+        text: '固定資産の<strong>除却</strong>と<strong>廃棄</strong>の違いとして正しいものはどれですか。',
+        choices: [
+          '除却は事業での使用をやめること、廃棄は捨てること。除却では処分価値を貯蔵品に振り替える',
+          '除却は売却して代金を受け取ること、廃棄は無償で譲渡すること',
+          '除却は固定資産除却損を計上し、廃棄は損失を計上しない'
+        ],
+        answer: 0,
+        explain: '<p><strong>除却</strong>は事業での使用をやめることで、モノ自体は手元に残ります。スクラップとしての価値があるので、その分を<strong>貯蔵品</strong>（資産）に振り替え、帳簿価額との差額を固定資産除却損とします。</p><p><strong>廃棄</strong>は捨てることで、手元に何も残りません。貯蔵品は登場せず、帳簿価額の全額が損失になります。<strong>撤去費用を払った場合は損失に加えます。</strong></p><p>どちらも損失は計上します（選択肢3は誤り）。代金を受け取って手放すのは<strong>売却</strong>であって除却ではありません（選択肢2は誤り）。</p><p class="small muted">廃棄時の損失も、標準科目は<strong>固定資産除却損</strong>です。「固定資産廃棄損」は勘定科目表のB欄（許容科目）にあります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-kotei', {
+    title: '穴埋め — 用語を書けるようにする（7問）',
+    questions: [
+      {
+        text: '200％定率法において、取得原価に保証率を掛けて求める「1年あたり最低でもこれだけは償却したい」という下限額のことを何といいますか。通常どおり計算した償却額がこれを下回った年から、計算方法が切り替わります。',
+        answer: ['償却保証額', 'しょうきゃくほしょうがく'],
+        explain: '<p>定率法は残高に率を掛ける方法なので、そのままでは毎年一定割合が必ず残り、耐用年数が来ても償却しきれません。償却保証額はその下限を定め、割り込んだ年から定額法と同じ形の計算へ切り替えるための基準です。</p>'
+      },
+      {
+        text: '200％定率法で計算を切り替えたあと、改定償却率を掛ける相手となる金額のことを何といいますか。これは切り替えた年の期首帳簿価額であり、以後は毎年更新しません。',
+        answer: ['改定取得価額', 'かいていしゅとくかがく'],
+        explain: '<p>掛ける相手を固定し、率も固定するので、切替後の償却費は毎期同額になります。毎年その年の期首帳簿価額に更新してしまうと、また残高に率を掛ける形に戻り、償却しきれないという元の問題が再発します。</p>'
+      },
+      {
+        text: '（取得原価 − 残存価額）に、総利用可能量に対する当期の利用量の割合を掛けて減価償却費を求める方法を何といいますか。走行距離で寿命が決まる車両などに用います。',
+        answer: ['生産高比例法', 'せいさんだかひれいほう'],
+        explain: '<p>時間ではなく<strong>使った量</strong>を基準にする方法です。当期の利用量そのものが「いつからどれだけ使ったか」を織り込んでいるため、期中取得であっても<strong>月割をしません。</strong>月割が必要なのは定額法と定率法です。</p>'
+      },
+      {
+        text: '減価償却累計額という科目を使わず、減価償却費の相手勘定として固定資産そのものを直接減らす記帳方法を何といいますか。この方法では資産の残高がそのまま帳簿価額になります。',
+        answer: ['直接法', 'ちょくせつほう'],
+        explain: '<p>有形固定資産では間接法が原則です。間接法なら取得原価・償却の進み具合・帳簿価額の3つが同時に読めますが、直接法では残高を見てもいくらで買った資産なのか分かりません。直接法が主に使われるのは、物理的な実体のない無形固定資産です。</p>'
+      },
+      {
+        text: '割賦購入において、分割払いにせず現金で一括払いした場合の価額のことを何といいますか。利息相当額を区分する場合、固定資産の取得原価はこの金額になります。',
+        answer: ['現金正価', 'げんきんせいか', '現金販売価額'],
+        explain: '<p>支払総額と現金正価の差が利息相当額です。これは<strong>代金の支払いを待ってもらったことへの対価</strong>であって固定資産の価値ではないので、取得原価に含めません。含めてしまうと、存在しない資産が減価償却を通じて何年もかけて費用化されます。</p><p>2級で利息を配分する方法は<strong>定額法に限られます。</strong>利息法は1級の範囲です。</p>'
+      },
+      {
+        text: '国庫補助金や工事負担金を受け入れて固定資産を取得したとき、受贈益と同額の損失を計上して取得原価を直接減らす処理を何といいますか。2級では直接控除方式による場合に限って出題されます。',
+        answer: ['圧縮記帳', 'あっしゅくきちょう'],
+        explain: '<p>受贈益に課税されると、設備投資を後押しするための補助金が受取年度に税金として出ていってしまいます。同額の固定資産圧縮損を計上して利益をゼロに戻すことで、これを防ぎます。</p><p>ただし減税ではなく<strong>課税の繰延べ</strong>です。取得原価が小さくなるぶん毎期の償却費も小さくなり、各年度の利益と税金は増えます。純資産の部で調整する<strong>積立金方式は1級</strong>の範囲です。</p>'
+      },
+      {
+        text: '固定資産の使用をやめて除却したとき、そのスクラップとしての処分価値を振り替える資産の勘定科目は何ですか。のちに実際に売れたら、この勘定を減らして代金を受け取る処理をします。',
+        answer: ['貯蔵品', 'ちょぞうひん'],
+        explain: '<p>除却は使用をやめただけで、価値のあるモノは手元に残っています。それを帳簿から全部消してしまうのは実態に合わないため、処分価値の分だけを資産として残します。</p><p>廃棄の場合は捨ててしまうので貯蔵品は登場せず、帳簿価額の全額が損失になります。撤去費用を払っていればそれも損失に加えます。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

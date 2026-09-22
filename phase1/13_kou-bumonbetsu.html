@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第九-1-0,工-第九-2-0,工-第九-3-0,工-第九-4-0,工-第九-5-0,工-第九-5-ア,工-第九-5-イ,工-第九-5-オ">
+<title>部門別計算 — 日商簿記2級 Phase 1 W4</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 13 部門別計算</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 13 ／ 3時間 ／ 工業簿記</p>
+    <h1>部門別計算<br>— 直接配賦法・相互配賦法</h1>
+    <p class="lead">UNIT 10 では、製造間接費という1つの箱から、1つの配賦率で製品へ配りました。<strong>工場に部門が複数あると、そのやり方が実態に合わなくなります。</strong>機械がうなりを上げている部門と、人が手で組み立てている部門を、同じ率で扱ってよいはずがありません。<mark>この単元でやることは、配る前に1段階はさむことだけです。</mark>予定配賦率を決めて、実際操業度を掛けて、差異を予算差異と操業度差異に分ける——UNIT 10 で作った型は、そのまま部門ごとに動きます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 10問</span>
+      <span class="chip">計算ドリル 10問</span>
+      <span class="chip">確認テスト 10問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">1つの配賦率では足りなくなるとき</a></li>
+      <li><a href="#s2">原価部門の設定 — 製造部門と補助部門</a></li>
+      <li><a href="#s3">部門個別費と部門共通費</a></li>
+      <li><a href="#s4">第1次集計 — 部門費を集める</a></li>
+      <li><a href="#s5">第2次集計 — 補助部門費を製造部門へ</a></li>
+      <li><a href="#s6">直接配賦法</a></li>
+      <li><a href="#s7">相互配賦法（簡便法）</a></li>
+      <li><a href="#s8">第3次集計 — 製造部門費を製品へ</a></li>
+      <li><a href="#s9">部門別予定配賦率と差異の把握</a></li>
+      <li><a href="#s10">仕訳ドリル 10問</a></li>
+      <li><a href="#s11">計算ドリル 10問</a></li>
+      <li><a href="#s12">確認テスト 10問</a></li>
+      <li><a href="#s13">用語の穴埋め 8問</a></li>
+      <li><a href="#s14">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>1つの配賦率では足りなくなるとき</h2>
+
+  <p>UNIT 10 でやったことをひとことで言うと、<strong>工場全体の製造間接費を1つの箱にまとめ、1つの配賦率で製品に配った</strong>ということです。工場が1つの作業場しかないなら、それで何の問題もありません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">2つの作業場がある工場で、同じ率を使うとどうなるか</span>
+    <p>切削部門と組立部門のある工場を考えます。</p>
+    <ul>
+      <li><strong>切削部門</strong>　大型の工作機械が並び、人は数値を入力して見張っているだけ。製造間接費の大半は<strong>機械の減価償却費と電力料</strong>で、金額が大きい</li>
+      <li><strong>組立部門</strong>　人が手で部品を組む。機械はドライバーと簡単な治具くらい。製造間接費は<strong>工場消耗品費や照明の電力料</strong>で、金額は小さい</li>
+    </ul>
+    <p>ここで工場全体をひとまとめにし、直接作業時間だけを基準に配ったとします。すると<mark>切削部門の機械の減価償却費が、組立部門で長時間作業した製品に大量に流れ込みます。</mark>組立部門の製品は切削機械にほとんど触れていないのにです。</p>
+    <p>逆に、切削部門を長く占有した製品は、人の作業時間が短いというだけで、高価な機械を使った分の原価をほとんど負担しません。<strong>製品原価が体系的に歪みます。</strong>「切削の製品は安く作れる」という誤った数字が出て、そのまま値付けや製品構成の判断に使われます。</p>
+  </div>
+
+  <p>解決の筋道は、UNIT 10 の「配賦基準は発生との因果関係で選ぶ」という原則から素直に出てきます。<strong>部門によって因果関係のある基準が違うのだから、部門ごとに率を分ければよい。</strong>切削部門は機械運転時間、組立部門は直接作業時間、というように。</p>
+
+  <div class="term">
+    <span class="term__w">部門別計算</span><span class="term__r">ぶもんべつけいさん</span>
+    <p>製造間接費を、いったん<strong>原価部門ごとに集計してから</strong>製品に配賦する手続。費目別計算（第1次計算）と製品別計算（第3次計算）のあいだに入る<strong>第2次の計算段階</strong>と位置づけられます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">部門別計算の目的は2つ</span>
+    <p><strong>① 製品原価の計算を正確にする</strong>　部門ごとに実態に合った配賦基準を使えるので、製品が実際に消費した製造間接費に近い金額を配れます。</p>
+    <p><strong>② 原価管理に役立てる</strong>　「工場全体で 80,000円 の不利差異」では誰に何を言えばよいか分かりません。「切削部門で 156,000円 の不利、組立部門は 40,000円 の有利」なら、切削部門の責任者に話ができます。<mark>部門は責任の単位でもある</mark>のです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">部門別計算は製造間接費だけの話</span>
+    <p>部門別に分けるのは<strong>製造間接費だけ</strong>です。直接材料費・直接労務費・直接経費は、もともと製造指図書番号が伝票に書いてあるので、部門を経由せず<mark>そのまま仕掛品へ直課されます</mark>。<br>部門別計算の話をしているうちに「直接材料費も部門に分けるのか」と迷うことがありますが、分ける必要がありません。分けられるものを、わざわざ配賦の対象にはしません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>原価部門の設定 — 製造部門と補助部門</h2>
+
+  <div class="term">
+    <span class="term__w">原価部門</span><span class="term__r">げんかぶもん</span>
+    <p>原価を集計するために設けた、工場内の計算上の区分。組織図上の「部」「課」とは必ずしも一致しません。<strong>原価を集計し管理するのに都合のよい単位</strong>で切ります。</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">製造部門</div>
+      <p><strong>製品の製造作業を直接行う部門</strong></p>
+      <p class="small">切削部門・組立部門・鋳造部門・塗装部門・仕上部門など。<mark>製品がその部門を通過していく</mark>ので、部門費を製品に配賦できます。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">補助部門</div>
+      <p><strong>製造部門を補助するだけで、製品の製造作業は行わない部門</strong></p>
+      <p class="small">動力部門・修繕部門・工場事務部門・材料倉庫部門・検査部門など。<mark>製品がここを通過しない</mark>ので、製品に直接配賦できません。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ補助部門費を製品に直接配れないのか</span>
+    <p>動力部門は電気を作り、それを切削部門と組立部門に送ります。<strong>製品そのものに電気を送っているわけではありません。</strong>製品が動力部門を通過しないので、「この製品が動力部門で何時間かかった」という数値がそもそも存在しません。配賦基準に使える量が測れないのです。</p>
+    <p>一方、製造部門なら「No.101 は切削部門の機械を 1,200時間 占有した」と測れます。だから<mark>補助部門費をいったん製造部門に移し、製造部門から製品へ配る</mark>という2段構えになります。これが第2次集計・第3次集計という区切りの正体です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">工場事務部門は補助部門、本社の事務部門は原価部門ですらない</span>
+    <p>「事務」という言葉が出てくると迷いますが、線引きははっきりしています。<strong>工場の中にある事務部門</strong>（工場の総務・経理・労務）は、製造活動を支えているので<mark>補助部門</mark>です。その費用は製造間接費に入ります。<br>ところが<strong>本社の管理部門</strong>の費用は、製造活動ではなく企業全体の管理の費用なので<mark>販売費及び一般管理費</mark>です。原価部門に入りません。<br>UNIT 10 で「工場の減価償却費は製造間接費、本社の減価償却費は販売費及び一般管理費」と線を引いたのと、まったく同じ線です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>部門個別費と部門共通費</h2>
+
+  <p>製造間接費を部門に集めようとすると、同じ問題がもう一度、一段小さい規模で現れます。<strong>どの部門のものか分かるものと、分からないものがある</strong>のです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">部門個別費</div>
+      <p><strong>どの部門で発生したかが特定できる製造間接費</strong></p>
+      <p class="small">切削部門の機械の減価償却費、組立部門の間接工の賃金、動力部門で使った燃料費など。<mark>その部門に賦課（直課）する</mark>。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">部門共通費</div>
+      <p><strong>複数の部門に共通して発生し、部門ごとに分けられない製造間接費</strong></p>
+      <p class="small">工場建物全体の減価償却費・火災保険料、福利施設の費用など。<mark>適当な配賦基準で各部門に配賦する</mark>。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">直接費・間接費と同じ構造が、1段下で繰り返される</span>
+    <p>費目別計算では「製品ごとに分けられるか」で直接費と間接費に分けました。部門別計算では「<strong>部門ごとに</strong>分けられるか」で部門個別費と部門共通費に分けます。<mark>問いの形は同じで、対象が製品から部門に変わっただけ</mark>です。</p>
+    <p>だから処理も同じです。分けられるものは<strong>賦課</strong>、分けられないものは基準を決めて<strong>配賦</strong>。この2語の使い分けは工業簿記を通じて一貫しています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">部門個別費は「直接費」ではない</span>
+    <p>部門個別費はすべて<strong>製造間接費</strong>です。製品から見れば間接費であり、部門から見れば個別費である、というだけのことです。<br>切削部門の機械の減価償却費は、切削部門に直課できます。しかしその部門を通るどの製品にいくらかかったかは分かりません。<mark>「個別費」は部門に対する言葉であって、製品に対する言葉ではありません。</mark>直接材料費や直接労務費とは別の階層の話です。</p>
+  </div>
+
+  <h3>部門共通費の配賦基準</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>部門共通費</th><th>配賦基準</th><th>なぜその基準か</th></tr></thead>
+    <tbody>
+      <tr><td>建物の減価償却費・賃借料</td><td>占有面積</td><td>広い場所を使う部門ほど、建物を多く消費している</td></tr>
+      <tr><td>建物の火災保険料</td><td>占有面積</td><td>保険の対象は建物であり、面積に比例して負担するのが自然</td></tr>
+      <tr><td>福利施設負担額</td><td>従業員数</td><td>食堂・更衣室などは人が使うもの。人数に比例する</td></tr>
+      <tr><td>機械の保険料</td><td>機械帳簿価額</td><td>保険の対象は機械であり、金額に比例する</td></tr>
+      <tr><td>電力料（測定していない場合）</td><td>馬力数 × 運転時間</td><td>電力の消費量に対応する。部門ごとにメーターがあれば個別費になる</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">試験では配賦基準が問題文で指定されます。自分で選ぶ必要はありません。ただし資料に「占有面積」「従業員数」「機械帳簿価額」が並んでいることがあるので、どの共通費にどれを使うかの対応は取り違えないでください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>第1次集計 — 部門費を集める</h2>
+
+  <p>ここからは1つの設例を最後まで通します。<strong>この単元の数値はすべてこの設例のものです。</strong></p>
+
+  <div class="card">
+    <div class="card__label">設例 — この単元を通して使う数値</div>
+    <p class="small">当月の製造間接費の実際発生額は <strong>4,560,000円</strong>。製造部門は切削部門・組立部門、補助部門は動力部門・修繕部門とする。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th class="amt">切削</th><th class="amt">組立</th><th class="amt">動力</th><th class="amt">修繕</th><th class="amt">合計</th></tr></thead>
+      <tbody>
+        <tr><td><strong>部門個別費</strong></td><td class="amt">1,408,000</td><td class="amt">1,106,000</td><td class="amt">402,000</td><td class="amt">264,000</td><td class="amt"><strong>3,180,000</strong></td></tr>
+        <tr><td>占有面積（㎡）</td><td class="amt">1,200</td><td class="amt">900</td><td class="amt">500</td><td class="amt">400</td><td class="amt">3,000</td></tr>
+        <tr><td>従業員数（人）</td><td class="amt">40</td><td class="amt">30</td><td class="amt">10</td><td class="amt">20</td><td class="amt">100</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">部門共通費は、建物減価償却費 <strong>900,000円</strong>（占有面積で配賦）と福利施設負担額 <strong>480,000円</strong>（従業員数で配賦）の合計 1,380,000円。</p>
+  </div>
+
+  <p>部門個別費 3,180,000 ＋ 部門共通費 1,380,000 ＝ <strong>4,560,000円</strong>。製造間接費の実際発生額と一致します。<mark>この一致は毎回確かめてください。</mark>合わなければ資料の読み落としがあります。</p>
+
+  <h3>部門共通費を配賦する</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>建物減価償却費 900,000円 ÷ 占有面積 3,000㎡ ＝ @300円／㎡</strong><br>切削 @300 × 1,200 ＝ 360,000／組立 @300 × 900 ＝ 270,000／動力 @300 × 500 ＝ 150,000／修繕 @300 × 400 ＝ 120,000</li>
+      <li><strong>福利施設負担額 480,000円 ÷ 従業員数 100人 ＝ @4,800円／人</strong><br>切削 @4,800 × 40 ＝ 192,000／組立 @4,800 × 30 ＝ 144,000／動力 @4,800 × 10 ＝ 48,000／修繕 @4,800 × 20 ＝ 96,000</li>
+      <li><strong>部門共通費の合計</strong><br>切削 552,000／組立 414,000／動力 198,000／修繕 216,000</li>
+    </ol>
+  </div>
+
+  <p class="small muted">検算：360,000 ＋ 270,000 ＋ 150,000 ＋ 120,000 ＝ 900,000円。192,000 ＋ 144,000 ＋ 48,000 ＋ 96,000 ＝ 480,000円。552,000 ＋ 414,000 ＋ 198,000 ＋ 216,000 ＝ 1,380,000円。すべて配り切れています。</p>
+
+  <h3>部門費配分表</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">合計</th><th class="amt">切削部門</th><th class="amt">組立部門</th><th class="amt">動力部門</th><th class="amt">修繕部門</th></tr></thead>
+    <tbody>
+      <tr><td>部門個別費</td><td class="amt">3,180,000</td><td class="amt">1,408,000</td><td class="amt">1,106,000</td><td class="amt">402,000</td><td class="amt">264,000</td></tr>
+      <tr><td>部門共通費</td><td class="amt">1,380,000</td><td class="amt">552,000</td><td class="amt">414,000</td><td class="amt">198,000</td><td class="amt">216,000</td></tr>
+      <tr><td><strong>部門費合計</strong></td><td class="amt"><strong>4,560,000</strong></td><td class="amt"><strong>1,960,000</strong></td><td class="amt"><strong>1,520,000</strong></td><td class="amt"><strong>600,000</strong></td><td class="amt"><strong>480,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">検算：1,960,000 ＋ 1,520,000 ＋ 600,000 ＋ 480,000 ＝ 4,560,000円。各部門の合計が製造間接費の総額と一致します。<strong>配賦表を作ったら必ずこの横と縦の両方向で合計を取ってください。</strong>どちらか一方だけだと、部門間の振り分けを間違えていても気づけません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">第1次集計の仕訳</span>
+    <p>製造間接費勘定から、各部門費勘定へ振り替えます。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">切削部門費</td><td class="d amt">1,960,000</td><td class="c">製造間接費</td><td class="c amt">4,560,000</td></tr>
+        <tr><td class="d">組立部門費</td><td class="d amt">1,520,000</td><td class="c"></td><td class="c amt"></td></tr>
+        <tr><td class="d">動力部門費</td><td class="d amt">600,000</td><td class="c"></td><td class="c amt"></td></tr>
+        <tr><td class="d">修繕部門費</td><td class="d amt">480,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>製造間接費勘定の残高がゼロになり、4つの部門費勘定に移ります。</mark>金額が増えも減りもしていないことを確かめてください。集計は組み替えであって、新しい原価の発生ではありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>第2次集計 — 補助部門費を製造部門へ</h2>
+
+  <p>第1次集計で4つの部門に分かれましたが、このうち<strong>動力部門と修繕部門の 1,080,000円 は、まだ製品へ配る道がありません</strong>。2章で見たとおり、製品がこれらの部門を通過しないからです。</p>
+
+  <p>そこで、補助部門が<strong>どの部門にどれだけ用役（サービス）を提供したか</strong>を基準にして、製造部門へ移します。</p>
+
+  <div class="card">
+    <div class="card__label">補助部門の用役提供割合（当月）</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>配賦基準</th><th class="amt">切削</th><th class="amt">組立</th><th class="amt">動力</th><th class="amt">修繕</th></tr></thead>
+      <tbody>
+        <tr><td>動力供給量（kWh）</td><td class="amt">3,600</td><td class="amt">2,400</td><td class="amt">—</td><td class="amt">1,200</td></tr>
+        <tr><td>修繕時間（時間）</td><td class="amt">60</td><td class="amt">20</td><td class="amt">20</td><td class="amt">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">動力部門は切削・組立だけでなく<strong>修繕部門にも電気を送っており</strong>、修繕部門も切削・組立だけでなく<strong>動力部門の機械を修繕しています</strong>。補助部門どうしが互いに用役をやりとりしています。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">補助部門どうしのやりとりが、計算を面倒にする</span>
+    <p>もし補助部門が製造部門にしか用役を提供していなければ、話は単純です。割合どおりに配って終わりです。</p>
+    <p>ところが実際には、<mark>動力部門は修繕部門に電気を送り、修繕部門は動力部門を修繕しています。</mark>動力部門費を配るには修繕部門への分を計算する必要があり、修繕部門費を配るには動力部門への分を計算する必要がある。<strong>互いが互いの答えを必要としている</strong>状態です。</p>
+    <p>厳密に解くには連立方程式を立てることになります（この解き方は1級の範囲です）。2級では、<strong>この面倒をどう割り切るか</strong>で2つの方法を学びます。無視するのが直接配賦法、1往復だけ計算して打ち切るのが相互配賦法（簡便法）です。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 420" style="width:100%;height:auto;min-width:700px" role="img" aria-label="製造間接費が第1次集計で4部門に分かれ、第2次集計で補助部門から製造部門へ移り、第3次集計で製品へ配賦される流れの図">
+      <g font-size="13" fill="var(--text)">
+        <text x="40" y="26" font-size="13" font-weight="700" fill="var(--accent)">第1次集計</text>
+        <text x="330" y="26" font-size="13" font-weight="700" fill="var(--accent)">第2次集計</text>
+        <text x="650" y="26" font-size="13" font-weight="700" fill="var(--accent)">第3次集計</text>
+
+        <!-- 製造間接費 -->
+        <rect x="20" y="150" width="140" height="80" rx="6" fill="var(--credit-bg)" stroke="var(--accent-br)" stroke-width="2.5"/>
+        <text x="90" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="var(--credit)">製造間接費</text>
+        <text x="90" y="204" text-anchor="middle" font-size="12">4,560,000</text>
+
+        <!-- 4部門 -->
+        <rect x="255" y="55" width="150" height="58" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.8"/>
+        <text x="330" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">切削部門</text>
+        <text x="330" y="98" text-anchor="middle" font-size="12">1,960,000</text>
+
+        <rect x="255" y="130" width="150" height="58" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.8"/>
+        <text x="330" y="153" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">組立部門</text>
+        <text x="330" y="173" text-anchor="middle" font-size="12">1,520,000</text>
+
+        <rect x="255" y="240" width="150" height="58" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="330" y="263" text-anchor="middle" font-size="14" font-weight="700" fill="var(--muted)">動力部門</text>
+        <text x="330" y="283" text-anchor="middle" font-size="12" fill="var(--muted)">600,000</text>
+
+        <rect x="255" y="315" width="150" height="58" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="330" y="338" text-anchor="middle" font-size="14" font-weight="700" fill="var(--muted)">修繕部門</text>
+        <text x="330" y="358" text-anchor="middle" font-size="12" fill="var(--muted)">480,000</text>
+
+        <text x="330" y="395" text-anchor="middle" font-size="11.5" fill="var(--muted)">補助部門（製品が通らない）</text>
+
+        <!-- 製造間接費 → 4部門 -->
+        <path d="M165 175 L 210 175 L 210 84 L 250 84" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+        <path d="M165 182 L 215 182 L 215 159 L 250 159" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+        <path d="M165 196 L 215 196 L 215 269 L 250 269" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+        <path d="M165 203 L 210 203 L 210 344 L 250 344" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+
+        <!-- 補助 → 製造 -->
+        <path d="M410 255 L 440 255 L 440 90 L 470 90 L 470 94 L 500 94" stroke="var(--credit)" stroke-width="2.2" fill="none" marker-end="url(#a2)"/>
+        <path d="M410 268 L 432 268 L 432 165 L 500 165" stroke="var(--credit)" stroke-width="2.2" fill="none" marker-end="url(#a2)"/>
+        <path d="M410 330 L 450 330 L 450 100 L 500 100" stroke="var(--credit)" stroke-width="2.2" fill="none" marker-end="url(#a2)"/>
+        <path d="M410 345 L 458 345 L 458 172 L 500 172" stroke="var(--credit)" stroke-width="2.2" fill="none" marker-end="url(#a2)"/>
+
+        <!-- 製造部門（第2次集計後） -->
+        <rect x="505" y="65" width="150" height="58" rx="6" fill="var(--debit-bg)" stroke="var(--accent-br)" stroke-width="2.2"/>
+        <text x="580" y="88" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">切削部門</text>
+        <text x="580" y="108" text-anchor="middle" font-size="12">2,680,000</text>
+
+        <rect x="505" y="140" width="150" height="58" rx="6" fill="var(--debit-bg)" stroke="var(--accent-br)" stroke-width="2.2"/>
+        <text x="580" y="163" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">組立部門</text>
+        <text x="580" y="183" text-anchor="middle" font-size="12">1,880,000</text>
+
+        <text x="580" y="222" text-anchor="middle" font-size="11.5" fill="var(--muted)">直接配賦法の場合</text>
+
+        <!-- 製造部門 → 仕掛品 -->
+        <path d="M660 94 L 700 94 L 700 130 L 740 130" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+        <path d="M660 169 L 700 169 L 700 140 L 740 140" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+
+        <rect x="745" y="105" width="115" height="62" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="802" y="142" text-anchor="middle" font-size="15" font-weight="700">仕掛品</text>
+        <text x="802" y="190" text-anchor="middle" font-size="11.5" fill="var(--muted)">製造指図書ごと</text>
+      </g>
+      <defs>
+        <marker id="a1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--accent)"/>
+        </marker>
+        <marker id="a2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/>
+        </marker>
+        <marker id="a3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">3段階のいずれでも総額 4,560,000円 は変わらない。動いているのは「どの箱に入っているか」だけ。補助部門の箱は第2次集計で空になる。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">第2次集計は、補助部門の箱を空にする手続</span>
+    <p>第2次集計が終わった時点で、<strong>動力部門費勘定と修繕部門費勘定の残高はゼロ</strong>になります。1,080,000円 がまるごと切削部門と組立部門に移るからです。<br>そして<mark>切削部門費 ＋ 組立部門費 ＝ 4,560,000円</mark>。総額は第1次集計と同じです。配賦法が変わっても、この総額は変わりません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>直接配賦法</h2>
+
+  <div class="term">
+    <span class="term__w">直接配賦法</span><span class="term__r">ちょくせつはいふほう</span>
+    <p>補助部門どうしの用役のやりとりを<strong>無視し</strong>、補助部門費を製造部門にだけ配賦する方法。</p>
+  </div>
+
+  <p>やり方は割り切りそのものです。<strong>資料のうち、補助部門へ向かう列を消してしまいます。</strong>残った製造部門の欄だけで割合を計算し直し、それに従って配ります。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>動力部門費 600,000円</strong>　修繕部門への 1,200kWh を無視し、切削 3,600 ： 組立 2,400 ＝ <strong>3 ： 2</strong> で配る<br>切削 600,000 × 3,600 ÷ 6,000 ＝ <strong>360,000円</strong>／組立 600,000 × 2,400 ÷ 6,000 ＝ <strong>240,000円</strong></li>
+      <li><strong>修繕部門費 480,000円</strong>　動力部門への 20時間 を無視し、切削 60 ： 組立 20 ＝ <strong>3 ： 1</strong> で配る<br>切削 480,000 × 60 ÷ 80 ＝ <strong>360,000円</strong>／組立 480,000 × 20 ÷ 80 ＝ <strong>120,000円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">分母は「無視した後」の合計に置き換える</span>
+    <p>動力部門の供給量は資料上 3,600 ＋ 2,400 ＋ 1,200 ＝ 7,200kWh です。しかし直接配賦法では、<mark>分母を 7,200 ではなく 6,000 にします。</mark></p>
+    <p>7,200 のまま割ると、切削 300,000 ＋ 組立 200,000 ＝ 500,000円 にしかならず、<strong>100,000円 が配られないまま動力部門に残ります</strong>。補助部門の箱を空にするのが第2次集計の目的でしたから、これでは目的を果たせません。<br>「無視する」とは<strong>その列を最初から無かったことにして割合を取り直す</strong>ことです。分子だけ消して分母をそのままにするのが、この方法でいちばん多い事故です。</p>
+  </div>
+
+  <h3>部門費振替表（直接配賦法）</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">合計</th><th class="amt">切削部門</th><th class="amt">組立部門</th><th class="amt">動力部門</th><th class="amt">修繕部門</th></tr></thead>
+    <tbody>
+      <tr><td>部門費合計</td><td class="amt">4,560,000</td><td class="amt">1,960,000</td><td class="amt">1,520,000</td><td class="amt">600,000</td><td class="amt">480,000</td></tr>
+      <tr><td>動力部門費</td><td class="amt">600,000</td><td class="amt">360,000</td><td class="amt">240,000</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td>修繕部門費</td><td class="amt">480,000</td><td class="amt">360,000</td><td class="amt">120,000</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td><strong>製造部門費</strong></td><td class="amt"><strong>4,560,000</strong></td><td class="amt"><strong>2,680,000</strong></td><td class="amt"><strong>1,880,000</strong></td><td class="amt">—</td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">検算：切削 1,960,000 ＋ 360,000 ＋ 360,000 ＝ 2,680,000円。組立 1,520,000 ＋ 240,000 ＋ 120,000 ＝ 1,880,000円。2,680,000 ＋ 1,880,000 ＝ 4,560,000円。第1次集計の総額と一致し、補助部門の欄はゼロになりました。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">第2次集計の仕訳</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">切削部門費</td><td class="d amt">720,000</td><td class="c">動力部門費</td><td class="c amt">600,000</td></tr>
+        <tr><td class="d">組立部門費</td><td class="d amt">360,000</td><td class="c">修繕部門費</td><td class="c amt">480,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>借方は切削へ 360,000 ＋ 360,000 ＝ 720,000円、組立へ 240,000 ＋ 120,000 ＝ 360,000円。貸方で補助部門費勘定が全額消えます。<mark>貸借とも 1,080,000円</mark>で一致します。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">直接配賦法は何を犠牲にしているのか</span>
+    <p>動力部門は実際に修繕部門へ 1,200kWh の電気を送っています。その電気は、修繕部門が仕事をするために消費されました。<strong>その原価はどこへ行くべきか</strong>——本来なら修繕部門費に上乗せされ、修繕部門を通じて製造部門へ流れるべきものです。</p>
+    <p>直接配賦法はそれを<mark>切削部門と組立部門に直接押し付けます。</mark>修繕部門を多く使う部門と、動力を多く使う部門がずれていれば、そのぶん原価が歪みます。</p>
+    <p>それでも使われるのは<strong>計算が圧倒的に簡単だから</strong>です。補助部門間の用役提供が少なければ、歪みも小さくて済みます。正確さと手間のどちらを取るか、という割り切りの問題であって、直接配賦法が「間違い」なのではありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>相互配賦法（簡便法）</h2>
+
+  <div class="term">
+    <span class="term__w">相互配賦法（簡便法）</span><span class="term__r">そうごはいふほう</span>
+    <p>補助部門どうしのやりとりを<strong>1往復だけ</strong>計算に入れる方法。<strong>第1次配賦</strong>では資料どおりの割合で補助部門にも配り、<strong>第2次配賦</strong>ではそこで補助部門に戻ってきた金額を<mark>直接配賦法で</mark>製造部門へ配って打ち切ります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「第1次配賦・第2次配賦」と「第1次集計・第2次集計」は別の言葉</span>
+    <p>言葉が紛らわしいので、最初に整理します。</p>
+    <ul>
+      <li><strong>第1次集計・第2次集計・第3次集計</strong>　部門別計算<strong>全体</strong>の3段階。部門費を集める／補助部門費を製造部門へ／製造部門費を製品へ</li>
+      <li><strong>第1次配賦・第2次配賦</strong>　<mark>相互配賦法の中だけ</mark>の2段階。第2次集計を2回に分けて行うという話</li>
+    </ul>
+    <p>つまり<strong>相互配賦法の第1次配賦も第2次配賦も、どちらも第2次集計の中身</strong>です。入れ子になっています。問題文がどちらの意味で使っているかは、補助部門費を配っている場面かどうかで判断できます。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ第2次配賦で直接配賦法に切り替えるのか</span>
+    <p>第1次配賦を資料どおりの割合で行うと、動力部門から修繕部門へ 100,000円、修繕部門から動力部門へ 96,000円 が移ります。<mark>補助部門の箱が空になりません。</mark></p>
+    <p>そこで第2次配賦をするのですが、ここでもまた資料どおりの割合で配ると、<strong>また互いに少額が残ります</strong>。第3次、第4次と繰り返せば残額はどんどん小さくなりますが、ゼロにはなりません。無限に続きます。</p>
+    <p>だから<strong>どこかで打ち切る</strong>必要があります。2級の簡便法は<mark>2回目で打ち切り、その回だけ直接配賦法を使う</mark>と決めています。残額がわずかなので、そこに直接配賦法の割り切りを持ち込んでも影響が小さい、という判断です。<br>打ち切らずに厳密に解く方法（連立方程式を立てる純粋の相互配賦法）は1級の範囲です。</p>
+  </div>
+
+  <h3>第1次配賦 — 資料どおりの割合で、補助部門にも配る</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>動力部門費 600,000円</strong>　切削 3,600 ： 組立 2,400 ： 修繕 1,200（計 7,200kWh）<br>切削 600,000 × 3,600 ÷ 7,200 ＝ <strong>300,000円</strong>／組立 600,000 × 2,400 ÷ 7,200 ＝ <strong>200,000円</strong>／修繕 600,000 × 1,200 ÷ 7,200 ＝ <strong>100,000円</strong></li>
+      <li><strong>修繕部門費 480,000円</strong>　切削 60 ： 組立 20 ： 動力 20（計 100時間）<br>切削 480,000 × 60 ÷ 100 ＝ <strong>288,000円</strong>／組立 480,000 × 20 ÷ 100 ＝ <strong>96,000円</strong>／動力 480,000 × 20 ÷ 100 ＝ <strong>96,000円</strong></li>
+    </ol>
+  </div>
+
+  <p>この時点で、動力部門には修繕部門から <strong>96,000円</strong>、修繕部門には動力部門から <strong>100,000円</strong> が入っています。これが第2次配賦の対象です。</p>
+
+  <h3>第2次配賦 — 戻ってきた分を、直接配賦法で配る</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>動力部門の 96,000円</strong>　修繕部門を無視し、切削 3,600 ： 組立 2,400 ＝ 3 ： 2<br>切削 96,000 × 3 ÷ 5 ＝ <strong>57,600円</strong>／組立 96,000 × 2 ÷ 5 ＝ <strong>38,400円</strong></li>
+      <li><strong>修繕部門の 100,000円</strong>　動力部門を無視し、切削 60 ： 組立 20 ＝ 3 ： 1<br>切削 100,000 × 3 ÷ 4 ＝ <strong>75,000円</strong>／組立 100,000 × 1 ÷ 4 ＝ <strong>25,000円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">第2次配賦の配賦元を取り違えない</span>
+    <p>動力部門の第2次配賦で配るのは <strong>96,000円</strong> です。これは<mark>修繕部門から動力部門に入ってきた金額</mark>です。動力部門が修繕部門へ配った 100,000円 ではありません。</p>
+    <p>感覚的には「自分が出した分」と「自分に入ってきた分」が入れ替わりやすいところです。<strong>第2次配賦で配るのは、その部門の欄に残っている金額</strong>——つまり第1次配賦で<mark>受け取った</mark>額です。表の縦の列を見て、その部門の欄にいくら載っているかを確かめてから配ってください。</p>
+  </div>
+
+  <h3>部門費振替表（相互配賦法・簡便法）</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>摘要</th><th class="amt">合計</th><th class="amt">切削部門</th><th class="amt">組立部門</th><th class="amt">動力部門</th><th class="amt">修繕部門</th></tr></thead>
+    <tbody>
+      <tr><td>部門費合計</td><td class="amt">4,560,000</td><td class="amt">1,960,000</td><td class="amt">1,520,000</td><td class="amt">600,000</td><td class="amt">480,000</td></tr>
+      <tr><td><strong>第1次配賦</strong></td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt"></td></tr>
+      <tr><td>　動力部門費</td><td class="amt">600,000</td><td class="amt">300,000</td><td class="amt">200,000</td><td class="amt">—</td><td class="amt">100,000</td></tr>
+      <tr><td>　修繕部門費</td><td class="amt">480,000</td><td class="amt">288,000</td><td class="amt">96,000</td><td class="amt">96,000</td><td class="amt">—</td></tr>
+      <tr><td><strong>第2次配賦</strong></td><td class="amt">196,000</td><td class="amt"></td><td class="amt"></td><td class="amt"><strong>96,000</strong></td><td class="amt"><strong>100,000</strong></td></tr>
+      <tr><td>　動力部門費</td><td class="amt">96,000</td><td class="amt">57,600</td><td class="amt">38,400</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td>　修繕部門費</td><td class="amt">100,000</td><td class="amt">75,000</td><td class="amt">25,000</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td><strong>製造部門費</strong></td><td class="amt"><strong>4,560,000</strong></td><td class="amt"><strong>2,680,600</strong></td><td class="amt"><strong>1,879,400</strong></td><td class="amt">—</td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">検算：切削 1,960,000 ＋ 300,000 ＋ 288,000 ＋ 57,600 ＋ 75,000 ＝ 2,680,600円。組立 1,520,000 ＋ 200,000 ＋ 96,000 ＋ 38,400 ＋ 25,000 ＝ 1,879,400円。2,680,600 ＋ 1,879,400 ＝ 4,560,000円。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2つの方法を並べて見る</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th class="amt">切削部門</th><th class="amt">組立部門</th><th class="amt">合計</th></tr></thead>
+      <tbody>
+        <tr><td>直接配賦法</td><td class="amt">2,680,000</td><td class="amt">1,880,000</td><td class="amt">4,560,000</td></tr>
+        <tr><td>相互配賦法（簡便法）</td><td class="amt">2,680,600</td><td class="amt">1,879,400</td><td class="amt">4,560,000</td></tr>
+        <tr><td><strong>差</strong></td><td class="amt"><strong>＋600</strong></td><td class="amt"><strong>△600</strong></td><td class="amt"><strong>0</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>合計は必ず一致します。</mark>配賦法が変えるのは製造部門どうしの分け方だけで、総額 4,560,000円 は動きません。<strong>配賦法を答えたあと、まず合計で検算してください。</strong>合計が合わない場合は、配り残しがあるか二重に配っています。</p>
+    <p>この設例では差が 600円 と小さいですが、これは補助部門間の用役提供が控えめだからです。補助部門どうしのやりとりが大きい工場では差が広がります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>第3次集計 — 製造部門費を製品へ</h2>
+
+  <p>ここから先は<strong>UNIT 10 とまったく同じ</strong>です。違うのは、率が部門の数だけあることだけです。</p>
+
+  <div class="card">
+    <div class="card__label">当月の操業度（直接配賦法の結果を使う）</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th class="amt">切削部門</th><th class="amt">組立部門</th></tr></thead>
+      <tbody>
+        <tr><td>配賦基準</td><td class="amt">機械運転時間</td><td class="amt">直接作業時間</td></tr>
+        <tr><td>No.101</td><td class="amt">1,200時間</td><td class="amt">1,100時間</td></tr>
+        <tr><td>No.102</td><td class="amt">800時間</td><td class="amt">900時間</td></tr>
+        <tr><td><strong>合計</strong></td><td class="amt"><strong>2,000時間</strong></td><td class="amt"><strong>2,000時間</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">切削部門は機械が中心、組立部門は人の作業が中心なので、<mark>部門ごとに因果関係のある基準を選んでいます。</mark>これが部門別計算をする理由そのものです。</p>
+  </div>
+
+  <h3>実際配賦の場合</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>切削部門の実際配賦率</strong> ＝ 2,680,000 ÷ 2,000時間 ＝ <strong>@1,340円</strong></li>
+      <li><strong>組立部門の実際配賦率</strong> ＝ 1,880,000 ÷ 2,000時間 ＝ <strong>@940円</strong></li>
+      <li><strong>No.101</strong>　@1,340 × 1,200 ＋ @940 × 1,100 ＝ 1,608,000 ＋ 1,034,000 ＝ <strong>2,642,000円</strong></li>
+      <li><strong>No.102</strong>　@1,340 × 800 ＋ @940 × 900 ＝ 1,072,000 ＋ 846,000 ＝ <strong>1,918,000円</strong></li>
+    </ol>
+  </div>
+
+  <p class="small muted">検算：2,642,000 ＋ 1,918,000 ＝ 4,560,000円。製造間接費の実際発生額と一致します。<strong>実際配賦なら必ず一致します。</strong>実際にかかった額を、余さず配っているからです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">第3次集計の仕訳</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">仕掛品</td><td class="d amt">4,560,000</td><td class="c">切削部門費</td><td class="c amt">2,680,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">組立部門費</td><td class="c amt">1,880,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>製造部門費勘定が空になり、仕掛品へ移ります。No.101 と No.102 の内訳は<strong>原価計算表</strong>で管理し、仕訳では合計額を1本で書きます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">UNIT 10 との違いは「率が2つある」ことだけ</span>
+    <p>工場全体を1つの率で配っていたら、実際配賦率は 4,560,000 ÷ 4,000時間（合計作業時間）というような1本の数字になります。部門別ならそれが2本に分かれます。<br><mark>手続が増えるのではなく、同じ手続を部門の数だけ繰り返すだけ</mark>です。だから部門が3つ4つに増えても、やることは変わりません。<br>ただし<strong>どの部門にどの基準を使うかは部門ごとに違います</strong>。切削は機械運転時間、組立は直接作業時間、という対応を資料から拾い間違えると、その部門の配賦額がすべて崩れます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>部門別予定配賦率と差異の把握</h2>
+
+  <p>UNIT 10 で、実際配賦には2つの弱点があると学びました。<strong>月末まで製品原価が決まらない</strong>ことと、<strong>操業度が変動すると製品原価が揺れる</strong>ことです。この弱点は部門別計算でも同じように残ります。むしろ<mark>第2次集計まで終わらないと率が出せないので、月末を待つ時間がさらに長くなります。</mark></p>
+
+  <p>答えも同じです。<strong>部門ごとに予定配賦率をあらかじめ決めておきます。</strong></p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">部門別予定配賦率</span>
+    <p><strong>部門別予定配賦率 ＝ その部門の製造間接費予算額 ÷ その部門の基準操業度</strong><br><strong>予定配賦額 ＝ 部門別予定配賦率 × その部門の<mark>実際</mark>操業度</strong></p>
+    <p>UNIT 10 の式と同じ形で、「その部門の」が付くだけです。<strong>年間予算を部門ごとに立て、年間の基準操業度も部門ごとに見積もる</strong>ことになります。</p>
+  </div>
+
+  <div class="card">
+    <div class="card__label">設例の続き — 年間予算</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th class="amt">切削部門</th><th class="amt">組立部門</th></tr></thead>
+      <tbody>
+        <tr><td>年間の製造間接費予算額</td><td class="amt">34,320,000円</td><td class="amt">23,040,000円</td></tr>
+        <tr><td>　うち変動費</td><td class="amt">13,728,000円</td><td class="amt">9,216,000円</td></tr>
+        <tr><td>　うち固定費</td><td class="amt">20,592,000円</td><td class="amt">13,824,000円</td></tr>
+        <tr><td>年間の基準操業度</td><td class="amt">機械運転時間 26,400時間</td><td class="amt">直接作業時間 24,000時間</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>切削部門の予定配賦率</strong> ＝ 34,320,000 ÷ 26,400 ＝ <strong>@1,300円</strong></li>
+      <li><strong>組立部門の予定配賦率</strong> ＝ 23,040,000 ÷ 24,000 ＝ <strong>@960円</strong></li>
+      <li><strong>切削部門の予定配賦額</strong> ＝ @1,300 × 実際 2,000時間 ＝ <strong>2,600,000円</strong></li>
+      <li><strong>組立部門の予定配賦額</strong> ＝ @960 × 実際 2,000時間 ＝ <strong>1,920,000円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">部門ごとに基準操業度が違う</span>
+    <p>この設例では、切削部門の年間基準操業度が 26,400時間、組立部門が 24,000時間 です。<mark>部門が違えば操業の実態も違うので、そろっていないのがふつうです。</mark>そろっていると思い込んで片方の数値を両方に使うと、片方の率がまるごと狂います。</p>
+    <p>単位も違います。切削は機械運転時間、組立は直接作業時間です。<strong>「時間」という同じ言葉で書かれていても、測っているものが違います。</strong>資料の行の見出しを最後まで読んでください。</p>
+  </div>
+
+  <h3>配賦時の仕訳</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">4,520,000</td><td class="c">切削部門費</td><td class="c amt">2,600,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">組立部門費</td><td class="c amt">1,920,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>2,600,000 ＋ 1,920,000 ＝ <strong>4,520,000円</strong>。実際発生額の 4,560,000円 とは一致しません。<mark>この不一致が部門ごとの配賦差異です。</mark></p>
+
+  <h3>部門費配賦差異</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th class="amt">切削部門</th><th class="amt">組立部門</th><th class="amt">合計</th></tr></thead>
+    <tbody>
+      <tr><td>予定配賦額</td><td class="amt">2,600,000</td><td class="amt">1,920,000</td><td class="amt">4,520,000</td></tr>
+      <tr><td>実際発生額</td><td class="amt">2,680,000</td><td class="amt">1,880,000</td><td class="amt">4,560,000</td></tr>
+      <tr><td><strong>配賦差異</strong></td><td class="amt"><strong>△80,000（不利）</strong></td><td class="amt"><strong>＋40,000（有利）</strong></td><td class="amt"><strong>△40,000（不利）</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">合計だけを見ていたら、何を見落とすか</span>
+    <p>工場全体では 40,000円 の不利差異です。「まあそんなものか」という金額でしょう。</p>
+    <p>ところが部門別に見ると、<mark>切削部門は 80,000円 の不利、組立部門は 40,000円 の有利</mark>です。切削部門の問題が、組立部門の健闘に半分打ち消されて見えなくなっていました。</p>
+    <p>工場全体で1つの率を使っていたら、この事実は数字の上に一度も現れません。<strong>部門別計算の第2の目的（原価管理）が効くのは、まさにこういう場面です。</strong>差異を部門別に把握してはじめて、切削部門の責任者に話ができます。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>切削部門（不利差異なので、差異勘定が借方に立つ）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">切削部門費配賦差異</td><td class="d amt">80,000</td><td class="c">切削部門費</td><td class="c amt">80,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>組立部門（有利差異なので、差異勘定が貸方に立つ）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">組立部門費</td><td class="d amt">40,000</td><td class="c">組立部門費配賦差異</td><td class="c amt">40,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">この2本は<strong>独立した仕訳</strong>です。1本の複合仕訳ではありません。部門ごとに差異の向きが違うので、差異勘定が借方に立つか貸方に立つかも部門ごとに決まります。</p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">切削部門費</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>製造間接費（第1次集計）</span><span>1,960,000</span></div>
+          <div class="l"><span>動力部門費・修繕部門費</span><span>720,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>2,680,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品（予定配賦額）</span><span>2,600,000</span></div>
+          <div class="l"><span>切削部門費配賦差異</span><span>80,000</span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>2,680,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">組立部門費</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>製造間接費（第1次集計）</span><span>1,520,000</span></div>
+          <div class="l"><span>動力部門費・修繕部門費</span><span>360,000</span></div>
+          <div class="l"><span>組立部門費配賦差異</span><span>40,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>1,920,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品（予定配賦額）</span><span>1,920,000</span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>1,920,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">検算：切削部門費は借方 1,960,000 ＋ 720,000 ＝ 2,680,000円、貸方 2,600,000 ＋ 80,000 ＝ 2,680,000円。組立部門費は借方 1,520,000 ＋ 360,000 ＋ 40,000 ＝ 1,920,000円、貸方 1,920,000円。<mark>有利差異の組立部門では、差異が借方に来て貸借を合わせています。</mark></p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">有利差異のとき、差異は借方に来る</span>
+    <p>UNIT 10 で「部門費勘定は借方が実際、貸方が予定」と学びました。組立部門は<strong>予定 1,920,000 ＞ 実際 1,880,000</strong> なので、借方が 40,000円 足りません。だから差異を<mark>借方</mark>に立てて締めます。</p>
+    <p>これは貸方差異（有利差異）です。<strong>差異勘定が貸方残高になる</strong>ことと、<strong>部門費勘定の借方に差異を書く</strong>ことは、同じ1本の仕訳の裏表です。混乱したら「貸借が合うようにどちら側に入れるか」から考え直してください。式の暗記より確実です。</p>
+  </div>
+
+  <h3>差異をさらに予算差異と操業度差異に分ける</h3>
+
+  <p>部門別でも、公式法変動予算を使えば差異を2つに分解できます。<strong>UNIT 10 のシュラッター図が、部門ごとに1枚ずつ立つと考えてください。</strong></p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>切削部門の月間予算</strong>　変動費 13,728,000 ÷ 12 ＝ 1,144,000円／固定費 20,592,000 ÷ 12 ＝ 1,716,000円／基準操業度 26,400 ÷ 12 ＝ 2,200時間</li>
+      <li><strong>変動費率</strong> ＝ 1,144,000 ÷ 2,200 ＝ <strong>@520円</strong>／<strong>固定費率</strong> ＝ 1,716,000 ÷ 2,200 ＝ <strong>@780円</strong>（合計 @1,300円で予定配賦率と一致）</li>
+      <li><strong>予算許容額</strong> ＝ @520 × 実際 2,000 ＋ 1,716,000 ＝ 1,040,000 ＋ 1,716,000 ＝ <strong>2,756,000円</strong></li>
+      <li><strong>予算差異</strong> ＝ 2,756,000 − 実際 2,680,000 ＝ <strong>＋76,000円（貸方・有利差異）</strong></li>
+      <li><strong>操業度差異</strong> ＝ @780 ×（実際 2,000 − 基準 2,200）＝ @780 × △200 ＝ <strong>△156,000円（借方・不利差異）</strong></li>
+      <li><strong>検算</strong>　＋76,000 ＋ △156,000 ＝ <strong>△80,000円</strong>。上で出した切削部門の配賦差異と一致します。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">切削部門で起きていたことを、言葉にする</span>
+    <p><strong>予算差異 76,000円 の有利</strong>　2,000時間 なら 2,756,000円 まで使ってよかったのに 2,680,000円 で済みました。<mark>現場は節約できています。</mark></p>
+    <p><strong>操業度差異 156,000円 の不利</strong>　2,200時間 動く前提で固定費を配る率を決めたのに 2,000時間 しか動かず、固定費 156,000円 を製品原価に配りきれませんでした。<mark>機械を遊ばせています。</mark></p>
+    <p>合計 80,000円 の不利だけを見て「切削部門は無駄遣いをしている」と結論するのは、まったくの誤りだったわけです。<strong>切削部門に必要なのは節約の指示ではなく、仕事を入れることです。</strong>差異を2つに分ける意味がここにあります。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">組立部門は操業度差異がゼロになる</span>
+    <p>組立部門の月間基準操業度は 24,000 ÷ 12 ＝ 2,000時間 で、実際操業度も 2,000時間 でした。<mark>一致しているので操業度差異は生じません。</mark>固定費率 ×（2,000 − 2,000）＝ 0 です。</p>
+    <p>したがって配賦差異 40,000円 の有利は<strong>全額が予算差異</strong>です。実際に、変動費率 ＝ 9,216,000 ÷ 12 ÷ 2,000 ＝ @384円、固定費 ＝ 13,824,000 ÷ 12 ＝ 1,152,000円 なので、予算許容額 ＝ @384 × 2,000 ＋ 1,152,000 ＝ 1,920,000円。予算差異 ＝ 1,920,000 − 1,880,000 ＝ ＋40,000円。検算も合います。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">補助部門にも予定配賦率を使うことがある</span>
+    <p>ここまでは補助部門費を<strong>実際発生額のまま</strong>製造部門へ配りました。しかし補助部門費にも予定配賦率を設定し、<mark>予定額で製造部門へ配賦する</mark>方法があります。</p>
+    <p>こうすると、補助部門の管理の巧拙（動力部門が燃料を無駄遣いしたなど）が製造部門の差異に紛れ込まなくなります。<strong>補助部門の差異は補助部門に残り、製造部門の責任者は自部門の管理だけを問われます。</strong>責任の所在を分ける、という部門別計算の目的がここでも効きます。<br>問題文が「補助部門費は予定配賦率による」と指定しているかどうかで、使う数値が変わります。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>部門別計算は、同じ金額を何度も足し合わせる場面が続きます。部門費振替表の<strong>縦の合計</strong>（1つの部門に入ってくる金額の積み上げ）は <strong>GT</strong> が効きます。切削部門なら 1,960,000 ＝ 、300,000 ＝ 、288,000 ＝ 、57,600 ＝ 、75,000 ＝ と打ってから <strong>GT</strong> を押すと 2,680,600 が出ます。</p>
+    <p>一方、<strong>横の合計</strong>（配賦した総額が元の金額と一致するかの確認）は別の系列なので、縦の途中で GT を読むとそこまでの累計が混ざります。縦と横は分けて、片方が終わったら GT をクリアしてから次に移ってください。<mark>検算のつもりで押した GT に、前の列の数字が残っている</mark>のが、この単元でいちばん起きやすい事故です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕訳ドリル 10問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-bumon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>計算ドリル 10問</h2>
+
+  <p>電卓を使って構いません。<strong>配賦表を作ったら、縦と横の両方で合計を取ってください。</strong>片方だけでは部門間の振り分け違いに気づけません。</p>
+
+  <div id="num-bumon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>確認テスト 10問</h2>
+
+  <div id="quiz-bumon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>用語の穴埋め 8問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-bumon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u13check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u13check">0 / 0 完了（0%）</div>
+
+  <div id="u13check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u13-1"><label for="k1"><span class="cl__t">工場全体で1つの配賦率を使うと何が起きるかを、部門の性質の違いから説明できる</span><span class="cl__d">機械中心の部門の減価償却費が、人手中心の部門で作業した製品に流れ込む。部門ごとに因果関係のある基準が違うため</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u13-2"><label for="k2"><span class="cl__t">部門別計算の目的を2つとも言える</span><span class="cl__d">①製品原価の計算を正確にする ②部門を責任の単位として原価管理に役立てる</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u13-3"><label for="k3"><span class="cl__t">部門別に分けるのは製造間接費だけだと分かっている</span><span class="cl__d">直接材料費・直接労務費・直接経費は製造指図書番号が分かるので、部門を経由せず仕掛品へ直課する</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u13-4"><label for="k4"><span class="cl__t">製造部門と補助部門を区別し、補助部門費を製品に直接配れない理由を言える</span><span class="cl__d">製品が補助部門を通過しないので、配賦基準に使える量が測れない。だからいったん製造部門へ移す</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u13-5"><label for="k5"><span class="cl__t">工場事務部門は補助部門、本社の管理部門は原価部門ではないと判定できる</span><span class="cl__d">工場の中の事務部門は製造活動を支えるので補助部門。本社の管理部門は販売費及び一般管理費で、原価部門に入らない</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u13-6"><label for="k6"><span class="cl__t">部門個別費と部門共通費を区別し、それぞれ賦課・配賦のどちらで処理するか言える</span><span class="cl__d">部門個別費は発生部門が分かるので賦課、部門共通費は分けられないので配賦基準で配る。直接費・間接費と同じ問いが1段下で繰り返される</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u13-7"><label for="k7"><span class="cl__t">部門個別費が「直接費」ではないと分かっている</span><span class="cl__d">部門個別費もすべて製造間接費。製品から見れば間接費、部門から見れば個別費というだけ</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u13-8"><label for="k8"><span class="cl__t">主な部門共通費とその配賦基準の対応を挙げられる</span><span class="cl__d">建物の減価償却費・火災保険料は占有面積、福利施設負担額は従業員数、機械の保険料は機械帳簿価額</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u13-9"><label for="k9"><span class="cl__t">第1次集計を行い、各部門の合計が製造間接費の総額と一致することを検算できる</span><span class="cl__d">部門個別費 ＋ 部門共通費 ＝ 製造間接費の実際発生額。縦と横の両方向で合計を取る</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u13-10"><label for="k10"><span class="cl__t">第1次集計・第2次集計・第3次集計が何から何への振替かを図で描ける</span><span class="cl__d">製造間接費→各部門費／補助部門費→製造部門費／製造部門費→仕掛品。どの段階でも総額は変わらない</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u13-11"><label for="k11"><span class="cl__t">補助部門どうしの用役のやりとりが計算を面倒にする理由を言える</span><span class="cl__d">互いが互いの答えを必要とする。厳密に解くには連立方程式が要るため、2級では無視するか1往復で打ち切る</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u13-12"><label for="k12"><span class="cl__t">直接配賦法で計算でき、分母を「無視した後」の合計に置き換えられる</span><span class="cl__d">補助部門への供給量を分母から外す。分子だけ消して分母をそのままにすると補助部門に金額が残る</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u13-13"><label for="k13"><span class="cl__t">直接配賦法が何を犠牲にしているかを説明できる</span><span class="cl__d">補助部門が他の補助部門へ提供した用役の原価が、製造部門に直接押し付けられる。計算の簡単さと引き換えの割り切り</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u13-14"><label for="k14"><span class="cl__t">相互配賦法（簡便法）の第1次配賦・第2次配賦を、それぞれどの割合で行うか言える</span><span class="cl__d">第1次配賦は資料どおりの割合で補助部門にも配る。第2次配賦は直接配賦法で製造部門にだけ配って打ち切る</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u13-15"><label for="k15"><span class="cl__t">第2次配賦で直接配賦法に切り替える理由を言える</span><span class="cl__d">資料どおりの割合で配り続けると互いに残額が出て無限に続く。残額が小さいので、そこに割り切りを持ち込んでも影響が小さい</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u13-16"><label for="k16"><span class="cl__t">第2次配賦で配るのが「その部門に入ってきた金額」だと分かっている</span><span class="cl__d">自分が他の補助部門へ配った額ではない。表のその部門の欄に残っている金額を配る</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u13-17"><label for="k17"><span class="cl__t">配賦法が違っても製造部門費の合計は変わらないと分かり、合計で検算する習慣がある</span><span class="cl__d">配賦法が変えるのは製造部門どうしの分け方だけ。合計が合わなければ配り残しか二重配賦</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u13-18"><label for="k18"><span class="cl__t">第3次集計で部門ごとに違う配賦基準を使い、製品別の配賦額を計算できる</span><span class="cl__d">切削は機械運転時間、組立は直接作業時間のように部門ごとに基準が違う。同じ「時間」でも測っているものが違う</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u13-19"><label for="k19"><span class="cl__t">部門別予定配賦率を計算し、部門ごとに基準操業度が違うことを前提に資料を読める</span><span class="cl__d">部門別予定配賦率 ＝ その部門の予算額 ÷ その部門の基準操業度。片方の数値を両方に使わない</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u13-20"><label for="k20"><span class="cl__t">部門ごとの配賦差異を計算し、合計だけを見ると何を見落とすか言える</span><span class="cl__d">不利差異と有利差異が打ち消し合って、問題のある部門が見えなくなる。部門別に把握してはじめて責任者に話ができる</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u13-21"><label for="k21"><span class="cl__t">部門費勘定は借方が実際・貸方が予定であり、有利差異のとき差異が借方に来ると分かる</span><span class="cl__d">予定＞実際なら借方が足りないので差異を借方に立てて締める。差異勘定は貸方残高（有利差異）になる</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u13-22"><label for="k22"><span class="cl__t">部門ごとに予算差異と操業度差異へ分解し、合計で検算できる</span><span class="cl__d">予算差異 ＝ 予算許容額 − 実際発生額／操業度差異 ＝ 固定費率 ×（実際操業度 − 基準操業度）。UNIT 10 のシュラッター図が部門ごとに1枚立つ</span></label></li>
+    <li><input type="checkbox" id="k23" data-key="p1u13-23"><label for="k23"><span class="cl__t">補助部門費に予定配賦率を使う意味を言える</span><span class="cl__d">補助部門の管理の巧拙が製造部門の差異に紛れ込まなくなる。責任の所在を分けられる</span></label></li>
+    <li><input type="checkbox" id="k24" data-key="p1u13-24"><label for="k24"><span class="cl__t">仕訳ドリル10問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k25" data-key="p1u13-25"><label for="k25"><span class="cl__t">計算ドリル10問・確認テスト10問を全問正解した</span><span class="cl__d">特に直接配賦法の分母の置き換えと、第2次配賦の配賦元を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元で、製造間接費を製品へ届ける道筋が完成しました。<strong>費目別計算（W1・W2）→ 部門別計算（W4）→ 製品別計算</strong>という3段階の、真ん中が埋まったことになります。</p>
+    <p>次は<strong>個別原価計算</strong>で、製造指図書ごとに原価を集計する仕組みを扱います。この単元で計算した製造部門費の配賦額が、原価計算表のどの欄に入るのかが見えるようになります。<br>そのあとのW5の総合原価計算では、製造指図書という単位そのものが消え、<mark>期間で区切って平均を取る</mark>という別の考え方に移ります。<strong>部門別計算は総合原価計算でも使われます</strong>（工程別総合原価計算がまさにそれです）から、ここで配賦表を作る手が止まらないようにしておいてください。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W4 ／ UNIT 13 部門別計算</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var BUMON_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '切削部門費', '組立部門費', '動力部門費', '修繕部門費',
+  '第1製造部門費', '第2製造部門費', '工場事務部門費', '材料倉庫部門費',
+  '切削部門費配賦差異', '組立部門費配賦差異',
+  '第1製造部門費配賦差異', '第2製造部門費配賦差異',
+  '製造間接費配賦差異', '予算差異', '操業度差異',
+  '材料消費価格差異', '賃率差異',
+  '電力料', '修繕料', '保険料', '減価償却費', '棚卸減耗費',
+  '従業員賞与手当', '退職給付費用', '法定福利費', '外注加工賃',
+  '現金', '当座預金', '普通預金', '未払金', '未払費用', '前払費用',
+  '買掛金', '預り金',
+  '機械減価償却累計額', '建物減価償却累計額', '販売費', '一般管理費'
+];
+
+BokiJournal.mount('#drill-bumon', {
+  title: '仕訳ドリル — 部門別計算',
+  accounts: BUMON_ACCOUNTS,
+  questions: [
+    {
+      text: '当月の製造間接費 4,560,000円 を各部門に集計した。切削部門 1,960,000円、組立部門 1,520,000円、動力部門 600,000円、修繕部門 480,000円 である。第1次集計の仕訳を示しなさい。',
+      debit: [['切削部門費', 1960000], ['組立部門費', 1520000], ['動力部門費', 600000], ['修繕部門費', 480000]],
+      credit: [['製造間接費', 4560000]],
+      hint: '製造間接費勘定の残高が、4つの部門費勘定に移ります。貸方は何行でしょうか。',
+      explain: '<p>第1次集計は、製造間接費勘定から各部門費勘定への<strong>振替</strong>です。借方に4つの部門費、貸方に製造間接費 4,560,000円 の1行。</p><p>検算：1,960,000 ＋ 1,520,000 ＋ 600,000 ＋ 480,000 ＝ <strong>4,560,000円</strong>。<mark>金額が増えも減りもしていないことを必ず確かめてください。</mark>集計は箱の組み替えであって、新しい原価の発生ではありません。</p>'
+    },
+    {
+      text: '直接配賦法により補助部門費を製造部門へ配賦した。動力部門費 600,000円 は切削部門へ 360,000円・組立部門へ 240,000円、修繕部門費 480,000円 は切削部門へ 360,000円・組立部門へ 120,000円 である。第2次集計の仕訳を示しなさい。',
+      debit: [['切削部門費', 720000], ['組立部門費', 360000]],
+      credit: [['動力部門費', 600000], ['修繕部門費', 480000]],
+      hint: '借方は部門ごとにまとめます。切削部門には2つの補助部門から入ってきます。',
+      explain: '<p>借方は<strong>部門ごとに合算</strong>します。切削部門 360,000 ＋ 360,000 ＝ <strong>720,000円</strong>、組立部門 240,000 ＋ 120,000 ＝ <strong>360,000円</strong>。</p><p>貸方は補助部門費勘定を全額消します。動力 600,000 ＋ 修繕 480,000 ＝ 1,080,000円。借方も 720,000 ＋ 360,000 ＝ 1,080,000円 で一致します。</p><p><mark>第2次集計が終わると、補助部門費勘定の残高はゼロになります。</mark>これが第2次集計の目的です。残高が残っていたら配り残しがあります。</p>'
+    },
+    {
+      text: '実際配賦により、製造部門費を仕掛品へ振り替えた。切削部門費は 2,680,000円、組立部門費は 1,880,000円 である。第3次集計の仕訳を示しなさい。',
+      debit: [['仕掛品', 4560000]],
+      credit: [['切削部門費', 2680000], ['組立部門費', 1880000]],
+      hint: '製造指図書ごとの内訳は原価計算表で管理し、仕訳では合計額を1本で書きます。',
+      explain: '<p>借方 仕掛品 2,680,000 ＋ 1,880,000 ＝ <strong>4,560,000円</strong>。貸方は製造部門費勘定を部門ごとに立てます。</p><p>実際配賦なので、<mark>製造間接費の実際発生額 4,560,000円 が余さず仕掛品へ移ります。</mark>配賦差異は生じません。差異が生じるのは予定配賦をしたときだけです。</p><p>No.101 と No.102 の内訳は原価計算表で管理するので、仕訳には現れません。</p>'
+    },
+    {
+      text: '部門別予定配賦率により、製造部門費を仕掛品へ配賦した。切削部門の予定配賦率は @1,300円・実際機械運転時間 2,000時間、組立部門の予定配賦率は @960円・実際直接作業時間 2,000時間 である。',
+      debit: [['仕掛品', 4520000]],
+      credit: [['切削部門費', 2600000], ['組立部門費', 1920000]],
+      hint: '予定配賦額 ＝ 部門別予定配賦率 × その部門の実際操業度。部門ごとに計算します。',
+      explain: '<p>切削部門 @1,300 × 2,000時間 ＝ <strong>2,600,000円</strong>／組立部門 @960 × 2,000時間 ＝ <strong>1,920,000円</strong>。合計 <strong>4,520,000円</strong> が仕掛品へ入ります。</p><p><mark>予定するのは率だけで、掛ける操業度は実際のものを使います。</mark>UNIT 10 の予定配賦とまったく同じ構造で、率が部門の数だけあるだけです。</p><p>この仕訳は月末を待たずに書けます。第2次集計が終わらないと実際配賦率が出せない部門別計算では、予定配賦の利点がさらに大きくなります。</p>'
+    },
+    {
+      text: '月末に、切削部門費勘定の残高を切削部門費配賦差異勘定へ振り替えた。当月の予定配賦額は 2,600,000円、実際発生額（第2次集計後）は 2,680,000円 である。',
+      debit: [['切削部門費配賦差異', 80000]],
+      credit: [['切削部門費', 80000]],
+      hint: '部門費勘定は借方が実際、貸方が予定。どちらが大きいでしょうか。',
+      explain: '<p>配賦差異 ＝ 予定配賦額 2,600,000 − 実際発生額 2,680,000 ＝ <strong>△80,000円</strong>。マイナスなので<strong>借方差異（不利差異）</strong>です。</p><p>切削部門費勘定は借方に実際 2,680,000円、貸方に予定 2,600,000円 で、<mark>借方に 80,000円 の残高が残っています。</mark>これを消すには貸方に 80,000円 を立て、相手科目の差異勘定を借方に置きます。</p><p>差異勘定は借方残高になります。年度末に売上原価へ賦課するとき、売上原価を<strong>増やす</strong>方向に働きます。</p>'
+    },
+    {
+      text: '月末に、組立部門費勘定の残高を組立部門費配賦差異勘定へ振り替えた。当月の予定配賦額は 1,920,000円、実際発生額（第2次集計後）は 1,880,000円 である。',
+      debit: [['組立部門費', 40000]],
+      credit: [['組立部門費配賦差異', 40000]],
+      hint: '前問と符号が逆です。貸借がどちら向きになるか、勘定の残高から考えてください。',
+      explain: '<p>配賦差異 ＝ 予定配賦額 1,920,000 − 実際発生額 1,880,000 ＝ <strong>＋40,000円</strong>。プラスなので<strong>貸方差異（有利差異）</strong>です。</p><p>組立部門費勘定は借方に実際 1,880,000円、貸方に予定 1,920,000円。<mark>借方が 40,000円 足りません。</mark>だから差異を<strong>借方</strong>に立てて貸借を合わせ、相手科目の差異勘定を貸方に置きます。</p><p><strong>差異勘定が貸方残高（有利差異）になることと、部門費勘定の借方に差異を書くことは、同じ1本の仕訳の裏表です。</strong>符号の式を暗記するより、「貸借が合うようにどちら側に入れるか」から考えるほうが確実です。</p>'
+    },
+    {
+      text: '会計年度末に、切削部門費配賦差異勘定の借方残高 240,000円 を売上原価に賦課した。',
+      debit: [['売上原価', 240000]],
+      credit: [['切削部門費配賦差異', 240000]],
+      hint: '借方残高の差異は不利差異です。売上原価を増やすのか減らすのか。',
+      explain: '<p>借方残高の差異は<strong>不利差異</strong>で、製品原価に入れきれなかった分を意味します。会計年度末には売上原価を<strong>増やす</strong>方向で処理するので、<mark>売上原価が借方</mark>に来ます。これが売上原価加減法です。</p><p>差異勘定の借方残高を消すには貸方に立てる必要があり、相手科目が売上原価の借方になる、という順で考えても同じ答えになります。</p><p><strong>月末に部門費勘定の残高を差異勘定へ振り替えるのと、年度末に差異勘定の残高を売上原価へ賦課するのは別の手続です。</strong>問題文がどちらを求めているかを読み分けてください。</p>'
+    },
+    {
+      text: '相互配賦法（簡便法）の第1次配賦を行った。動力部門費 600,000円 を切削部門へ 300,000円・組立部門へ 200,000円・修繕部門へ 100,000円 配賦し、修繕部門費 480,000円 を切削部門へ 288,000円・組立部門へ 96,000円・動力部門へ 96,000円 配賦した。この第1次配賦の仕訳を示しなさい。',
+      debit: [['切削部門費', 588000], ['組立部門費', 296000], ['動力部門費', 96000], ['修繕部門費', 100000]],
+      credit: [['動力部門費', 600000], ['修繕部門費', 480000]],
+      hint: '第1次配賦では補助部門も配賦先になります。借方に補助部門が現れます。',
+      explain: '<p>借方は部門ごとに合算します。切削 300,000 ＋ 288,000 ＝ <strong>588,000円</strong>、組立 200,000 ＋ 96,000 ＝ <strong>296,000円</strong>、動力へ <strong>96,000円</strong>（修繕部門から）、修繕へ <strong>100,000円</strong>（動力部門から）。</p><p>検算：借方 588,000 ＋ 296,000 ＋ 96,000 ＋ 100,000 ＝ 1,080,000円。貸方 600,000 ＋ 480,000 ＝ 1,080,000円。一致します。</p><p><mark>第1次配賦だけでは補助部門の箱が空になりません。</mark>動力部門に 96,000円、修繕部門に 100,000円 が残ります。これを第2次配賦で処理します。</p>'
+    },
+    {
+      text: '前問の続きとして、相互配賦法（簡便法）の第2次配賦を行った。第1次配賦で動力部門に残った 96,000円 を切削部門 3 ： 組立部門 2 の割合で、修繕部門に残った 100,000円 を切削部門 3 ： 組立部門 1 の割合で配賦する。',
+      debit: [['切削部門費', 132600], ['組立部門費', 63400]],
+      credit: [['動力部門費', 96000], ['修繕部門費', 100000]],
+      hint: '第2次配賦は直接配賦法です。補助部門には配りません。',
+      explain: '<p>動力部門 96,000円 を 3 ： 2 で　切削 96,000 × 3 ÷ 5 ＝ <strong>57,600円</strong>／組立 96,000 × 2 ÷ 5 ＝ <strong>38,400円</strong><br>修繕部門 100,000円 を 3 ： 1 で　切削 100,000 × 3 ÷ 4 ＝ <strong>75,000円</strong>／組立 100,000 × 1 ÷ 4 ＝ <strong>25,000円</strong></p><p>借方 切削 57,600 ＋ 75,000 ＝ <strong>132,600円</strong>、組立 38,400 ＋ 25,000 ＝ <strong>63,400円</strong>。検算：132,600 ＋ 63,400 ＝ 196,000円 ＝ 96,000 ＋ 100,000円。</p><p><mark>第2次配賦で配るのは「その部門に入ってきた金額」です。</mark>動力部門が配るのは 96,000円（修繕部門から受け取った額）であって、動力部門が修繕部門へ配った 100,000円 ではありません。</p>'
+    },
+    {
+      text: '当月、動力部門で使用した燃料 120,000円 と、切削部門の機械に対する減価償却費 340,000円 を、それぞれ部門個別費として各部門に賦課した。なお減価償却費の貸方は機械減価償却累計額とする。',
+      debit: [['動力部門費', 120000], ['切削部門費', 340000]],
+      credit: [['材料', 120000], ['機械減価償却累計額', 340000]],
+      hint: '部門個別費は発生した部門が特定できるので、配賦ではなく賦課します。',
+      explain: '<p>燃料は<strong>間接材料費</strong>で、動力部門で使われたことが分かるので動力部門費に<mark>賦課</mark>します。切削部門の機械の減価償却費は<strong>間接経費</strong>で、切削部門費に賦課します。</p><p><strong>部門個別費はすべて製造間接費です。</strong>製品から見れば間接費であり、部門から見れば個別費である、というだけのことです。直接材料費や直接労務費とは別の階層の話なので、混同しないでください。</p><p>賦課なので配賦基準は登場しません。配賦基準が要るのは、部門共通費（建物の減価償却費など）のほうです。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-bumon', {
+  title: '計算ドリル — 部門別計算',
+  questions: [
+    {
+      text: '部門共通費のうち建物減価償却費 900,000円 を占有面積で配賦する。占有面積は切削部門 1,200㎡、組立部門 900㎡、動力部門 500㎡、修繕部門 400㎡ である。① 配賦率（円／㎡）、② 切削部門への配賦額、③ 修繕部門への配賦額を求めなさい。',
+      answer: [300, 360000, 120000],
+      formula: ['900000 / (1200 + 900 + 500 + 400)', '(900000 / 3000) * 1200', '(900000 / 3000) * 400'],
+      labels: ['① 配賦率（円／㎡）', '② 切削部門（円）', '③ 修繕部門（円）'],
+      hint: '分母は4部門の面積の合計です。補助部門も配賦先に含まれます。',
+      explain: '<p>① 900,000 ÷（1,200 ＋ 900 ＋ 500 ＋ 400 ＝ 3,000㎡）＝ <strong>@300円／㎡</strong><br>② @300 × 1,200 ＝ <strong>360,000円</strong><br>③ @300 × 400 ＝ <strong>120,000円</strong></p><p><mark>部門共通費は補助部門にも配賦します。</mark>動力部門も修繕部門も工場の建物を使っているからです。補助部門を分母から外すのは第2次集計の直接配賦法の話であって、部門共通費の配賦とは別の場面です。</p><p>検算：@300 ×（1,200 ＋ 900 ＋ 500 ＋ 400）＝ 900,000円。全額が配り切れています。</p>'
+    },
+    {
+      text: '部門個別費は切削部門 1,408,000円、組立部門 1,106,000円、動力部門 402,000円、修繕部門 264,000円 である。部門共通費の配賦額は切削部門 552,000円、組立部門 414,000円、動力部門 198,000円、修繕部門 216,000円 であった。① 切削部門の部門費合計、② 動力部門の部門費合計、③ 4部門の部門費合計を求めなさい。',
+      answer: [1960000, 600000, 4560000],
+      formula: ['1408000 + 552000', '402000 + 198000', '1408000 + 1106000 + 402000 + 264000 + 552000 + 414000 + 198000 + 216000'],
+      labels: ['① 切削部門（円）', '② 動力部門（円）', '③ 4部門合計（円）'],
+      hint: '③は縦の合計と横の合計のどちらで計算しても同じ値になります。',
+      explain: '<p>① 1,408,000 ＋ 552,000 ＝ <strong>1,960,000円</strong><br>② 402,000 ＋ 198,000 ＝ <strong>600,000円</strong><br>③ 部門個別費 3,180,000 ＋ 部門共通費 1,380,000 ＝ <strong>4,560,000円</strong></p><p>③は各部門の合計を足しても同じです。1,960,000 ＋ 1,520,000 ＋ 600,000 ＋ 480,000 ＝ 4,560,000円。</p><p><mark>配賦表を作ったら、縦と横の両方向で合計を取ってください。</mark>片方だけだと、部門間の振り分けを間違えていても総額は合ってしまい、気づけません。</p>'
+    },
+    {
+      text: '直接配賦法により動力部門費 600,000円 を配賦する。当月の動力供給量は切削部門 3,600kWh、組立部門 2,400kWh、修繕部門 1,200kWh であった。① 配賦計算に使う分母（kWh）、② 切削部門への配賦額、③ 組立部門への配賦額を求めなさい。',
+      answer: [6000, 360000, 240000],
+      formula: ['3600 + 2400', '600000 * 3600 / (3600 + 2400)', '600000 * 2400 / (3600 + 2400)'],
+      labels: ['① 分母（kWh）', '② 切削部門（円）', '③ 組立部門（円）'],
+      hint: '直接配賦法は補助部門への供給を無視します。分母はどうなるでしょうか。',
+      explain: '<p>① 修繕部門への 1,200kWh を無視するので、分母は 3,600 ＋ 2,400 ＝ <strong>6,000kWh</strong>。資料上の総供給量 7,200kWh ではありません。<br>② 600,000 × 3,600 ÷ 6,000 ＝ <strong>360,000円</strong><br>③ 600,000 × 2,400 ÷ 6,000 ＝ <strong>240,000円</strong></p><p><mark>分母を 7,200 のままにすると、切削 300,000 ＋ 組立 200,000 ＝ 500,000円 にしかならず、100,000円 が動力部門に残ります。</mark>補助部門の箱を空にするのが第2次集計の目的でしたから、これでは目的を果たせません。</p><p>「無視する」とは<strong>その列を最初から無かったことにして割合を取り直す</strong>ことです。分子だけ消して分母をそのままにするのが、この方法でいちばん多い事故です。</p>'
+    },
+    {
+      text: '直接配賦法により補助部門費を配賦した結果、切削部門には動力部門から 360,000円・修繕部門から 360,000円、組立部門には動力部門から 240,000円・修繕部門から 120,000円 が配賦された。第1次集計の部門費は切削部門 1,960,000円、組立部門 1,520,000円 である。① 切削部門の製造部門費、② 組立部門の製造部門費、③ 両部門の合計を求めなさい。',
+      answer: [2680000, 1880000, 4560000],
+      formula: ['1960000 + 360000 + 360000', '1520000 + 240000 + 120000', '1960000 + 360000 + 360000 + 1520000 + 240000 + 120000'],
+      labels: ['① 切削部門（円）', '② 組立部門（円）', '③ 合計（円）'],
+      hint: '③が第1次集計の総額と一致するかを確かめてください。',
+      explain: '<p>① 1,960,000 ＋ 360,000 ＋ 360,000 ＝ <strong>2,680,000円</strong><br>② 1,520,000 ＋ 240,000 ＋ 120,000 ＝ <strong>1,880,000円</strong><br>③ <strong>4,560,000円</strong></p><p>③は第1次集計の総額（1,960,000 ＋ 1,520,000 ＋ 600,000 ＋ 480,000 ＝ 4,560,000円）と一致します。<mark>第2次集計は補助部門から製造部門へ金額を移す手続であって、総額を変えません。</mark></p><p>合計が合わない場合は、配り残しがあるか二重に配っています。この検算は配賦法を問わず必ず成り立つので、答案を書く前に一度取ってください。</p>'
+    },
+    {
+      text: '相互配賦法（簡便法）により動力部門費 600,000円 を第1次配賦する。当月の動力供給量は切削部門 3,600kWh、組立部門 2,400kWh、修繕部門 1,200kWh であった。① 切削部門への配賦額、② 組立部門への配賦額、③ 修繕部門への配賦額を求めなさい。',
+      answer: [300000, 200000, 100000],
+      formula: ['600000 * 3600 / 7200', '600000 * 2400 / 7200', '600000 * 1200 / 7200'],
+      labels: ['① 切削部門（円）', '② 組立部門（円）', '③ 修繕部門（円）'],
+      hint: '第1次配賦は資料どおりの割合です。補助部門にも配ります。',
+      explain: '<p>分母は資料どおり 3,600 ＋ 2,400 ＋ 1,200 ＝ <strong>7,200kWh</strong>。<br>① 600,000 × 3,600 ÷ 7,200 ＝ <strong>300,000円</strong><br>② 600,000 × 2,400 ÷ 7,200 ＝ <strong>200,000円</strong><br>③ 600,000 × 1,200 ÷ 7,200 ＝ <strong>100,000円</strong></p><p>検算：300,000 ＋ 200,000 ＋ 100,000 ＝ 600,000円。</p><p><mark>直接配賦法との違いは分母だけです。</mark>直接配賦法なら 6,000kWh、相互配賦法の第1次配賦なら 7,200kWh。問題文がどちらの方法かを読み落とすと、ここで全部ずれます。</p>'
+    },
+    {
+      text: '相互配賦法（簡便法）の第1次配賦の結果、動力部門に 96,000円、修繕部門に 100,000円 が残った。第2次配賦を行う。動力供給量は切削部門 3,600kWh・組立部門 2,400kWh、修繕時間は切削部門 60時間・組立部門 20時間 である（補助部門への提供分は除く）。① 動力部門から切削部門への配賦額、② 修繕部門から切削部門への配賦額、③ 切削部門が第2次配賦で受け取る合計額を求めなさい。',
+      answer: [57600, 75000, 132600],
+      formula: ['96000 * 3600 / (3600 + 2400)', '100000 * 60 / (60 + 20)', '96000 * 3600 / (3600 + 2400) + 100000 * 60 / (60 + 20)'],
+      labels: ['① 動力部門から（円）', '② 修繕部門から（円）', '③ 合計（円）'],
+      hint: '第2次配賦は直接配賦法で行います。それぞれの部門が配るのはいくらでしょうか。',
+      explain: '<p>① 動力部門の 96,000円 を 3,600 ： 2,400 ＝ 3 ： 2 で　96,000 × 3 ÷ 5 ＝ <strong>57,600円</strong><br>② 修繕部門の 100,000円 を 60 ： 20 ＝ 3 ： 1 で　100,000 × 3 ÷ 4 ＝ <strong>75,000円</strong><br>③ 57,600 ＋ 75,000 ＝ <strong>132,600円</strong></p><p><mark>動力部門が配るのは 96,000円 です。</mark>これは修繕部門から動力部門に入ってきた金額であり、動力部門が修繕部門へ配った 100,000円 ではありません。「自分が出した分」と「自分に入ってきた分」が入れ替わりやすいところです。</p><p>検算：組立部門は 96,000 × 2 ÷ 5 ＝ 38,400円、100,000 × 1 ÷ 4 ＝ 25,000円 で計 63,400円。132,600 ＋ 63,400 ＝ 196,000円 ＝ 96,000 ＋ 100,000円。</p>'
+    },
+    {
+      text: '製造部門費を実際配賦する。切削部門費は 2,680,000円 で配賦基準は機械運転時間（No.101 が 1,200時間、No.102 が 800時間）、組立部門費は 1,880,000円 で配賦基準は直接作業時間（No.101 が 1,100時間、No.102 が 900時間）である。① 切削部門の実際配賦率、② 組立部門の実際配賦率、③ No.101 への配賦額の合計を求めなさい。',
+      answer: [1340, 940, 2642000],
+      formula: ['2680000 / (1200 + 800)', '1880000 / (1100 + 900)', '(2680000 / 2000) * 1200 + (1880000 / 2000) * 1100'],
+      labels: ['① 切削部門の配賦率（円）', '② 組立部門の配賦率（円）', '③ No.101（円）'],
+      hint: '部門ごとに基準が違います。切削は機械運転時間、組立は直接作業時間です。',
+      explain: '<p>① 2,680,000 ÷ 2,000時間 ＝ <strong>@1,340円</strong><br>② 1,880,000 ÷ 2,000時間 ＝ <strong>@940円</strong><br>③ @1,340 × 1,200 ＋ @940 × 1,100 ＝ 1,608,000 ＋ 1,034,000 ＝ <strong>2,642,000円</strong></p><p>検算：No.102 は @1,340 × 800 ＋ @940 × 900 ＝ 1,072,000 ＋ 846,000 ＝ 1,918,000円。2,642,000 ＋ 1,918,000 ＝ 4,560,000円 で製造間接費の実際発生額と一致します。<mark>実際配賦なら必ず一致します。</mark></p><p>切削と組立で単位が違うことに注意してください。同じ「時間」と書かれていても、測っているものが機械運転時間と直接作業時間で別です。</p>'
+    },
+    {
+      text: '部門別予定配賦率を計算する。切削部門の年間製造間接費予算額は 34,320,000円 で年間基準操業度は機械運転時間 26,400時間、組立部門の年間予算額は 23,040,000円 で年間基準操業度は直接作業時間 24,000時間 である。当月の実際操業度は両部門とも 2,000時間 であった。① 切削部門の予定配賦率、② 組立部門の予定配賦率、③ 当月の予定配賦額の合計を求めなさい。',
+      answer: [1300, 960, 4520000],
+      formula: ['34320000 / 26400', '23040000 / 24000', '(34320000 / 26400) * 2000 + (23040000 / 24000) * 2000'],
+      labels: ['① 切削部門（円）', '② 組立部門（円）', '③ 予定配賦額の合計（円）'],
+      hint: '部門ごとに基準操業度が違います。片方の数値を両方に使わないでください。',
+      explain: '<p>① 34,320,000 ÷ 26,400 ＝ <strong>@1,300円</strong><br>② 23,040,000 ÷ 24,000 ＝ <strong>@960円</strong><br>③ @1,300 × 2,000 ＋ @960 × 2,000 ＝ 2,600,000 ＋ 1,920,000 ＝ <strong>4,520,000円</strong></p><p><mark>基準操業度が 26,400時間 と 24,000時間 でそろっていません。</mark>部門が違えば操業の実態も違うので、そろっていないのがふつうです。そろっていると思い込んで片方の数値を両方に使うと、片方の率がまるごと狂います。</p><p>年間で割っても月間に直して割っても率は同じです（34,320,000 ÷ 12 ＝ 2,860,000 を 26,400 ÷ 12 ＝ 2,200 で割っても @1,300円）。分子と分母の期間をそろえることだけ守ってください。</p>'
+    },
+    {
+      text: '部門別予定配賦額は切削部門 2,600,000円・組立部門 1,920,000円、第2次集計後の実際発生額は切削部門 2,680,000円・組立部門 1,880,000円 であった。① 切削部門の配賦差異（絶対値）、② 組立部門の配賦差異（絶対値）、③ 工場全体の配賦差異（絶対値）を求めなさい。',
+      answer: [80000, 40000, 40000],
+      formula: ['2680000 - 2600000', '1920000 - 1880000', '(2680000 + 1880000) - (2600000 + 1920000)'],
+      labels: ['① 切削部門（絶対値・円）', '② 組立部門（絶対値・円）', '③ 工場全体（絶対値・円）'],
+      hint: '部門ごとに符号が違います。合計するときは符号を付けてから足してください。',
+      explain: '<p>① 2,600,000 − 2,680,000 ＝ △80,000 → <strong>80,000円の不利差異</strong><br>② 1,920,000 − 1,880,000 ＝ ＋40,000 → <strong>40,000円の有利差異</strong><br>③ △80,000 ＋ 40,000 ＝ △40,000 → <strong>40,000円の不利差異</strong></p><p><mark>①と②の絶対値を足して 120,000円 としないでください。</mark>符号が逆なので打ち消し合い、工場全体では 40,000円 にとどまります。</p><p>そしてこれが部門別に差異を把握する意味です。工場全体の 40,000円 だけを見ていたら、切削部門の 80,000円 の不利が組立部門の健闘に半分打ち消されて見えなくなっていました。<strong>部門別に把握してはじめて、切削部門の責任者に話ができます。</strong></p>'
+    },
+    {
+      text: '切削部門について公式法変動予算により差異を分析する。月間の変動費予算額は 1,144,000円、月間の固定費予算額は 1,716,000円、月間の基準操業度は機械運転時間 2,200時間 である。当月の実際機械運転時間は 2,000時間、実際発生額は 2,680,000円 であった。① 固定費率、② 予算差異（絶対値）、③ 操業度差異（絶対値）を求めなさい。',
+      answer: [780, 76000, 156000],
+      formula: ['1716000 / 2200', '(1144000 / 2200) * 2000 + 1716000 - 2680000', '(1716000 / 2200) * (2200 - 2000)'],
+      labels: ['① 固定費率（円）', '② 予算差異（絶対値・円）', '③ 操業度差異（絶対値・円）'],
+      hint: '変動費率を先に出してください。UNIT 10 のシュラッター図がそのまま使えます。',
+      explain: '<p>変動費率 ＝ 1,144,000 ÷ 2,200 ＝ @520円。<br>① 固定費率 ＝ 1,716,000 ÷ 2,200 ＝ <strong>@780円</strong>（予定配賦率 ＝ @520 ＋ @780 ＝ @1,300円）<br>② 予算許容額 ＝ @520 × 2,000 ＋ 1,716,000 ＝ 1,040,000 ＋ 1,716,000 ＝ 2,756,000円。<br>予算差異 ＝ 2,756,000 − 2,680,000 ＝ ＋76,000 → <strong>76,000円の有利差異</strong><br>③ 操業度差異 ＝ @780 ×（2,000 − 2,200）＝ △156,000 → <strong>156,000円の不利差異</strong></p><p>検算：＋76,000 ＋ △156,000 ＝ △80,000円。予定配賦額 @1,300 × 2,000 ＝ 2,600,000円 との差 2,600,000 − 2,680,000 ＝ △80,000円 と一致します。</p><p><mark>切削部門は節約できているのに、機械を遊ばせています。</mark>合計 80,000円 の不利だけを見て「無駄遣いをしている」と結論するのは誤りでした。必要なのは節約の指示ではなく、仕事を入れることです。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-bumon', {
+  title: '確認テスト — 部門別計算',
+  questions: [
+    {
+      text: '部門別計算を行う理由として、最も適切なものはどれですか。',
+      choices: [
+        '直接材料費と直接労務費を部門ごとに分けて管理するため',
+        '部門によって製造間接費の発生と因果関係のある配賦基準が違うので、部門ごとの率を使って製品原価の正確性を高めるため',
+        '製造間接費の総額を減らすため',
+        '補助部門の費用を製造原価から除外するため'
+      ],
+      answer: 1,
+      explain: '<p>機械中心の切削部門と手作業中心の組立部門では、製造間接費の発生に対応する基準が違います。工場全体で1つの率を使うと、<mark>切削部門の機械の減価償却費が、組立部門で長時間作業した製品に流れ込みます。</mark>部門ごとの率を使えばこの歪みが小さくなります。</p><p>選択肢1は誤りです。<strong>部門別に分けるのは製造間接費だけ</strong>で、直接材料費・直接労務費は製造指図書番号が分かるので仕掛品へ直課されます。</p><p>選択肢3も誤りです。配賦法をどう変えても総額 4,560,000円 は変わりません。部門別計算は配り方を変えるだけで、原価そのものを減らしません。<br>選択肢4も誤りで、補助部門費は第2次集計を通じてすべて製造部門へ移り、製造原価に含まれます。</p>'
+    },
+    {
+      text: '補助部門費を製品に直接配賦できない理由として、最も適切なものはどれですか。',
+      choices: [
+        '補助部門費は製造原価ではなく販売費及び一般管理費だから',
+        '製品が補助部門を通過しないため、配賦基準に使える量が製品ごとに測れないから',
+        '補助部門費は金額が小さく、配賦しても影響がないから',
+        '補助部門費は直接費として処理されるから'
+      ],
+      answer: 1,
+      explain: '<p>動力部門は電気を作り、それを切削部門と組立部門に送っています。<strong>製品そのものに電気を送っているわけではありません。</strong>製品が動力部門を通過しないので、「この製品が動力部門で何時間かかった」という数値がそもそも存在しません。</p><p>一方、製造部門なら「No.101 は切削部門の機械を 1,200時間 占有した」と測れます。だから<mark>補助部門費をいったん製造部門に移し、製造部門から製品へ配る</mark>という2段構えになります。</p><p>選択肢1は誤りです。補助部門は工場の中にあり製造活動を支えているので、その費用は製造間接費です。本社の管理部門であれば販売費及び一般管理費になります。</p>'
+    },
+    {
+      text: '次のうち、部門共通費として配賦の対象になるものはどれですか。',
+      choices: [
+        '切削部門の機械に対する減価償却費',
+        '動力部門で使用した燃料費',
+        '工場建物全体に対する火災保険料',
+        '組立部門の間接工に対する賃金'
+      ],
+      answer: 2,
+      explain: '<p>工場建物全体の火災保険料は、どの部門の分がいくらかを分けられないので<strong>部門共通費</strong>です。占有面積などの基準で各部門に配賦します。</p><p>選択肢1・2・4はいずれも<strong>発生した部門が特定できる</strong>ので部門個別費で、その部門に賦課します。</p><p><mark>「部門ごとに分けられるか」だけが判定の基準です。</mark>費目別計算で「製品ごとに分けられるか」を問うたのと同じ形の問いが、1段下で繰り返されています。<br>なお部門個別費もすべて製造間接費です。「個別費」は部門に対する言葉であって、直接費という意味ではありません。</p>'
+    },
+    {
+      text: '直接配賦法の特徴として、正しいものはどれですか。',
+      choices: [
+        '補助部門どうしの用役の授受を無視し、補助部門費を製造部門にだけ配賦する',
+        '補助部門どうしの用役の授受を連立方程式で厳密に処理する',
+        '補助部門費を製品に直接配賦する',
+        '部門共通費を配賦せずに製造部門に直課する'
+      ],
+      answer: 0,
+      explain: '<p>直接配賦法は、<strong>資料のうち補助部門へ向かう列を消してしまう</strong>方法です。残った製造部門の欄だけで割合を取り直し、それに従って配ります。</p><p>このとき<mark>分母も「無視した後」の合計に置き換えます。</mark>分子だけ消して分母をそのままにすると、補助部門に金額が残り、箱が空になりません。</p><p>選択肢2は純粋の相互配賦法（1級の範囲）です。選択肢3は誤りで、補助部門費は製造部門を経由してから製品へ配られます。<br>選択肢4も誤りです。「直接」という語は<strong>補助部門を経由せず製造部門へ配る</strong>という意味であって、部門共通費の処理とは関係ありません。</p>'
+    },
+    {
+      text: '動力部門費 600,000円 を直接配賦法で配賦します。当月の動力供給量は切削部門 3,600kWh、組立部門 2,400kWh、修繕部門 1,200kWh でした。切削部門への配賦額はいくらですか。',
+      choices: [
+        '300,000円',
+        '360,000円',
+        '200,000円',
+        '240,000円'
+      ],
+      answer: 1,
+      invariant: [
+        ['600000 * 3600 / (3600 + 2400)', 'answer'],
+        ['600000 * 3600 / (3600 + 2400) + 600000 * 2400 / (3600 + 2400)', '600000']
+      ],
+      explain: '<p>直接配賦法なので修繕部門への 1,200kWh を無視し、分母は 3,600 ＋ 2,400 ＝ <strong>6,000kWh</strong>。<br>600,000 × 3,600 ÷ 6,000 ＝ <strong>360,000円</strong>。</p><p>選択肢1の 300,000円 は、<mark>分母を資料どおりの 7,200kWh のままにした</mark>場合の金額です（600,000 × 3,600 ÷ 7,200）。この値は相互配賦法の第1次配賦では正しいのですが、直接配賦法では誤りです。この間違い方をすると、切削 300,000 ＋ 組立 200,000 ＝ 500,000円 にしかならず、100,000円 が動力部門に残ります。</p><p>選択肢3の 200,000円 と選択肢4の 240,000円 は、いずれも組立部門への配賦額です（前者は分母 7,200、後者は分母 6,000）。</p>'
+    },
+    {
+      text: '相互配賦法（簡便法）について、正しい記述はどれですか。',
+      choices: [
+        '第1次配賦も第2次配賦も、資料どおりの用役提供割合で配賦する',
+        '第1次配賦は資料どおりの割合で補助部門にも配賦し、第2次配賦は直接配賦法で製造部門にだけ配賦する',
+        '第1次配賦は直接配賦法で行い、第2次配賦で補助部門間の授受を処理する',
+        '補助部門費が完全にゼロになるまで配賦を繰り返す'
+      ],
+      answer: 1,
+      explain: '<p>第1次配賦では資料どおりの割合で<strong>補助部門にも配賦</strong>します。これで補助部門間の用役の授受が1往復ぶん計算に入ります。しかし<mark>補助部門の箱は空になりません。</mark>互いに少額が戻ってくるからです。</p><p>そこで第2次配賦を行いますが、ここでまた資料どおりの割合で配ると、また互いに残額が出ます。<strong>第3次、第4次と繰り返してもゼロにはならず、無限に続きます。</strong>だからどこかで打ち切る必要があり、2級の簡便法は2回目で打ち切り、その回だけ直接配賦法を使うと決めています。</p><p>選択肢4はこの理由から誤りです。残額がわずかなので、そこに直接配賦法の割り切りを持ち込んでも影響が小さい、という判断で打ち切ります。</p>'
+    },
+    {
+      text: '相互配賦法（簡便法）の第1次配賦の結果、動力部門には修繕部門から 96,000円 が配賦され、修繕部門には動力部門から 100,000円 が配賦されました。第2次配賦で動力部門が製造部門へ配賦する金額はいくらですか。',
+      choices: [
+        '100,000円',
+        '96,000円',
+        '196,000円',
+        '4,000円'
+      ],
+      answer: 1,
+      invariant: [
+        ['96000', 'answer']
+      ],
+      explain: '<p>第2次配賦で配るのは、<mark>その部門の欄に残っている金額</mark>——つまり第1次配賦で<strong>受け取った</strong>額です。動力部門が受け取ったのは修繕部門からの <strong>96,000円</strong> です。</p><p>選択肢1の 100,000円 は、動力部門が第1次配賦で修繕部門へ<strong>配った</strong>額です。これは修繕部門の欄に載っているので、第2次配賦で修繕部門が配る金額になります。「自分が出した分」と「自分に入ってきた分」が入れ替わりやすいところです。</p><p>選択肢4の 4,000円 は両者の差額ですが、差額を配るという処理はありません。<strong>2つの部門はそれぞれ独立に、自分の欄の金額を配ります。</strong>第2次配賦の総額は 96,000 ＋ 100,000 ＝ 196,000円 です。</p>'
+    },
+    {
+      text: '直接配賦法と相互配賦法（簡便法）で同じ資料を処理した場合について、正しい記述はどれですか。',
+      choices: [
+        '製造部門費の合計額が配賦法によって変わる',
+        '製造部門費の合計額は同じだが、各製造部門への分かれ方が変わる',
+        '相互配賦法のほうが製造部門費の合計額が必ず大きくなる',
+        '直接配賦法では補助部門費の一部が配賦されずに残る'
+      ],
+      answer: 1,
+      explain: '<p>配賦法が変えるのは<strong>製造部門どうしの分け方だけ</strong>で、総額は動きません。第2次集計は補助部門から製造部門へ金額を移す手続であり、金額を生んだり消したりしないからです。</p><p>設例では、直接配賦法が切削 2,680,000・組立 1,880,000、相互配賦法（簡便法）が切削 2,680,600・組立 1,879,400。<mark>どちらも合計 4,560,000円 です。</mark></p><p><strong>配賦法を答えたあと、まず合計で検算してください。</strong>合計が合わない場合は、配り残しがあるか二重に配っています。<br>選択肢4は誤りです。直接配賦法でも分母を正しく置き換えれば、補助部門費は全額が製造部門へ移ります。残るとしたら分母の置き換えを忘れた計算違いです。</p>'
+    },
+    {
+      text: '部門別予定配賦率を用いて配賦したところ、切削部門は予定配賦額 2,600,000円・実際発生額 2,680,000円、組立部門は予定配賦額 1,920,000円・実際発生額 1,880,000円 でした。工場全体の配賦差異はいくらですか。',
+      choices: [
+        '120,000円の不利差異',
+        '40,000円の不利差異',
+        '40,000円の有利差異',
+        '120,000円の有利差異'
+      ],
+      answer: 1,
+      invariant: [
+        ['(2600000 - 2680000) + (1920000 - 1880000)', '(2600000 + 1920000) - (2680000 + 1880000)'],
+        ['(2680000 + 1880000) - (2600000 + 1920000)', 'answer']
+      ],
+      explain: '<p>切削部門 2,600,000 − 2,680,000 ＝ △80,000円（不利差異）<br>組立部門 1,920,000 − 1,880,000 ＝ ＋40,000円（有利差異）<br>工場全体 △80,000 ＋ 40,000 ＝ <strong>△40,000円（不利差異）</strong></p><p>選択肢1の 120,000円 は、<mark>符号を無視して絶対値を足した</mark>金額です。2つの差異は向きが逆なので打ち消し合います。</p><p>そしてこの設問自体が、部門別に差異を把握する意味を示しています。工場全体の 40,000円 だけを見ていたら、<strong>切削部門の 80,000円 の不利が組立部門の健闘に半分打ち消されて見えなくなっていました。</strong></p>'
+    },
+    {
+      text: '部門費勘定の記入について、正しい記述はどれですか。',
+      choices: [
+        '予定配賦額が実際発生額を上回る場合、差異は部門費勘定の貸方に記入される',
+        '予定配賦額が実際発生額を上回る場合、差異は部門費勘定の借方に記入され、差異勘定は貸方残高（有利差異）になる',
+        '部門費勘定は借方が予定、貸方が実際である',
+        '予定配賦をしても部門費勘定に差異が生じることはない'
+      ],
+      answer: 1,
+      explain: '<p>部門費勘定は<strong>借方が実際、貸方が予定</strong>です。UNIT 10 の製造間接費勘定・材料勘定・賃金給料勘定とすべて同じ構造をしています。</p><p>予定配賦額が実際発生額を上回ると、<mark>貸方のほうが大きく、借方が足りません。</mark>だから差異を借方に立てて貸借を合わせます。相手科目は差異勘定の貸方なので、差異勘定は貸方残高＝<strong>有利差異</strong>になります。</p><p><strong>差異勘定が貸方残高になることと、部門費勘定の借方に差異を書くことは、同じ1本の仕訳の裏表です。</strong>符号の式を暗記するより、「貸借が合うようにどちら側に入れるか」から考えるほうが確実です。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-bumon', {
+  title: '用語の穴埋め — 部門別計算',
+  questions: [
+    {
+      text: '製造間接費をいったん原価部門ごとに集計してから製品に配賦する手続を何といいますか。',
+      answer: ['部門別計算', 'ぶもんべつけいさん', '部門費計算', 'ぶもんひけいさん'],
+      explain: '<p><strong>部門別計算</strong>（部門費計算）。費目別計算と製品別計算のあいだに入る第2次の計算段階です。<mark>目的は2つ</mark>——製品原価の計算を正確にすることと、部門を責任の単位として原価管理に役立てることです。</p>'
+    },
+    {
+      text: '製品の製造作業を直接行う部門を何といいますか。',
+      answer: ['製造部門', 'せいぞうぶもん'],
+      explain: '<p><strong>製造部門</strong>。切削部門・組立部門・鋳造部門・塗装部門など。<mark>製品がその部門を通過していく</mark>ので、その部門で製品が消費した量を測ることができ、部門費を製品に配賦できます。</p>'
+    },
+    {
+      text: '製造部門を補助するだけで、製品の製造作業を行わない部門を何といいますか。',
+      answer: ['補助部門', 'ほじょぶもん'],
+      explain: '<p><strong>補助部門</strong>。動力部門・修繕部門・工場事務部門・材料倉庫部門など。製品がここを通過しないため配賦基準に使える量が測れず、<mark>いったん製造部門へ移してから製品へ配ります。</mark>これが第2次集計です。</p>'
+    },
+    {
+      text: 'どの部門で発生したかが特定できる製造間接費を何といいますか。',
+      answer: ['部門個別費', 'ぶもんこべつひ'],
+      explain: '<p><strong>部門個別費</strong>。切削部門の機械の減価償却費、動力部門の燃料費など。その部門に<strong>賦課</strong>します。<br><mark>部門個別費もすべて製造間接費です。</mark>「個別費」は部門に対する言葉であって、直接費という意味ではありません。</p>'
+    },
+    {
+      text: '複数の部門に共通して発生し、部門ごとに分けられない製造間接費を何といいますか。',
+      answer: ['部門共通費', 'ぶもんきょうつうひ'],
+      explain: '<p><strong>部門共通費</strong>。工場建物の減価償却費・火災保険料（占有面積で配賦）、福利施設負担額（従業員数で配賦）など。分けられないので基準を決めて<strong>配賦</strong>します。<br>部門共通費は<mark>補助部門にも配賦します</mark>。補助部門も工場の建物を使っているからです。</p>'
+    },
+    {
+      text: '補助部門どうしの用役の授受を無視し、補助部門費を製造部門にだけ配賦する方法を何といいますか。',
+      answer: ['直接配賦法', 'ちょくせつはいふほう'],
+      explain: '<p><strong>直接配賦法</strong>。<mark>分母も「無視した後」の合計に置き換えます。</mark>分子だけ消して分母をそのままにすると、補助部門に金額が残って箱が空になりません。<br>計算は簡単ですが、補助部門が他の補助部門へ提供した用役の原価が、製造部門に直接押し付けられます。</p>'
+    },
+    {
+      text: '第1次配賦で補助部門にも配賦し、第2次配賦は直接配賦法で処理して打ち切る方法を何といいますか。',
+      answer: ['相互配賦法', 'そうごはいふほう'],
+      explain: '<p><strong>相互配賦法</strong>（2級で扱うのは簡便法）。補助部門間の用役の授受を1往復だけ計算に入れます。<br>第2次配賦で直接配賦法に切り替えるのは、<mark>資料どおりの割合で配り続けると互いに残額が出て無限に続く</mark>からです。残額がわずかなので、そこに割り切りを持ち込んでも影響が小さいと判断します。</p>'
+    },
+    {
+      text: '原価を集計するために工場内に設けた計算上の区分を何といいますか。',
+      answer: ['原価部門', 'げんかぶもん'],
+      explain: '<p><strong>原価部門</strong>。組織図上の「部」「課」とは必ずしも一致せず、<strong>原価を集計し管理するのに都合のよい単位</strong>で切ります。製造部門と補助部門に分かれます。<br><mark>本社の管理部門は原価部門ではありません。</mark>その費用は販売費及び一般管理費です。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>
