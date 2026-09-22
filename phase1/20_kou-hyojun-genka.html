@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第十二-1-0,工-第十二-2-0,工-第十二-2-ア,工-第十二-2-ウ,工-第十二-3-0,工-第十二-4-0,工-第十二-4-ア">
+<title>標準原価計算 — 日商簿記2級 Phase 1 W6</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 20 標準原価計算</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 20 ／ 6時間 ／ 工業簿記</p>
+    <h1>標準原価計算<br>— 原価差異の分析と記帳</h1>
+    <p class="lead">ここまでの原価計算は「実際にいくらかかったか」を集計するものでした。この単元では発想が変わります。<strong>先に「いくらであるべきか」を決めておき、実際との差を分析する</strong>。それが標準原価計算です。<mark>UNIT 10 で描いたシュラッター図が、そのままこの単元の土台になります</mark>。違うのは、比較の基準が「予定」から「標準」に変わることだけです。第5問で最も出題頻度の高い論点であり、パターンが固定されている分、確実に得点源にできます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 6h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 10問</span>
+      <span class="chip">計算ドリル 10問</span>
+      <span class="chip">確認テスト 12問</span>
+      <span class="chip">穴埋め 8問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">実際原価計算だけでは何が困るのか</a></li>
+      <li><a href="#s2">標準原価計算の3つの目的</a></li>
+      <li><a href="#s3">原価標準 — 製品1個あたりの「あるべき原価」</a></li>
+      <li><a href="#s4">当月の標準原価を出す — 完成品換算量が要る</a></li>
+      <li><a href="#s5">符号の向きを最初に決める</a></li>
+      <li><a href="#s6">記帳方法① パーシャル・プラン</a></li>
+      <li><a href="#s7">記帳方法② シングル・プラン</a></li>
+      <li><a href="#s8">直接材料費差異 — 価格差異と数量差異</a></li>
+      <li><a href="#s9">直接労務費差異 — 賃率差異と時間差異</a></li>
+      <li><a href="#s10">実際原価計算の差異との関係</a></li>
+      <li><a href="#s11">製造間接費差異 — シュラッター図に能率差異が増える</a></li>
+      <li><a href="#s12">標準原価差異の会計処理 — 売上原価加減法</a></li>
+      <li><a href="#s13">仕訳ドリル 10問</a></li>
+      <li><a href="#s14">計算ドリル 10問</a></li>
+      <li><a href="#s15">確認テスト 12問</a></li>
+      <li><a href="#s16">用語の穴埋め 8問</a></li>
+      <li><a href="#s17">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>実際原価計算だけでは何が困るのか</h2>
+
+  <p>ある工場で、今月のテーブル1台の原価が 7,800円 と出ました。この数字を見て、何が分かるでしょうか。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">実際原価は「高いのか安いのか」を教えてくれない</span>
+    <p>7,800円 は事実です。しかし<mark>事実だけでは、工場がうまくやったのかどうかが判定できません。</mark></p>
+    <p>先月は 7,500円 でした。300円 上がっています。悪化したのでしょうか。<br>材料の仕入価格が上がったのかもしれません。作業員が余計に手間をかけたのかもしれません。たまたま高い材料を使ったのかもしれません。<strong>実際原価どうしを比べても、どれが原因か分かりません。</strong>比べている相手（先月の実際原価）も、同じようにいろいろな事情が混ざった数字だからです。</p>
+    <p>ものさしが揺れているものを、ものさしにしてはいけません。<strong>判定するには「揺れない基準」が要ります。</strong></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">先に「あるべき原価」を決めておく</span>
+    <p>「この工場が正常な状態で作れば、テーブル1台は 7,400円 でできるはずだ」という金額を、<strong>作る前に決めておきます</strong>。これが<mark>標準原価</mark>です。<br>実際に 7,800円 かかったなら、400円 の超過です。しかもこの 400円 は、材料の価格が上がったせいなのか、材料を使いすぎたせいなのか、時間をかけすぎたせいなのか、<strong>分解して特定できます</strong>。<br>実際原価計算では「先月と比べて増えた」までしか言えません。標準原価計算は「材料の使いすぎが 50円、作業時間の超過が 200円」というところまで言えます。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">標準原価計算</span><span class="term__r">ひょうじゅんげんかけいさん</span>
+    <p>あらかじめ設定した標準原価によって製品原価を計算し、実際原価との差額（標準原価差異）を分析する原価計算の方法。<strong>実際原価計算の対義語</strong>にあたります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">標準原価計算でも、実際原価の集計はやめない</span>
+    <p>「標準で計算するなら、実際はもう数えなくていい」と考えると行き詰まります。<mark>実際原価を集計しなければ、差異が計算できません。</mark><br>標準原価計算は実際原価計算を置き換えるものではなく、<strong>実際原価に加えて標準原価も計算し、両者を突き合わせる</strong>仕組みです。仕事は減るどころか増えます。それでも実務で採用されるのは、増えた手間以上の情報が得られるからです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>標準原価計算の3つの目的</h2>
+
+  <p>なぜ手間をかけて標準原価を計算するのか。目的は3つあります。<strong>3つとも言えるようにしてください。</strong>確認テストで問われます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">目的① 原価管理</div>
+      <p><strong>最も重要な目的</strong></p>
+      <p class="small">実際原価と標準原価の差を分析し、どこに無駄があったかを特定して現場に伝える。<mark>標準原価計算を導入する第一の理由</mark>。</p>
+      <p class="small muted">差異分析（8〜11章）がこの目的を担う。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">目的② 記帳の簡略化・迅速化</div>
+      <p><strong>月末を待たずに原価が出る</strong></p>
+      <p class="small">完成品原価も仕掛品原価も、標準原価で計算すれば<strong>数量さえ分かれば即座に出ます</strong>。実際原価が確定するのを待つ必要がありません。</p>
+      <p class="small muted">UNIT 10 の予定配賦と同じ発想。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">目的③ 予算編成の基礎</div>
+      <p><strong>計画のものさしになる</strong></p>
+      <p class="small">来期 10,000個 作るなら原価はいくらか。原価標準が決まっていれば掛け算で出ます。利益計画・価格決定の土台になります。</p>
+      <p class="small muted">予算編成・棚卸資産の評価にも使う。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">目的②が効く理由 — 数量だけで原価が決まる</span>
+    <p>実際原価計算では、完成品原価を出すのに材料の実際消費額・実際労務費・製造間接費の配賦額をすべて集計しなければなりません。<strong>どれか1つでも確定しないと、完成品原価が出ません。</strong></p>
+    <p>標準原価計算では、<mark>原価標準 × 完成品数量</mark>で終わりです。テーブル1台 7,400円 と決まっているなら、900台 完成したら 6,660,000円。実際にいくらかかったかを知らなくても書けます。<br>この性質は、月次決算を早く締めたい会社にとって大きな価値があります。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>実際原価計算</th><th>標準原価計算</th></tr></thead>
+    <tbody>
+      <tr><td><strong>製品原価の金額</strong></td><td>実際にかかった額</td><td>あらかじめ決めた標準原価</td></tr>
+      <tr><td><strong>いつ計算できるか</strong></td><td>実際原価がすべて確定してから（月末以降）</td><td>数量が分かった時点ですぐ</td></tr>
+      <tr><td><strong>差異の分析</strong></td><td>予定価格・予定賃率・予定配賦率を使った部分だけ</td><td>価格と数量の両方について分析できる</td></tr>
+      <tr><td><strong>原価管理への使いみち</strong></td><td>前月との比較しかできない</td><td>あるべき原価との比較ができる</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>原価標準 — 製品1個あたりの「あるべき原価」</h2>
+
+  <div class="term">
+    <span class="term__w">原価標準</span><span class="term__r">げんかひょうじゅん</span>
+    <p><strong>製品1個あたりの標準原価</strong>。直接材料費・直接労務費・製造間接費のそれぞれについて、「標準単価 × 標準消費量」の形で設定します。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「原価標準」と「標準原価」は別の言葉</span>
+    <p>字が入れ替わっているだけなので読み飛ばしがちですが、指すものが違います。</p>
+    <p><strong>原価標準</strong>　製品<mark>1個あたり</mark>のあるべき原価。カードに書いてある単価表のこと。<br><strong>標準原価</strong>　原価標準 × 数量で計算した<mark>総額</mark>。「完成品の標準原価 6,660,000円」のように使う。</p>
+    <p>問題文が「原価標準は 7,400円」と言っていれば1個あたりの話、「当月の標準原価」と言っていれば総額の話です。<strong>単位が個あたりなのか総額なのかを、必ず確かめてください。</strong></p>
+  </div>
+
+  <h3>標準原価カード</h3>
+
+  <p>原価標準を1枚にまとめた表を<strong>標準原価カード</strong>といいます。この単元を通して次の設例を使います。</p>
+
+  <div class="card">
+    <div class="card__label">設例 — 製品X の標準原価カード</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>費目</th><th class="amt">標準単価</th><th class="amt">標準消費量</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td>直接材料費</td><td class="amt">@500円／kg</td><td class="amt">4kg</td><td class="amt">2,000円</td></tr>
+        <tr><td>直接労務費</td><td class="amt">@1,200円／時間</td><td class="amt">2時間</td><td class="amt">2,400円</td></tr>
+        <tr><td>製造間接費</td><td class="amt">@1,500円／時間</td><td class="amt">2時間</td><td class="amt">3,000円</td></tr>
+        <tr><td><strong>原価標準（製品1個あたり）</strong></td><td class="amt"></td><td class="amt"></td><td class="amt"><strong>7,400円</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small muted">検算：2,000 ＋ 2,400 ＋ 3,000 ＝ 7,400円。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">3行とも「単価 × 数量」という同じ形をしている</span>
+    <p>直接材料費は <strong>標準単価 × 標準消費量</strong>、直接労務費は <strong>標準賃率 × 標準作業時間</strong>、製造間接費は <strong>標準配賦率 × 標準操業度</strong>。<br>呼び名は違いますが、<mark>どれも「1単位あたりの金額」と「使う量」の掛け算</mark>です。だから差異も3つとも同じ形——<strong>単価のズレ</strong>と<strong>数量のズレ</strong>——に分かれます。これが差異分析の全体像です。</p>
+  </div>
+
+  <h3>製造間接費の標準配賦率は、どこから来るのか</h3>
+
+  <p><strong>ここが UNIT 10 との接続点です。</strong>標準配賦率 @1,500円 は天から降ってきた数字ではなく、予定配賦率とまったく同じ手順で計算します。</p>
+
+  <div class="card">
+    <div class="card__label">設例 — 製造間接費の月間予算（公式法変動予算）</div>
+    <ul class="small">
+      <li>月間の基準操業度　直接作業時間 1,800時間</li>
+      <li>月間の変動費予算　1,080,000円（変動費率 @600円）</li>
+      <li>月間の固定費予算　1,620,000円（固定費率 @900円）</li>
+      <li>月間の製造間接費予算額　2,700,000円</li>
+    </ul>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li>変動費率 ＝ 1,080,000 ÷ 1,800 ＝ <strong>@600円</strong></li>
+      <li>固定費率 ＝ 1,620,000 ÷ 1,800 ＝ <strong>@900円</strong></li>
+      <li>標準配賦率 ＝ @600 ＋ @900 ＝ <strong>@1,500円</strong></li>
+      <li>製品1個あたりの標準製造間接費 ＝ @1,500 × 標準作業時間 2時間 ＝ <strong>3,000円</strong></li>
+    </ol>
+  </div>
+
+  <p class="small muted">検算：2,700,000 ÷ 1,800 ＝ @1,500円。変動費率と固定費率を足したものと一致します。UNIT 10 の「予定配賦率 ＝ 変動費率 ＋ 固定費率」と同じ式です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">UNIT 10 の予定配賦と、何が違うのか</span>
+    <p>計算式は同じです。違うのは<strong>掛ける操業度</strong>です。</p>
+    <p><strong>UNIT 10（予定配賦）</strong>　予定配賦額 ＝ 予定配賦率 × <mark>実際</mark>操業度<br><strong>この単元（標準原価計算）</strong>　標準配賦額 ＝ 標準配賦率 × <mark>標準</mark>操業度</p>
+    <p>予定配賦は、率だけを予定し、操業度は実際のものを使いました。だから「実際に 1,750時間 かかったなら、その 1,750時間 ぶんを製品原価にする」という計算になります。<strong>時間をかけすぎたかどうかは問いませんでした。</strong></p>
+    <p>標準原価計算は、操業度まで標準にします。「この生産量なら 1,680時間 で済むはずだ」という時間で配賦するので、<mark>1,750時間 かかったという事実は製品原価に入らず、差異として切り離されます</mark>。これが 11章 で能率差異という新しい差異が増える理由です。</p>
+  </div>
+
+  <h3>標準はどうやって決めるのか</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">標準は「理想」ではなく「正常な状態で達成できる値」</span>
+    <p>標準消費量 4kg は、材料を1グラムも無駄にしない理想値ではありません。<strong>正常な作業をしていても出てしまう切りくずや不良の分を織り込んだ</strong>、現実に達成可能な水準です。<br>理想値を標準にすると、どんなに頑張っても必ず不利差異が出ます。<mark>いつも不利差異が出る基準は、現場が真剣に受け取らなくなります。</mark>「今月も不利差異でしたね」で終わるなら、差異を計算する意味がありません。</p>
+  </div>
+
+  <p class="small muted">試験では標準原価カードが問題文に与えられます。自分で標準を設定する必要はありません。ただし「標準消費量 4kg に切りくず分が含まれているか」といった趣旨の選択肢が確認テストで問われることがあります。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>当月の標準原価を出す — 完成品換算量が要る</h2>
+
+  <p>原価標準が決まったら、次は「当月の標準原価はいくらか」を出します。<strong>ここで UNIT 17・18 の総合原価計算で使った完成品換算量が戻ってきます。</strong></p>
+
+  <div class="card">
+    <div class="card__label">設例 — 当月の生産データ（製品X）</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th class="amt">数量</th><th>加工進捗度</th></tr></thead>
+      <tbody>
+        <tr><td>月初仕掛品</td><td class="amt">200個</td><td>50%</td></tr>
+        <tr><td>当月完成品</td><td class="amt">900個</td><td>—</td></tr>
+        <tr><td>月末仕掛品</td><td class="amt">100個</td><td>40%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">直接材料は<strong>工程の始点ですべて投入</strong>する。加工費（直接労務費・製造間接費）は加工の進み具合に応じて発生する。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ換算量が要るのか — 材料と加工費で「当月やった分」が違う</span>
+    <p>差異を計算するには「当月やった作業に対して、標準ではいくらのはずだったか」が要ります。この<strong>「当月やった分」</strong>が、材料と加工費で違います。</p>
+    <p><strong>材料</strong>は始点で全量投入します。月初仕掛品 200個 は、先月のうちに材料を投入し終えています。だから当月投入すべき材料は、<mark>完成 900 ＋ 月末 100 − 月初 200 ＝ 800個ぶん</mark>です。</p>
+    <p><strong>加工費</strong>は進み具合に比例します。月初仕掛品 200個 は 50% まで加工済みなので、当月やった加工は残り 50%（＝100個ぶん）。月末仕掛品 100個 は 40% まで進んだので 40個ぶん。だから当月やった加工は <mark>900 ＋ 40 − 100 ＝ 840個ぶん</mark>です。</p>
+    <p>この 800個 と 840個 を取り違えると、材料費差異と労務費差異が両方とも狂います。<strong>UNIT 17 で学んだ先入先出法の考え方そのもの</strong>です。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>当月投入量（材料）</strong>　完成 900 ＋ 月末 100 − 月初 200 ＝ <strong>800個</strong></li>
+      <li><strong>当月投入量（加工費・完成品換算量）</strong>　完成 900 ＋ 月末 100 × 40% − 月初 200 × 50% ＝ 900 ＋ 40 − 100 ＝ <strong>840個</strong></li>
+      <li><strong>標準消費量</strong>　800個 × 4kg ＝ <strong>3,200kg</strong></li>
+      <li><strong>標準直接作業時間</strong>　840個 × 2時間 ＝ <strong>1,680時間</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">標準操業度 ＝ 標準直接作業時間</span>
+    <p>製造間接費の配賦基準が直接作業時間である場合、<strong>製造間接費の標準操業度は直接労務費の標準作業時間と同じ 1,680時間</strong>です。標準原価カードで直接労務費も製造間接費も「2時間」だったのは、同じ時間を2回使っているからです。<br>配賦基準が機械運転時間なら別の数値になります。<mark>問題文がどの基準を指定しているかを確認してください。</mark></p>
+  </div>
+
+  <h3>当月の標準原価（当月投入分）</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>費目</th><th>計算</th><th class="amt">標準原価</th></tr></thead>
+    <tbody>
+      <tr><td>直接材料費</td><td>@500 × 3,200kg</td><td class="amt">1,600,000円</td></tr>
+      <tr><td>直接労務費</td><td>@1,200 × 1,680時間</td><td class="amt">2,016,000円</td></tr>
+      <tr><td>製造間接費</td><td>@1,500 × 1,680時間</td><td class="amt">2,520,000円</td></tr>
+      <tr><td><strong>合計</strong></td><td></td><td class="amt"><strong>6,136,000円</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">検算：1,600,000 ＋ 2,016,000 ＋ 2,520,000 ＝ 6,136,000円。</p>
+
+  <h3>完成品・仕掛品の標準原価</h3>
+
+  <p>完成品と仕掛品の金額も、原価標準から直接出せます。<strong>実際原価を一切使いません。</strong></p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>完成品標準原価</strong>　900個 × @7,400 ＝ <strong>6,660,000円</strong></li>
+      <li><strong>月末仕掛品標準原価</strong>　材料 100個 × 2,000 ＝ 200,000　＋　加工費 40個ぶん ×（2,400 ＋ 3,000 ＝ 5,400）＝ 216,000　→　<strong>416,000円</strong></li>
+      <li><strong>月初仕掛品標準原価</strong>　材料 200個 × 2,000 ＝ 400,000　＋　加工費 100個ぶん × 5,400 ＝ 540,000　→　<strong>940,000円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">標準原価どうしは必ずつながる</span>
+    <p><strong>月初仕掛品 ＋ 当月投入 − 月末仕掛品 ＝ 完成品</strong><br>940,000 ＋ 6,136,000 − 416,000 ＝ <strong>6,660,000円</strong>。完成品標準原価と一致します。<br><mark>標準原価の世界だけで計算すれば、必ずぴったり合います。</mark>合わなければ換算量のどこかを間違えています。差異分析に進む前に、この検算をしてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">仕掛品の加工費は「個数 × 進捗度」で数える</span>
+    <p>月末仕掛品 100個 の加工費を 100 × 5,400 ＝ 540,000円 としてはいけません。<mark>まだ 40% しか加工していないのですから、40個ぶんの加工費しか発生していません。</mark><br>一方、材料費は 100個 ぶんが丸ごと入ります。始点で全量投入しているからです。<strong>材料費は個数そのまま、加工費は換算量。</strong>この使い分けを毎回確かめてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>符号の向きを最初に決める</h2>
+
+  <p>差異分析で最も事故が多いのは計算ではなく<strong>符号</strong>です。金額は合っているのに有利・不利が逆、という失点が本当に多い。<mark>この章で向きを1つに固定し、最後まで崩しません。</mark></p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この教材で使う向き — 標準 − 実際</span>
+    <p><strong>すべての差異を「標準 − 実際」の順で引きます。</strong></p>
+    <p><strong>プラス（標準 ＞ 実際）＝ 有利差異 ＝ 貸方差異</strong>　想定より安く済んだ<br><strong>マイナス（標準 ＜ 実際）＝ 不利差異 ＝ 借方差異</strong>　想定より高くついた</p>
+    <p>UNIT 04 の材料消費価格差異（予定 − 実際）、UNIT 07 の賃率差異（予定 − 実際）、UNIT 10 の配賦差異（予定 − 実際）と<mark>まったく同じ向き</mark>です。「予定」が「標準」に変わっただけで、引き算の順番は変わりません。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ有利差異が貸方なのか</span>
+    <p>覚え方ではなく、勘定の形から出てきます。<br>材料勘定の借方には<strong>実際</strong>にかかった額が入り、貸方から<strong>標準</strong>の額が仕掛品へ出ていきます。実際 ＞ 標準 なら借方のほうが大きいので、<mark>貸借を合わせるために貸方に差異を立てる必要があります</mark>。その差異を受ける勘定の側では借方に立つので、借方差異＝不利差異です。<br>逆に実際 ＜ 標準 なら差異は貸方に立ち、有利差異になります。<strong>UNIT 10 の「製造間接費勘定は借方が実際、貸方が予定」と同じ構造</strong>です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>符号</th><th>大小関係</th><th>呼び方</th><th>差異勘定での位置</th><th>意味</th></tr></thead>
+    <tbody>
+      <tr><td><strong>プラス</strong></td><td>標準 ＞ 実際</td><td>有利差異</td><td>貸方差異</td><td>予定より安く作れた</td></tr>
+      <tr><td><strong>マイナス</strong></td><td>標準 ＜ 実際</td><td>不利差異</td><td>借方差異</td><td>予定より高くついた</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">答案には符号ではなく「有利」「不利」を書く</span>
+    <p>試験の答案用紙は「金額」と「有利・不利（または借方・貸方）」を別々に書かせる形式がほとんどです。<mark>金額欄にはマイナスを付けず、絶対値を書きます。</mark>△100,000 と書くのではなく、100,000 と書いて不利に丸を付ける、という形です。</p>
+    <p>ただし<strong>計算の途中では必ず符号付きで扱ってください。</strong>絶対値だけで計算していると、複数の差異を合計するときに符号を取り違えます。「計算は符号付き、答案は絶対値＋有利／不利」と手順を分けます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「有利差異が出た＝よくやった」とは限らない</span>
+    <p>数量差異が有利ということは、標準より少ない材料で作れたということです。良いことのように見えますが、<mark>安い粗悪な材料に替えて歩留まりが悪化し、価格差異が有利・数量差異が不利になる</mark>といった組み合わせもあります。</p>
+    <p>試験で問われるのは金額と有利・不利の判定だけですが、この意味づけを持っていると符号の取り違えが減ります。「材料を多く使った → 損 → 不利」と物語で追えるからです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>記帳方法① パーシャル・プラン</h2>
+
+  <p>標準原価計算では、仕掛品勘定に何を書くかで2つの方法に分かれます。<strong>2級で扱うのはパーシャル・プランとシングル・プランの2つだけ</strong>です。まずパーシャル・プランから。</p>
+
+  <div class="term">
+    <span class="term__w">パーシャル・プラン</span><span class="term__r">ぱーしゃる・ぷらん</span>
+    <p>仕掛品勘定の<strong>借方を実際原価</strong>で記入する方法。貸方（完成品・月末仕掛品）は標準原価なので、<mark>差額として原価差異が仕掛品勘定の中に現れます</mark>。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「パーシャル（部分的）」とは何が部分的なのか</span>
+    <p>仕掛品勘定を見てください。貸方は標準原価、借方は実際原価。<strong>標準原価で書かれているのが貸方だけ＝部分的</strong>だから、パーシャル・プランといいます。<br>実務上の利点は、<mark>費目別の各勘定（材料・賃金・給料・製造間接費）から実際原価をそのまま振り替えればよい</mark>ことです。各費目の段階で標準原価に直す手間がありません。差異の計算は仕掛品勘定の1か所で済みます。</p>
+  </div>
+
+  <h3>設例の数値で勘定を書く</h3>
+
+  <p>4章で出した標準原価に、実際原価を加えます。</p>
+
+  <div class="card">
+    <div class="card__label">設例 — 当月の実際原価（製品X）</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>費目</th><th>実際</th><th class="amt">実際原価</th></tr></thead>
+      <tbody>
+        <tr><td>直接材料費</td><td>実際単価 @520円 × 実際消費量 3,150kg</td><td class="amt">1,638,000円</td></tr>
+        <tr><td>直接労務費</td><td>実際賃率 @1,180円 × 実際作業時間 1,750時間</td><td class="amt">2,065,000円</td></tr>
+        <tr><td>製造間接費</td><td>実際発生額</td><td class="amt">2,760,000円</td></tr>
+        <tr><td><strong>合計</strong></td><td></td><td class="amt"><strong>6,463,000円</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small muted">検算：1,638,000 ＋ 2,065,000 ＋ 2,760,000 ＝ 6,463,000円。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 860 300" style="width:100%;height:auto;min-width:720px" role="img" aria-label="パーシャル・プランの勘定の流れ。材料・賃金給料・製造間接費から実際原価が仕掛品勘定の借方に入り、貸方から完成品・月末仕掛品が標準原価で出て、差額が原価差異になる">
+      <g font-size="13" fill="var(--text)">
+        <rect x="20" y="30" width="150" height="42" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="95" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">材料</text>
+        <rect x="20" y="88" width="150" height="42" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="95" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">賃金・給料</text>
+        <rect x="20" y="146" width="150" height="42" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="95" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="var(--debit)">製造間接費</text>
+
+        <path d="M175 51 L 250 51 L 250 105 L 330 105" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#pm1)"/>
+        <path d="M175 109 L 330 109" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#pm1)"/>
+        <path d="M175 167 L 250 167 L 250 113 L 330 113" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#pm1)"/>
+        <text x="252" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">実際原価</text>
+        <text x="252" y="223" text-anchor="middle" font-size="12" fill="var(--muted)">6,463,000</text>
+
+        <rect x="335" y="30" width="185" height="180" rx="6" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="427" y="55" text-anchor="middle" font-size="16" font-weight="700">仕掛品</text>
+        <path d="M427 66 L 427 200" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="380" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--debit)">借方</text>
+        <text x="380" y="104" text-anchor="middle" font-size="11.5" fill="var(--danger)">実際原価</text>
+        <text x="474" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--credit)">貸方</text>
+        <text x="474" y="104" text-anchor="middle" font-size="11.5" fill="var(--credit)">標準原価</text>
+        <text x="380" y="132" text-anchor="middle" font-size="11" fill="var(--muted)">月初 940,000</text>
+        <text x="380" y="150" text-anchor="middle" font-size="11" fill="var(--muted)">材料 1,638,000</text>
+        <text x="380" y="168" text-anchor="middle" font-size="11" fill="var(--muted)">労務 2,065,000</text>
+        <text x="380" y="186" text-anchor="middle" font-size="11" fill="var(--muted)">間接 2,760,000</text>
+        <text x="474" y="132" text-anchor="middle" font-size="11" fill="var(--muted)">完成 6,660,000</text>
+        <text x="474" y="150" text-anchor="middle" font-size="11" fill="var(--muted)">月末 416,000</text>
+        <text x="474" y="172" text-anchor="middle" font-size="11" font-weight="700" fill="var(--danger)">差異 327,000</text>
+
+        <path d="M525 130 L 600 130" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#pm2)"/>
+        <rect x="605" y="60" width="145" height="46" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="677" y="88" text-anchor="middle" font-size="14" font-weight="700">製品</text>
+        <path d="M525 118 L 570 118 L 570 83 L 600 83" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#pm2)"/>
+        <rect x="605" y="150" width="145" height="46" rx="6" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="677" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="var(--danger)">原価差異</text>
+        <text x="677" y="188" text-anchor="middle" font-size="11.5" fill="var(--danger)">327,000（不利）</text>
+        <path d="M525 172 L 600 172" stroke="var(--danger)" stroke-width="2.5" fill="none" marker-end="url(#pm3)"/>
+
+        <text x="427" y="240" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--accent)">差異は仕掛品勘定の中で把握される</text>
+        <text x="427" y="262" text-anchor="middle" font-size="11.5" fill="var(--muted)">借方（実際）と貸方（標準）の差額として現れる</text>
+      </g>
+      <defs>
+        <marker id="pm1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/></marker>
+        <marker id="pm2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/></marker>
+        <marker id="pm3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--danger)"/></marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">パーシャル・プラン。実際原価が仕掛品の借方にそのまま入るので、差異は仕掛品勘定の貸借差額として出てくる。</p>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">仕掛品（パーシャル・プラン）</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前月繰越（標準）</span><span>940,000</span></div>
+          <div class="l"><span>材料（実際）</span><span>1,638,000</span></div>
+          <div class="l"><span>賃金・給料（実際）</span><span>2,065,000</span></div>
+          <div class="l"><span>製造間接費（実際）</span><span>2,760,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>7,403,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品（完成品標準原価）</span><span>6,660,000</span></div>
+          <div class="l"><span>次月繰越（標準）</span><span>416,000</span></div>
+          <div class="l"><span><strong>原価差異</strong></span><span><strong>327,000</strong></span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>7,403,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">検算：借方 940,000 ＋ 1,638,000 ＋ 2,065,000 ＋ 2,760,000 ＝ 7,403,000円。貸方 6,660,000 ＋ 416,000 ＋ 327,000 ＝ 7,403,000円。貸借が一致します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">差異の総額を別の道からも確かめる</span>
+    <p>当月投入分の標準原価 6,136,000円 に対して実際原価 6,463,000円。<br><strong>6,136,000 − 6,463,000 ＝ △327,000円（不利差異）</strong>。仕掛品勘定の貸借差額と一致します。</p>
+    <p><mark>月初・月末仕掛品はどちらも標準原価で入っているので、差異の総額には影響しません。</mark>差異は「当月投入分の標準原価と実際原価の差」だけで決まります。この見方ができると、仕掛品勘定を書かずに総差異を検算できます。</p>
+  </div>
+
+  <h3>仕訳</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th colspan="4">① 実際原価を仕掛品勘定に振り替える</th></tr><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">6,463,000</td><td class="c">材料</td><td class="c amt">1,638,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">賃金・給料</td><td class="c amt">2,065,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">製造間接費</td><td class="c amt">2,760,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th colspan="4">② 完成品を製品勘定へ振り替える（標準原価）</th></tr><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製品</td><td class="d amt">6,660,000</td><td class="c">仕掛品</td><td class="c amt">6,660,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th colspan="4">③ 原価差異を把握する</th></tr><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">原価差異</td><td class="d amt">327,000</td><td class="c">仕掛品</td><td class="c amt">327,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">差異を費目別に分けて計上する場合は、借方を 直接材料費差異 38,000／直接労務費差異 49,000／製造間接費差異 240,000 の3行に分けます。合計は 327,000円 で変わりません。どちらの形で答えるかは問題文または答案用紙の勘定科目欄で決まります。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>記帳方法② シングル・プラン</h2>
+
+  <div class="term">
+    <span class="term__w">シングル・プラン</span><span class="term__r">しんぐる・ぷらん</span>
+    <p>仕掛品勘定の<strong>借方も標準原価</strong>で記入する方法。仕掛品勘定は貸借とも標準原価になるため、<mark>原価差異は仕掛品勘定ではなく、費目別の各勘定（材料・賃金・給料・製造間接費）で把握されます</mark>。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「シングル（単一）」とは何が単一なのか</span>
+    <p>仕掛品勘定が<strong>借方も貸方も標準原価という単一の基準で書かれている</strong>からシングル・プランです。仕掛品勘定を見ても差異は出てきません。貸借がぴったり合って締まります。</p>
+    <p>そのかわり、差異は手前の各費目勘定で把握されます。材料勘定の借方は実際、貸方は仕掛品へ出す標準。その差が材料の差異です。<mark>差異を「どこで」把握するかが、2つの方法の唯一の違い</mark>です。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 860 300" style="width:100%;height:auto;min-width:720px" role="img" aria-label="シングル・プランの勘定の流れ。材料・賃金給料・製造間接費の各勘定で差異が把握され、標準原価だけが仕掛品勘定に入る">
+      <g font-size="13" fill="var(--text)">
+        <rect x="20" y="30" width="150" height="42" rx="6" fill="var(--debit-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="95" y="49" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--debit)">材料</text>
+        <text x="95" y="65" text-anchor="middle" font-size="10.5" fill="var(--danger)">ここで差異 38,000</text>
+        <rect x="20" y="88" width="150" height="42" rx="6" fill="var(--debit-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="95" y="107" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--debit)">賃金・給料</text>
+        <text x="95" y="123" text-anchor="middle" font-size="10.5" fill="var(--danger)">ここで差異 49,000</text>
+        <rect x="20" y="146" width="150" height="42" rx="6" fill="var(--debit-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="95" y="165" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--debit)">製造間接費</text>
+        <text x="95" y="181" text-anchor="middle" font-size="10.5" fill="var(--danger)">ここで差異 240,000</text>
+
+        <path d="M175 51 L 250 51 L 250 105 L 330 105" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#sm2)"/>
+        <path d="M175 109 L 330 109" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#sm2)"/>
+        <path d="M175 167 L 250 167 L 250 113 L 330 113" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#sm2)"/>
+        <text x="252" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="var(--credit)">標準原価</text>
+        <text x="252" y="223" text-anchor="middle" font-size="12" fill="var(--muted)">6,136,000</text>
+
+        <rect x="335" y="30" width="185" height="180" rx="6" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="427" y="55" text-anchor="middle" font-size="16" font-weight="700">仕掛品</text>
+        <path d="M427 66 L 427 200" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="380" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--credit)">借方</text>
+        <text x="380" y="104" text-anchor="middle" font-size="11.5" fill="var(--credit)">標準原価</text>
+        <text x="474" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--credit)">貸方</text>
+        <text x="474" y="104" text-anchor="middle" font-size="11.5" fill="var(--credit)">標準原価</text>
+        <text x="380" y="132" text-anchor="middle" font-size="11" fill="var(--muted)">月初 940,000</text>
+        <text x="380" y="150" text-anchor="middle" font-size="11" fill="var(--muted)">材料 1,600,000</text>
+        <text x="380" y="168" text-anchor="middle" font-size="11" fill="var(--muted)">労務 2,016,000</text>
+        <text x="380" y="186" text-anchor="middle" font-size="11" fill="var(--muted)">間接 2,520,000</text>
+        <text x="474" y="132" text-anchor="middle" font-size="11" fill="var(--muted)">完成 6,660,000</text>
+        <text x="474" y="150" text-anchor="middle" font-size="11" fill="var(--muted)">月末 416,000</text>
+        <text x="474" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="var(--credit)">差異は出ない</text>
+
+        <path d="M525 118 L 570 118 L 570 83 L 600 83" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#sm2)"/>
+        <rect x="605" y="60" width="145" height="46" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="677" y="88" text-anchor="middle" font-size="14" font-weight="700">製品</text>
+
+        <path d="M175 60 L 205 60 L 205 250 L 600 250" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#sm3)"/>
+        <rect x="605" y="228" width="145" height="44" rx="6" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="677" y="247" text-anchor="middle" font-size="13" font-weight="700" fill="var(--danger)">原価差異</text>
+        <text x="677" y="264" text-anchor="middle" font-size="11.5" fill="var(--danger)">327,000（不利）</text>
+
+        <text x="427" y="240" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--accent)">仕掛品勘定は貸借とも標準原価</text>
+      </g>
+      <defs>
+        <marker id="sm2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/></marker>
+        <marker id="sm3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--danger)"/></marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">シングル・プラン。差異は材料・賃金給料・製造間接費の各勘定で把握され、仕掛品には標準原価だけが入る。</p>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">仕掛品（シングル・プラン）</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前月繰越（標準）</span><span>940,000</span></div>
+          <div class="l"><span>材料（標準）</span><span>1,600,000</span></div>
+          <div class="l"><span>賃金・給料（標準）</span><span>2,016,000</span></div>
+          <div class="l"><span>製造間接費（標準）</span><span>2,520,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>7,076,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品（完成品標準原価）</span><span>6,660,000</span></div>
+          <div class="l"><span>次月繰越（標準）</span><span>416,000</span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>7,076,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">材料（シングル・プラン）</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>実際消費額</span><span>1,638,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>1,638,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品（標準）</span><span>1,600,000</span></div>
+          <div class="l"><span><strong>直接材料費差異</strong></span><span><strong>38,000</strong></span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>1,638,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">検算：仕掛品の借方 940,000 ＋ 1,600,000 ＋ 2,016,000 ＋ 2,520,000 ＝ 7,076,000円。貸方 6,660,000 ＋ 416,000 ＝ 7,076,000円。差異を立てなくても一致します。材料勘定は借方 1,638,000円、貸方 1,600,000 ＋ 38,000 ＝ 1,638,000円。</p>
+
+  <h3>2つの方法を並べる</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>パーシャル・プラン</th><th>シングル・プラン</th></tr></thead>
+    <tbody>
+      <tr><td><strong>仕掛品勘定の借方</strong></td><td><mark>実際原価</mark></td><td><mark>標準原価</mark></td></tr>
+      <tr><td><strong>仕掛品勘定の貸方</strong></td><td>標準原価</td><td>標準原価</td></tr>
+      <tr><td><strong>差異が現れる場所</strong></td><td><strong>仕掛品勘定</strong>（貸借差額）</td><td><strong>費目別の各勘定</strong>（材料・賃金・給料・製造間接費）</td></tr>
+      <tr><td><strong>設例の仕掛品 借方合計</strong></td><td class="amt">7,403,000円</td><td class="amt">7,076,000円</td></tr>
+      <tr><td><strong>完成品原価・月末仕掛品</strong></td><td colspan="2" style="text-align:center">どちらも標準原価。<strong>方法が違っても同じ金額</strong></td></tr>
+      <tr><td><strong>差異の総額</strong></td><td colspan="2" style="text-align:center">どちらも 327,000円（不利）。<strong>把握する場所が違うだけ</strong></td></tr>
+      <tr><td><strong>手間</strong></td><td>各費目は実際のまま振り替えればよい</td><td>各費目の段階で標準原価を計算する必要がある</td></tr>
+      <tr><td><strong>差異が分かる時点</strong></td><td>仕掛品勘定を締めたとき</td><td>各費目の消費を記録した時点で分かる</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2つの方法で変わらないもの</span>
+    <p><strong>完成品標準原価 6,660,000円</strong>、<strong>月末仕掛品標準原価 416,000円</strong>、<strong>原価差異の総額 327,000円（不利）</strong>。この3つは方法によらず同じです。<br><mark>記帳方法は「差異をどの勘定で受け止めるか」を決めるだけで、金額そのものを変えません。</mark>第5問で「パーシャル・プランによる」と指定されていても、差異分析の計算は何も変わりません。変わるのは仕掛品勘定の借方に何を書くかだけです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">答案用紙の仕掛品勘定を見れば、どちらか分かる</span>
+    <p>問題文に明記されているのがふつうですが、答案用紙からも判断できます。<br><strong>仕掛品勘定の貸方に「原価差異」や「標準原価差異」という行がある → パーシャル・プラン</strong>。差異を仕掛品の中で受けるからです。<br><strong>仕掛品勘定に差異の行がない → シングル・プラン</strong>。</p>
+    <p>取り違えると、仕掛品勘定の借方に書く金額がすべて変わります。<mark>設例では借方合計が 7,403,000円 と 7,076,000円 で 327,000円 も違います。</mark>解き始める前に必ず確認してください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で問われる記帳方法はこの2つだけ</span>
+    <p>市販のテキストには<strong>修正パーシャル・プラン</strong>という第3の方法が載っていることがありますが、これは出題区分表では1級の範囲です。2級の答案で書くことはありません。<br>この単元で押さえるのは<mark>パーシャル・プランとシングル・プランの2つ</mark>です。混乱を避けるため、修正パーシャル・プランには手を出さないでください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>直接材料費差異 — 価格差異と数量差異</h2>
+
+  <p>ここから差異を分解します。まず直接材料費。<strong>総差異 38,000円（不利）が、なぜ出たのか</strong>を突き止めます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">原因は2つしかない</span>
+    <p>直接材料費 ＝ 単価 × 消費量。かけ算で出る金額が想定と違うなら、<strong>単価がズレたか、消費量がズレたか、その両方か</strong>しかありません。</p>
+    <p><strong>単価のズレ</strong>　買値が想定より高かった／安かった。これは<mark>購買部門の責任</mark>で、現場の作業とは関係ありません。<br><strong>消費量のズレ</strong>　材料を想定より多く使った／少なく済んだ。これは<mark>製造現場の責任</mark>です。</p>
+    <p>責任を負う部門が違うので、合算したままでは誰に何を伝えればよいか決まりません。だから分けます。</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">価格差異</div>
+      <p><strong>（標準単価 − 実際単価）× 実際消費量</strong></p>
+      <p class="small">単価のズレ。掛ける数量は<mark>実際</mark>消費量。</p>
+      <p class="small muted">購買部門の責任。市場価格の変動も含む。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">数量差異</div>
+      <p><strong>標準単価 ×（標準消費量 − 実際消費量）</strong></p>
+      <p class="small">数量のズレ。掛ける単価は<mark>標準</mark>単価。</p>
+      <p class="small muted">製造現場の責任。材料の無駄遣い・歩留まりの悪化。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">掛ける相手を取り違えるのが最頻出の事故</span>
+    <p>価格差異には<strong>実際</strong>消費量を掛け、数量差異には<strong>標準</strong>単価を掛けます。逆にすると金額が変わります。</p>
+    <p>覚え方は<mark>「自分がズレている側と反対を、相手の実際／標準で決める」</mark>ではなく、次の図で読んでください。式の暗記では試験中に迷います。</p>
+  </div>
+
+  <h3>ボックス図で面積として読む</h3>
+
+  <p>横軸に消費量、縦軸に単価をとった長方形を描きます。<strong>UNIT 04 の材料消費価格差異で描いた図と同じ形</strong>で、縦軸だけでなく横軸にも差が出るようになったものです。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 420" style="width:100%;height:auto;min-width:620px" role="img" aria-label="直接材料費差異のボックス図。縦軸が単価、横軸が消費量。標準の長方形と実際の長方形の差を価格差異と数量差異の2つの帯として示す">
+      <g font-size="13" fill="var(--text)">
+        <!-- 軸 -->
+        <path d="M80 40 L 80 350" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M80 350 L 640 350" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="74" y="354" text-anchor="end" font-size="12" fill="var(--muted)">0</text>
+        <text x="38" y="34" font-size="12.5" fill="var(--muted)">単価</text>
+        <text x="632" y="378" text-anchor="middle" font-size="12.5" fill="var(--muted)">消費量</text>
+
+        <!-- 実際単価 @520 → y=90 ／ 標準単価 @500 → y=120 -->
+        <!-- 実際消費量 3150kg → x=520 ／ 標準消費量 3200kg → x=530 -->
+        <!-- 標準原価の長方形 -->
+        <rect x="80" y="120" width="450" height="230" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="2"/>
+        <text x="300" y="250" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--credit)">標準原価</text>
+        <text x="300" y="272" text-anchor="middle" font-size="12" fill="var(--credit)">@500 × 3,200kg ＝ 1,600,000</text>
+
+        <!-- 価格差異の帯（実際消費量の幅、単価の差） -->
+        <rect x="80" y="90" width="420" height="30" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2"/>
+        <text x="285" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger)">価格差異 △63,000（不利）</text>
+
+        <!-- 数量差異の帯（標準単価の高さ、消費量の差 3150→3200 は有利なので実際が標準より少ない） -->
+        <rect x="500" y="120" width="30" height="230" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2"/>
+        <text x="560" y="230" font-size="12" font-weight="700" fill="var(--ok)">数量差異</text>
+        <text x="560" y="248" font-size="12" fill="var(--ok)">＋25,000（有利）</text>
+
+        <!-- 目盛り -->
+        <path d="M80 90 L 500 90" stroke="var(--danger)" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="74" y="94" text-anchor="end" font-size="11.5" fill="var(--danger)">@520</text>
+        <text x="74" y="124" text-anchor="end" font-size="11.5" fill="var(--credit)">@500</text>
+        <text x="74" y="110" text-anchor="end" font-size="10" fill="var(--muted)">実際</text>
+
+        <path d="M500 350 L 500 78" stroke="var(--danger)" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <text x="500" y="370" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--danger)">3,150kg</text>
+        <text x="500" y="388" text-anchor="middle" font-size="10.5" fill="var(--muted)">実際</text>
+        <path d="M530 350 L 530 108" stroke="var(--credit)" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <text x="585" y="370" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--credit)">3,200kg</text>
+        <text x="585" y="388" text-anchor="middle" font-size="10.5" fill="var(--muted)">標準</text>
+
+        <text x="115" y="62" font-size="12" fill="var(--muted)">実際原価 ＝ @520 × 3,150kg ＝ 1,638,000</text>
+        <text x="115" y="80" font-size="12" fill="var(--muted)">総差異 1,600,000 − 1,638,000 ＝ △38,000（不利）</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">価格差異の帯は<strong>実際</strong>消費量の幅（3,150kg）で描く。数量差異の帯は<strong>標準</strong>単価の高さ（@500）で描く。重なりを二重に数えないための約束。<br><span class="muted">差が見えるよう帯の幅と高さを誇張してある。面積の比は実際の金額の比と一致しない。</span></p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ価格差異の幅が「実際」消費量なのか</span>
+    <p>単価の差 20円 と消費量の差 50kg が同時に起きているので、<strong>両方が重なる角の部分（20円 × 50kg ＝ 1,000円）をどちらに入れるか</strong>を決めなければなりません。二重に数えると合計が総差異に戻らなくなります。</p>
+    <p>標準原価計算では<mark>重なりを価格差異に含める</mark>と決めています。だから価格差異の帯は実際消費量いっぱいの幅で描き、数量差異は標準単価の高さだけで描きます。</p>
+    <p>理由は、価格差異が購買部門の責任だからです。現場の責任である数量差異に、価格変動の影響まで押し付けるのは不公平です。<strong>責任を負う側に不確実な部分を寄せない</strong>という考え方です。</p>
+  </div>
+
+  <h3>設例で計算する</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>価格差異</strong> ＝（@500 − @520）× 3,150kg ＝ △20 × 3,150 ＝ <strong>△63,000円（不利差異）</strong></li>
+      <li><strong>数量差異</strong> ＝ @500 ×（3,200kg − 3,150kg）＝ @500 × ＋50 ＝ <strong>＋25,000円（有利差異）</strong></li>
+      <li><strong>検算</strong>　△63,000 ＋ ＋25,000 ＝ <strong>△38,000円</strong>。直接材料費の総差異（1,600,000 − 1,638,000）と一致します。</li>
+    </ol>
+  </div>
+
+  <p>意味を言葉にします。<strong>価格差異 63,000円 の不利</strong>は、想定 @500円 の材料が @520円 でしか買えなかった、という<mark>買値の上振れ</mark>です。<strong>数量差異 25,000円 の有利</strong>は、3,200kg 使うはずのところを 3,150kg で済ませた、という<mark>現場の節約</mark>です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">符号が食い違う組み合わせは実際に出る</span>
+    <p>この設例は<strong>価格差異が不利・数量差異が有利</strong>です。2つの符号が揃うとは限りません。</p>
+    <p>「総差異が不利だから両方とも不利だろう」と決めつけると必ず落とします。<mark>2つの差異は別々の原因から出ているので、符号もそれぞれ独立に決まります。</mark>必ず2つとも計算して、それぞれに有利・不利を判定してください。合計が総差異に戻ることで検算になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>直接労務費差異 — 賃率差異と時間差異</h2>
+
+  <p>直接労務費も同じ形です。<strong>単価にあたるのが賃率、数量にあたるのが作業時間</strong>。名前が変わるだけで、図も式も材料費とまったく同じです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">賃率差異</div>
+      <p><strong>（標準賃率 − 実際賃率）× 実際作業時間</strong></p>
+      <p class="small">賃率のズレ。掛ける時間は<mark>実際</mark>作業時間。</p>
+      <p class="small muted">人員構成・残業の割増などが原因。労務管理部門の責任。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">時間差異</div>
+      <p><strong>標準賃率 ×（標準作業時間 − 実際作業時間）</strong></p>
+      <p class="small">時間のズレ。掛ける賃率は<mark>標準</mark>賃率。</p>
+      <p class="small muted">製造現場の責任。作業能率の良し悪しを表す。<strong>作業時間差異</strong>ともいう。</p>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>直接材料費</th><th>直接労務費</th></tr></thead>
+    <tbody>
+      <tr><td><strong>単価にあたるもの</strong></td><td>標準単価 @500円／kg</td><td>標準賃率 @1,200円／時間</td></tr>
+      <tr><td><strong>数量にあたるもの</strong></td><td>標準消費量 3,200kg</td><td>標準作業時間 1,680時間</td></tr>
+      <tr><td><strong>単価のズレ</strong></td><td>価格差異</td><td>賃率差異</td></tr>
+      <tr><td><strong>数量のズレ</strong></td><td>数量差異</td><td>時間差異（作業時間差異）</td></tr>
+      <tr><td><strong>単価のズレに掛けるもの</strong></td><td colspan="2" style="text-align:center"><strong>実際</strong>の数量</td></tr>
+      <tr><td><strong>数量のズレに掛けるもの</strong></td><td colspan="2" style="text-align:center"><strong>標準</strong>の単価</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>設例で計算する</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>賃率差異</strong> ＝（@1,200 − @1,180）× 1,750時間 ＝ ＋20 × 1,750 ＝ <strong>＋35,000円（有利差異）</strong></li>
+      <li><strong>時間差異</strong> ＝ @1,200 ×（1,680時間 − 1,750時間）＝ @1,200 × △70 ＝ <strong>△84,000円（不利差異）</strong></li>
+      <li><strong>検算</strong>　＋35,000 ＋ △84,000 ＝ <strong>△49,000円</strong>。直接労務費の総差異（2,016,000 − 2,065,000）と一致します。</li>
+    </ol>
+  </div>
+
+  <p>意味を言葉にします。<strong>賃率差異 35,000円 の有利</strong>は、想定 @1,200円 より安い @1,180円 の人員で作業できた、ということです。<strong>時間差異 84,000円 の不利</strong>は、1,680時間 で済むはずの作業に 1,750時間 かけてしまった、という<mark>作業能率の悪化</mark>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">時間差異は「能率」を測っている</span>
+    <p>時間差異は<strong>作業の速さ</strong>だけを見ています。賃率は標準で固定しているので、人員構成の影響は入りません。<mark>純粋に「予定より速かったか遅かったか」だけが金額になります。</mark></p>
+    <p>だから時間差異は、現場の管理者に対して最も意味のある数字です。「70時間 余計にかかり、84,000円 の不利差異が出ました」という報告は、作業手順の見直しという具体的な行動につながります。<br><strong>この「時間のズレ」という発想が、次章の製造間接費でも能率差異として現れます。</strong></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">標準作業時間は「標準操業度」として製造間接費にも効く</span>
+    <p>1,680時間 という標準作業時間は、直接労務費だけの数字ではありません。<mark>製造間接費の標準操業度としても同じ 1,680時間 を使います</mark>（配賦基準が直接作業時間の場合）。</p>
+    <p>逆に言うと、<strong>換算量を間違えて標準作業時間を誤ると、直接労務費差異と製造間接費差異の両方が崩れます。</strong>4章の換算量の計算は、差異分析全体の土台です。時間をかけて確実にしてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>実際原価計算の差異との関係</h2>
+
+  <p>「賃率差異」という言葉は UNIT 07 でも出てきました。同じ名前ですが、出てくる文脈が違います。<strong>ここを整理しておかないと、問題文の条件を読み違えます。</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>実際原価計算（UNIT 04・07・10）</th><th>標準原価計算（この単元）</th></tr></thead>
+    <tbody>
+      <tr><td><strong>単価</strong></td><td>予定価格・予定賃率・予定配賦率</td><td>標準単価・標準賃率・標準配賦率</td></tr>
+      <tr><td><strong>数量</strong></td><td><mark>実際のまま</mark>（消費量・作業時間・操業度）</td><td><mark>標準も設定する</mark></td></tr>
+      <tr><td><strong>材料費の差異</strong></td><td>材料消費価格差異（1つだけ）</td><td>価格差異 ＋ <strong>数量差異</strong></td></tr>
+      <tr><td><strong>労務費の差異</strong></td><td>賃率差異（1つだけ）</td><td>賃率差異 ＋ <strong>時間差異</strong></td></tr>
+      <tr><td><strong>製造間接費の差異</strong></td><td>予算差異 ＋ 操業度差異（2つ）</td><td>予算差異 ＋ <strong>能率差異</strong> ＋ 操業度差異（3つ）</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">差異が増えるのは「数量にも標準を置いた」から</span>
+    <p>実際原価計算では、単価だけを予定にして数量は実際のまま使いました。<mark>「実際に 3,150kg 使ったなら、その 3,150kg ぶんが製品原価」</mark>という扱いです。使いすぎたかどうかは問いません。</p>
+    <p>標準原価計算は数量にも標準を置きます。「この生産量なら 3,200kg で済むはず」という基準ができたので、<strong>実際の消費量との差が新しい差異になります</strong>。これが数量差異・時間差異・能率差異です。</p>
+    <p>だから<mark>実際原価計算の差異は、標準原価計算の差異の一部にそのまま対応します。</mark>材料消費価格差異 ＝ 価格差異、賃率差異 ＝ 賃率差異、予算差異 ＝ 予算差異、操業度差異 ＝ 操業度差異。<strong>増えた分は数量側の差異だけ</strong>です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">同じ「賃率差異」でも計算の土台が違う</span>
+    <p>式の形はどちらも「（予定または標準の賃率 − 実際賃率）× 実際作業時間」で同じです。<mark>そこは変わりません。</mark></p>
+    <p>違うのは、UNIT 07 では賃率差異がそれで終わりだったのに対し、この単元では<strong>時間差異とセットで初めて労務費の総差異になる</strong>ことです。UNIT 07 の感覚のまま「賃率差異を出したから労務費の分析は終わり」と考えると、時間差異を丸ごと落とします。</p>
+    <p>問題文が標準原価計算だと分かったら、<strong>各費目について必ず2つ（製造間接費は3つ）の差異を出す</strong>と決めておいてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>製造間接費差異 — シュラッター図に能率差異が増える</h2>
+
+  <p><strong>UNIT 10 で描いたシュラッター図が、そのまま使えます。</strong>軸の取り方も、予算線と配賦線の引き方も同じ。増えるのは縦線が1本だけです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">UNIT 10 からの変化は1つだけ — 縦線が2本になる</span>
+    <p>UNIT 10 では、縦線を引く場所は<strong>実際操業度</strong>1本だけでした。予定配賦額は「予定配賦率 × 実際操業度」だったからです。</p>
+    <p>標準原価計算では、配賦額が<strong>標準配賦率 × 標準操業度</strong>になります。だから<mark>標準操業度にも縦線を引く必要があります</mark>。実際操業度の縦線と、標準操業度の縦線。この2本の間に生まれる新しい差異が<strong>能率差異</strong>です。</p>
+    <p>図の構造は変わりません。斜めの線は2本のまま、実際発生額の点も1つのまま。<strong>縦線が1本増えて、差異が2つから3つになるだけ</strong>です。</p>
+  </div>
+
+  <div class="card">
+    <div class="card__label">設例の製造間接費データ（再掲）</div>
+    <ul class="small">
+      <li>月間の基準操業度　1,800時間　／　変動費率 @600円　／　固定費率 @900円　／　標準配賦率 @1,500円</li>
+      <li>月間の固定費予算額　1,620,000円</li>
+      <li><strong>標準操業度　1,680時間</strong>（4章で計算した標準直接作業時間）</li>
+      <li><strong>実際操業度　1,750時間</strong>　／　<strong>実際発生額　2,760,000円</strong></li>
+    </ul>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 780 470" style="width:100%;height:auto;min-width:680px" role="img" aria-label="標準原価計算のシュラッター図。標準操業度と実際操業度の2本の縦線を引き、予算差異・能率差異・操業度差異の3つを示す">
+      <g font-size="13" fill="var(--text)">
+        <!-- 軸 -->
+        <path d="M90 40 L 90 380" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M90 380 L 700 380" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="84" y="384" text-anchor="end" font-size="12" fill="var(--muted)">0</text>
+        <text x="40" y="32" font-size="12.5" fill="var(--muted)">金額</text>
+        <text x="690" y="412" text-anchor="middle" font-size="12.5" fill="var(--muted)">操業度</text>
+
+        <!-- スケール設計
+             x: 0h→90, 1800h→560 （1h = 0.26111px）
+                1680h → 90+438.7 = 528.7 ≒ 529
+                1750h → 90+457.0 = 547
+             y: 金額 0 → 380, 2,700,000 → 200 （1円 = 0.00006667px, 100,000円 = 6.667px）
+                固定費 1,620,000 → 380-108 = 272
+                予算線: (0,1,620,000)=(90,272) → (1800h, 2,700,000)=(560,200)
+                配賦線: (0,0)=(90,380) → (1800h, 2,700,000)=(560,200)
+        -->
+        <!-- 固定費の水平線 -->
+        <path d="M90 272 L 620 272" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="84" y="276" text-anchor="end" font-size="11" fill="var(--muted)">1,620,000</text>
+        <text x="150" y="330" font-size="11.5" fill="var(--muted)">固定費予算 1,620,000</text>
+
+        <!-- 予算線 -->
+        <path d="M90 272 L 560 200" stroke="var(--credit)" stroke-width="2.5" fill="none"/>
+        <text x="596" y="196" font-size="12.5" font-weight="700" fill="var(--credit)">予算線</text>
+        <text x="596" y="212" font-size="10.5" fill="var(--muted)">変動費率@600＋固定費</text>
+
+        <!-- 標準配賦線 -->
+        <path d="M90 380 L 560 200" stroke="var(--debit)" stroke-width="2.5" fill="none"/>
+        <text x="596" y="242" font-size="12.5" font-weight="700" fill="var(--debit)">標準配賦線</text>
+        <text x="596" y="258" font-size="10.5" fill="var(--muted)">標準配賦率@1,500</text>
+
+        <!-- 縦線：標準操業度 1,680h -->
+        <path d="M529 380 L 529 120" stroke="var(--ok)" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <text x="470" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ok)">1,680h</text>
+        <text x="470" y="417" text-anchor="middle" font-size="10.5" fill="var(--muted)">標準操業度</text>
+
+        <!-- 縦線：実際操業度 1,750h -->
+        <path d="M547 380 L 547 120" stroke="var(--danger)" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <text x="560" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger)">1,750h</text>
+        <text x="560" y="417" text-anchor="middle" font-size="10.5" fill="var(--muted)">実際操業度</text>
+
+        <!-- 縦線：基準操業度 1,800h -->
+        <path d="M560 380 L 560 120" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <text x="648" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">1,800h</text>
+        <text x="648" y="417" text-anchor="middle" font-size="10.5" fill="var(--muted)">基準操業度</text>
+
+        <!-- 点：標準配賦額 @1500*1680 = 2,520,000 → y = 380 - 168 = 212 -->
+        <circle cx="529" cy="212" r="5" fill="var(--debit)"/>
+        <!-- 点：予算許容額 @600*1750+1,620,000 = 2,670,000 → y = 380 - 178 = 202 -->
+        <circle cx="547" cy="202" r="5" fill="var(--credit)"/>
+        <!-- 点：実際発生額 2,760,000 → y = 380 - 184 = 196 -->
+        <circle cx="547" cy="196" r="5.5" fill="var(--danger)"/>
+        <!-- 点：標準配賦線が実際操業度で取る値 @1500*1750=2,625,000 → y=380-175=205 -->
+        <circle cx="547" cy="205" r="4" fill="var(--debit)" opacity="0.55"/>
+
+        <!-- ラベル -->
+        <path d="M547 196 L 380 100" stroke="var(--danger)" stroke-width="1.2"/>
+        <text x="376" y="94" text-anchor="end" font-size="12" font-weight="700" fill="var(--danger)">実際発生額 2,760,000</text>
+        <path d="M547 202 L 300 140" stroke="var(--credit)" stroke-width="1.2"/>
+        <text x="296" y="136" text-anchor="end" font-size="12" font-weight="700" fill="var(--credit)">予算許容額 2,670,000</text>
+        <path d="M529 212 L 250 180" stroke="var(--debit)" stroke-width="1.2"/>
+        <text x="246" y="176" text-anchor="end" font-size="12" font-weight="700" fill="var(--debit)">標準配賦額 2,520,000</text>
+
+        <!-- 差異の帯（右に拡大表示） -->
+        <rect x="640" y="60" width="13" height="20" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="1.5"/>
+        <text x="660" y="70" font-size="11" font-weight="700" fill="var(--danger)">予算差異</text>
+        <text x="660" y="83" font-size="11" fill="var(--danger)">90,000（不利）</text>
+        <rect x="640" y="95" width="13" height="22" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="1.5"/>
+        <text x="660" y="105" font-size="11" font-weight="700" fill="var(--warn)">能率差異</text>
+        <text x="660" y="118" font-size="11" fill="var(--warn)">105,000（不利）</text>
+        <rect x="640" y="130" width="13" height="18" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="660" y="140" font-size="11" font-weight="700" fill="var(--credit)">操業度差異</text>
+        <text x="660" y="153" font-size="11" fill="var(--credit)">45,000（不利）</text>
+
+        <text x="120" y="58" font-size="12" fill="var(--muted)">縦線が2本に増えた。標準操業度と実際操業度の間が能率差異。</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">標準操業度 1,680h・実際操業度 1,750h・基準操業度 1,800h の3本が並ぶ。予算差異は実際操業度の縦線上、能率差異は標準と実際の縦線の間、操業度差異は実際と基準の縦線の間。</p>
+  </div>
+
+  <h3>3つの差異の式</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">3分法（2級の標準形）</span>
+    <p><strong>予算差異</strong> ＝ 予算許容額 − 実際発生額<br>　ただし 予算許容額 ＝ 変動費率 × <mark>実際</mark>操業度 ＋ 固定費予算額</p>
+    <p><strong>能率差異</strong> ＝ 標準配賦率 ×（標準操業度 − <mark>実際</mark>操業度）</p>
+    <p><strong>操業度差異</strong> ＝ 固定費率 ×（<mark>実際</mark>操業度 − 基準操業度）</p>
+    <p><strong>合計 ＝ 標準配賦額 − 実際発生額</strong>。必ずこの検算をしてください。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">3つの差異は、それぞれ隣り合う2本の線の間を測っている</span>
+    <p><strong>予算差異</strong>　実際操業度の縦線の上で、実際発生額と予算線の距離。<mark>「1,750時間 動いたなら 2,670,000円 で足りたはずなのに 2,760,000円 使った」</mark>という使いすぎです。UNIT 10 とまったく同じ意味です。</p>
+    <p><strong>能率差異</strong>　標準操業度と実際操業度の間。<mark>「1,680時間 で済むはずの作業に 1,750時間 かけた。その 70時間 ぶんの製造間接費が余計にかかった」</mark>ということです。直接労務費の時間差異と同じ原因から出ています。</p>
+    <p><strong>操業度差異</strong>　実際操業度と基準操業度の間。<mark>「1,800時間 動く前提で固定費を配る率を決めたのに 1,750時間 しか動かなかった」</mark>という固定費の配り残しです。UNIT 10 とまったく同じ意味です。</p>
+  </div>
+
+  <h3>設例で計算する</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>予算許容額</strong> ＝ @600 × 1,750 ＋ 1,620,000 ＝ 1,050,000 ＋ 1,620,000 ＝ <strong>2,670,000円</strong></li>
+      <li><strong>予算差異</strong> ＝ 2,670,000 − 2,760,000 ＝ <strong>△90,000円（不利差異）</strong></li>
+      <li><strong>能率差異</strong> ＝ @1,500 ×（1,680 − 1,750）＝ @1,500 × △70 ＝ <strong>△105,000円（不利差異）</strong></li>
+      <li><strong>操業度差異</strong> ＝ @900 ×（1,750 − 1,800）＝ @900 × △50 ＝ <strong>△45,000円（不利差異）</strong></li>
+      <li><strong>検算</strong>　△90,000 ＋ △105,000 ＋ △45,000 ＝ <strong>△240,000円</strong><br>標準配賦額 @1,500 × 1,680 ＝ 2,520,000円。2,520,000 − 2,760,000 ＝ △240,000円。一致します。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">操業度差異に掛けるのは標準操業度ではなく実際操業度</span>
+    <p>操業度差異の式は <strong>固定費率 ×（実際操業度 − 基準操業度）</strong> です。標準操業度は出てきません。</p>
+    <p>理由は、固定費を「実際に工場を動かした時間ぶん」しか吸収できないからです。<mark>1,750時間 動いた事実に対して、基準の 1,800時間 に届かなかった 50時間 ぶんが配り残しになります。</mark>標準がいくらであろうと、固定費の吸収は実際の稼働時間で決まります。</p>
+    <p>この3本の縦線をどの順で使うかは、<strong>図を描けば迷いません。</strong>予算差異と能率差異の境目が実際操業度、能率差異と操業度差異の境目も実際操業度。<mark>実際操業度の縦線が2回登場する</mark>と覚えてください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">能率差異の範囲は問題文で指定される</span>
+    <p>上の3分法では、能率差異に<strong>標準配賦率 @1,500（＝変動費率＋固定費率）</strong>を掛けました。これが2級の標準的な扱いで、<mark>変動費と固定費の両方から能率差異を計算する</mark>方法です。</p>
+    <p>問題によっては「能率差異は変動費のみから把握する」と指定されることがあります。その場合は変動費率 @600 だけを掛け、@600 × △70 ＝ △42,000円 になります。<strong>残りの @900 × △70 ＝ △63,000円 は操業度差異に含めます</strong>（操業度差異 ＝ @900 ×（1,680 − 1,800）＝ △108,000円）。</p>
+    <p class="small">検算：△90,000 ＋ △42,000 ＋ △108,000 ＝ △240,000円。総額は同じです。<mark>総額だけは一致するので、合計で検算しても取り違えに気づけません。</mark>問題文が能率差異の範囲を指定しているかを必ず確かめてください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">UNIT 10 との対応をもう一度</span>
+    <p>UNIT 10 の予定配賦では、配賦額が「予定配賦率 × 実際操業度」だったので、<strong>標準操業度の縦線が存在しませんでした</strong>。つまり実際操業度と標準操業度が同じ場所にあり、能率差異がゼロの状態です。</p>
+    <p>標準原価計算で縦線が分かれたことで、能率差異が姿を現しました。<mark>図の骨格は何も変わっていません。</mark>予算線と配賦線の引き方も、基準操業度で2本が交わることも、固定費率だけが操業度差異を生むことも、すべて UNIT 10 のまま使えます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>標準原価差異の会計処理 — 売上原価加減法</h2>
+
+  <p>分析した差異を、最後にどこへ持っていくかです。<strong>UNIT 10 の配賦差異とまったく同じ扱い</strong>です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">原則 — 会計年度末に売上原価へ賦課する</span>
+    <p>標準原価差異は、<strong>原則として会計年度末に売上原価に賦課します</strong>。これを<mark>売上原価加減法</mark>といいます。</p>
+    <p><strong>不利差異（借方残高）なら売上原価を増やす</strong>（売上原価が借方）<br><strong>有利差異（貸方残高）なら売上原価を減らす</strong>（売上原価が貸方）</p>
+    <p>UNIT 04 の材料消費価格差異、UNIT 07 の賃率差異、UNIT 10 の製造間接費配賦差異と同じです。<strong>工業簿記の差異はすべて、最後は売上原価に落ちます。</strong></p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ売上原価に入れるのか</span>
+    <p>差異は<strong>「標準原価に入りきらなかった（または入れすぎた）金額」</strong>です。理屈からいえば、売れた分は売上原価に、売れ残った分は棚卸資産（製品・仕掛品）に按分するのが正しい。</p>
+    <p>それでも原則として全額を売上原価に入れるのは、<mark>標準が正常な水準に設定されていれば差異は小さいはず</mark>だからです。小さい金額を按分する手間に見合いません。<br>さらに、差異は「その期の製造活動の能率の良し悪し」を表すものです。<strong>資産として翌期に繰り越すより、その期の損益に反映させるほうが実態に合います。</strong></p>
+  </div>
+
+  <h3>仕訳</h3>
+
+  <p>原価差異勘定に借方残高 327,000円（不利差異）がある状態で会計年度末を迎えた場合です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">327,000</td><td class="c">原価差異</td><td class="c amt">327,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>有利差異（貸方残高 120,000円）なら、借方と貸方が逆になります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">原価差異</td><td class="d amt">120,000</td><td class="c">売上原価</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">月末にやることと年度末にやることを混同しない</span>
+    <p><strong>月末</strong>　差異を把握して差異勘定に計上する（パーシャル・プランなら仕掛品勘定から、シングル・プランなら各費目勘定から）。差異勘定に月々の差異が積み上がっていきます。</p>
+    <p><strong>会計年度末</strong>　積み上がった差異勘定の残高を売上原価に賦課する。</p>
+    <p>問題文が「月末に差異を計上した」と言っているのか「会計年度末に売上原価に賦課した」と言っているのかで、書く仕訳が変わります。<mark>この2つは別の手続です。</mark>UNIT 04・07・10 でも同じ注意をしました。工業簿記の差異はすべてこの2段構えです。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">異常な差異は売上原価に入れない</span>
+    <p>売上原価加減法の対象は<strong>正常な範囲の差異</strong>です。<mark>災害による損失など、正常な製造活動から生じたとはいえない多額の差異は、非原価項目として営業外費用または特別損失に計上します。</mark></p>
+    <p>これは「正常な差異は製造活動の一部だから売上原価、異常な差異は製造活動と無関係だから損益計算書の下のほう」という切り分けです。2級で問われるのはあくまで原則の売上原価加減法ですが、この線引きがあることは知っておいてください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この単元で使う勘定科目</span>
+    <p><strong>原価差異</strong>　差異の総額を受ける勘定。標準原価差異ともいう。<br><strong>直接材料費差異</strong>／<strong>価格差異</strong>／<strong>数量差異</strong>　材料費の差異を受ける勘定。<br><strong>直接労務費差異</strong>／<strong>賃率差異</strong>／<strong>時間差異</strong>　労務費の差異を受ける勘定。<br><strong>製造間接費差異</strong>／<strong>予算差異</strong>／<strong>能率差異</strong>／<strong>操業度差異</strong>　製造間接費の差異を受ける勘定。</p>
+    <p>どこまで細かく分けるかは<mark>問題文の指定または答案用紙の勘定科目欄</mark>で決まります。指定がなければ費目ごと（直接材料費差異・直接労務費差異・製造間接費差異）にまとめるか、原価差異1本にまとめます。<br>どれも<strong>差異勘定であり、資産でも負債でもありません</strong>。年度末に売上原価へ消えていく、一時的な受け皿です。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>差異分析では、標準単価・標準賃率・標準配賦率・固定費率という<strong>4つの率</strong>を何度も掛け直します。打ち直すたびに取り違える危険があるので、いま使っている率を<strong>メモリに入れて</strong>から差を掛けてください。</p>
+    <p>たとえば時間差異なら、標準賃率 1,200 を <strong>M+</strong> で記憶し、（1,680 − 1,750）＝ △70 を出して × <strong>MR</strong> ＝ で △84,000 が出ます。<mark>差を先に出してから率を掛ける</mark>順にすると、符号が画面に残るので有利・不利を見失いません。</p>
+    <p>3つの差異を足して総差異と突き合わせるときは <strong>GT</strong> が使えます。ただし前問の値が残っているとそのまま加算されるので、<strong>差異分析を始める前に必ず GT をクリア</strong>してください。桁は合っているのに答だけ違うという、いちばん気づきにくい誤りになります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 10問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-hyojun"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル 10問</h2>
+
+  <p>電卓を使って構いません。<strong>差異は必ず符号付きで計算し、最後に有利・不利を判定してください。</strong>製造間接費の差異はシュラッター図を描いてから式に入ります。</p>
+
+  <div id="num-hyojun"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>確認テスト 12問</h2>
+
+  <div id="quiz-hyojun"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s16"><span class="num">16</span>用語の穴埋め 8問</h2>
+
+  <p class="small muted">漢字またはカタカナで答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-hyojun"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s17"><span class="num">17</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u20check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u20check">0 / 0 完了（0%）</div>
+
+  <div id="u20check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u20-1"><label for="k1"><span class="cl__t">実際原価計算だけでは原価管理ができない理由を言える</span><span class="cl__d">実際原価どうしを比べても、比べる相手も事情が混ざった数字なので、何が原因で増えたのかが分からない。揺れないものさしとして標準原価が要る</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u20-2"><label for="k2"><span class="cl__t">標準原価計算の目的を3つ挙げられる</span><span class="cl__d">①原価管理（最重要）②記帳の簡略化・迅速化 ③予算編成の基礎</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u20-3"><label for="k3"><span class="cl__t">標準原価計算でも実際原価の集計は続けると分かっている</span><span class="cl__d">実際原価を集計しなければ差異が計算できない。標準原価計算は実際原価計算を置き換えるものではない</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u20-4"><label for="k4"><span class="cl__t">「原価標準」と「標準原価」を区別できる</span><span class="cl__d">原価標準は製品1個あたり、標準原価は原価標準×数量の総額</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u20-5"><label for="k5"><span class="cl__t">標準原価カードの3行がすべて「単価×数量」の形だと分かる</span><span class="cl__d">標準単価×標準消費量／標準賃率×標準作業時間／標準配賦率×標準操業度。だから差異も単価のズレと数量のズレに分かれる</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u20-6"><label for="k6"><span class="cl__t">標準配賦率を変動費率と固定費率から計算でき、UNIT 10 の予定配賦率と同じ式だと言える</span><span class="cl__d">標準配賦率＝変動費率＋固定費率＝製造間接費予算額÷基準操業度。違うのは掛ける操業度が実際ではなく標準になること</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u20-7"><label for="k7"><span class="cl__t">当月投入量と完成品換算量を計算し分けられる</span><span class="cl__d">材料は完成＋月末−月初（個数そのまま）。加工費は完成＋月末×進捗度−月初×進捗度。取り違えると材料費差異と労務費差異が両方狂う</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u20-8"><label for="k8"><span class="cl__t">月初仕掛品＋当月投入−月末仕掛品＝完成品 の検算を、標準原価だけで通せる</span><span class="cl__d">標準原価の世界だけで計算すれば必ずぴったり合う。合わなければ換算量のどこかが違う</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u20-9"><label for="k9"><span class="cl__t">差異の符号の向きを「標準 − 実際」に固定し、プラスが有利だと即答できる</span><span class="cl__d">プラス（標準＞実際）＝有利差異＝貸方差異。マイナス＝不利差異＝借方差異。UNIT 04・07・10 の「予定−実際」と同じ向き</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u20-10"><label for="k10"><span class="cl__t">答案には絶対値と有利・不利を書き、計算の途中は符号付きで扱うと決めている</span><span class="cl__d">金額欄にマイナスは付けない。ただし絶対値だけで計算すると合計のときに符号を取り違える</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u20-11"><label for="k11"><span class="cl__t">パーシャル・プランの仕掛品勘定に何が入るか書ける</span><span class="cl__d">借方が実際原価、貸方が標準原価。差異は仕掛品勘定の貸借差額として現れる</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u20-12"><label for="k12"><span class="cl__t">シングル・プランの仕掛品勘定に何が入るか書ける</span><span class="cl__d">借方も貸方も標準原価。仕掛品勘定に差異は出ず、材料・賃金給料・製造間接費の各勘定で差異が把握される</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u20-13"><label for="k13"><span class="cl__t">2つの記帳方法で完成品原価・月末仕掛品・差異総額が変わらないと言える</span><span class="cl__d">記帳方法は差異をどの勘定で受けるかを決めるだけ。金額そのものは変えない</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u20-14"><label for="k14"><span class="cl__t">2級の記帳方法はパーシャル・プランとシングル・プランの2つだけだと知っている</span><span class="cl__d">修正パーシャル・プランは出題区分表では1級。市販テキストに載っていても2級の答案では書かない</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u20-15"><label for="k15"><span class="cl__t">価格差異と数量差異の式を、掛ける相手まで含めて書ける</span><span class="cl__d">価格差異＝（標準単価−実際単価）×実際消費量／数量差異＝標準単価×（標準消費量−実際消費量）</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u20-16"><label for="k16"><span class="cl__t">価格差異に実際消費量を掛ける理由を、重なりの扱いから説明できる</span><span class="cl__d">単価の差と数量の差が重なる角の部分を価格差異に含めると決めている。現場の責任である数量差異に価格変動の影響を押し付けないため</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u20-17"><label for="k17"><span class="cl__t">賃率差異と時間差異の式を書け、材料費の2差異と同じ形だと言える</span><span class="cl__d">賃率差異＝（標準賃率−実際賃率）×実際作業時間／時間差異＝標準賃率×（標準作業時間−実際作業時間）</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u20-18"><label for="k18"><span class="cl__t">2つの差異の符号が食い違う場合があると分かり、必ず両方を計算する</span><span class="cl__d">価格差異が不利で数量差異が有利、という組み合わせは実際に出る。総差異の符号から決めつけない</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u20-19"><label for="k19"><span class="cl__t">実際原価計算の差異と標準原価計算の差異の対応を説明できる</span><span class="cl__d">材料消費価格差異＝価格差異、賃率差異＝賃率差異、予算差異・操業度差異はそのまま。増えたのは数量側（数量差異・時間差異・能率差異）だけ。数量にも標準を置いたから</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u20-20"><label for="k20"><span class="cl__t">標準原価計算のシュラッター図を、何も見ずに描ける</span><span class="cl__d">UNIT 10 の図に標準操業度の縦線が1本増えただけ。標準操業度・実際操業度・基準操業度の3本が並び、予算差異・能率差異・操業度差異の3つに分かれる</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u20-21"><label for="k21"><span class="cl__t">製造間接費の3つの差異の式を書け、合計で検算できる</span><span class="cl__d">予算差異＝予算許容額−実際発生額／能率差異＝標準配賦率×（標準操業度−実際操業度）／操業度差異＝固定費率×（実際操業度−基準操業度）／合計＝標準配賦額−実際発生額</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u20-22"><label for="k22"><span class="cl__t">操業度差異に掛けるのが実際操業度であって標準操業度ではないと言える</span><span class="cl__d">固定費は実際に工場を動かした時間ぶんしか吸収できない。実際操業度の縦線が能率差異と操業度差異の境目として2回登場する</span></label></li>
+    <li><input type="checkbox" id="k23" data-key="p1u20-23"><label for="k23"><span class="cl__t">能率差異の範囲が問題文で指定されると知っている</span><span class="cl__d">標準配賦率を掛けるのが標準的な扱い。変動費のみから把握する指定なら変動費率を掛け、固定費分は操業度差異に含める。総額は同じなので合計では気づけない</span></label></li>
+    <li><input type="checkbox" id="k24" data-key="p1u20-24"><label for="k24"><span class="cl__t">売上原価加減法による差異の処理を書け、月末の手続と区別できる</span><span class="cl__d">月末は差異を把握して差異勘定へ。会計年度末に差異勘定の残高を売上原価へ賦課する。不利差異なら売上原価が借方</span></label></li>
+    <li><input type="checkbox" id="k25" data-key="p1u20-25"><label for="k25"><span class="cl__t">仕訳ドリル10問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k26" data-key="p1u20-26"><label for="k26"><span class="cl__t">計算ドリル10問・確認テスト12問を全問正解した</span><span class="cl__d">特に差異の符号と、掛ける相手が標準か実際かの取り違えを落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>標準原価計算は<strong>第5問で最も出題頻度の高い論点</strong>です。パターンが固定されているぶん、反復すればそのまま12点になります。</p>
+    <p>優先して固めるのは次の3つです。<mark>①完成品換算量から標準消費量・標準作業時間を出す</mark>、<mark>②6つ（または7つ）の差異を符号付きで出して合計で検算する</mark>、<mark>③パーシャル・プランとシングル・プランで仕掛品勘定の借方に何を書くか</mark>。<br>この3つが崩れなければ、第5問で標準原価計算が出た回は取りきれます。</p>
+    <p>W7では工業簿記の最後として<strong>直接原価計算・CVP分析</strong>に進みます。そこでも固定費と変動費を分ける発想が中心になるので、<strong>この単元で固定費率と変動費率の扱いを確実にしておいてください。</strong></p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W6 ／ UNIT 20 標準原価計算</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var HYOJUN_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '原価差異',
+  '直接材料費差異', '価格差異', '数量差異',
+  '直接労務費差異', '賃率差異', '時間差異',
+  '製造間接費差異', '予算差異', '能率差異', '操業度差異',
+  '材料消費価格差異', '製造間接費配賦差異',
+  '売上', '売掛金', '現金', '当座預金', '買掛金', '未払金'
+];
+
+BokiJournal.mount('#drill-hyojun', {
+  title: '仕訳ドリル — 標準原価計算',
+  accounts: HYOJUN_ACCOUNTS,
+  questions: [
+    {
+      text: '<strong>パーシャル・プラン</strong>を採用している。当月の実際原価を仕掛品勘定に振り替えた。直接材料費の実際発生額 1,638,000円（貸方は材料）、直接労務費の実際発生額 2,065,000円（貸方は賃金・給料）、製造間接費の実際発生額 2,760,000円（貸方は製造間接費）である。',
+      debit: [['仕掛品', 6463000]],
+      credit: [['材料', 1638000], ['賃金・給料', 2065000], ['製造間接費', 2760000]],
+      hint: 'パーシャル・プランでは、仕掛品勘定の借方に何が入るでしょうか。',
+      explain: '<p>パーシャル・プランは<strong>仕掛品勘定の借方を実際原価で記入する</strong>方法です。各費目の実際発生額をそのまま振り替えます。</p><p>借方 ＝ 1,638,000 ＋ 2,065,000 ＋ 2,760,000 ＝ <strong>6,463,000円</strong>。</p><p>「パーシャル（部分的）」とは、<mark>標準原価で書かれているのが貸方だけ＝部分的</mark>という意味です。各費目の段階で標準原価に直す手間がないのが利点で、差異の計算は仕掛品勘定の1か所で済みます。</p>'
+    },
+    {
+      text: '当月の完成品を製品勘定に振り替えた。原価標準は製品1個あたり 7,400円、当月の完成品は 900個である。',
+      debit: [['製品', 6660000]],
+      credit: [['仕掛品', 6660000]],
+      hint: '完成品は標準原価で振り替えます。実際原価は使いません。',
+      explain: '<p>完成品標準原価 ＝ @7,400 × 900個 ＝ <strong>6,660,000円</strong>。</p><p><mark>実際にいくらかかったかを知らなくても、この仕訳は書けます。</mark>数量さえ分かれば原価標準との掛け算で出るからです。これが標準原価計算の目的②「記帳の簡略化・迅速化」の中身です。</p><p>なお、この仕訳はパーシャル・プランでもシングル・プランでも同じです。<strong>完成品はどちらの方法でも標準原価</strong>だからです。</p>'
+    },
+    {
+      text: '<strong>パーシャル・プラン</strong>を採用している。月末に仕掛品勘定の貸借差額から原価差異を把握した。仕掛品勘定の借方合計は 7,403,000円（月初仕掛品 940,000円 ＋ 当月の実際原価 6,463,000円）、貸方は完成品 6,660,000円 と月末仕掛品 416,000円 である。差異は原価差異勘定に一括して計上する。',
+      debit: [['原価差異', 327000]],
+      credit: [['仕掛品', 327000]],
+      hint: '借方合計と貸方に計上済みの金額の差を求めます。差異は借方・貸方どちらに立つでしょうか。',
+      explain: '<p>貸方に計上済みの金額 ＝ 6,660,000 ＋ 416,000 ＝ 7,076,000円。<br>借方合計 7,403,000 − 7,076,000 ＝ <strong>327,000円</strong>が、仕掛品勘定の借方に残っています。</p><p>借方に残高が残るということは<mark>実際原価のほうが標準原価より大きい＝不利差異</mark>です。これを消すには貸方に 仕掛品 327,000 を立て、相手科目の原価差異を借方に置きます。</p><p>検算：当月投入分の標準原価 6,136,000 − 実際原価 6,463,000 ＝ △327,000円。<strong>月初・月末仕掛品はどちらも標準原価なので差異の総額には影響しません。</strong>この道からも同じ金額が出ます。</p>'
+    },
+    {
+      text: '<strong>シングル・プラン</strong>を採用している。当月の標準原価を仕掛品勘定に振り替えた。直接材料費の標準原価 1,600,000円（貸方は材料）、直接労務費の標準原価 2,016,000円（貸方は賃金・給料）、製造間接費の標準原価 2,520,000円（貸方は製造間接費）である。',
+      debit: [['仕掛品', 6136000]],
+      credit: [['材料', 1600000], ['賃金・給料', 2016000], ['製造間接費', 2520000]],
+      hint: 'シングル・プランでは、仕掛品勘定の借方に何が入るでしょうか。',
+      explain: '<p>シングル・プランは<strong>仕掛品勘定の借方も標準原価で記入する</strong>方法です。借方 ＝ 1,600,000 ＋ 2,016,000 ＋ 2,520,000 ＝ <strong>6,136,000円</strong>。</p><p>「シングル（単一）」とは、<mark>仕掛品勘定が借方も貸方も標準原価という単一の基準で書かれている</mark>という意味です。仕掛品勘定には差異が現れず、貸借がぴったり合って締まります。</p><p>パーシャル・プランの問1と比べてください。同じ月の同じ取引なのに、借方が 6,463,000円 と 6,136,000円 で <strong>327,000円 違います</strong>。記帳方法の取り違えは、この金額の差として答案に出ます。</p>'
+    },
+    {
+      text: '<strong>シングル・プラン</strong>を採用している。月末に材料勘定で直接材料費差異を把握した。材料の実際消費額は 1,638,000円、仕掛品勘定へ振り替えた標準原価は 1,600,000円である。差異は直接材料費差異勘定に計上する。',
+      debit: [['直接材料費差異', 38000]],
+      credit: [['材料', 38000]],
+      hint: '材料勘定の借方は実際、貸方は標準。どちらが大きいでしょうか。',
+      explain: '<p>材料勘定は借方（実際消費額）1,638,000円、貸方（仕掛品へ標準）1,600,000円。<mark>借方が 38,000円 多い</mark>ので、貸借を合わせるために貸方へ 38,000円 を立てます。</p><p>実際 ＞ 標準 なので<strong>不利差異</strong>。差異勘定では借方に立ちます。</p><p>シングル・プランでは、このように<strong>費目別の各勘定で差異が把握されます</strong>。材料の消費を記録した時点で差異が分かるので、パーシャル・プランより早く現場に伝えられるのが利点です。</p>'
+    },
+    {
+      text: '<strong>シングル・プラン</strong>を採用している。月末に賃金・給料勘定で直接労務費差異を把握した。実際の直接労務費は 2,065,000円、仕掛品勘定へ振り替えた標準原価は 2,016,000円である。差異は直接労務費差異勘定に計上する。',
+      debit: [['直接労務費差異', 49000]],
+      credit: [['賃金・給料', 49000]],
+      hint: '前問と同じ考え方です。実際と標準の差を、どちら側に立てるでしょうか。',
+      explain: '<p>2,065,000 − 2,016,000 ＝ <strong>49,000円</strong>。実際 ＞ 標準 なので<strong>不利差異</strong>です。</p><p>賃金・給料勘定の借方に実際 2,065,000円、貸方に標準 2,016,000円。借方が多いので、貸方に差異 49,000円 を立てて締めます。差異勘定では借方です。</p><p>この 49,000円 は、さらに<mark>賃率差異 ＋35,000円（有利）と時間差異 △84,000円（不利）</mark>に分解できます。＋35,000 ＋ △84,000 ＝ △49,000円。<strong>符号が食い違っているので、合算した 49,000円 だけを見ても何が起きたのか分かりません。</strong>これが差異を分析する理由です。</p>'
+    },
+    {
+      text: '月末に、把握した原価差異 327,000円（借方残高）を、費目別の差異勘定に振り替えた。内訳は直接材料費差異 38,000円、直接労務費差異 49,000円、製造間接費差異 240,000円である。いずれも借方残高の不利差異である。',
+      debit: [['直接材料費差異', 38000], ['直接労務費差異', 49000], ['製造間接費差異', 240000]],
+      credit: [['原価差異', 327000]],
+      hint: '原価差異勘定の借方残高を消すには、貸方に立てます。借方は3つの費目別差異勘定です。',
+      explain: '<p>38,000 ＋ 49,000 ＋ 240,000 ＝ <strong>327,000円</strong>。すべて不利差異なので、各差異勘定の<strong>借方</strong>に立ちます。</p><p>原価差異勘定の借方残高を消すには貸方に 327,000円 を置きます。</p><p>どこまで細かく差異勘定を分けるかは<mark>問題文の指定または答案用紙の勘定科目欄</mark>で決まります。指定がなければ原価差異1本でも構いません。<strong>分け方が変わっても総額 327,000円 は変わりません。</strong></p>'
+    },
+    {
+      text: '月末に、直接材料費差異 38,000円（借方残高）を価格差異と数量差異に分析して計上し直した。価格差異は 63,000円の不利差異、数量差異は 25,000円の有利差異である。',
+      debit: [['価格差異', 63000]],
+      credit: [['数量差異', 25000], ['直接材料費差異', 38000]],
+      hint: '不利差異は借方、有利差異は貸方。貸借が一致することを確かめてください。',
+      explain: '<p><strong>価格差異 63,000円は不利差異なので借方</strong>、<strong>数量差異 25,000円は有利差異なので貸方</strong>です。そして直接材料費差異勘定の借方残高 38,000円 を消すために、貸方へ 38,000円 を置きます。</p><p>検算：借方 63,000円。貸方 25,000 ＋ 38,000 ＝ <strong>63,000円</strong>。一致します。</p><p><mark>符号が食い違う組み合わせの典型例です。</mark>総差異が 38,000円 の不利だからといって、2つとも不利とは限りません。買値は上振れしたが（価格差異 不利）、材料は節約できた（数量差異 有利）、という状態です。<br>△63,000 ＋ ＋25,000 ＝ △38,000円。符号付きで足せば必ず総差異に戻ります。</p>'
+    },
+    {
+      text: '会計年度末に、原価差異勘定の借方残高 327,000円を売上原価に賦課した。売上原価加減法による。',
+      debit: [['売上原価', 327000]],
+      credit: [['原価差異', 327000]],
+      hint: '借方残高は不利差異です。売上原価を増やすのでしょうか、減らすのでしょうか。',
+      explain: '<p>借方残高の差異は<strong>不利差異</strong>で、標準原価に入りきらなかった金額を意味します。会計年度末には売上原価を<strong>増やす</strong>方向で処理するので、<mark>売上原価が借方</mark>に来ます。これが売上原価加減法です。</p><p>差異勘定の借方残高を消すには貸方に立てる必要があり、相手科目が売上原価の借方になる、という順で考えても同じ答えになります。</p><p><strong>月末に差異を把握するのと、年度末に売上原価へ賦課するのは別の手続です。</strong>問題文がどちらを求めているかを読み分けてください。UNIT 04 の材料消費価格差異、UNIT 10 の製造間接費配賦差異と同じ2段構えです。</p>'
+    },
+    {
+      text: '会計年度末に、原価差異勘定の貸方残高 120,000円を売上原価に賦課した。売上原価加減法による。',
+      debit: [['原価差異', 120000]],
+      credit: [['売上原価', 120000]],
+      hint: '前問と逆です。貸方残高は有利差異を意味します。',
+      explain: '<p>貸方残高の差異は<strong>有利差異</strong>で、標準原価に入れすぎた金額を意味します。会計年度末には売上原価を<strong>減らす</strong>方向で処理するので、<mark>売上原価が貸方</mark>に来ます。</p><p>差異勘定の貸方残高を消すには借方に立てる必要があり、相手科目が売上原価の貸方になる、という順で考えても同じです。</p><p>前問と合わせて<strong>不利差異なら売上原価が借方、有利差異なら売上原価が貸方</strong>という対応を確実にしてください。ここは「標準より安く作れたのだから売上原価が減る」という意味で追えば迷いません。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-hyojun', {
+  title: '計算ドリル — 標準原価計算',
+  badge: '計算ドリル 10問',
+  questions: [
+    {
+      text: '製品Xの原価標準は、直接材料費 @500円／kg × 4kg、直接労務費 @1,200円／時間 × 2時間、製造間接費 @1,500円／時間 × 2時間である。① 直接材料費、② 直接労務費、③ 製造間接費、④ 原価標準（製品1個あたりの標準原価）を求めなさい。',
+      answer: [2000, 2400, 3000, 7400],
+      formula: ['500 * 4', '1200 * 2', '1500 * 2', '500 * 4 + 1200 * 2 + 1500 * 2'],
+      labels: ['① 直接材料費（円）', '② 直接労務費（円）', '③ 製造間接費（円）', '④ 原価標準（円）'],
+      hint: '3行とも「標準単価 × 標準消費量」の掛け算です。',
+      explain: '<p>① @500 × 4kg ＝ <strong>2,000円</strong><br>② @1,200 × 2時間 ＝ <strong>2,400円</strong><br>③ @1,500 × 2時間 ＝ <strong>3,000円</strong><br>④ 2,000 ＋ 2,400 ＋ 3,000 ＝ <strong>7,400円</strong></p><p>3行とも<mark>「1単位あたりの金額」×「使う量」</mark>という同じ形です。だから差異も3つとも「単価のズレ」と「数量のズレ」に分かれます。</p><p>④は<strong>製品1個あたり</strong>の金額なので原価標準といいます。これに数量を掛けた総額が標準原価です。言葉が入れ替わるだけなので混同しないでください。</p>'
+    },
+    {
+      text: '製造間接費の月間予算は、変動費 1,080,000円・固定費 1,620,000円、月間の基準操業度は直接作業時間 1,800時間である。① 変動費率、② 固定費率、③ 標準配賦率を求めなさい。',
+      answer: [600, 900, 1500],
+      formula: ['1080000 / 1800', '1620000 / 1800', '1080000 / 1800 + 1620000 / 1800'],
+      labels: ['① 変動費率（円）', '② 固定費率（円）', '③ 標準配賦率（円）'],
+      hint: '変動費も固定費も、同じ基準操業度で割ります。UNIT 10 の予定配賦率と同じ式です。',
+      explain: '<p>① 変動費率 ＝ 1,080,000 ÷ 1,800 ＝ <strong>@600円</strong><br>② 固定費率 ＝ 1,620,000 ÷ 1,800 ＝ <strong>@900円</strong><br>③ 標準配賦率 ＝ @600 ＋ @900 ＝ <strong>@1,500円</strong></p><p>検算：予算総額（1,080,000 ＋ 1,620,000 ＝ 2,700,000）÷ 1,800 ＝ @1,500円。一致します。</p><p><mark>UNIT 10 の「予定配賦率 ＝ 変動費率 ＋ 固定費率」とまったく同じ式</mark>です。呼び名が予定配賦率から標準配賦率に変わっただけで、計算は変わりません。<strong>操業度差異の計算に使うのは固定費率 @900 だけ</strong>なので、②を出せないと先へ進めません。</p>'
+    },
+    {
+      text: '当月の生産データは、月初仕掛品 200個（加工進捗度50%）、当月完成品 900個、月末仕掛品 100個（加工進捗度40%）である。直接材料は工程の始点で全量投入する。原価標準は直接材料費 @500円 × 4kg、直接労務費 @1,200円 × 2時間である。① 当月投入量（材料・個）、② 当月投入量（加工費・完成品換算量・個）、③ 標準消費量（kg）、④ 標準直接作業時間（時間）を求めなさい。',
+      answer: [800, 840, 3200, 1680],
+      formula: ['900 + 100 - 200', '900 + 100 * 0.4 - 200 * 0.5', '(900 + 100 - 200) * 4', '(900 + 100 * 0.4 - 200 * 0.5) * 2'],
+      labels: ['① 当月投入量・材料（個）', '② 当月投入量・加工費（個）', '③ 標準消費量（kg）', '④ 標準直接作業時間（時間）'],
+      hint: '材料は個数そのまま、加工費は進捗度を掛けた換算量です。',
+      explain: '<p>① 材料 ＝ 900 ＋ 100 − 200 ＝ <strong>800個</strong>。材料は始点で全量投入するので、進捗度を掛けません。<br>② 加工費 ＝ 900 ＋ 100 × 40% − 200 × 50% ＝ 900 ＋ 40 − 100 ＝ <strong>840個</strong><br>③ 800個 × 4kg ＝ <strong>3,200kg</strong><br>④ 840個 × 2時間 ＝ <strong>1,680時間</strong></p><p><mark>①と②が違う数字になるのが要点です。</mark>月初仕掛品 200個 は先月のうちに材料を投入済みですが、加工は 50% しか済んでいません。だから当月やった加工は残り 50%（＝100個ぶん）です。</p><p><strong>この 1,680時間 は、製造間接費の標準操業度としても使います</strong>（配賦基準が直接作業時間の場合）。ここを間違えると、直接労務費差異と製造間接費差異の両方が崩れます。</p>'
+    },
+    {
+      text: '標準単価 @500円／kg、標準消費量 3,200kg に対して、実際単価 @520円／kg、実際消費量 3,150kg であった。① 価格差異、② 数量差異、③ 直接材料費の総差異の金額（いずれも絶対値）を求めなさい。',
+      answer: [63000, 25000, 38000],
+      formula: ['(520 - 500) * 3150', '500 * (3200 - 3150)', '520 * 3150 - 500 * 3200'],
+      labels: ['① 価格差異（絶対値・円）', '② 数量差異（絶対値・円）', '③ 総差異（絶対値・円）'],
+      hint: '価格差異には実際消費量を掛け、数量差異には標準単価を掛けます。符号も確かめてください。',
+      explain: '<p>① 価格差異 ＝（@500 − @520）× 3,150kg ＝ △20 × 3,150 ＝ △63,000 → <strong>63,000円の不利差異</strong><br>② 数量差異 ＝ @500 ×（3,200 − 3,150）＝ @500 × ＋50 ＝ ＋25,000 → <strong>25,000円の有利差異</strong><br>③ 総差異 ＝ 標準 1,600,000 − 実際 1,638,000 ＝ △38,000 → <strong>38,000円の不利差異</strong></p><p>検算：△63,000 ＋ ＋25,000 ＝ △38,000円。③と一致します。</p><p><mark>2つの符号が食い違っています。</mark>買値は @500 の想定より @520 と上振れしたが（不利）、材料は 3,200kg のところ 3,150kg で済んだ（有利）、という状態です。<strong>総差異が不利だから両方とも不利、と決めつけないでください。</strong></p><p>掛ける相手も確かめてください。価格差異には<strong>実際</strong>消費量 3,150kg、数量差異には<strong>標準</strong>単価 @500。逆にすると金額が変わります。</p>'
+    },
+    {
+      text: '標準賃率 @1,200円／時間、標準直接作業時間 1,680時間に対して、実際賃率 @1,180円／時間、実際直接作業時間 1,750時間であった。① 賃率差異、② 時間差異、③ 直接労務費の総差異の金額（いずれも絶対値）を求めなさい。',
+      answer: [35000, 84000, 49000],
+      formula: ['(1200 - 1180) * 1750', '1200 * (1750 - 1680)', '1180 * 1750 - 1200 * 1680'],
+      labels: ['① 賃率差異（絶対値・円）', '② 時間差異（絶対値・円）', '③ 総差異（絶対値・円）'],
+      hint: '材料費の2差異とまったく同じ形です。単価が賃率、数量が作業時間に変わるだけ。',
+      explain: '<p>① 賃率差異 ＝（@1,200 − @1,180）× 1,750時間 ＝ ＋20 × 1,750 ＝ ＋35,000 → <strong>35,000円の有利差異</strong><br>② 時間差異 ＝ @1,200 ×（1,680 − 1,750）＝ @1,200 × △70 ＝ △84,000 → <strong>84,000円の不利差異</strong><br>③ 総差異 ＝ 標準 2,016,000 − 実際 2,065,000 ＝ △49,000 → <strong>49,000円の不利差異</strong></p><p>検算：＋35,000 ＋ △84,000 ＝ △49,000円。③と一致します。</p><p>ここも符号が食い違います。<mark>想定より安い賃率の人員で作業できた（有利）が、1,680時間 で済むはずの作業に 1,750時間 かけた（不利）</mark>という状態です。</p><p><strong>時間差異は純粋に作業能率を測っています。</strong>賃率を標準で固定しているので、人員構成の影響は入りません。「70時間 余計にかかった」という事実だけが 84,000円 になります。</p>'
+    },
+    {
+      text: '製造間接費について、標準配賦率 @1,500円（変動費率 @600円、固定費率 @900円）、月間の固定費予算額 1,620,000円、月間の基準操業度 1,800時間である。当月の標準操業度は 1,680時間、実際操業度は 1,750時間、実際発生額は 2,760,000円であった。① 予算許容額、② 標準配賦額、③ 製造間接費の総差異の金額（絶対値）を求めなさい。',
+      answer: [2670000, 2520000, 240000],
+      formula: ['600 * 1750 + 1620000', '1500 * 1680', '2760000 - 1500 * 1680'],
+      labels: ['① 予算許容額（円）', '② 標準配賦額（円）', '③ 総差異（絶対値・円）'],
+      hint: '予算許容額には実際操業度を、標準配賦額には標準操業度を使います。',
+      explain: '<p>① 予算許容額 ＝ @600 × <mark>1,750</mark> ＋ 1,620,000 ＝ 1,050,000 ＋ 1,620,000 ＝ <strong>2,670,000円</strong><br>② 標準配賦額 ＝ @1,500 × <mark>1,680</mark> ＝ <strong>2,520,000円</strong><br>③ 総差異 ＝ 2,520,000 − 2,760,000 ＝ △240,000 → <strong>240,000円の不利差異</strong></p><p><strong>掛ける操業度が①と②で違います。</strong>予算許容額は「実際にその時間動いたなら、いくらまで使ってよかったか」なので実際操業度 1,750時間。標準配賦額は「その生産量なら、いくら配賦されるべきか」なので標準操業度 1,680時間です。</p><p><mark>UNIT 10 の予定配賦では、配賦額にも実際操業度を掛けていました。</mark>標準原価計算になって操業度にも標準が置かれたため、ここが分かれます。これが次問の能率差異を生みます。</p>'
+    },
+    {
+      text: '前問と同じ条件（標準配賦率 @1,500円、変動費率 @600円、固定費率 @900円、固定費予算額 1,620,000円、基準操業度 1,800時間、標準操業度 1,680時間、実際操業度 1,750時間、実際発生額 2,760,000円）について、能率差異を標準配賦率で把握する3分法により ① 予算差異、② 能率差異、③ 操業度差異の金額（いずれも絶対値）を求めなさい。',
+      answer: [90000, 105000, 45000],
+      formula: ['2760000 - (600 * 1750 + 1620000)', '1500 * (1750 - 1680)', '900 * (1800 - 1750)'],
+      labels: ['① 予算差異（絶対値・円）', '② 能率差異（絶対値・円）', '③ 操業度差異（絶対値・円）'],
+      hint: '能率差異は標準操業度と実際操業度の間、操業度差異は実際操業度と基準操業度の間です。',
+      explain: '<p>① 予算差異 ＝ 予算許容額 2,670,000 − 実際発生額 2,760,000 ＝ △90,000 → <strong>90,000円の不利差異</strong><br>② 能率差異 ＝ @1,500 ×（1,680 − 1,750）＝ @1,500 × △70 ＝ △105,000 → <strong>105,000円の不利差異</strong><br>③ 操業度差異 ＝ @900 ×（1,750 − 1,800）＝ @900 × △50 ＝ △45,000 → <strong>45,000円の不利差異</strong></p><p><strong>検算：</strong>△90,000 ＋ △105,000 ＋ △45,000 ＝ <strong>△240,000円</strong>。前問③の総差異と一致します。<mark>差異分析をしたら必ずこの足し算をしてください。</mark></p><p>意味を言葉にすると、予算差異は「1,750時間 動いたなら 2,670,000円 で足りたはずなのに 2,760,000円 使った＝使いすぎ」、能率差異は「1,680時間 で済むはずの作業に 1,750時間 かけた＝その 70時間 ぶんの製造間接費が余計にかかった」、操業度差異は「1,800時間 動く前提で固定費を配る率を決めたのに 1,750時間 しか動かなかった＝固定費を配りきれなかった」です。</p><p><strong>操業度差異に掛けるのは実際操業度 1,750時間であって、標準操業度 1,680時間ではありません。</strong>固定費は実際に工場を動かした時間ぶんしか吸収できないからです。</p>'
+    },
+    {
+      text: '製品Yの原価標準は、直接材料費 @300円／kg × 5kg、直接労務費 @1,000円／時間 × 3時間、製造間接費 @800円／時間 × 3時間である。当月は月初・月末とも仕掛品がなく、当月完成品は 1,000個であった。実際は、直接材料 @310円／kg を 4,900kg 消費、直接労務費は実際賃率 @980円／時間 で 3,050時間であった。① 価格差異、② 数量差異、③ 賃率差異、④ 時間差異の金額（いずれも絶対値）を求めなさい。',
+      answer: [49000, 30000, 61000, 50000],
+      formula: ['(310 - 300) * 4900', '300 * (5000 - 4900)', '(1000 - 980) * 3050', '1000 * (3050 - 3000)'],
+      labels: ['① 価格差異（絶対値・円）', '② 数量差異（絶対値・円）', '③ 賃率差異（絶対値・円）', '④ 時間差異（絶対値・円）'],
+      hint: '月初・月末とも仕掛品がないので、当月投入量は完成品数量と同じ 1,000個です。標準消費量と標準作業時間を先に出してください。',
+      explain: '<p>仕掛品がないので当月投入量 ＝ 完成品 1,000個。<br>標準消費量 ＝ 1,000 × 5kg ＝ 5,000kg　／　標準作業時間 ＝ 1,000 × 3時間 ＝ 3,000時間。</p><p>① 価格差異 ＝（@300 − @310）× 4,900kg ＝ △10 × 4,900 ＝ △49,000 → <strong>49,000円の不利差異</strong><br>② 数量差異 ＝ @300 ×（5,000 − 4,900）＝ @300 × ＋100 ＝ ＋30,000 → <strong>30,000円の有利差異</strong><br>③ 賃率差異 ＝（@1,000 − @980）× 3,050時間 ＝ ＋20 × 3,050 ＝ ＋61,000 → <strong>61,000円の有利差異</strong><br>④ 時間差異 ＝ @1,000 ×（3,000 − 3,050）＝ @1,000 × △50 ＝ △50,000 → <strong>50,000円の不利差異</strong></p><p>検算：直接材料費 △49,000 ＋ ＋30,000 ＝ △19,000円。標準 @300 × 5,000 ＝ 1,500,000 − 実際 @310 × 4,900 ＝ 1,519,000 ＝ △19,000円。一致します。<br>直接労務費 ＋61,000 ＋ △50,000 ＝ ＋11,000円。標準 @1,000 × 3,000 ＝ 3,000,000 − 実際 @980 × 3,050 ＝ 2,989,000 ＝ ＋11,000円。一致します。</p><p><mark>直接労務費の総差異は有利差異です。</mark>賃率の有利が時間の不利を上回ったからです。総差異の符号は、2つの差異の大きさ次第で決まります。</p>'
+    },
+    {
+      text: '前問の製品Yについて、製造間接費の月間予算は変動費率 @300円、固定費予算額 1,500,000円、月間の基準操業度は 3,000時間である（標準配賦率 @800円）。当月の実際発生額は 2,420,000円、実際操業度は 3,050時間、標準操業度は 3,000時間であった。能率差異を標準配賦率で把握する3分法により ① 予算差異、② 能率差異、③ 操業度差異の金額（いずれも絶対値）を求めなさい。',
+      answer: [5000, 40000, 25000],
+      formula: ['2420000 - (300 * 3050 + 1500000)', '800 * (3050 - 3000)', '(1500000 / 3000) * (3050 - 3000)'],
+      labels: ['① 予算差異（絶対値・円）', '② 能率差異（絶対値・円）', '③ 操業度差異（絶対値・円）'],
+      hint: '今度は実際操業度が基準操業度を上回っています。操業度差異の符号が前問までと逆になります。',
+      explain: '<p>固定費率 ＝ 1,500,000 ÷ 3,000 ＝ @500円。標準配賦率 @300 ＋ @500 ＝ @800円（問題文と一致）。</p><p>予算許容額 ＝ @300 × 3,050 ＋ 1,500,000 ＝ 915,000 ＋ 1,500,000 ＝ 2,415,000円。<br>① 予算差異 ＝ 2,415,000 − 2,420,000 ＝ △5,000 → <strong>5,000円の不利差異</strong><br>② 能率差異 ＝ @800 ×（3,000 − 3,050）＝ @800 × △50 ＝ △40,000 → <strong>40,000円の不利差異</strong><br>③ 操業度差異 ＝ @500 ×（3,050 − 3,000）＝ @500 × ＋50 ＝ ＋25,000 → <strong>25,000円の有利差異</strong></p><p><mark>操業度差異が有利差異になりました。</mark>実際操業度 3,050時間 が基準操業度 3,000時間 を上回ったので、固定費を予定以上に配れたからです。</p><p>検算：標準配賦額 ＝ @800 × 3,000 ＝ 2,400,000円。2,400,000 − 2,420,000 ＝ △20,000円。<br>△5,000 ＋ △40,000 ＋ ＋25,000 ＝ <strong>△20,000円</strong>。一致します。</p><p><strong>3つの符号はそれぞれ独立に決まります。</strong>この問題では能率差異が不利、操業度差異が有利です。必ず3つとも計算してください。</p>'
+    },
+    {
+      text: '製品Xについて、原価標準は製品1個あたり 7,400円（うち直接材料費 2,000円、加工費 5,400円）である。月初仕掛品 200個（加工進捗度50%）、当月完成品 900個、月末仕掛品 100個（加工進捗度40%）であり、直接材料は工程の始点で全量投入する。① 完成品標準原価、② 月末仕掛品標準原価、③ 月初仕掛品標準原価を求めなさい。',
+      answer: [6660000, 416000, 940000],
+      formula: ['7400 * 900', '2000 * 100 + 5400 * 100 * 0.4', '2000 * 200 + 5400 * 200 * 0.5'],
+      labels: ['① 完成品標準原価（円）', '② 月末仕掛品標準原価（円）', '③ 月初仕掛品標準原価（円）'],
+      hint: '仕掛品は材料費と加工費を分けて計算します。材料費は個数そのまま、加工費は進捗度を掛けます。',
+      explain: '<p>① 完成品 ＝ @7,400 × 900個 ＝ <strong>6,660,000円</strong>。完成しているので進捗度は関係ありません。</p><p>② 月末仕掛品 ＝ 材料費 2,000 × 100個 ＝ 200,000　＋　加工費 5,400 × 100個 × 40% ＝ 216,000　→　<strong>416,000円</strong><br>③ 月初仕掛品 ＝ 材料費 2,000 × 200個 ＝ 400,000　＋　加工費 5,400 × 200個 × 50% ＝ 540,000　→　<strong>940,000円</strong></p><p><mark>材料費は個数そのまま、加工費は進捗度を掛けた換算量。</mark>材料は始点で全量投入しているので、進捗度が何%でも材料費は満額入ります。</p><p><strong>検算：</strong>月初 940,000 ＋ 当月投入の標準原価 6,136,000 − 月末 416,000 ＝ <strong>6,660,000円</strong>。①と一致します。標準原価の世界だけで計算すれば必ずぴったり合うので、差異分析に進む前にこの検算をしてください。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-hyojun', {
+  title: '確認テスト — 標準原価計算',
+  badge: '確認テスト 12問',
+  questions: [
+    {
+      text: '標準原価計算を採用する最も重要な目的はどれですか。',
+      choices: [
+        '実際原価の集計作業を不要にすること',
+        '原価管理。実際原価との差異を分析し、どこに無駄があったかを特定して現場に伝えること',
+        '税務申告に必要な原価を計算すること',
+        '製品の売価を法律で定められた方法で決定すること'
+      ],
+      answer: 1,
+      explain: '<p>標準原価計算の第一の目的は<strong>原価管理</strong>です。実際原価どうしを比べても、比べる相手自体がいろいろな事情の混ざった数字なので、何が原因で原価が動いたのか分かりません。<mark>あらかじめ決めた「あるべき原価」というものさしがあって初めて、差異の原因を特定できます。</mark></p><p>目的はほかに②記帳の簡略化・迅速化（数量さえ分かれば原価が出るので月末を待たない）、③予算編成の基礎（原価標準 × 計画数量で予算が組める）があります。</p><p>選択肢1は誤りです。<strong>実際原価を集計しなければ差異が計算できません。</strong>標準原価計算は実際原価計算を置き換えるものではなく、両方を計算して突き合わせる仕組みです。仕事はむしろ増えます。</p>'
+    },
+    {
+      text: '「原価標準」と「標準原価」の関係について、正しい記述はどれですか。',
+      choices: [
+        '同じものを指す言葉であり、どちらを使っても構わない',
+        '原価標準は製品1個あたりのあるべき原価であり、標準原価は原価標準に数量を掛けた総額である',
+        '原価標準は実際原価計算で使う用語、標準原価は標準原価計算で使う用語である',
+        '原価標準は月初に設定する金額、標準原価は月末に確定する金額である'
+      ],
+      answer: 1,
+      explain: '<p><strong>原価標準</strong>は<mark>製品1個あたり</mark>のあるべき原価。標準原価カードに書かれている単価表のことです。<br><strong>標準原価</strong>は原価標準 × 数量で計算した<mark>総額</mark>です。「完成品の標準原価 6,660,000円」のように使います。</p><p>字が入れ替わっているだけなので読み飛ばしがちですが、指すものが違います。<strong>問題文が「原価標準は 7,400円」と言っていれば1個あたりの話、「当月の標準原価」と言っていれば総額の話です。</strong></p><p>単位が個あたりなのか総額なのかを確かめないまま計算を始めると、桁が3つずれた答えを書くことになります。</p>'
+    },
+    {
+      text: 'パーシャル・プランとシングル・プランの違いとして、正しい記述はどれですか。',
+      choices: [
+        'パーシャル・プランは仕掛品勘定の借方を実際原価で記入し、シングル・プランは借方も標準原価で記入する',
+        'パーシャル・プランは仕掛品勘定の貸方を実際原価で記入し、シングル・プランは貸方も標準原価で記入する',
+        'パーシャル・プランは差異を分析しないが、シングル・プランは差異を分析する',
+        'パーシャル・プランは総合原価計算で、シングル・プランは個別原価計算で用いる'
+      ],
+      answer: 0,
+      explain: '<p><strong>パーシャル・プラン</strong>は仕掛品勘定の<mark>借方を実際原価</mark>で記入します。貸方（完成品・月末仕掛品）は標準原価なので、差異は仕掛品勘定の貸借差額として現れます。</p><p><strong>シングル・プラン</strong>は仕掛品勘定の<mark>借方も標準原価</mark>で記入します。仕掛品勘定は貸借とも標準原価になるため差異が出ず、差異は材料・賃金給料・製造間接費の各勘定で把握されます。</p><p>選択肢2は貸方と借方が逆です。<strong>どちらの方法でも貸方（完成品・月末仕掛品）は標準原価</strong>です。ここが両方の共通点で、だから完成品原価と月末仕掛品の金額は方法によらず同じになります。</p><p>選択肢3も誤りです。どちらの方法でも差異は分析します。違うのは把握する場所だけです。</p>'
+    },
+    {
+      text: '同じ月の同じ取引について、パーシャル・プランとシングル・プランで計算した場合に<strong>異なる</strong>金額になるものはどれですか。',
+      choices: [
+        '完成品標準原価',
+        '月末仕掛品標準原価',
+        '仕掛品勘定の借方合計',
+        '原価差異の総額'
+      ],
+      answer: 2,
+      explain: '<p>記帳方法によって変わるのは<strong>仕掛品勘定の借方に何を書くか</strong>だけです。パーシャル・プランは実際原価、シングル・プランは標準原価を書くので、借方合計が変わります。</p><p>設例では、パーシャル・プランの借方合計 7,403,000円 に対してシングル・プランは 7,076,000円。差は 327,000円 で、これはちょうど原価差異の総額にあたります。</p><p>一方、<mark>完成品標準原価・月末仕掛品標準原価・原価差異の総額は、どちらの方法でも同じ</mark>です。記帳方法は差異をどの勘定で受け止めるかを決めるだけで、金額そのものを変えません。</p><p><strong>答案用紙の仕掛品勘定に「原価差異」の行があればパーシャル・プラン</strong>です。取り違えると借方に書く金額がすべて変わるので、解き始める前に確認してください。</p>'
+    },
+    {
+      text: '直接材料費の価格差異の計算式として正しいものはどれですか。',
+      choices: [
+        '（標準単価 − 実際単価）× 標準消費量',
+        '（標準単価 − 実際単価）× 実際消費量',
+        '標準単価 ×（標準消費量 − 実際消費量）',
+        '実際単価 ×（標準消費量 − 実際消費量）'
+      ],
+      answer: 1,
+      explain: '<p><strong>価格差異 ＝（標準単価 − 実際単価）× 実際消費量</strong>。単価のズレを測る差異なので、掛ける数量は<mark>実際</mark>消費量です。</p><p>理由は、単価の差と数量の差が重なる角の部分をどちらの差異に含めるかの約束にあります。<strong>標準原価計算では重なりを価格差異に含める</strong>と決めており、だから価格差異は実際消費量いっぱいの幅で計算します。</p><p>この約束の背景は責任の所在です。<mark>価格差異は購買部門の責任、数量差異は製造現場の責任。</mark>現場の責任である数量差異に価格変動の影響まで押し付けないため、不確実な重なりの部分を価格差異に寄せます。</p><p>選択肢3は数量差異の式です。数量差異には<strong>標準</strong>単価を掛けます。この2つの掛ける相手を逆にするのが最も多い事故です。</p>'
+    },
+    {
+      text: '標準単価 @600円／kg、標準消費量 2,000kg のところ、実際単価 @580円／kg、実際消費量 2,100kg であった。数量差異はいくらですか。',
+      choices: [
+        '60,000円の不利差異',
+        '58,000円の不利差異',
+        '60,000円の有利差異',
+        '42,000円の不利差異'
+      ],
+      answer: 0,
+      invariant: [
+        ['600 * (2100 - 2000)', '60000'],
+        ['600 * (2100 - 2000)', 'answer']
+      ],
+      explain: '<p>数量差異 ＝ 標準単価 ×（標準消費量 − 実際消費量）＝ @600 ×（2,000 − 2,100）＝ @600 × △100 ＝ <strong>△60,000円 → 60,000円の不利差異</strong>。</p><p><mark>標準より 100kg 多く使ったので不利差異</mark>です。「標準 − 実際」がマイナス＝不利、という向きを崩さないでください。</p><p>選択肢2の 58,000円 は、数量差異に<strong>実際</strong>単価 @580 を掛けた場合の金額です（@580 × 100）。<strong>数量差異に掛けるのは標準単価</strong>です。<br>選択肢4の 42,000円 は価格差異の金額です。しかも<strong>符号も逆</strong>で、（@600 − @580）× 2,100 ＝ ＋42,000 の<mark>有利</mark>差異です。実際単価が標準を下回っているのだから、価格差異は有利になります。</p><p>検算：△60,000 ＋ ＋42,000 ＝ △18,000円。総差異 ＝ 標準 1,200,000 − 実際 1,218,000 ＝ △18,000円。一致します。</p>'
+    },
+    {
+      text: '標準賃率 @1,000円／時間、標準作業時間 2,400時間のところ、実際賃率 @1,050円／時間、実際作業時間 2,350時間であった。賃率差異と時間差異の組み合わせとして正しいものはどれですか。',
+      choices: [
+        '賃率差異 117,500円の不利差異、時間差異 50,000円の有利差異',
+        '賃率差異 117,500円の有利差異、時間差異 50,000円の不利差異',
+        '賃率差異 120,000円の不利差異、時間差異 52,500円の有利差異',
+        '賃率差異 117,500円の不利差異、時間差異 52,500円の有利差異'
+      ],
+      answer: 0,
+      invariant: [
+        ['(1050 - 1000) * 2350', '117500'],
+        ['1000 * (2400 - 2350)', '50000']
+      ],
+      explain: '<p>賃率差異 ＝（@1,000 − @1,050）× <strong>実際</strong> 2,350時間 ＝ △50 × 2,350 ＝ <strong>△117,500円（不利差異）</strong><br>時間差異 ＝ <strong>標準</strong> @1,000 ×（2,400 − 2,350）＝ @1,000 × ＋50 ＝ <strong>＋50,000円（有利差異）</strong></p><p>検算：△117,500 ＋ ＋50,000 ＝ △67,500円。総差異 ＝ 標準 2,400,000 − 実際 2,467,500 ＝ △67,500円。一致します。</p><p>選択肢3の 120,000円 は、賃率差異に<strong>標準</strong>作業時間 2,400 を掛けた場合です（@50 × 2,400）。<strong>賃率差異には実際作業時間を掛けます。</strong><br>選択肢4の 52,500円 は、時間差異に<strong>実際</strong>賃率 @1,050 を掛けた場合です。<strong>時間差異には標準賃率を掛けます。</strong></p><p>選択肢2は符号が両方とも逆です。実際賃率が標準を上回っているのだから、賃率差異は不利です。</p>'
+    },
+    {
+      text: '標準原価計算の製造間接費差異が、実際原価計算（予定配賦）の場合より1つ多い3つに分かれる理由として、最も適切なものはどれですか。',
+      choices: [
+        '標準原価計算では製造間接費を変動費と固定費に分けるが、予定配賦では分けないから',
+        '標準原価計算では操業度にも標準を設定するため、標準操業度と実際操業度の差から能率差異が生じるから',
+        '標準原価計算では基準操業度を2つ設定するから',
+        '標準原価計算では予算差異を変動費と固定費に分けて計算するから'
+      ],
+      answer: 1,
+      explain: '<p>予定配賦では、配賦額が<strong>予定配賦率 × 実際操業度</strong>でした。実際にかかった時間ぶんをそのまま製品原価にするので、<mark>「時間をかけすぎたか」は問いません。</mark></p><p>標準原価計算では配賦額が<strong>標準配賦率 × 標準操業度</strong>になります。「この生産量なら 1,680時間 で済むはず」という基準ができたので、実際の 1,750時間 との差が新しい差異になります。これが<strong>能率差異</strong>です。</p><p>シュラッター図で言えば、<mark>縦線が1本増えただけ</mark>です。斜めの線も実際発生額の点も UNIT 10 のまま。標準操業度の縦線が加わり、差異が2つから3つに分かれます。</p><p>選択肢1は誤りです。<strong>公式法変動予算では、予定配賦でも変動費と固定費に分けます。</strong>UNIT 10 で変動費率 @300・固定費率 @600 と分けたとおりです。</p>'
+    },
+    {
+      text: '標準配賦率 @1,500円（変動費率 @600円、固定費率 @900円）、月間の固定費予算額 1,620,000円、基準操業度 1,800時間である。当月の標準操業度 1,680時間、実際操業度 1,750時間、実際発生額 2,760,000円であった。能率差異を標準配賦率で把握する3分法による能率差異はいくらですか。',
+      choices: [
+        '42,000円の不利差異',
+        '105,000円の不利差異',
+        '180,000円の不利差異',
+        '63,000円の不利差異'
+      ],
+      answer: 1,
+      invariant: [
+        ['1500 * (1750 - 1680)', '105000'],
+        ['1500 * (1750 - 1680)', 'answer']
+      ],
+      explain: '<p>能率差異 ＝ 標準配賦率 ×（標準操業度 − 実際操業度）＝ @1,500 ×（1,680 − 1,750）＝ @1,500 × △70 ＝ <strong>△105,000円（不利差異）</strong>。</p><p>1,680時間 で済むはずの作業に 1,750時間 かけたので、その <mark>70時間 ぶんの製造間接費が余計にかかった</mark>という意味です。</p><p>選択肢1の 42,000円 は、<strong>能率差異を変動費のみから把握する</strong>指定だった場合の金額です（@600 × 70）。その場合、残りの @900 × 70 ＝ 63,000円（選択肢4）は操業度差異に含めます。<mark>どちらで把握するかは問題文の指定で決まります。</mark></p><p>選択肢3の 180,000円 は、標準操業度と基準操業度の差 120時間 に標準配賦率を掛けたものです。<strong>能率差異が測るのは標準操業度と実際操業度の間</strong>であって、基準操業度は関係ありません。</p>'
+    },
+    {
+      text: '前問と同じ条件（標準配賦率 @1,500円、固定費率 @900円、固定費予算額 1,620,000円、基準操業度 1,800時間、標準操業度 1,680時間、実際操業度 1,750時間、実際発生額 2,760,000円）における操業度差異はいくらですか。',
+      choices: [
+        '108,000円の不利差異',
+        '45,000円の有利差異',
+        '45,000円の不利差異',
+        '75,000円の不利差異'
+      ],
+      answer: 2,
+      invariant: [
+        ['900 * (1800 - 1750)', '45000'],
+        ['900 * (1800 - 1750)', 'answer']
+      ],
+      explain: '<p>操業度差異 ＝ 固定費率 ×（実際操業度 − 基準操業度）＝ @900 ×（1,750 − 1,800）＝ @900 × △50 ＝ <strong>△45,000円（不利差異）</strong>。</p><p>1,800時間 動く前提で固定費を配る率を決めたのに 1,750時間 しか動かなかったので、<mark>固定費 45,000円 を製品原価に配りきれなかった</mark>という意味です。</p><p><strong>掛けるのは実際操業度 1,750時間であって、標準操業度 1,680時間ではありません。</strong>固定費は実際に工場を動かした時間ぶんしか吸収できないからです。<br>選択肢1の 108,000円 は @900 ×（1,680 − 1,800）で、標準操業度を使ってしまった場合です。これは能率差異を変動費のみから把握する場合の操業度差異にあたります。</p><p>検算（標準配賦率で能率差異を把握する3分法）：予算差異 △90,000 ＋ 能率差異 △105,000 ＋ 操業度差異 △45,000 ＝ △240,000円。標準配賦額 2,520,000 − 実際発生額 2,760,000 ＝ △240,000円。一致します。</p>'
+    },
+    {
+      text: '標準原価差異の会計処理について、2級で原則とされる方法はどれですか。',
+      choices: [
+        '会計年度末に売上原価に賦課する（売上原価加減法）',
+        '売上原価・製品・仕掛品に数量比で按分する',
+        '翌期に繰り越して次期の標準原価に反映させる',
+        '営業外損益として処理する'
+      ],
+      answer: 0,
+      explain: '<p>標準原価差異は、原則として<strong>会計年度末に売上原価に賦課します</strong>。これを<mark>売上原価加減法</mark>といいます。<br>不利差異（借方残高）なら売上原価を増やし、有利差異（貸方残高）なら減らします。</p><p>理屈だけで言えば選択肢2の按分が正しいのですが、<strong>標準が正常な水準に設定されていれば差異は小さいはず</strong>で、按分の手間に見合いません。また差異は「その期の製造活動の能率」を表すものなので、資産として繰り越すより当期の損益に反映させるほうが実態に合います。</p><p>UNIT 04 の材料消費価格差異、UNIT 07 の賃率差異、UNIT 10 の製造間接費配賦差異と同じ扱いです。<strong>工業簿記の差異はすべて、最後は売上原価に落ちます。</strong></p><p>選択肢3・4は2級の出題範囲外の処理です。ただし<mark>災害による損失など異常な差異は、非原価項目として営業外費用または特別損失に計上します。</mark>売上原価加減法の対象は正常な範囲の差異です。</p>'
+    },
+    {
+      text: '会計年度末に、原価差異勘定の貸方残高 85,000円を売上原価に賦課します。この仕訳として正しいものはどれですか。',
+      choices: [
+        '借方：売上原価 85,000　貸方：原価差異 85,000',
+        '借方：原価差異 85,000　貸方：売上原価 85,000',
+        '借方：仕掛品 85,000　貸方：原価差異 85,000',
+        '借方：原価差異 85,000　貸方：製品 85,000'
+      ],
+      answer: 1,
+      invariant: [['85000', 'answer']],
+      explain: '<p>貸方残高の差異は<strong>有利差異</strong>で、標準原価に入れすぎた分を意味します。会計年度末には売上原価を<strong>減らす</strong>方向で処理するので、<mark>売上原価が貸方</mark>に来ます。これが売上原価加減法です。</p><p>差異勘定の貸方残高を消すには借方に立てる必要があり、相手科目が売上原価の貸方になる、という順で考えても同じ答えになります。</p><p>不利差異（借方残高）なら選択肢1の形になり、売上原価が増えます。</p><p><strong>月末に差異を把握するのと、年度末に売上原価へ賦課するのは別の手続です。</strong>問題文がどちらを求めているかを読み分けてください。選択肢3・4のように仕掛品や製品を相手にすることはありません。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-hyojun', {
+  title: '用語の穴埋め — 標準原価計算',
+  questions: [
+    {
+      text: '製品1個あたりのあるべき原価を、標準単価と標準消費量の掛け算で設定したものを何といいますか。',
+      answer: ['原価標準', 'げんかひょうじゅん'],
+      explain: '<p><strong>原価標準</strong>。製品1個あたりの金額です。これに数量を掛けた総額が<mark>標準原価</mark>で、言葉が入れ替わっているだけなので混同しやすいところです。<br>問題文が「原価標準は 7,400円」と言っていれば1個あたりの話、「当月の標準原価」と言っていれば総額の話です。</p>'
+    },
+    {
+      text: '仕掛品勘定の借方を実際原価で記入し、差異を仕掛品勘定の貸借差額として把握する記帳方法を何といいますか。',
+      answer: ['パーシャル・プラン', 'パーシャルプラン', 'ぱーしゃる・ぷらん', 'ぱーしゃるぷらん'],
+      explain: '<p><strong>パーシャル・プラン</strong>。貸方（完成品・月末仕掛品）だけが標準原価＝<mark>部分的</mark>に標準原価で書かれているという意味です。<br>各費目の実際原価をそのまま振り替えればよいので手間が少なく、差異の計算は仕掛品勘定の1か所で済みます。</p>'
+    },
+    {
+      text: '仕掛品勘定の借方も標準原価で記入し、差異を材料・賃金給料・製造間接費の各勘定で把握する記帳方法を何といいますか。',
+      answer: ['シングル・プラン', 'シングルプラン', 'しんぐる・ぷらん', 'しんぐるぷらん'],
+      explain: '<p><strong>シングル・プラン</strong>。仕掛品勘定が借方も貸方も標準原価という<mark>単一</mark>の基準で書かれているという意味です。仕掛品勘定には差異が現れず、貸借がぴったり合って締まります。<br>各費目の消費を記録した時点で差異が分かるので、パーシャル・プランより早く現場に伝えられます。</p>'
+    },
+    {
+      text: '直接材料費の差異のうち、標準単価と実際単価の差に実際消費量を掛けて計算するものを何といいますか。',
+      answer: ['価格差異', 'かかくさい'],
+      explain: '<p><strong>価格差異</strong> ＝（標準単価 − 実際単価）× <mark>実際</mark>消費量。買値の上振れ・下振れを表し、購買部門の責任にあたります。<br>掛けるのが実際消費量なのは、単価の差と数量の差が重なる角の部分を価格差異に含めると決めているからです。現場の責任である数量差異に価格変動の影響を押し付けないための約束です。</p>'
+    },
+    {
+      text: '直接労務費の差異のうち、標準賃率に標準作業時間と実際作業時間の差を掛けて計算し、作業能率の良し悪しを表すものを何といいますか。',
+      answer: ['時間差異', 'じかんさい', '作業時間差異', 'さぎょうじかんさい'],
+      explain: '<p><strong>時間差異</strong>（作業時間差異）＝ <mark>標準</mark>賃率 ×（標準作業時間 − 実際作業時間）。<br>賃率を標準で固定しているので人員構成の影響が入らず、<strong>純粋に「予定より速かったか遅かったか」だけ</strong>が金額になります。だから現場の管理者にとって最も意味のある数字です。</p>'
+    },
+    {
+      text: '製造間接費の差異のうち、標準操業度と実際操業度の差から生じ、作業能率の良し悪しを表すものを何といいますか。',
+      answer: ['能率差異', 'のうりつさい'],
+      explain: '<p><strong>能率差異</strong> ＝ 標準配賦率 ×（標準操業度 − 実際操業度）。標準原価計算で新しく現れる差異で、<mark>予定配賦（UNIT 10）には存在しませんでした</mark>。操業度にも標準を設定したから生まれます。<br>直接労務費の時間差異と同じ原因（作業に時間をかけすぎた／早く終えた）から出ています。<br>問題文が「変動費のみから把握する」と指定した場合は変動費率を掛け、固定費分は操業度差異に含めます。</p>'
+    },
+    {
+      text: '製造間接費の差異のうち、実際操業度が基準操業度と異なったために固定費を製品原価に配りきれなかった（または配りすぎた）ことから生じるものを何といいますか。',
+      answer: ['操業度差異', 'そうぎょうどさい'],
+      explain: '<p><strong>操業度差異</strong> ＝ 固定費率 ×（<mark>実際</mark>操業度 − 基準操業度）。標準操業度ではなく実際操業度を掛けます。固定費は実際に工場を動かした時間ぶんしか吸収できないからです。<br>実際が基準を下回れば不利差異（設備を遊ばせた）、上回れば有利差異です。UNIT 10 の操業度差異とまったく同じ意味・同じ式です。</p>'
+    },
+    {
+      text: '標準原価差異を会計年度末に売上原価に加算または減算して処理する方法を何といいますか。',
+      answer: ['売上原価加減法', 'うりあげげんかかげんほう'],
+      explain: '<p><strong>売上原価加減法</strong>。不利差異（借方残高）なら売上原価を増やし、有利差異（貸方残高）なら減らします。2級で原則とされる処理です。<br>理屈からは売上原価・製品・仕掛品への按分が正しいのですが、標準が正常な水準なら差異は小さく、按分の手間に見合いません。また差異は当期の製造活動の能率を表すので、当期の損益に反映させるほうが実態に合います。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>

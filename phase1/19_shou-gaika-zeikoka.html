@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-18-g2,商-第二-18-ア,商-第二-22-g2,商-第二-21-イ">
+<meta name="boki-subject" content="商">
+<title>外貨建取引・法人税等・税効果会計 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 19 外貨建取引・法人税等・税効果会計</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W6 商業簿記 ／ UNIT 19 ／ 6時間</p>
+    <h1>外貨建取引・法人税等・税効果会計<br>— 相場と税法という、自分では決められない2つの外部</h1>
+    <p class="lead">この単元は見かけ上3つの論点ですが、根は1つです。<strong>会社が自分で決められないルールが外から入ってくると、帳簿の数字がそのままでは使えなくなる</strong>——その調整の話です。ドルで売れば、円でいくらかは相場が決めます。利益に税金がかかるとき、いくら課税するかは税法が決めます。どちらも会社の意思と無関係に動くので、<mark>帳簿の数字と、外から与えられた数字とのズレをどう処理するか</mark>が問題になります。外貨では<strong>為替差損益</strong>、税金では<strong>法人税等調整額</strong>。この2つがズレの受け皿です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 6h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 16問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">なぜ外貨の取引だけ特別な処理が要るのか</a></li>
+      <li><a href="#s2">3つの時点と3つのレート</a></li>
+      <li><a href="#s3">決済時に出る差額 — 決済差損益</a></li>
+      <li><a href="#s4">決算時に出る差額 — 換算差額</a></li>
+      <li><a href="#s5">換算し直さないもの — 前払金・前受金・棚卸資産</a></li>
+      <li><a href="#s6">為替予約（振当処理）— 相場を先に固定する</a></li>
+      <li><a href="#s7">法人税・住民税・事業税 — 3級の処理の再確認</a></li>
+      <li><a href="#s8">課税所得の算定 — 会計の利益と税務の所得は一致しない</a></li>
+      <li><a href="#s9">税効果会計はなぜ必要か</a></li>
+      <li><a href="#s10">一時差異と永久差異</a></li>
+      <li><a href="#s11">将来減算一時差異の処理 — 引当金と減価償却</a></li>
+      <li><a href="#s12">その他有価証券の税効果 — ここだけ処理が違う</a></li>
+      <li><a href="#s13">仕訳ドリル 16問</a></li>
+      <li><a href="#s14">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s15">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>なぜ外貨の取引だけ特別な処理が要るのか</h2>
+
+  <p>海外旅行の前に両替所で 1,000ドルを買ったとします。そのとき1ドル150円だったので、150,000円払いました。旅行から帰ってきて、使わなかった 1,000ドルをそのまま持っていたら、いつのまにか1ドル140円になっていました。</p>
+
+  <p>あなたの財布の中身は<strong>1,000ドルのまま、1セントも減っていません。</strong>それでも円に戻せば 140,000円にしかならず、<mark>10,000円損したことになります。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">帳簿は円で書く。だから外貨は必ずどこかで円に直す</span>
+    <p>日本の会社の帳簿は円で作ります。ドルで売買しても、帳簿に書くのは円の金額です。<strong>円に直すには、そのときの為替相場を使うしかありません。</strong></p>
+    <p>ところが相場は毎日動きます。同じ 1,000ドルの売掛金でも、売ったときと入金されたときで円換算額が変わってしまう。この<mark>「ドルでは変わっていないのに、円では変わった」分</mark>が、外貨建取引に固有の損益です。</p>
+    <p>これを<span class="term"><span class="term__w">為替差損益</span><span class="term__r">かわせさそんえき</span></span>といいます。商品を高く売ったから出た利益でも、仕入を安く抑えたから出た利益でもありません。<strong>相場が動いたことだけから出た損益</strong>なので、損益計算書では営業外収益・営業外費用に置かれます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で扱う外貨建取引は「営業取引」だけ</span>
+    <p>出題区分表で2級の範囲とされているのは<strong>外貨建の営業取引</strong>です。商品を売って生じた売掛金、商品を仕入れて生じた買掛金、手付金として払った前払金・受け取った前受金、そして外貨預金です。</p>
+    <p>外貨建の<strong>貸付金・借入金</strong>のような<strong>資金の調達・運用に係る取引は1級</strong>です。外貨建の有価証券を決算日に換算し直す処理も2級では問われません。</p>
+    <p>市販テキストによっては外貨建の借入金を例に使っていることがありますが、<mark>2級の答案で問われるのは営業取引から生じた債権債務と外貨預金まで</mark>だと割り切ってください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>3つの時点と3つのレート</h2>
+
+  <p>外貨建取引の処理は、<strong>時点を3つに分けるだけ</strong>で見通しがよくなります。どのレートを使うかは、時点によって機械的に決まります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>時点</th><th>使うレート</th><th>略号</th><th>何が起きるか</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="d"><strong>取引発生時</strong><br><span class="small muted">売った・仕入れた</span></td>
+          <td>取引日の相場</td>
+          <td><strong>HR</strong><br><span class="small muted">Historical Rate</span></td>
+          <td>この金額で売上・仕入と債権債務を記帳する</td>
+        </tr>
+        <tr>
+          <td class="d"><strong>決済時</strong><br><span class="small muted">入金された・支払った</span></td>
+          <td>決済日の相場</td>
+          <td>—</td>
+          <td>受け払いした円の額と、帳簿の債権債務の差が<strong>為替差損益</strong></td>
+        </tr>
+        <tr>
+          <td class="d"><strong>決算時</strong><br><span class="small muted">まだ決済していない</span></td>
+          <td>決算日の相場</td>
+          <td><strong>CR</strong><br><span class="small muted">Current Rate</span></td>
+          <td>債権債務を決算日レートに換算し直し、差を<strong>為替差損益</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+      <svg viewBox="0 0 700 260" role="img" aria-label="外貨建取引の時間軸。取引発生時はHRで記帳し、期中に決済すれば決済差額、決算日をまたげばCRで換算替えして換算差額が生じる流れの図">
+        <line x1="40" y1="70" x2="660" y2="70" stroke="var(--border-2)" stroke-width="2"/>
+
+        <circle cx="90" cy="70" r="7" fill="var(--accent)"/>
+        <text x="90" y="50" text-anchor="middle" font-size="13" fill="var(--text)">取引発生時</text>
+        <text x="90" y="95" text-anchor="middle" font-size="12" fill="var(--muted)">HR で記帳</text>
+
+        <circle cx="320" cy="70" r="7" fill="var(--accent)"/>
+        <text x="320" y="50" text-anchor="middle" font-size="13" fill="var(--text)">決済時</text>
+        <text x="320" y="95" text-anchor="middle" font-size="12" fill="var(--muted)">決済日の相場</text>
+
+        <circle cx="550" cy="70" r="7" fill="var(--accent)"/>
+        <text x="550" y="50" text-anchor="middle" font-size="13" fill="var(--text)">決算日</text>
+        <text x="550" y="95" text-anchor="middle" font-size="12" fill="var(--muted)">CR で換算替え</text>
+
+        <rect x="200" y="130" width="240" height="50" rx="8" fill="var(--surface-2)" stroke="var(--border-2)"/>
+        <text x="320" y="152" text-anchor="middle" font-size="13" fill="var(--text)">決済差額</text>
+        <text x="320" y="170" text-anchor="middle" font-size="11" fill="var(--muted)">実際に受け払いした円 − 帳簿価額</text>
+
+        <rect x="450" y="130" width="230" height="50" rx="8" fill="var(--surface-2)" stroke="var(--border-2)"/>
+        <text x="565" y="152" text-anchor="middle" font-size="13" fill="var(--text)">換算差額</text>
+        <text x="565" y="170" text-anchor="middle" font-size="11" fill="var(--muted)">CR 換算額 − 帳簿価額</text>
+
+        <rect x="250" y="205" width="200" height="40" rx="8" fill="var(--surface-2)" stroke="var(--accent)"/>
+        <text x="350" y="230" text-anchor="middle" font-size="14" fill="var(--text)">どちらも 為替差損益</text>
+
+        <path d="M320 100 L320 128" stroke="var(--border-2)" stroke-width="2" fill="none"/>
+        <path d="M550 100 L560 128" stroke="var(--border-2)" stroke-width="2" fill="none"/>
+        <path d="M320 182 L340 203" stroke="var(--accent)" stroke-width="2" fill="none"/>
+        <path d="M540 182 L400 205" stroke="var(--accent)" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+    <p class="figure__cap">決済差額と換算差額は、発生する場面が違うだけで<strong>どちらも為替差損益</strong>です。科目を分ける必要はありません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">売上・仕入の金額は、あとから動かさない</span>
+    <p>1,000ドルの商品を1ドル150円のときに売れば、<strong>売上は 150,000円で確定します。</strong>その後に相場が140円になっても、売上を 140,000円に書き換えることはしません。</p>
+    <p>動くのは<mark>売掛金のほうだけ</mark>です。商品を売ったという事実はその日に起きたことであり、あとから相場が動いても売った金額は変わらないからです。相場が動いたことによる損益は、<strong>売上とは別枠の為替差損益</strong>に出します。</p>
+    <p>これを混ぜると、損益計算書の売上高が相場によってぶれることになり、本業でいくら売ったのかが分からなくなります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>決済時に出る差額 — 決済差損益</h2>
+
+  <p>まず、決算日をまたがずに期中で決済が済んだ場合です。いちばん単純な形です。</p>
+
+  <h3>売った側（売掛金）</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年5月10日。米国のA社に商品 2,000ドルを掛けで売り上げた。この日の為替相場は1ドル150円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売掛金</td><td class="d amt">300,000</td><td class="c">売上</td><td class="c amt">300,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>2,000ドル × 150円 ＝ <strong>300,000円</strong>。取引発生時のレート（HR）で記帳します。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年6月20日。上記の売掛金 2,000ドルが当座預金口座に入金された。この日の為替相場は1ドル144円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">288,000</td><td class="c">売掛金</td><td class="c amt">300,000</td></tr>
+        <tr><td class="d">為替差損益</td><td class="d amt">12,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>実際に入ってきた円</strong>：2,000ドル × 144円 ＝ <strong>288,000円</strong></li>
+    <li><strong>帳簿の売掛金</strong>：300,000円。これを全額消す</li>
+    <li><strong>差額</strong>：300,000 − 288,000 ＝ <strong>12,000円足りない</strong>。借方に為替差損益を立てる（為替差損）</li>
+  </ol>
+
+  <div class="callout callout--why">
+    <span class="callout__t">円安・円高で損得がどちらに出るか、覚えずに出す</span>
+    <p>「円安なら輸出が得」といった通説を丸暗記すると、必ずどこかで逆に書きます。<strong>毎回この順で考えてください。</strong></p>
+    <ol class="steps">
+      <li><strong>自分はドルを受け取る側か、払う側か</strong></li>
+      <li><strong>いま1ドルは記帳したときより高いか、安いか</strong></li>
+      <li><strong>受け取る側なら、1ドルが高いほうが得。払う側なら、1ドルが安いほうが得</strong></li>
+    </ol>
+    <p>上の例は<strong>受け取る側</strong>で、1ドル150円 → 144円と<strong>安くなりました</strong>。受け取るドルの価値が下がったので<mark>損</mark>です。1ドル156円になっていれば、312,000円入ってきて 12,000円の<strong>為替差益</strong>でした。</p>
+  </div>
+
+  <h3>仕入れた側（買掛金）</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年7月5日。米国のB社から商品 3,000ドルを掛けで仕入れた。この日の為替相場は1ドル146円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">仕入</td><td class="d amt">438,000</td><td class="c">買掛金</td><td class="c amt">438,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年8月31日。上記の買掛金 3,000ドルを当座預金口座から支払った。この日の為替相場は1ドル152円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">買掛金</td><td class="d amt">438,000</td><td class="c">当座預金</td><td class="c amt">456,000</td></tr>
+        <tr><td class="d">為替差損益</td><td class="d amt">18,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>3,000ドル × 152円 ＝ <strong>456,000円</strong>を支払う一方、帳簿の買掛金は 438,000円。<strong>18,000円余計に払った</strong>ので為替差損です。ドルを払う側なのに1ドルが高くなったのだから、損で合っています。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">為替差損益は「損」にも「益」にもなる1つの科目</span>
+    <p>勘定科目表には<strong>為替差損益</strong>という科目があり、損でも益でもこれ1つで処理できます。借方に立てば損、貸方に立てば益です。</p>
+    <p>ただし<mark>貸借対照表の科目ではなく損益計算書の科目</mark>であり、損益計算書に載せるときは<strong>為替差損（営業外費用）または為替差益（営業外収益）</strong>として、当期の差損と差益を相殺した純額で表示します。</p>
+    <p>勘定科目表には「為替差損、為替差益」という損益を分けた科目も載っており、そちらでも答案では正解になります。<strong>問題文に勘定科目の指定一覧があるときは、そこに載っている科目を使ってください。</strong>本教材は書き分けずに済む<strong>為替差損益</strong>に統一します。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>決算時に出る差額 — 換算差額</h2>
+
+  <p>決算日を迎えても、まだ決済していない外貨建の債権債務が残っていることがあります。この場合、<strong>決算日の相場（CR）で換算し直します。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ決算日に換算し直すのか</span>
+    <p>売掛金 2,000ドルは、いずれドルで入金されます。<strong>いくら円になるかは、入金日の相場が決めます。</strong>取引日の相場で記帳した 300,000円は、あくまで「取引日ならこれだけだった」という数字にすぎません。</p>
+    <p>決算日の時点で会社が持っている財産をいちばん正しく表すのは、<mark>「いま円にしたらいくらか」</mark>です。だから決算日の相場に直します。有価証券を時価に直すのと同じ発想です。</p>
+    <p>これを<span class="term"><span class="term__w">換算替え</span><span class="term__r">かんさんがえ</span></span>といい、生じた差額はやはり為替差損益です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×2年3月31日（決算日）。売掛金のうち 2,000ドル（帳簿価額 300,000円、取引時の相場は1ドル150円）が未決済である。決算日の為替相場は1ドル155円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売掛金</td><td class="d amt">10,000</td><td class="c">為替差損益</td><td class="c amt">10,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>決算日レートでの換算額</strong>：2,000ドル × 155円 ＝ <strong>310,000円</strong></li>
+    <li><strong>帳簿価額</strong>：300,000円</li>
+    <li><strong>差額</strong>：310,000 − 300,000 ＝ <strong>10,000円の増加</strong>。売掛金を増やし、貸方に為替差損益（為替差益）</li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">増減させるのは債権債務であって、売上や仕入ではない</span>
+    <p>換算替えの仕訳は必ず<strong>「債権債務」と「為替差損益」の2科目</strong>でできます。売上や仕入は出てきません。第4節の例で「売上 10,000／為替差損益 10,000」と書いてしまうと、当期の売上高が相場によって動いてしまいます。</p>
+    <p>覚え方は単純です。<mark>相場が動いたことで変わるのは、これから受け払いするお金の額だけ</mark>。売った事実そのものは変わりません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">翌期首に振り戻すのかどうか</span>
+    <p>外貨建債権債務の換算替えは、<strong>翌期首に振り戻しません。</strong>決算日レートで換算した金額が、そのまま翌期の帳簿価額になります。</p>
+    <p>その結果、翌期に決済したときの為替差損益は<mark>「決済日レートによる金額」と「前期末の決算日レートによる金額」の差</mark>になります。取引日レートとの差ではありません。</p>
+    <p>上の売掛金が×2年5月に1ドル148円で入金されたなら、受け取るのは 2,000 × 148 ＝ 296,000円。帳簿価額は前期末に直した 310,000円なので、差額 14,000円が翌期の為替差損です。<strong>前期に計上した 10,000円の為替差益とは別に、翌期の損益として計上します。</strong></p>
+    <p class="small muted">通算すれば 10,000 − 14,000 ＝ △4,000円で、取引時の 300,000円と実際の 296,000円の差に一致します。期をまたいでも辻褄は合います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>換算し直さないもの — 前払金・前受金・棚卸資産</h2>
+
+  <p>ここが第3問の決算整理で最も引っかかる場所です。<strong>外貨建てであれば何でも決算日に換算し直す、わけではありません。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">基準は「これから外貨でお金をやり取りするか」</span>
+    <p>売掛金 1,000ドルは、いずれドルで入金されます。<strong>相場が動けば手に入る円が変わる</strong>ので、換算し直す意味があります。</p>
+    <p>ところが、商品の手付金として支払った<strong>前払金 1,000ドル</strong>はどうでしょうか。お金はすでに払い終わっています。<mark>残っているのは「商品を受け取る権利」だけで、お金のやり取りは1円も残っていません。</mark>相場が動いても受け取る商品の量は変わらないので、換算し直す理由がありません。</p>
+    <p>前受金も同じです。すでにお金は受け取っており、残るのは<strong>商品を引き渡す義務</strong>です。これも相場と無関係です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>期末に持っているもの</th><th>決算日に換算し直すか</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td class="d">外貨建の売掛金・受取手形・電子記録債権</td><td><strong>する</strong></td><td>将来ドルで入金される</td></tr>
+        <tr><td class="d">外貨建の買掛金・支払手形・電子記録債務</td><td><strong>する</strong></td><td>将来ドルで支払う</td></tr>
+        <tr><td class="d">外貨預金</td><td><strong>する</strong></td><td>外貨そのもの。円に戻す額が相場で変わる</td></tr>
+        <tr><td class="c">前払金</td><td><strong>しない</strong></td><td>支払済み。残るのは商品を受け取る権利</td></tr>
+        <tr><td class="c">前受金</td><td><strong>しない</strong></td><td>受取済み。残るのは商品を引き渡す義務</td></tr>
+        <tr><td class="c">棚卸資産・固定資産</td><td><strong>しない</strong></td><td>お金ではなくモノ。取得時の円換算額が取得原価</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">前払金を充当したとき、仕入の金額はいくらになるか</span>
+    <p>手付金を払ってから商品が届く取引では、<strong>前払金の部分だけ取引時のレートが違います。</strong></p>
+    <p>×1年6月1日に手付金 500ドルを支払い（1ドル148円）、×1年7月1日に商品 2,000ドルが届いて残額 1,500ドルは掛けとした（1ドル152円）とします。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>×1年7月1日。商品 2,000ドルを仕入れ、手付金 500ドル（支払時の相場は1ドル148円）を充当し、残額は掛けとした。この日の相場は1ドル152円</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">仕入</td><td class="d amt">302,000</td><td class="c">前払金</td><td class="c amt">74,000</td></tr>
+          <tr><td class="d"></td><td class="d amt"></td><td class="c">買掛金</td><td class="c amt">228,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ol class="steps">
+      <li><strong>前払金</strong>：500ドル × 148円 ＝ <strong>74,000円</strong>。支払時のレートのまま消す。換算し直さない</li>
+      <li><strong>買掛金</strong>：1,500ドル × 152円 ＝ <strong>228,000円</strong>。仕入時のレートで記帳する</li>
+      <li><strong>仕入</strong>：74,000 ＋ 228,000 ＝ <strong>302,000円</strong>。貸方の合計がそのまま仕入の金額になる</li>
+    </ol>
+    <p><mark>2,000ドル × 152円 ＝ 304,000円 としてしまうのが最も多い誤りです。</mark>前払金の 500ドルは148円で払い切っているのだから、152円で数え直す理由はありません。仕入の金額は<strong>「前払金の円換算額 ＋ 買掛金の円換算額」で出す</strong>と固定してください。</p>
+    <p>この形では<strong>為替差損益は生じません。</strong>前払金を換算し直さないからです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>為替予約（振当処理）— 相場を先に固定する</h2>
+
+  <p>3か月後に 10,000ドルが入金される予定だとします。そのときの相場が155円か140円かで、手に入る円は 1,550,000円にも 1,400,000円にもなります。<strong>150万円の売上のつもりが、15万円ぶれる。</strong>これでは資金繰りの計画が立ちません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「3か月後に1ドル148円で交換する」と銀行と約束しておく</span>
+    <p>銀行と、<strong>将来の特定の日に、決められたレートで円とドルを交換する契約</strong>を結んでおけば、相場がどう動いても手に入る円は確定します。これが<span class="term"><span class="term__w">為替予約</span><span class="term__r">かわせよやく</span></span>です。</p>
+    <p>このときの決められたレートを<span class="term"><span class="term__w">先物為替相場</span><span class="term__r">さきものかわせそうば</span></span>（予約レート）、その日その場の相場を<span class="term"><span class="term__w">直物為替相場</span><span class="term__r">じきものかわせそうば</span></span>といいます。</p>
+    <p>予約をつけた債権債務は、<mark>将来いくらの円になるかが確定します。</mark>確定しているのだから、決算日にあらためて相場の影響を見積もる意味がありません。</p>
+  </div>
+
+  <p>この考えをそのまま帳簿に持ち込むのが<span class="term"><span class="term__w">振当処理</span><span class="term__r">ふりあてしょり</span></span>です。<strong>債権債務の円換算額を、予約レートで換算した金額に置き換えてしまいます。</strong></p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級の為替予約は、振当処理だけ・期間配分なし</span>
+    <p>出題区分表は<strong>「為替予約の振当処理を含むものの、２級では為替予約差額は期間配分をしない」</strong>と書いています。ここから次の2つが決まります。</p>
+    <ul>
+      <li><strong>独立処理（予約そのものを時価評価する方法）は1級。</strong>2級では書きません</li>
+      <li><strong>直直差額と直先差額に分けて、直先差額を期間配分する処理も2級では行いません。</strong>予約レートで換算した金額との差額は、<mark>分割せず全額を当期の為替差損益にします</mark></li>
+    </ul>
+    <p>市販テキストには「直先差額は期間配分する」と書かれたものがありますが、<strong>2級の答案でそこまで求められることはありません。</strong>差額をそのまま当期の損益にする形で押さえてください。</p>
+  </div>
+
+  <h3>取引と同時に予約をつけた場合</h3>
+
+  <p>いちばん単純です。<strong>最初から予約レートで記帳します。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年9月1日。米国のC社へ商品 10,000ドルを掛けで売り上げ、同時に代金全額について3か月後に1ドル148円で円に交換する為替予約を行った（振当処理）。この日の直物為替相場は1ドル152円</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売掛金</td><td class="d amt">1,480,000</td><td class="c">売上</td><td class="c amt">1,480,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>10,000ドル × <strong>予約レート148円</strong> ＝ <strong>1,480,000円</strong>。直物相場の152円は使いません。この時点で「3か月後に 1,480,000円が入る」ことが確定しているので、<mark>その確定額で売上も売掛金も記帳します。</mark></p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">取引と同時の予約では、為替差損益が一切出ない</span>
+    <p>最初から予約レートで記帳するので、ズレようがありません。<strong>決算日も換算替えしませんし、決済日にも差額は出ません。</strong></p>
+    <p>決済日の仕訳は「当座預金 1,480,000／売掛金 1,480,000」だけです。<mark>「予約をつけたのだから何か損益が出るはずだ」と探さないでください。</mark>出ないのが正しい姿です。</p>
+  </div>
+
+  <h3>取引のあとから予約をつけた場合</h3>
+
+  <p>こちらが本番で問われる形です。すでに取引日のレートで記帳したあと、途中で予約をつけます。<strong>帳簿価額を予約レートによる金額に付け替え、その差額を為替差損益にします。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年10月5日。商品 5,000ドルを掛けで仕入れた。この日の直物為替相場は1ドル150円</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">仕入</td><td class="d amt">750,000</td><td class="c">買掛金</td><td class="c amt">750,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年11月10日。上記の買掛金 5,000ドル全額について、1ドル154円で為替予約を行った（振当処理）。この日の直物為替相場は1ドル153円</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">為替差損益</td><td class="d amt">20,000</td><td class="c">買掛金</td><td class="c amt">20,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>予約レートによる金額</strong>：5,000ドル × 154円 ＝ <strong>770,000円</strong></li>
+    <li><strong>帳簿価額</strong>：5,000ドル × 150円 ＝ <strong>750,000円</strong></li>
+    <li><strong>差額</strong>：770,000 − 750,000 ＝ <strong>20,000円</strong>。買掛金が増えるので借方に為替差損益（為替差損）</li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">予約日の直物相場（153円）は使わない</span>
+    <p>問題文は親切なようでいて、<strong>予約日の直物相場を必ず書いてきます。</strong>上の例なら153円です。これを使うと直直差額（150円→153円）と直先差額（153円→154円）に分かれ、<mark>後者を期間配分する1級の処理に入ってしまいます。</mark></p>
+    <p>2級では期間配分をしないので、<strong>直直差額と直先差額を分ける必要がそもそもありません。</strong>予約レートによる金額と帳簿価額を直接比べて、差額を全額まとめて為替差損益にします。</p>
+    <p>予約日の直物相場は、<strong>1級の処理を知っている人向けに置かれた数字</strong>だと思って読み飛ばしてください。使うのは<mark>予約レートと帳簿価額の2つだけ</mark>です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">予約をつけた債権債務は、決算日レートで換算しない</span>
+    <p>予約をつけた時点で円換算額が 770,000円に確定しています。<strong>決算日を迎えても、この金額のままです。</strong>決算日の相場が160円でも145円でも、支払うのは 770,000円だからです。</p>
+    <p>第3問の決算整理で外貨建債権債務が並んでいたら、<mark>予約の有無をまず確認してください。</mark>予約付きのものを他と一緒に決算日レートで換算してしまうのが、この論点で最も多い失点です。</p>
+    <p>「換算しない」のではなく「<strong>決算日レートでは換算しない</strong>」という点に注意してください。予約レートによる換算はすでに済んでいます。</p>
+  </div>
+
+  <p>決済日の仕訳は、確定した金額を払うだけです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×2年1月10日。上記の買掛金 5,000ドル（予約レート1ドル154円）を当座預金から支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">買掛金</td><td class="d amt">770,000</td><td class="c">当座預金</td><td class="c amt">770,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>法人税・住民税・事業税 — 3級の処理の再確認</h2>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">これは3級の論点だが、2級の第3問で必ず必要になる</span>
+    <p>法人税・住民税・事業税は、出題区分表では<strong>3級の範囲</strong>です（2019年度改定で3級に移りました）。そのため<mark>2級のテキストには章として載っていないことがあります。</mark></p>
+    <p>ところが、<strong>2級の第3問（決算）では損益計算書の末尾にほぼ毎回登場します。</strong>これが書けないと、税引後の当期純利益が出せず、貸借対照表の繰越利益剰余金も合いません。<strong>1か所の漏れが複数の解答欄を巻き込む</strong>典型です。</p>
+    <p>2級での上乗せは<strong>「課税所得の算定方法」</strong>です（第8節）。基本の仕訳は3級のままなので、ここで一度洗い直しておきます。</p>
+  </div>
+
+  <p>会社の利益には<strong>法人税・住民税・事業税</strong>の3つがかかります。計算の基礎はどれも同じ<strong>課税所得</strong>で、納付も同時期にまとめて行うため、帳簿では<strong>法人税、住民税及び事業税</strong>（または略して<strong>法人税等</strong>）という1つの科目で処理します。</p>
+
+  <h3>中間申告・納付</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">1年分をまとめて後払いさせない仕組み</span>
+    <p>税金は決算で利益が確定してから計算します。しかし国の立場からすると、1年に1度しか入ってこないのでは困る。会社の立場でも、1年分を一度に払うのは資金繰りが苦しい。</p>
+    <p>そこで、<strong>事業年度の半分が過ぎた時点で概算額をいったん納めます。</strong>これが<strong>中間申告・納付</strong>です。あくまで概算なので、<mark>この時点では費用にせず「仮払」として資産に置いておきます。</mark></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年11月28日。法人税・住民税・事業税の中間申告を行い、520,000円を現金で納付した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">仮払法人税等</td><td class="d amt">520,000</td><td class="c">現金</td><td class="c amt">520,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>決算時</h3>
+
+  <p>決算で1年分の税額が確定したら、<strong>全額を費用に計上し、中間で払った分を差し引いた残りを未払いの負債にします。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×2年3月31日（決算日）。当期の法人税・住民税・事業税が 1,230,000円と確定した。中間納付額は 520,000円である</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">法人税、住民税及び事業税</td><td class="d amt">1,230,000</td><td class="c">仮払法人税等</td><td class="c amt">520,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">未払法人税等</td><td class="c amt">710,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>1,230,000 − 520,000 ＝ <strong>710,000円</strong>が、決算日の翌日から2か月以内に納める分です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">借方に計上するのは確定額の全額。差額ではない</span>
+    <p>費用として計上するのは<strong>1年分の確定額 1,230,000円まるごと</strong>です。中間で払った 520,000円を引いた 710,000円を費用にするのではありません。</p>
+    <p>中間納付は<mark>「税金を前払いした」だけで、費用の発生ではありません。</mark>だから仮払法人税等（資産）に置いていたのです。決算でそれを取り崩し、費用に振り替えます。</p>
+    <p>ここを間違えると、損益計算書の法人税等が過小になり、<strong>当期純利益が過大</strong>になります。第3問では下流の繰越利益剰余金まで全部ずれます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">中間納付が確定額を上回ったとき</span>
+    <p>業績が下振れして、確定額が中間納付額より少なくなることがあります。その場合は<strong>払いすぎた分が戻ってきます。</strong>科目は<strong>未収還付法人税等</strong>（資産）です。</p>
+    <p>確定額 400,000円・中間納付 520,000円なら、<strong>法人税、住民税及び事業税 400,000／仮払法人税等 520,000</strong>、差額 120,000円を借方の<strong>未収還付法人税等</strong>で受けます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>課税所得の算定 — 会計の利益と税務の所得は一致しない</h2>
+
+  <p>ここが2級での上乗せです。「法人税等は税引前当期純利益に税率を掛けて出す」と思っていると、この先の税効果会計がまったく理解できません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">会計と税務は、目的が違うので計算も違う</span>
+    <p><strong>会計の目的</strong>は、会社の業績と財産状態を投資家や債権者に正しく伝えることです。だから「将来これだけ損が出そうだ」という見積りも、根拠があるなら費用にします。貸倒引当金も減価償却も見積りです。</p>
+    <p><strong>税務の目的</strong>は、公平に税金を集めることです。見積りを自由に認めると、<mark>会社が費用を大きく見積もるほど税金が減ってしまいます。</mark>だから税務は「本当にその金額が妥当か」を厳しく制限します。</p>
+    <p>目的が違うのだから、<strong>会計上の利益と税務上の所得が一致しないのはむしろ当然</strong>です。</p>
+  </div>
+
+  <p>そこで、会計の利益を出発点にして税務のルールに合わせる調整を行います。これを<span class="term"><span class="term__w">申告調整</span><span class="term__r">しんこくちょうせい</span></span>といいます。</p>
+
+  <p class="center"><strong>課税所得 ＝ 税引前当期純利益 ＋ 損金不算入額 − 益金不算入額</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>会計での呼び方</th><th>税務での呼び方</th></tr></thead>
+      <tbody>
+        <tr><td class="d">プラスの項目</td><td>収益</td><td><strong>益金</strong></td></tr>
+        <tr><td class="d">マイナスの項目</td><td>費用</td><td><strong>損金</strong></td></tr>
+        <tr><td class="d">差引きの結果</td><td>税引前当期純利益</td><td><strong>課税所得</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ足し算と引き算になるのか</span>
+    <p><strong>損金不算入</strong>とは、「会計では費用にしたが、税務では損金として認めない」ものです。会計上は引いてしまっているので、<mark>課税所得を出すには足し戻す必要があります。</mark></p>
+    <p><strong>益金不算入</strong>とは、「会計では収益にしたが、税務では益金に含めない」ものです。会計上は足してしまっているので、<mark>引き算で取り除きます。</mark></p>
+    <p>足すのか引くのかを迷ったら、<strong>「会計でどう扱ったか」の逆をする</strong>と考えてください。会計で引いたなら足し戻し、会計で足したなら引く。</p>
+  </div>
+
+  <h3>計算例</h3>
+
+  <p>税引前当期純利益 <strong>8,000,000円</strong>。貸倒引当金の繰入限度超過額 <strong>300,000円</strong>、減価償却の償却限度超過額 <strong>200,000円</strong>が損金不算入となった。受取配当金の益金不算入額が <strong>100,000円</strong>ある。法定実効税率は <strong>30%</strong>である。</p>
+
+  <ol class="steps">
+    <li><strong>課税所得</strong>：8,000,000 ＋ 300,000 ＋ 200,000 − 100,000 ＝ <strong>8,400,000円</strong></li>
+    <li><strong>法人税、住民税及び事業税</strong>：8,400,000 × 30% ＝ <strong>2,520,000円</strong></li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">損益計算書に載る法人税等は、課税所得から計算した金額</span>
+    <p>8,000,000 × 30% ＝ 2,400,000円 ではありません。<strong>実際に納める税額は課税所得 8,400,000円を基礎に決まります。</strong>損益計算書の「法人税、住民税及び事業税」の行に書くのも、この実際の納税額 2,520,000円です。</p>
+    <p>その結果、損益計算書の上では<mark>税引前当期純利益 8,000,000円に対して税金が 2,520,000円</mark>となり、比率は31.5%になります。税率は30%のはずなのに、です。</p>
+    <p>この見え方のズレを直すのが、次節からの<strong>税効果会計</strong>です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">法定実効税率は問題文が与える</span>
+    <p>法人税・住民税・事業税を合わせた実質的な税率を<strong>法定実効税率</strong>といいます。事業税が損金に算入されることを織り込んだ算式で求めますが、<mark>その算定方法は2級では問われません。</mark></p>
+    <p>問題文に「法定実効税率は30%とする」と必ず書かれます。そのまま使ってください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>税効果会計はなぜ必要か</h2>
+
+  <p>前節の数字をそのまま損益計算書に並べてみます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>損益計算書（税効果を適用しない場合）</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">税引前当期純利益</td><td class="amt">8,000,000</td></tr>
+        <tr><td class="d">法人税、住民税及び事業税</td><td class="amt">2,520,000</td></tr>
+        <tr><td class="d"><strong>当期純利益</strong></td><td class="amt"><strong>5,480,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">税率30%のはずなのに、31.5%取られているように見える</span>
+    <p>この損益計算書を読んだ投資家は「利益の31.5%が税金で持っていかれている」と読みます。しかし税率は30%です。<strong>この会社が特別に重い税負担を負っているわけではありません。</strong></p>
+    <p>差の原因は、<mark>損金不算入になった 500,000円が「いまは認められないが、将来は認められる」ものだった</mark>ことにあります。貸倒引当金の繰入限度超過額は、実際に貸し倒れたときに損金になります。減価償却の償却限度超過額も、後の年度で損金になります。</p>
+    <p>つまり、<strong>いま多く払った税金は、将来その分だけ少なくなります。</strong>税金が増えたのではなく、<strong>払う時期が早まっただけ</strong>です。</p>
+  </div>
+
+  <p>この「払う時期がずれているだけ」という事実を財務諸表に反映させるのが<span class="term"><span class="term__w">税効果会計</span><span class="term__r">ぜいこうかかいけい</span></span>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>損益計算書（税効果を適用した場合）</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">税引前当期純利益</td><td class="amt">8,000,000</td></tr>
+        <tr><td class="d">法人税、住民税及び事業税</td><td class="amt">2,520,000</td></tr>
+        <tr><td class="d">法人税等調整額</td><td class="amt">△150,000</td></tr>
+        <tr><td class="d"><strong>当期純利益</strong></td><td class="amt"><strong>5,630,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>差し引かれる税額は 2,520,000 − 150,000 ＝ <strong>2,370,000円</strong>。これは 8,000,000 × 30% − 100,000 × 30% に相当し、<mark>一時的なズレの分だけが取り除かれた</mark>状態です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">税効果会計は納税額を1円も変えない</span>
+    <p>税務署に納めるのは、あくまで課税所得から計算した <strong>2,520,000円</strong>です。税効果会計をやってもやらなくても、<strong>納税額はまったく同じです。</strong></p>
+    <p>変わるのは<mark>損益計算書の見え方だけ</mark>です。「節税の手続き」と誤解すると、なぜ繰延税金資産という資産が出てくるのかが理解できなくなります。</p>
+    <p>税効果会計は<strong>表示を整えるための会計処理</strong>であり、税務申告とは別の話です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">なぜ受取配当金の益金不算入が残っているのか</span>
+    <p>上の数字をよく見ると、8,000,000 × 30% ＝ 2,400,000円ではなく 2,370,000円になっています。差の 30,000円は、<strong>受取配当金の益金不算入 100,000円 × 30%</strong>です。</p>
+    <p>これは<mark>将来にわたって永久に課税されない</mark>ものなので、時期のズレではありません。税効果会計の対象にならず、調整せずに残ります。次節で扱う<strong>永久差異</strong>です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>一時差異と永久差異</h2>
+
+  <p>会計と税務の差には2種類あり、<strong>税効果会計の対象になるのは一方だけ</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th><strong>一時差異</strong></th><th><strong>永久差異</strong></th></tr></thead>
+      <tbody>
+        <tr><td class="d">性質</td><td>いつかは解消する<br><strong>時期のズレ</strong></td><td>永久に解消しない<br><strong>扱いそのものの違い</strong></td></tr>
+        <tr><td class="d">例</td><td>貸倒引当金の繰入限度超過額<br>減価償却の償却限度超過額<br>その他有価証券の評価差額</td><td>受取配当金の益金不算入<br>交際費の損金不算入<br>寄附金の損金不算入</td></tr>
+        <tr><td class="d">税効果会計</td><td><strong>適用する</strong></td><td><strong>適用しない</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「あとで取り返せるか」だけが分かれ目</span>
+    <p>貸倒引当金の繰入限度超過額は、いま損金になりませんが、<strong>実際に貸し倒れたときには損金になります。</strong>つまりいま払った税金は、将来取り返せます。取り返せる権利があるなら、それは<mark>資産として計上するに値します。</mark></p>
+    <p>いっぽう受取配当金の益金不算入は、<strong>いま課税されず、将来も永久に課税されません。</strong>取り返すも何も、そもそも税金が発生していません。将来の税額に影響しないので、資産にも負債にもなりません。</p>
+    <p>だから税効果会計の対象は一時差異だけです。判断は<strong>「この差は、いつか反対向きに戻るか」</strong>の一問で済みます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で扱う一時差異は3つだけ</span>
+    <p>出題区分表は<strong>「２級では引当金、減価償却およびその他有価証券に係る一時差異に限る」</strong>と限定しています。具体的には次の3つです。</p>
+    <ul>
+      <li><strong>貸倒引当金の繰入限度超過額</strong>（引当金）</li>
+      <li><strong>減価償却の償却限度超過額</strong>（減価償却）</li>
+      <li><strong>その他有価証券の評価差額</strong></li>
+    </ul>
+    <p>また<strong>繰延税金資産の回収可能性の検討は2級では行いません。</strong>「将来に十分な課税所得が見込めないので繰延税金資産を取り崩す」といった処理は出題されません。<mark>一時差異に税率を掛けた金額を、そのまま繰延税金資産・繰延税金負債とします。</mark></p>
+    <p><strong>繰延税金資産と繰延税金負債の相殺表示も2級では問われません。</strong>両方が出てきた場合でも、それぞれ計上した金額をそのまま答えます。</p>
+  </div>
+
+  <h3>将来減算一時差異と将来加算一時差異</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>いまの状態</th><th>将来</th><th>計上する科目</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="d"><strong>将来減算<br>一時差異</strong></td>
+          <td>会計の費用が税務で認められず<br><strong>いま税金を多く払っている</strong></td>
+          <td>認められて<br><strong>税金が減る</strong></td>
+          <td><strong>繰延税金資産</strong><br><span class="small muted">税金の前払い</span></td>
+        </tr>
+        <tr>
+          <td class="d"><strong>将来加算<br>一時差異</strong></td>
+          <td>会計の収益が税務で課税されず<br><strong>いま税金が少ない</strong></td>
+          <td>課税されて<br><strong>税金が増える</strong></td>
+          <td><strong>繰延税金負債</strong><br><span class="small muted">税金の未払い</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「減算」「加算」は将来の課税所得に対する向き</span>
+    <p>名前だけ見ると、どちらがどちらか分からなくなります。<strong>「将来」の「課税所得」を「減算」する、と読んでください。</strong></p>
+    <p>将来減算一時差異は、<mark>将来の課税所得を減らす</mark>ので、将来の税金が減ります。税金が減るのだから、いまは多く払っている。多く払った分は返ってくるので<strong>資産</strong>です。</p>
+    <p>いまの損益計算書を見て判断しようとすると混乱します。<strong>必ず「将来どうなるか」で考える</strong>と固定してください。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2級で出るのはほぼ将来減算一時差異</span>
+    <p>引当金と減価償却の限度超過額は、どちらも<strong>将来減算一時差異</strong>です。つまり繰延税金資産を計上します。</p>
+    <p>繰延税金<strong>負債</strong>が出るのは、実質的に<strong>その他有価証券の評価差益</strong>のときだけです（第12節）。<mark>繰延税金負債が出たら、ほぼその他有価証券の話</mark>だと考えてよい水準です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>将来減算一時差異の処理 — 引当金と減価償却</h2>
+
+  <p>処理は単純です。<strong>一時差異 × 法定実効税率</strong>を繰延税金資産とし、相手科目を<strong>法人税等調整額</strong>にするだけです。</p>
+
+  <h3>貸倒引当金の繰入限度超過額</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、貸倒引当金の繰入額 800,000円のうち 300,000円が税務上損金に算入されなかった。法定実効税率は30%である。なお、期首における一時差異はなかった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">繰延税金資産</td><td class="d amt">90,000</td><td class="c">法人税等調整額</td><td class="c amt">90,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>300,000 × 30% ＝ <strong>90,000円</strong>。いま 90,000円多く税金を払っており、将来その分が減る。<mark>返ってくる権利があるので資産</mark>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">法人税等調整額を貸方に置く意味</span>
+    <p>損益計算書では、法人税、住民税及び事業税の<strong>すぐ下に法人税等調整額の行</strong>が来ます。貸方に立てた 90,000円はここで<mark>マイナス表示（△90,000）</mark>され、税額を減らしたように見せます。</p>
+    <p>実際に納める税額は変わりません。変わるのは損益計算書の上での見え方だけです。これによって、税引前当期純利益に対する税負担の比率が法定実効税率に近づきます。</p>
+  </div>
+
+  <h3>減価償却の償却限度超過額</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ減価償却で差が出るのか</span>
+    <p>会計では、その資産が実際に何年使えるかを見積もって耐用年数を決めます。ところが税務は、<strong>資産の種類ごとに耐用年数を法律で決めています</strong>（法定耐用年数）。</p>
+    <p>会計上5年で償却する備品を、税務が8年と定めていれば、<mark>会計の減価償却費のほうが毎年大きくなります。</mark>その超える部分が損金に算入されません。</p>
+    <p>しかしこれも時期のズレです。会計上は5年で償却し終わりますが、税務上は6年目以降も償却が続き、そこで損金になります。<strong>資産を使い切るまでの合計額はどちらも同じ</strong>です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、備品の減価償却費 1,200,000円のうち 400,000円が税務上の償却限度額を超過し、損金に算入されなかった。法定実効税率は30%である。なお、期首における一時差異はなかった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">繰延税金資産</td><td class="d amt">120,000</td><td class="c">法人税等調整額</td><td class="c amt">120,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2期目以降 — 差額だけを追加計上する</h3>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">毎期、繰延税金資産の「あるべき残高」に合わせる</span>
+    <p>一時差異は毎期積み上がっていきます。<strong>すでに計上してある繰延税金資産があるなら、その差額だけを追加計上します。</strong>毎期まるごと計上し直すのではありません。</p>
+    <p>前期末の一時差異が 300,000円（繰延税金資産 90,000円）、当期末の一時差異が 500,000円だとします。</p>
+    <ol class="steps">
+      <li><strong>当期末のあるべき繰延税金資産</strong>：500,000 × 30% ＝ <strong>150,000円</strong></li>
+      <li><strong>すでにある残高</strong>：90,000円</li>
+      <li><strong>追加計上額</strong>：150,000 − 90,000 ＝ <strong>60,000円</strong></li>
+    </ol>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">繰延税金資産</td><td class="d amt">60,000</td><td class="c">法人税等調整額</td><td class="c amt">60,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>逆に、当期末の一時差異が 200,000円まで減っていたなら、あるべき残高は 60,000円。90,000 − 60,000 ＝ 30,000円を取り崩し、<mark>法人税等調整額 30,000／繰延税金資産 30,000</mark>と借方に立てます。</p>
+    <p class="small muted">問題文が「期首における一時差異はなかった」と書いているなら、当期末の一時差異にそのまま税率を掛けて計上すれば足ります。この一文の有無を必ず確認してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>その他有価証券の税効果 — ここだけ処理が違う</h2>
+
+  <p>UNIT 16 で扱ったとおり、その他有価証券の評価差額は<strong>全部純資産直入法</strong>により、損益計算書を通さずに純資産へ直接入れます。<mark>この「損益を通さない」という性質が、税効果の処理も変えます。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">損益を通っていないものに、法人税等調整額は使えない</span>
+    <p>法人税等調整額は<strong>損益計算書の税額を調整する科目</strong>です。税引前当期純利益に対する税負担の見え方を整えるために使います。</p>
+    <p>ところが、その他有価証券の評価差額は<mark>そもそも損益計算書に一切出てきません。</mark>税引前当期純利益に含まれていないものの税額を、損益計算書上で調整しても意味がありません。</p>
+    <p>だから調整するのは<strong>純資産に載る評価差額金の側</strong>です。評価差額金を税引後の金額にし、税金相当分を繰延税金負債（または繰延税金資産）とします。</p>
+  </div>
+
+  <h3>評価差益のとき — 繰延税金負債</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算日。その他有価証券として保有する株式（取得原価 2,000,000円）の時価は 2,500,000円であった。全部純資産直入法により処理し、法定実効税率30%で税効果会計を適用する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">その他有価証券</td><td class="d amt">500,000</td><td class="c">繰延税金負債</td><td class="c amt">150,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">その他有価証券評価差額金</td><td class="c amt">350,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>評価差額</strong>：2,500,000 − 2,000,000 ＝ <strong>500,000円の評価益</strong></li>
+    <li><strong>繰延税金負債</strong>：500,000 × 30% ＝ <strong>150,000円</strong></li>
+    <li><strong>その他有価証券評価差額金</strong>：500,000 − 150,000 ＝ <strong>350,000円</strong></li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">評価差額がそのまま評価差額金になるわけではない</span>
+    <p>UNIT 16 では税効果を考えず、評価差額 500,000円をそのまま評価差額金にしました。<strong>税効果を適用する問題では、税金相当分を差し引いた金額が評価差額金になります。</strong></p>
+    <p>いま値上がりしているこの株式を将来売れば、値上がり分に課税されます。<mark>500,000円のうち 150,000円はいずれ税金として出ていく</mark>のだから、株主のものとして純資産に載せてよいのは残りの 350,000円だけ、という理屈です。</p>
+    <p>問題文に「税効果会計を適用する」と書かれているかどうかで金額が変わります。<strong>この一文を読み飛ばさないでください。</strong></p>
+  </div>
+
+  <h3>評価差損のとき — 繰延税金資産</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算日。その他有価証券として保有する株式（取得原価 3,000,000円）の時価は 2,600,000円であった。全部純資産直入法により処理し、法定実効税率30%で税効果会計を適用する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">繰延税金資産</td><td class="d amt">120,000</td><td class="c">その他有価証券</td><td class="c amt">400,000</td></tr>
+        <tr><td class="d">その他有価証券評価差額金</td><td class="d amt">280,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>評価差額 400,000円の評価損。繰延税金資産は 400,000 × 30% ＝ <strong>120,000円</strong>、評価差額金は 400,000 − 120,000 ＝ <strong>280,000円</strong>が借方（純資産のマイナス）です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">3つの一時差異を、この1枚で見分ける</span>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>一時差異</th><th>計上する資産負債</th><th>相手科目</th><th>損益計算書に出るか</th></tr></thead>
+        <tbody>
+          <tr><td class="d">貸倒引当金の繰入限度超過額</td><td>繰延税金資産</td><td><strong>法人税等調整額</strong></td><td><strong>出る</strong></td></tr>
+          <tr><td class="d">減価償却の償却限度超過額</td><td>繰延税金資産</td><td><strong>法人税等調整額</strong></td><td><strong>出る</strong></td></tr>
+          <tr><td class="d">その他有価証券の評価差益</td><td>繰延税金負債</td><td><strong>その他有価証券評価差額金</strong></td><td><strong>出ない</strong></td></tr>
+          <tr><td class="d">その他有価証券の評価差損</td><td>繰延税金資産</td><td><strong>その他有価証券評価差額金</strong></td><td><strong>出ない</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>分かれ目は<strong>「もとの差異が損益計算書を通ったか」</strong>の一点だけです。通ったものは法人税等調整額で調整し、通らなかったものは純資産の側で調整します。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">その他有価証券は翌期首に振り戻す。税効果の分も一緒に</span>
+    <p>UNIT 16 で確認したとおり、その他有価証券の評価差額は<strong>翌期首に必ず振り戻します（洗替法）。</strong>税効果を適用した場合は、<mark>繰延税金負債（資産）も評価差額金と一緒に振り戻します。</mark></p>
+    <p>評価差益の例なら、翌期首は「繰延税金負債 150,000・その他有価証券評価差額金 350,000／その他有価証券 500,000」です。仕訳をそっくり逆にするだけです。</p>
+    <p>引当金や減価償却の一時差異は振り戻しません。<strong>振り戻すのはその他有価証券だけ</strong>で、これは有価証券の論点がそもそも洗替法だからです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 16問</h2>
+
+  <p>外貨建取引は<strong>第1問で頻出</strong>、税効果会計は<strong>第2問・第3問の両方</strong>に出ます。とくに税効果は、<mark>相手科目が法人税等調整額なのか評価差額金なのか</mark>を一瞬で選べる状態にしてください。</p>
+
+  <div id="drill-gaika-zeikoka"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>課税所得の算定と繰延税金資産の追加計上は、<strong>計算を間違えても仕訳の形は崩れない</strong>ため自分では気づけません。独立に確認します。</p>
+
+  <div id="num-gaika-zeikoka"></div>
+
+  <div id="quiz-gaika-zeikoka"></div>
+
+  <div id="fill-gaika-zeikoka"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。この単元は<strong>第2問の個別論点（税効果）としても、第3問の決算整理（外貨換算・法人税等・税効果）としても出ます。</strong>とくに法人税等は、書けないと損益計算書の末尾から下が全部止まります。</p>
+
+  <div class="progressbar" data-progress-for="#u19check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u19check">0 / 0 完了（0%）</div>
+
+  <div id="u19check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u19-w6u19-1"><label for="c1"><span class="cl__t">為替差損益がどこから生まれるか説明できる</span><span class="cl__d">外貨では変わっていないのに円では変わった分。商品を高く売った利益でも仕入を抑えた利益でもなく、相場が動いたことだけから出る</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u19-w6u19-2"><label for="c2"><span class="cl__t">3つの時点と使うレートを対応させられる</span><span class="cl__d">取引発生時はHR、決済時は決済日の相場、決算時はCR。時点が決まればレートは機械的に決まる</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u19-w6u19-3"><label for="c3"><span class="cl__t">売上・仕入の金額をあとから動かさないと言える</span><span class="cl__d">相場が動いて変わるのは債権債務だけ。売った事実はその日に起きたことで、金額は変わらない</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u19-w6u19-4"><label for="c4"><span class="cl__t">決済時の為替差損益を計算できる</span><span class="cl__d">実際に受け払いした円と帳簿価額の差。ドルを受け取る側なら1ドルが高いほうが得、払う側なら安いほうが得</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u19-w6u19-5"><label for="c5"><span class="cl__t">決算時の換算替えを両方向に書ける</span><span class="cl__d">CR換算額と帳簿価額の差。債権債務と為替差損益の2科目だけででき、売上・仕入は出てこない</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u19-w6u19-6"><label for="c6"><span class="cl__t">換算替えを翌期首に振り戻さないと分かっている</span><span class="cl__d">決算日レートの金額がそのまま翌期の帳簿価額になる。翌期の為替差損益は前期末の金額との差で出る</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u19-w6u19-7"><label for="c7"><span class="cl__t">決算日に換算し直さないものを挙げられる</span><span class="cl__d">前払金・前受金・棚卸資産・固定資産。すでに決済が済んでおり、これから外貨でやり取りするお金が残っていない</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u19-w6u19-8"><label for="c8"><span class="cl__t">前払金を充当した仕入の金額を出せる</span><span class="cl__d">前払金の円換算額（支払時レート）＋ 買掛金の円換算額（仕入時レート）。総額に仕入時レートを掛けない</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u19-w6u19-9"><label for="c9"><span class="cl__t">為替予約が何のための契約か説明できる</span><span class="cl__d">将来の特定日に決められたレートで交換する約束。手に入る円が確定し、相場の振れを断てる</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u19-w6u19-10"><label for="c10"><span class="cl__t">取引と同時の予約では為替差損益が出ないと分かっている</span><span class="cl__d">最初から予約レートで記帳するのでズレようがない。決算日も決済日も差額は生じない</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u19-w6u19-11"><label for="c11"><span class="cl__t">あとから予約をつけた場合の差額を出せる</span><span class="cl__d">予約レートによる金額と帳簿価額の差を、全額まとめて当期の為替差損益にする。2級は期間配分をしない</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u19-w6u19-12"><label for="c12"><span class="cl__t">予約日の直物相場を使わないと分かっている</span><span class="cl__d">直直差額と直先差額に分けるのは1級の処理。使うのは予約レートと帳簿価額の2つだけ</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u19-w6u19-13"><label for="c13"><span class="cl__t">予約付きの債権債務を決算日レートで換算しないと言える</span><span class="cl__d">予約時点で円換算額が確定している。決算整理では外貨建債権債務の予約の有無をまず確認する</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u19-w6u19-14"><label for="c14"><span class="cl__t">2級で扱う外貨建取引の範囲を言える</span><span class="cl__d">営業取引から生じた債権債務と外貨預金まで。外貨建の貸付金・借入金など財務活動に係る取引は1級</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u19-w6u19-15"><label for="c15"><span class="cl__t">中間納付を仮払法人税等で処理できる</span><span class="cl__d">概算の前払いであって費用の発生ではない。資産に置いておき、決算で取り崩す</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u19-w6u19-16"><label for="c16"><span class="cl__t">決算時に確定額の全額を費用計上できる</span><span class="cl__d">借方は1年分の確定額まるごと。中間納付を引いた差額を費用にすると、当期純利益が過大になる</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u19-w6u19-17"><label for="c17"><span class="cl__t">法人税等が3級の論点でも2級の第3問で必須だと分かっている</span><span class="cl__d">2級テキストに載らないことがあるが、損益計算書の末尾に毎回出る。書けないと繰越利益剰余金まで全部ずれる</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u19-w6u19-18"><label for="c18"><span class="cl__t">課税所得の算式を書ける</span><span class="cl__d">税引前当期純利益 ＋ 損金不算入額 − 益金不算入額。会計で引いたものは足し戻し、会計で足したものは引く</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u19-w6u19-19"><label for="c19"><span class="cl__t">会計の利益と課税所得が一致しない理由を説明できる</span><span class="cl__d">会計は業績と財産状態を正しく伝えるため、税務は公平に税を集めるため。目的が違うので計算も違う</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u19-w6u19-20"><label for="c20"><span class="cl__t">損益計算書の法人税等が課税所得から計算されると言える</span><span class="cl__d">税引前当期純利益に税率を掛けた額ではない。実際の納税額をそのまま載せる</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u19-w6u19-21"><label for="c21"><span class="cl__t">税効果会計が必要な理由を説明できる</span><span class="cl__d">税金が増えたのではなく払う時期が早まっただけ。そのズレを取り除いて、税引前当期純利益に対応した税額を見せる</span></label></li>
+    <li><input type="checkbox" id="c22" data-key="p1u19-w6u19-22"><label for="c22"><span class="cl__t">税効果会計が納税額を変えないと言える</span><span class="cl__d">納めるのは課税所得から計算した金額のまま。変わるのは損益計算書の見え方だけで、節税の手続きではない</span></label></li>
+    <li><input type="checkbox" id="c23" data-key="p1u19-w6u19-23"><label for="c23"><span class="cl__t">一時差異と永久差異を区別できる</span><span class="cl__d">いつか反対向きに戻るなら一時差異、永久に戻らないなら永久差異。税効果の対象は一時差異だけ</span></label></li>
+    <li><input type="checkbox" id="c24" data-key="p1u19-w6u19-24"><label for="c24"><span class="cl__t">2級で扱う一時差異を3つ挙げられる</span><span class="cl__d">貸倒引当金の繰入限度超過額、減価償却の償却限度超過額、その他有価証券の評価差額。回収可能性の検討と相殺表示は範囲外</span></label></li>
+    <li><input type="checkbox" id="c25" data-key="p1u19-w6u19-25"><label for="c25"><span class="cl__t">将来減算・将来加算の向きを言える</span><span class="cl__d">将来の課税所得を減らすのが将来減算＝いま多く払っている＝繰延税金資産。いまの損益で判断せず将来で考える</span></label></li>
+    <li><input type="checkbox" id="c26" data-key="p1u19-w6u19-26"><label for="c26"><span class="cl__t">引当金・減価償却の税効果仕訳を書ける</span><span class="cl__d">一時差異 × 法定実効税率を繰延税金資産とし、相手科目は法人税等調整額。貸方に立って税額を減らして見せる</span></label></li>
+    <li><input type="checkbox" id="c27" data-key="p1u19-w6u19-27"><label for="c27"><span class="cl__t">2期目以降は差額だけを計上すると分かっている</span><span class="cl__d">当期末のあるべき残高から既存の残高を引く。一時差異が減っていれば取り崩し、法人税等調整額が借方に立つ</span></label></li>
+    <li><input type="checkbox" id="c28" data-key="p1u19-w6u19-28"><label for="c28"><span class="cl__t">その他有価証券の税効果で法人税等調整額を使わない理由を言える</span><span class="cl__d">評価差額がそもそも損益計算書を通っていない。調整するのは純資産に載る評価差額金の側</span></label></li>
+    <li><input type="checkbox" id="c29" data-key="p1u19-w6u19-29"><label for="c29"><span class="cl__t">税効果適用後の評価差額金を計算できる</span><span class="cl__d">評価差額 − 評価差額 × 税率。時価と取得原価の差額がそのまま評価差額金になるわけではない</span></label></li>
+    <li><input type="checkbox" id="c30" data-key="p1u19-w6u19-30"><label for="c30"><span class="cl__t">その他有価証券の振戻で税効果分も戻すと分かっている</span><span class="cl__d">繰延税金負債（資産）も評価差額金と一緒に振り戻す。振り戻すのはその他有価証券だけで、引当金や減価償却は戻さない</span></label></li>
+    <li><input type="checkbox" id="c31" data-key="p1u19-w6u19-31"><label for="c31"><span class="cl__t">仕訳ドリル16問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元の論点は、<strong>Phase 2 W8 の第3問独立週でもう一度、決算整理の側から出てきます。</strong>そのときに「外貨換算と税効果は W6 でやった」という状態にしておけば、W8 は表示区分の練習に集中できます。</p>
+    <p>毎週の仕訳ドリルの枠には、<strong>前払金を充当した外貨の仕入</strong>と<strong>その他有価証券の税効果</strong>を混ぜ続けてください。前者は「総額に取引時レートを掛ける」誤りに戻りやすく、後者は「法人税等調整額を使う」誤りに戻りやすい2つです。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W6 UNIT 19 外貨建取引・法人税等・税効果会計</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '売掛金', '買掛金', '受取手形', '支払手形',
+    '前払金', '前受金', '未収入金', '未払金',
+    '仕入', '売上', '為替差損益',
+    'その他有価証券', 'その他有価証券評価差額金',
+    '繰延税金資産', '繰延税金負債', '法人税等調整額',
+    '仮払法人税等', '未払法人税等', '未収還付法人税等',
+    '法人税、住民税及び事業税',
+    '貸倒引当金', '貸倒引当金繰入', '減価償却費', '備品減価償却累計額'
+  ];
+
+  /* ========== 仕訳ドリル 16問 ========== */
+  BokiJournal.mount('#drill-gaika-zeikoka', {
+    title: '仕訳ドリル — 外貨建取引・為替予約・法人税等・税効果（16問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '米国のA社へ商品 <strong>2,000ドル</strong>を掛けで売り上げた。この日の為替相場は <strong>1ドル150円</strong>であった。',
+        debit: [['売掛金', 300000]],
+        credit: [['売上', 300000]],
+        hint: '取引発生時に使うレートはどれですか。',
+        explain: '<p>取引発生時は<strong>その日の為替相場（HR）</strong>で円に換算します。</p><p>2,000ドル × 150円 ＝ <strong>300,000円</strong>。売上も売掛金もこの金額で記帳します。</p><p>この売上 300,000円は、その後に相場が動いても<mark>あとから書き換えません。</mark>商品を売ったという事実はこの日に起きたことだからです。相場が動いたことによる損益は、売上とは別枠の為替差損益に出します。</p>'
+      },
+      {
+        text: '前問の売掛金 <strong>2,000ドル</strong>（帳簿価額 <strong>300,000円</strong>）が当座預金口座に入金された。この日の為替相場は <strong>1ドル144円</strong>であった。',
+        debit: [['当座預金', 288000], ['為替差損益', 12000]],
+        credit: [['売掛金', 300000]],
+        hint: '実際に入ってきた円と、帳簿の売掛金はいくらですか。',
+        explain: '<p><strong>実際に入ってきた円</strong>：2,000ドル × 144円 ＝ <strong>288,000円</strong>。</p><p><strong>帳簿の売掛金</strong>：300,000円。これを全額消します。</p><p><strong>差額</strong>：300,000 − 288,000 ＝ <strong>12,000円</strong>。足りないので借方に為替差損益（為替差損）を立てます。</p><p>自分は<strong>ドルを受け取る側</strong>で、1ドルが150円から144円へ<strong>安くなりました</strong>。受け取るドルの価値が下がったのだから損です。「円安なら輸出が得」といった通説を暗記せず、<mark>受け取る側か払う側か、1ドルが高くなったか安くなったか</mark>の2つで毎回考えてください。</p>'
+      },
+      {
+        text: '米国のB社から商品 <strong>3,000ドル</strong>を掛けで仕入れた。この日の為替相場は <strong>1ドル146円</strong>であった。その後、この買掛金 3,000ドルを当座預金口座から支払った。支払日の為替相場は <strong>1ドル152円</strong>であった。<strong>支払日の仕訳</strong>を示しなさい。',
+        debit: [['買掛金', 438000], ['為替差損益', 18000]],
+        credit: [['当座預金', 456000]],
+        hint: 'ドルを払う側です。1ドルが高くなったのは得ですか、損ですか。',
+        explain: '<p><strong>帳簿の買掛金</strong>：3,000ドル × 146円 ＝ <strong>438,000円</strong>。</p><p><strong>実際に支払った円</strong>：3,000ドル × 152円 ＝ <strong>456,000円</strong>。</p><p><strong>差額</strong>：456,000 − 438,000 ＝ <strong>18,000円余計に払った</strong>ので、借方に為替差損益（為替差損）です。</p><p>自分は<strong>ドルを払う側</strong>で、1ドルが146円から152円へ高くなりました。払うドルの値段が上がったのだから損で、計算と一致します。</p>'
+      },
+      {
+        text: '決算日を迎えた。売掛金のうち <strong>2,000ドル</strong>（取引時の相場は1ドル150円、帳簿価額 <strong>300,000円</strong>）が未決済である。決算日の為替相場は <strong>1ドル155円</strong>であった。必要な決算整理仕訳を示しなさい。',
+        debit: [['売掛金', 10000]],
+        credit: [['為替差損益', 10000]],
+        hint: '増減させるのは売掛金ですか、売上ですか。',
+        explain: '<p><strong>決算日レート（CR）での換算額</strong>：2,000ドル × 155円 ＝ <strong>310,000円</strong>。</p><p><strong>帳簿価額</strong>：300,000円。</p><p><strong>差額</strong>：310,000 − 300,000 ＝ <strong>10,000円の増加</strong>。売掛金を増やし、貸方に為替差損益（為替差益）を立てます。</p><p>換算替えの仕訳は必ず<mark>「債権債務」と「為替差損益」の2科目</mark>でできます。売上は出てきません。売上を増減させると、当期の売上高が相場によってぶれてしまいます。</p><p class="small muted">この換算替えは<strong>翌期首に振り戻しません。</strong>310,000円がそのまま翌期の帳簿価額になり、翌期の為替差損益は決済額と 310,000円の差で計算します。</p>'
+      },
+      {
+        text: '決算日を迎えた。買掛金のうち <strong>4,000ドル</strong>（取引時の相場は1ドル151円、帳簿価額 <strong>604,000円</strong>）が未決済である。決算日の為替相場は <strong>1ドル147円</strong>であった。必要な決算整理仕訳を示しなさい。',
+        debit: [['買掛金', 16000]],
+        credit: [['為替差損益', 16000]],
+        hint: '払う側にとって、1ドルが安くなったのは得ですか。',
+        explain: '<p><strong>決算日レートでの換算額</strong>：4,000ドル × 147円 ＝ <strong>588,000円</strong>。</p><p><strong>帳簿価額</strong>：604,000円。</p><p><strong>差額</strong>：604,000 − 588,000 ＝ <strong>16,000円の減少</strong>。買掛金（負債）を減らし、貸方に為替差損益（為替差益）です。</p><p>払うべきドルの円換算額が 604,000円から 588,000円へ減ったので、<mark>負債が軽くなった＝得</mark>です。ドルを払う側にとっては1ドルが安くなるほうが得で、向きが一致します。</p><p>負債の換算替えは、資産と借方・貸方が逆になります。「決算日レートのほうが高ければ差益」と覚えると必ず逆に書くので、<strong>負債が増えたか減ったか</strong>で判断してください。</p>'
+      },
+      {
+        text: '米国のD社から商品 <strong>2,000ドル</strong>を仕入れ、手付金として支払済みの <strong>前払金 500ドル</strong>（支払時の相場は <strong>1ドル148円</strong>）を充当し、残額は掛けとした。仕入日の為替相場は <strong>1ドル152円</strong>であった。',
+        debit: [['仕入', 302000]],
+        credit: [['前払金', 74000], ['買掛金', 228000]],
+        hint: '前払金は決算日にも換算し直さない項目でした。仕入日のレートで数え直しますか。',
+        explain: '<p><strong>前払金</strong>：500ドル × <mark>148円</mark> ＝ <strong>74,000円</strong>。支払時のレートのまま消します。すでに払い終わっており、相場が動いても受け取る商品は変わらないので、換算し直す理由がありません。</p><p><strong>買掛金</strong>：1,500ドル × 152円 ＝ <strong>228,000円</strong>。こちらは仕入日のレートで記帳します。</p><p><strong>仕入</strong>：74,000 ＋ 228,000 ＝ <strong>302,000円</strong>。貸方の合計がそのまま仕入の金額になります。</p><p>2,000ドル × 152円 ＝ 304,000円としてしまうのが最も多い誤りです。仕入の金額は<strong>「前払金の円換算額 ＋ 買掛金の円換算額」で出す</strong>と固定してください。</p><p>この形では<strong>為替差損益は生じません。</strong>前払金を換算し直さないからです。</p>'
+      },
+      {
+        text: '米国のC社へ商品 <strong>10,000ドル</strong>を掛けで売り上げ、<strong>同時に</strong>代金全額について <strong>1ドル148円</strong>で円に交換する<strong>為替予約</strong>を行った（振当処理）。この日の直物為替相場は <strong>1ドル152円</strong>であった。',
+        debit: [['売掛金', 1480000]],
+        credit: [['売上', 1480000]],
+        hint: '将来いくら手に入るかは、もう確定しています。',
+        explain: '<p>取引と<strong>同時に</strong>予約をつけた場合は、最初から<strong>予約レート</strong>で記帳します。</p><p>10,000ドル × <strong>148円</strong> ＝ <strong>1,480,000円</strong>。直物相場の152円は使いません。</p><p>この時点で「3か月後に 1,480,000円が入る」ことが確定しているので、その確定額で売上も売掛金も記帳します。</p><p><mark>為替差損益は一切出ません。</mark>決算日も換算替えしませんし、決済日にも差額は生じません。「予約をつけたのだから何か損益が出るはずだ」と探さないでください。出ないのが正しい姿です。</p>'
+      },
+      {
+        text: '×1年10月5日に商品 <strong>5,000ドル</strong>を掛けで仕入れている（この日の直物為替相場は <strong>1ドル150円</strong>、買掛金の帳簿価額 <strong>750,000円</strong>）。×1年11月10日、この買掛金全額について <strong>1ドル154円</strong>で<strong>為替予約</strong>を行った（振当処理）。予約日の直物為替相場は <strong>1ドル153円</strong>であった。<strong>予約日の仕訳</strong>を示しなさい。',
+        debit: [['為替差損益', 20000]],
+        credit: [['買掛金', 20000]],
+        hint: '使うレートは2つだけです。153円は何のために書かれているでしょうか。',
+        explain: '<p><strong>予約レートによる金額</strong>：5,000ドル × 154円 ＝ <strong>770,000円</strong>。</p><p><strong>帳簿価額</strong>：750,000円。</p><p><strong>差額</strong>：770,000 − 750,000 ＝ <strong>20,000円</strong>。買掛金が増えるので、借方に為替差損益（為替差損）です。</p><p><strong>予約日の直物相場 153円は使いません。</strong>これを使うと直直差額（150円→153円）と直先差額（153円→154円）に分かれ、<mark>後者を期間配分する1級の処理に入ってしまいます。</mark>出題区分表は「２級では為替予約差額は期間配分をしない」と明記しているので、差額は分割せず全額を当期の損益にします。</p><p>使うのは<strong>予約レートと帳簿価額の2つだけ</strong>です。</p>'
+      },
+      {
+        text: '決算日を迎えた。外貨建の買掛金は次の2口である。<strong>① 5,000ドル</strong>（<strong>1ドル154円</strong>の為替予約が付されており、予約レートで換算した <strong>770,000円</strong>で計上されている）、<strong>② 2,000ドル</strong>（予約は付されておらず、取引時の相場 <strong>1ドル149円</strong>で <strong>298,000円</strong>と計上されている）。決算日の為替相場は <strong>1ドル160円</strong>であった。必要な決算整理仕訳を示しなさい。',
+        debit: [['為替差損益', 22000]],
+        credit: [['買掛金', 22000]],
+        hint: '2口とも換算し直しますか。予約が付いているほうは、将来いくら払うか決まっています。',
+        explain: '<p><strong>① 予約が付された 5,000ドルは、決算日レートで換算しません。仕訳は生じません。</strong>予約をつけた時点で円換算額が 770,000円に確定しており、決算日の相場が160円でも145円でも<mark>実際に支払うのは 770,000円</mark>だからです。5,000 × 160 ＝ 800,000円として 30,000円の為替差損を計上してしまうのが、この論点で最も多い失点です。</p><p><strong>② 予約のない 2,000ドルだけを換算替えします。</strong>2,000 × 160 ＝ 320,000円。帳簿価額 298,000円との差 320,000 − 298,000 ＝ <strong>22,000円</strong>だけ買掛金が増え、借方に為替差損益（為替差損）です。</p><p>第3問の決算整理で外貨建債権債務が並んでいたら、<strong>予約の有無をまず確認してください。</strong>「換算しない」のではなく「<strong>決算日レートでは換算しない</strong>」という点に注意してください。予約レートによる換算はすでに済んでいます。</p>'
+      },
+      {
+        text: '法人税・住民税・事業税の<strong>中間申告</strong>を行い、<strong>520,000円</strong>を現金で納付した。',
+        debit: [['仮払法人税等', 520000]],
+        credit: [['現金', 520000]],
+        hint: 'この時点で当期の税額は確定していますか。',
+        explain: '<p>中間納付は、事業年度の半分が過ぎた時点で<strong>概算額をいったん納める</strong>手続きです。当期の税額はまだ確定していません。</p><p>概算の前払いであって<mark>費用の発生ではない</mark>ので、<strong>仮払法人税等</strong>（資産）に置いておきます。決算で税額が確定したときに取り崩します。</p><p>いきなり「法人税、住民税及び事業税」で費用処理してしまうと、決算時に二重計上になります。</p>'
+      },
+      {
+        text: '決算にあたり、当期の法人税・住民税・事業税が <strong>1,230,000円</strong>と確定した。中間納付額は <strong>520,000円</strong>である。',
+        debit: [['法人税、住民税及び事業税', 1230000]],
+        credit: [['仮払法人税等', 520000], ['未払法人税等', 710000]],
+        hint: '借方に立てるのは確定額の全額ですか、差額ですか。',
+        explain: '<p>費用として計上するのは<strong>1年分の確定額 1,230,000円まるごと</strong>です。中間納付を引いた差額を費用にするのではありません。</p><p><strong>仮払法人税等</strong>：中間で払った 520,000円を取り崩します。</p><p><strong>未払法人税等</strong>：1,230,000 − 520,000 ＝ <strong>710,000円</strong>。決算日の翌日から2か月以内に納める分です。</p><p>中間納付は<mark>「税金を前払いした」だけで費用の発生ではない</mark>ので、資産に置いていたものを決算で費用に振り替えます。ここを間違えると法人税等が過小になり、<strong>当期純利益が過大</strong>になって、第3問では繰越利益剰余金まで全部ずれます。</p>'
+      },
+      {
+        text: '決算にあたり、当期の法人税・住民税・事業税が <strong>400,000円</strong>と確定した。中間納付額は <strong>520,000円</strong>であり、<strong>払いすぎた分は還付される</strong>見込みである。',
+        debit: [['法人税、住民税及び事業税', 400000], ['未収還付法人税等', 120000]],
+        credit: [['仮払法人税等', 520000]],
+        hint: '中間納付が確定額を上回っています。差額はどちらに出ますか。',
+        explain: '<p>業績が下振れして、確定額が中間納付額より少なくなった形です。</p><p><strong>法人税、住民税及び事業税</strong>：確定額 400,000円。</p><p><strong>仮払法人税等</strong>：中間で払った 520,000円を全額取り崩します。</p><p><strong>差額</strong>：520,000 − 400,000 ＝ <strong>120,000円</strong>を払いすぎています。返ってくるので、借方に<strong>未収還付法人税等</strong>（資産）で受けます。</p><p>未払法人税等が貸方に立つ通常の形と、貸借が逆になります。<mark>確定額と中間納付額のどちらが大きいか</mark>で向きが決まります。</p>'
+      },
+      {
+        text: '決算にあたり、貸倒引当金の繰入額 <strong>800,000円</strong>のうち <strong>300,000円</strong>が税務上<strong>損金に算入されなかった</strong>。<strong>法定実効税率は30%</strong>として税効果会計を適用する。なお、期首における一時差異はなかった。',
+        debit: [['繰延税金資産', 90000]],
+        credit: [['法人税等調整額', 90000]],
+        hint: 'いま税金を多く払っていますか、少なく払っていますか。',
+        explain: '<p><strong>繰延税金資産</strong>：300,000 × 30% ＝ <strong>90,000円</strong>。</p><p>会計では 800,000円を費用にしたのに、税務は 300,000円を損金として認めませんでした。その結果、<mark>いま納める税金が 90,000円多くなっています。</mark></p><p>しかしこの 300,000円は、実際に貸し倒れたときに損金として認められます。そのとき税金が 90,000円減ります。つまり<strong>いま多く払っている分は税金の前払い</strong>であり、返ってくる権利として資産に計上します。これが<strong>将来減算一時差異</strong>です。</p><p>相手科目は<strong>法人税等調整額</strong>。貸方に置くことで、損益計算書上の法人税等が 90,000円減ったように見せ、税引前当期純利益と対応させます。<strong>実際に納める税額は1円も変わりません。</strong></p>'
+      },
+      {
+        text: '決算にあたり、備品の減価償却費 <strong>1,200,000円</strong>のうち <strong>400,000円</strong>が税務上の<strong>償却限度額を超過</strong>し、損金に算入されなかった。<strong>法定実効税率は30%</strong>として税効果会計を適用する。なお、期首における一時差異はなかった。',
+        debit: [['繰延税金資産', 120000]],
+        credit: [['法人税等調整額', 120000]],
+        hint: '前問と同じ構造です。会計上の費用が、税務ではまだ認められていません。',
+        explain: '<p><strong>繰延税金資産</strong>：400,000 × 30% ＝ <strong>120,000円</strong>。</p><p>会計では実際に何年使えるかを見積もって耐用年数を決めますが、税務は資産の種類ごとに<strong>法定耐用年数</strong>を定めています。会計の耐用年数のほうが短ければ、会計の減価償却費が毎年大きくなり、超える部分が損金に算入されません。</p><p>これも時期のズレです。会計上の償却が終わったあとも税務上は償却が続き、そこで損金になります。<mark>使い切るまでの合計額はどちらも同じ</mark>です。</p><p>したがって<strong>将来減算一時差異</strong>であり、貸倒引当金の場合とまったく同じ処理になります。</p>'
+      },
+      {
+        text: '決算日。<strong>その他有価証券</strong>として保有する株式（取得原価 <strong>2,000,000円</strong>）の時価は <strong>2,500,000円</strong>であった。<strong>全部純資産直入法</strong>により処理し、<strong>法定実効税率30%</strong>で税効果会計を適用する。',
+        debit: [['その他有価証券', 500000]],
+        credit: [['繰延税金負債', 150000], ['その他有価証券評価差額金', 350000]],
+        hint: '相手科目に法人税等調整額を使ってよいか、この評価差額が損益計算書を通っているかで判断してください。',
+        explain: '<p><strong>評価差額</strong>：2,500,000 − 2,000,000 ＝ <strong>500,000円の評価益</strong>。</p><p><strong>繰延税金負債</strong>：500,000 × 30% ＝ <strong>150,000円</strong>。</p><p><strong>その他有価証券評価差額金</strong>：500,000 − 150,000 ＝ <strong>350,000円</strong>。</p><p>ここで<mark>法人税等調整額を使わない</mark>のが最大の注意点です。法人税等調整額は損益計算書の税額を調整する科目ですが、その他有価証券の評価差額は全部純資産直入法により<strong>そもそも損益計算書を通っていません。</strong>税引前当期純利益に含まれていないものを、損益計算書上で調整しても意味がありません。</p><p>だから調整するのは<strong>純資産に載る評価差額金の側</strong>です。いま値上がりしているこの株式を将来売れば値上がり分に課税されるので、500,000円のうち 150,000円はいずれ税金として出ていきます。株主のものとして純資産に載せてよいのは残りの 350,000円だけ、という理屈です。</p>'
+      },
+      {
+        text: '決算日。<strong>その他有価証券</strong>として保有する株式（取得原価 <strong>3,000,000円</strong>）の時価は <strong>2,600,000円</strong>であった。<strong>全部純資産直入法</strong>により処理し、<strong>法定実効税率30%</strong>で税効果会計を適用する。',
+        debit: [['繰延税金資産', 120000], ['その他有価証券評価差額金', 280000]],
+        credit: [['その他有価証券', 400000]],
+        hint: '前問と貸借が逆になります。評価差損のとき、税効果はどちら側に出ますか。',
+        explain: '<p><strong>評価差額</strong>：3,000,000 − 2,600,000 ＝ <strong>400,000円の評価損</strong>。</p><p><strong>繰延税金資産</strong>：400,000 × 30% ＝ <strong>120,000円</strong>。</p><p><strong>その他有価証券評価差額金</strong>：400,000 − 120,000 ＝ <strong>280,000円</strong>を借方に立てます。これは<strong>純資産のマイナス</strong>で、貸借対照表には「その他有価証券評価差額金 △280,000」と表示されます。</p><p>評価損のときも<strong>全部純資産直入法</strong>なので、投資有価証券評価損のような費用科目は立てません。相手科目が法人税等調整額でない点も評価差益のときと同じです。</p><p class="small muted">この仕訳は<strong>翌期首に振り戻します。</strong>繰延税金資産も評価差額金と一緒に、そっくり逆の仕訳で戻します。振り戻すのはその他有価証券だけで、引当金や減価償却の一時差異は戻しません。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-gaika-zeikoka', {
+    title: '計算ドリル — 課税所得・繰延税金資産・評価差額金（6問）',
+    questions: [
+      {
+        text: '米国のA社へ商品 <strong>4,000ドル</strong>を掛けで売り上げた（取引時の為替相場は <strong>1ドル149円</strong>）。決算日を迎えたが未決済であり、決算日の為替相場は <strong>1ドル153円</strong>であった。その後、翌期に <strong>1ドル146円</strong>で入金された。<strong>取引時の売掛金</strong>、<strong>決算日の換算替えで生じる為替差損益の金額</strong>、および<strong>翌期の決済時に生じる為替差損益の金額</strong>を求めなさい（いずれも絶対額で答える）。',
+        labels: ['取引時の売掛金', '決算時の為替差損益', '決済時の為替差損益'],
+        answer: [596000, 16000, 28000],
+        formula: ['4000*149', '4000*153-4000*149', '4000*153-4000*146'],
+        hint: '決算日の換算替えは翌期首に振り戻しません。翌期の比較対象はどの金額でしょうか。',
+        explain: '<p><strong>取引時の売掛金</strong>：4,000 × 149 ＝ <strong>596,000円</strong>。</p><p><strong>決算時</strong>：4,000 × 153 ＝ 612,000円。612,000 − 596,000 ＝ <strong>16,000円の為替差益</strong>。売掛金を増やします。</p><p><strong>決済時</strong>：受け取るのは 4,000 × 146 ＝ 584,000円。帳簿価額は前期末に直した <mark>612,000円</mark>です。612,000 − 584,000 ＝ <strong>28,000円の為替差損</strong>。</p><p>換算替えは翌期首に振り戻さないので、翌期の比較対象は<strong>取引時の 596,000円ではなく前期末の 612,000円</strong>です。</p><p>検算：16,000 − 28,000 ＝ △12,000円。取引時 596,000円に対して実際は 584,000円しか入らなかったので、通算では 12,000円の損。期をまたいでも辻褄が合います。</p>'
+      },
+      {
+        text: '米国のD社から商品 <strong>3,000ドル</strong>を仕入れ、手付金として支払済みの <strong>前払金 800ドル</strong>（支払時の相場は <strong>1ドル147円</strong>）を充当し、残額は掛けとした。仕入日の為替相場は <strong>1ドル153円</strong>であった。<strong>前払金の円換算額</strong>、<strong>買掛金の円換算額</strong>、および<strong>仕入の金額</strong>を求めなさい。',
+        labels: ['前払金', '買掛金', '仕入'],
+        answer: [117600, 336600, 454200],
+        formula: ['800*147', '(3000-800)*153', '800*147+(3000-800)*153'],
+        hint: '前払金は換算し直しません。',
+        explain: '<p><strong>前払金</strong>：800 × <mark>147</mark> ＝ <strong>117,600円</strong>。支払時のレートのまま消します。</p><p><strong>買掛金</strong>：(3,000 − 800) × 153 ＝ 2,200 × 153 ＝ <strong>336,600円</strong>。</p><p><strong>仕入</strong>：117,600 ＋ 336,600 ＝ <strong>454,200円</strong>。</p><p>3,000 × 153 ＝ 459,000円 としないでください。差の 4,800円は、前払金 800ドルを147円ではなく153円で数え直してしまった分（800 × 6）です。</p>'
+      },
+      {
+        text: '税引前当期純利益が <strong>12,000,000円</strong>である。当期において、貸倒引当金の繰入限度超過額 <strong>400,000円</strong>と減価償却の償却限度超過額 <strong>600,000円</strong>が損金に算入されず、受取配当金の益金不算入額が <strong>200,000円</strong>あった。<strong>法定実効税率は30%</strong>である。<strong>課税所得</strong>と<strong>損益計算書に載る法人税、住民税及び事業税</strong>を求めなさい。',
+        labels: ['課税所得', '法人税、住民税及び事業税'],
+        answer: [12800000, 3840000],
+        formula: ['12000000+400000+600000-200000', '(12000000+400000+600000-200000)*0.3'],
+        hint: '会計で引いたものは足し戻し、会計で足したものは引きます。',
+        explain: '<p><strong>課税所得</strong>：12,000,000 ＋ 400,000 ＋ 600,000 − 200,000 ＝ <strong>12,800,000円</strong>。</p><p>損金不算入額は、会計では費用にしたのに税務が認めなかったものなので<mark>足し戻します</mark>。益金不算入額は、会計では収益にしたのに税務が課税しないものなので<mark>引きます</mark>。</p><p><strong>法人税、住民税及び事業税</strong>：12,800,000 × 30% ＝ <strong>3,840,000円</strong>。</p><p>12,000,000 × 30% ＝ 3,600,000円 ではありません。実際に納める税額は<strong>課税所得</strong>を基礎に決まり、損益計算書に載せるのもこの実際の納税額です。</p>'
+      },
+      {
+        text: '前問と同じ資料（税引前当期純利益 <strong>12,000,000円</strong>、貸倒引当金の繰入限度超過額 <strong>400,000円</strong>、減価償却の償却限度超過額 <strong>600,000円</strong>、受取配当金の益金不算入額 <strong>200,000円</strong>、<strong>法定実効税率30%</strong>、期首の一時差異はなし）について、<strong>計上する繰延税金資産</strong>、<strong>法人税等調整額</strong>、および<strong>当期純利益</strong>を求めなさい（法人税等調整額は絶対額で答える）。',
+        labels: ['繰延税金資産', '法人税等調整額', '当期純利益'],
+        answer: [300000, 300000, 8460000],
+        formula: ['(400000+600000)*0.3', '(400000+600000)*0.3', '12000000-(12000000+400000+600000-200000)*0.3+(400000+600000)*0.3'],
+        hint: '税効果の対象になるのは一時差異だけです。受取配当金の益金不算入はどちらでしょうか。',
+        explain: '<p><strong>一時差異</strong>：400,000 ＋ 600,000 ＝ 1,000,000円。受取配当金の益金不算入 200,000円は<mark>永久差異</mark>なので含めません。永久に課税されないものなので、将来の税額に影響しないからです。</p><p><strong>繰延税金資産</strong>：1,000,000 × 30% ＝ <strong>300,000円</strong>。仕訳は「繰延税金資産 300,000／法人税等調整額 300,000」。</p><p><strong>当期純利益</strong>：12,000,000 − 3,840,000 ＋ 300,000 ＝ <strong>8,460,000円</strong>。</p><p>検算：税負担は 3,840,000 − 300,000 ＝ 3,540,000円。これは 12,000,000 × 30% − 200,000 × 30% ＝ 3,600,000 − 60,000 ＝ 3,540,000円 と一致します。<mark>一時差異のズレだけが取り除かれ、永久差異の分は残る</mark>のが税効果会計の正しい姿です。</p>'
+      },
+      {
+        text: '前期末の将来減算一時差異は <strong>1,500,000円</strong>で、繰延税金資産 <strong>450,000円</strong>が計上されている。当期末の将来減算一時差異は <strong>2,200,000円</strong>となった。<strong>法定実効税率は30%</strong>である。<strong>当期末のあるべき繰延税金資産</strong>と、<strong>当期に追加計上する金額</strong>を求めなさい。',
+        labels: ['当期末のあるべき繰延税金資産', '当期の追加計上額'],
+        answer: [660000, 210000],
+        formula: ['2200000*0.3', '2200000*0.3-450000'],
+        hint: '毎期まるごと計上し直すのではありません。',
+        explain: '<p><strong>当期末のあるべき繰延税金資産</strong>：2,200,000 × 30% ＝ <strong>660,000円</strong>。</p><p><strong>追加計上額</strong>：660,000 − 450,000 ＝ <strong>210,000円</strong>。仕訳は「繰延税金資産 210,000／法人税等調整額 210,000」。</p><p>一時差異は毎期積み上がっていくので、<mark>すでに計上してある残高との差額だけ</mark>を追加します。2,200,000 × 30% ＝ 660,000円をそのまま計上すると、繰延税金資産が 450,000 ＋ 660,000 ＝ 1,110,000円になってしまいます。</p><p>逆に一時差異が減っていれば取り崩し、法人税等調整額が借方に立ちます。<strong>問題文に「期首における一時差異はなかった」と書かれているかどうかを必ず確認してください。</strong></p>'
+      },
+      {
+        text: '<strong>その他有価証券</strong>として保有する株式の取得原価は <strong>5,000,000円</strong>、当期末の時価は <strong>5,800,000円</strong>である。<strong>全部純資産直入法</strong>により処理し、<strong>法定実効税率30%</strong>で税効果会計を適用する。<strong>評価差額</strong>、<strong>繰延税金負債</strong>、および<strong>純資産に計上されるその他有価証券評価差額金</strong>を求めなさい。',
+        labels: ['評価差額', '繰延税金負債', 'その他有価証券評価差額金'],
+        answer: [800000, 240000, 560000],
+        formula: ['5800000-5000000', '(5800000-5000000)*0.3', '(5800000-5000000)*0.7'],
+        hint: '時価と取得原価の差額が、そのまま評価差額金になりますか。',
+        explain: '<p><strong>評価差額</strong>：5,800,000 − 5,000,000 ＝ <strong>800,000円</strong>の評価益。</p><p><strong>繰延税金負債</strong>：800,000 × 30% ＝ <strong>240,000円</strong>。</p><p><strong>その他有価証券評価差額金</strong>：800,000 − 240,000 ＝ <strong>560,000円</strong>。800,000 × 70% と計算しても同じです。</p><p>仕訳は「その他有価証券 800,000／繰延税金負債 240,000・その他有価証券評価差額金 560,000」。</p><p><mark>時価と取得原価の差額がそのまま評価差額金になるわけではありません。</mark>問題文に「税効果会計を適用する」と書かれているかどうかで金額が変わるので、この一文を読み飛ばさないでください。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-gaika-zeikoka', {
+    title: '確認テスト — 換算・予約・税効果の判断（10問）',
+    questions: [
+      {
+        text: '外貨建の売掛金について決算日に換算替えを行ったとき、為替差損益の相手科目となるのはどれですか。',
+        choices: [
+          '売上',
+          '売掛金',
+          '仕入'
+        ],
+        answer: 1,
+        explain: '<p>換算替えの仕訳は必ず<strong>「債権債務」と「為替差損益」の2科目</strong>でできます。相場が動いたことで変わるのは、これから受け払いするお金の額だけだからです。</p><p>売上は取引発生時のレートで確定しており、あとから書き換えません（選択肢1）。商品を売ったという事実はその日に起きたことで、金額は相場と無関係です。売上を増減させると、当期の売上高が相場によってぶれてしまいます。</p><p>仕入は買掛金に対応する科目で、売掛金の換算替えには出てきません（選択肢3）。</p>'
+      },
+      {
+        text: '決算日に<strong>換算替えを行わない</strong>ものはどれですか。',
+        choices: [
+          '外貨建の買掛金',
+          '外貨預金',
+          '商品の手付金として支払った外貨建の前払金'
+        ],
+        answer: 2,
+        explain: '<p>基準は<strong>「これから外貨でお金をやり取りするか」</strong>です。</p><p><strong>前払金</strong>はすでに払い終わっており、残っているのは「商品を受け取る権利」だけです。相場が動いても受け取る商品は変わらないので、換算し直す理由がありません。前受金も同じです。</p><p>買掛金は将来ドルで支払うので換算し直します（選択肢1）。外貨預金は外貨そのもので、円に戻す額が相場で変わるので換算し直します（選択肢2）。</p><p>棚卸資産・固定資産も換算し直しません。お金ではなくモノであり、取得時の円換算額が取得原価だからです。</p>'
+      },
+      {
+        text: '外貨建取引のうち、<strong>2級の出題範囲に含まれない</strong>ものはどれですか。',
+        choices: [
+          '商品の輸出によって生じた外貨建売掛金の換算',
+          '外貨建の借入金の決算日における換算',
+          '外貨建の買掛金に為替予約を付した場合の振当処理'
+        ],
+        answer: 1,
+        explain: '<p>出題区分表で2級の範囲とされているのは<strong>外貨建の営業取引</strong>です。外貨建の<strong>貸付金・借入金</strong>のような資金の調達・運用に係る取引は<strong>1級</strong>です。</p><p>2級が扱うのは営業取引から生じた債権債務（売掛金・買掛金・前払金・前受金など）までだと割り切ってください。このうち決算日に換算し直すのは売掛金・買掛金と外貨預金で、前払金・前受金は換算しません。外貨建有価証券の換算も2級では問われません。</p><p>為替予約の<strong>振当処理は2級の範囲</strong>です（選択肢3）。ただし独立処理は1級で、振当処理でも為替予約差額の期間配分は2級では行いません。</p>'
+      },
+      {
+        text: '商品を仕入れたあとに、その買掛金へ為替予約を付した（振当処理）。予約日の仕訳で生じる差額の計算に用いるレートの組み合わせとして、2級で正しいものはどれですか。',
+        choices: [
+          '取引日の直物相場と予約日の直物相場の差、および予約日の直物相場と予約レートの差に分け、後者を期間配分する',
+          '予約レートによる換算額と帳簿価額を直接比べ、差額の全額を当期の為替差損益とする',
+          '予約日の直物相場による換算額と帳簿価額を比べ、差額を当期の為替差損益とする'
+        ],
+        answer: 1,
+        explain: '<p>出題区分表は<strong>「２級では為替予約差額は期間配分をしない」</strong>と明記しています。したがって直直差額と直先差額に分ける必要がそもそもなく、<mark>予約レートによる換算額と帳簿価額を直接比べて、差額の全額を当期の為替差損益にします。</mark></p><p>選択肢1は直直差額・直先差額に分けて期間配分する処理で、<strong>1級の範囲</strong>です。</p><p>選択肢3のように予約日の直物相場を使うと、予約レートまで届かず金額が合いません。問題文は必ず予約日の直物相場を書いてきますが、<strong>2級で使うのは予約レートと帳簿価額の2つだけ</strong>です。</p>'
+      },
+      {
+        text: '為替予約（振当処理）を付した買掛金について、決算日に行う処理はどれですか。',
+        choices: [
+          '決算日の直物為替相場で換算替えする',
+          '予約レートによる換算額のままとし、決算日レートでは換算替えしない',
+          '予約レートと決算日レートの平均で換算替えする'
+        ],
+        answer: 1,
+        explain: '<p>予約をつけた時点で、その買掛金の円換算額は<strong>予約レートによる金額に確定しています。</strong>決算日の相場がいくらであっても、実際に支払う円は変わりません。相場の影響をあらためて見積もる意味がありません。</p><p>第3問の決算整理で外貨建債権債務が並んでいたら、<mark>予約の有無をまず確認してください。</mark>予約付きのものを他と一緒に決算日レートで換算してしまうのが、この論点で最も多い失点です。</p><p>「換算しない」のではなく「<strong>決算日レートでは換算しない</strong>」という点に注意してください。予約レートによる換算はすでに済んでいます。</p>'
+      },
+      {
+        text: '法人税・住民税・事業税の決算時の処理として正しいものはどれですか。中間納付額がある場合を考えます。',
+        choices: [
+          '確定した年税額の全額を費用に計上し、仮払法人税等を取り崩して差額を未払法人税等とする',
+          '確定した年税額から中間納付額を差し引いた残額だけを費用に計上する',
+          '中間納付額は費用として計上済みなので、決算では追加の仕訳を行わない'
+        ],
+        answer: 0,
+        explain: '<p>費用として計上するのは<strong>1年分の確定額まるごと</strong>です。中間納付は<mark>「税金を前払いした」だけで費用の発生ではない</mark>ため、仮払法人税等（資産）に置いていました。決算でそれを取り崩し、費用に振り替えます。</p><p>選択肢2のように差額だけを費用にすると、損益計算書の法人税等が過小になり<strong>当期純利益が過大</strong>になります。第3問では下流の繰越利益剰余金まで全部ずれます。</p><p>中間納付時に費用計上はしていません（選択肢3）。なお法人税等は出題区分表では3級の論点ですが、2級の第3問では損益計算書の末尾にほぼ毎回登場します。</p>'
+      },
+      {
+        text: '税引前当期純利益が <strong>10,000,000円</strong>、損金不算入額が <strong>800,000円</strong>、益金不算入額が <strong>300,000円</strong>であった。<strong>法定実効税率30%</strong>（課税所得の100分の30）のとき、損益計算書に載る<strong>法人税、住民税及び事業税</strong>はいくらですか。',
+        choices: [
+          '3,000,000円',
+          '3,150,000円',
+          '3,330,000円'
+        ],
+        answer: 1,
+        invariant: [
+          ['(10000000 + 800000 - 300000) * 30 / 100', 'answer'],
+          ['10000000 * 30 / 100', '3000000']
+        ],
+        explain: '<p><strong>課税所得</strong>：10,000,000 ＋ 800,000 − 300,000 ＝ <strong>10,500,000円</strong>。損金不算入額は会計で引いてしまっているので足し戻し、益金不算入額は会計で足してしまっているので引きます。</p><p><strong>法人税、住民税及び事業税</strong>：10,500,000 × 30% ＝ <strong>3,150,000円</strong>。</p><p>選択肢1の 3,000,000円は、税引前当期純利益にそのまま税率を掛けた金額です。<mark>実際に納める税額は課税所得を基礎に決まります。</mark></p><p>選択肢3の 3,330,000円は、益金不算入額を引かずに足してしまった場合（10,000,000 ＋ 800,000 ＋ 300,000 ＝ 11,100,000円）の金額です。<strong>足すのか引くのかは「会計でどう扱ったかの逆」</strong>で判断してください。</p>'
+      },
+      {
+        text: '次のうち、<strong>税効果会計の対象にならない</strong>ものはどれですか。',
+        choices: [
+          '貸倒引当金の繰入限度超過額',
+          '受取配当金の益金不算入額',
+          '減価償却の償却限度超過額'
+        ],
+        answer: 1,
+        explain: '<p>税効果会計の対象は<strong>一時差異だけ</strong>です。判断は「この差は、いつか反対向きに戻るか」の一問で済みます。</p><p><strong>受取配当金の益金不算入</strong>は、いま課税されず将来も永久に課税されません。取り返すも何も、そもそも税金が発生していないので、将来の税額に影響しません。これが<strong>永久差異</strong>です。交際費や寄附金の損金不算入も同じです。</p><p>貸倒引当金の繰入限度超過額は実際に貸し倒れたときに（選択肢1）、減価償却の償却限度超過額は後の年度で（選択肢3）、いずれ損金になります。時期のズレなので<strong>一時差異</strong>です。</p><p class="small muted">2級で扱う一時差異は、引当金・減価償却・その他有価証券の評価差額の3つに限られます。</p>'
+      },
+      {
+        text: '<strong>その他有価証券</strong>の評価差額に税効果会計を適用するとき、<strong>法人税等調整額を用いない</strong>理由はどれですか。',
+        choices: [
+          'その他有価証券の評価差額は金額が小さく、損益計算書で調整するほどの重要性がないため',
+          '評価差額がそもそも損益計算書を通っておらず、損益計算書上の税額を調整する意味がないため',
+          'その他有価証券の評価差額は永久差異であり、税効果会計の対象外であるため'
+        ],
+        answer: 1,
+        explain: '<p>法人税等調整額は<strong>損益計算書の税額を調整する科目</strong>で、税引前当期純利益に対する税負担の見え方を整えるために使います。</p><p>ところが、その他有価証券の評価差額は全部純資産直入法により<mark>損益計算書に一切出てきません。</mark>税引前当期純利益に含まれていないものの税額を損益計算書上で調整しても意味がありません。だから調整するのは<strong>純資産に載る評価差額金の側</strong>です。</p><p>金額の重要性とは関係ありません（選択肢1）。その他有価証券の評価差額は<strong>一時差異</strong>であり、税効果会計の対象です（選択肢3）。出題区分表も2級で扱う一時差異の1つとして明記しています。</p><p>分かれ目は<strong>「もとの差異が損益計算書を通ったか」</strong>の一点だけです。</p>'
+      },
+      {
+        text: 'その他有価証券として保有する株式の取得原価は <strong>4,000,000円</strong>、期末時価は <strong>4,600,000円</strong>である。全部純資産直入法により処理し、<strong>法定実効税率30%</strong>（評価差額の100分の30）で税効果会計を適用したとき、貸借対照表の純資産に計上される<strong>その他有価証券評価差額金</strong>はいくらですか。',
+        choices: [
+          '600,000円',
+          '420,000円',
+          '180,000円'
+        ],
+        answer: 1,
+        invariant: [
+          ['(4600000 - 4000000) - (4600000 - 4000000) * 30 / 100', 'answer'],
+          ['(4600000 - 4000000) * 30 / 100', '180000']
+        ],
+        explain: '<p><strong>評価差額</strong>：4,600,000 − 4,000,000 ＝ <strong>600,000円</strong>の評価益。</p><p><strong>繰延税金負債</strong>：600,000 × 30% ＝ 180,000円。</p><p><strong>その他有価証券評価差額金</strong>：600,000 − 180,000 ＝ <strong>420,000円</strong>。600,000 × 70% と計算しても同じです。</p><p>選択肢1の 600,000円は、税効果を適用しなかった場合の金額です。<mark>時価と取得原価の差額がそのまま評価差額金になるわけではありません。</mark>問題文に「税効果会計を適用する」と書かれているかどうかで金額が変わります。</p><p>選択肢3の 180,000円は繰延税金負債の金額です。こちらは純資産ではなく負債の部に計上されます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-gaika-zeikoka', {
+    title: '穴埋め — 用語を書けるようにする（7問）',
+    questions: [
+      {
+        text: '外貨建の債権債務を円に換算した金額が、取引時と決済時・決算時とで異なることによって生じる損益を何といいますか。損益計算書では営業外収益または営業外費用に表示します。',
+        answer: ['為替差損益', 'かわせさそんえき', '為替差損', '為替差益'],
+        explain: '<p>外貨では変わっていないのに円では変わった分であり、商品を高く売った利益でも仕入を抑えた利益でもありません。<strong>相場が動いたことだけから出る損益</strong>なので営業外に置きます。</p><p>決済時に生じる差額（決済差額）も、決算時の換算替えで生じる差額（換算差額）も、どちらも同じ為替差損益です。勘定科目表には「為替差損益」という1つの科目があり、借方に立てば損、貸方に立てば益です。</p>'
+      },
+      {
+        text: '将来の特定の日に、あらかじめ決められた為替相場で外貨と円を交換する契約を銀行と結ぶことを何といいますか。これにより、将来手に入る円（または支払う円）が確定します。',
+        answer: ['為替予約', 'かわせよやく'],
+        explain: '<p>相場の振れによって手に入る円がぶれると、資金繰りの計画が立ちません。そこで将来のレートを先に固定します。決められたレートを<strong>先物為替相場（予約レート）</strong>、その日その場の相場を<strong>直物為替相場</strong>といいます。</p><p>予約をつけた債権債務は将来の円換算額が確定するので、<strong>決算日レートでは換算替えしません。</strong></p>'
+      },
+      {
+        text: '為替予約を付した外貨建債権債務について、その円換算額を予約レートで換算した金額に置き換えてしまう処理方法を何といいますか。2級で扱う為替予約の処理はこれだけです。',
+        answer: ['振当処理', 'ふりあてしょり'],
+        explain: '<p>予約によって将来の円換算額が確定しているのだから、その確定額を帳簿価額とする、という考え方です。</p><p><strong>2級では為替予約差額の期間配分をしません。</strong>取引のあとから予約をつけた場合は、予約レートによる換算額と帳簿価額を直接比べ、差額の全額を当期の為替差損益とします。直直差額と直先差額に分けて期間配分する処理も、予約そのものを時価評価する<strong>独立処理</strong>も、どちらも1級の範囲です。</p>'
+      },
+      {
+        text: '法人税の計算の基礎となる、税務上の利益にあたる金額を何といいますか。税引前当期純利益に損金不算入額を加算し、益金不算入額を減算して求めます。',
+        answer: ['課税所得', 'かぜいしょとく'],
+        explain: '<p>会計の目的は業績と財産状態を正しく伝えること、税務の目的は公平に税を集めることです。<strong>目的が違うので計算も違い、会計上の利益と課税所得は一致しません。</strong></p><p>足すのか引くのかは<mark>「会計でどう扱ったかの逆」</mark>で判断します。会計で費用にしたが税務が認めないもの（損金不算入）は足し戻し、会計で収益にしたが税務が課税しないもの（益金不算入）は引きます。</p><p>損益計算書の「法人税、住民税及び事業税」に載るのは、この課税所得から計算した実際の納税額です。</p>'
+      },
+      {
+        text: '会計上の費用・収益と税務上の損金・益金の差のうち、いつかは反対向きに解消して将来の税額に影響するものを何といいますか。税効果会計の対象となるのはこちらだけです。',
+        answer: ['一時差異', 'いちじさい'],
+        explain: '<p>判断は<strong>「この差は、いつか反対向きに戻るか」</strong>の一問で済みます。貸倒引当金の繰入限度超過額は実際に貸し倒れたときに、減価償却の償却限度超過額は後の年度で、いずれ損金になります。</p><p>対して、受取配当金の益金不算入や交際費の損金不算入は永久に解消しないので<strong>永久差異</strong>といい、税効果会計の対象になりません。将来の税額に影響しないため、資産にも負債にもならないからです。</p><p>2級で扱う一時差異は<strong>引当金・減価償却・その他有価証券の評価差額</strong>の3つに限られます。</p>'
+      },
+      {
+        text: '将来減算一時差異に法定実効税率を掛けて計上する資産の勘定科目は何ですか。いま多く納めている税金が将来戻ってくる分にあたり、税金の前払いとしての性格を持ちます。',
+        answer: ['繰延税金資産', 'くりのべぜいきんしさん'],
+        explain: '<p>会計上の費用が税務上まだ認められていないため、いま納める税金が多くなっています。しかしその費用は将来認められて税金が減るので、<mark>いま多く払っている分は返ってくる</mark>ことになります。返ってくる権利があるから資産です。</p><p>「将来減算」は<strong>将来の課税所得を減算する</strong>という意味です。いまの損益計算書を見て判断すると混乱するので、必ず「将来どうなるか」で考えてください。</p><p class="small muted">2級では<strong>繰延税金資産の回収可能性の検討を行いません。</strong>一時差異に税率を掛けた金額をそのまま計上します。繰延税金資産と繰延税金負債の相殺表示も問われません。</p>'
+      },
+      {
+        text: '引当金や減価償却に係る一時差異に税効果会計を適用したとき、繰延税金資産の相手科目となる勘定科目は何ですか。損益計算書では法人税、住民税及び事業税のすぐ下に表示します。',
+        answer: ['法人税等調整額', 'ほうじんぜいとうちょうせいがく'],
+        explain: '<p>貸方に立てば損益計算書上でマイナス表示され、税額を減らしたように見せます。これによって、税引前当期純利益に対する税負担の比率が法定実効税率に近づきます。</p><p><strong>実際に納める税額は1円も変わりません。</strong>税効果会計は表示を整えるための会計処理であり、節税の手続きではありません。</p><p>ただし<strong>その他有価証券の評価差額に係る税効果では、この科目を使いません。</strong>評価差額がそもそも損益計算書を通っていないためで、相手科目は<strong>その他有価証券評価差額金</strong>になります。分かれ目は「もとの差異が損益計算書を通ったか」の一点です。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>
