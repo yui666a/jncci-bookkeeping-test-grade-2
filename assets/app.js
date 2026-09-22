@@ -366,6 +366,28 @@
     if (s === '') return NaN;
     return Number(s);
   }
+  // 入力中にカーソル位置を保つのは、キャレット右側の数字の個数を数え直す方法でしか
+  // できない。区切りが増減しても右側の桁数は変わらないため。
+  function groupAmt(inp) {
+    inp.addEventListener('input', function () {
+      var tail = inp.value.slice(inp.selectionEnd).replace(/\D/g, '').length;
+      var half = inp.value.replace(/[０-９]/g, function (c) {
+        return String.fromCharCode(c.charCodeAt(0) - 0xFEE0);
+      });
+      var neg = /^\s*-/.test(half);
+      var parts = half.replace(/[^\d.]/g, '').split('.');
+      var intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      // 小数部は3桁区切りにしない。金額に小数が出るのは単価や率の計算だけで、
+      // そこに区切りを入れると桁の読み方が変わる。
+      var out = (neg ? '-' : '') + intPart + (parts.length > 1 ? '.' + parts.slice(1).join('') : '');
+      inp.value = out;
+      var pos = out.length;
+      for (var seen = 0; pos > 0 && seen < tail; pos--) {
+        if (/\d/.test(out[pos - 1])) seen++;
+      }
+      inp.setSelectionRange(pos, pos);
+    });
+  }
   function shell(root, cfg, badgeText) {
     root.classList.add('drill');
     var head = el('div', 'drill__head');
@@ -729,6 +751,7 @@
             td1.appendChild(accountPicker(accounts, side));
             var inp = el('input', 'amt');
             inp.type = 'text'; inp.inputMode = 'numeric'; inp.placeholder = '0';
+            groupAmt(inp);
             inp.dataset.side = side;
             td2.appendChild(inp);
             tr.appendChild(td1); tr.appendChild(td2);
@@ -895,6 +918,7 @@
           var line = el('div', 'numq');
           if (labels[ai]) line.appendChild(el('span', 'small', labels[ai]));
           var inp = el('input', 'amt'); inp.type = 'text'; inp.inputMode = 'decimal'; inp.placeholder = '0';
+          groupAmt(inp);
           line.appendChild(inp);
           if (q.unit) line.appendChild(el('span', 'unit', q.unit));
           inputs.push(inp);
