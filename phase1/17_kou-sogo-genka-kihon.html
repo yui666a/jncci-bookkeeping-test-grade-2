@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第十一-1-0,工-第十一-2-0,工-第十一-3-0,工-第十一-6-0,工-第十一-6-ア,工-第十一-6-イ,工-第十一-8-0">
+<title>総合原価計算の基本 — 日商簿記2級 Phase 1 W5</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 17 総合原価計算の基本</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 17 ／ 4時間 ／ 工業簿記</p>
+    <h1>総合原価計算の基本<br>— 単純総合原価計算と平均法・先入先出法</h1>
+    <p class="lead">UNIT 14 では、製造指図書という箱を用意して、伝票に書かれた番号どおりに原価を仕分けました。<mark>この単元では、その箱がありません。</mark>同じものを連続して作る工場には仕分ける単位がないからです。仕分けられない以上、1か月分の原価をまとめて集めて、完成した分と作りかけの分に<strong>按分する</strong>しかありません。仕掛品勘定の形は UNIT 14 とまったく同じで、<strong>貸方の完成品原価をどう決めるかだけが変わります。</strong>その決め方が平均法と先入先出法の2つです。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算ドリル 14問</span>
+      <span class="chip">確認テスト 14問</span>
+      <span class="chip">穴埋め 10問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">指図書のない工場で、原価をどう分けるか</a></li>
+      <li><a href="#s2">総合原価計算の4つの種類 — 地図を先に持つ</a></li>
+      <li><a href="#s3">按分するには基準が要る — 数量という基準の限界</a></li>
+      <li><a href="#s4">加工進捗度と完成品換算量</a></li>
+      <li><a href="#s5">ボックス図 — 材料費と加工費で2つ描く</a></li>
+      <li><a href="#s6">平均法 — 月初と当月を混ぜて平らにする</a></li>
+      <li><a href="#s7">(修正)先入先出法 — 月初から先に出ていく</a></li>
+      <li><a href="#s8">2つの方法を並べて比べる</a></li>
+      <li><a href="#s9">仕掛品勘定と記帳 — UNIT 14 と同じ形に着地する</a></li>
+      <li><a href="#s10">仕損と減損 — 数が合わなくなる</a></li>
+      <li><a href="#s11">度外視法 — 発生点で負担者が変わる</a></li>
+      <li><a href="#s12">度外視法の計算 — 2つの型を通しで解く</a></li>
+      <li><a href="#s13">解く手順の型 — 7ステップ</a></li>
+      <li><a href="#s14">仕訳ドリル 12問</a></li>
+      <li><a href="#s15">計算ドリル 14問</a></li>
+      <li><a href="#s16">確認テスト 14問</a></li>
+      <li><a href="#s17">用語の穴埋め 10問</a></li>
+      <li><a href="#s18">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>指図書のない工場で、原価をどう分けるか</h2>
+
+  <p>ジュースを作る工場を考えます。ラインは朝から晩まで動き続け、原料が入口から入って、ボトルが出口から出てきます。月末の夜、ラインを止めて中を見ると、<strong>まだボトルになっていない、途中まで加工された液体がタンクに残っています。</strong></p>
+
+  <p>ここで経理が困ります。今月、材料費と労務費と製造間接費を合わせて 161万円 かかりました。完成したボトルは1,000本。<mark>この 161万円 は全部が1,000本のためにかかったのでしょうか。</mark>違います。タンクに残っている液体にも、材料は使われ、人が作業し、機械が動いています。161万円 の一部はそちらの分です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ指図書ごとの集計ができないのか</span>
+    <p>UNIT 14 の受注生産なら、タンクの中身に「No.101用」という札が付いています。だから伝票に番号を書けて、番号ごとに集められました。<br>ジュース工場のタンクの液体には、<strong>誰のぶんという区別がありません。</strong>昨日入れた原料と今日入れた原料が混ざり、どの1リットルがどの注文のものかを言うことに意味がありません。区別がない以上、<mark>伝票に書く番号がなく、集計する単位そのものが存在しません。</mark><br>だから総合原価計算では、集計の方向を逆にします。<strong>1か月にかかった原価の総額を先に確定させ、それを完成品と月末仕掛品に分ける。</strong>集めるのではなく分けるのです。UNIT 14 が「集めて出す」なら、この単元は「割って出す」です。</p>
+  </div>
+
+  <p>この単元がやることは、結局のところ次の1行に尽きます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">総合原価計算がすること</span>
+    <p><strong>月初仕掛品原価 ＋ 当月製造費用 ＝ 完成品総合原価 ＋ 月末仕掛品原価</strong><br>左辺は先月からの繰越と今月かかった分で、<mark>問題文を読めば必ず分かります。</mark>右辺の2つをどう割るかが、この単元のすべてです。<br>左辺と右辺が一致するという関係は、方法が平均法でも先入先出法でも、仕損があってもなくても、絶対に崩れません。<strong>答案を書いたら必ずこの等式で検算してください。</strong>どちらか一方を求めて他方を「差額で」出せば自動的に成り立ちますが、両方を別々に計算したときは合わないことがあります。合わなければどこかで計算を間違えています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「総合」は合計という意味ではない</span>
+    <p>総合原価計算の「総合」は、複数の製品の原価を合計するという意味ではありません。<mark>一定期間の原価を一括して（総合して）把握し、それを生産量で割る</mark>という計算の進め方を指しています。<br>英語では process costing（工程原価計算）といい、こちらのほうが実態に近い言い方です。「工程を流れていく原価を、期間で区切って捉える」というイメージを持っておくと、あとで出てくる工程別総合原価計算（UNIT 18）ともつながります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>総合原価計算の4つの種類 — 地図を先に持つ</h2>
+
+  <p>総合原価計算には4つの型があります。<strong>工場が何を作っているかによって、どこまで計算を分けるかが変わる</strong>だけで、基本の考え方は全部同じです。先に地図を持っておくと、いま何を学んでいるかが見えます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>種類</th><th>どんな工場か</th><th>何を分けるか</th><th>扱う単元</th></tr></thead>
+    <tbody>
+      <tr><td><strong>単純総合原価計算</strong></td><td>1種類の製品を1つの工程で作る<br>（製氷、精糖、セメント）</td><td>分けない。1つのボックス図で終わる</td><td><strong>この単元</strong></td></tr>
+      <tr><td><strong>工程別総合原価計算</strong></td><td>1種類の製品を複数の工程を通して作る<br>（紙＝抄造→仕上、化学＝反応→精製）</td><td><strong>工程ごと</strong>に計算し、前工程の原価を次工程へ引き継ぐ</td><td>UNIT 18</td></tr>
+      <tr><td><strong>組別総合原価計算</strong></td><td>異なる種類の製品を同じ設備で作る<br>（A社向け飲料とB社向け飲料）</td><td><strong>製品の種類（組）ごと</strong>に計算する。組間接費は配賦する</td><td>UNIT 18</td></tr>
+      <tr><td><strong>等級別総合原価計算</strong></td><td>同じ製品でサイズや品位だけが違う<br>（同じ配合の洗剤の大・中・小）</td><td>いったんまとめて計算し、<strong>等価係数</strong>で各等級に分ける</td><td>UNIT 18</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この単元で学ぶことが、残り3つの土台になる</span>
+    <p>工程別も組別も等級別も、<mark>最後は必ず単純総合原価計算に帰着します。</mark><br>工程別は「工程ごとに単純総合原価計算を1回ずつやる」、組別は「組ごとに単純総合原価計算を1回ずつやる」、等級別は「全体で単純総合原価計算を1回やってから等価係数で割る」です。<br>つまり、この単元で学ぶ<strong>加工進捗度・完成品換算量・平均法・先入先出法・度外視法</strong>という道具は、4つの型すべてで同じように使います。<strong>ここが崩れると W5 のあとの工業簿記が全部崩れます。</strong>4時間をかける理由がここにあります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">副産物の処理と連産品の計算は2級の範囲外</span>
+    <p>市販のテキストには、総合原価計算の章の最後に<strong>副産物の処理</strong>（主産物と一緒に出てくる価値の低い産物）や<strong>連産品の計算</strong>（1つの原料から複数の製品が同時にできる場合の按分）が載っていることがあります。<br><mark>出題区分表では、どちらも1級です。</mark>2級の答案で副産物の評価額を控除する計算も、連産品に正常市価で原価を按分する計算も問われません。<strong>ここに時間を使わないでください。</strong><br>同様に、仕損・減損の<strong>非度外視法</strong>、<strong>異常</strong>仕損費・異常減損費の処理、<strong>純粋</strong>先入先出法も1級です。2級で学ぶのは<strong>度外視法</strong>と<strong>(修正)先入先出法</strong>だけです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>按分するには基準が要る — 数量という基準の限界</h2>
+
+  <p>完成品と月末仕掛品に原価を按分します。何を基準に分けるかを決めなければ按分できません。最初に思いつくのは<strong>数量</strong>です。</p>
+
+  <p>今月の状況を具体的に置きます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>項目</th><th class="amt">数量</th><th>状態</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品</td><td class="amt">200個</td><td>加工進捗度 50%</td></tr>
+      <tr><td>当月投入</td><td class="amt">1,000個</td><td>—</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>1,200個</strong></td><td>—</td></tr>
+      <tr><td>当月完成品</td><td class="amt">1,000個</td><td>完成</td></tr>
+      <tr><td>月末仕掛品</td><td class="amt">200個</td><td>加工進捗度 50%</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>1,200個</strong></td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>当月の原価は、直接材料費 504,000円、加工費 945,000円。月初仕掛品原価は材料費 96,000円・加工費 67,000円です。合計 1,612,000円 を、完成品1,000個 と月末仕掛品200個 に分けます。</p>
+
+  <p>数量で按分すれば、完成品に 1,000 / 1,200、月末仕掛品に 200 / 1,200 です。しかしこれは<strong>明らかにおかしい。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ数量で按分してはいけないのか</span>
+    <p>月末仕掛品は<strong>作りかけ</strong>です。完成品と同じ手間はかかっていません。進捗度50%なら、人の作業も機械の稼働も半分しか受けていません。<br><mark>それなのに完成品1個と同じ額を負担させると、月末仕掛品の原価が過大になり、そのぶん完成品原価が過小になります。</mark>完成品原価は売上原価になるので、そのまま利益を歪めます。<br>ところが、ここで「じゃあ全部を進捗度で割り引こう」とすると、今度は別の誤りが起きます。<strong>材料費は作りかけでも100%かかっていることがある</strong>からです。<br>つまり、原価の種類によって「作りかけがどれだけ負担すべきか」が違います。<strong>だから材料費と加工費を分けて計算します。</strong>これが総合原価計算の最初の、そして最大の分岐点です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>加工進捗度と完成品換算量</h2>
+
+  <p>パンを焼く工程を思い浮かべてください。小麦粉・水・イースト・塩は、<strong>こねる最初の段階で全部入れます。</strong>こね終わった生地も、発酵中の生地も、焼き上がったパンも、<mark>入っている小麦粉の量は同じです。</mark></p>
+
+  <p>一方、こねる手間、発酵を待つ時間、窯の燃料は、<strong>工程が進むほど積み上がります。</strong>こね終わっただけの生地は、焼き上がったパンの半分の手間しか受けていません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">材料費と加工費で、作りかけの扱いが違う理由</span>
+    <p><strong>直接材料費</strong>は、工程の<mark>始点で全量が投入される</mark>のが基本です。始点で入れてしまうのだから、進捗度が1%でも100%でも、1個あたりに含まれる材料は同じです。だから<strong>数量をそのまま使います。</strong><br><strong>加工費</strong>（直接労務費 ＋ 製造間接費）は、<mark>作業が進むにつれて少しずつ発生します。</mark>進捗度50%の仕掛品は、完成品の半分の加工しか受けていません。だから<strong>数量 × 加工進捗度</strong>で「完成品なら何個ぶんの加工に相当するか」に直してから使います。<br>この直した数量を<strong>完成品換算量</strong>といいます。<br>材料費と加工費を1つの表で一緒に計算してしまうと、この違いを表現できません。<strong>だからボックス図を2つ描きます。</strong></p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 860 300" style="width:100%;height:auto;min-width:660px" role="img" aria-label="直接材料費は始点で全量投入され進捗によらず一定、加工費は進捗に比例して発生することを示す図">
+      <g font-size="13" fill="var(--text)">
+        <text x="30" y="30" font-size="14" font-weight="700">工程の進み方と、原価の入り方</text>
+
+        <!-- 工程の帯 -->
+        <rect x="120" y="55" width="620" height="34" rx="4" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="30" y="77" font-size="12" font-weight="700">工程</text>
+        <text x="130" y="77" font-size="12" fill="var(--muted)">始点 0%</text>
+        <text x="430" y="77" font-size="12" text-anchor="middle" fill="var(--muted)">50%</text>
+        <text x="730" y="77" font-size="12" text-anchor="end" fill="var(--muted)">終点 100%</text>
+        <line x1="430" y1="55" x2="430" y2="89" stroke="var(--border-2)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+        <!-- 直接材料費 -->
+        <text x="30" y="130" font-size="12" font-weight="700" fill="var(--debit)">直接材料費</text>
+        <rect x="120" y="110" width="620" height="28" rx="3" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="1.5"/>
+        <text x="430" y="129" font-size="12" text-anchor="middle" font-weight="700" fill="var(--debit)">始点で全量投入 — 進捗に関係なく 100%</text>
+        <text x="120" y="160" font-size="11.5" fill="var(--muted)">→ 按分の基準は</text>
+        <text x="238" y="160" font-size="11.5" font-weight="700" fill="var(--debit)">数量そのまま</text>
+
+        <!-- 加工費 -->
+        <text x="30" y="215" font-size="12" font-weight="700" fill="var(--credit)">加工費</text>
+        <path d="M120 233 L740 190 L740 233 Z" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <line x1="430" y1="233" x2="430" y2="211" stroke="var(--credit)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="560" y="222" font-size="12" font-weight="700" fill="var(--credit)">進捗に比例して発生</text>
+        <text x="120" y="258" font-size="11.5" fill="var(--muted)">→ 按分の基準は</text>
+        <text x="238" y="258" font-size="11.5" font-weight="700" fill="var(--credit)">数量 × 加工進捗度（完成品換算量）</text>
+
+        <!-- 50% の仕掛品 -->
+        <circle cx="430" cy="233" r="4" fill="var(--accent)"/>
+        <text x="430" y="285" font-size="11.5" text-anchor="middle" fill="var(--accent)" font-weight="700">進捗度50%の仕掛品 — 材料は満額、加工は半分</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">同じ1個の仕掛品でも、材料費は完成品と同額を負担し、加工費は半額しか負担しない。この非対称が、ボックス図を2つ描く理由。</p>
+  </div>
+
+  <p>先ほどの数量を完成品換算量に直します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>項目</th><th class="amt">数量</th><th class="amt">進捗度</th><th class="amt">完成品換算量</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品</td><td class="amt">200個</td><td class="amt">50%</td><td class="amt">100個</td></tr>
+      <tr><td>当月完成品</td><td class="amt">1,000個</td><td class="amt">100%</td><td class="amt">1,000個</td></tr>
+      <tr><td>月末仕掛品</td><td class="amt">200個</td><td class="amt">50%</td><td class="amt">100個</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">完成品の換算量は、完成品の数量そのもの</span>
+    <p>完成品は進捗度100%です。<mark>1,000個 × 100% ＝ 1,000個。</mark>換算しても数量は変わりません。<br>ここを「完成品にも何か掛けるのでは」と迷って手が止まる人がいます。<strong>換算量の表で数字が変わるのは、月初仕掛品と月末仕掛品の2行だけです。</strong><br>もうひとつ、<strong>当月投入の換算量は掛け算では出しません。</strong>投入量に進捗度という概念がないからです。当月投入の換算量は必ず<mark>差額</mark>で求めます（次節で扱います）。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">材料が始点で投入されない場合は、必ず問題文に書いてある</span>
+    <p>「材料は工程の始点で全量投入する」が基本ですが、問題文が別のことを言うこともあります。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>問題文の書き方</th><th>材料費の按分基準</th></tr></thead>
+      <tbody>
+        <tr><td>「材料は工程の始点ですべて投入する」</td><td><strong>数量そのまま</strong>（基本形）</td></tr>
+        <tr><td>「材料は工程の終点で投入する」</td><td>月末仕掛品は<strong>まだ材料を受け取っていない</strong>ので、材料費は全額が完成品負担</td></tr>
+        <tr><td>「材料は工程を通じて平均的に投入する」</td><td>加工費と同じく<strong>換算量</strong>で按分する</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>問題文の1行を読み落とすと、材料費の按分が丸ごとずれます。</mark>ボックス図を描く前に、材料の投入時点を必ず確認してください。この単元の計算はすべて基本形（始点投入）で進めます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>ボックス図 — 材料費と加工費で2つ描く</h2>
+
+  <p><strong>ボックス図</strong>は、仕掛品勘定を数量と金額の両面で表した下書きです。左側に「入ってきたもの」、右側に「出ていったもの」を書きます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 330" style="width:100%;height:auto;min-width:700px" role="img" aria-label="直接材料費と加工費の2つのボックス図。材料費は数量、加工費は完成品換算量を使う">
+      <g font-size="13" fill="var(--text)">
+        <!-- 材料費ボックス -->
+        <text x="20" y="28" font-size="14" font-weight="700" fill="var(--debit)">直接材料費のボックス（数量そのまま）</text>
+        <rect x="20" y="42" width="400" height="120" rx="4" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="1.5"/>
+        <line x1="220" y1="42" x2="220" y2="162" stroke="var(--debit)" stroke-width="1.5"/>
+        <text x="34" y="66" font-size="12" font-weight="700">月初仕掛品</text>
+        <text x="200" y="66" font-size="12" text-anchor="end">200個</text>
+        <text x="34" y="86" font-size="12">　96,000円</text>
+        <text x="34" y="116" font-size="12" font-weight="700">当月投入</text>
+        <text x="200" y="116" font-size="12" text-anchor="end">1,000個</text>
+        <text x="34" y="136" font-size="12">　504,000円</text>
+        <text x="234" y="66" font-size="12" font-weight="700">完成品</text>
+        <text x="405" y="66" font-size="12" text-anchor="end">1,000個</text>
+        <text x="234" y="116" font-size="12" font-weight="700">月末仕掛品</text>
+        <text x="405" y="116" font-size="12" text-anchor="end">200個</text>
+        <line x1="20" y1="96" x2="220" y2="96" stroke="var(--debit)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="220" y1="96" x2="420" y2="96" stroke="var(--debit)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="20" y="184" font-size="11.5" fill="var(--muted)">左合計 1,200個 ＝ 右合計 1,200個　／　左金額 600,000円</text>
+
+        <!-- 加工費ボックス -->
+        <text x="460" y="28" font-size="14" font-weight="700" fill="var(--credit)">加工費のボックス（完成品換算量）</text>
+        <rect x="460" y="42" width="400" height="120" rx="4" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <line x1="660" y1="42" x2="660" y2="162" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="474" y="66" font-size="12" font-weight="700">月初仕掛品</text>
+        <text x="640" y="66" font-size="12" text-anchor="end">100個</text>
+        <text x="474" y="86" font-size="12">　67,000円</text>
+        <text x="474" y="116" font-size="12" font-weight="700">当月投入</text>
+        <text x="640" y="116" font-size="12" text-anchor="end">1,000個</text>
+        <text x="474" y="136" font-size="12">　945,000円</text>
+        <text x="674" y="66" font-size="12" font-weight="700">完成品</text>
+        <text x="845" y="66" font-size="12" text-anchor="end">1,000個</text>
+        <text x="674" y="116" font-size="12" font-weight="700">月末仕掛品</text>
+        <text x="845" y="116" font-size="12" text-anchor="end">100個</text>
+        <line x1="460" y1="96" x2="660" y2="96" stroke="var(--credit)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="660" y1="96" x2="860" y2="96" stroke="var(--credit)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="460" y="184" font-size="11.5" fill="var(--muted)">左合計 1,100個 ＝ 右合計 1,100個　／　左金額 1,012,000円</text>
+
+        <!-- 当月投入の求め方 -->
+        <rect x="20" y="206" width="840" height="100" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="40" y="232" font-size="13" font-weight="700" fill="var(--accent)">加工費の「当月投入 1,000個」はどこから来たか</text>
+        <text x="40" y="256" font-size="12">完成品 1,000個 ＋ 月末仕掛品 100個 − 月初仕掛品 100個 ＝ 1,000個</text>
+        <text x="40" y="280" font-size="12" fill="var(--muted)">投入した実際の数量 1,000個 と偶然一致しているが、両者は別物。</text>
+        <text x="40" y="298" font-size="12" fill="var(--muted)">加工費の当月投入換算量は、必ず右合計から月初を引いた差額で求める。</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">材料費は数量、加工費は完成品換算量。同じ1か月の生産を2つの物差しで測っている。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">加工費の当月投入換算量を、投入数量から計算してはいけない</span>
+    <p>材料費のボックスでは、当月投入は<strong>問題文に書かれた投入数量（1,000個）をそのまま</strong>使います。<br>加工費のボックスでは、当月投入は<mark>完成品換算量の合計から月初仕掛品換算量を引いた差額</mark>です。<br>この例ではたまたま両方1,000個になりましたが、<strong>一般には一致しません。</strong>月初と月末の進捗度が違えばずれます。<br>「当月投入が1,000個だから加工費も1,000個」と覚えると、月初 200個(50%)・月末 300個(40%) のような問題で必ず間違えます。<strong>加工費の当月投入は、毎回かならず差額で出してください。</strong></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">ボックス図を描く順番</span>
+    <p>手が止まらないよう、描く順番を固定します。<br><strong>1.</strong> 材料費のボックスを描き、左に月初数量と投入数量、右に完成品数量と月末数量を置く。<mark>左合計と右合計が一致することを確かめる。</mark>ここが合わなければ問題文の読み違いなので、先に進まない。<br><strong>2.</strong> 加工費のボックスを描き、月初と月末だけ進捗度を掛けて換算量にする。完成品はそのまま。<br><strong>3.</strong> 加工費の当月投入を、右合計 − 月初 の差額で埋める。<br><strong>4.</strong> 両方のボックスの左側に金額を書き込む。<br>この4ステップが終わってから、はじめて平均法か先入先出法かを考えます。<strong>金額の計算より先に、数量の枠を完成させてください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>平均法 — 月初と当月を混ぜて平らにする</h2>
+
+  <p>タンクの中を想像してください。先月から残っていた液体と、今月新しく入れた原料が、ラインの中で混ざり合っています。<mark>どれが先月ぶんで、どれが今月ぶんかを見分けることはできません。</mark></p>
+
+  <p>見分けられないのだから、<strong>全部混ざって同じ品質になったものとして扱う</strong>のが素直です。これが<strong>平均法</strong>です。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>月初仕掛品原価と当月製造費用を合算する。</strong><br>材料費：96,000 ＋ 504,000 ＝ <strong>600,000円</strong>　／　加工費：67,000 ＋ 945,000 ＝ <strong>1,012,000円</strong></li>
+      <li><strong>ボックスの右側の合計で割って、平均単価を出す。</strong><br>材料費：600,000 ÷（完成品1,000個 ＋ 月末200個 ＝ 1,200個）＝ <strong>@500円</strong><br>加工費：1,012,000 ÷（完成品1,000個 ＋ 月末100個 ＝ 1,100個）＝ <strong>@920円</strong></li>
+      <li><strong>月末仕掛品原価を求める。</strong><br>材料費：@500 × 200個 ＝ 100,000円<br>加工費：@920 × 100個 ＝ 92,000円<br>合計 <strong>192,000円</strong></li>
+      <li><strong>完成品総合原価を求める。</strong><br>材料費：@500 × 1,000個 ＝ 500,000円<br>加工費：@920 × 1,000個 ＝ 920,000円<br>合計 <strong>1,420,000円</strong>（＝ 1,612,000 − 192,000 と一致）</li>
+      <li><strong>完成品単位原価を求める。</strong><br>1,420,000 ÷ 1,000個 ＝ <strong>@1,420円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">平均法の割り算の分母は、ボックスの右側</span>
+    <p>平均単価の分母は<mark>完成品 ＋ 月末仕掛品</mark>です。ボックス図の右側の合計そのものです。<br>これは「左側（月初 ＋ 当月投入）の合計」と数量として同じなので、<strong>どちらから読んでも同じ数になります。</strong>ただし、次節の先入先出法では分母が右側でも左側でもなくなるので、平均法のうちに「右側を使う」と手を覚えておくと混ざりません。<br>検算：192,000 ＋ 1,420,000 ＝ 1,612,000円。<mark>月初仕掛品原価 163,000 ＋ 当月製造費用 1,449,000 ＝ 1,612,000円 と一致します。</mark></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">材料費の分母と加工費の分母は違う</span>
+    <p>材料費の分母は 1,200個、加工費の分母は 1,100個。<strong>この2つを同じ数字だと思って計算すると、加工費が丸ごとずれます。</strong><br>ボックス図を2つ描いていれば、それぞれの図の右合計を読むだけなので取り違えようがありません。<mark>1つの表に材料費と加工費を並べて書くと、分母が1つしかないように錯覚します。</mark>手間でも2つ描いてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>(修正)先入先出法 — 月初から先に出ていく</h2>
+
+  <p>パンの生地を発酵棚に並べる工場を想像してください。<strong>先に棚に入れた生地から先に焼きます。</strong>後から入れた生地を先に焼くことはありません。</p>
+
+  <p>この見方を採ると、月初仕掛品はすべて当月中に完成したと考えることになります。そうすると<mark>月末に残っているのは、必ず当月に投入したものだけ</mark>です。これが<strong>先入先出法</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ2つの方法があるのか</span>
+    <p>どちらが正しいという話ではありません。<strong>タンクの中の実態は誰にも見えない</strong>ので、どう仮定するかを企業が選びます。<br><strong>平均法</strong>は、混ざってしまうものを混ざったものとして扱う仮定です。計算が簡単で、原価の変動が平らになります。<br><strong>先入先出法</strong>は、物理的に先に入ったものが先に出るという仮定です。<mark>月末仕掛品の原価が当月の単価だけで構成されるため、月末の在庫評価が最新の原価に近くなります。</mark>また、当月の単価が先月と分離されるので、当月の原価管理には向きます。<br>試験では問題文が「月末仕掛品の評価は平均法による」「先入先出法による」と必ず指定します。<strong>自分で選ぶ場面はありません。</strong></p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>当月製造費用だけを使って、当月投入分の単価を出す。</strong><mark>月初仕掛品原価は分子にも分母にも入れません。</mark><br>材料費：504,000 ÷ 当月投入1,000個 ＝ <strong>@504円</strong><br>加工費：945,000 ÷ 当月投入換算量1,000個 ＝ <strong>@945円</strong></li>
+      <li><strong>月末仕掛品原価を、当月の単価で計算する。</strong><br>材料費：@504 × 200個 ＝ 100,800円<br>加工費：@945 × 100個 ＝ 94,500円<br>合計 <strong>195,300円</strong></li>
+      <li><strong>完成品総合原価は、残り全部。</strong><br>月初仕掛品原価 163,000 ＋ 当月製造費用 1,449,000 − 月末仕掛品原価 195,300 ＝ <strong>1,416,700円</strong></li>
+      <li><strong>完成品単位原価を求める。</strong><br>1,416,700 ÷ 1,000個 ＝ <strong>@1,416.7円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">先入先出法では、完成品原価は差額で出す</span>
+    <p>平均法では完成品も月末仕掛品も単価 × 数量で出せましたが、<strong>先入先出法の完成品は単価 × 数量では出せません。</strong>完成品の中に、月初仕掛品から引き継いだ分と当月投入から来た分が混在しているからです。<br>だから<mark>先に月末仕掛品原価を確定させ、残りを完成品原価とします。</mark>この「残り全部」という出し方が、貸借が必ず一致することを保証しています。<br>完成品単位原価が割り切れない数になることは珍しくありません。@1,416.7円 のように小数が出ても、<strong>それ自体は誤りのサインではありません。</strong>問題文の指示（円未満四捨五入など）に従ってください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「(修正)」が付いている理由 — 完成品を2つに分けない</span>
+    <p>出題区分表には<strong>「(修正)先入先出法」</strong>と書かれています。修正が付かない<strong>純粋先入先出法</strong>は1級です。<br>純粋先入先出法は、完成品を「月初仕掛品から完成した分」と「当月投入から完成した分」に分け、<mark>2つの単位原価を別々に示します。</mark><br>(修正)先入先出法は、完成品を1つにまとめて平均的な単位原価を1つだけ示します。<strong>2級で答える完成品単位原価は常に1つです。</strong>「月初から完成した分の単位原価はいくらか」と問われることはありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">加工費の当月投入換算量を、ここでも差額で出す</span>
+    <p>先入先出法の加工費の分母は<strong>当月投入の完成品換算量</strong>です。<br>完成品 1,000個 ＋ 月末仕掛品 100個 − 月初仕掛品 100個 ＝ 1,000個。<br><mark>月初の換算量を引くのを忘れると、分母が大きくなって単価が小さく出ます。</mark>この誤りは月末仕掛品原価を過小にし、完成品原価を過大にするので、答案の複数箇所を同時に狂わせます。<br>覚え方：<strong>「先に月初が出ていったのだから、当月の加工は月初の残り半分から始まる」</strong>。月初仕掛品は50%まで加工済みなので、当月はその続きの50%しか加工していません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>2つの方法を並べて比べる</h2>
+
+  <p>同じ資料から出た2つの答えを並べます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>項目</th><th class="amt">平均法</th><th class="amt">先入先出法</th><th>差の理由</th></tr></thead>
+    <tbody>
+      <tr><td>材料費の単価</td><td class="amt">@500</td><td class="amt">@504</td><td>平均法は月初（@480相当）を混ぜるので単価が下がる</td></tr>
+      <tr><td>加工費の単価</td><td class="amt">@920</td><td class="amt">@945</td><td>同上。月初（@670相当）を混ぜると下がる</td></tr>
+      <tr><td><strong>月末仕掛品原価</strong></td><td class="amt"><strong>192,000</strong></td><td class="amt"><strong>195,300</strong></td><td>単価が高いぶん先入先出法のほうが大きい</td></tr>
+      <tr><td><strong>完成品総合原価</strong></td><td class="amt"><strong>1,420,000</strong></td><td class="amt"><strong>1,416,700</strong></td><td>月末が大きいぶん完成品は小さい</td></tr>
+      <tr><td>完成品単位原価</td><td class="amt">@1,420</td><td class="amt">@1,416.7</td><td>—</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>1,612,000</strong></td><td class="amt"><strong>1,612,000</strong></td><td><mark>どちらも必ず一致する</mark></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">方法が違っても、分ける総額は変わらない</span>
+    <p>1,612,000円 という総額は、<strong>どちらの方法でも同じ</strong>です。方法が決めているのは<mark>その総額を完成品と月末仕掛品にどう割るかという比率だけ</mark>です。<br>だから片方が増えれば必ず片方が減ります。<strong>「平均法のほうが完成品原価も月末仕掛品原価も大きい」という答案はあり得ません。</strong>答え合わせのときに両方が同じ方向に動いていたら、どこかで計算を間違えています。<br>このチェックは電卓を叩く前にできるので、見直しの第一手として使ってください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">月初仕掛品がなければ、2つの方法は同じ答えになる</span>
+    <p>平均法と先入先出法の違いは<strong>月初仕掛品原価をどう扱うか</strong>だけです。月初仕掛品がゼロなら、混ぜる相手がいないので計算式が完全に一致します。<br><mark>問題文に「月初仕掛品はない」と書いてあったら、どちらの方法が指定されていても計算は1通りです。</mark>方法の指定を探して時間を使う必要はありません。<br>逆に言えば、月初仕掛品がある問題では、方法の指定を読み落とすと確実に間違えます。<strong>資料の最初に「月末仕掛品の評価方法」を必ず探してください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>仕掛品勘定と記帳 — UNIT 14 と同じ形に着地する</h2>
+
+  <p>ここまでの計算が、勘定のどこに現れるかを確認します。<strong>UNIT 14 の個別原価計算と、勘定の形は何も変わりません。</strong></p>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">仕掛品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>前月繰越</span><span>163,000</span></div>
+          <div class="l"><span>材料</span><span>504,000</span></div>
+          <div class="l"><span>賃金・給料</span><span>600,000</span></div>
+          <div class="l"><span>製造間接費</span><span>345,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,612,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品</span><span>1,420,000</span></div>
+          <div class="l"><span>次月繰越</span><span>192,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,612,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">製品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>仕掛品</span><span>1,420,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,420,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>売上原価</span><span>1,420,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,420,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">仕掛品の貸借は 1,612,000円 で一致します（163,000 ＋ 504,000 ＋ 600,000 ＋ 345,000 ＝ 1,420,000 ＋ 192,000）。加工費 945,000円 の内訳は、直接労務費 600,000円 ＋ 製造間接費配賦額 345,000円。評価方法は平均法。製品は当月にすべて販売したものとしています。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">借方は UNIT 14 と同じ、貸方の決め方だけが違う</span>
+    <p><strong>借方</strong>　前月繰越 ＋ 材料 ＋ 賃金・給料 ＋ 製造間接費。<mark>UNIT 14 の仕掛品勘定とまったく同じ顔ぶれです。</mark>費目別計算（UNIT 04・07・10）で集めた原価が流れ込む口であって、そこに個別か総合かの違いはありません。<br><strong>貸方</strong>　製品への振替額（＝完成品総合原価）と次月繰越（＝月末仕掛品原価）。<strong>UNIT 14 ではこの金額を原価計算表の列の合計から読みました。この単元ではボックス図の按分計算から出します。</strong>出し方が違うだけで、置く場所は同じです。<br>検算：借方合計 163,000 ＋ 504,000 ＋ 600,000 ＋ 345,000 ＝ 1,612,000円。貸方合計 1,420,000 ＋ 192,000 ＝ 1,612,000円。一致します。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">総合原価計算に「原価計算表」はない</span>
+    <p>UNIT 14 では、仕掛品勘定の内訳明細として原価計算表がありました。指図書ごとの列があり、縦横の検算ができました。<br>総合原価計算では、<mark>分ける単位が「完成品」と「月末仕掛品」の2つしかありません。</mark>列が2つしかない表を作っても明細になりません。だから原価計算表は作らず、代わりに<strong>ボックス図が下書きの役割を担います。</strong><br>試験で解答用紙に書くのは、仕掛品勘定か、総合原価計算表という様式（月初仕掛品原価・当月製造費用・完成品総合原価・月末仕掛品原価を材料費と加工費に分けて並べたもの）です。<strong>ボックス図は自分の計算用紙に描くものであって、答案に書くものではありません。</strong></p>
+  </div>
+
+  <h3>1か月分の仕訳</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>取引</th><th>借方</th><th class="amt">金額</th><th>貸方</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td>材料の消費（全額が直接材料費）</td><td class="d">仕掛品</td><td class="amt">504,000</td><td class="c">材料</td><td class="amt">504,000</td></tr>
+      <tr><td>直接工賃金の消費</td><td class="d">仕掛品</td><td class="amt">600,000</td><td class="c">賃金・給料</td><td class="amt">600,000</td></tr>
+      <tr><td>製造間接費の予定配賦</td><td class="d">仕掛品</td><td class="amt">345,000</td><td class="c">製造間接費</td><td class="amt">345,000</td></tr>
+      <tr><td>完成品の製品勘定への振替</td><td class="d">製品</td><td class="amt">1,420,000</td><td class="c">仕掛品</td><td class="amt">1,420,000</td></tr>
+      <tr><td>販売分の売上原価への振替</td><td class="d">売上原価</td><td class="amt">1,420,000</td><td class="c">製品</td><td class="amt">1,420,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">完成品総合原価の金額だけが、計算しないと書けない</span>
+    <p>5本の仕訳のうち、上の3本は費目別計算の結果をそのまま写すだけです。<mark>4本目の 1,420,000円 だけが、ボックス図の按分計算を終えないと書けません。</mark><br>第4問(1)の仕訳問題で「当月の完成品を製品勘定に振り替えた」と問われたら、それは<strong>按分計算をさせる問題</strong>です。仕訳の形（借方 製品／貸方 仕掛品）は簡単でも、金額を出すのに平均法か先入先出法かの判断が要ります。<strong>金額欄が空欄の仕訳問題を見たら、資料に評価方法の指定がないか探してください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕損と減損 — 数が合わなくなる</h2>
+
+  <p>ここまでは、投入した数量がそのまま完成品と月末仕掛品になりました。現実の工場ではそうならないことがあります。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">モノが残る</div>
+      <p><strong>仕損（しそんじ）</strong></p>
+      <p class="small">加工に失敗して規格外になったもの。<mark>不良品という「モノ」が残ります。</mark><br>金属部品の寸法違い、成形品のひび、印刷のかすれ。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">モノが消える</div>
+      <p><strong>減損（げんそん）</strong></p>
+      <p class="small">蒸発・粉散・ガス化などで投入物が消えてなくなること。<mark>あとに何も残りません。</mark><br>加熱中の水分の蒸発、粉体の飛散、化学反応でのガス化。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2級では、仕損と減損の計算はまったく同じ</span>
+    <p>モノが残るか消えるかは大きな違いに見えますが、<mark>2級で学ぶ度外視法では、計算手続きが完全に同じです。</mark>どちらも「ボックス図の右側に、完成品でも月末仕掛品でもない行が現れる」という形で扱います。<br>違いが効いてくるのは、仕損品に売却価値（<strong>評価額</strong>）がある場合です。売れる不良品なら、その金額だけ原価から控除します。減損は消えてなくなるので評価額がありません。<br><strong>問題文に評価額の記載がなければ、仕損も減損も同じ計算です。</strong>用語だけが違うと考えてください。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「正常」仕損・「正常」減損とは何か</span>
+    <p><strong>正常</strong>とは、<mark>その製造方法を採る以上、どうしても避けられない範囲</mark>という意味です。技術的にどれだけ注意しても数%は失敗する、という工程がこれにあたります。<br>避けられない以上、<strong>それは良品を作るために必要な原価です。</strong>だから正常仕損費・正常減損費は、良品（完成品や月末仕掛品）の原価に含めます。捨てるのではなく、良品に背負わせます。<br>これに対して、火災や機械の故障で大量に失敗したような<strong>異常</strong>仕損・異常減損は、良品を作るのに必要な原価ではありません。<strong>非原価項目として営業外費用や特別損失に落とします。</strong>ただし<mark>異常仕損費・異常減損費の処理は1級の範囲です。</mark>2級の問題文に出てくる仕損・減損は必ず「正常」です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">正常仕損・正常減損は、ボックス図の右側に書く</span>
+    <p>数量の関係はこうなります。<br><strong>月初仕掛品 ＋ 当月投入 ＝ 完成品 ＋ 正常仕損（正常減損）＋ 月末仕掛品</strong><br><mark>仕損・減損を左側（投入側）から引いてはいけません。</mark>投入したものが工程の途中で失敗したり消えたりするのだから、出ていった側の内訳です。<br>数量が合わないときは、この行を右側に書き忘れています。<strong>ボックス図の左右が合わない状態で金額の計算に進まないでください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>度外視法 — 発生点で負担者が変わる</h2>
+
+  <p>正常仕損費を良品に背負わせる、と決めました。では<strong>具体的にどう背負わせるか。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">度外視法という名前の意味</span>
+    <p><strong>度外視</strong>とは「無視する」という意味です。何を無視するのか。<mark>仕損費という金額を、独立に計算することを無視します。</mark></p>
+    <p>仕損費をいくらと計算して良品に配る方法（<strong>非度外視法</strong>・1級）に対して、度外視法は<strong>按分計算の分母の決め方だけで、仕損費が自動的に良品へ流れるようにします。</strong>仕損費の金額が答案に現れないので、「仕損費はいくらですか」と問われることはありません。</p>
+    <p>仕掛けはこうです。<mark>仕損を分母に1個として数えれば、仕損が集めた原価は完成品側に残ります。</mark>仕損は完成品でも月末仕掛品でもないので、そこに割り当てられた原価は誰かが引き取るしかなく、差額で求める完成品がそれを引き取ります。<br>逆に<mark>仕損を分母から外せば、単価そのものが上がります。</mark>その単価で評価される完成品と月末仕掛品の両方に、仕損費が上乗せされます。</p>
+    <p><strong>つまり分母をどう決めるかが、そのまま「誰が負担するか」の指定になっています。</strong>次節でその決め方を見ます。</p>
+  </div>
+
+  <p>ここで、誰に背負わせるかが問題になります。<strong>完成品だけか、完成品と月末仕掛品の両方か。</strong>これは<mark>仕損・減損が工程のどこで発生したか</mark>で決まります。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 340" style="width:100%;height:auto;min-width:700px" role="img" aria-label="仕損の発生点と月末仕掛品の進捗度の関係。発生点を月末仕掛品が通過していれば両者負担、通過していなければ完成品のみ負担">
+      <g font-size="13" fill="var(--text)">
+        <!-- ケース1 終点発生 -->
+        <text x="20" y="28" font-size="14" font-weight="700">ケース1　仕損が終点（100%）で発生　月末仕掛品の進捗度 60%</text>
+        <rect x="120" y="44" width="600" height="30" rx="4" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <rect x="120" y="44" width="360" height="30" rx="4" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="30" y="64" font-size="12" font-weight="700">工程</text>
+        <text x="300" y="64" font-size="11.5" text-anchor="middle" font-weight="700" fill="var(--credit)">月末仕掛品はここまで（60%）</text>
+        <line x1="720" y1="38" x2="720" y2="80" stroke="var(--warn)" stroke-width="2.5"/>
+        <text x="728" y="56" font-size="11.5" font-weight="700" fill="var(--warn)">仕損発生点</text>
+        <text x="728" y="72" font-size="11.5" fill="var(--warn)">（100%）</text>
+        <text x="120" y="98" font-size="12">月末仕掛品は発生点を <strong>まだ通過していない</strong> → 仕損はまだ起きていない</text>
+        <text x="120" y="120" font-size="12.5" font-weight="700" fill="var(--credit)">→ 仕損費は完成品だけが負担する</text>
+        <text x="120" y="142" font-size="11.5" fill="var(--muted)">計算：仕損数量を分母に残す。月末仕掛品は仕損がなかったときと同じ単価で計算される</text>
+
+        <line x1="20" y1="168" x2="860" y2="168" stroke="var(--border-2)" stroke-width="1"/>
+
+        <!-- ケース2 始点発生 -->
+        <text x="20" y="200" font-size="14" font-weight="700">ケース2　減損が始点（0%）で発生　月末仕掛品の進捗度 50%</text>
+        <rect x="120" y="216" width="600" height="30" rx="4" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <rect x="120" y="216" width="300" height="30" rx="4" fill="var(--debit-bg)" stroke="var(--debit)" stroke-width="1.5"/>
+        <text x="30" y="236" font-size="12" font-weight="700">工程</text>
+        <text x="270" y="236" font-size="11.5" text-anchor="middle" font-weight="700" fill="var(--debit)">月末仕掛品はここまで（50%）</text>
+        <line x1="120" y1="210" x2="120" y2="252" stroke="var(--warn)" stroke-width="2.5"/>
+        <text x="128" y="268" font-size="11.5" font-weight="700" fill="var(--warn)">減損発生点（0%）</text>
+        <text x="120" y="290" font-size="12">月末仕掛品は発生点を <strong>すでに通過している</strong> → 月末仕掛品のぶんも減損している</text>
+        <text x="120" y="312" font-size="12.5" font-weight="700" fill="var(--debit)">→ 減損費は完成品と月末仕掛品の両方が負担する</text>
+        <text x="120" y="332" font-size="11.5" fill="var(--muted)">計算：当月投入量から減損数量を外す。月末仕掛品の単価も上がる</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">判定は1つの問いだけ。月末仕掛品は、仕損・減損が起きる地点をもう通り過ぎたか。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">判定のしかた — 2つの数を比べるだけ</span>
+    <p><strong>仕損・減損の発生点の進捗度</strong>と<strong>月末仕掛品の進捗度</strong>を比べます。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>大小関係</th><th>意味</th><th>負担者</th></tr></thead>
+      <tbody>
+        <tr><td>発生点 &gt; 月末仕掛品の進捗度</td><td>月末仕掛品はまだ発生点に届いていない</td><td><strong>完成品のみ</strong></td></tr>
+        <tr><td>発生点 ≦ 月末仕掛品の進捗度</td><td>月末仕掛品はすでに発生点を通過した</td><td><strong>完成品と月末仕掛品の両方</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>発生点が「終点」「工程の終わり」と書いてあれば、月末仕掛品が100%ということはあり得ないので、必ず完成品のみ負担です。</mark>逆に<mark>「始点」「工程の始め」なら、月末仕掛品は必ず通過しているので必ず両者負担です。</mark><br>この2つが試験での大半を占めます。「工程の40%地点で発生」のように中途半端な数字が出たときだけ、月末仕掛品の進捗度と比べてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">月初仕掛品の進捗度は判定に使わない</span>
+    <p>比べるのは<strong>月末</strong>仕掛品の進捗度です。月初仕掛品の進捗度は、加工費の換算量には使いますが、<mark>負担者の判定には一切使いません。</mark><br>負担者の判定は「いま工程の途中に残っているものが、発生点を通過したか」を問うものです。月初仕掛品はもう工程を進んで完成品か月末仕掛品になっているので、判定の対象ではありません。<br>資料に進捗度が2つ（月初と月末）出てくるので、<strong>どちらと比べるのかを取り違えやすい場所です。</strong></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">発生点が不明なときは「平均的に発生」＝両者負担</span>
+    <p>問題文に「減損は工程を通じて平均的に発生する」と書かれることがあります。工程のどこでも起きるということなので、<mark>月末仕掛品もその進捗のぶんだけ減損を経験しています。</mark>したがって<strong>両者負担</strong>です。<br>発生点についての記述がまったくない場合も、慣行として両者負担で処理します。ただし<strong>2級の問題では発生点が必ず明記されます。</strong>見つからないなら資料を読み落としています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>度外視法の計算 — 2つの型を通しで解く</h2>
+
+  <h3>型1　終点で発生 ＝ 完成品のみ負担（平均法）</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>資料</th><th class="amt">数量</th><th class="amt">直接材料費</th><th class="amt">加工費</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品（進捗度 50%）</td><td class="amt">400個</td><td class="amt">140,000</td><td class="amt">90,000</td></tr>
+      <tr><td>当月投入</td><td class="amt">2,000個</td><td class="amt">580,000</td><td class="amt">1,050,000</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>2,400個</strong></td><td class="amt"><strong>720,000</strong></td><td class="amt"><strong>1,140,000</strong></td></tr>
+      <tr><td>当月完成品</td><td class="amt">2,000個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td>正常仕損（終点で発生・評価額なし）</td><td class="amt">100個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td>月末仕掛品（進捗度 60%）</td><td class="amt">300個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>2,400個</strong></td><td class="amt">—</td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">材料は工程の始点で全量投入。月末仕掛品の評価は平均法による。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>数量が合うことを確かめる。</strong>400 ＋ 2,000 ＝ 2,400個、2,000 ＋ 100 ＋ 300 ＝ 2,400個。一致。</li>
+      <li><strong>負担者を判定する。</strong>発生点 100% &gt; 月末仕掛品の進捗度 60%。月末仕掛品はまだ発生点に届いていないので<strong>完成品のみ負担</strong>。</li>
+      <li><strong>換算量を出す。</strong>月初 400 × 50% ＝ 200個、月末 300 × 60% ＝ 180個。完成品は 2,000個。<mark>仕損は終点発生なので加工進捗度100%、換算量100個。</mark></li>
+      <li><strong>按分の分母に仕損を残す。</strong>完成品のみ負担なので、月末仕掛品には仕損費を負担させません。<br>材料費の分母：完成品 2,000 ＋ 仕損 100 ＋ 月末 300 ＝ <strong>2,400個</strong><br>加工費の分母：完成品 2,000 ＋ 仕損換算 100 ＋ 月末 180 ＝ <strong>2,280個</strong></li>
+      <li><strong>平均単価を出す。</strong><br>材料費：720,000 ÷ 2,400 ＝ <strong>@300円</strong><br>加工費：1,140,000 ÷ 2,280 ＝ <strong>@500円</strong></li>
+      <li><strong>月末仕掛品原価を出す。</strong>@300 × 300 ＋ @500 × 180 ＝ 90,000 ＋ 90,000 ＝ <strong>180,000円</strong></li>
+      <li><strong>完成品総合原価を出す。</strong>720,000 ＋ 1,140,000 − 180,000 ＝ <strong>1,680,000円</strong>。単位原価 1,680,000 ÷ 2,000個 ＝ <strong>@840円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">検算 — 仕損費が完成品だけに乗ったことを確かめる</span>
+    <p>180,000 ＋ 1,680,000 ＝ 1,860,000円。<br>月初仕掛品原価（140,000 ＋ 90,000 ＝ 230,000）＋ 当月製造費用（580,000 ＋ 1,050,000 ＝ 1,630,000）＝ 1,860,000円。<mark>一致します。</mark></p>
+    <p>この例では、完成品原価の中身を分解できます。<br>完成品2,000個の正味 ＝ @300 × 2,000 ＋ @500 × 2,000 ＝ 1,600,000円<br>仕損100個が集めた原価 ＝ @300 × 100 ＋ @500 × 100 ＝ 80,000円<br>1,600,000 ＋ 80,000 ＝ 1,680,000円。<strong>仕損が背負った 80,000円 が、そっくり完成品に移っています。</strong></p>
+    <p><mark>月末仕掛品の単価 @300円・@500円 は、仕損100個を分母に含めて計算したものです。</mark>仕損がまったく発生しなかった場合と同じ単価であり、月末仕掛品は仕損費を1円も負担していません。これが「完成品のみ負担」の意味です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">完成品のみ負担では、分母から仕損を「外さない」</span>
+    <p>度外視法という名前から「仕損の数量を分母から外す」と覚えてしまいがちですが、<strong>それをすると単価が上がり、その単価で評価される月末仕掛品にも仕損費が乗ります。</strong><br>この例で仕損100個を分母から外すと、材料費は 720,000 ÷ 2,300 ＝ @313.04円 に上がり、月末仕掛品原価は 180,000円 より大きくなります。<mark>完成品のみ負担と言いながら、月末仕掛品に負担させていることになります。</mark><br>分母から外すのは<strong>両者負担のとき</strong>です。単価が上がることで両方に乗せたいのだから、そのときだけ外します。<strong>度外視法で実際に調整するのは、両者負担の場合だけです。</strong>完成品のみ負担では、仕損を良品と同じように分母に数え、その結果として仕損が集めた原価が完成品側に残ります。</p>
+  </div>
+
+  <h3>型2　始点で発生 ＝ 両者負担（先入先出法）</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>資料</th><th class="amt">数量</th><th class="amt">直接材料費</th><th class="amt">加工費</th></tr></thead>
+    <tbody>
+      <tr><td>月初仕掛品（進捗度 40%）</td><td class="amt">300個</td><td class="amt">96,000</td><td class="amt">66,000</td></tr>
+      <tr><td>当月投入</td><td class="amt">2,200個</td><td class="amt">672,000</td><td class="amt">1,144,000</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>2,500個</strong></td><td class="amt"><strong>768,000</strong></td><td class="amt"><strong>1,210,000</strong></td></tr>
+      <tr><td>当月完成品</td><td class="amt">2,000個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td>正常減損（始点で発生）</td><td class="amt">100個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td>月末仕掛品（進捗度 50%）</td><td class="amt">400個</td><td class="amt">—</td><td class="amt">—</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt"><strong>2,500個</strong></td><td class="amt">—</td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">材料は工程の始点で全量投入。月末仕掛品の評価は先入先出法による。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>数量が合うことを確かめる。</strong>300 ＋ 2,200 ＝ 2,500個、2,000 ＋ 100 ＋ 400 ＝ 2,500個。一致。</li>
+      <li><strong>負担者を判定する。</strong>発生点 0% ≦ 月末仕掛品の進捗度 50%。月末仕掛品はすでに発生点を通過しているので<strong>両者負担</strong>。</li>
+      <li><strong>換算量を出す。</strong>月初 300 × 40% ＝ 120個、月末 400 × 50% ＝ 200個。<mark>減損は始点発生なので加工進捗度0%、換算量はゼロ。</mark>加工費のボックスに減損の行は現れない。</li>
+      <li><strong>当月投入から減損を外す。</strong>両者負担なので、分母を減らすのは<strong>投入側</strong>。<br>材料費の分母：当月投入 2,200 − 減損 100 ＝ <strong>2,100個</strong><br>加工費の分母：完成品 2,000 ＋ 月末 200 − 月初 120 ＝ <strong>2,080個</strong>（減損は換算量ゼロなので元から入っていない）</li>
+      <li><strong>当月の単価を出す。</strong>先入先出法なので当月製造費用だけを使う。<br>材料費：672,000 ÷ 2,100 ＝ <strong>@320円</strong><br>加工費：1,144,000 ÷ 2,080 ＝ <strong>@550円</strong></li>
+      <li><strong>月末仕掛品原価を出す。</strong>@320 × 400 ＋ @550 × 200 ＝ 128,000 ＋ 110,000 ＝ <strong>238,000円</strong></li>
+      <li><strong>完成品総合原価を出す。</strong>（96,000 ＋ 66,000）＋（672,000 ＋ 1,144,000）− 238,000 ＝ 162,000 ＋ 1,816,000 − 238,000 ＝ <strong>1,740,000円</strong>。単位原価 1,740,000 ÷ 2,000個 ＝ <strong>@870円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">検算</span>
+    <p>238,000 ＋ 1,740,000 ＝ 1,978,000円。<br>月初仕掛品原価 162,000 ＋ 当月製造費用 1,816,000 ＝ 1,978,000円。<mark>一致します。</mark><br>月末仕掛品の材料費単価が @320円（672,000 ÷ 2,100）であって @305.45円（672,000 ÷ 2,200）ではないところに、<strong>月末仕掛品も減損費を負担していることが現れています。</strong>減損がなければ単価は下がり、月末仕掛品原価も小さくなっていました。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">2つの型の違いは、分母から外すか外さないかにある</span>
+    <p>完成品のみ負担（型1）では、仕損数量を<strong>分母に残しました</strong>。両者負担（型2）では、減損数量を<strong>分母から外しました</strong>。<mark>この一点だけが違いです。</mark></p>
+    <p>なぜこれで負担者が切り替わるのか。<strong>分母を減らすと単価が上がり、その単価で評価されるものすべてに原価が乗るから</strong>です。<br>型2では 672,000 ÷ 2,100 ＝ @320円 であって 672,000 ÷ 2,200 ＝ @305.45円 ではありません。月末仕掛品もこの上がった @320円 で評価されるので、<mark>完成品と月末仕掛品の両方が減損費を負担します。</mark>これが狙いどおりです。<br>型1で同じことをすると、月末仕掛品まで上がった単価で評価され、完成品のみ負担という前提が崩れます。だから外しません。</p>
+    <p><strong>覚え方：「両者負担のときだけ分母をいじる」。</strong>完成品のみ負担は、仕損を良品と同じ1個として数え、仕損が集めた原価が完成品側に残るのに任せるだけです。<br>平均法で両者負担の場合は、月初 ＋ 当月投入 の合計数量から減損を外します。先入先出法なら当月投入から外します。<strong>外す先は評価方法が決め、外すかどうかは負担者が決めます。</strong></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">完成品のみ負担で、先入先出法を使う場合</span>
+    <p>型1は平均法、型2は先入先出法で解きましたが、<strong>負担者の判定と評価方法は独立です。</strong>4通りの組み合わせがすべてあり得ます。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>完成品のみ負担</th><th>両者負担</th></tr></thead>
+      <tbody>
+        <tr><td><strong>平均法</strong></td><td>完成品 ＋ <strong>仕損</strong> ＋ 月末<br><span class="small muted">仕損を分母に残す</span></td><td>（月初 ＋ 当月投入）− 仕損<br><span class="small muted">仕損を分母から外す</span></td></tr>
+        <tr><td><strong>先入先出法</strong></td><td>当月投入（＝完成品 ＋ <strong>仕損</strong> ＋ 月末 − 月初）<br><span class="small muted">仕損を分母に残す</span></td><td>当月投入 − 仕損<br><span class="small muted">仕損を分母から外す</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><strong>縦（評価方法）が分母の範囲を決め、横（負担者）が仕損を外すかどうかを決めます。</strong>2つの軸は独立に効くので、片方ずつ順に決めてください。</p>
+    <p>先入先出法・完成品のみ負担のときの加工費の分母は、<mark>完成品 ＋ 仕損換算量 ＋ 月末換算量 − 月初換算量</mark>です。<strong>月初換算量を引くのは先入先出法だから、仕損換算量を足したままにするのは完成品のみ負担だから</strong>であって、2つは別々の理由から来ています。<mark>月初を引くのを忘れると分母が大きくなり、仕損を外してしまうと月末仕掛品に仕損費が乗ります。</mark></p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">仕損品に評価額がある場合</span>
+    <p>仕損品が屑鉄などとして売れる場合、問題文に「仕損品の評価額は1個あたり200円」のように書かれます。<br>この売却価値のぶんは、会社が回収できる金額です。<mark>回収できるものまで良品に背負わせるのは行きすぎなので、原価から控除します。</mark><br><strong>控除する先は、仕損費を負担する側と揃えます。</strong>完成品のみ負担なら<strong>完成品総合原価から</strong>、両者負担なら<strong>按分する前の原価から</strong>差し引きます。後者は完成品と月末仕掛品の両方が負担している状態なので、按分前に引くことで両方から差し引かれます。<br>按分前の原価のうちどれから引くかは、<mark>問題文の指示に従ってください</mark>（評価額は材料の価値なので直接材料費から控除する形が多く示されます）。<br><strong>問題文に評価額の記載がなければ、この処理は不要です。</strong>この単元の計算例はすべて評価額なしで進めています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>解く手順の型 — 7ステップ</h2>
+
+  <p>総合原価計算の問題は、条件の組み合わせが多い割に<strong>手順は完全に固定</strong>です。順番を体に入れてしまえば、どの組み合わせが来ても同じように解けます。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>資料から3つの指定を拾う。</strong>①月末仕掛品の評価方法（平均法／先入先出法）②材料の投入時点（始点／終点／平均的）③仕損・減損の発生点と評価額。<mark>この3つを丸で囲んでから計算を始めます。</mark></li>
+      <li><strong>数量のボックスを作り、左右が合うことを確かめる。</strong>月初 ＋ 当月投入 ＝ 完成品 ＋ 仕損（減損）＋ 月末。<strong>合わなければここで止まる。</strong></li>
+      <li><strong>負担者を判定する。</strong>発生点と月末仕掛品の進捗度を比べる。終点なら完成品のみ、始点なら両者。</li>
+      <li><strong>ボックス図を2つ描き、換算量を埋める。</strong>材料費は数量、加工費は数量 × 進捗度。加工費の当月投入は差額。</li>
+      <li><strong>分母を決める。</strong>評価方法と負担者の組み合わせで決まる（第12節の表）。<mark>ここが最大の分岐点なので、分母の数字を計算用紙に大きく書いておく。</mark></li>
+      <li><strong>単価を出し、月末仕掛品原価を計算する。</strong>材料費と加工費を別々に計算して合算する。</li>
+      <li><strong>完成品総合原価は差額で出し、等式で検算する。</strong>月初 ＋ 当月投入 ＝ 完成品 ＋ 月末。<strong>合わなければ答案を書かない。</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">第4問(2)は解答欄が連動する</span>
+    <p>完成品総合原価を間違えると、そこから計算する完成品単位原価も、仕掛品勘定の貸方も、製品勘定も、売上原価も全部ずれます。<mark>1つの誤りが4つも5つも解答欄を巻き込みます。</mark><br>だから手順7の検算が決定的に重要です。<strong>等式が合わないまま答案に数字を書き始めないでください。</strong>合わない原因の8割は、手順2の数量の左右不一致か、手順5の分母の取り違えです。<br>検算に30秒かけるほうが、間違った数字を5箇所に書き写してから気づくより、はるかに速く終わります。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>月末仕掛品原価は「材料費の単価 × 数量 ＋ 加工費の単価 × 換算量」という形なので、<strong>GTキー</strong>で2回の掛け算をまとめられます。<br>@300 × 300 <strong>＝</strong>（90,000がGTに積まれる）、@500 × 180 <strong>＝</strong>（90,000が積まれる）、そのあと <strong>GT</strong> を押すと 180,000 が出ます。<mark>途中の2つの金額もそれぞれ画面に出るので、答案の内訳欄に書き写せます。</mark><br>次の問題に移る前に <strong>GT</strong> を2回押してクリアしてください。前の問題の月末仕掛品が残ったまま積み上がると、合計だけが合わないという形で現れ、原因の切り分けに時間を取られます。<br>単価を出す割り算の結果は <strong>M+</strong> でメモリに入れておくと、完成品原価の計算で呼び戻せます。<strong>MR</strong> で読み出し、<strong>MC</strong>（または AC を長押し）でクリアします。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-sogo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>計算ドリル 14問</h2>
+
+  <p>電卓を使って構いません。<strong>解く前に必ずボックス図を2つ描いてください。</strong>頭の中で按分すると、加工費の分母を材料費の分母と取り違えます。</p>
+
+  <div id="num-sogo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s16"><span class="num">16</span>確認テスト 14問</h2>
+
+  <div id="quiz-sogo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s17"><span class="num">17</span>用語の穴埋め 10問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-sogo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s18"><span class="num">18</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u17check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u17check">0 / 0 完了（0%）</div>
+
+  <div id="u17check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u17-1"><label for="k1"><span class="cl__t">総合原価計算が必要になる理由を、個別原価計算との対比で説明できる</span><span class="cl__d">同じものを連続生産する工場には仕分ける単位がない。集めるのではなく、総額を完成品と月末仕掛品に按分する</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u17-2"><label for="k2"><span class="cl__t">「月初仕掛品原価 ＋ 当月製造費用 ＝ 完成品総合原価 ＋ 月末仕掛品原価」を暗記している</span><span class="cl__d">方法が平均法でも先入先出法でも、仕損があってもなくても崩れない。答案を書く前の検算式</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u17-3"><label for="k3"><span class="cl__t">総合原価計算の4つの種類と、それぞれがどんな工場で使われるかを言える</span><span class="cl__d">単純（1製品1工程）／工程別（複数工程）／組別（複数種類）／等級別（サイズ違い）。すべて単純総合原価計算に帰着する</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u17-4"><label for="k4"><span class="cl__t">副産物の処理・連産品の計算・非度外視法・純粋先入先出法が2級の範囲外だと分かっている</span><span class="cl__d">出題区分表ではすべて1級。テキストに載っていても手を出さない</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u17-5"><label for="k5"><span class="cl__t">材料費と加工費を分けて計算する理由を説明できる</span><span class="cl__d">材料は始点で全量投入されるので作りかけでも満額かかる。加工費は進捗に比例する。作りかけの負担すべき額が違う</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u17-6"><label for="k6"><span class="cl__t">完成品換算量を、数量 × 加工進捗度 で計算できる</span><span class="cl__d">換算で数字が変わるのは月初仕掛品と月末仕掛品の2行だけ。完成品は進捗度100%なので数量のまま</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u17-7"><label for="k7"><span class="cl__t">加工費の当月投入換算量を、必ず差額で求めている</span><span class="cl__d">完成品 ＋ 月末換算量 − 月初換算量。投入数量をそのまま使うと、月初と月末の進捗度が違う問題で必ず外す</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u17-8"><label for="k8"><span class="cl__t">材料の投入時点が始点でない場合の扱いを、3パターン言える</span><span class="cl__d">始点＝数量そのまま／終点＝月末仕掛品は負担しない／平均的に投入＝換算量で按分</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u17-9"><label for="k9"><span class="cl__t">ボックス図を材料費と加工費で2つ描き、左右の合計が一致することを確かめている</span><span class="cl__d">1つの表にまとめると分母が1つしかないと錯覚する。数量の枠が完成するまで金額の計算に進まない</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u17-10"><label for="k10"><span class="cl__t">平均法の計算を5ステップで通せる</span><span class="cl__d">月初と当月を合算→右側の合計で割って平均単価→月末仕掛品→完成品→単位原価</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u17-11"><label for="k11"><span class="cl__t">平均法の分母が材料費と加工費で違うことを分かっている</span><span class="cl__d">材料費は完成品＋月末数量、加工費は完成品＋月末換算量。ボックス図を2つ描いていれば取り違えない</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u17-12"><label for="k12"><span class="cl__t">先入先出法で、月初仕掛品原価を単価の計算に入れない理由を言える</span><span class="cl__d">月初から先に完成したと考えるので、月末に残るのは当月投入分だけ。当月製造費用だけで当月の単価を出す</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u17-13"><label for="k13"><span class="cl__t">先入先出法では完成品原価を差額で求めると分かっている</span><span class="cl__d">完成品には月初から来た分と当月投入から来た分が混在するので、単価×数量では出せない。月末を先に確定させて残りを完成品とする</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u17-14"><label for="k14"><span class="cl__t">「(修正)先入先出法」の修正が何を指すか言える</span><span class="cl__d">完成品を月初由来と当月由来に分けず、単位原価を1つだけ示す。2つに分けるのは純粋先入先出法で1級</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u17-15"><label for="k15"><span class="cl__t">平均法と先入先出法で、完成品原価と月末仕掛品原価が逆方向に動くと分かっている</span><span class="cl__d">分ける総額は同じなので、片方が増えれば片方が減る。両方が同じ方向に動いていたら計算違い</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u17-16"><label for="k16"><span class="cl__t">月初仕掛品がない場合、2つの方法が同じ答えになると分かっている</span><span class="cl__d">違いは月初仕掛品原価の扱いだけ。混ぜる相手がいなければ計算式が一致する</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u17-17"><label for="k17"><span class="cl__t">仕掛品勘定の形が個別原価計算と同じだと説明できる</span><span class="cl__d">借方は前月繰越・材料・賃金給料・製造間接費。貸方は製品への振替と次月繰越。金額の出し方だけが違う</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u17-18"><label for="k18"><span class="cl__t">総合原価計算に原価計算表がなく、ボックス図が下書きだと分かっている</span><span class="cl__d">分ける単位が完成品と月末仕掛品の2つしかないので明細表にならない。ボックス図は計算用紙に描くもので答案には書かない</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u17-19"><label for="k19"><span class="cl__t">仕損と減損の違いを言え、2級では計算が同じだと分かっている</span><span class="cl__d">仕損は不良品というモノが残る、減損は蒸発・粉散で消える。度外視法では手続きが完全に同じ</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u17-20"><label for="k20"><span class="cl__t">正常仕損費を良品に負担させる理由を言え、異常仕損費が1級だと分かっている</span><span class="cl__d">避けられない以上、良品を作るのに必要な原価だから。異常仕損費の非原価項目としての処理は1級</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u17-21"><label for="k21"><span class="cl__t">仕損・減損をボックス図の右側に書くと分かっている</span><span class="cl__d">月初 ＋ 当月投入 ＝ 完成品 ＋ 仕損（減損）＋ 月末。投入側から引かない</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u17-22"><label for="k22"><span class="cl__t">度外視法が「仕損費を独立に計算しない」方法だと説明できる</span><span class="cl__d">按分計算の分母の決め方だけで負担者が決まる。仕損費の金額は答案に現れない</span></label></li>
+    <li><input type="checkbox" id="k23" data-key="p1u17-23"><label for="k23"><span class="cl__t">負担者の判定を、発生点と月末仕掛品の進捗度の比較でできる</span><span class="cl__d">終点発生なら完成品のみ、始点発生なら両者。月初仕掛品の進捗度は判定に使わない</span></label></li>
+    <li><input type="checkbox" id="k24" data-key="p1u17-24"><label for="k24"><span class="cl__t">完成品のみ負担では仕損を分母に残し、両者負担では外すと分かっている</span><span class="cl__d">外すと単価が上がり月末仕掛品にも仕損費が乗る。調整するのは両者負担のときだけ</span></label></li>
+    <li><input type="checkbox" id="k25" data-key="p1u17-25"><label for="k25"><span class="cl__t">始点発生の仕損・減損は加工費の換算量がゼロだと分かっている</span><span class="cl__d">始点で消えたものは加工を1%も受けていない。加工費のボックスに仕損の行は現れない</span></label></li>
+    <li><input type="checkbox" id="k26" data-key="p1u17-26"><label for="k26"><span class="cl__t">先入先出法・完成品のみ負担のとき、月初を引きつつ仕損は残せる</span><span class="cl__d">月初を引くのは先入先出法だから、仕損を残すのは完成品のみ負担だから。2つの判断は別々の理由から来ている</span></label></li>
+    <li><input type="checkbox" id="k27" data-key="p1u17-27"><label for="k27"><span class="cl__t">仕損品に評価額がある場合、負担者と同じ先から控除すると分かっている</span><span class="cl__d">回収できる金額まで良品に背負わせない。問題文に評価額の記載がなければこの処理は不要</span></label></li>
+    <li><input type="checkbox" id="k28" data-key="p1u17-28"><label for="k28"><span class="cl__t">7ステップの手順を、資料の3つの指定を拾うところから通せる</span><span class="cl__d">評価方法・材料の投入時点・仕損の発生点を丸で囲む→数量の左右一致→負担者判定→ボックス2つ→分母決定→月末仕掛品→完成品と検算</span></label></li>
+    <li><input type="checkbox" id="k29" data-key="p1u17-29"><label for="k29"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k30" data-key="p1u17-30"><label for="k30"><span class="cl__t">計算ドリル14問・確認テスト14問を全問正解した</span><span class="cl__d">特に加工費の当月投入換算量と、度外視法の分母を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元で、<strong>1つの製品を1つの工程で作る場合</strong>の総合原価計算が通りました。加工進捗度・完成品換算量・平均法・先入先出法・度外視法という道具がそろっています。<br>次の UNIT 18 では、<strong>工程別・組別・等級別</strong>に進みます。どれも新しい計算方法ではなく、<mark>この単元の計算を何回か繰り返すか、最後に係数で割るかの違いだけです。</mark>工程別なら工程の数だけ、組別なら組の数だけ、同じボックス図を描きます。<br>UNIT 18 に入る前に、この単元の7ステップを見ないで言えるようにしておいてください。繰り返す元の手順があやふやだと、繰り返す回数が増えるぶん誤りも増えます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W5 ／ UNIT 17 総合原価計算の基本</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var SOGO_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '製造間接費配賦差異', '予算差異', '操業度差異',
+  '材料消費価格差異', '賃率差異',
+  '電力料', '修繕料', '保険料', '減価償却費', '棚卸減耗費',
+  '売上', '売掛金', '現金', '当座預金', '買掛金', '未払金'
+];
+
+BokiJournal.mount('#drill-sogo', {
+  title: '仕訳ドリル — 総合原価計算の基本',
+  accounts: SOGO_ACCOUNTS,
+  questions: [
+    {
+      text: '当月の材料消費額は 620,000円であった。このうち工程の始点で投入した直接材料費が 504,000円、工場共通の補助材料が 116,000円である。',
+      debit: [['仕掛品', 504000], ['製造間接費', 116000]],
+      credit: [['材料', 620000]],
+      hint: '総合原価計算でも、直接材料費と間接材料費の分かれ目は変わりません。',
+      explain: '<p>工程の始点で投入する主要材料は<strong>直接材料費</strong>です。指図書はありませんが、その工程で作る製品のために投入したことは明らかなので、<strong>仕掛品</strong>の借方へ直接入ります。</p><p>工場共通の補助材料は<strong>間接材料費</strong>で、<strong>製造間接費</strong>に集めます。</p><p><mark>総合原価計算になっても、費目別計算の段階は個別原価計算とまったく同じです。</mark>変わるのは、仕掛品勘定に集まった原価を完成品と月末仕掛品にどう割るかという、その先の話だけです。</p>'
+    },
+    {
+      text: '当月の賃金消費額は 780,000円であった。このうち製造ラインでの直接作業に対応する分が 600,000円、機械の保全および運搬作業に対応する分が 180,000円である。',
+      debit: [['仕掛品', 600000], ['製造間接費', 180000]],
+      credit: [['賃金・給料', 780000]],
+      hint: '直接作業時間に対応する分が直接労務費です。',
+      explain: '<p>製造ラインでの直接作業は<strong>直接労務費</strong>として仕掛品へ。保全・運搬は<strong>間接労務費</strong>として製造間接費へ集めます。</p><p>総合原価計算では、直接労務費と製造間接費を合わせて<strong>加工費</strong>と呼び、ボックス図では1つにまとめて按分します。<mark>ただし仕訳の段階では別々の科目のままです。</mark></p><p>この単元では「加工費」は<strong>按分計算のための括り</strong>であって、仕訳では直接労務費と製造間接費のままです。<mark>ただし工程別総合原価計算（UNIT 18）では、加工費をいったん1つの勘定に集めてから各工程へ配賦する形が使われます。</mark>問題文が加工費勘定を示していればそれに従ってください。</p>'
+    },
+    {
+      text: '当月の製造間接費を予定配賦率 @1,150円、実際直接作業時間 300時間により配賦した。',
+      debit: [['仕掛品', 345000]],
+      credit: [['製造間接費', 345000]],
+      hint: '@1,150 × 300時間 です。',
+      explain: '<p>@1,150 × 300時間 ＝ <strong>345,000円</strong>。</p><p>総合原価計算でも、製造間接費の配賦は UNIT 10 で学んだとおり予定配賦率を使います。<mark>配る先が指図書ではなく「その工程の生産全体」になるだけです。</mark></p><p>配賦された 345,000円 は、直接労務費 600,000円 と合わせて<strong>加工費 945,000円</strong>となり、ボックス図の加工費の当月投入額になります。</p>'
+    },
+    {
+      text: '当月の生産データは、月初仕掛品 200個（進捗度50%）、当月投入 1,000個、当月完成品 1,000個、月末仕掛品 200個（進捗度50%）である。月初仕掛品原価は材料費 96,000円・加工費 67,000円、当月製造費用は材料費 504,000円・加工費 945,000円。材料は始点で全量投入し、月末仕掛品の評価は平均法による。完成品を製品勘定に振り替えた。',
+      debit: [['製品', 1420000]],
+      credit: [['仕掛品', 1420000]],
+      hint: '材料費 @500、加工費 @920 で完成品1,000個分を計算します。',
+      explain: '<p>材料費の平均単価 ＝（96,000 ＋ 504,000）÷（1,000 ＋ 200）＝ @500円<br>加工費の平均単価 ＝（67,000 ＋ 945,000）÷（1,000 ＋ 100）＝ @920円</p><p>完成品総合原価 ＝ @500 × 1,000個 ＋ @920 × 1,000個 ＝ <strong>1,420,000円</strong></p><p>仕訳の形は「借方 製品／貸方 仕掛品」で UNIT 14 と同じですが、<mark>金額を出すのにボックス図の按分計算が要ります。</mark>第4問(1)でこの形の仕訳が出たら、資料に評価方法の指定がないか必ず探してください。</p>'
+    },
+    {
+      text: '前問と同じ資料で、月末仕掛品の評価を先入先出法によった場合の、完成品の製品勘定への振替の仕訳を示しなさい。',
+      debit: [['製品', 1416700]],
+      credit: [['仕掛品', 1416700]],
+      hint: '当月製造費用だけで単価を出し、月末仕掛品を先に確定させます。',
+      explain: '<p>材料費の単価 ＝ 504,000 ÷ 1,000個 ＝ @504円<br>加工費の単価 ＝ 945,000 ÷（1,000 ＋ 100 − 100 ＝ 1,000個）＝ @945円</p><p>月末仕掛品原価 ＝ @504 × 200 ＋ @945 × 100 ＝ 100,800 ＋ 94,500 ＝ 195,300円</p><p>完成品総合原価 ＝ 163,000 ＋ 1,449,000 − 195,300 ＝ <strong>1,416,700円</strong></p><p>平均法の 1,420,000円 より 3,300円 小さくなります。<mark>月末仕掛品が 3,300円 大きいぶん、完成品が小さい。</mark>総額 1,612,000円 はどちらでも変わりません。</p>'
+    },
+    {
+      text: '当月の完成品 1,000個（完成品総合原価 1,420,000円）のうち、800個を1個あたり 2,000円で掛け販売した。売上原価対立法によっている。',
+      debit: [['売掛金', 1600000], ['売上原価', 1136000]],
+      credit: [['売上', 1600000], ['製品', 1136000]],
+      hint: '完成品単位原価を先に出してから、販売数量を掛けます。',
+      explain: '<p>完成品単位原価 ＝ 1,420,000 ÷ 1,000個 ＝ @1,420円<br>売上原価 ＝ @1,420 × 800個 ＝ <strong>1,136,000円</strong><br>売上高 ＝ @2,000 × 800個 ＝ 1,600,000円</p><p>販売の仕訳（借方 売掛金／貸方 売上）と原価の振替（借方 売上原価／貸方 製品）を同時に書きます。</p><p><mark>完成した1,000個のうち200個は製品勘定に残ります。</mark>その金額は @1,420 × 200個 ＝ 284,000円。完成しただけでは売上原価になりません。</p>'
+    },
+    {
+      text: '当月の生産データは、月初仕掛品 400個（進捗度50%）、当月投入 2,000個、当月完成品 2,000個、正常仕損 100個（工程の終点で発生・評価額なし）、月末仕掛品 300個（進捗度60%）である。月初仕掛品原価は材料費 140,000円・加工費 90,000円、当月製造費用は材料費 580,000円・加工費 1,050,000円。材料は始点で全量投入し、月末仕掛品の評価は平均法による。正常仕損費の処理は度外視法による。完成品を製品勘定に振り替えた。',
+      debit: [['製品', 1680000]],
+      credit: [['仕掛品', 1680000]],
+      hint: '終点発生なので完成品のみ負担。月末仕掛品に仕損費を乗せないよう、仕損を分母に残します。',
+      explain: '<p>発生点100% &gt; 月末仕掛品の進捗度60% なので<strong>完成品のみ負担</strong>。月末仕掛品に仕損費を負担させないため、仕損100個を分母に残します。</p><p>材料費 ＝ 720,000 ÷（2,000 ＋ 100 ＋ 300 ＝ 2,400）＝ @300円<br>加工費 ＝ 1,140,000 ÷（2,000 ＋ 100 ＋ 180 ＝ 2,280）＝ @500円</p><p>月末仕掛品 ＝ @300 × 300 ＋ @500 × 180 ＝ 90,000 ＋ 90,000 ＝ 180,000円<br>完成品総合原価 ＝ 1,860,000 − 180,000 ＝ <strong>1,680,000円</strong></p><p>仕損100個が集めた @300 × 100 ＋ @500 × 100 ＝ 80,000円 は、完成品でも月末仕掛品でもないため、<mark>差額で求める完成品がそっくり引き取ります。</mark>これが完成品のみ負担の仕掛けです。</p>'
+    },
+    {
+      text: '当月の生産データは、月初仕掛品 300個（進捗度40%）、当月投入 2,200個、当月完成品 2,000個、正常減損 100個（工程の始点で発生）、月末仕掛品 400個（進捗度50%）である。月初仕掛品原価は材料費 96,000円・加工費 66,000円、当月製造費用は材料費 672,000円・加工費 1,144,000円。材料は始点で全量投入し、月末仕掛品の評価は先入先出法による。正常減損費の処理は度外視法による。完成品を製品勘定に振り替えた。',
+      debit: [['製品', 1740000]],
+      credit: [['仕掛品', 1740000]],
+      hint: '始点発生なので両者負担。当月投入量から減損を外します。',
+      explain: '<p>発生点0% ≦ 月末仕掛品の進捗度50% なので<strong>両者負担</strong>。投入側の分母から減損を外します。</p><p>材料費 ＝ 672,000 ÷（2,200 − 100 ＝ 2,100個）＝ @320円<br>加工費 ＝ 1,144,000 ÷（2,000 ＋ 200 − 120 ＝ 2,080個）＝ @550円</p><p>月末仕掛品 ＝ @320 × 400 ＋ @550 × 200 ＝ 128,000 ＋ 110,000 ＝ 238,000円<br>完成品総合原価 ＝ 1,978,000 − 238,000 ＝ <strong>1,740,000円</strong></p><p><mark>始点発生の減損は加工費の換算量がゼロ</mark>なので、加工費の分母には元から入っていません。外す操作が要るのは材料費だけです。</p>'
+    },
+    {
+      text: '当月の製造間接費の実際発生額は 368,000円であった。予定配賦額 345,000円との差額を製造間接費配賦差異勘定に振り替えた。',
+      debit: [['製造間接費配賦差異', 23000]],
+      credit: [['製造間接費', 23000]],
+      hint: '実際発生額のほうが大きいので不利差異です。',
+      explain: '<p>368,000 − 345,000 ＝ <strong>23,000円</strong> の<strong>不利差異（借方差異）</strong>です。予定より多くかかったので、製造間接費勘定の借方に残高が残ります。これを配賦差異勘定へ振り替えます。</p><p><mark>配賦差異は仕掛品勘定には入りません。</mark>仕掛品に入れてしまうと、完成品と月末仕掛品の按分計算に差異が混ざってしまいます。</p><p>総合原価計算でも、製造間接費の予定配賦と差異処理は UNIT 10 のとおりです。ボックス図に入る加工費は<strong>予定配賦額ベース</strong>の 345,000円 であって、実際発生額の 368,000円 ではありません。</p>'
+    },
+    {
+      text: '月初仕掛品はなく、当月投入 1,500個、当月完成品 1,200個、月末仕掛品 300個（進捗度40%）である。当月製造費用は材料費 450,000円・加工費 528,000円。材料は始点で全量投入している。完成品を製品勘定に振り替えた。',
+      debit: [['製品', 840000]],
+      credit: [['仕掛品', 840000]],
+      hint: '月初仕掛品がないので、平均法でも先入先出法でも同じ答えになります。',
+      explain: '<p>月末仕掛品の換算量 ＝ 300 × 40% ＝ 120個</p><p>材料費 ＝ 450,000 ÷（1,200 ＋ 300 ＝ 1,500個）＝ @300円<br>加工費 ＝ 528,000 ÷（1,200 ＋ 120 ＝ 1,320個）＝ @400円</p><p>月末仕掛品 ＝ @300 × 300 ＋ @400 × 120 ＝ 90,000 ＋ 48,000 ＝ 138,000円<br>完成品総合原価 ＝ 978,000 − 138,000 ＝ <strong>840,000円</strong></p><p><mark>月初仕掛品がゼロなら、混ぜる相手がいないので2つの方法の計算式が一致します。</mark>評価方法の指定を探して時間を使う必要はありません。</p>'
+    },
+    {
+      text: '当月完成品 2,000個の完成品総合原価は 1,680,000円であった。このうち1,500個を1個あたり 1,300円で掛け販売した。売上原価対立法によっている。',
+      debit: [['売掛金', 1950000], ['売上原価', 1260000]],
+      credit: [['売上', 1950000], ['製品', 1260000]],
+      hint: '完成品単位原価 ＝ 1,680,000 ÷ 2,000個 です。',
+      explain: '<p>完成品単位原価 ＝ 1,680,000 ÷ 2,000個 ＝ @840円<br>売上原価 ＝ @840 × 1,500個 ＝ <strong>1,260,000円</strong><br>売上高 ＝ @1,300 × 1,500個 ＝ 1,950,000円</p><p>売上総利益 ＝ 1,950,000 − 1,260,000 ＝ 690,000円。</p><p><mark>完成品単位原価が出ていれば、販売分の売上原価は掛け算だけです。</mark>総合原価計算では製品が均質なので、どの1個を売っても単価は同じ @840円 になります。個別原価計算のように「どの指図書の製品を売ったか」を追う必要がありません。</p>'
+    },
+    {
+      text: '月末に、材料勘定の実地棚卸を行ったところ、帳簿残高 180,000円に対して実際有高が 174,000円であった。差額は正常な範囲の減耗である。',
+      debit: [['製造間接費', 6000]],
+      credit: [['材料', 6000]],
+      hint: '正常な棚卸減耗は製造原価に含めます。',
+      explain: '<p>180,000 − 174,000 ＝ <strong>6,000円</strong>。倉庫での正常な減耗は、製造活動に伴って必然的に生じるものなので<strong>間接経費</strong>として製造間接費に集めます。</p><p><mark>この単元で扱う工程内の減損とは別物です。</mark>工程内の減損は仕掛品勘定の中で度外視法によって良品に負担させますが、倉庫の棚卸減耗は材料勘定から製造間接費へ振り替えます。発生する場所が違います。</p><p>異常な棚卸減耗であれば非原価項目となり、営業外費用や特別損失に計上します。ただしその判断は2級の出題範囲では問われません。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-sogo', {
+  title: '計算ドリル — 総合原価計算の基本',
+  badge: '計算ドリル 14問',
+  questions: [
+    {
+      text: '月初仕掛品 200個（加工進捗度50%）、当月完成品 1,000個、月末仕掛品 200個（加工進捗度50%）である。① 月初仕掛品の完成品換算量、② 完成品の完成品換算量、③ 月末仕掛品の完成品換算量を求めなさい。',
+      answer: [100, 1000, 100],
+      formula: ['200 * 0.5', '1000 * 1', '200 * 0.5'],
+      labels: ['① 月初仕掛品の換算量（個）', '② 完成品の換算量（個）', '③ 月末仕掛品の換算量（個）'],
+      hint: '完成品の加工進捗度は100%です。',
+      explain: '<p>① 200 × 50% ＝ <strong>100個</strong><br>② 1,000 × 100% ＝ <strong>1,000個</strong><br>③ 200 × 50% ＝ <strong>100個</strong></p><p><mark>換算で数字が変わるのは月初仕掛品と月末仕掛品の2行だけです。</mark>完成品は進捗度100%なので数量そのままです。ここで手が止まると、以降の計算がすべて遅れます。</p>'
+    },
+    {
+      text: '月初仕掛品 300個（加工進捗度40%）、当月投入 2,200個、当月完成品 2,000個、月末仕掛品 500個（加工進捗度60%）である。① 月初仕掛品の換算量、② 月末仕掛品の換算量、③ 加工費のボックス図における当月投入の完成品換算量を求めなさい。',
+      answer: [120, 300, 2180],
+      formula: ['300 * 0.4', '500 * 0.6', '2000 + 500 * 0.6 - 300 * 0.4'],
+      labels: ['① 月初の換算量（個）', '② 月末の換算量（個）', '③ 当月投入の換算量（個）'],
+      hint: '当月投入の換算量は掛け算では出ません。右側の合計から月初を引きます。',
+      explain: '<p>① 300 × 40% ＝ <strong>120個</strong><br>② 500 × 60% ＝ <strong>300個</strong><br>③ 完成品 2,000 ＋ 月末 300 − 月初 120 ＝ <strong>2,180個</strong></p><p><mark>③を投入数量 2,200個 と答えるのが、この論点で最も多い誤りです。</mark>投入量に加工進捗度という概念はありません。加工費の当月投入換算量は必ず差額で求めます。</p><p>この問題では 2,180個 と 2,200個 が近い数字なので、間違えても気づきにくいのが厄介です。<strong>差額で出すという手順を、毎回機械的に実行してください。</strong></p>'
+    },
+    {
+      text: '月初仕掛品 200個（進捗度50%）、当月投入 1,000個、当月完成品 1,000個、月末仕掛品 200個（進捗度50%）である。月初仕掛品原価は材料費 96,000円・加工費 67,000円、当月製造費用は材料費 504,000円・加工費 945,000円。材料は始点で全量投入。平均法により ① 材料費の平均単価、② 加工費の平均単価を求めなさい。',
+      answer: [500, 920],
+      formula: ['(96000 + 504000) / (1000 + 200)', '(67000 + 945000) / (1000 + 200 * 0.5)'],
+      labels: ['① 材料費の平均単価（円）', '② 加工費の平均単価（円）'],
+      hint: '分母はボックス図の右側の合計。材料費と加工費で違います。',
+      explain: '<p>① 材料費 ＝（96,000 ＋ 504,000）÷（完成品1,000 ＋ 月末200）＝ 600,000 ÷ 1,200 ＝ <strong>@500円</strong><br>② 加工費 ＝（67,000 ＋ 945,000）÷（完成品1,000 ＋ 月末100）＝ 1,012,000 ÷ 1,100 ＝ <strong>@920円</strong></p><p><mark>材料費の分母は 1,200個、加工費の分母は 1,100個。</mark>この2つを同じ数字だと思って計算すると、加工費が丸ごとずれます。ボックス図を2つ描いていれば取り違えません。</p>'
+    },
+    {
+      text: '前問と同じ資料について、平均法により ① 月末仕掛品原価、② 完成品総合原価、③ 完成品単位原価を求めなさい。',
+      answer: [192000, 1420000, 1420],
+      formula: [
+        '500 * 200 + 920 * 100',
+        '(96000 + 504000 + 67000 + 945000) - (500 * 200 + 920 * 100)',
+        '((96000 + 504000 + 67000 + 945000) - (500 * 200 + 920 * 100)) / 1000'
+      ],
+      labels: ['① 月末仕掛品原価（円）', '② 完成品総合原価（円）', '③ 完成品単位原価（円）'],
+      hint: '月末仕掛品は 材料費@500×200個 ＋ 加工費@920×100個 です。',
+      explain: '<p>① @500 × 200 ＋ @920 × 100 ＝ 100,000 ＋ 92,000 ＝ <strong>192,000円</strong><br>② 1,612,000 − 192,000 ＝ <strong>1,420,000円</strong><br>③ 1,420,000 ÷ 1,000個 ＝ <strong>@1,420円</strong></p><p>検算：192,000 ＋ 1,420,000 ＝ 1,612,000円。月初仕掛品原価 163,000 ＋ 当月製造費用 1,449,000 ＝ 1,612,000円 と一致します。<mark>この等式が合わないまま答案を書かないでください。</mark></p>'
+    },
+    {
+      text: '前々問と同じ資料について、先入先出法により ① 材料費の単価、② 加工費の単価、③ 月末仕掛品原価、④ 完成品総合原価を求めなさい。',
+      answer: [504, 945, 195300, 1416700],
+      formula: [
+        '504000 / 1000',
+        '945000 / (1000 + 200 * 0.5 - 200 * 0.5)',
+        '504 * 200 + 945 * 100',
+        '(96000 + 504000 + 67000 + 945000) - (504 * 200 + 945 * 100)'
+      ],
+      labels: ['① 材料費の単価（円）', '② 加工費の単価（円）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）'],
+      hint: '月初仕掛品原価は分子にも分母にも入れません。',
+      explain: '<p>① 504,000 ÷ 当月投入1,000個 ＝ <strong>@504円</strong><br>② 945,000 ÷（1,000 ＋ 100 − 100 ＝ 1,000個）＝ <strong>@945円</strong><br>③ @504 × 200 ＋ @945 × 100 ＝ 100,800 ＋ 94,500 ＝ <strong>195,300円</strong><br>④ 1,612,000 − 195,300 ＝ <strong>1,416,700円</strong></p><p>平均法（月末 192,000・完成品 1,420,000）と比べると、<mark>月末仕掛品が 3,300円 大きく、完成品が 3,300円 小さくなっています。</mark>分ける総額 1,612,000円 は同じなので、必ず逆方向に動きます。</p>'
+    },
+    {
+      text: '月初仕掛品 200個（進捗度50%）、当月投入 1,000個、当月完成品 1,000個、月末仕掛品 200個（進捗度50%）である。月初仕掛品原価は材料費 60,000円・加工費 90,000円、当月製造費用は材料費 450,000円・加工費 900,000円。材料は始点で全量投入。平均法により ① 材料費の平均単価、② 加工費の平均単価、③ 月末仕掛品原価、④ 完成品総合原価を求めなさい。',
+      answer: [425, 900, 175000, 1325000],
+      formula: [
+        '(60000 + 450000) / (1000 + 200)',
+        '(90000 + 900000) / (1000 + 200 * 0.5)',
+        '425 * 200 + 900 * 100',
+        '(60000 + 450000 + 90000 + 900000) - (425 * 200 + 900 * 100)'
+      ],
+      labels: ['① 材料費の平均単価（円）', '② 加工費の平均単価（円）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）'],
+      hint: '材料費の分母 1,200個、加工費の分母 1,100個。',
+      explain: '<p>① 510,000 ÷ 1,200 ＝ <strong>@425円</strong><br>② 990,000 ÷ 1,100 ＝ <strong>@900円</strong><br>③ @425 × 200 ＋ @900 × 100 ＝ 85,000 ＋ 90,000 ＝ <strong>175,000円</strong><br>④ 1,500,000 − 175,000 ＝ <strong>1,325,000円</strong></p><p>完成品単位原価は 1,325,000 ÷ 1,000個 ＝ @1,325円。<mark>検算：175,000 ＋ 1,325,000 ＝ 1,500,000円。</mark>月初 150,000 ＋ 当月投入 1,350,000 と一致します。</p>'
+    },
+    {
+      text: '前問と同じ資料について、先入先出法により ① 材料費の単価、② 加工費の単価、③ 月末仕掛品原価、④ 完成品総合原価を求めなさい。',
+      answer: [450, 900, 180000, 1320000],
+      formula: [
+        '450000 / 1000',
+        '900000 / (1000 + 200 * 0.5 - 200 * 0.5)',
+        '450 * 200 + 900 * 100',
+        '(60000 + 450000 + 90000 + 900000) - (450 * 200 + 900 * 100)'
+      ],
+      labels: ['① 材料費の単価（円）', '② 加工費の単価（円）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）'],
+      hint: '当月製造費用だけを使い、月末仕掛品を先に確定させます。',
+      explain: '<p>① 450,000 ÷ 1,000個 ＝ <strong>@450円</strong><br>② 900,000 ÷ 1,000個 ＝ <strong>@900円</strong><br>③ @450 × 200 ＋ @900 × 100 ＝ 90,000 ＋ 90,000 ＝ <strong>180,000円</strong><br>④ 1,500,000 − 180,000 ＝ <strong>1,320,000円</strong></p><p>平均法の月末 175,000円 より 5,000円 大きく、完成品は 5,000円 小さくなりました。<mark>月初の材料費単価が @300円（60,000÷200個）と当月の @450円 より安いため、混ぜた平均法のほうが単価が下がります。</mark></p><p>加工費の単価はどちらも @900円 で一致しています。月初の加工費単価が @900円（90,000÷100個）と当月と同じだったためです。<strong>常に両方の単価がずれるわけではありません。</strong></p>'
+    },
+    {
+      text: '月初仕掛品はなく、当月投入 1,500個、当月完成品 1,200個、月末仕掛品 300個（進捗度40%）である。当月製造費用は材料費 450,000円・加工費 528,000円。材料は始点で全量投入。① 材料費の単価、② 加工費の単価、③ 月末仕掛品原価、④ 完成品総合原価を求めなさい。',
+      answer: [300, 400, 138000, 840000],
+      formula: [
+        '450000 / (1200 + 300)',
+        '528000 / (1200 + 300 * 0.4)',
+        '300 * 300 + 400 * 300 * 0.4',
+        '(450000 + 528000) - (300 * 300 + 400 * 300 * 0.4)'
+      ],
+      labels: ['① 材料費の単価（円）', '② 加工費の単価（円）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）'],
+      hint: '月初仕掛品がないので、評価方法の指定は結果に影響しません。',
+      explain: '<p>① 450,000 ÷ 1,500個 ＝ <strong>@300円</strong><br>② 528,000 ÷（1,200 ＋ 120 ＝ 1,320個）＝ <strong>@400円</strong><br>③ @300 × 300 ＋ @400 × 120 ＝ 90,000 ＋ 48,000 ＝ <strong>138,000円</strong><br>④ 978,000 − 138,000 ＝ <strong>840,000円</strong></p><p><mark>月初仕掛品がゼロなら、平均法でも先入先出法でも計算式が完全に一致します。</mark>違いは月初仕掛品原価の扱いだけだからです。問題文に「月初仕掛品はない」とあれば、評価方法を探す必要はありません。</p>'
+    },
+    {
+      text: '月初仕掛品 400個（進捗度50%）、当月投入 2,000個、当月完成品 2,000個、正常仕損 100個（工程の終点で発生・評価額なし）、月末仕掛品 300個（進捗度60%）である。① 数量の合計が左右で一致することを確かめたうえで、② 平均法における材料費の按分の分母、③ 加工費の按分の分母を求めなさい。正常仕損費は度外視法による。',
+      answer: [2400, 2400, 2280],
+      formula: ['400 + 2000', '2000 + 100 + 300', '2000 + 100 + 300 * 0.6'],
+      labels: ['① 数量の合計（個）', '② 材料費の分母（個）', '③ 加工費の分母（個）'],
+      hint: '終点発生なので完成品のみ負担。月末仕掛品に仕損費を乗せないよう、仕損を分母に残します。',
+      explain: '<p>① 400 ＋ 2,000 ＝ <strong>2,400個</strong>。右側も 2,000 ＋ 100 ＋ 300 ＝ 2,400個 で一致します。</p><p>発生点100% &gt; 月末仕掛品の進捗度60% なので<strong>完成品のみ負担</strong>。月末仕掛品に仕損費を負担させないため、仕損を分母に残します。</p><p>② 完成品 2,000 ＋ 仕損 100 ＋ 月末 300 ＝ <strong>2,400個</strong><br>③ 完成品 2,000 ＋ 仕損換算 100 ＋ 月末換算 180 ＝ <strong>2,280個</strong></p><p><mark>仕損は終点発生なので加工進捗度100%、換算量は100個です。</mark>始点発生なら換算量がゼロになるので、加工費の分母には現れません。発生点によって加工費側の扱いが変わることに注意してください。</p><p>分母から仕損を外すと単価が上がり、<strong>その単価で評価される月末仕掛品にも仕損費が乗ってしまいます。</strong>外すのは両者負担のときだけです。</p>'
+    },
+    {
+      text: '前問と同じ生産データで、月初仕掛品原価は材料費 140,000円・加工費 90,000円、当月製造費用は材料費 580,000円・加工費 1,050,000円である。平均法・度外視法により ① 材料費の単価、② 加工費の単価、③ 月末仕掛品原価、④ 完成品総合原価、⑤ 完成品単位原価を求めなさい。',
+      answer: [300, 500, 180000, 1680000, 840],
+      formula: [
+        '(140000 + 580000) / (2000 + 100 + 300)',
+        '(90000 + 1050000) / (2000 + 100 + 300 * 0.6)',
+        '300 * 300 + 500 * 300 * 0.6',
+        '(140000 + 580000 + 90000 + 1050000) - (300 * 300 + 500 * 300 * 0.6)',
+        '((140000 + 580000 + 90000 + 1050000) - (300 * 300 + 500 * 300 * 0.6)) / 2000'
+      ],
+      labels: ['① 材料費の単価（円）', '② 加工費の単価（円）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）', '⑤ 完成品単位原価（円）'],
+      hint: '前問で求めた分母 2,400個・2,280個 を使います。',
+      explain: '<p>① 720,000 ÷ 2,400 ＝ <strong>@300円</strong><br>② 1,140,000 ÷ 2,280 ＝ <strong>@500円</strong><br>③ @300 × 300 ＋ @500 × 180 ＝ 90,000 ＋ 90,000 ＝ <strong>180,000円</strong><br>④ 1,860,000 − 180,000 ＝ <strong>1,680,000円</strong><br>⑤ 1,680,000 ÷ 2,000個 ＝ <strong>@840円</strong></p><p>検算：180,000 ＋ 1,680,000 ＝ 1,860,000円。月初 230,000 ＋ 当月投入 1,630,000 と一致します。</p><p>完成品原価の中身は、正味 @300 × 2,000 ＋ @500 × 2,000 ＝ 1,600,000円 と、仕損100個が集めた @300 × 100 ＋ @500 × 100 ＝ 80,000円 の合計です。<mark>仕損費 80,000円 が完成品だけに乗り、月末仕掛品の単価は仕損がなかった場合と同じ @300円・@500円 のままです。</mark></p>'
+    },
+    {
+      text: '月初仕掛品 300個（進捗度40%）、当月投入 2,200個、当月完成品 2,000個、正常減損 100個（工程の始点で発生）、月末仕掛品 400個（進捗度50%）である。正常減損費は度外視法による。月末仕掛品の評価は先入先出法。① 材料費の按分の分母、② 加工費の按分の分母を求めなさい。',
+      answer: [2100, 2080],
+      formula: ['2200 - 100', '2000 + 400 * 0.5 - 300 * 0.4'],
+      labels: ['① 材料費の分母（個）', '② 加工費の分母（個）'],
+      hint: '始点発生なので両者負担。当月投入量から減損を外します。',
+      explain: '<p>発生点0% ≦ 月末仕掛品の進捗度50% なので<strong>両者負担</strong>。先入先出法なので分母は当月投入側です。</p><p>① 当月投入 2,200 − 減損 100 ＝ <strong>2,100個</strong><br>② 完成品 2,000 ＋ 月末換算量 200 − 月初換算量 120 ＝ <strong>2,080個</strong></p><p><mark>加工費の分母から減損を外す操作は要りません。</mark>始点で消えたものは加工を1%も受けていないので、換算量がゼロ。元から分母に入っていないからです。</p><p>外す操作が要るのは材料費だけです。始点で投入した材料は、減損した100個分も含めて工程に入っているためです。</p>'
+    },
+    {
+      text: '前問と同じ生産データで、月初仕掛品原価は材料費 96,000円・加工費 66,000円、当月製造費用は材料費 672,000円・加工費 1,144,000円である。先入先出法・度外視法により ① 材料費の単価、② 加工費の単価、③ 月末仕掛品原価、④ 完成品総合原価、⑤ 完成品単位原価を求めなさい。',
+      answer: [320, 550, 238000, 1740000, 870],
+      formula: [
+        '672000 / (2200 - 100)',
+        '1144000 / (2000 + 400 * 0.5 - 300 * 0.4)',
+        '320 * 400 + 550 * 400 * 0.5',
+        '(96000 + 66000 + 672000 + 1144000) - (320 * 400 + 550 * 400 * 0.5)',
+        '((96000 + 66000 + 672000 + 1144000) - (320 * 400 + 550 * 400 * 0.5)) / 2000'
+      ],
+      labels: ['① 材料費の単価（円）', '② 加工費の単価（円）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）', '⑤ 完成品単位原価（円）'],
+      hint: '先入先出法なので、単価の分子は当月製造費用だけです。',
+      explain: '<p>① 672,000 ÷ 2,100 ＝ <strong>@320円</strong><br>② 1,144,000 ÷ 2,080 ＝ <strong>@550円</strong><br>③ @320 × 400 ＋ @550 × 200 ＝ 128,000 ＋ 110,000 ＝ <strong>238,000円</strong><br>④ 1,978,000 − 238,000 ＝ <strong>1,740,000円</strong><br>⑤ 1,740,000 ÷ 2,000個 ＝ <strong>@870円</strong></p><p>検算：238,000 ＋ 1,740,000 ＝ 1,978,000円。月初 162,000 ＋ 当月投入 1,816,000 と一致します。</p><p>材料費の単価が @320円 であって @305.45円（672,000 ÷ 2,200）ではないところに、<mark>月末仕掛品も減損費を負担していることが現れています。</mark></p>'
+    },
+    {
+      text: '月初仕掛品 500個（進捗度40%）、当月投入 3,000個、当月完成品 3,000個、正常仕損 100個（工程の終点で発生・評価額なし）、月末仕掛品 400個（進捗度50%）である。月初仕掛品原価は材料費 150,000円・加工費 84,000円、当月製造費用は材料費 900,000円・加工費 1,860,000円。材料は始点で全量投入。先入先出法・度外視法により ① 材料費の分母、② 加工費の分母、③ 月末仕掛品原価、④ 完成品総合原価を求めなさい。',
+      answer: [3000, 3100, 240000, 2754000],
+      formula: [
+        '3000 + 100 + 400 - 500',
+        '3000 + 100 + 400 * 0.5 - 500 * 0.4',
+        '(900000 / (3000 + 100 + 400 - 500)) * 400 + (1860000 / (3000 + 100 + 400 * 0.5 - 500 * 0.4)) * 400 * 0.5',
+        '(150000 + 84000 + 900000 + 1860000) - ((900000 / (3000 + 100 + 400 - 500)) * 400 + (1860000 / (3000 + 100 + 400 * 0.5 - 500 * 0.4)) * 400 * 0.5)'
+      ],
+      labels: ['① 材料費の分母（個）', '② 加工費の分母（個）', '③ 月末仕掛品原価（円）', '④ 完成品総合原価（円）'],
+      hint: '完成品のみ負担で先入先出法。分母は当月投入分、そこに仕損は残したままにします。',
+      explain: '<p>発生点100% &gt; 月末仕掛品の進捗度50% なので<strong>完成品のみ負担</strong>。先入先出法なので分母は当月投入分です。<mark>完成品のみ負担なので、仕損は分母に残します。</mark></p><p>① 当月投入数量 ＝ 完成品 3,000 ＋ 仕損 100 ＋ 月末 400 − 月初 500 ＝ <strong>3,000個</strong><br>② 当月投入の加工換算量 ＝ 完成品 3,000 ＋ 仕損換算 100 ＋ 月末換算 200 − 月初換算 200 ＝ <strong>3,100個</strong></p><p>③ 材料費単価 ＝ 900,000 ÷ 3,000 ＝ @300円、加工費単価 ＝ 1,860,000 ÷ 3,100 ＝ @600円<br>@300 × 400 ＋ @600 × 200 ＝ 120,000 ＋ 120,000 ＝ <strong>240,000円</strong></p><p>④ 2,994,000 − 240,000 ＝ <strong>2,754,000円</strong>。検算：240,000 ＋ 2,754,000 ＝ 2,994,000円。月初 234,000 ＋ 当月投入 2,760,000 と一致します。</p><p>仕損100個が集めた @300 × 100 ＋ @600 × 100 ＝ 90,000円 は完成品が引き取ります。<mark>月初換算量を引くのは先入先出法だから、仕損換算量を足したままにするのは完成品のみ負担だから</mark>であって、2つは別々の理由から来ています。</p>'
+    },
+    {
+      text: '当月完成品 2,000個の完成品総合原価が 1,680,000円、月末仕掛品原価が 180,000円であった。月初仕掛品原価は 230,000円である。① 完成品単位原価、② 当月製造費用の合計を求めなさい。',
+      answer: [840, 1630000],
+      formula: ['1680000 / 2000', '1680000 + 180000 - 230000'],
+      labels: ['① 完成品単位原価（円）', '② 当月製造費用（円）'],
+      hint: '「月初 ＋ 当月投入 ＝ 完成品 ＋ 月末」を当月投入について解きます。',
+      explain: '<p>① 1,680,000 ÷ 2,000個 ＝ <strong>@840円</strong><br>② 1,680,000 ＋ 180,000 − 230,000 ＝ <strong>1,630,000円</strong></p><p><mark>この等式は右からでも左からでも使えます。</mark>答案の検算に使うのが基本ですが、資料の一部が伏せられている問題では、このように逆算して埋める使い方もします。</p><p>第4問(2)では仕掛品勘定の一部を空欄にして「金額を答えなさい」という形で出ることがあります。<strong>等式を1本覚えておけば、どこが空欄でも埋められます。</strong></p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-sogo', {
+  title: '確認テスト — 総合原価計算の基本',
+  questions: [
+    {
+      text: '総合原価計算が適用される生産形態として、最も適切なものはどれですか。',
+      choices: [
+        '顧客の仕様に合わせた産業用機械を、注文ごとに製造している工場',
+        '同一規格の清涼飲料水を連続して大量生産している工場',
+        '船舶を1隻ずつ受注して建造している造船所',
+        '顧客ごとに設計が異なるビルを建設している建設会社'
+      ],
+      answer: 1,
+      explain: '<p>総合原価計算は<strong>大量見込生産</strong>で使います。食品、飲料、製紙、化学、セメント、汎用部品が典型です。</p><p>選択肢1・3・4はいずれも<strong>受注生産</strong>で、個別原価計算（UNIT 14）の対象です。注文ごとに製造指図書を発行し、その指図書ごとに原価を集計します。</p><p><mark>製品を1つずつ見分けられるかどうかが分かれ目です。</mark>見分けられるから指図書ごとに集められ、見分けられないから総額を数量で割ります。</p>'
+    },
+    {
+      text: '総合原価計算において、直接材料費と加工費を分けて計算する理由として、最も適切なものはどれですか。',
+      choices: [
+        '直接材料費は変動費、加工費は固定費だから',
+        '直接材料費は実際額、加工費は予定額で計算するから',
+        '月末仕掛品が負担すべき割合が、材料費と加工費で異なるから',
+        '直接材料費は仕掛品勘定に入り、加工費は製造間接費勘定に入るから'
+      ],
+      answer: 2,
+      explain: '<p>直接材料費は工程の<strong>始点で全量投入される</strong>のが基本なので、進捗度が何%であっても1個あたりに含まれる材料の量は同じです。だから月末仕掛品も完成品と同額を負担します。</p><p>加工費は<strong>作業が進むにつれて発生する</strong>ので、進捗度50%の仕掛品は完成品の半分しか負担しません。</p><p><mark>この非対称があるため、1つの物差しで按分できません。</mark>材料費は数量、加工費は完成品換算量という2つの基準が要ります。だからボックス図を2つ描きます。</p><p>選択肢1は誤りです。加工費には変動費も固定費も含まれます。選択肢4も誤りで、加工費（直接労務費＋製造間接費）も最終的には仕掛品勘定に入ります。</p>'
+    },
+    {
+      text: '月初仕掛品 300個（加工進捗度40%）、当月投入 2,200個、当月完成品 2,000個（加工進捗度100%）、月末仕掛品 500個（加工進捗度60%）です。加工費のボックス図における当月投入の完成品換算量はいくらですか。',
+      choices: ['2,200個', '2,180個', '2,300個', '2,080個'],
+      answer: 1,
+      invariant: [
+        ['2000 + 500 * 60 / 100 - 300 * 40 / 100', 'answer']
+      ],
+      explain: '<p>加工費の当月投入換算量は<mark>掛け算では出せません。</mark>投入量に加工進捗度という概念がないためです。必ず差額で求めます。</p><p>完成品 2,000 ＋ 月末換算量（500 × 60% ＝ 300）− 月初換算量（300 × 40% ＝ 120）＝ <strong>2,180個</strong></p><p>選択肢1の 2,200個 は投入数量をそのまま使った誤りで、この論点で最も多い間違いです。<strong>2,180個 と 2,200個 は近い数字なので、間違えても気づきにくいのが厄介です。</strong></p><p>選択肢3の 2,300個 は月初換算量を引き忘れた値、選択肢4の 2,080個 は月末の進捗度を50%と読み違えた値です。</p>'
+    },
+    {
+      text: '月初仕掛品原価が 163,000円、当月製造費用が 1,449,000円、月末仕掛品原価が 192,000円のとき、完成品総合原価はいくらですか。',
+      choices: ['1,257,000円', '1,420,000円', '1,612,000円', '1,804,000円'],
+      answer: 1,
+      invariant: [
+        ['163000 + 1449000 - 192000', 'answer']
+      ],
+      explain: '<p>「月初仕掛品原価 ＋ 当月製造費用 ＝ 完成品総合原価 ＋ 月末仕掛品原価」を完成品について解きます。</p><p>163,000 ＋ 1,449,000 − 192,000 ＝ <strong>1,420,000円</strong></p><p>選択肢1の 1,257,000円 は月初仕掛品原価を足し忘れた値、選択肢3の 1,612,000円 は月末仕掛品原価を引き忘れた値、選択肢4の 1,804,000円 は月末仕掛品原価を足してしまった値です。</p><p><mark>この等式は総合原価計算のすべての問題で成り立ちます。</mark>答案を書く前の検算として、必ず使ってください。</p>'
+    },
+    {
+      text: '平均法と先入先出法の違いについて、正しい説明はどれですか。',
+      choices: [
+        '平均法のほうが完成品総合原価も月末仕掛品原価も大きくなる',
+        '月初仕掛品がない場合、両者の計算結果は一致する',
+        '先入先出法では月初仕掛品原価を分子に含めて単価を計算する',
+        '平均法では完成品総合原価を差額で求める'
+      ],
+      answer: 1,
+      explain: '<p>両者の違いは<strong>月初仕掛品原価をどう扱うか</strong>だけです。月初仕掛品がゼロなら混ぜる相手がいないので、計算式が完全に一致します。</p><p>選択肢1は誤りです。分ける総額は方法によらず同じなので、<mark>片方が増えれば必ず片方が減ります。</mark>両方が同じ方向に動く答案はあり得ません。</p><p>選択肢3も誤りです。先入先出法では月初仕掛品原価を分子にも分母にも入れず、<strong>当月製造費用だけ</strong>で当月の単価を出します。</p><p>選択肢4も誤りで、差額で求めるのは先入先出法のほうです。平均法では完成品も月末仕掛品も単価 × 数量で出せます。</p>'
+    },
+    {
+      text: '出題区分表において、2級の範囲に含まれるものはどれですか。',
+      choices: [
+        '連産品の計算',
+        '副産物の処理と評価',
+        '(修正)先入先出法による月末仕掛品の評価',
+        '異常仕損費の処理'
+      ],
+      answer: 2,
+      explain: '<p>出題区分表で2級に置かれているのは、完成品総合原価と期末仕掛品原価の計算における<strong>平均法</strong>と<strong>(修正)先入先出法</strong>、および正常仕損費・正常減損費の<strong>度外視法</strong>による処理です。</p><p>選択肢1の連産品の計算、選択肢2の副産物の処理と評価、選択肢4の異常仕損費の処理は、いずれも<mark>1級の範囲です。</mark>純粋先入先出法と非度外視法も1級です。</p><p>市販テキストの総合原価計算の章にこれらが載っていることがありますが、<strong>級の判定は出題区分表が正</strong>です。2級の答案で副産物の評価額を控除する計算も、連産品に正常市価で按分する計算も問われません。</p>'
+    },
+    {
+      text: '「(修正)先入先出法」の「修正」が意味するものはどれですか。',
+      choices: [
+        '月初仕掛品原価を当月製造費用に加算して修正すること',
+        '完成品を月初由来と当月投入由来に分けず、単位原価を1つだけ示すこと',
+        '仕損数量を分母から除外して単価を修正すること',
+        '加工進捗度によって材料費の按分を修正すること'
+      ],
+      answer: 1,
+      explain: '<p>修正が付かない<strong>純粋先入先出法</strong>は、完成品を「月初仕掛品から完成した分」と「当月投入から完成した分」に分け、<mark>2つの単位原価を別々に示します。</mark>これは1級の範囲です。</p><p><strong>(修正)先入先出法</strong>は、完成品を1つにまとめて平均的な単位原価を1つだけ示します。<strong>2級で答える完成品単位原価は常に1つです。</strong></p><p>選択肢1は誤りです。先入先出法では月初仕掛品原価を単価の計算に含めません。選択肢3は度外視法の説明、選択肢4は材料の投入時点の話で、どちらも「修正」とは関係ありません。</p>'
+    },
+    {
+      text: '正常仕損費を良品（完成品や月末仕掛品）の原価に含める理由として、最も適切なものはどれですか。',
+      choices: [
+        '仕損品にも売却価値があるため',
+        '避けられない仕損は、良品を作るために必要な原価だから',
+        '仕損費を独立の勘定科目で処理する定めがないため',
+        '仕損の数量が少ないため重要性が乏しいから'
+      ],
+      answer: 1,
+      explain: '<p><strong>正常</strong>とは、その製造方法を採る以上どうしても避けられない範囲という意味です。技術的にどれだけ注意しても数%は失敗する、という工程がこれにあたります。</p><p><mark>避けられない以上、それは良品を作るために必要な原価です。</mark>だから捨てるのではなく、良品に背負わせます。</p><p>これに対して、火災や機械の故障による<strong>異常</strong>仕損は良品を作るのに必要な原価ではないので、非原価項目として処理します（1級の範囲）。</p><p>選択肢1は誤りです。評価額がある場合は、その分だけ原価から控除します。むしろ評価額があることは、良品に負担させる額を減らす方向に働きます。</p>'
+    },
+    {
+      text: '正常仕損が工程の終点で発生し、月末仕掛品の加工進捗度が60%のとき、正常仕損費を負担するのは誰ですか。',
+      choices: [
+        '完成品のみ',
+        '完成品と月末仕掛品の両方',
+        '月末仕掛品のみ',
+        '完成品と月初仕掛品の両方'
+      ],
+      answer: 0,
+      explain: '<p>判定は<strong>発生点の進捗度</strong>と<strong>月末仕掛品の進捗度</strong>を比べるだけです。</p><p>発生点100% &gt; 月末仕掛品の進捗度60%。月末仕掛品はまだ発生点に届いていないので、<mark>その仕掛品については仕損がまだ起きていません。</mark>起きていない仕損の費用を負担させる理由がないので、<strong>完成品のみ負担</strong>です。</p><p>発生点が「終点」「工程の終わり」と書かれていれば、月末仕掛品が100%ということはあり得ないので、必ず完成品のみ負担になります。</p><p><mark>月初仕掛品の進捗度は判定に使いません。</mark>月初仕掛品はもう完成品か月末仕掛品になっているので、判定の対象ではありません。</p>'
+    },
+    {
+      text: '正常減損が工程の始点で発生する場合、加工費のボックス図における減損の完成品換算量はいくらになりますか。',
+      choices: [
+        '減損数量と同じ',
+        '減損数量 × 月末仕掛品の進捗度',
+        'ゼロ',
+        '減損数量 × 50%'
+      ],
+      answer: 2,
+      explain: '<p>始点（進捗度0%）で消えたものは、<mark>加工を1%も受けていません。</mark>したがって完成品換算量は 数量 × 0% ＝ <strong>ゼロ</strong>です。</p><p>だから加工費のボックス図には減損の行が現れません。<strong>両者負担のとき、加工費の分母から減損を外す操作は不要です。</strong>元から入っていないからです。</p><p>外す操作が要るのは材料費だけです。始点で投入した材料は、減損した分も含めて工程に入っているためです。</p><p>これに対して終点発生の仕損は、加工進捗度100%なので換算量は数量と同じ100個になり、<strong>加工費の分母にも現れます。</strong>発生点によって加工費側に出るか出ないかが変わることを区別してください。</p>'
+    },
+    {
+      text: '度外視法による正常仕損費の処理について、正しい説明はどれですか。',
+      choices: [
+        '仕損費を独立に計算し、完成品と月末仕掛品に按分する',
+        '仕損費を独立に計算せず、按分計算の分母の決め方だけで自動的に良品に負担させる',
+        '仕損費を製造間接費勘定に振り替え、翌月以降に配賦する',
+        '仕損費を非原価項目として営業外費用に計上する'
+      ],
+      answer: 1,
+      explain: '<p><strong>度外視</strong>とは「無視する」という意味で、<mark>仕損費という金額を独立に計算することを無視します。</mark>代わりに、按分計算の分母をどう決めるかだけで負担者を切り替えます。</p><p><strong>完成品のみ負担</strong>なら仕損を分母に残します。仕損は完成品でも月末仕掛品でもないため、そこに割り当てられた原価は差額で求める完成品が引き取ります。<br><strong>両者負担</strong>なら仕損を分母から外します。単価が上がり、その単価で評価される完成品と月末仕掛品の両方に乗ります。</p><p>どちらの場合も<strong>仕損費の金額が答案に現れません。</strong>「仕損費はいくらですか」と問われることはありません。</p><p>選択肢1は<strong>非度外視法</strong>の説明で、1級の範囲です。選択肢4は<strong>異常</strong>仕損費の処理で、これも1級です。選択肢3のような処理は存在しません。</p>'
+    },
+    {
+      text: '正常減損が工程の始点で発生し、両者負担となる場合、先入先出法における直接材料費の按分の分母として正しいものはどれですか。',
+      choices: [
+        '完成品数量 ＋ 月末仕掛品数量',
+        '当月投入数量 − 減損数量',
+        '当月投入数量 ＋ 減損数量',
+        '月初仕掛品数量 ＋ 当月投入数量 − 減損数量'
+      ],
+      answer: 1,
+      explain: '<p>先入先出法では<strong>当月投入分だけで単価を出す</strong>ので、分母は投入側です。両者負担なので、そこから減損数量を外します。</p><p><strong>当月投入数量 − 減損数量</strong>。たとえば投入2,200個・減損100個なら 2,100個 です。</p><p><mark>分母を減らすと単価が上がり、その単価で評価される月末仕掛品にも減損費が乗ります。</mark>「投入した2,200個分の材料が、実質2,100個分しか良品にならなかった」という形を認めることで、完成品と月末仕掛品の両方が自動的に負担します。<strong>分母から外すのは両者負担のときだけです。</strong></p><p>選択肢4は平均法・両者負担の分母です。選択肢1は平均法で仕損を分母に残す形に近く、先入先出法の分母ではありません。</p>'
+    },
+    {
+      text: '月初仕掛品 500個（進捗度40%）、当月完成品 3,000個、正常仕損 100個（終点発生）、月末仕掛品 400個（進捗度50%）です。先入先出法・度外視法による場合、加工費の按分の分母はいくらですか。',
+      choices: ['3,300個', '3,200個', '3,000個', '3,100個'],
+      answer: 3,
+      invariant: [
+        ['3000 + 100 + 400 * 50 / 100 - 500 * 40 / 100', 'answer']
+      ],
+      explain: '<p>終点発生なので<strong>完成品のみ負担</strong>。先入先出法なので分母は当月投入分の換算量です。<mark>完成品のみ負担なので、仕損換算量は分母に残します。</mark></p><p>当月投入の加工換算量 ＝ 完成品 3,000 ＋ 仕損換算量（100 × 100% ＝ 100）＋ 月末換算量（400 × 50% ＝ 200）− 月初換算量（500 × 40% ＝ 200）＝ <strong>3,100個</strong>。</p><p>選択肢3の 3,000個 は仕損を分母から外してしまった値です。<mark>外すと単価が上がり、その単価で評価される月末仕掛品にも仕損費が乗ります。</mark>完成品のみ負担と言いながら月末に負担させることになるので誤りです。</p><p>選択肢1の 3,300個 は月初換算量を引き忘れた値、選択肢2の 3,200個 は仕損を外したうえに月初も引き忘れた値です。</p><p><strong>月初を引くのは先入先出法だから、仕損を残すのは完成品のみ負担だから。</strong>2つの判断は別々の理由から来ています。</p>'
+    },
+    {
+      text: '総合原価計算における仕掛品勘定について、正しい説明はどれですか。',
+      choices: [
+        '個別原価計算と異なり、製造間接費は仕掛品勘定に入らない',
+        '借方の顔ぶれは個別原価計算と同じで、貸方の金額の出し方だけが異なる',
+        '原価計算表を作成し、その合計が仕掛品勘定になる',
+        '月末仕掛品原価は仕掛品勘定には現れず、製品勘定の借方に記入する'
+      ],
+      answer: 1,
+      explain: '<p>借方は<strong>前月繰越 ＋ 材料 ＋ 賃金・給料 ＋ 製造間接費</strong>。<mark>個別原価計算の仕掛品勘定とまったく同じ顔ぶれです。</mark>費目別計算で集めた原価が流れ込む口であって、そこに個別か総合かの違いはありません。</p><p>貸方は製品への振替額（完成品総合原価）と次月繰越（月末仕掛品原価）。<strong>個別原価計算では原価計算表の列の合計から読み、総合原価計算ではボックス図の按分計算から出します。</strong>出し方が違うだけで置く場所は同じです。</p><p>選択肢3は誤りです。総合原価計算では分ける単位が完成品と月末仕掛品の2つしかないため、原価計算表という明細表は作りません。<strong>ボックス図は計算用紙に描くもので、答案には書きません。</strong></p><p>選択肢4も誤りで、月末仕掛品原価は仕掛品勘定の貸方に次月繰越として記入されます。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-sogo', {
+  title: '用語の穴埋め — 総合原価計算の基本',
+  questions: [
+    {
+      text: '同一規格の製品を連続して大量生産する工場で用いられ、一定期間の原価を集計して完成品と月末仕掛品に按分する原価計算の方法を何といいますか。',
+      answer: ['総合原価計算', 'そうごうげんかけいさん'],
+      explain: '<p><strong>総合原価計算</strong>。製品を1つずつ見分けられないため、指図書ごとに集める代わりに<mark>総額を数量で割ります。</mark>個別原価計算が「集めて出す」なら、こちらは「割って出す」です。</p>'
+    },
+    {
+      text: '1種類の製品を1つの工程で製造する場合に用いる、総合原価計算のもっとも基本的な型を何といいますか。',
+      answer: ['単純総合原価計算', 'たんじゅんそうごうげんかけいさん'],
+      explain: '<p><strong>単純総合原価計算</strong>。製氷、精糖、セメントのような工場で使います。<mark>工程別・組別・等級別は、すべてこの計算を繰り返すか、最後に係数で割るかの違いです。</mark>この型が崩れると、残り3つも崩れます。</p>'
+    },
+    {
+      text: '仕掛品が完成品に対してどの程度まで加工が進んでいるかを示す割合を何といいますか。',
+      answer: ['加工進捗度', 'かこうしんちょくど', '進捗度', 'しんちょくど'],
+      explain: '<p><strong>加工進捗度</strong>。直接材料費は工程の始点で全量投入されるため進捗度に影響されませんが、<mark>加工費は進捗に応じて発生する</mark>ので、この割合で按分します。</p>'
+    },
+    {
+      text: '仕掛品の数量に加工進捗度を掛けて、完成品なら何個分の加工に相当するかに直した数量を何といいますか。',
+      answer: ['完成品換算量', 'かんせいひんかんさんりょう', '完成品換算数量', 'かんせいひんかんさんすうりょう'],
+      explain: '<p><strong>完成品換算量</strong>。換算で数字が変わるのは<mark>月初仕掛品と月末仕掛品の2行だけ</mark>です。完成品は進捗度100%なので数量のまま。当月投入の換算量は掛け算ではなく差額で求めます。</p>'
+    },
+    {
+      text: '月初仕掛品原価と当月製造費用を合算し、その合計を完成品と月末仕掛品の合計数量で割って平均単価を出す方法を何といいますか。',
+      answer: ['平均法', 'へいきんほう'],
+      explain: '<p><strong>平均法</strong>。タンクの中で先月分と今月分が混ざって見分けられないのだから、<mark>混ざったものとして扱う</mark>という仮定です。分母はボックス図の右側（完成品 ＋ 月末仕掛品）です。</p>'
+    },
+    {
+      text: '月初仕掛品から先に完成したと仮定し、当月製造費用だけで当月の単価を計算する方法を何といいますか。出題区分表では「(修正)」が付いた名称で示されています。',
+      answer: ['先入先出法', 'さきいれさきだしほう', '修正先入先出法', 'しゅうせいさきいれさきだしほう'],
+      explain: '<p><strong>(修正)先入先出法</strong>。月初から先に出ていくと考えるので、<mark>月末に残るのは必ず当月投入分だけ</mark>です。だから単価の計算に月初仕掛品原価を入れません。完成品原価は差額で求めます。</p><p>完成品を月初由来と当月由来の2つに分けて単位原価を別々に示す<strong>純粋先入先出法</strong>は1級です。</p>'
+    },
+    {
+      text: '製造の過程で加工に失敗し、規格外の不良品となることを何といいますか。蒸発や粉散で物がなくなる「減損」と対になる語です。',
+      answer: ['仕損', 'しそんじ', 'しそん'],
+      explain: '<p><strong>仕損</strong>。不良品という<mark>モノが残る</mark>点が減損との違いです。売却価値があれば評価額として原価から控除しますが、2級で学ぶ度外視法では<strong>計算手続きは減損とまったく同じ</strong>です。</p>'
+    },
+    {
+      text: '蒸発・粉散・ガス化などにより、投入した物が工程の途中で消えてなくなることを何といいますか。',
+      answer: ['減損', 'げんそん'],
+      explain: '<p><strong>減損</strong>。あとに何も残らないので評価額がありません。<mark>ボックス図では完成品でも月末仕掛品でもない行として、右側に書きます。</mark>投入側から引いてはいけません。</p>'
+    },
+    {
+      text: '正常仕損費・正常減損費を独立に計算せず、按分計算の分母の決め方だけでその原価を良品に負担させる処理方法を何といいますか。',
+      answer: ['度外視法', 'どがいしほう'],
+      explain: '<p><strong>度外視法</strong>。仕損費を計算して足すのではなく、<mark>分母をどう決めるかだけで負担者を切り替えます。</mark>完成品のみ負担なら仕損を分母に残し、両者負担なら分母から外します。だから仕損費の金額は答案に現れず、「仕損費はいくらか」と問われることもありません。</p><p>仕損費を独立に計算してから配分する<strong>非度外視法</strong>は1級の範囲です。</p>'
+    },
+    {
+      text: '仕損・減損が工程の終点で発生した場合、その費用を負担するのは完成品のみです。これに対し、工程の始点で発生した場合の負担者を、漢字4文字で何といいますか。',
+      answer: ['両者負担', 'りょうしゃふたん'],
+      explain: '<p><strong>両者負担</strong>。完成品と月末仕掛品の両方が負担します。判定は<mark>発生点の進捗度と月末仕掛品の進捗度を比べるだけ</mark>です。始点なら月末仕掛品は必ず通過しているので両者負担、終点なら必ず完成品のみ負担になります。</p><p>月初仕掛品の進捗度は判定に使いません。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>

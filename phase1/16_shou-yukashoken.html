@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-2-0,商-第二-2-ア,商-第二-2-イ,商-第二-2-ウ,商-第二-15-0,商-第二-15-ア,商-第二-15-イ,商-第二-15-ウ,商-第二-15-オ,商-第三-7-g2">
+<meta name="boki-subject" content="商">
+<title>有価証券の4分類と評価 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 16 有価証券の4分類と評価</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W5 商業簿記 ／ UNIT 16 ／ 3時間</p>
+    <h1>有価証券の4分類と評価<br>— 何のために持っているかで処理が変わる</h1>
+    <p class="lead">3級の有価証券は「買って、配当や利息をもらって、売る」だけでした。2級で最初に立ちはだかるのは、<strong>同じA社株式を持っていても、会社によって・目的によって処理がまったく違う</strong>という事実です。時価で評価し直す株式もあれば、時価が半値になっても取得原価のまま動かさない株式もあります。この違いは暗記事項ではなく、<mark>「その株式にとって時価という数字は意味を持つのか」</mark>という一つの問いから全部出てきます。ここを押さえれば、4分類は覚えるものではなく導けるものになります。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">なぜ同じ株式なのに処理が違うのか</a></li>
+      <li><a href="#s2">4分類と、それぞれの評価方法</a></li>
+      <li><a href="#s3">取得 — 付随費用は取得原価に含める</a></li>
+      <li><a href="#s4">売却 — 平均原価で帳簿価額を出す</a></li>
+      <li><a href="#s5">債券の端数利息 — 誰のものかで分ける</a></li>
+      <li><a href="#s6">売買目的有価証券の評価替え（時価法）</a></li>
+      <li><a href="#s7">満期保有目的債券と償却原価法（定額法）</a></li>
+      <li><a href="#s8">子会社株式・関連会社株式 — 動かさない</a></li>
+      <li><a href="#s9">その他有価証券と全部純資産直入法</a></li>
+      <li><a href="#s10">分記法による処理</a></li>
+      <li><a href="#s11">貸借対照表の表示区分と長期前払費用</a></li>
+      <li><a href="#s12">仕訳ドリル 14問</a></li>
+      <li><a href="#s13">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s14">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>なぜ同じ株式なのに処理が違うのか</h2>
+
+  <p>あなたが持ち家に住んでいるとします。近所の同じような家が3,000万円で売れたと聞いても、あなたは自分の家計簿の資産額を書き換えないでしょう。<strong>売る気がないからです。</strong></p>
+
+  <p>ところが、転売するために買った土地なら話は別です。いま相場がいくらかは死活問題で、<mark>「売ったらいくらになるか」がそのまま自分の財産状態を表します。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">時価という数字が意味を持つかどうかは、保有目的で決まる</span>
+    <p>有価証券も同じです。<strong>いつでも売るつもりで持っている株式</strong>にとって、決算日の時価は「いま換金したらいくらか」そのものであり、これを無視した財務諸表は実態を表しません。</p>
+    <p>一方、<strong>子会社を支配するために持っている株式</strong>を時価で評価してどうなるでしょうか。売るつもりがないのですから、時価が上がっても下がっても手元の資金は1円も変わりません。それなのに評価益を計上すれば、<mark>実現していない利益が損益計算書に載り、配当できてしまいます。</mark></p>
+    <p>だから会計は、有価証券を<strong>保有目的で分類してから評価方法を決める</strong>という順序をとります。「株式か債券か」ではありません。<strong>何のために持っているか</strong>です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">分類は問題文が与える。勝手に決めない</span>
+    <p>「A社株式を1,000株取得した」だけでは分類できません。試験では必ず<strong>「売買目的で」「支配目的で」「長期保有目的で」「満期まで保有する目的で」</strong>といった手がかりが問題文に書かれます。あるいは決算整理の資料に「売買目的有価証券」「その他有価証券」と勘定科目そのものが並びます。</p>
+    <p>逆に言えば、<mark>この手がかりを読み飛ばすと、正しく計算できても評価方法ごと間違えます。</mark>有価証券の問題では、金額を見る前にまず「これはどの分類か」を確定させてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>4分類と、それぞれの評価方法</h2>
+
+  <p>2級で扱う有価証券は次の4つです。この表が単元全体の骨格になります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>分類</th><th>持っている理由</th><th>決算時の評価</th><th>差額の行き先</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="d"><strong>売買目的有価証券</strong></td>
+          <td>値上がり益を狙って短期で売買する</td>
+          <td><strong>時価法</strong>（時価に直す）</td>
+          <td><strong>当期の損益</strong><br>有価証券評価損益</td>
+        </tr>
+        <tr>
+          <td class="d"><strong>満期保有目的債券</strong></td>
+          <td>満期まで持って額面を受け取る</td>
+          <td><strong>償却原価法</strong>（定額法）<br>時価には直さない</td>
+          <td><strong>当期の損益</strong><br>有価証券利息</td>
+        </tr>
+        <tr>
+          <td class="d"><strong>子会社株式・関連会社株式</strong></td>
+          <td>他の会社を支配する・影響力を持つ</td>
+          <td><strong>取得原価のまま</strong><br>評価替えしない</td>
+          <td>（差額が生じない）</td>
+        </tr>
+        <tr>
+          <td class="d"><strong>その他有価証券</strong></td>
+          <td>取引先との持ち合いなど、上の3つ以外</td>
+          <td><strong>時価法</strong>（時価に直す）</td>
+          <td><strong>純資産</strong><br>その他有価証券評価差額金</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">1本の問いから4つとも導ける</span>
+    <p>暗記すべき表に見えますが、次の2段階の問いで機械的に決まります。</p>
+    <ol class="steps">
+      <li><strong>時価に直すか？</strong><br>「売ったらいくらか」が財産状態を表すものだけ直します。売買目的とその他有価証券は直す。子会社株式・関連会社株式は売る前提がないので直さない。満期保有目的債券は満期に額面が返ってくることが決まっているので、途中の時価は意味を持ちません</li>
+      <li><strong>直すなら、差額を損益にしてよいか？</strong><br>売買目的は<strong>いつでも売れる＝売ったも同然</strong>なので損益にしてよい。その他有価証券は<mark>すぐ売るつもりがないので、まだ損益にしてはいけない</mark>。そこで損益計算書を通さず、純資産に直接入れます</li>
+    </ol>
+    <p>その他有価証券の「純資産直入」だけが異様に見えますが、<strong>時価には直したい（財産状態は正しく示したい）が、損益にはしたくない（まだ実現していない）</strong>という2つの要請を同時に満たすと、この形しかありません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">満期保有目的債券を「時価に直さない」と覚えただけでは足りない</span>
+    <p>満期保有目的債券は時価評価しませんが、<strong>何もしないわけではありません。</strong>額面より安く（または高く）買った場合は、その差額を満期までかけて少しずつ帳簿価額に加算（減算）していきます。これが<strong>償却原価法</strong>です。第7節で扱います。</p>
+    <p>「評価替えしない」のは<strong>子会社株式・関連会社株式だけ</strong>です。ここを混同すると、決算整理で満期保有目的債券を素通りさせてしまいます。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+      <svg viewBox="0 0 700 300" role="img" aria-label="有価証券の4分類と評価差額の行き先">
+        <rect x="10" y="10" width="200" height="50" rx="8" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="110" y="32" text-anchor="middle" font-size="14" fill="var(--fg)">有価証券を取得</text>
+        <text x="110" y="50" text-anchor="middle" font-size="11" fill="var(--muted)">保有目的を確認する</text>
+
+        <rect x="260" y="10" width="200" height="46" rx="8" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="360" y="30" text-anchor="middle" font-size="13" fill="var(--fg)">売買目的有価証券</text>
+        <text x="360" y="47" text-anchor="middle" font-size="11" fill="var(--muted)">時価法</text>
+
+        <rect x="260" y="70" width="200" height="46" rx="8" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="360" y="90" text-anchor="middle" font-size="13" fill="var(--fg)">満期保有目的債券</text>
+        <text x="360" y="107" text-anchor="middle" font-size="11" fill="var(--muted)">償却原価法（定額法）</text>
+
+        <rect x="260" y="130" width="200" height="46" rx="8" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="360" y="150" text-anchor="middle" font-size="13" fill="var(--fg)">子会社・関連会社株式</text>
+        <text x="360" y="167" text-anchor="middle" font-size="11" fill="var(--muted)">取得原価のまま</text>
+
+        <rect x="260" y="190" width="200" height="46" rx="8" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="360" y="210" text-anchor="middle" font-size="13" fill="var(--fg)">その他有価証券</text>
+        <text x="360" y="227" text-anchor="middle" font-size="11" fill="var(--muted)">時価法</text>
+
+        <rect x="510" y="10" width="175" height="106" rx="8" fill="var(--panel)" stroke="var(--accent)"/>
+        <text x="597" y="52" text-anchor="middle" font-size="13" fill="var(--fg)">当期の損益</text>
+        <text x="597" y="72" text-anchor="middle" font-size="11" fill="var(--muted)">評価損益・有価証券利息</text>
+
+        <rect x="510" y="190" width="175" height="46" rx="8" fill="var(--panel)" stroke="var(--accent)"/>
+        <text x="597" y="210" text-anchor="middle" font-size="13" fill="var(--fg)">純資産</text>
+        <text x="597" y="227" text-anchor="middle" font-size="11" fill="var(--muted)">評価差額金</text>
+
+        <path d="M210 35 L255 33" stroke="var(--line)" stroke-width="2" fill="none"/>
+        <path d="M210 35 L255 93" stroke="var(--line)" stroke-width="2" fill="none"/>
+        <path d="M210 35 L255 153" stroke="var(--line)" stroke-width="2" fill="none"/>
+        <path d="M210 35 L255 213" stroke="var(--line)" stroke-width="2" fill="none"/>
+
+        <path d="M460 33 L505 45" stroke="var(--accent)" stroke-width="2" fill="none"/>
+        <path d="M460 93 L505 85" stroke="var(--accent)" stroke-width="2" fill="none"/>
+        <path d="M460 213 L505 213" stroke="var(--accent)" stroke-width="2" fill="none"/>
+
+        <text x="360" y="268" text-anchor="middle" font-size="11" fill="var(--muted)">子会社株式・関連会社株式は評価替えをしないため、行き先がない</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で扱わない有価証券の論点</span>
+    <ul>
+      <li><strong>部分純資産直入法は1級。</strong>その他有価証券の評価差額のうち、評価損だけを当期の損益にする方法です。2級で書くのは<strong>全部純資産直入法だけ</strong>で、評価益でも評価損でもすべて純資産に入れます</li>
+      <li><strong>時価が著しく下落した有価証券の処理（減損）は1級。</strong>時価が取得原価の50％以上下落した場合などに切り下げる処理は、2級では問われません</li>
+      <li><strong>投資不動産は1級</strong>、<strong>有価証券の貸付・借入・差入・預り・保管も1級</strong>、<strong>売買目的有価証券の総記法も1級</strong>です</li>
+      <li><strong>償却原価法の利息法は1級。</strong>2級は<strong>定額法だけ</strong>です</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>取得 — 付随費用は取得原価に含める</h2>
+
+  <p>有価証券を買うと、証券会社に手数料を払います。この手数料をどう扱うかは、固定資産のときと同じ考え方です。</p>
+
+  <p class="center"><strong>取得原価 ＝ 購入代価 ＋ 付随費用（買入手数料など）</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">手数料を払わなければその株式は手に入らなかった</span>
+    <p>手数料は「株式そのものの値段」ではありませんが、<strong>その株式を使える状態にするために避けられなかった支出</strong>です。建物を買うときの登記費用や仲介手数料を取得原価に含めるのと同じ理屈で、有価証券でも取得原価に含めます。</p>
+    <p>支払手数料（費用）で処理してしまうと、その株式の取得原価が実際より小さくなり、<mark>売却したときの売却益が手数料の分だけ水増しされます。</mark></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>売買目的でA社株式1,000株を1株 800円で購入し、買入手数料 12,000円とともに当座預金から支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売買目的有価証券</td><td class="d amt">812,000</td><td class="c">当座預金</td><td class="c amt">812,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>800円 × 1,000株 ＝ 800,000円 に手数料 12,000円 を足して <strong>812,000円</strong>。1株あたりの取得原価は 812,000 ÷ 1,000 ＝ <strong>812円</strong> になります。</p>
+
+  <h3>債券を「＠○円」で買うとき</h3>
+
+  <p>債券の値段は、額面100円あたりいくらか、という形で示されます。<strong>額面 1,000,000円の社債を＠98円で買う</strong>とは、100円につき98円で買うという意味です。</p>
+
+  <p class="center"><strong>購入代価 ＝ 額面総額 × 単価 ÷ 100</strong></p>
+
+  <p>この例なら 1,000,000 × 98 ÷ 100 ＝ <strong>980,000円</strong>。額面より安いので、差額 20,000円は満期までに帳簿価額へ加算されていきます（第7節）。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">＠98円を「1口98円」と読まない</span>
+    <p>＠98円は<strong>額面100円あたりの値段</strong>です。額面1,000,000円の債券の口数を数える必要はありません。<mark>額面に 98/100 を掛けるだけ</mark>です。</p>
+    <p>電卓では「額面 × 98 ÷ 100」より「額面 × 0.98」のほうが打鍵が少なく済みます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>売却 — 平均原価で帳簿価額を出す</h2>
+
+  <p>売ったときの損益は、<strong>売却価額 − 帳簿価額</strong>です。難しいのは帳簿価額のほうで、同じ銘柄を何回かに分けて買っていると「どの株を売ったのか」が問題になります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">株式に個体差はないので、平均で考える</span>
+    <p>1月に@800円で1,000株、5月に@860円で500株買ったとします。10月に600株売ったとき、売れたのは1月に買った株でしょうか、5月の株でしょうか。</p>
+    <p><strong>区別できません。</strong>株式は同じ銘柄なら1株ずつに個体差がないからです。そこで、<mark>それまでに買った全部をならした平均単価</mark>を帳簿価額とします。</p>
+    <p class="center"><strong>平均単価 ＝ 取得原価の合計 ÷ 取得株数の合計</strong></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>売買目的で1月に@800円で1,000株、5月に@860円で500株取得したA社株式のうち、600株を@890円で売却し代金は後日受け取ることとした</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">未収入金</td><td class="d amt">534,000</td><td class="c">売買目的有価証券</td><td class="c amt">492,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">有価証券売却益</td><td class="c amt">42,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>平均単価</strong>：(800 × 1,000 ＋ 860 × 500) ÷ 1,500 ＝ 1,230,000 ÷ 1,500 ＝ <strong>@820円</strong></li>
+    <li><strong>売った分の帳簿価額</strong>：820 × 600 ＝ <strong>492,000円</strong></li>
+    <li><strong>売却価額</strong>：890 × 600 ＝ <strong>534,000円</strong></li>
+    <li><strong>売却損益</strong>：534,000 − 492,000 ＝ <strong>42,000円の売却益</strong></li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">代金の未収は「未収入金」。売掛金ではない</span>
+    <p>有価証券は商品ではないので、売った代金の未収は<strong>未収入金</strong>で受けます。売掛金は商品を売った代金の未収にだけ使います。固定資産を売ったときと同じです。</p>
+    <p>現金や当座預金ですぐ受け取ったのなら、もちろんそれらの科目です。<strong>問題文が「代金は後日受け取ることとした」と書いていたら未収入金</strong>、と読み替えてください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">売却損益の科目は、分類によって変わる</span>
+    <p>売買目的有価証券を売ったときは<strong>有価証券売却益／有価証券売却損</strong>です。ところが、その他有価証券や満期保有目的債券のような<strong>投資有価証券として扱うもの</strong>を売った場合は、<strong>投資有価証券売却益／投資有価証券売却損</strong>を使います。</p>
+    <p>流動資産に置いてある有価証券を売るのは本業に近い活動ですが、長期投資の株式を売るのは臨時の出来事です。<mark>損益計算書での表示区分が変わる（営業外収益か特別利益か）</mark>ため、科目も分けます。</p>
+    <p class="small muted">問題文に勘定科目の指定一覧があるときは、そこに載っている科目を使ってください。指定一覧が答えの根拠です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>債券の端数利息 — 誰のものかで分ける</h2>
+
+  <p>債券には利払日が決まっています。たとえば「利払日は3月末と9月末の年2回」という社債なら、9月30日と3月31日に半年分の利息がまとめて支払われます。</p>
+
+  <p>問題は、<strong>利払日と利払日の間に売買された場合</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">利息は「持っていた期間」に応じて分けるのが筋</span>
+    <p>10月1日から3月31日までの半年分の利息は、3月31日に<strong>そのとき債券を持っている人</strong>に全額支払われます。債券が11月25日に売買されたとしましょう。</p>
+    <p>このまま放っておくと、10月1日から11月25日まで債券を持っていた<strong>売り手</strong>は、その期間の利息を1円ももらえません。一方<strong>買い手</strong>は、11月25日から持ち始めただけなのに半年分をまるごと受け取ります。<mark>明らかに不公平です。</mark></p>
+    <p>そこで、売買の時点で<strong>買い手が売り手に、前回の利払日の翌日から売買日までの利息を立て替えて渡します。</strong>これが<span class="term"><span class="term__w">端数利息</span><span class="term__r">はすうりそく</span></span>です。買い手は3月31日に半年分をまとめて受け取ることで、立て替えた分を回収します。</p>
+  </div>
+
+  <p class="center"><strong>端数利息 ＝ 額面総額 × 年利率 × 経過日数 ÷ 365日</strong></p>
+
+  <h3>計算例</h3>
+
+  <p>額面 3,000,000円・年利率 1.46％・利払日 3月末と9月末の社債を、<strong>11月25日</strong>に売買した。</p>
+
+  <ol class="steps">
+    <li><strong>経過日数</strong>：前回の利払日は9月30日。その<strong>翌日の10月1日から売買日の11月25日まで</strong>を数えます。10月は31日、11月は25日なので、31 ＋ 25 ＝ <strong>56日</strong></li>
+    <li><strong>端数利息</strong>：3,000,000 × 1.46％ × 56 ÷ 365 ＝ 43,800 × 56 ÷ 365 ＝ <strong>6,720円</strong></li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">日数の数え方 — 利払日の翌日から、売買日まで</span>
+    <p>前回の利払日そのものは含めません。その日の利息はすでに支払われているからです。<strong>翌日から数え始めて、売買日を含めて終わります。</strong></p>
+    <p>上の例で「9月30日から11月25日まで」と数えて57日にしてしまう誤りが定番です。<mark>9月30日分の利息は9月30日の利払いに含まれている</mark>ので、二重に数えることになります。</p>
+    <p class="small muted">問題文が「経過日数は◯日として計算する」と与えてくれることもあります。与えられていたらそれに従ってください。</p>
+  </div>
+
+  <h3>買い手の仕訳</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>売買目的で額面 3,000,000円の社債を＠99円で買い入れ、端数利息 6,720円とともに小切手を振り出して支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売買目的有価証券</td><td class="d amt">2,970,000</td><td class="c">当座預金</td><td class="c amt">2,976,720</td></tr>
+        <tr><td class="d">有価証券利息</td><td class="d amt">6,720</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>債券の代金は 3,000,000 × 99 ÷ 100 ＝ <strong>2,970,000円</strong>。これに端数利息 6,720円 を加えた 2,976,720円 を支払います。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ買い手の端数利息が「有価証券利息の借方」なのか</span>
+    <p>端数利息を払った買い手は、次の利払日（3月31日）に半年分の利息を受け取ります。そのとき<strong>有価証券利息が貸方に立ちます。</strong>売買時に払った分を借方に置いておけば、<mark>差引きで「自分が持っていた期間の利息だけ」が残ります。</mark></p>
+    <p>上の例で、3月31日に受け取る半年分は 3,000,000 × 1.46％ ÷ 2 ＝ 21,900円。有価証券利息勘定は 21,900 − 6,720 ＝ <strong>15,180円の貸方残</strong>となり、これが買い手の保有期間に対応する利息です。</p>
+    <p class="small muted">保有期間を日割りで計算すると、11月26日から3月31日までの126日分は 3,000,000 × 1.46％ × 126 ÷ 365 ＝ 15,120円 で、60円の差が出ます。<strong>半年分のクーポンを「年利率 ÷ 2」で求めているため</strong>です（10月1日から3月31日は実日数182日なので、日割りなら 21,840円）。試験では問題文が示す計算方法に従えば足り、この差を調整することはありません。</p>
+    <p><strong>端数利息は資産（未収入金）ではなく、収益のマイナス</strong>として処理する、と覚えるより、「受け取る利息から先に差し引いておく」と理解するほうが応用が利きます。</p>
+  </div>
+
+  <h3>売り手の仕訳</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>売買目的で保有する額面 3,000,000円の社債（帳簿価額 2,940,000円）を＠99円で売却し、端数利息 6,720円とともに現金で受け取った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">現金</td><td class="d amt">2,976,720</td><td class="c">売買目的有価証券</td><td class="c amt">2,940,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">有価証券売却益</td><td class="c amt">30,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">有価証券利息</td><td class="c amt">6,720</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>売り手にとって端数利息は、自分が持っていた期間に対して当然もらうべき利息なので、<strong>有価証券利息の貸方</strong>です。売却損益は 2,970,000 − 2,940,000 ＝ <strong>30,000円の売却益</strong>で、<mark>端数利息とは切り離して計算します。</mark></p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">端数利息を売却損益に混ぜない</span>
+    <p>受け取った総額 2,976,720円 から帳簿価額 2,940,000円 を引いて「売却益 36,720円」としてしまうのが最も多い誤りです。<strong>端数利息は債券の対価ではありません。</strong>利息の精算であって、売買の損益とは別の話です。</p>
+    <p>手順を固定してください。<mark>まず端数利息を切り離す。残りを債券の売買代金とみて、帳簿価額と比べる。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>売買目的有価証券の評価替え（時価法）</h2>
+
+  <p>決算日に、売買目的有価証券を<strong>時価に直します。</strong>差額は当期の損益です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算日。売買目的で保有するA社株式（帳簿価額 812,000円）の時価は 860,000円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売買目的有価証券</td><td class="d amt">48,000</td><td class="c">有価証券評価損益</td><td class="c amt">48,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>時価 860,000 − 帳簿価額 812,000 ＝ <strong>48,000円の値上がり</strong>。資産を増やし、同額を収益とします。</p>
+
+  <p>逆に時価が 790,000円 なら 812,000 − 790,000 ＝ 22,000円の値下がりで、<strong>有価証券評価損益 22,000／売買目的有価証券 22,000</strong> となります。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">科目名は3通りある。どれも正しい</span>
+    <p>商業簿記標準・許容勘定科目表には、<strong>有価証券評価損益</strong>のほかに<strong>有価証券評価益</strong>・<strong>有価証券評価損</strong>という損益を分けた科目も載っています。どれも答案で正解になります。</p>
+    <p>本教材は、評価益と評価損で科目を書き分けずに済む<strong>有価証券評価損益</strong>に統一します。値上がりなら貸方、値下がりなら借方に書くだけで済むからです。</p>
+    <p class="small muted">問題文に勘定科目の指定一覧があるときは、そこに載っている科目を使います。「有価証券評価益」しか並んでいなければ、それが出題者の求める答えです。</p>
+  </div>
+
+  <h3>翌期首に振り戻すのか</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">2級は「切放法」でよい</span>
+    <p>時価に評価替えした帳簿価額を、翌期首に取得原価へ戻す方法（<strong>洗替法</strong>）と、そのまま時価を新しい帳簿価額とする方法（<strong>切放法</strong>）があります。</p>
+    <p>2級の出題ではどちらもありえます。<strong>どちらで処理するかは問題文の指示に従ってください。</strong>指示があるということは、そのとおりにしなければ正解にならないということです。<mark>自分の慣れた方法で解かない</mark>のがここでの鉄則です。</p>
+    <p>一方、<strong>その他有価証券は必ず洗替法</strong>で、翌期首に取得原価へ戻します。第9節で扱います。<mark>「振り戻すのはその他有価証券」</mark>と覚えるのが実務的です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>満期保有目的債券と償却原価法（定額法）</h2>
+
+  <p>満期まで持ち続けるつもりの債券は、時価に直しません。売る予定がないのだから、途中の時価は自分の財産状態と関係がないからです。</p>
+
+  <p>ただし、<strong>額面と違う金額で買った場合</strong>には調整が要ります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">額面より安く買えた分は、利息の一部である</span>
+    <p>額面 1,000,000円の社債を 980,000円で買ったとします。満期には額面どおり 1,000,000円が返ってきます。<strong>差額の 20,000円は必ず手に入ります。</strong></p>
+    <p>ではなぜ安く買えたのでしょうか。その社債のクーポン（表面利率）が、市場が求める利回りより低かったからです。<mark>不足する利息を値引きという形で先にもらった</mark>のが、この 20,000円の正体です。</p>
+    <p>だとすれば、これを満期の年に一度に利益として計上するのはおかしい。<strong>保有する各期に少しずつ配分するべき</strong>です。この配分の手続きが<span class="term"><span class="term__w">償却原価法</span><span class="term__r">しょうきゃくげんかほう</span></span>で、毎期均等に割る方法を<strong>定額法</strong>といいます。</p>
+  </div>
+
+  <p class="center"><strong>当期の償却額 ＝（額面総額 − 取得原価）× 当期の保有月数 ÷ 取得日から満期日までの月数</strong></p>
+
+  <h3>計算例</h3>
+
+  <p>×1年4月1日に、額面 5,000,000円・償還期限5年の社債を<strong>＠98円</strong>で取得した（満期保有目的）。決算日は3月31日。</p>
+
+  <ol class="steps">
+    <li><strong>取得原価</strong>：5,000,000 × 98 ÷ 100 ＝ <strong>4,900,000円</strong></li>
+    <li><strong>差額（金利調整差額）</strong>：5,000,000 − 4,900,000 ＝ <strong>100,000円</strong></li>
+    <li><strong>1年あたりの償却額</strong>：100,000 ÷ 5年 ＝ <strong>20,000円</strong></li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×2年3月31日（決算日）。償却原価法（定額法）により評価する</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">満期保有目的債券</td><td class="d amt">20,000</td><td class="c">有価証券利息</td><td class="c amt">20,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>帳簿価額は 4,900,000 ＋ 20,000 ＝ 4,920,000円 になります。これを5年続けると 4,900,000 ＋ 20,000 × 5 ＝ <strong>5,000,000円</strong>で、満期日にちょうど額面と一致します。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">相手科目は「有価証券利息」。評価益ではない</span>
+    <p>償却額は<strong>利息の一部を後から受け取っているだけ</strong>なので、収益の科目は<strong>有価証券利息</strong>です。有価証券評価損益ではありません。</p>
+    <p>損益計算書では、クーポン利息も償却額も同じ<strong>有価証券利息</strong>にまとまって営業外収益に載ります。「利息の受取方法が2通りあった」というだけで、性質は同じものだからです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">額面より高く買った場合は、帳簿価額が減っていく</span>
+    <p>額面 1,000,000円の社債を＠103円（1,030,000円）で買った場合、差額の 30,000円は<strong>多く払いすぎた分</strong>です。満期に戻ってくるのは額面の 1,000,000円だけなので、<mark>この 30,000円は損失として各期に配分されます。</mark></p>
+    <p>仕訳は逆向きになり、<strong>有価証券利息／満期保有目的債券</strong>。有価証券利息の借方に立つので、受取利息を減らす効果を持ちます。</p>
+    <p>「償却原価法＝帳簿価額が増える」と覚えていると、この形で必ず止まります。<strong>額面に向かって近づいていく</strong>のが償却原価法です。安く買ったなら増え、高く買ったなら減ります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">期中取得なら月割する</span>
+    <p>期の途中で取得した年度は、<strong>その期に保有していた月数</strong>で按分します。上の例で取得日が×1年11月1日なら、初年度の償却額は 20,000 × 5 ÷ 12 ＝ <strong>8,333円</strong>（円未満四捨五入）です。</p>
+    <p>分母は「取得日から満期日までの月数」であって、必ずしも「償還期限の年数 × 12」ではありません。<mark>発行から時間が経った債券を途中で買えば、残りの期間はそのぶん短くなります。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>子会社株式・関連会社株式 — 動かさない</h2>
+
+  <p>他の会社を<strong>支配する目的</strong>で持つ株式が子会社株式、<strong>重要な影響を与える目的</strong>で持つ株式が関連会社株式です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>分類</th><th>持株比率のめやす</th><th>関係</th></tr></thead>
+      <tbody>
+        <tr><td class="d">子会社株式</td><td>50％超</td><td>支配している</td></tr>
+        <tr><td class="d">関連会社株式</td><td>20％以上50％以下</td><td>重要な影響を与えられる</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">売るつもりのない株式に時価をあてても意味がない</span>
+    <p>子会社株式は、子会社を支配し続けるために持っているものです。時価が2倍になっても売りませんし、半分になっても売りません。<mark>売買の意思がないのだから、「売ったらいくらか」という数字は財産状態を表さない</mark>のです。</p>
+    <p>それどころか、時価評価して評価益を計上すれば、実現していない利益をもとに配当ができてしまいます。取得原価のまま据え置くのが筋です。</p>
+    <p><strong>決算整理では何もしません。</strong>決算整理の資料に子会社株式が並んでいても、仕訳は「仕訳なし」です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「関連会社株式」と「関係会社株式」</span>
+    <p>勘定科目表には<strong>関連会社株式</strong>と<strong>関係会社株式</strong>の両方が載っています。</p>
+    <ul>
+      <li><strong>関連会社株式</strong> — 関連会社（20％以上50％以下）の株式だけを指す科目</li>
+      <li><strong>関係会社株式</strong> — 子会社株式と関連会社株式をまとめて表す科目</li>
+    </ul>
+    <p>どちらも答案で使える科目です。<mark>問題文に勘定科目の指定一覧があれば、そこに載っているものを使ってください。</mark>指定がなければ、子会社なら子会社株式、関連会社なら関連会社株式と書き分けるのが安全です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">子会社株式はW7以降の連結会計につながる</span>
+    <p>個別財務諸表では子会社株式を取得原価のまま持ちますが、<strong>連結財務諸表を作るときにはこの子会社株式を消去します。</strong>親会社の「子会社株式」と子会社の「資本」が同じものを二重に表しているためです。</p>
+    <p>この単元で学ぶ「子会社株式は動かさない」は、あくまで<strong>個別財務諸表の話</strong>です。W7の資本連結で、この株式が投資と資本の相殺消去の対象になります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>その他有価証券と全部純資産直入法</h2>
+
+  <p>売買目的でも、満期保有目的でも、子会社・関連会社株式でもない有価証券が<strong>その他有価証券</strong>です。典型は<strong>取引先との持ち合い株式</strong>で、関係を維持するために長く持ち続けます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">時価には直したい。でも損益にはしたくない</span>
+    <p>持ち合い株式は、いますぐ売るつもりはありませんが、<strong>売ろうと思えば売れます。</strong>子会社株式と違って、売っても事業に支障は出ません。だから決算日の時価は、その会社の財産状態を表す意味のある数字です。<strong>時価に直します。</strong></p>
+    <p>しかし、売る予定がないものの値上がりを当期の利益にしてよいでしょうか。<mark>売っていないのだから、その利益はまだ現実のものではありません。</mark>これを当期純利益に含めれば、いつでも配当に回せてしまいます。</p>
+    <p>そこで、<strong>損益計算書を通さずに、貸借対照表の純資産に直接入れます。</strong>この処理を<span class="term"><span class="term__w">全部純資産直入法</span><span class="term__r">ぜんぶじゅんしさんちょくにゅうほう</span></span>といい、使う科目が<strong>その他有価証券評価差額金</strong>です。</p>
+  </div>
+
+  <h3>評価益が出たとき</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算日。その他有価証券として保有するB社株式（取得原価 1,500,000円）の時価は 1,680,000円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">その他有価証券</td><td class="d amt">180,000</td><td class="c">その他有価証券評価差額金</td><td class="c amt">180,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>評価損が出たとき</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算日。その他有価証券として保有するC社株式（取得原価 900,000円）の時価は 840,000円であった</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">その他有価証券評価差額金</td><td class="d amt">60,000</td><td class="c">その他有価証券</td><td class="c amt">60,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">評価損でも「その他有価証券評価差額金」。評価損の科目は使わない</span>
+    <p><strong>全部</strong>純資産直入法の「全部」は、<mark>評価益も評価損も全部まとめて純資産に入れる</mark>という意味です。評価損が出たときに「投資有価証券評価損」のような費用科目を立ててはいけません。</p>
+    <p>借方に立ったその他有価証券評価差額金は、<strong>純資産のマイナス</strong>です。貸借対照表では評価・換算等差額等の区分に「その他有価証券評価差額金 △60,000」と表示されます。</p>
+    <p><strong>評価損だけを当期の損益にする方法は部分純資産直入法といい、1級の範囲です。</strong>2級の答案では使いません。</p>
+  </div>
+
+  <h3>翌期首に必ず振り戻す</h3>
+
+  <div class="callout callout--why">
+    <span class="callout__t">その他有価証券だけは洗替法である</span>
+    <p>その他有価証券の評価差額は、<strong>翌期首に必ず取得原価へ戻します。</strong>上のB社株式なら、翌期首に次の仕訳を書きます。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>翌期首。前期末の評価差額を振り戻す</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">その他有価証券評価差額金</td><td class="d amt">180,000</td><td class="c">その他有価証券</td><td class="c amt">180,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>なぜ戻すのか。その他有価証券の評価差額は<strong>「決算日時点の時価はこうでした」という報告のため</strong>に付けたものにすぎず、帳簿価額そのものを書き換えたわけではないからです。戻さずに翌期末を迎えると、次の評価替えで<mark>「取得原価と時価の差」ではなく「前期末の時価と今期末の時価の差」を計算してしまいます。</mark></p>
+    <p>売却したときの損益も、常に<strong>取得原価</strong>を基準に計算します。期首に取得原価へ戻っているからこそ、それが自然にできます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">振戻仕訳を書き忘れると、次の評価替えが必ず狂う</span>
+    <p>第2問で「×2年度の決算整理仕訳を答えよ」と問われ、資料に前期末の評価差額金が残っている場合、<strong>まず振り戻してから評価替えをします。</strong></p>
+    <p>実務では期首に振戻仕訳を書きますが、試験では<mark>「取得原価と当期末の時価の差額をそのまま評価差額金とする」と考えれば、振戻を経由したのと同じ結果になります。</mark>B社株式の×2年度末の時価が 1,560,000円なら、評価差額金は 1,560,000 − 1,500,000 ＝ 60,000円（貸方）です。前期の 180,000円は関係ありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>分記法による処理</h2>
+
+  <p>ここまでの売却仕訳では、有価証券勘定を帳簿価額で減らし、差額を売却損益としてきました。この<strong>原価と利益を分けて記録する方法</strong>を<span class="term"><span class="term__w">分記法</span><span class="term__r">ぶんきほう</span></span>といいます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">商品売買の分記法と同じ構造</span>
+    <p>3級の商品売買で、売ったときに「売上」ではなく「商品」を原価で減らし、差額を「商品売買益」とする方法を習いました。有価証券の分記法もまったく同じ形です。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>場面</th><th>商品売買の分記法</th><th>有価証券の分記法</th></tr></thead>
+        <tbody>
+          <tr><td class="d">購入</td><td>商品／現金</td><td>売買目的有価証券／現金</td></tr>
+          <tr><td class="d">売却</td><td>現金／商品・商品売買益</td><td>現金／売買目的有価証券・有価証券売却益</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><mark>有価証券の売買は、簿記では分記法で記帳するのが原則です。</mark>商品と違って銘柄ごとの残高管理が容易であり、売るたびに利益が確定して分かるほうが実態に合うからです。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">これまで書いてきた仕訳が、すべて分記法だった</span>
+    <p>第4節・第5節で書いた売却仕訳は、いずれも分記法によるものです。有価証券勘定を帳簿価額で減らし、受け取った額との差を有価証券売却益（損）としました。</p>
+    <p><strong>新しい記帳方法を覚える必要はありません。</strong>「いま自分が書いているこの形には分記法という名前がついている」と知っておけば十分です。</p>
+    <p class="small muted">売却のたびに損益を記録しない<strong>総記法</strong>という方法もありますが、これは1級の範囲です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>貸借対照表の表示区分と長期前払費用</h2>
+
+  <p>有価証券は、勘定科目の名前がそのまま貸借対照表の表示科目になるとは限りません。<strong>表示区分と表示科目は、分類と保有期間から決まります。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>分類</th><th>表示区分</th><th>表示科目</th></tr></thead>
+      <tbody>
+        <tr><td class="d">売買目的有価証券</td><td><strong>流動資産</strong></td><td>有価証券</td></tr>
+        <tr><td class="d">満期保有目的債券<br><span class="small muted">満期が決算日の翌日から1年以内</span></td><td><strong>流動資産</strong></td><td>有価証券</td></tr>
+        <tr><td class="d">満期保有目的債券<br><span class="small muted">満期が1年を超える</span></td><td><strong>投資その他の資産</strong></td><td>投資有価証券</td></tr>
+        <tr><td class="d">子会社株式・関連会社株式</td><td><strong>投資その他の資産</strong></td><td>関係会社株式</td></tr>
+        <tr><td class="d">その他有価証券</td><td><strong>投資その他の資産</strong></td><td>投資有価証券</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">流動か固定かは「1年以内に現金になるか」で決まる</span>
+    <p>売買目的有価証券はいつでも売るつもりのものなので、当然<strong>流動資産</strong>です。</p>
+    <p>子会社株式・関連会社株式・その他有価証券は長く持ち続けるものなので<strong>投資その他の資産</strong>です。こちらは保有期間を問わず固定資産の区分に入ります。</p>
+    <p>満期保有目的債券だけが、<mark>満期がいつ来るかで場所が変わります。</mark>満期が1年以内なら1年以内に現金になるので流動資産、それより先なら投資その他の資産です。これを<strong>1年基準（ワン・イヤー・ルール）</strong>といいます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">勘定科目名をそのまま貸借対照表に書かない</span>
+    <p>帳簿には「売買目的有価証券」「その他有価証券」と書きますが、<strong>貸借対照表には「有価証券」「投資有価証券」と書きます。</strong>第3問で財務諸表を作らされたときに、勘定科目名をそのまま転記すると間違いになります。</p>
+    <p>子会社株式と関連会社株式は、貸借対照表では<strong>関係会社株式</strong>としてまとめて表示されるのが原則です。</p>
+  </div>
+
+  <h3>長期前払費用 — 1年を超える前払分</h3>
+
+  <p>投資その他の資産の区分には、有価証券以外にも入るものがあります。そのひとつが<strong>長期前払費用</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">前払費用も1年基準で分かれる</span>
+    <p>3級で習った前払費用は「来期の分を先に払った」もので、1年以内に費用になります。だから<strong>流動資産</strong>です。</p>
+    <p>ところが、<strong>3年分の保険料を一括で前払いした</strong>ような場合はどうでしょうか。2年目・3年目に費用になる分は、決算日の翌日から1年を超えてはじめて費用になります。これは流動資産ではありません。<mark>1年を超える分だけを切り出して、投資その他の資産の「長期前払費用」とします。</mark></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>×1年10月1日に3年分の火災保険料 360,000円を現金で支払っていた。×2年3月31日の決算にあたり、必要な処理を行う（決算日は3月31日）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">前払費用</td><td class="d amt">120,000</td><td class="c">保険料</td><td class="c amt">300,000</td></tr>
+        <tr><td class="d">長期前払費用</td><td class="d amt">180,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>1か月あたり</strong>：360,000 ÷ 36か月 ＝ <strong>10,000円</strong></li>
+    <li><strong>当期の費用</strong>：×1年10月〜×2年3月の<strong>6か月</strong>。10,000 × 6 ＝ <strong>60,000円</strong>。これだけが保険料として残ります</li>
+    <li><strong>前払費用（流動資産）</strong>：×2年4月〜×3年3月の<strong>12か月</strong>。10,000 × 12 ＝ <strong>120,000円</strong></li>
+    <li><strong>長期前払費用（投資その他の資産）</strong>：×3年4月〜×4年9月の<strong>18か月</strong>。10,000 × 18 ＝ <strong>180,000円</strong></li>
+  </ol>
+
+  <p>検算：60,000 ＋ 120,000 ＋ 180,000 ＝ <strong>360,000円</strong>。支払った総額と一致します。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">1年の起点は「支払日」ではなく「決算日の翌日」</span>
+    <p>×1年10月1日に3年分を払ったからといって、×2年9月30日までが流動、それ以降が長期、ではありません。<strong>決算日（×2年3月31日）の翌日から1年以内</strong>、つまり×3年3月31日までに費用になる分が流動資産です。</p>
+    <p>この起点を誤ると、流動と固定の金額が両方ずれます。<mark>決算日を基準に線を引く</mark>と固定してください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">翌期末には、長期から流動へ振り替える</span>
+    <p>時間が経てば「1年を超える分」は「1年以内の分」になります。次の決算日（×3年3月31日）には、残りの 180,000円のうち×3年4月〜×4年3月の 120,000円が前払費用、×4年4月〜9月の 60,000円が長期前払費用になります。</p>
+    <p>毎期末に、<strong>決算日の翌日から1年以内に費用となる分</strong>を数え直して区分します。一度決めた区分が固定されるわけではありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>仕訳ドリル 14問</h2>
+
+  <p>有価証券は<strong>第1問で毎回のように出て、第2問で単独の大問にもなる</strong>論点です。分類の判定と金額の計算を、どちらも止まらずに出せる状態を作ってください。</p>
+
+  <div id="drill-yukashoken"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>端数利息の日数と償却原価法の償却額は、<strong>計算が合わなくても仕訳の形が崩れない</strong>ため、自分では誤りに気づけません。独立に確認します。</p>
+
+  <div id="num-yukashoken"></div>
+
+  <div id="quiz-yukashoken"></div>
+
+  <div id="fill-yukashoken"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。有価証券は<strong>第2問の個別論点として単独で出るうえ、第3問（決算）の決算整理でも必ず問われます。</strong>分類の判定から評価替えまでが一続きで動くので、途中で止まらない状態にしてください。</p>
+
+  <div class="progressbar" data-progress-for="#u16check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u16check">0 / 0 完了（0%）</div>
+
+  <div id="u16check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u16-w5u16-1"><label for="c1"><span class="cl__t">評価方法が保有目的で決まる理由を説明できる</span><span class="cl__d">時価という数字が意味を持つかどうかは、売る意思があるかで変わる。株式か債券かでは決まらない</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u16-w5u16-2"><label for="c2"><span class="cl__t">4分類の名前と評価方法を対応させられる</span><span class="cl__d">売買目的＝時価法・損益、満期保有目的＝償却原価法、子会社関連会社＝取得原価、その他＝時価法・純資産</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u16-w5u16-3"><label for="c3"><span class="cl__t">評価替えをしないのは子会社株式・関連会社株式だけだと言える</span><span class="cl__d">満期保有目的債券は時価評価はしないが償却原価法による処理がある。決算整理で素通りさせない</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u16-w5u16-4"><label for="c4"><span class="cl__t">取得原価に買入手数料を含められる</span><span class="cl__d">購入代価＋付随費用。支払手数料で処理すると、売却益が手数料の分だけ水増しされる</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u16-w5u16-5"><label for="c5"><span class="cl__t">＠○円という債券の値段から購入代価を出せる</span><span class="cl__d">額面100円あたりの値段。額面総額 × 単価 ÷ 100。口数を数える必要はない</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u16-w5u16-6"><label for="c6"><span class="cl__t">複数回に分けて取得した株式の売却原価を平均単価で出せる</span><span class="cl__d">取得原価の合計 ÷ 取得株数の合計。株式には個体差がないので、どの株を売ったかは区別できない</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u16-w5u16-7"><label for="c7"><span class="cl__t">売却代金の未収に使う科目を選べる</span><span class="cl__d">有価証券は商品ではないので未収入金。売掛金は商品を売った代金にだけ使う</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u16-w5u16-8"><label for="c8"><span class="cl__t">売却損益の科目を分類で使い分けられる</span><span class="cl__d">売買目的なら有価証券売却益（損）、投資有価証券として持つものなら投資有価証券売却益（損）</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u16-w5u16-9"><label for="c9"><span class="cl__t">端数利息がなぜ必要か説明できる</span><span class="cl__d">利息は利払日に持っている人に全額支払われる。売り手が持っていた期間の分を買い手が立て替えて渡す</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u16-w5u16-10"><label for="c10"><span class="cl__t">端数利息の経過日数を正しく数えられる</span><span class="cl__d">前回の利払日の翌日から売買日まで。利払日そのものを含めると1日多くなる</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u16-w5u16-11"><label for="c11"><span class="cl__t">端数利息の仕訳を買い手・売り手の両方から書ける</span><span class="cl__d">買い手は有価証券利息の借方、売り手は貸方。どちらも有価証券利息を使い、未収入金や未払金にはしない</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u16-w5u16-12"><label for="c12"><span class="cl__t">端数利息を売却損益に混ぜない</span><span class="cl__d">まず端数利息を切り離し、残りを債券の売買代金として帳簿価額と比べる。利息の精算と売買の損益は別の話</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u16-w5u16-13"><label for="c13"><span class="cl__t">売買目的有価証券の評価替えを両方向に書ける</span><span class="cl__d">時価＞帳簿価額なら有価証券を増やして有価証券評価損益の貸方、逆なら借方</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u16-w5u16-14"><label for="c14"><span class="cl__t">償却原価法が必要な理由を説明できる</span><span class="cl__d">額面と取得原価の差は、クーポンで足りない利息を値引きの形で先にもらったもの。満期に一度に計上せず各期に配分する</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u16-w5u16-15"><label for="c15"><span class="cl__t">償却原価法（定額法）の償却額を計算できる</span><span class="cl__d">（額面 − 取得原価）× 当期の保有月数 ÷ 取得日から満期日までの月数</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u16-w5u16-16"><label for="c16"><span class="cl__t">償却額の相手科目が有価証券利息だと分かっている</span><span class="cl__d">利息の一部を後から受け取っているだけなので、有価証券評価損益ではない</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u16-w5u16-17"><label for="c17"><span class="cl__t">額面より高く買った債券の償却を逆向きに書ける</span><span class="cl__d">帳簿価額は額面に向かって減っていく。有価証券利息／満期保有目的債券となる</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u16-w5u16-18"><label for="c18"><span class="cl__t">子会社株式・関連会社株式の決算整理が「仕訳なし」だと言える</span><span class="cl__d">支配・影響力のために持っており売る意思がないので、時価は財産状態を表さない</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u16-w5u16-19"><label for="c19"><span class="cl__t">その他有価証券の評価差額を純資産に入れる理由を説明できる</span><span class="cl__d">時価には直したいが、売っていない以上まだ損益にはできない。両方を満たすには純資産に直接入れるしかない</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u16-w5u16-20"><label for="c20"><span class="cl__t">評価損のときも評価差額金を使うと分かっている</span><span class="cl__d">全部純資産直入法の「全部」は、評価益も評価損も全部純資産に入れるという意味。評価損だけを損益にする部分純資産直入法は1級</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u16-w5u16-21"><label for="c21"><span class="cl__t">その他有価証券の振戻仕訳を書ける</span><span class="cl__d">翌期首に前期末の評価差額を逆仕訳で戻し、取得原価に復元する。振り戻さないと次の評価替えが狂う</span></label></li>
+    <li><input type="checkbox" id="c22" data-key="p1u16-w5u16-22"><label for="c22"><span class="cl__t">その他有価証券の評価差額を常に取得原価との差で出せる</span><span class="cl__d">期首に取得原価へ戻っているため、当期末の評価差額は「取得原価と当期末時価の差」。前期末の時価は関係ない</span></label></li>
+    <li><input type="checkbox" id="c23" data-key="p1u16-w5u16-23"><label for="c23"><span class="cl__t">分記法がどういう記帳方法か言える</span><span class="cl__d">売却時に有価証券を原価で減らし、差額を売却損益とする方法。商品売買の分記法と同じ構造で、有価証券では原則</span></label></li>
+    <li><input type="checkbox" id="c24" data-key="p1u16-w5u16-24"><label for="c24"><span class="cl__t">貸借対照表の表示区分と表示科目を言える</span><span class="cl__d">売買目的は流動資産の有価証券、子会社関連会社は投資その他の資産の関係会社株式、その他有価証券は投資有価証券</span></label></li>
+    <li><input type="checkbox" id="c25" data-key="p1u16-w5u16-25"><label for="c25"><span class="cl__t">満期保有目的債券の表示区分を1年基準で振り分けられる</span><span class="cl__d">満期が決算日の翌日から1年以内なら流動資産の有価証券、1年を超えるなら投資その他の資産の投資有価証券</span></label></li>
+    <li><input type="checkbox" id="c26" data-key="p1u16-w5u16-26"><label for="c26"><span class="cl__t">長期前払費用に振り替える金額を出せる</span><span class="cl__d">決算日の翌日から1年を超えて費用となる分。起点は支払日ではなく決算日</span></label></li>
+    <li><input type="checkbox" id="c27" data-key="p1u16-w5u16-27"><label for="c27"><span class="cl__t">2級で扱わない有価証券の論点を言える</span><span class="cl__d">部分純資産直入法・減損（著しい下落）・利息法・投資不動産・総記法はいずれも1級</span></label></li>
+    <li><input type="checkbox" id="c28" data-key="p1u16-w5u16-28"><label for="c28"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>有価証券は<strong>第2問で単独の大問として出る</strong>典型論点です。複数銘柄を並べて「それぞれの決算整理仕訳と貸借対照表の表示額を答えよ」という形が頻出で、1銘柄ごとの処理は易しくても、分類を1つ取り違えると連鎖して崩れます。</p>
+    <p>毎週の仕訳ドリルの枠に、<strong>端数利息の日数計算</strong>と<strong>その他有価証券の振戻から評価替えまでの2期分</strong>を混ぜ続けてください。どちらも2週間触らないと手が止まります。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W5 UNIT 16 有価証券の4分類と評価</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '未収入金', '未払金',
+    '売買目的有価証券', '満期保有目的債券', '子会社株式', '関連会社株式', '関係会社株式', 'その他有価証券',
+    '投資有価証券',
+    '前払費用', '長期前払費用', '未収収益', '保険料', '支払手数料',
+    'その他有価証券評価差額金',
+    '有価証券利息', '受取配当金',
+    '有価証券売却益', '有価証券売却損', '有価証券評価損益',
+    '投資有価証券売却益', '投資有価証券売却損'
+  ];
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  BokiJournal.mount('#drill-yukashoken', {
+    title: '仕訳ドリル — 有価証券の取得・売却・端数利息・評価替え（14問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '<strong>売買目的</strong>でA社株式 <strong>1,000株</strong>を1株 <strong>800円</strong>で購入し、<strong>買入手数料 12,000円</strong>とともに小切手を振り出して支払った。',
+        debit: [['売買目的有価証券', 812000]],
+        credit: [['当座預金', 812000]],
+        hint: '手数料を別の科目にしてよいか考えてください。',
+        explain: '<p><strong>購入代価</strong>：800 × 1,000株 ＝ 800,000円。<strong>付随費用</strong>：12,000円。</p><p><strong>取得原価</strong>：800,000 ＋ 12,000 ＝ <strong>812,000円</strong>。1株あたり 812,000 ÷ 1,000 ＝ 812円です。</p><p>買入手数料は「株式そのものの値段」ではありませんが、<mark>その株式を手に入れるために避けられなかった支出</mark>なので取得原価に含めます。支払手数料（費用）で処理すると取得原価が小さくなり、売却したときの売却益が手数料の分だけ水増しされます。</p><p>小切手を振り出しているので貸方は<strong>当座預金</strong>です。</p>'
+      },
+      {
+        text: '<strong>売買目的</strong>で保有するA社株式（1月に@800円で1,000株、5月に@860円で500株取得）のうち <strong>600株</strong>を1株 <strong>890円</strong>で売却し、代金は<strong>後日受け取る</strong>こととした。',
+        debit: [['未収入金', 534000]],
+        credit: [['売買目的有価証券', 492000], ['有価証券売却益', 42000]],
+        hint: '2回に分けて買っています。どの株を売ったのか区別できますか。',
+        explain: '<p><strong>平均単価</strong>：(800 × 1,000 ＋ 860 × 500) ÷ 1,500株 ＝ 1,230,000 ÷ 1,500 ＝ <strong>@820円</strong>。株式は同じ銘柄なら1株ずつに個体差がないので、どの株を売ったかは区別できません。平均でならします。</p><p><strong>売った分の帳簿価額</strong>：820 × 600株 ＝ <strong>492,000円</strong>。</p><p><strong>売却価額</strong>：890 × 600株 ＝ <strong>534,000円</strong>。</p><p><strong>売却損益</strong>：534,000 − 492,000 ＝ <strong>42,000円の売却益</strong>。</p><p>代金は後日なので<strong>未収入金</strong>です。有価証券は商品ではないため売掛金は使いません。</p>'
+      },
+      {
+        text: '<strong>11月25日</strong>、<strong>売買目的</strong>で額面総額 <strong>3,000,000円</strong>の社債（<strong>年利率 1.46％</strong>、利払日 <strong>3月末と9月末</strong>）を<strong>＠99円</strong>で買い入れ、<strong>端数利息</strong>とともに小切手を振り出して支払った。端数利息は日割りで計算する（1年は365日）。',
+        debit: [['売買目的有価証券', 2970000], ['有価証券利息', 6720]],
+        credit: [['当座預金', 2976720]],
+        hint: '前回の利払日はいつで、そこから何日経っていますか。',
+        explain: '<p><strong>債券の代金</strong>：3,000,000 × 99 ÷ 100 ＝ <strong>2,970,000円</strong>。＠99円は額面100円あたりの値段です。</p><p><strong>経過日数</strong>：前回の利払日は9月30日。その<mark>翌日の10月1日から売買日の11月25日まで</mark>で、10月31日 ＋ 11月25日 ＝ <strong>56日</strong>。利払日そのものを含めて57日としないでください。9月30日分の利息はその日の利払いで支払済みです。</p><p><strong>端数利息</strong>：3,000,000 × 1.46％ × 56 ÷ 365 ＝ 43,800 × 56 ÷ 365 ＝ <strong>6,720円</strong>。</p><p>買い手は次の利払日に半年分をまとめて受け取るので、売り手が持っていた期間の分を<strong>有価証券利息の借方</strong>に置いておきます。こうすると差引きで、自分が持っていた期間の利息だけが残ります。</p><p><strong>支払総額</strong>：2,970,000 ＋ 6,720 ＝ 2,976,720円。</p>'
+      },
+      {
+        text: '<strong>売買目的</strong>で保有する額面総額 <strong>3,000,000円</strong>の社債（帳簿価額 <strong>2,940,000円</strong>、年利率 1.46％、利払日 3月末と9月末）を、<strong>11月25日</strong>に<strong>＠99円</strong>で売却し、<strong>端数利息</strong>とともに現金で受け取った。端数利息は日割りで計算する（1年は365日）。',
+        debit: [['現金', 2976720]],
+        credit: [['売買目的有価証券', 2940000], ['有価証券売却益', 30000], ['有価証券利息', 6720]],
+        hint: '受け取った総額と帳簿価額の差を、そのまま売却益にしてよいでしょうか。',
+        explain: '<p><strong>端数利息</strong>：10月1日から11月25日までの56日分。3,000,000 × 1.46％ × 56 ÷ 365 ＝ <strong>6,720円</strong>。売り手が持っていた期間の利息なので<strong>有価証券利息の貸方</strong>です。</p><p><strong>債券の売買代金</strong>：3,000,000 × 99 ÷ 100 ＝ <strong>2,970,000円</strong>。</p><p><strong>売却損益</strong>：2,970,000 − 2,940,000 ＝ <strong>30,000円の売却益</strong>。</p><p>受け取った総額 2,976,720円 から帳簿価額 2,940,000円 を引いて「売却益 36,720円」とするのが最も多い誤りです。<mark>端数利息は債券の対価ではなく利息の精算</mark>なので、売却損益とは切り離します。手順は「まず端数利息を切り離す、残りを債券の代金とみて帳簿価額と比べる」で固定してください。</p>'
+      },
+      {
+        text: '決算日を迎えた。<strong>売買目的</strong>で保有するA社株式（帳簿価額 <strong>812,000円</strong>）の<strong>時価は 860,000円</strong>であった。評価替えの仕訳を示しなさい。',
+        debit: [['売買目的有価証券', 48000]],
+        credit: [['有価証券評価損益', 48000]],
+        hint: '差額はどこへ行きますか。損益計算書と貸借対照表のどちらでしょう。',
+        explain: '<p><strong>評価差額</strong>：860,000 − 812,000 ＝ <strong>48,000円の値上がり</strong>。資産を増やし、同額を収益とします。</p><p>売買目的有価証券は<mark>いつでも売るつもりで持っている＝売ったも同然</mark>なので、評価差額を<strong>当期の損益</strong>にしてよい唯一の株式です。</p><p>科目は<strong>有価証券評価損益</strong>。勘定科目表には有価証券評価益・有価証券評価損という損益を分けた科目も載っており、どちらも正解になりますが、本教材は値上がり・値下がりで書き分けずに済む有価証券評価損益に統一します。</p>'
+      },
+      {
+        text: '決算日を迎えた。<strong>売買目的</strong>で保有するD社株式（帳簿価額 <strong>1,240,000円</strong>）の<strong>時価は 1,185,000円</strong>であった。評価替えの仕訳を示しなさい。',
+        debit: [['有価証券評価損益', 55000]],
+        credit: [['売買目的有価証券', 55000]],
+        hint: '前問と向きが逆になります。',
+        explain: '<p><strong>評価差額</strong>：1,240,000 − 1,185,000 ＝ <strong>55,000円の値下がり</strong>。資産を減らし、同額を費用（損失）とします。</p><p>科目は評価益のときと同じ<strong>有価証券評価損益</strong>で、借方に立てるだけです。有価証券評価損という科目も勘定科目表にあり、そちらでも正解になります。</p><p class="small muted">売買目的有価証券は、問題文に指示がなければ切放法（時価をそのまま翌期の帳簿価額とする）として扱って差し支えありません。翌期首に必ず振り戻すのは、その他有価証券だけです。</p>'
+      },
+      {
+        text: '×1年4月1日、<strong>満期まで保有する目的</strong>で額面総額 <strong>5,000,000円</strong>の社債（<strong>償還期限5年</strong>）を<strong>＠98円</strong>で取得し、代金は普通預金から支払った。',
+        debit: [['満期保有目的債券', 4900000]],
+        credit: [['普通預金', 4900000]],
+        hint: '額面と取得原価が違いますが、この時点では差額を何かに計上しますか。',
+        explain: '<p><strong>取得原価</strong>：5,000,000 × 98 ÷ 100 ＝ <strong>4,900,000円</strong>。</p><p>額面との差額 100,000円は、この時点では何も計上しません。<mark>取得原価で記帳するだけ</mark>です。差額は満期までの各期に、償却原価法によって少しずつ配分されます。</p><p>この差額を取得時に「有価証券利息」として一度に計上してしまうと、まだ経過していない5年分の利息を初年度に全部計上することになります。</p>'
+      },
+      {
+        text: '×2年3月31日（決算日）。前問の満期保有目的債券（額面総額 <strong>5,000,000円</strong>、取得原価 <strong>4,900,000円</strong>、×1年4月1日取得、償還期限5年）について、<strong>償却原価法（定額法）</strong>により評価する。',
+        debit: [['満期保有目的債券', 20000]],
+        credit: [['有価証券利息', 20000]],
+        hint: '相手科目は評価損益ではありません。差額の正体は何でしたか。',
+        explain: '<p><strong>差額（金利調整差額）</strong>：5,000,000 − 4,900,000 ＝ <strong>100,000円</strong>。</p><p><strong>当期の償却額</strong>：100,000 ÷ 5年 ＝ <strong>20,000円</strong>（当期は4月1日から3月31日までの12か月まるごと保有）。</p><p>帳簿価額は 4,900,000 ＋ 20,000 ＝ 4,920,000円になります。これを5年続けると 4,900,000 ＋ 20,000 × 5 ＝ 5,000,000円 で、満期日にちょうど額面と一致します。</p><p>相手科目は<strong>有価証券利息</strong>です。額面より安く買えたのは、クーポンが市場の利回りより低かったぶんを<mark>値引きという形で先にもらった</mark>からで、その正体は利息です。有価証券評価損益ではありません。</p>'
+      },
+      {
+        text: '×2年3月31日（決算日）。<strong>満期まで保有する目的</strong>で×1年4月1日に取得した額面総額 <strong>2,000,000円</strong>の社債（取得原価 <strong>2,060,000円</strong>、<strong>償還期限4年</strong>）について、<strong>償却原価法（定額法）</strong>により評価する。',
+        debit: [['有価証券利息', 15000]],
+        credit: [['満期保有目的債券', 15000]],
+        hint: '額面より高く買っています。帳簿価額は増えますか、減りますか。',
+        explain: '<p><strong>差額</strong>：2,060,000 − 2,000,000 ＝ <strong>60,000円</strong>。額面より<strong>高く</strong>買っています。</p><p><strong>当期の償却額</strong>：60,000 ÷ 4年 ＝ <strong>15,000円</strong>。</p><p>満期に戻ってくるのは額面の 2,000,000円だけなので、多く払った 60,000円は<mark>各期に配分される損失</mark>です。仕訳は前問と逆向きになり、有価証券利息の<strong>借方</strong>に立って受取利息を減らします。</p><p>「償却原価法＝帳簿価額が増える」と覚えているとここで止まります。償却原価法は<strong>帳簿価額を額面に向かって近づけていく</strong>手続きです。安く買ったなら増え、高く買ったなら減ります。帳簿価額は 2,060,000 − 15,000 ＝ 2,045,000円 になります。</p>'
+      },
+      {
+        text: 'E社の発行済株式総数の <strong>60％</strong>にあたる株式を <strong>8,400,000円</strong>で取得し、代金は<strong>買入手数料 60,000円</strong>とともに当座預金から支払った。E社を<strong>支配する目的</strong>である。',
+        debit: [['子会社株式', 8460000]],
+        credit: [['当座預金', 8460000]],
+        hint: '持株比率と保有目的から、分類が決まります。',
+        explain: '<p>発行済株式総数の<strong>50％超</strong>を持ち、支配する目的なので<strong>子会社株式</strong>です。</p><p><strong>取得原価</strong>：8,400,000 ＋ 60,000 ＝ <strong>8,460,000円</strong>。買入手数料は分類にかかわらず取得原価に含めます。</p><p class="small muted">持株比率が20％以上50％以下で重要な影響を与えられる場合は<strong>関連会社株式</strong>です。子会社株式と関連会社株式をまとめた<strong>関係会社株式</strong>という科目もあり、貸借対照表ではこちらで表示するのが原則です。</p>'
+      },
+      {
+        text: '決算日を迎えた。保有する<strong>子会社株式</strong>（取得原価 <strong>8,460,000円</strong>）の<strong>時価は 7,200,000円</strong>に下落していた。決算整理の仕訳を示しなさい（時価の下落は著しいものではない）。',
+        debit: [],
+        credit: [],
+        hint: 'この株式にとって、時価という数字は意味を持つでしょうか。',
+        explain: '<p><strong>仕訳なし</strong>です。子会社株式は<strong>取得原価のまま</strong>で、評価替えをしません。</p><p>子会社株式はE社を支配し続けるために持っているものです。<mark>時価が下がっても売らないのだから、「売ったらいくらか」という数字は自社の財産状態を表しません。</mark>評価損を計上するほうが実態から遠ざかります。</p><p>決算整理の資料に子会社株式が並んでいても、手を動かす必要はありません。評価替えをしないのは<strong>子会社株式・関連会社株式だけ</strong>で、満期保有目的債券には償却原価法による処理があります。</p><p class="small muted">時価が著しく下落した場合に帳簿価額を切り下げる処理（減損）は1級の範囲です。2級では問われません。</p>'
+      },
+      {
+        text: '決算日を迎えた。<strong>その他有価証券</strong>として保有するB社株式（取得原価 <strong>1,500,000円</strong>）の<strong>時価は 1,680,000円</strong>であった。<strong>全部純資産直入法</strong>により処理する。',
+        debit: [['その他有価証券', 180000]],
+        credit: [['その他有価証券評価差額金', 180000]],
+        hint: '時価には直します。ただし差額の行き先が売買目的とは違います。',
+        explain: '<p><strong>評価差額</strong>：1,680,000 − 1,500,000 ＝ <strong>180,000円</strong>。</p><p>その他有価証券は売ろうと思えば売れるので、時価に直して財産状態を正しく示します。しかし<mark>いますぐ売るつもりはないので、その値上がりはまだ現実のものではありません。</mark>当期の利益にすれば配当に回せてしまいます。</p><p>そこで損益計算書を通さず、貸借対照表の<strong>純資産（評価・換算等差額等）</strong>に直接入れます。これが全部純資産直入法で、科目は<strong>その他有価証券評価差額金</strong>です。</p>'
+      },
+      {
+        text: '決算日を迎えた。<strong>その他有価証券</strong>として保有するC社株式（取得原価 <strong>900,000円</strong>）の<strong>時価は 840,000円</strong>であった。<strong>全部純資産直入法</strong>により処理する。',
+        debit: [['その他有価証券評価差額金', 60000]],
+        credit: [['その他有価証券', 60000]],
+        hint: '評価損が出ましたが、費用の科目を立ててよいでしょうか。',
+        explain: '<p><strong>評価差額</strong>：900,000 − 840,000 ＝ <strong>60,000円の値下がり</strong>。</p><p>評価損が出ても使う科目は<strong>その他有価証券評価差額金</strong>で、借方に立てるだけです。<mark>全部純資産直入法の「全部」は、評価益も評価損も全部まとめて純資産に入れるという意味</mark>です。投資有価証券評価損のような費用科目を立ててはいけません。</p><p>借方に立った評価差額金は純資産のマイナスで、貸借対照表には「その他有価証券評価差額金 △60,000」と表示されます。</p><p><strong>評価損だけを当期の損益にする部分純資産直入法は1級の範囲</strong>です。2級の答案では使いません。</p>'
+      },
+      {
+        text: '×1年10月1日に<strong>3年分の火災保険料 360,000円</strong>を現金で支払い、全額を保険料として処理していた。×2年3月31日の決算にあたり、必要な決算整理仕訳を示しなさい（決算日は3月31日）。',
+        debit: [['前払費用', 120000], ['長期前払費用', 180000]],
+        credit: [['保険料', 300000]],
+        hint: '前払分を1年以内と1年超に分けます。線を引く起点はどこですか。',
+        explain: '<p><strong>1か月あたり</strong>：360,000 ÷ 36か月 ＝ <strong>10,000円</strong>。</p><p><strong>当期の費用</strong>：×1年10月〜×2年3月の6か月で 60,000円。これが保険料として残ります。</p><p><strong>前払費用（流動資産）</strong>：決算日の翌日から1年以内、つまり×2年4月〜×3年3月の<strong>12か月</strong>。10,000 × 12 ＝ <strong>120,000円</strong>。</p><p><strong>長期前払費用（投資その他の資産）</strong>：×3年4月〜×4年9月の<strong>18か月</strong>。10,000 × 18 ＝ <strong>180,000円</strong>。</p><p>前払分の合計は 120,000 ＋ 180,000 ＝ <strong>300,000円</strong>で、これを保険料から減らします。検算：60,000 ＋ 300,000 ＝ 360,000円。</p><p>1年の起点は<mark>支払日ではなく決算日の翌日</mark>です。支払日から1年（×2年9月30日まで）で線を引くと、流動と固定の金額が両方ずれます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-yukashoken', {
+    title: '計算ドリル — 端数利息と償却額を出す（6問）',
+    unit: '円',
+    questions: [
+      {
+        text: '額面総額 <strong>3,000,000円</strong>・<strong>年利率 1.46％</strong>・利払日 <strong>3月末と9月末</strong>の社債を <strong>11月25日</strong>に売買した。<strong>経過日数</strong>と<strong>端数利息</strong>を求めなさい（1年は365日、日割り計算）。経過日数は日数そのものを答えること。',
+        labels: ['経過日数（日）', '端数利息'],
+        answer: [56, 6720],
+        formula: ['31+25', '3000000*0.0146*56/365'],
+        hint: '数え始めるのは利払日の翌日です。',
+        explain: '<p><strong>経過日数</strong>：前回の利払日は9月30日。その<strong>翌日の10月1日から売買日の11月25日まで</strong>を数えます。10月は31日あり、11月は25日まで。31 ＋ 25 ＝ <strong>56日</strong>。</p><p>9月30日を含めて57日としないでください。<mark>9月30日分の利息はその日の利払いで支払済み</mark>なので、二重に数えることになります。</p><p><strong>端数利息</strong>：3,000,000 × 1.46％ ＝ 43,800円（1年分）。43,800 × 56 ÷ 365 ＝ <strong>6,720円</strong>。</p>'
+      },
+      {
+        text: '額面総額 <strong>4,000,000円</strong>・<strong>年利率 0.73％</strong>・利払日 <strong>6月末と12月末</strong>の社債を <strong>2月14日</strong>に売買した。<strong>経過日数</strong>と<strong>端数利息</strong>を求めなさい（1年は365日、日割り計算。うるう年ではない）。',
+        labels: ['経過日数（日）', '端数利息'],
+        answer: [45, 3600],
+        formula: ['31+14', '4000000*0.0073*45/365'],
+        hint: '前回の利払日は12月31日です。年をまたぎます。',
+        explain: '<p><strong>経過日数</strong>：前回の利払日は12月31日。翌日の<strong>1月1日から2月14日まで</strong>で、1月は31日、2月は14日まで。31 ＋ 14 ＝ <strong>45日</strong>。</p><p>年をまたいでも数え方は同じです。<mark>利払日の翌日から売買日まで</mark>を素直に数えます。</p><p><strong>端数利息</strong>：4,000,000 × 0.73％ ＝ 29,200円（1年分）。29,200 × 45 ÷ 365 ＝ <strong>3,600円</strong>。</p>'
+      },
+      {
+        text: '×1年4月1日に、額面総額 <strong>5,000,000円</strong>・<strong>償還期限5年</strong>の社債を<strong>＠98円</strong>で取得した（満期保有目的、決算日は3月31日）。<strong>取得原価</strong>、<strong>1年あたりの償却額</strong>、および<strong>×2年3月31日時点の帳簿価額</strong>を求めなさい。',
+        labels: ['取得原価', '1年あたりの償却額', '×2年3月31日の帳簿価額'],
+        answer: [4900000, 20000, 4920000],
+        formula: ['5000000*98/100', '(5000000-4900000)/5', '5000000*98/100+(5000000-4900000)/5'],
+        hint: '＠98円は額面100円あたりの値段です。',
+        explain: '<p><strong>取得原価</strong>：5,000,000 × 98 ÷ 100 ＝ <strong>4,900,000円</strong>。</p><p><strong>差額</strong>：5,000,000 − 4,900,000 ＝ 100,000円。<strong>1年あたりの償却額</strong>：100,000 ÷ 5年 ＝ <strong>20,000円</strong>。</p><p><strong>×2年3月31日の帳簿価額</strong>：4,900,000 ＋ 20,000 ＝ <strong>4,920,000円</strong>。</p><p>これを5年続けると 4,900,000 ＋ 20,000 × 5 ＝ 5,000,000円 で、満期日にちょうど額面と一致します。</p>'
+      },
+      {
+        text: '×1年10月1日に、額面総額 <strong>3,000,000円</strong>の社債を<strong>＠96円</strong>で取得した（満期保有目的）。<strong>満期日は×4年9月30日</strong>、決算日は3月31日である。<strong>取得原価</strong>、<strong>取得日から満期日までの月数</strong>、および<strong>×2年3月31日の決算で計上する償却額</strong>を求めなさい。',
+        labels: ['取得原価', '取得日から満期日までの月数', '×2年3月期の償却額'],
+        answer: [2880000, 36, 20000],
+        formula: ['3000000*96/100', '36', '(3000000-3000000*96/100)*6/36'],
+        hint: '当期に保有していたのは何か月でしょうか。',
+        explain: '<p><strong>取得原価</strong>：3,000,000 × 96 ÷ 100 ＝ <strong>2,880,000円</strong>。</p><p><strong>取得日から満期日まで</strong>：×1年10月1日から×4年9月30日まで、ちょうど3年 ＝ <strong>36か月</strong>。</p><p><strong>差額</strong>：3,000,000 − 2,880,000 ＝ 120,000円。</p><p><strong>当期の保有月数</strong>：×1年10月〜×2年3月の<strong>6か月</strong>。120,000 × 6 ÷ 36 ＝ <strong>20,000円</strong>。</p><p>分母は「償還期限の年数 × 12」ではなく<mark>取得日から満期日までの月数</mark>です。発行から時間が経った債券を途中で買えば、残りの期間はそのぶん短くなります。</p>'
+      },
+      {
+        text: '<strong>売買目的</strong>でF社株式を、6月に <strong>@750円で2,400株</strong>、9月に <strong>@820円で600株</strong>取得した（買入手数料はない）。12月に <strong>1,200株</strong>を <strong>@880円</strong>で売却した。<strong>平均単価</strong>、<strong>売却した分の帳簿価額</strong>、および<strong>売却益</strong>を求めなさい。',
+        labels: ['平均単価（円）', '売却分の帳簿価額', '売却益'],
+        answer: [764, 916800, 139200],
+        formula: ['(750*2400+820*600)/3000', '(750*2400+820*600)/3000*1200', '880*1200-(750*2400+820*600)/3000*1200'],
+        hint: 'どの株を売ったのか区別できますか。',
+        explain: '<p><strong>平均単価</strong>：(750 × 2,400 ＋ 820 × 600) ÷ 3,000株 ＝ (1,800,000 ＋ 492,000) ÷ 3,000 ＝ 2,292,000 ÷ 3,000 ＝ <strong>@764円</strong>。</p><p><strong>売却分の帳簿価額</strong>：764 × 1,200株 ＝ <strong>916,800円</strong>。</p><p><strong>売却価額</strong>：880 × 1,200 ＝ 1,056,000円。<strong>売却益</strong>：1,056,000 − 916,800 ＝ <strong>139,200円</strong>。</p><p>株式は同じ銘柄なら1株ずつに個体差がないので、6月に買った株を売ったのか9月の株を売ったのかは区別できません。<mark>それまでに買った全部をならした平均単価</mark>を帳簿価額とします。</p><p class="small muted">平均単価が割り切れない場合は、単価を丸めてから株数を掛けないでください。取得原価の総額に株数の割合を掛けます（この問題では割り切れます）。</p>'
+      },
+      {
+        text: '×1年9月1日に<strong>2年分の地代 480,000円</strong>を支払い、全額を費用として処理した（決算日は3月31日）。×2年3月31日の決算において、<strong>当期の費用となる額</strong>、<strong>前払費用（流動資産）とする額</strong>、<strong>長期前払費用とする額</strong>をそれぞれ求めなさい。',
+        labels: ['当期の費用', '前払費用', '長期前払費用'],
+        answer: [140000, 240000, 100000],
+        formula: ['480000/24*7', '480000/24*12', '480000/24*5'],
+        hint: '線を引く起点は支払日ではありません。',
+        explain: '<p><strong>1か月あたり</strong>：480,000 ÷ 24か月 ＝ <strong>20,000円</strong>。</p><p><strong>当期の費用</strong>：×1年9月〜×2年3月の<strong>7か月</strong>。20,000 × 7 ＝ <strong>140,000円</strong>。</p><p><strong>前払費用</strong>：決算日の翌日から1年以内、×2年4月〜×3年3月の<strong>12か月</strong>。20,000 × 12 ＝ <strong>240,000円</strong>。</p><p><strong>長期前払費用</strong>：×3年4月〜×3年8月の<strong>5か月</strong>。20,000 × 5 ＝ <strong>100,000円</strong>。</p><p>検算：140,000 ＋ 240,000 ＋ 100,000 ＝ <strong>480,000円</strong>。支払総額と一致します。7 ＋ 12 ＋ 5 ＝ 24か月 でも確認できます。</p><p>支払日から1年（×2年8月31日）で線を引くと誤ります。<mark>起点は決算日の翌日</mark>です。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-yukashoken', {
+    title: '確認テスト — 分類と評価の判断（10問）',
+    questions: [
+      {
+        text: '有価証券の評価方法を決めるにあたって、最初に確認すべきことはどれですか。',
+        choices: [
+          '株式か債券かという証券の種類',
+          '何のために保有しているかという保有目的',
+          '取得原価が時価より高いか低いか'
+        ],
+        answer: 1,
+        explain: '<p>評価方法は<strong>保有目的</strong>で決まります。同じA社株式でも、値上がり益を狙って持っていれば売買目的有価証券として時価評価し、支配のために持っていれば子会社株式として取得原価のまま据え置きます。</p><p>時価という数字が意味を持つのは、<mark>「売ったらいくらか」がその会社の財産状態を表す場合に限られます。</mark>売る意思がなければ、時価がいくらでも手元の資金は変わりません。</p><p>株式か債券かでは決まりません（選択肢1）。時価と取得原価の大小は、分類を決めた<strong>あとに</strong>金額を計算するための情報です（選択肢3）。</p>'
+      },
+      {
+        text: '決算にあたって<strong>評価替えをまったく行わない</strong>有価証券はどれですか。',
+        choices: [
+          '満期保有目的債券',
+          '子会社株式・関連会社株式',
+          'その他有価証券'
+        ],
+        answer: 1,
+        explain: '<p><strong>子会社株式・関連会社株式</strong>だけが取得原価のまま据え置かれます。支配や影響力のために持っており、売る意思がないためです。決算整理は「仕訳なし」になります。</p><p><strong>満期保有目的債券は時価評価こそしませんが、償却原価法による処理があります</strong>（選択肢1）。額面と取得原価が違う場合、その差額を各期に配分するため、決算整理で必ず仕訳が発生します。「時価に直さない」と「何もしない」を混同すると、決算整理で素通りさせてしまいます。</p><p>その他有価証券は時価法で評価替えします（選択肢3）。差額の行き先が純資産である点が売買目的と違うだけです。</p>'
+      },
+      {
+        text: 'その他有価証券の評価差額を、損益計算書ではなく<strong>純資産に直接入れる</strong>理由はどれですか。',
+        choices: [
+          '評価差額の金額が小さく、損益計算書に載せるほどの重要性がないため',
+          '時価で財産状態を示しつつ、まだ売っていない以上その差額を当期の損益にはできないため',
+          'その他有価証券は時価評価をしないため、損益が発生しないため'
+        ],
+        answer: 1,
+        explain: '<p>その他有価証券には<strong>2つの要請が同時にかかります。</strong>売ろうと思えば売れるので時価で財産状態を示したい。しかしいますぐ売るつもりはないので、値上がりを当期の利益にはできない。</p><p>この両方を満たす方法は、<mark>貸借対照表の資産は時価にし、相手科目を損益計算書ではなく純資産に置く</mark>ことしかありません。損益にしてしまえば、実現していない利益をもとに配当ができてしまいます。</p><p>金額の重要性とは関係ありません（選択肢1）。その他有価証券は時価評価します（選択肢3）。</p>'
+      },
+      {
+        text: 'その他有価証券について<strong>評価損</strong>が生じたとき、2級で用いる処理はどれですか。',
+        choices: [
+          'その他有価証券評価差額金を借方に計上する',
+          '投資有価証券評価損（費用）を計上する',
+          '評価損の場合は評価替えを行わない'
+        ],
+        answer: 0,
+        explain: '<p>2級で用いるのは<strong>全部純資産直入法だけ</strong>です。「全部」は<mark>評価益も評価損も全部まとめて純資産に入れる</mark>という意味で、評価損のときもその他有価証券評価差額金を借方に立てるだけです。</p><p>借方に立った評価差額金は純資産のマイナスで、貸借対照表には「その他有価証券評価差額金 △◯◯」と表示されます。</p><p><strong>評価損だけを当期の損益にする方法は部分純資産直入法といい、1級の範囲です</strong>（選択肢2）。2級の答案で費用科目を立ててはいけません。評価損でも評価替えは行います（選択肢3）。</p>'
+      },
+      {
+        text: '債券を利払日と利払日の間に売買したとき、<strong>端数利息</strong>を授受する理由はどれですか。',
+        choices: [
+          '債券の時価が利払日の直前に上昇するため、その分を調整するから',
+          '利息は利払日に債券を持っている人に全額支払われるため、売り手が保有した期間の分を買い手が立て替えて渡すから',
+          '売却損益を圧縮して課税を繰り延べるため'
+        ],
+        answer: 1,
+        explain: '<p>利息は利払日に<strong>そのとき債券を持っている人</strong>に半年分まとめて支払われます。そのままでは、前回の利払日から売買日まで持っていた売り手が1円ももらえず、買い手が持っていない期間の利息まで受け取ることになります。</p><p>そこで売買時に、<mark>買い手が売り手へ「利払日の翌日から売買日まで」の利息を立て替えて渡します。</mark>買い手は次の利払日に半年分を受け取ることで、立て替えた分を回収します。</p><p>買い手は有価証券利息の借方、売り手は貸方に記入します。<strong>端数利息は債券の対価ではないので、売却損益とは切り離して計算します。</strong></p>'
+      },
+      {
+        text: '利払日が3月末と9月末の社債を <strong>11月25日</strong>に売買した場合、端数利息の計算に用いる<strong>経過日数</strong>はどれですか。',
+        choices: [
+          '9月30日から11月25日までの57日',
+          '10月1日から11月25日までの56日',
+          '10月1日から11月24日までの55日'
+        ],
+        answer: 1,
+        explain: '<p>数え始めるのは<strong>前回の利払日の翌日</strong>、数え終わるのは<strong>売買日</strong>です。10月1日から11月25日まで、10月の31日 ＋ 11月の25日 ＝ <strong>56日</strong>。</p><p>9月30日を含めてはいけません（選択肢1）。<mark>9月30日分の利息はその日の利払いですでに支払われている</mark>ので、二重に数えることになります。</p><p>売買日そのものは含めます（選択肢3）。その日までは売り手が保有していたとみるためです。</p><p class="small muted">問題文が「経過日数は◯日として計算する」と与えている場合は、それに従ってください。</p>'
+      },
+      {
+        text: '額面総額 <strong>3,000,000円</strong>の社債（帳簿価額 <strong>2,940,000円</strong>）を、<strong>額面100円につき99円</strong>で売却し、端数利息 <strong>6,720円</strong>とともに受け取った。このとき計上される<strong>有価証券売却益</strong>はいくらですか。',
+        choices: [
+          '30,000円',
+          '36,720円',
+          '2,976,720円'
+        ],
+        answer: 0,
+        invariant: [
+          ['3000000 * 99 / 100 - 2940000', 'answer'],
+          ['3000000 * 99 / 100 + 6720', '2976720']
+        ],
+        explain: '<p><strong>債券の売買代金</strong>：3,000,000 × 99 ÷ 100 ＝ <strong>2,970,000円</strong>。</p><p><strong>売却損益</strong>：2,970,000 − 2,940,000 ＝ <strong>30,000円の売却益</strong>。</p><p>選択肢2の 36,720円は、受け取った総額 2,976,720円 から帳簿価額を引いた額です。<mark>端数利息 6,720円は債券の対価ではなく利息の精算</mark>なので、売却損益に混ぜてはいけません。これが最も多い誤りです。</p><p>手順を固定してください。<strong>まず端数利息を切り離す。残りを債券の売買代金とみて帳簿価額と比べる。</strong></p><p>選択肢3は受け取った総額そのもので、売却益ではありません。</p>'
+      },
+      {
+        text: '満期保有目的債券を<strong>額面より高い金額</strong>で取得した場合、償却原価法（定額法）による決算整理仕訳の形はどれですか。',
+        choices: [
+          '満期保有目的債券／有価証券利息（帳簿価額が増える）',
+          '有価証券利息／満期保有目的債券（帳簿価額が減る）',
+          '有価証券評価損益／満期保有目的債券（帳簿価額が減る）'
+        ],
+        answer: 1,
+        explain: '<p>償却原価法は<strong>帳簿価額を額面に向かって近づけていく</strong>手続きです。額面より高く買ったなら、帳簿価額は額面に向かって<mark>減っていきます。</mark></p><p>多く払った分は満期に戻ってこないので各期に配分される損失であり、有価証券利息の<strong>借方</strong>に立って受取利息を減らします。</p><p>選択肢1は額面より安く買った場合の形です。選択肢3は科目が誤りで、<strong>相手科目は常に有価証券利息</strong>です。差額の正体は、クーポンと市場利回りのずれを売買価格で調整したものであり、性質は利息だからです。有価証券評価損益は売買目的有価証券の時価評価に使う科目です。</p>'
+      },
+      {
+        text: '貸借対照表における<strong>その他有価証券</strong>の表示区分と表示科目の組み合わせとして正しいものはどれですか。',
+        choices: [
+          '流動資産・有価証券',
+          '投資その他の資産・投資有価証券',
+          '投資その他の資産・関係会社株式'
+        ],
+        answer: 1,
+        explain: '<p>その他有価証券は長く持ち続けるものなので<strong>投資その他の資産</strong>に表示し、表示科目は<strong>投資有価証券</strong>です。</p><p>流動資産の「有価証券」に入るのは、<strong>売買目的有価証券</strong>と、<strong>満期が決算日の翌日から1年以内の満期保有目的債券</strong>です（選択肢1）。</p><p>「関係会社株式」は子会社株式と関連会社株式をまとめて表示する科目です（選択肢3）。</p><p><mark>帳簿の勘定科目名をそのまま貸借対照表に転記しない</mark>でください。帳簿には「その他有価証券」と書き、貸借対照表には「投資有価証券」と書きます。</p>'
+      },
+      {
+        text: '×1年10月1日に3年分の保険料を前払いし、×2年3月31日（決算日）を迎えた。<strong>長期前払費用</strong>に振り替えるのはどの期間に対応する金額ですか。',
+        choices: [
+          '×2年10月1日から×4年9月30日までの分',
+          '×3年4月1日から×4年9月30日までの分',
+          '×2年4月1日から×4年9月30日までの分'
+        ],
+        answer: 1,
+        explain: '<p>長期前払費用は<strong>決算日の翌日から1年を超えて費用となる分</strong>です。決算日は×2年3月31日なので、1年以内は×3年3月31日まで。それを超える<strong>×3年4月1日から×4年9月30日まで（18か月）</strong>が長期前払費用です。</p><p>選択肢1は<mark>支払日から1年</mark>で線を引いた誤りです。起点は支払日ではなく決算日の翌日です。</p><p>選択肢3は前払分の全体（24か月）で、このうち×2年4月から×3年3月までの12か月分は流動資産の前払費用になります。</p><p>毎期末に数え直す点にも注意してください。翌期末には、いまの長期前払費用の一部が前払費用へ移ります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-yukashoken', {
+    title: '穴埋め — 用語を書けるようにする（7問）',
+    questions: [
+      {
+        text: '債券を利払日と利払日の間に売買したとき、前回の利払日の翌日から売買日までの利息として、買い手が売り手に支払う金額のことを何といいますか。',
+        answer: ['端数利息', 'はすうりそく'],
+        explain: '<p>利息は利払日に債券を持っている人へ全額支払われるため、放っておくと売り手が保有期間の利息を受け取れません。買い手が立て替えて渡し、次の利払日に半年分をまとめて受け取ることで回収します。</p><p>買い手は有価証券利息の借方、売り手は貸方に記入します。<strong>債券の対価ではないので、売却損益とは切り離して計算してください。</strong></p>'
+      },
+      {
+        text: '満期保有目的債券を額面と異なる金額で取得したとき、その差額を満期までの各期に配分して帳簿価額を額面に近づけていく方法を何といいますか。2級では定額法によるものだけが出題されます。',
+        answer: ['償却原価法', 'しょうきゃくげんかほう'],
+        explain: '<p>額面と取得原価の差額は、クーポンが市場の利回りと合わないぶんを売買価格で調整したものであり、その正体は<strong>利息</strong>です。だから満期の年に一度に計上せず各期に配分し、相手科目も有価証券利息を使います。</p><p>安く買ったなら帳簿価額は増え、高く買ったなら減ります。<strong>利息法は1級の範囲</strong>で、2級は定額法だけです。</p>'
+      },
+      {
+        text: 'その他有価証券の評価差額について、評価益であっても評価損であっても、すべて損益計算書を通さず純資産の部に直接計上する方法を何といいますか。',
+        answer: ['全部純資産直入法', 'ぜんぶじゅんしさんちょくにゅうほう'],
+        explain: '<p>時価で財産状態を示しつつ、まだ売っていない以上その差額を当期の損益にはできない、という2つの要請を同時に満たす形がこれです。使う科目は<strong>その他有価証券評価差額金</strong>で、評価損のときは借方に立て、純資産のマイナスとして表示します。</p><p><strong>評価損だけを当期の損益にする部分純資産直入法は1級</strong>の範囲です。2級の答案では使いません。</p>'
+      },
+      {
+        text: '決算時に計上したその他有価証券の評価差額を、翌期首に逆仕訳して取得原価に戻す処理方法を何といいますか。売買目的有価証券では、問題文に指示がなければこれと逆の方法によります。',
+        answer: ['洗替法', 'あらいがえほう', '洗い替え法', '洗替え法'],
+        explain: '<p>その他有価証券の評価差額は「決算日時点の時価はこうでした」という報告のために付けたものにすぎないので、翌期首に取得原価へ戻します。戻さないと、次の評価替えで「取得原価と時価の差」ではなく「前期末の時価と今期末の時価の差」を計算してしまいます。</p><p>売買目的有価証券は、指示がなければ<strong>切放法</strong>（時価をそのまま翌期の帳簿価額とする）として扱って差し支えありません。<strong>翌期首に必ず振り戻すのはその他有価証券</strong>と覚えてください。</p>'
+      },
+      {
+        text: '有価証券を売却したとき、有価証券勘定を帳簿価額（原価）で減らし、売却価額との差額を売却損益として記録する方法を何といいますか。商品売買で同じ名前の方法を学んでいます。',
+        answer: ['分記法', 'ぶんきほう'],
+        explain: '<p>有価証券の売買は分記法で記帳するのが原則です。商品と違って銘柄ごとの残高管理が容易であり、売るたびに利益が確定して分かるほうが実態に合うためです。</p><p>この単元で書いてきた売却仕訳は、すべて分記法によるものでした。新しい記帳方法を覚える必要はありません。<strong>売却のたびに損益を記録しない総記法は1級</strong>の範囲です。</p>'
+      },
+      {
+        text: '子会社株式と関連会社株式をまとめて表す勘定科目で、貸借対照表の投資その他の資産の区分に表示するときに用いるものは何ですか。',
+        answer: ['関係会社株式', 'かんけいがいしゃかぶしき'],
+        explain: '<p>帳簿では子会社株式・関連会社株式と区別して記帳しますが、貸借対照表では<strong>関係会社株式</strong>としてまとめて表示するのが原則です。</p><p>どちらも勘定科目表に載っており答案で使えます。問題文に勘定科目の指定一覧があれば、そこに載っているものを使ってください。</p>'
+      },
+      {
+        text: '前払いした費用のうち、決算日の翌日から1年を超えてはじめて費用となる部分を振り替える資産の勘定科目は何ですか。貸借対照表では投資その他の資産の区分に表示します。',
+        answer: ['長期前払費用', 'ちょうきまえばらいひよう'],
+        explain: '<p>前払費用は1年基準で分かれます。決算日の翌日から1年以内に費用となる分は流動資産の<strong>前払費用</strong>、それを超える分は投資その他の資産の<strong>長期前払費用</strong>です。</p><p>線を引く起点は<strong>支払日ではなく決算日の翌日</strong>です。ここを誤ると流動と固定の金額が両方ずれます。また毎期末に数え直すため、一度決めた区分が固定されるわけではありません。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>
