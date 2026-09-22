@@ -1167,5 +1167,100 @@
     "c35921e2",
     "9e8b3464",
     "580ee5e8"
+  ],
+  "phase1/19_shou-gaika-zeikoka#drill-gaika-zeikoka": [
+    "3e7ca601",
+    "4e3f9713",
+    "6a1b4eca",
+    "9037b044",
+    "a6f37d44",
+    "1091d495",
+    "68df1eb8",
+    "fb07939a",
+    "f3ca688e",
+    "06dfad86",
+    "1305a09e",
+    "2d2f1e11",
+    "a912221b",
+    "9672ae6d",
+    "84ddcc01",
+    "fa047f63"
+  ],
+  "phase1/19_shou-gaika-zeikoka#fill-gaika-zeikoka": [
+    "c9541b0b",
+    "33db59db",
+    "7c6992e6",
+    "39baec8c",
+    "c02f6c08",
+    "72cbf224",
+    "e995489c"
+  ],
+  "phase1/19_shou-gaika-zeikoka#num-gaika-zeikoka": [
+    "3eb2b3e2",
+    "ca1c44f7",
+    "30494ee8",
+    "3b9f0feb",
+    "555d7054",
+    "fadddbde"
+  ],
+  "phase1/19_shou-gaika-zeikoka#quiz-gaika-zeikoka": [
+    "db5461f0",
+    "d31c897c",
+    "d2aedeae",
+    "1aced102",
+    "bdd08496",
+    "793db2a8",
+    "3326585b",
+    "35d0af1c",
+    "47da51d6",
+    "78f78fd3"
+  ],
+  "phase1/20_kou-hyojun-genka#drill-hyojun": [
+    "2a12231f",
+    "11ae1f9b",
+    "0cefe976",
+    "c09b276d",
+    "5f774b6b",
+    "970566ab",
+    "fc38084a",
+    "d88ed262",
+    "5c7aa452",
+    "3f7ed790"
+  ],
+  "phase1/20_kou-hyojun-genka#fill-hyojun": [
+    "7a4692a1",
+    "abbf4a29",
+    "a44cf5b7",
+    "bb50c830",
+    "f4bfbd20",
+    "289a55c4",
+    "778dd1f1",
+    "49cdbf4e"
+  ],
+  "phase1/20_kou-hyojun-genka#num-hyojun": [
+    "bcef0093",
+    "ef77e596",
+    "1617c632",
+    "4ada01c5",
+    "3c264615",
+    "a3ff8cb8",
+    "e5ae5f7f",
+    "70b5669b",
+    "2285794f",
+    "47da17e4"
+  ],
+  "phase1/20_kou-hyojun-genka#quiz-hyojun": [
+    "f9c8b031",
+    "5b84fd0a",
+    "4732e242",
+    "45788d17",
+    "7e4dec2d",
+    "bed23e76",
+    "9b00314c",
+    "ddc0fb6e",
+    "a3c20e0b",
+    "be2d6800",
+    "3bddc1e6",
+    "c1caca57"
   ]
 }
