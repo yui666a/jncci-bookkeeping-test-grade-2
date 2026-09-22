@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第十一-4-0,工-第十一-5-0,工-第十一-7-0,工-第十一-7-ア,工-第十一-7-イ">
+<title>総合原価計算の種類 — 日商簿記2級 Phase 1 W5</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 18 総合原価計算の種類</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 18 ／ 4時間 ／ 工業簿記</p>
+    <h1>工程別・組別・等級別<br>総合原価計算</h1>
+    <p class="lead">UNIT 17 では、工場が1種類の製品だけを1つのラインで作っている姿を前提に、月の総原価を完成品と月末仕掛品に按分しました。現実の工場はそこまで単純ではありません。<mark>ラインが2本に分かれていたり、同じラインで種類の違う製品を作っていたり、同じ製品をサイズ違いで作っていたり</mark>します。この単元で扱う3つの方法は、どれも<strong>按分する前に、まず原価を正しい箱に分ける</strong>ための仕掛けです。<strong>箱に分けたあとの計算は、UNIT 17 のボックス図そのままです。</strong></p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算ドリル 12問</span>
+      <span class="chip">確認テスト 12問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">単純総合原価計算では足りない3つの場面</a></li>
+      <li><a href="#s2">工程別総合原価計算 — なぜ工程ごとに区切るのか</a></li>
+      <li><a href="#s3">累加法 — 第1工程の完成品原価を第2工程へ渡す</a></li>
+      <li><a href="#s4">前工程費が「始点投入の材料費」と同じ扱いになる理由</a></li>
+      <li><a href="#s5">工程別総合原価計算を通しで解く</a></li>
+      <li><a href="#s6">工程別の記帳 — 勘定を工程の数だけ置く</a></li>
+      <li><a href="#s7">組別総合原価計算 — 種類の違う製品を同じ工場で作る</a></li>
+      <li><a href="#s8">組別総合原価計算を通しで解く</a></li>
+      <li><a href="#s9">等級別総合原価計算 — 同じ製品のサイズ違い</a></li>
+      <li><a href="#s10">等価係数と積数 — 按分の重みを作る</a></li>
+      <li><a href="#s11">等級別総合原価計算を通しで解く</a></li>
+      <li><a href="#s12">3つの方法の使い分けと、2級の範囲の線引き</a></li>
+      <li><a href="#s13">仕訳ドリル 12問</a></li>
+      <li><a href="#s14">計算ドリル 12問</a></li>
+      <li><a href="#s15">確認テスト 12問</a></li>
+      <li><a href="#s16">用語の穴埋め 8問</a></li>
+      <li><a href="#s17">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>単純総合原価計算では足りない3つの場面</h2>
+
+  <p>UNIT 17 で扱った計算を思い出してください。1か月に発生した原価をすべて仕掛品勘定に集め、それを完成品と月末仕掛品に按分しました。この計算が成り立つには、<strong>集めた原価が「同じ1種類の製品のためのもの」でなければなりません。</strong>違う製品の原価が混ざった総額を数量で割っても、出てくるのは意味のない平均値です。</p>
+
+  <p>ところが実際の工場では、次の3つの形がよく起きます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">場面1</div>
+      <p><strong>工程が分かれている</strong></p>
+      <p class="small">ビール工場。<mark>仕込み</mark>の工程で麦汁を作り、それを<mark>発酵・熟成</mark>の工程へ送る。作っている製品は1種類だが、途中に区切りがある。<br>→ <strong>工程別総合原価計算</strong></p>
+    </div>
+    <div class="card">
+      <div class="card__label">場面2</div>
+      <p><strong>種類の違う製品を作る</strong></p>
+      <p class="small">同じ製麺ラインで<mark>うどん</mark>と<mark>そば</mark>を作る。原料も違えば手間も違う。数量を足すこと自体に意味がない。<br>→ <strong>組別総合原価計算</strong></p>
+    </div>
+    <div class="card">
+      <div class="card__label">場面3</div>
+      <p><strong>同じ製品のサイズ違い</strong></p>
+      <p class="small">同じ生地から<mark>Lサイズ・Mサイズ・Sサイズ</mark>のTシャツを作る。製品としては同種だが、生地の使用量も縫製の手間も比例して違う。<br>→ <strong>等級別総合原価計算</strong></p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">3つとも「按分する前に箱を分ける」話である</span>
+    <p>この3つは別々の計算方法に見えますが、やっていることは同じです。<mark>UNIT 17 のボックス図を、いくつ描くかが違うだけです。</mark></p>
+    <p><strong>工程別</strong>は工程の数だけボックス図を描き、前のボックスの完成品原価を次のボックスの投入に回します。<br><strong>組別</strong>は製品の種類（組）の数だけボックス図を描き、原価を先に組へ割り当ててから各ボックスを解きます。<br><strong>等級別</strong>はボックス図を1つだけ描いて完成品原価を出し、<strong>そのあとで</strong>等級ごとに分けます。</p>
+    <p>どの方法でも、1つのボックス図の中でやること — 完成品換算量を出し、平均法か先入先出法で単価を出し、完成品と月末仕掛品に分ける — は<strong>UNIT 17 と一字も変わりません。</strong>新しく覚えるのは「ボックス図をいくつ描き、その間をどうつなぐか」だけです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">新しい計算を覚える単元だと思わない</span>
+    <p>この単元でつまずく人の多くは、工程別・組別・等級別を<strong>3つの新しい計算手順</strong>として覚えようとします。そうすると手順が3倍になり、試験中に「これは工程別の解き方だったか、組別だったか」と迷います。</p>
+    <p>実際に新しいのは<mark>按分の前処理</mark>だけです。前処理が終わったあとは、UNIT 17 で何度も描いたボックス図に戻ります。<strong>「箱を分ける段階」と「箱の中を按分する段階」を頭の中で分けておくこと</strong>が、この単元を軽くする唯一のコツです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>工程別総合原価計算 — なぜ工程ごとに区切るのか</h2>
+
+  <p>缶詰工場を考えます。原料の魚を<strong>下処理して煮る工程</strong>があり、そのあと<strong>缶に詰めて密封・殺菌する工程</strong>があります。工場全体で1か月に 500万円 かかったとして、この500万円を完成した缶詰の個数で割れば、1個あたりの原価は出ます。<mark>出ることは出るのですが、それだけでは工場長は何も判断できません。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">工程ごとに区切る目的は「原価が膨らんだ場所を特定する」こと</span>
+    <p>先月は1個あたり 200円 だったのに今月は 240円 になった、という事態が起きたとします。工場全体の総額でしか原価を把握していないと、<strong>原因がどこにあるのか分かりません。</strong>魚の仕入値が上がったのか、殺菌の燃料を使いすぎたのか、切り分けようがないのです。</p>
+    <p>工程ごとに原価を集計しておけば、<mark>「煮る工程は変わっていないが、詰める工程が1個あたり40円増えている」</mark>と分かります。そこではじめて、缶の仕入先を見直すという打ち手が出てきます。</p>
+    <p><strong>原価計算の目的は数字を出すことではなく、管理に使える形で出すことです。</strong>工程別に区切る理由はここにあります。副次的な効果として、工程ごとの仕掛品原価が把握できるため、工程の途中で止まっている在庫の金額も正確になります。</p>
+  </div>
+
+  <p>工程別総合原価計算が向くのは、<strong>製品が複数の工程を順に通って完成し、各工程の区切りがはっきりしている</strong>工場です。化学、製紙、製鉄、食品、自動車部品などが典型です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">「工程」は物理的な場所ではなく、原価を集計する区切り</span>
+    <p>UNIT 13 の部門別計算と似た発想です。部門別計算が製造間接費を部門という箱に分けたように、工程別計算は<strong>製造原価の全体を工程という箱に分けます。</strong></p>
+    <p>ただし違いが1つあります。部門は<mark>同じ月の中で横に並ぶ箱</mark>で、補助部門から製造部門へ原価が移りました。工程は<mark>時間の流れに沿って直列に並ぶ箱</mark>で、原価は必ず前から後ろへ一方向に流れます。戻りません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>累加法 — 第1工程の完成品原価を第2工程へ渡す</h2>
+
+  <p>工程別総合原価計算で2級が扱うのは<strong>累加法</strong>という方法です。出題区分表では「全原価要素工程別総合原価計算の方法と記帳（累加法）」と書かれています。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">累加法のルールは1行で済む</span>
+    <p><strong>第1工程の完成品総合原価を、そのまま第2工程の投入原価として引き継ぐ。</strong>引き継いだ原価を、第2工程では<strong>前工程費</strong>という名前で呼ぶ。</p>
+    <p>これだけです。工程が3つあれば、第2工程の完成品総合原価が第3工程の前工程費になります。<mark>原価が工程を進むたびに積み上がっていく</mark>ので「累加」法といいます。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 340" style="width:100%;height:auto;min-width:700px" role="img" aria-label="第1工程の材料費と加工費が第1工程完成品原価になり、それが第2工程の前工程費として引き継がれ、第2工程の加工費と合わさって製品になる流れの図">
+      <defs>
+        <marker id="f1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+        </marker>
+        <marker id="f2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--credit)"/>
+        </marker>
+        <marker id="f3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--debit)"/>
+        </marker>
+      </defs>
+      <g font-size="13" fill="var(--text)">
+        <text x="150" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="var(--accent)">第1工程</text>
+        <text x="560" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="var(--accent)">第2工程</text>
+
+        <!-- 第1工程 投入 -->
+        <rect x="20" y="60" width="135" height="52" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.8"/>
+        <text x="87" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">直接材料費</text>
+        <text x="87" y="100" text-anchor="middle" font-size="12">1,200,000</text>
+
+        <rect x="20" y="128" width="135" height="52" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.8"/>
+        <text x="87" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">加工費</text>
+        <text x="87" y="168" text-anchor="middle" font-size="12">980,000</text>
+
+        <!-- 第1工程 ボックス -->
+        <rect x="195" y="55" width="150" height="130" rx="6" fill="var(--surface-2)" stroke="var(--accent-br)" stroke-width="2.2"/>
+        <text x="270" y="82" text-anchor="middle" font-size="13" font-weight="700">第1工程仕掛品</text>
+        <text x="270" y="106" text-anchor="middle" font-size="11.5" fill="var(--muted)">UNIT 17 のボックス図</text>
+        <text x="270" y="126" text-anchor="middle" font-size="11.5" fill="var(--muted)">で按分する</text>
+        <text x="270" y="152" text-anchor="middle" font-size="12">完成 1,200個</text>
+        <text x="270" y="170" text-anchor="middle" font-size="11.5" fill="var(--muted)">月末 400個(50%)</text>
+
+        <path d="M160 86 L 190 86" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#f1)"/>
+        <path d="M160 154 L 190 154" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#f1)"/>
+
+        <!-- 第1工程 月末仕掛品 -->
+        <rect x="195" y="212" width="150" height="46" rx="6" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="270" y="232" text-anchor="middle" font-size="12" fill="var(--muted)">月末仕掛品</text>
+        <text x="270" y="250" text-anchor="middle" font-size="12" fill="var(--muted)">440,000</text>
+        <path d="M270 190 L 270 208" stroke="var(--border-2)" stroke-width="1.8" fill="none"/>
+
+        <!-- 引き継ぎ -->
+        <rect x="380" y="88" width="150" height="64" rx="6" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="2.5"/>
+        <text x="455" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="var(--credit)">前工程費</text>
+        <text x="455" y="128" text-anchor="middle" font-size="12">1,740,000</text>
+        <text x="455" y="142" text-anchor="middle" font-size="11" fill="var(--muted)">@1,450 × 1,200個</text>
+        <text x="455" y="156" text-anchor="middle" font-size="10.5" fill="var(--muted)">＋ 月初 435,000</text>
+
+        <path d="M350 120 L 375 120" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#f2)"/>
+        <text x="455" y="74" text-anchor="middle" font-size="11.5" fill="var(--credit)">第1工程の完成品原価がそのまま名前を変える</text>
+
+        <!-- 第2工程 加工費 -->
+        <rect x="380" y="178" width="150" height="52" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.8"/>
+        <text x="455" y="197" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">加工費</text>
+        <text x="455" y="213" text-anchor="middle" font-size="12">1,024,000</text>
+        <text x="455" y="227" text-anchor="middle" font-size="10.5" fill="var(--muted)">＋ 月初 96,000</text>
+
+        <!-- 第2工程 ボックス -->
+        <rect x="570" y="88" width="155" height="142" rx="6" fill="var(--surface-2)" stroke="var(--accent-br)" stroke-width="2.2"/>
+        <text x="647" y="115" text-anchor="middle" font-size="13" font-weight="700">第2工程仕掛品</text>
+        <text x="647" y="139" text-anchor="middle" font-size="11.5" fill="var(--muted)">前工程費は始点投入の</text>
+        <text x="647" y="157" text-anchor="middle" font-size="11.5" fill="var(--muted)">材料費と同じ扱い</text>
+        <text x="647" y="183" text-anchor="middle" font-size="12">完成 1,300個</text>
+        <text x="647" y="201" text-anchor="middle" font-size="11.5" fill="var(--muted)">月末 200個(50%)</text>
+
+        <path d="M535 120 L 565 120" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#f2)"/>
+        <path d="M535 204 L 552 204 L 552 160 L 565 160" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#f1)"/>
+
+        <!-- 製品 -->
+        <rect x="765" y="106" width="95" height="60" rx="6" fill="var(--debit-bg)" stroke="var(--accent-br)" stroke-width="2.2"/>
+        <text x="812" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="var(--debit)">製品</text>
+        <text x="812" y="150" text-anchor="middle" font-size="12">2,925,000</text>
+        <path d="M730 136 L 760 136" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#f3)"/>
+
+        <!-- 第2工程 月末 -->
+        <rect x="570" y="256" width="155" height="46" rx="6" fill="var(--surface)" stroke="var(--border-2)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="647" y="276" text-anchor="middle" font-size="12" fill="var(--muted)">月末仕掛品</text>
+        <text x="647" y="294" text-anchor="middle" font-size="12" fill="var(--muted)">370,000</text>
+        <path d="M647 235 L 647 252" stroke="var(--border-2)" stroke-width="1.8" fill="none"/>
+
+        <text x="440" y="326" text-anchor="middle" font-size="11.5" fill="var(--muted)">原価は前から後ろへ一方向にしか流れない。第2工程の原価が第1工程へ戻ることはない</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">工程別総合原価計算（累加法）の原価の流れ。数値は第5節の設例による</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">第2工程に「直接材料費」の行が無いことが普通にある</span>
+    <p>図を見ると、第2工程の投入は<strong>前工程費と加工費の2つだけ</strong>です。第2工程で新たに材料を投入しない工場なら、これが正しい形です。</p>
+    <p>問題文に「第2工程の直接材料費」が書かれていないとき、<mark>書き忘れではないか</mark>と疑って手が止まることがあります。疑う必要はありません。缶詰工場でいえば、魚は第1工程の始点で投入され、第2工程では缶に詰めて熱を加えるだけです。第2工程に材料の行が無いのはむしろ自然です。</p>
+    <p>逆に「第2工程の始点で包装材を投入する」と書いてある問題なら、前工程費とは別に第2工程の直接材料費の欄を作ります。<strong>問題文が与えた欄をそのまま作ればよく、自分で足したり引いたりしません。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>前工程費が「始点投入の材料費」と同じ扱いになる理由</h2>
+
+  <p>累加法で最も重要な一点がここです。<strong>第2工程のボックス図で、前工程費は始点投入の直接材料費と全く同じように扱います。</strong>つまり<mark>完成品換算量ではなく、実際の数量で按分します。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ進捗度を掛けないのか</span>
+    <p>UNIT 17 で学んだ原則を思い出してください。<strong>始点で全量投入される原価は数量で按分し、進捗に応じて発生する原価は完成品換算量で按分する</strong>のでした。理由は、月末仕掛品が「進捗50%」であっても、<mark>始点投入の材料は100%入っているから</mark>です。半分できた製品にも、材料は丸ごと1個分入っています。</p>
+    <p>前工程費はどうでしょうか。第2工程の月末仕掛品が進捗50%だとします。この仕掛品は<strong>第1工程を通り抜けて第2工程に入ってきたもの</strong>です。第1工程は完全に終わっています。だから<mark>第1工程でかかった原価は、この仕掛品に丸ごと1個分乗っています。</mark>進捗50%というのは「第2工程の作業が半分済んだ」という意味であって、第1工程が半分という意味ではありません。</p>
+    <p>したがって前工程費は<strong>始点で全量投入された原価</strong>とまったく同じ性質を持ちます。だから同じように、数量で按分します。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">前工程費に進捗度を掛けるのが、この論点で最も多い誤り</span>
+    <p>第2工程の月末仕掛品が 200個・進捗50% だったとき、前工程費の按分を「200個 × 50% ＝ 100個分」としてしまう誤りです。正しくは <mark>200個分</mark> です。</p>
+    <p>こう覚えてください。<strong>第2工程に入った瞬間、その製品は第1工程を100%終えている。</strong>第2工程の進捗度は、第2工程で発生する加工費にだけ掛かります。</p>
+    <p>この誤りは、完成品原価と月末仕掛品原価の両方を狂わせ、さらに第3工程がある問題では下流の全部を巻き込みます。<strong>ボックス図に「前工程費（数量で按分）」と書き込んでから計算を始めてください。</strong></p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>原価の種類</th><th>投入のしかた</th><th>按分に使う量</th></tr></thead>
+    <tbody>
+      <tr><td><strong>前工程費</strong></td><td>第2工程の始点で全量</td><td><strong>数量</strong>（進捗度を掛けない）</td></tr>
+      <tr><td>第2工程の直接材料費<br><span class="small muted">始点投入と書かれている場合</span></td><td>第2工程の始点で全量</td><td><strong>数量</strong></td></tr>
+      <tr><td>第2工程の加工費</td><td>第2工程の進捗に応じて</td><td><strong>完成品換算量</strong>（数量 × 進捗度）</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">前工程費の単価は、第1工程の完成品単位原価そのもの</span>
+    <p>第1工程の完成品総合原価が 1,740,000円、完成品数量が 1,200個 なら、単位原価は @1,450円 です。この 1,200個 がそのまま第2工程へ投入されるので、<mark>第2工程の前工程費の当月投入は「1,200個・1,740,000円」という形で入ります。</mark></p>
+    <p>先入先出法で第2工程を解くなら、当月投入分の単価 @1,450円 が月末仕掛品の評価に使えます。平均法なら月初仕掛品の前工程費と合算して平均単価を出します。<strong>どちらの方法を使うかは問題文が指定します。工程ごとに違う方法を指定されることもあります。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>工程別総合原価計算を通しで解く</h2>
+
+  <p>ここまでの話を、1つの設例で最後まで通します。<strong>手を動かして一緒に解いてください。</strong></p>
+
+  <div class="card">
+    <div class="card__label">設例</div>
+    <p class="small">当工場は2つの工程を経て製品を製造しており、工程別総合原価計算（累加法）を採用している。直接材料はすべて第1工程の始点で投入する。第1工程は<strong>平均法</strong>、第2工程は<strong>先入先出法</strong>による。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>第1工程</th><th>第2工程</th></tr></thead>
+      <tbody>
+        <tr><td>月初仕掛品 数量（進捗度）</td><td class="amt">200個（50%）</td><td class="amt">300個（40%）</td></tr>
+        <tr><td>月初仕掛品 直接材料費／前工程費</td><td class="amt">120,000</td><td class="amt">435,000</td></tr>
+        <tr><td>月初仕掛品 加工費</td><td class="amt">56,000</td><td class="amt">96,000</td></tr>
+        <tr><td>当月投入 数量</td><td class="amt">1,400個</td><td class="amt">—</td></tr>
+        <tr><td>当月投入 直接材料費</td><td class="amt">1,080,000</td><td class="amt">—</td></tr>
+        <tr><td>当月投入 加工費</td><td class="amt">924,000</td><td class="amt">1,024,000</td></tr>
+        <tr><td>完成品 数量</td><td class="amt">1,200個</td><td class="amt">1,300個</td></tr>
+        <tr><td>月末仕掛品 数量（進捗度）</td><td class="amt">400個（50%）</td><td class="amt">200個（50%）</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>第1工程の数量を確かめる。</strong>月初 200個 ＋ 当月投入 1,400個 ＝ 1,600個。完成 1,200個 ＋ 月末 400個 ＝ 1,600個。一致します。<mark>数量が合わないまま金額の計算に入らないこと。</mark></li>
+      <li><strong>第1工程の直接材料費を平均法で按分する。</strong>始点投入なので数量で按分します。<br>合計 120,000 ＋ 1,080,000 ＝ 1,200,000円。数量 1,200 ＋ 400 ＝ 1,600個。単価 @750円。<br>完成品 @750 × 1,200 ＝ 900,000円／月末仕掛品 @750 × 400 ＝ 300,000円</li>
+      <li><strong>第1工程の加工費を平均法で按分する。</strong>完成品換算量で按分します。<br>合計 56,000 ＋ 924,000 ＝ 980,000円。換算量 1,200 ＋ 400 × 50% ＝ 1,400個。単価 @700円。<br>完成品 @700 × 1,200 ＝ 840,000円／月末仕掛品 @700 × 200 ＝ 140,000円</li>
+      <li><strong>第1工程を締める。</strong>完成品総合原価 900,000 ＋ 840,000 ＝ <strong>1,740,000円</strong>（単位原価 @1,450円）。月末仕掛品 300,000 ＋ 140,000 ＝ 440,000円。<br>検算：1,740,000 ＋ 440,000 ＝ 2,180,000円 ＝ 1,200,000 ＋ 980,000。一致します。</li>
+      <li><strong>第2工程へ引き継ぐ。</strong>前工程費の当月投入は <mark>1,200個・1,740,000円</mark>。第1工程の完成品がそっくり第2工程の投入になります。</li>
+      <li><strong>第2工程の数量を確かめる。</strong>月初 300個 ＋ 当月投入 1,200個 ＝ 1,500個。完成 1,300個 ＋ 月末 200個 ＝ 1,500個。一致します。</li>
+      <li><strong>第2工程の前工程費を先入先出法で按分する。</strong>始点投入と同じ扱いなので<strong>数量</strong>で按分します。月末仕掛品は当月投入分から構成されるので、単価は @1,740,000 ÷ 1,200個 ＝ @1,450円。<br>月末仕掛品 @1,450 × 200個 ＝ 290,000円<br>完成品 435,000 ＋ 1,740,000 − 290,000 ＝ 1,885,000円</li>
+      <li><strong>第2工程の加工費を先入先出法で按分する。</strong>当月投入の完成品換算量 ＝ 完成 1,300 − 月初 300 × 40% ＋ 月末 200 × 50% ＝ 1,300 − 120 ＋ 100 ＝ 1,280個。単価 1,024,000 ÷ 1,280 ＝ @800円。<br>月末仕掛品 @800 × 200 × 50% ＝ 80,000円<br>完成品 96,000 ＋ 1,024,000 − 80,000 ＝ 1,040,000円</li>
+      <li><strong>第2工程を締める。</strong>完成品総合原価 1,885,000 ＋ 1,040,000 ＝ <strong>2,925,000円</strong>（単位原価 2,925,000 ÷ 1,300個 ＝ @2,250円）。月末仕掛品 290,000 ＋ 80,000 ＝ 370,000円。<br>検算：投入合計 435,000 ＋ 96,000 ＋ 1,740,000 ＋ 1,024,000 ＝ 3,295,000円。産出合計 2,925,000 ＋ 370,000 ＝ 3,295,000円。一致します。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">各工程を締めるたびに検算する</span>
+    <p>工程別の問題は、第1工程の誤りが第2工程の前工程費を通じて全部に伝染します。<mark>第1工程を締めた時点で「完成品 ＋ 月末仕掛品 ＝ 月初 ＋ 当月投入」を必ず確認してください。</mark></p>
+    <p>手順4の検算で 2,180,000円 が両辺で一致したから、手順5で 1,740,000円 を安心して引き継げます。ここを飛ばして先へ進み、最後に答えが合わないと分かったときには、どこまで戻ればよいか分からなくなります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>工程別の記帳 — 勘定を工程の数だけ置く</h2>
+
+  <p>計算ができたら、それを勘定に落とします。工程別総合原価計算では<strong>仕掛品勘定を工程の数だけ置きます。</strong>「第1工程仕掛品」「第2工程仕掛品」という科目名になります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>取引</th><th>借方</th><th class="amt">金額</th><th>貸方</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="2">第1工程に直接材料費と加工費を投入</td><td class="d">第1工程仕掛品</td><td class="amt">2,004,000</td><td class="c">材料</td><td class="amt">1,080,000</td></tr>
+      <tr><td class="c">加工費</td><td class="amt">924,000</td></tr>
+      <tr><td>第1工程の完成品を第2工程へ振り替える</td><td class="d">第2工程仕掛品</td><td class="amt">1,740,000</td><td class="c">第1工程仕掛品</td><td class="amt">1,740,000</td></tr>
+      <tr><td>第2工程に加工費を投入</td><td class="d">第2工程仕掛品</td><td class="amt">1,024,000</td><td class="c">加工費</td><td class="amt">1,024,000</td></tr>
+      <tr><td>第2工程の完成品を製品勘定へ振り替える</td><td class="d">製品</td><td class="amt">2,925,000</td><td class="c">第2工程仕掛品</td><td class="amt">2,925,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">工程間の振替仕訳が、累加法の「累加」そのもの</span>
+    <p>2本目の仕訳 <strong>第2工程仕掛品 1,740,000 ／ 第1工程仕掛品 1,740,000</strong> が、計算上の「前工程費として引き継ぐ」を勘定の形にしたものです。</p>
+    <p>この仕訳を書いた結果、第1工程仕掛品勘定の残高は 440,000円（月末仕掛品）だけになり、第2工程仕掛品勘定の借方には 435,000 ＋ 96,000（月初）＋ 1,740,000（前工程費）＋ 1,024,000（加工費）が積み上がります。<mark>勘定の残高が、そのままボックス図の数字になっています。</mark></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">工程間の振替で使う貸方科目を取り違えない</span>
+    <p>第1工程から第2工程への振替は <strong>借方 第2工程仕掛品 ／ 貸方 第1工程仕掛品</strong> です。貸方に「製品」と書いてはいけません。第1工程が終わっただけで、製品としては未完成だからです。</p>
+    <p>「製品」勘定に振り替えるのは<mark>最終工程が完成したとき</mark>の1回だけです。工程が3つなら、振替仕訳は工程間に2本（1→2、2→3）と、最終の製品勘定への1本の合計3本になります。</p>
+    <p>なお、工程の途中の完成品を外部に販売したり倉庫に保管したりする工場では「半製品」勘定を使います。<strong>工程間の振替は仕掛品勘定から仕掛品勘定へ</strong>が基本形で、半製品が出てくるのは<mark>問題文がそう指示したときだけ</mark>です。その場合も、問題文が求めている範囲の仕訳だけを答えます。</p>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">第1工程仕掛品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>月初仕掛品</span><span>176,000</span></div>
+          <div class="l"><span>材料</span><span>1,080,000</span></div>
+          <div class="l"><span>加工費</span><span>924,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>2,180,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>第2工程仕掛品</span><span>1,740,000</span></div>
+          <div class="l"><span>次月繰越</span><span>440,000</span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>2,180,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">第2工程仕掛品</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>月初仕掛品</span><span>531,000</span></div>
+          <div class="l"><span>第1工程仕掛品</span><span>1,740,000</span></div>
+          <div class="l"><span>加工費</span><span>1,024,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>3,295,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品</span><span>2,925,000</span></div>
+          <div class="l"><span>次月繰越</span><span>370,000</span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>3,295,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">第1工程の月初仕掛品 176,000円 は 120,000（直接材料費）＋ 56,000（加工費）、第2工程の月初仕掛品 531,000円 は 435,000（前工程費）＋ 96,000（加工費）です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>組別総合原価計算 — 種類の違う製品を同じ工場で作る</h2>
+
+  <p>製麺工場が、同じ設備でうどんとそばを作っているとします。原料は小麦粉とそば粉で違い、そばのほうが手間もかかります。ここで工場の総原価をうどんとそばの合計数量で割ったら、<mark>うどんの原価が過大になり、そばの原価が過小になります。</mark>製品として別物だからです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">組別総合原価計算は、部門別計算とまったく同じ構造をしている</span>
+    <p>この問題への対処は、UNIT 13 の部門別計算で一度学んだ形です。原価を次の2つに分けます。</p>
+    <ul>
+      <li><strong>組直接費</strong> — どの組（＝製品の種類）のものか分かる原価。<mark>賦課</mark>する</li>
+      <li><strong>組間接費</strong> — 複数の組に共通で、どの組か分けられない原価。<mark>配賦</mark>する</li>
+    </ul>
+    <p>そば粉の代金は「そば組のもの」と分かります。だから直接そば組の箱へ入れます（賦課）。工場の電気代・建物の減価償却費・工場長の給料は両方の組のために使われており、伝票を見ても分けられません。だから配賦基準（直接作業時間、機械運転時間など）を決めて按分します（配賦）。</p>
+    <p><strong>賦課できるものは賦課し、できないものは配賦する。</strong>この原則は、材料費・労務費（直接費と間接費）でも、部門別計算（部門個別費と部門共通費）でも、組別計算（組直接費と組間接費）でも、同じ1つの考え方です。<mark>名前が変わっているだけで、新しい概念は1つもありません。</mark></p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>単元</th><th>賦課するもの</th><th>配賦するもの</th><th>配り先</th></tr></thead>
+    <tbody>
+      <tr><td>UNIT 04・07 費目別</td><td>直接材料費・直接労務費</td><td>製造間接費</td><td>製品（指図書）</td></tr>
+      <tr><td>UNIT 13 部門別</td><td>部門個別費</td><td>部門共通費</td><td>部門</td></tr>
+      <tr><td><strong>この単元 組別</strong></td><td><strong>組直接費</strong></td><td><strong>組間接費</strong></td><td><strong>組</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「組直接費」と「直接費」は同じ意味ではない</span>
+    <p>組直接費とは<strong>「どの組のものか分かる原価」</strong>であって、「直接材料費と直接労務費」のことではありません。</p>
+    <p>たとえば、A組製品専用の機械の減価償却費を考えてみてください。これは<mark>製造間接費（どの製品1個分かは分けられない）ですが、組直接費（A組のものだと分かる）</mark>です。この場合、A組の箱に賦課します。</p>
+    <p>問題文が「組直接費」「組間接費」という区分で数字を与えてくるので、自分で費目から判定する場面はほとんどありません。ただし<strong>「A組専用設備の減価償却費」のような書き方をされたときに、製造間接費だから配賦、と早合点しないこと。</strong>配賦するかどうかは費目ではなく、組に紐づけられるかどうかで決まります。</p>
+  </div>
+
+  <p>組別総合原価計算の手順は3段階です。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>組直接費を各組に賦課する。</strong>問題文の与えたとおりに、A組の箱・B組の箱へ入れる</li>
+      <li><strong>組間接費を配賦基準で各組に配賦する。</strong>配賦率 ＝ 組間接費総額 ÷ 配賦基準の合計。各組の配賦額 ＝ 配賦率 × その組の配賦基準</li>
+      <li><strong>組ごとにボックス図を解く。</strong>ここから先は UNIT 17 と完全に同じ。組の数だけ単純総合原価計算をする</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">組別の記帳は組ごとに仕掛品勘定を置く</span>
+    <p>「A組仕掛品」「B組仕掛品」という勘定を立て、完成品は「A組製品」「B組製品」へ振り替えます。組間接費はいったん<strong>組間接費</strong>勘定に集めてから、各組の仕掛品勘定へ配賦する形を採ります。</p>
+    <p>工程別が<mark>直列（前から後ろへ流れる）</mark>だったのに対し、組別は<mark>並列（最初から最後まで別々のライン）</mark>です。A組仕掛品からB組仕掛品への振替は起きません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>組別総合原価計算を通しで解く</h2>
+
+  <div class="card">
+    <div class="card__label">設例</div>
+    <p class="small">当工場はA組製品とB組製品を製造しており、組別総合原価計算を採用している。組間接費は直接作業時間を基準に配賦する。直接材料はすべて始点で投入し、月末仕掛品の評価は<strong>平均法</strong>による。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th>A組</th><th>B組</th><th>合計</th></tr></thead>
+      <tbody>
+        <tr><td>組直接費 直接材料費</td><td class="amt">1,440,000</td><td class="amt">900,000</td><td class="amt">2,340,000</td></tr>
+        <tr><td>組直接費 直接労務費</td><td class="amt">960,000</td><td class="amt">660,000</td><td class="amt">1,620,000</td></tr>
+        <tr><td>直接作業時間</td><td class="amt">1,600時間</td><td class="amt">800時間</td><td class="amt">2,400時間</td></tr>
+        <tr><td>月初仕掛品 直接材料費</td><td class="amt">160,000</td><td class="amt">100,000</td><td class="amt">—</td></tr>
+        <tr><td>月初仕掛品 加工費</td><td class="amt">120,000</td><td class="amt">64,000</td><td class="amt">—</td></tr>
+        <tr><td>月初仕掛品 数量（進捗度）</td><td class="amt">200個（50%）</td><td class="amt">100個（40%）</td><td class="amt">—</td></tr>
+        <tr><td>完成品 数量</td><td class="amt">1,800個</td><td class="amt">1,000個</td><td class="amt">—</td></tr>
+        <tr><td>月末仕掛品 数量（進捗度）</td><td class="amt">200個（50%）</td><td class="amt">100個（50%）</td><td class="amt">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">組間接費の当月発生額は 1,680,000円 である。加工費は直接労務費と組間接費配賦額の合計とする。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>組間接費の配賦率を出す。</strong>1,680,000円 ÷ 2,400時間 ＝ <strong>@700円</strong></li>
+      <li><strong>各組へ配賦する。</strong>A組 @700 × 1,600時間 ＝ 1,120,000円／B組 @700 × 800時間 ＝ 560,000円<br>検算：1,120,000 ＋ 560,000 ＝ 1,680,000円。配賦したものの合計は、配賦する前の総額と必ず一致します。</li>
+      <li><strong>各組の当月加工費を確定する。</strong>A組 960,000 ＋ 1,120,000 ＝ 2,080,000円／B組 660,000 ＋ 560,000 ＝ 1,220,000円</li>
+      <li><strong>A組のボックス図を解く（平均法）。</strong><br>直接材料費：(160,000 ＋ 1,440,000) ÷ (1,800 ＋ 200) ＝ @800円。完成品 1,440,000円／月末 160,000円<br>加工費：換算量 1,800 ＋ 200 × 50% ＝ 1,900個。(120,000 ＋ 2,080,000) ÷ 1,900 ＝ @1,157.89…円</li>
+      <li><strong>A組の端数処理を確認する。</strong>単価が割り切れません。このような場合、問題文は必ず「円未満四捨五入」などの指示を出します。<mark>指示がないまま割り切れないときは、按分の仕方を間違えている可能性を疑ってください。</mark>ここでは月末仕掛品を先に計算する方法を採ります。<br>月末仕掛品 加工費 ＝ 2,200,000 × (100 ÷ 1,900) ＝ 115,789円（円未満四捨五入）<br>完成品 加工費 ＝ 2,200,000 − 115,789 ＝ 2,084,211円</li>
+      <li><strong>A組を締める。</strong>完成品総合原価 1,440,000 ＋ 2,084,211 ＝ <strong>3,524,211円</strong>／月末仕掛品 160,000 ＋ 115,789 ＝ 275,789円<br>検算：3,524,211 ＋ 275,789 ＝ 3,800,000円 ＝ 160,000 ＋ 120,000 ＋ 1,440,000 ＋ 2,080,000。一致します。</li>
+      <li><strong>B組のボックス図を解く（平均法）。</strong><br>直接材料費：(100,000 ＋ 900,000) ÷ (1,000 ＋ 100) ＝ @909.09…円 → こちらも割り切れないので差額で求めます。月末仕掛品 ＝ 1,000,000 × (100 ÷ 1,100) ＝ 90,909円。完成品 ＝ 909,091円<br>加工費：換算量 1,000 ＋ 100 × 50% ＝ 1,050個。合計 64,000 ＋ 1,220,000 ＝ 1,284,000円。月末仕掛品 ＝ 1,284,000 × (50 ÷ 1,050) ＝ 61,143円。完成品 ＝ 1,222,857円</li>
+      <li><strong>B組を締める。</strong>完成品総合原価 909,091 ＋ 1,222,857 ＝ <strong>2,131,948円</strong>／月末仕掛品 90,909 ＋ 61,143 ＝ 152,052円<br>検算：2,131,948 ＋ 152,052 ＝ 2,284,000円 ＝ 100,000 ＋ 64,000 ＋ 900,000 ＋ 1,220,000。一致します。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">割り切れないときは「月末仕掛品を先に出して差額で完成品」</span>
+    <p>単価が割り切れない場合、単価を丸めてから数量を掛けると、完成品と月末仕掛品の合計が投入額と一致しなくなります。<mark>ボックス図の左右が合わなくなるのは致命的です。</mark></p>
+    <p>そこで<strong>月末仕掛品を按分で先に求め、完成品は差額で求めます。</strong>こうすれば、丸めの影響は完成品側が吸収し、合計は必ず一致します。月末仕掛品のほうを先に出すのは、数量が少なく丸めの影響が小さいからです。</p>
+    <p>問題文に「単価は円未満四捨五入」と明示された場合はその指示に従います。どちらの指示もないときは、この差額法が安全です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>取引</th><th>借方</th><th class="amt">金額</th><th>貸方</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="2">組間接費をA組・B組に配賦する</td><td class="d">A組仕掛品</td><td class="amt">1,120,000</td><td class="c">組間接費</td><td class="amt">1,680,000</td></tr>
+      <tr><td class="d">B組仕掛品</td><td class="amt">560,000</td></tr>
+      <tr><td>A組製品の完成</td><td class="d">A組製品</td><td class="amt">3,524,211</td><td class="c">A組仕掛品</td><td class="amt">3,524,211</td></tr>
+      <tr><td>B組製品の完成</td><td class="d">B組製品</td><td class="amt">2,131,948</td><td class="c">B組仕掛品</td><td class="amt">2,131,948</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>等級別総合原価計算 — 同じ製品のサイズ違い</h2>
+
+  <p>缶詰工場に戻ります。同じ中身の缶詰を、<strong>大缶・中缶・小缶</strong>の3サイズで作っているとします。中身は同一、製造ラインも同一、違うのは容量だけです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ組別ではだめなのか</span>
+    <p>大缶と小缶を別の組として扱い、組直接費と組間接費に分けることも理屈の上ではできます。しかし<mark>実務上それができません。</mark>同じラインを流れる同じ中身の缶詰について、「この魚肉は大缶用、この魚肉は小缶用」と原価を分けて記録するのは、手間に見合いません。</p>
+    <p>一方で、大缶と小缶を同じ1個として数えて平均すると明らかにおかしい。大缶には小缶の3倍の中身が入っているからです。</p>
+    <p>そこで<strong>「原価の発生額は、サイズにおおよそ比例するはずだ」という前提を置きます。</strong>小缶を1とすれば大缶は3、中缶は2、という重みを決め、この重みで総原価を按分します。この重みが<mark>等価係数</mark>です。</p>
+    <p><strong>組別が「原価を分けて集める」方法なら、等級別は「まとめて集めてから比率で分ける」方法です。</strong>手間をかけずに済ませるための割り切りであり、だからこそ同種製品にしか使えません。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>組別総合原価計算</th><th>等級別総合原価計算</th></tr></thead>
+    <tbody>
+      <tr><td>製品</td><td>種類が<strong>違う</strong>製品<br><span class="small muted">うどんとそば</span></td><td><strong>同じ種類</strong>で大きさ・品位が違う製品<br><span class="small muted">大缶・中缶・小缶</span></td></tr>
+      <tr><td>原価の集計</td><td>最初から<strong>組ごとに分けて</strong>集計する</td><td>いったん<strong>全体でまとめて</strong>集計する</td></tr>
+      <tr><td>分ける道具</td><td>組直接費の賦課 ＋ 組間接費の配賦</td><td><strong>等価係数</strong>による按分</td></tr>
+      <tr><td>分けるタイミング</td><td>ボックス図を解く<strong>前</strong></td><td>ボックス図を解いた<strong>後</strong></td></tr>
+      <tr><td>ボックス図の数</td><td>組の数だけ</td><td><strong>1つだけ</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">等級別ではボックス図を等級の数だけ描かない</span>
+    <p>最も多い誤解です。等級別総合原価計算では、<strong>ボックス図は1つしか描きません。</strong>工場全体の原価を単純総合原価計算と同じ方法で完成品総合原価と月末仕掛品原価に分け、<mark>そのあとで完成品総合原価だけを等級ごとに按分します。</mark></p>
+    <p>月末仕掛品を等級別に分ける必要は、2級の問題では生じません。仕掛品はまだどの等級になるか確定していない、と考えれば自然です。</p>
+    <p>手順を1行で言えば <strong>「単純総合原価計算 → 完成品原価を等価係数で按分」</strong> です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>等価係数と積数 — 按分の重みを作る</h2>
+
+  <p>等価係数だけでは按分できません。<mark>等価係数は「1個あたりの重み」であって、「全体に占める割合」ではない</mark>からです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ等価係数だけで按分してはいけないのか</span>
+    <p>大缶の等価係数が 1.0、小缶が 0.5 だったとします。ここで完成品総合原価を 1.0 : 0.5 ＝ 2 : 1 で分けたら、明らかに誤りです。大缶を100個、小缶を10,000個 作った月もあれば、その逆の月もあるからです。</p>
+    <p>等価係数が意味するのは<strong>「小缶1個は大缶0.5個ぶんの原価がかかる」</strong>ということだけです。原価の総額に対する各等級の取り分は、<mark>1個あたりの重み × 個数</mark>で決まります。</p>
+    <p>この「等価係数 × 完成品数量」を<strong>積数</strong>といいます。積数こそが按分の基準であり、等価係数はその材料にすぎません。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>等級ごとに積数を出す。</strong>積数 ＝ 等価係数 × 完成品数量</li>
+      <li><strong>積数を合計する。</strong>これが按分の分母になる</li>
+      <li><strong>完成品総合原価を積数の比で按分する。</strong>各等級の原価 ＝ 完成品総合原価 × (その等級の積数 ÷ 積数合計)</li>
+      <li><strong>等級ごとの単位原価を出す。</strong>その等級の原価 ÷ その等級の完成品数量</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">積数1あたりの原価を先に出すほうが電卓が速い</span>
+    <p>手順3を等級ごとに「完成品総合原価 × 積数 ÷ 積数合計」と計算すると、3等級で割り算を3回することになります。</p>
+    <p>代わりに<strong>「積数1あたりの原価 ＝ 完成品総合原価 ÷ 積数合計」を先に1回だけ出し、</strong>それに各等級の積数を掛けるほうが速く、丸め誤差も1箇所に閉じ込められます。<mark>この値は「等価係数1.0の等級の単位原価」でもあります。</mark></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">按分の対象は完成品総合原価であって、当月製造費用ではない</span>
+    <p>月初仕掛品や月末仕掛品がある問題で、当月製造費用をいきなり積数で按分してしまう誤りがあります。</p>
+    <p><strong>按分するのは、ボックス図を解いて出した完成品総合原価です。</strong>月末仕掛品原価を引く前の金額を按分すると、まだ完成していない分まで等級製品に割り振ることになります。</p>
+    <p>手順を間違えないために、<mark>ボックス図を解き終えるまで等価係数の欄を見ない</mark>ようにしてください。等価係数は最後に使う道具です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>等級別総合原価計算を通しで解く</h2>
+
+  <div class="card">
+    <div class="card__label">設例</div>
+    <p class="small">当工場は同一工程で等級製品A・B・Cを製造しており、等級別総合原価計算を採用している。当月の完成品総合原価は 4,860,000円 であった（単純総合原価計算の手続により算定済み）。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>等級製品</th><th>等価係数</th><th>完成品数量</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td class="amt">1.0</td><td class="amt">1,800個</td></tr>
+        <tr><td>B</td><td class="amt">0.8</td><td class="amt">1,500個</td></tr>
+        <tr><td>C</td><td class="amt">0.5</td><td class="amt">1,200個</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>等級製品</th><th class="amt">等価係数</th><th class="amt">完成品数量</th><th class="amt">積数</th><th class="amt">按分された原価</th><th class="amt">単位原価</th></tr></thead>
+    <tbody>
+      <tr><td>A</td><td class="amt">1.0</td><td class="amt">1,800個</td><td class="amt">1,800</td><td class="amt">2,430,000</td><td class="amt">@1,350</td></tr>
+      <tr><td>B</td><td class="amt">0.8</td><td class="amt">1,500個</td><td class="amt">1,200</td><td class="amt">1,620,000</td><td class="amt">@1,080</td></tr>
+      <tr><td>C</td><td class="amt">0.5</td><td class="amt">1,200個</td><td class="amt">600</td><td class="amt">810,000</td><td class="amt">@675</td></tr>
+      <tr><td><strong>合計</strong></td><td class="amt">—</td><td class="amt">4,500個</td><td class="amt"><strong>3,600</strong></td><td class="amt"><strong>4,860,000</strong></td><td class="amt">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>積数を出す。</strong>A ＝ 1.0 × 1,800 ＝ 1,800／B ＝ 0.8 × 1,500 ＝ 1,200／C ＝ 0.5 × 1,200 ＝ 600</li>
+      <li><strong>積数を合計する。</strong>1,800 ＋ 1,200 ＋ 600 ＝ <strong>3,600</strong></li>
+      <li><strong>積数1あたりの原価を出す。</strong>4,860,000 ÷ 3,600 ＝ <strong>@1,350円</strong></li>
+      <li><strong>各等級へ按分する。</strong>A ＝ @1,350 × 1,800 ＝ 2,430,000円／B ＝ @1,350 × 1,200 ＝ 1,620,000円／C ＝ @1,350 × 600 ＝ 810,000円<br>検算：2,430,000 ＋ 1,620,000 ＋ 810,000 ＝ 4,860,000円。完成品総合原価と一致します。</li>
+      <li><strong>単位原価を出す。</strong>A ＝ 2,430,000 ÷ 1,800個 ＝ @1,350円／B ＝ 1,620,000 ÷ 1,500個 ＝ @1,080円／C ＝ 810,000 ÷ 1,200個 ＝ @675円</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">単位原価の比が等価係数の比になることが検算になる</span>
+    <p>A @1,350／B @1,080／C @675 という単位原価の比を取ると、1,350 : 1,080 : 675 ＝ <strong>1.0 : 0.8 : 0.5</strong> です。等価係数の比そのものです。</p>
+    <p>これは偶然ではありません。等価係数とは「1個あたりの原価の比」の見積りなのだから、按分した結果の単位原価がその比になるのは当然です。<mark>計算が終わったら、単位原価を等価係数で割ってみてください。3つとも同じ値（この例では @1,350）になれば正しく按分できています。</mark></p>
+    <p>この検算は電卓の操作2回で済み、按分の誤りをほぼ確実に捕まえます。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>取引</th><th>借方</th><th class="amt">金額</th><th>貸方</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3">等級製品の完成</td><td class="d">A等級製品</td><td class="amt">2,430,000</td><td class="c">仕掛品</td><td class="amt">4,860,000</td></tr>
+      <tr><td class="d">B等級製品</td><td class="amt">1,620,000</td></tr>
+      <tr><td class="d">C等級製品</td><td class="amt">810,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">仕掛品勘定は1つだけです。等級ごとに分かれるのは製品勘定からで、<strong>これが「ボックス図を解いた後で分ける」ことの記帳上の現れ</strong>です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>3つの方法の使い分けと、2級の範囲の線引き</h2>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>工程別</th><th>組別</th><th>等級別</th></tr></thead>
+    <tbody>
+      <tr><td>何が複数あるか</td><td><strong>工程</strong>が複数</td><td><strong>製品の種類</strong>が複数</td><td>同種製品の<strong>等級</strong>が複数</td></tr>
+      <tr><td>仕掛品勘定の数</td><td>工程の数</td><td>組の数</td><td><strong>1つ</strong></td></tr>
+      <tr><td>ボックス図の数</td><td>工程の数</td><td>組の数</td><td><strong>1つ</strong></td></tr>
+      <tr><td>勘定のつながり</td><td><strong>直列</strong>（前から後ろへ）</td><td><strong>並列</strong>（互いに独立）</td><td>1本から最後に分岐</td></tr>
+      <tr><td>分ける道具</td><td>前工程費の引継ぎ</td><td>賦課と配賦</td><td>等価係数と積数</td></tr>
+      <tr><td>分けるタイミング</td><td>工程ごとに順に</td><td>ボックス図の<strong>前</strong></td><td>ボックス図の<strong>後</strong></td></tr>
+      <tr><td>典型例</td><td>化学・製紙・製鉄</td><td>製麺・衣料・電子部品</td><td>缶詰・製粉・鋳物</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">2級で出題される範囲はここまで</span>
+    <p>総合原価計算には、市販テキストが同じ章に載せていても<strong>出題区分表では1級</strong>という論点があります。2級の学習では踏み込みません。</p>
+    <ul>
+      <li><strong>非累加法</strong> — 工程別総合原価計算のもう1つの方法。前工程費として引き継がず、原価要素ごとに全工程を通して計算する。区分表では累加法に「（非累加法）」と1級の注記が付いている</li>
+      <li><strong>加工費工程別総合原価計算</strong> — 材料費は工程別にせず加工費だけを工程別に計算する方法。1級</li>
+      <li><strong>副産物の処理と評価</strong> — 主産物を作る過程で出る価値の低い産出物の扱い。1級</li>
+      <li><strong>連産品の計算</strong> — 同一の原料から必然的に複数の異種製品が生まれる場合の原価配分。1級</li>
+      <li><strong>純粋先入先出法</strong> — 2級で使うのは修正先入先出法。1級</li>
+      <li><strong>異常仕損費・異常減損費の処理</strong> — 2級で扱うのは正常仕損・正常減損の度外視法まで。1級</li>
+    </ul>
+    <p><mark>連産品と等級別は表面的に似ているため混同されますが、扱いは正反対です。</mark>等級別は「同種製品を等価係数で按分する」2級の論点、連産品は「必然的に生じる異種製品に結合原価を配分する」1級の論点です。問題文に「連産品」と書かれていたら、2級の範囲ではありません。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">第4問(2)で問われる形</span>
+    <p>第4問(2)は 16点 の総合問題枠で、総合原価計算はその中心的な出題です。工程別・組別・等級別のいずれが出ても、聞かれるのは次のどれかに収まります。</p>
+    <ul>
+      <li>完成品総合原価と月末仕掛品原価を答える</li>
+      <li>完成品の単位原価を答える</li>
+      <li>仕掛品勘定・原価計算表の空欄を埋める</li>
+      <li>工程別なら、第1工程完成品原価（＝第2工程の前工程費）を答える</li>
+    </ul>
+    <p><strong>数値が下流の解答欄に連動するので、途中の1箇所の誤りが複数の解答欄を巻き込みます。</strong>各工程・各組を締めるたびの検算を省かないでください。<mark>10秒の検算が、8点の連鎖的な失点を防ぎます。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-sogo-shurui"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル 12問</h2>
+
+  <p>電卓を使って構いません。<strong>工程別の問題では、第1工程を締めてから第2工程に進んでください。</strong>第1工程の完成品原価を確定させずに第2工程の計算を始めると、どこで間違えたか分からなくなります。</p>
+
+  <div id="num-sogo-shurui"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>確認テスト 12問</h2>
+
+  <div id="quiz-sogo-shurui"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s16"><span class="num">16</span>用語の穴埋め 8問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-sogo-shurui"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s17"><span class="num">17</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u18check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u18check">0 / 0 完了（0%）</div>
+
+  <div id="u18check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u18-1"><label for="k1"><span class="cl__t">工程別・組別・等級別の3つが「按分の前に箱を分ける」仕掛けだと説明できる</span><span class="cl__d">箱に分けたあとのボックス図の解き方は UNIT 17 と一字も変わらない。新しいのは分け方だけ</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u18-2"><label for="k2"><span class="cl__t">工程ごとに原価を区切る目的を、原価が膨らんだ場所の特定として説明できる</span><span class="cl__d">工場全体の総額しか持たないと、原価が上がった原因がどの工程にあるか切り分けられない</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u18-3"><label for="k3"><span class="cl__t">累加法のルールを1行で言える</span><span class="cl__d">第1工程の完成品総合原価を、そのまま第2工程の前工程費として引き継ぐ</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u18-4"><label for="k4"><span class="cl__t">前工程費を数量で按分する理由を、進捗度の意味から説明できる</span><span class="cl__d">第2工程に入った時点で第1工程は100%終わっている。第2工程の進捗度は第2工程の加工費にだけ掛かる</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u18-5"><label for="k5"><span class="cl__t">前工程費に進捗度を掛けないことを、ボックス図に書き込む習慣がある</span><span class="cl__d">この論点で最も多い誤り。月末200個・進捗50%なら前工程費は200個分</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u18-6"><label for="k6"><span class="cl__t">第2工程に直接材料費の行が無いことがあると分かっている</span><span class="cl__d">材料を第1工程の始点だけで投入する工場では自然な形。問題文の与えた欄をそのまま作る</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u18-7"><label for="k7"><span class="cl__t">工程間の振替仕訳を書け、貸方科目を取り違えない</span><span class="cl__d">第2工程仕掛品／第1工程仕掛品。貸方に製品と書かない。製品勘定への振替は最終工程の完成時だけ</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u18-8"><label for="k8"><span class="cl__t">各工程を締めるたびに「完成品＋月末仕掛品＝月初＋当月投入」を検算する</span><span class="cl__d">第1工程の誤りは前工程費を通じて第2工程の全部に伝染する。締めた時点で止める</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u18-9"><label for="k9"><span class="cl__t">組別総合原価計算が「組直接費は賦課・組間接費は配賦」の構造だと言える</span><span class="cl__d">UNIT 13 の部門別計算、費目別計算と同じ1つの考え方。名前が変わっているだけ</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u18-10"><label for="k10"><span class="cl__t">組直接費が「直接材料費と直接労務費」の意味ではないと分かっている</span><span class="cl__d">A組専用設備の減価償却費は製造間接費だが組直接費。組に紐づけられるかどうかで決まる</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u18-11"><label for="k11"><span class="cl__t">組間接費の配賦率を出し、各組へ配賦して合計が総額と一致することを確認できる</span><span class="cl__d">配賦率＝組間接費総額÷配賦基準合計。配賦後の合計は配賦前の総額に必ず戻る</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u18-12"><label for="k12"><span class="cl__t">単価が割り切れないとき、月末仕掛品を先に出して完成品を差額で求められる</span><span class="cl__d">単価を丸めてから数量を掛けると、合計が投入額と一致しなくなる。丸めの影響を完成品側に吸収させる</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u18-13"><label for="k13"><span class="cl__t">等級別総合原価計算を使う理由を、組別との手間の違いから説明できる</span><span class="cl__d">同じラインを流れる同一中身の製品を組別に集計するのは手間に見合わない。比率で分ける割り切り</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u18-14"><label for="k14"><span class="cl__t">等級別ではボックス図を1つしか描かないと分かっている</span><span class="cl__d">単純総合原価計算で完成品総合原価を出し、その後で等級ごとに按分する。月末仕掛品は等級別に分けない</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u18-15"><label for="k15"><span class="cl__t">等価係数だけで按分してはいけない理由を言え、積数を計算できる</span><span class="cl__d">等価係数は1個あたりの重み。取り分は重み×個数で決まる。積数＝等価係数×完成品数量</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u18-16"><label for="k16"><span class="cl__t">按分の対象が完成品総合原価であり、当月製造費用ではないと分かっている</span><span class="cl__d">ボックス図を解き終えるまで等価係数の欄を見ない。等価係数は最後に使う道具</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u18-17"><label for="k17"><span class="cl__t">等級別の検算として、単位原価の比が等価係数の比になることを使える</span><span class="cl__d">単位原価を等価係数で割ると全等級が同じ値になる。電卓操作2回で按分の誤りを捕まえられる</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u18-18"><label for="k18"><span class="cl__t">3つの方法を、仕掛品勘定の数とつながり方で区別できる</span><span class="cl__d">工程別は工程の数だけ直列、組別は組の数だけ並列、等級別は1つで最後に製品勘定が分岐する</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u18-19"><label for="k19"><span class="cl__t">2級の工程別が累加法だけで、非累加法は1級だと分かっている</span><span class="cl__d">区分表では累加法に「（非累加法）」と1級の注記が付く。加工費工程別総合原価計算も1級</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u18-20"><label for="k20"><span class="cl__t">副産物の処理と連産品の計算が1級の範囲だと分かっている</span><span class="cl__d">等級別と連産品は似て見えるが扱いは正反対。問題文に「連産品」とあれば2級の範囲外</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u18-21"><label for="k21"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u18-22"><label for="k22"><span class="cl__t">計算ドリル12問・確認テスト12問を全問正解した</span><span class="cl__d">特に前工程費の按分と、積数による按分を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>これで総合原価計算の形は出そろいました。<strong>単純（UNIT 17）・工程別・組別・等級別の4つが、どれも同じボックス図の上で動いている</strong>ことを確認してください。試験で「これは何別か」を判定する場面では、<mark>仕掛品勘定がいくつ必要になるか</mark>を考えると迷いません。</p>
+    <p>W6では<strong>標準原価計算</strong>に入ります。総合原価計算が「実際にかかった原価を完成品と月末仕掛品に分ける」計算だったのに対し、標準原価計算は<strong>あらかじめ決めた原価と実際を比べて差異を出す</strong>計算です。<mark>ボックス図は使わなくなり、W3で作ったシュラッター図の型に戻ります。</mark></p>
+    <p>ただし完成品換算量の考え方はそのまま使います。標準原価計算でも月末仕掛品の加工費は進捗度を掛けて計算するからです。<strong>この単元と UNIT 17 のボックス図が手に馴染んでいることが前提</strong>になります。</p>
+    <p>先へ進む前に、第5節の工程別の設例をもう一度、何も見ずに最後まで解いてください。<mark>第1工程を締める検算と、前工程費を数量で按分する点の2つが自動で出てくるようになっていれば十分です。</mark></p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W5 ／ UNIT 18 総合原価計算の種類</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var SOGO_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '第1工程仕掛品', '第2工程仕掛品', '第3工程仕掛品',
+  'A組仕掛品', 'B組仕掛品', 'A組製品', 'B組製品', '組間接費',
+  'A等級製品', 'B等級製品', 'C等級製品',
+  '加工費', '月次損益',
+  '製造間接費配賦差異', '予算差異', '操業度差異',
+  '材料消費価格差異', '賃率差異',
+  '電力料', '修繕料', '保険料', '減価償却費', '棚卸減耗費', '外注加工賃',
+  '売上', '売掛金', '現金', '当座預金', '普通預金', '買掛金', '未払金'
+];
+
+BokiJournal.mount('#drill-sogo-shurui', {
+  title: '仕訳ドリル — 総合原価計算の種類',
+  accounts: SOGO_ACCOUNTS,
+  questions: [
+    {
+      text: '工程別総合原価計算（累加法）を採用している。第1工程の当月完成品総合原価 1,740,000円 を第2工程へ振り替えた。',
+      debit: [['第2工程仕掛品', 1740000]],
+      credit: [['第1工程仕掛品', 1740000]],
+      hint: '第1工程が終わっただけで、製品としてはまだ未完成です。',
+      explain: '<p>累加法では、第1工程の完成品総合原価がそのまま第2工程の<strong>前工程費</strong>として引き継がれます。勘定の形にすると、この振替仕訳になります。</p><p>貸方に「製品」と書いてはいけません。<mark>製品勘定に振り替えるのは、最終工程が完成したときの1回だけです。</mark>第1工程を出た時点では、まだ第2工程の加工が残っています。</p><p>この仕訳の結果、第1工程仕掛品勘定に残るのは第1工程の月末仕掛品原価だけになります。</p>'
+    },
+    {
+      text: '前問に続き、第2工程の当月完成品総合原価 2,925,000円 を製品勘定へ振り替えた。第2工程が最終工程である。',
+      debit: [['製品', 2925000]],
+      credit: [['第2工程仕掛品', 2925000]],
+      hint: '最終工程の完成品だけが製品になります。',
+      explain: '<p>最終工程の完成品総合原価が、そのまま<strong>製品</strong>勘定の借方に入ります。この 2,925,000円 の中には、第1工程でかかった原価（前工程費 1,885,000円）がそのまま含まれています。<mark>原価が工程を進むたびに積み上がるのが累加法です。</mark></p><p>工程が3つある工場なら、振替仕訳は第1→第2、第2→第3、第3→製品 の3本になります。<strong>製品勘定への振替は常に1本だけ</strong>と覚えてください。</p>'
+    },
+    {
+      text: '第1工程で直接材料 1,080,000円 を消費し、加工費 924,000円 を第1工程に賦課した。加工費は「加工費」勘定に集計されている。',
+      debit: [['第1工程仕掛品', 2004000]],
+      credit: [['材料', 1080000], ['加工費', 924000]],
+      hint: '借方は1行にまとまります。',
+      explain: '<p>1,080,000 ＋ 924,000 ＝ <strong>2,004,000円</strong> が第1工程仕掛品の借方に入ります。</p><p>総合原価計算の問題では、直接労務費と製造間接費をまとめて<strong>加工費</strong>として扱うことが多くあります。ボックス図が「直接材料費」と「加工費」の2本で済むためです。<mark>問題文が加工費という括りで数字を与えてきたら、それをそのまま使ってよい</mark>という合図です。</p><p>工程別では、この投入が工程ごとに行われます。第2工程には第2工程の加工費が別途賦課されます。</p>'
+    },
+    {
+      text: '組別総合原価計算を採用している。当月の組間接費 1,680,000円 を直接作業時間（A組 1,600時間、B組 800時間）を基準に各組へ配賦した。',
+      debit: [['A組仕掛品', 1120000], ['B組仕掛品', 560000]],
+      credit: [['組間接費', 1680000]],
+      hint: '配賦率を先に出します。配賦した合計は、配賦する前の総額に戻ります。',
+      explain: '<p>配賦率 ＝ 1,680,000 ÷ (1,600 ＋ 800) ＝ <strong>@700円</strong><br>A組 ＝ @700 × 1,600時間 ＝ 1,120,000円<br>B組 ＝ @700 × 800時間 ＝ 560,000円</p><p>検算：1,120,000 ＋ 560,000 ＝ 1,680,000円。<mark>配賦とは総額を分けることなので、配賦後の合計は必ず配賦前の総額と一致します。</mark>一致しないなら配賦率か掛け算のどちらかが誤っています。</p><p>UNIT 13 の部門別計算で、部門共通費を配賦したのと同じ形です。配り先が部門から組に変わっただけです。</p>'
+    },
+    {
+      text: '組別総合原価計算を採用している。A組の組直接費として直接材料費 1,440,000円、直接労務費 960,000円 を賦課した。',
+      debit: [['A組仕掛品', 2400000]],
+      credit: [['材料', 1440000], ['賃金・給料', 960000]],
+      hint: '賦課なので、A組の箱にそのまま入れます。',
+      explain: '<p>1,440,000 ＋ 960,000 ＝ <strong>2,400,000円</strong>。組直接費は<mark>どの組のものか分かっている原価</mark>なので、配り方を決める余地がありません。伝票のとおりにA組仕掛品へ置くだけです。</p><p>これが<strong>賦課</strong>です。前問の組間接費が<strong>配賦</strong>だったのと対になります。金額を「置く」のが賦課、基準を決めて金額を「作る」のが配賦です。</p>'
+    },
+    {
+      text: '組別総合原価計算を採用している。当月のA組製品が完成した。A組の完成品総合原価は 3,524,211円 である。',
+      debit: [['A組製品', 3524211]],
+      credit: [['A組仕掛品', 3524211]],
+      hint: '組ごとに製品勘定も分かれます。',
+      explain: '<p>組別総合原価計算では、仕掛品勘定だけでなく<strong>製品勘定も組ごとに分けます。</strong>A組仕掛品 → A組製品、B組仕掛品 → B組製品 という並列の流れになります。</p><p><mark>A組仕掛品からB組仕掛品への振替は起こりません。</mark>工程別が直列（前から後ろへ流れる）だったのに対し、組別は並列（互いに独立した2本のライン）だからです。この違いが勘定の形にそのまま現れます。</p>'
+    },
+    {
+      text: '等級別総合原価計算を採用している。当月の完成品総合原価 4,860,000円 を、等価係数と完成品数量にもとづき各等級製品に按分して振り替えた。等級製品A（等価係数1.0・1,800個）、B（0.8・1,500個）、C（0.5・1,200個）である。',
+      debit: [['A等級製品', 2430000], ['B等級製品', 1620000], ['C等級製品', 810000]],
+      credit: [['仕掛品', 4860000]],
+      hint: '積数（等価係数 × 完成品数量）を先に出します。',
+      explain: '<p>積数：A ＝ 1.0 × 1,800 ＝ 1,800／B ＝ 0.8 × 1,500 ＝ 1,200／C ＝ 0.5 × 1,200 ＝ 600。合計 <strong>3,600</strong><br>積数1あたり ＝ 4,860,000 ÷ 3,600 ＝ @1,350円<br>A ＝ @1,350 × 1,800 ＝ 2,430,000円／B ＝ @1,350 × 1,200 ＝ 1,620,000円／C ＝ @1,350 × 600 ＝ 810,000円</p><p>貸方の仕掛品は<strong>1行だけ</strong>です。<mark>等級別では仕掛品勘定を等級ごとに分けません。</mark>工場全体で1つのボックス図を解き、完成品原価を出した後で等級に分かれます。分岐が起きるのは製品勘定からです。</p>'
+    },
+    {
+      text: '工程別総合原価計算を採用している工場で、第2工程に加工費 1,024,000円 を賦課した。なお当工場では材料をすべて第1工程の始点で投入している。',
+      debit: [['第2工程仕掛品', 1024000]],
+      credit: [['加工費', 1024000]],
+      hint: '第2工程で材料を投入していないことが明記されています。',
+      explain: '<p>第2工程の投入は<strong>前工程費と加工費の2つだけ</strong>です。材料を第1工程の始点でしか投入しない工場では、これが正常な形です。</p><p><mark>第2工程に直接材料費の行が無いことを、問題文の書き忘れだと疑う必要はありません。</mark>缶詰工場でいえば、魚は第1工程で投入され、第2工程では缶に詰めて殺菌するだけです。</p><p>問題文が「第2工程の始点で包装材を投入する」と書いている場合にだけ、前工程費とは別に第2工程の直接材料費の欄を作ります。</p>'
+    },
+    {
+      text: '組別総合原価計算を採用している。当月の組間接費の実際発生額は、間接材料費 480,000円、間接労務費 700,000円、間接経費 500,000円 であった。これらを組間接費勘定に集計した。',
+      debit: [['組間接費', 1680000]],
+      credit: [['材料', 480000], ['賃金・給料', 700000], ['経費', 500000]],
+      hint: '各組に配賦する前に、いったん1つの勘定に集めます。',
+      explain: '<p>480,000 ＋ 700,000 ＋ 500,000 ＝ <strong>1,680,000円</strong>。</p><p>組間接費は<strong>いったん組間接費勘定に集めてから</strong>、配賦基準を使って各組の仕掛品勘定へ配ります。UNIT 10 で製造間接費をいったん製造間接費勘定に集めたのと同じ形です。</p><p><mark>集めてから配る、という2段階を踏むのは、配賦の対象になる総額を確定させるためです。</mark>総額が決まらなければ配賦率を計算できません。</p>'
+    },
+    {
+      text: '等級別総合原価計算を採用している工場で、当月に完成したA等級製品のうち 1,500個（単位原価 @1,350円）を得意先に引き渡し、売上原価を計上した。なお売上の計上は別途行っている。',
+      debit: [['売上原価', 2025000]],
+      credit: [['A等級製品', 2025000]],
+      hint: '完成した数量ではなく、引き渡した数量で計算します。',
+      explain: '<p>@1,350 × 1,500個 ＝ <strong>2,025,000円</strong>。</p><p>等級別総合原価計算の目的は、<mark>等級ごとの単位原価を出すこと</mark>です。その単位原価があってはじめて、等級ごとの売上原価と在庫金額が計算できます。この仕訳が、等級別に計算した意味が現れる場面です。</p><p>完成品が 1,800個 で引き渡しが 1,500個 なら、残る 300個（405,000円）はA等級製品勘定に残ります。<strong>完成しただけでは売上原価になりません。</strong></p>'
+    },
+    {
+      text: '工程別総合原価計算（累加法）を採用している工場で、第1工程の当月完成品 1,200個（単位原価 @1,450円）のうち、1,000個を第2工程へ振り替え、残り 200個 は半製品として倉庫に保管した。半製品の振替は行わず、第2工程への振替分のみ処理する。',
+      debit: [['第2工程仕掛品', 1450000]],
+      credit: [['第1工程仕掛品', 1450000]],
+      hint: '問題文が処理の対象を限定しています。',
+      explain: '<p>@1,450 × 1,000個 ＝ <strong>1,450,000円</strong>。第2工程へ実際に送った分だけを振り替えます。</p><p>通常の工程別総合原価計算では、第1工程の完成品は全量が第2工程へ流れます。<mark>一部を倉庫に保管する形は、問題文が明示したときだけ考えます。</mark></p><p>この問題では「半製品の振替は行わず」と指示があるため、倉庫分 200個 の処理は問われていません。<strong>問題文が処理の範囲を限定しているときは、その範囲だけを答えます。</strong>指示にない仕訳を書き足すと、解答欄の行数が合わなくなります。</p>'
+    },
+    {
+      text: '組別総合原価計算を採用している。当月のB組製品が完成した。B組の当月製造費用は直接材料費 900,000円、加工費 1,220,000円 であり、月初仕掛品原価 164,000円、月末仕掛品原価 152,052円 である。完成品を製品勘定へ振り替えなさい。',
+      debit: [['B組製品', 2131948]],
+      credit: [['B組仕掛品', 2131948]],
+      hint: '完成品総合原価は、月初と当月投入の合計から月末仕掛品を引いた額です。',
+      explain: '<p>完成品総合原価 ＝ 164,000 ＋ 900,000 ＋ 1,220,000 − 152,052 ＝ <strong>2,131,948円</strong></p><p>ボックス図の左側（月初 ＋ 当月投入）から月末仕掛品を引けば完成品原価になる、という関係はどの総合原価計算でも共通です。<mark>組別だからといって特別な計算は要りません。</mark></p><p>検算：2,131,948 ＋ 152,052 ＝ 2,284,000円 ＝ 164,000 ＋ 900,000 ＋ 1,220,000。左右が一致します。<strong>この検算を組ごとに必ず行ってください。</strong></p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-sogo-shurui', {
+  title: '計算ドリル — 総合原価計算の種類',
+  badge: '計算ドリル 12問',
+  questions: [
+    {
+      text: '工程別総合原価計算（累加法）を採用している。第1工程は平均法による。直接材料はすべて第1工程の始点で投入する。月初仕掛品の直接材料費 120,000円、当月投入の直接材料費 1,080,000円。完成品数量 1,200個、月末仕掛品 400個（進捗度50%）。① 直接材料費の単価、② 完成品に配分される直接材料費、③ 月末仕掛品の直接材料費を求めなさい。',
+      answer: [750, 900000, 300000],
+      formula: [
+        '(120000 + 1080000) / (1200 + 400)',
+        '(120000 + 1080000) / (1200 + 400) * 1200',
+        '(120000 + 1080000) / (1200 + 400) * 400'
+      ],
+      labels: ['① 単価（円）', '② 完成品(円)', '③ 月末仕掛品(円)'],
+      hint: '始点投入なので、進捗度を掛けずに数量で按分します。',
+      explain: '<p>① (120,000 ＋ 1,080,000) ÷ (1,200 ＋ 400) ＝ <strong>@750円</strong><br>② @750 × 1,200個 ＝ <strong>900,000円</strong><br>③ @750 × 400個 ＝ <strong>300,000円</strong></p><p>始点投入の直接材料費は、月末仕掛品にも<mark>完成品と同じだけ丸ごと入っています。</mark>進捗50%というのは加工がどこまで進んだかであって、材料の入り具合ではありません。</p><p>検算：900,000 ＋ 300,000 ＝ 1,200,000円 ＝ 120,000 ＋ 1,080,000。一致します。</p>'
+    },
+    {
+      text: '前問と同じ第1工程について、加工費を計算する。月初仕掛品 200個（進捗度50%）の加工費は 56,000円、当月投入の加工費は 924,000円。完成品数量 1,200個、月末仕掛品 400個（進捗度50%）。平均法による。① 完成品換算量の合計、② 加工費の単価、③ 完成品に配分される加工費を求めなさい。',
+      answer: [1400, 700, 840000],
+      formula: [
+        '1200 + 400 * 50 / 100',
+        '(56000 + 924000) / (1200 + 400 * 50 / 100)',
+        '(56000 + 924000) / (1200 + 400 * 50 / 100) * 1200'
+      ],
+      labels: ['① 完成品換算量(個)', '② 単価(円)', '③ 完成品の加工費(円)'],
+      hint: '平均法では月初仕掛品の換算量を分母に入れません。分母は完成品と月末仕掛品です。',
+      explain: '<p>① 1,200 ＋ 400 × 50% ＝ <strong>1,400個</strong><br>② (56,000 ＋ 924,000) ÷ 1,400 ＝ <strong>@700円</strong><br>③ @700 × 1,200個 ＝ <strong>840,000円</strong></p><p>平均法の分母は<mark>「完成品 ＋ 月末仕掛品」の換算量</mark>です。月初仕掛品の換算量は使いません。月初仕掛品原価を分子に足し込んで、まとめて平均してしまうのが平均法だからです。</p><p>月末仕掛品の加工費は @700 × 200個（＝400 × 50%）＝ 140,000円。検算：840,000 ＋ 140,000 ＝ 980,000円 ＝ 56,000 ＋ 924,000。一致します。</p>'
+    },
+    {
+      text: '前2問の結果から、第1工程を締める。完成品に配分された直接材料費は 900,000円、加工費は 840,000円 であった。完成品数量は 1,200個 である。① 第1工程の完成品総合原価、② 第1工程の完成品単位原価、③ この金額が第2工程で呼ばれる名前の当月投入額を求めなさい（②と③は円）。',
+      answer: [1740000, 1450, 1740000],
+      formula: ['900000 + 840000', '(900000 + 840000) / 1200', '900000 + 840000'],
+      labels: ['① 完成品総合原価(円)', '② 完成品単位原価(円)', '③ 第2工程の前工程費 当月投入(円)'],
+      hint: '累加法では、第1工程の完成品総合原価がそっくりそのまま第2工程に移ります。',
+      explain: '<p>① 900,000 ＋ 840,000 ＝ <strong>1,740,000円</strong><br>② 1,740,000 ÷ 1,200個 ＝ <strong>@1,450円</strong><br>③ <strong>1,740,000円</strong>（①と同じ金額）</p><p><mark>③が①と同じ金額になることが、累加法のすべてです。</mark>第1工程の完成品総合原価は、名前を「前工程費」に変えて第2工程の当月投入になります。金額は1円も変わりません。</p><p>②の単位原価 @1,450円 は、第2工程で先入先出法を使うときに月末仕掛品の評価に使います。平均法なら月初仕掛品の前工程費と合算して平均を取り直します。</p>'
+    },
+    {
+      text: '第2工程は先入先出法による。前工程費の当月投入は 1,200個・1,740,000円。月初仕掛品 300個（進捗度40%）の前工程費は 435,000円。完成品数量 1,300個、月末仕掛品 200個（進捗度50%）。① 前工程費の当月投入単価、② 月末仕掛品の前工程費、③ 完成品に配分される前工程費を求めなさい。',
+      answer: [1450, 290000, 1885000],
+      formula: [
+        '1740000 / 1200',
+        '1740000 / 1200 * 200',
+        '435000 + 1740000 - 1740000 / 1200 * 200'
+      ],
+      labels: ['① 当月投入単価(円)', '② 月末仕掛品(円)', '③ 完成品(円)'],
+      hint: '前工程費は始点投入の材料費と同じ扱いです。進捗度を掛けてはいけません。',
+      explain: '<p>① 1,740,000 ÷ 1,200個 ＝ <strong>@1,450円</strong><br>② @1,450 × <mark>200個</mark> ＝ <strong>290,000円</strong>（200 × 50% ＝ 100個 としない）<br>③ 435,000 ＋ 1,740,000 − 290,000 ＝ <strong>1,885,000円</strong></p><p>②が最重要です。第2工程の月末仕掛品は進捗50%ですが、<strong>第1工程はすでに100%終わっています。</strong>この仕掛品が第2工程に入ってきた時点で、第1工程の原価は丸ごと1個分乗っています。だから数量そのままで按分します。</p><p>③は先入先出法なので、月初仕掛品原価 435,000円 はすべて完成品に含まれます。差額で求めるのが確実です。</p>'
+    },
+    {
+      text: '前問と同じ第2工程の加工費を計算する。先入先出法による。当月投入の加工費 1,024,000円。月初仕掛品 300個（進捗度40%）、完成品 1,300個、月末仕掛品 200個（進捗度50%）。① 当月投入の完成品換算量、② 加工費の単価、③ 月末仕掛品の加工費を求めなさい。',
+      answer: [1280, 800, 80000],
+      formula: [
+        '1300 - 300 * 40 / 100 + 200 * 50 / 100',
+        '1024000 / (1300 - 300 * 40 / 100 + 200 * 50 / 100)',
+        '1024000 / (1300 - 300 * 40 / 100 + 200 * 50 / 100) * 200 * 50 / 100'
+      ],
+      labels: ['① 当月投入換算量(個)', '② 単価(円)', '③ 月末仕掛品の加工費(円)'],
+      hint: '先入先出法の分母は「完成品 − 月初仕掛品換算量 ＋ 月末仕掛品換算量」です。',
+      explain: '<p>① 1,300 − 300 × 40% ＋ 200 × 50% ＝ 1,300 − 120 ＋ 100 ＝ <strong>1,280個</strong><br>② 1,024,000 ÷ 1,280 ＝ <strong>@800円</strong><br>③ @800 × (200 × 50% ＝ 100個) ＝ <strong>80,000円</strong></p><p>先入先出法は<mark>当月に投入した原価を、当月に加工した分だけで割ります。</mark>月初仕掛品が前月までに加工済みの 120個分 は、当月の加工ではないので分母から引きます。</p><p>③では進捗度を掛けます。<strong>加工費は進捗に応じて発生する</strong>ので、前工程費とは扱いが逆になります。同じ月末仕掛品 200個 について、前工程費は 200個分、加工費は 100個分 で按分する、という非対称がこの論点の核心です。</p>'
+    },
+    {
+      text: '第2工程を締める。完成品に配分された前工程費は 1,885,000円、加工費は 1,040,000円 であった。月末仕掛品の前工程費は 290,000円、加工費は 80,000円 である。完成品数量は 1,300個。① 完成品総合原価、② 完成品単位原価、③ 月末仕掛品原価を求めなさい。',
+      answer: [2925000, 2250, 370000],
+      formula: [
+        '1885000 + 1040000',
+        '(1885000 + 1040000) / 1300',
+        '290000 + 80000'
+      ],
+      labels: ['① 完成品総合原価(円)', '② 完成品単位原価(円)', '③ 月末仕掛品原価(円)'],
+      hint: '完成品総合原価と月末仕掛品原価を足すと、投入額の合計になるはずです。',
+      explain: '<p>① 1,885,000 ＋ 1,040,000 ＝ <strong>2,925,000円</strong><br>② 2,925,000 ÷ 1,300個 ＝ <strong>@2,250円</strong><br>③ 290,000 ＋ 80,000 ＝ <strong>370,000円</strong></p><p>検算：2,925,000 ＋ 370,000 ＝ 3,295,000円。投入側は月初仕掛品 435,000 ＋ 96,000 ＝ 531,000円、当月投入 1,740,000 ＋ 1,024,000 ＝ 2,764,000円、合計 3,295,000円。<mark>一致します。</mark></p><p>②の単位原価 @2,250円 には、第1工程でかかった原価も含まれています。累加法では、最終工程の単位原価が<strong>全工程を通した1個あたりの原価</strong>になります。</p>'
+    },
+    {
+      text: '組別総合原価計算を採用している。当月の組間接費 1,680,000円 を直接作業時間を基準に配賦する。直接作業時間はA組 1,600時間、B組 800時間 である。① 配賦率、② A組への配賦額、③ B組への配賦額を求めなさい。',
+      answer: [700, 1120000, 560000],
+      formula: [
+        '1680000 / (1600 + 800)',
+        '1680000 / (1600 + 800) * 1600',
+        '1680000 / (1600 + 800) * 800'
+      ],
+      labels: ['① 配賦率(円/時間)', '② A組配賦額(円)', '③ B組配賦額(円)'],
+      hint: '配賦率は総額を配賦基準の合計で割ります。',
+      explain: '<p>① 1,680,000 ÷ (1,600 ＋ 800 ＝ 2,400時間) ＝ <strong>@700円</strong><br>② @700 × 1,600時間 ＝ <strong>1,120,000円</strong><br>③ @700 × 800時間 ＝ <strong>560,000円</strong></p><p>検算：1,120,000 ＋ 560,000 ＝ 1,680,000円。<mark>配賦とは総額を分ける操作なので、配賦後の合計は必ず配賦前の総額に戻ります。</mark>これが合わないなら配賦率か掛け算が誤っています。</p><p>UNIT 13 の部門共通費の配賦とまったく同じ計算です。配り先が部門から組に変わっただけで、手順に違いはありません。</p>'
+    },
+    {
+      text: '前問に続く。A組の組直接費は直接材料費 1,440,000円、直接労務費 960,000円。B組の組直接費は直接材料費 900,000円、直接労務費 660,000円。組間接費の配賦額はA組 1,120,000円、B組 560,000円 である。① A組の当月製造費用、② B組の当月製造費用、③ 両組の当月製造費用の合計を求めなさい。',
+      answer: [3520000, 2120000, 5640000],
+      formula: [
+        '1440000 + 960000 + 1120000',
+        '900000 + 660000 + 560000',
+        '1440000 + 960000 + 1120000 + 900000 + 660000 + 560000'
+      ],
+      labels: ['① A組(円)', '② B組(円)', '③ 合計(円)'],
+      hint: '組直接費の賦課額と組間接費の配賦額を足します。',
+      explain: '<p>① 1,440,000 ＋ 960,000 ＋ 1,120,000 ＝ <strong>3,520,000円</strong><br>② 900,000 ＋ 660,000 ＋ 560,000 ＝ <strong>2,120,000円</strong><br>③ 3,520,000 ＋ 2,120,000 ＝ <strong>5,640,000円</strong></p><p>③は別の足し方でも検算できます。組直接費の総額 (1,440,000 ＋ 900,000) ＋ (960,000 ＋ 660,000) ＝ 3,960,000円 に、組間接費の総額 1,680,000円 を足して 5,640,000円。<mark>縦に足しても横に足しても同じ総額になります。</mark></p><p>ここまでが「箱を分ける」段階です。この先、①と②をそれぞれ別のボックス図で按分していきます。</p>'
+    },
+    {
+      text: 'A組の直接材料費を平均法で按分する。月初仕掛品の直接材料費 160,000円、当月投入の直接材料費 1,440,000円。完成品数量 1,800個、月末仕掛品 200個（進捗度50%）。直接材料はすべて始点で投入する。① 単価、② 完成品に配分される直接材料費、③ 月末仕掛品の直接材料費を求めなさい。',
+      answer: [800, 1440000, 160000],
+      formula: [
+        '(160000 + 1440000) / (1800 + 200)',
+        '(160000 + 1440000) / (1800 + 200) * 1800',
+        '(160000 + 1440000) / (1800 + 200) * 200'
+      ],
+      labels: ['① 単価(円)', '② 完成品(円)', '③ 月末仕掛品(円)'],
+      hint: '組別でも、ボックス図の解き方は単純総合原価計算と同じです。',
+      explain: '<p>① (160,000 ＋ 1,440,000) ÷ (1,800 ＋ 200) ＝ <strong>@800円</strong><br>② @800 × 1,800個 ＝ <strong>1,440,000円</strong><br>③ @800 × 200個 ＝ <strong>160,000円</strong></p><p><mark>組間接費を配賦し終えたら、あとは UNIT 17 のボックス図をそのまま解くだけです。</mark>組別だから特別な計算が要る、ということはありません。</p><p>②の完成品原価が当月投入額 1,440,000円 とたまたま同じ値になっていますが、これは月初仕掛品と月末仕掛品の材料費が偶然一致したためです。一般には一致しません。</p>'
+    },
+    {
+      text: '等級別総合原価計算を採用している。当月の完成品総合原価は 4,860,000円 である。等級製品A（等価係数1.0・完成品数量1,800個）、B（0.8・1,500個）、C（0.5・1,200個）である。① Aの積数、② Bの積数、③ Cの積数、④ 積数の合計を求めなさい。',
+      answer: [1800, 1200, 600, 3600],
+      formula: [
+        '10 * 1800 / 10',
+        '8 * 1500 / 10',
+        '5 * 1200 / 10',
+        '10 * 1800 / 10 + 8 * 1500 / 10 + 5 * 1200 / 10'
+      ],
+      labels: ['① Aの積数', '② Bの積数', '③ Cの積数', '④ 積数合計'],
+      hint: '積数 ＝ 等価係数 × 完成品数量。単位は個ではなく、按分のための無名数です。',
+      explain: '<p>① 1.0 × 1,800個 ＝ <strong>1,800</strong><br>② 0.8 × 1,500個 ＝ <strong>1,200</strong><br>③ 0.5 × 1,200個 ＝ <strong>600</strong><br>④ 1,800 ＋ 1,200 ＋ 600 ＝ <strong>3,600</strong></p><p>等価係数は「1個あたりの重み」にすぎません。<mark>取り分を決めるのは「重み × 個数」＝ 積数です。</mark>等価係数の比 1.0 : 0.8 : 0.5 でいきなり按分すると、作った個数の違いを無視することになります。</p><p>実際、Bは等価係数がCより大きいうえに個数も多いので積数が2倍になり、Cはその逆です。<strong>積数を出すまでは、どの等級がいくら取るかは決まりません。</strong></p>'
+    },
+    {
+      text: '前問に続く。完成品総合原価 4,860,000円、積数合計 3,600（A 1,800・B 1,200・C 600）である。① 積数1あたりの原価、② A等級製品に按分される原価、③ B等級製品の単位原価、④ C等級製品の単位原価を求めなさい。',
+      answer: [1350, 2430000, 1080, 675],
+      formula: [
+        '4860000 / 3600',
+        '4860000 / 3600 * 1800',
+        '4860000 / 3600 * 1200 / 1500',
+        '4860000 / 3600 * 600 / 1200'
+      ],
+      labels: ['① 積数1あたり(円)', '② Aの原価(円)', '③ Bの単位原価(円)', '④ Cの単位原価(円)'],
+      hint: '積数1あたりの原価を先に1回だけ出すと、電卓の操作が少なくて済みます。',
+      explain: '<p>① 4,860,000 ÷ 3,600 ＝ <strong>@1,350円</strong><br>② @1,350 × 1,800 ＝ <strong>2,430,000円</strong><br>③ (@1,350 × 1,200 ＝ 1,620,000) ÷ 1,500個 ＝ <strong>@1,080円</strong><br>④ (@1,350 × 600 ＝ 810,000) ÷ 1,200個 ＝ <strong>@675円</strong></p><p>検算：単位原価の比を取ると @1,350 : @1,080 : @675 ＝ 1.0 : 0.8 : 0.5。<mark>等価係数の比と一致します。</mark>単位原価を等価係数で割ると3つとも @1,350円 になります。</p><p>①の @1,350円 は「等価係数1.0の等級の単位原価」でもあるため、Aの単位原価とも一致します。</p>'
+    },
+    {
+      text: 'A組の加工費を平均法で按分する。月初仕掛品の加工費 120,000円、当月の加工費 2,080,000円。完成品数量 1,800個、月末仕掛品 200個（進捗度50%）。① 完成品換算量の合計、② 按分の対象になる加工費の合計、③ 月末仕掛品の加工費（円未満四捨五入により 115,789円 とする）としたときの完成品の加工費を求めなさい。',
+      answer: [1900, 2200000, 2084211],
+      formula: [
+        '1800 + 200 * 50 / 100',
+        '120000 + 2080000',
+        '120000 + 2080000 - 115789'
+      ],
+      labels: ['① 換算量合計(個)', '② 加工費合計(円)', '③ 完成品の加工費(円)'],
+      hint: '単価を丸めてから掛けると合計が合わなくなります。完成品は差額で求めます。',
+      explain: '<p>① 1,800 ＋ 200 × 50% ＝ <strong>1,900個</strong><br>② 120,000 ＋ 2,080,000 ＝ <strong>2,200,000円</strong><br>③ 2,200,000 − 115,789 ＝ <strong>2,084,211円</strong></p><p>単価は 2,200,000 ÷ 1,900 ＝ @1,157.894…円 で割り切れません。<mark>この単価を @1,158円 に丸めてから数量を掛けると、完成品と月末仕掛品の合計が 2,200,000円 になりません。</mark>ボックス図の左右が合わなくなるのは致命的です。</p><p>そこで<strong>月末仕掛品を按分の比で先に求め、完成品は差額で求めます。</strong>月末仕掛品 ＝ 2,200,000 × (100 ÷ 1,900) ＝ 115,789.47… → 115,789円。この額を②から引いた残りが完成品の加工費です。<strong>丸めの影響を完成品側に吸収させることで、合計は必ず一致します。</strong>月末仕掛品を先に出すのは、数量が少なく丸めの影響が小さいためです。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-sogo-shurui', {
+  title: '確認テスト — 総合原価計算の種類',
+  questions: [
+    {
+      text: '工程別総合原価計算を採用する目的として、最も適切なものはどれですか。',
+      choices: [
+        '工程ごとに原価を集計することで、原価が増減した工程を特定し管理に役立てるため',
+        '工程ごとに異なる製品を製造している場合に、製品別の原価を計算するため',
+        '同じ製品の大きさや品位の違いを、原価に反映させるため',
+        '仕損が発生した工程を特定し、その工程の担当者に責任を負わせるため'
+      ],
+      answer: 0,
+      explain: '<p>工場全体の総額でしか原価を把握していないと、<mark>原価が上がったときに原因がどこにあるか切り分けられません。</mark>工程ごとに集計しておけば「煮る工程は変わっていないが、詰める工程が1個あたり40円増えている」と分かり、はじめて打ち手が出てきます。</p><p>選択肢2は<strong>組別</strong>総合原価計算の目的です。工程が違うのではなく製品の種類が違う場合に使います。選択肢3は<strong>等級別</strong>総合原価計算の目的です。</p><p>選択肢4は誤りです。原価計算の目的は責任追及ではなく管理です。また仕損の処理（正常仕損・正常減損）は工程別とは別の論点です。</p>'
+    },
+    {
+      text: '累加法による工程別総合原価計算において、「前工程費」の説明として正しいものはどれですか。',
+      choices: [
+        '前月から繰り越された月初仕掛品原価のこと',
+        '前の工程の完成品総合原価を、次の工程が引き継いだもの',
+        '前の工程で発生した製造間接費のうち、次の工程に配賦される部分',
+        '前の工程で生じた原価差異を、次の工程に振り替えたもの'
+      ],
+      answer: 1,
+      explain: '<p>累加法のルールは1行です。<strong>第1工程の完成品総合原価を、そのまま第2工程の投入原価として引き継ぐ。</strong>その引き継いだ原価を第2工程では前工程費と呼びます。<mark>金額は1円も変わりません。</mark></p><p>選択肢1は「月初仕掛品原価」の説明で、時間軸の話です。前工程費は工程軸の話であり、別物です。第2工程には「月初仕掛品に含まれる前工程費」と「当月投入の前工程費」の両方が存在します。</p><p>選択肢3は誤りです。引き継がれるのは完成品総合原価の全額であり、材料費も加工費もすべて含みます。選択肢4も誤りで、原価差異の振替とは無関係です。</p>'
+    },
+    {
+      text: '第2工程の月末仕掛品が 200個・進捗度50% であるとき、前工程費の按分に使う数量として正しいものはどれですか。',
+      choices: [
+        '100個（200個 × 50%）',
+        '200個',
+        '400個（200個 ÷ 50%）',
+        '進捗度の指示がないため計算できない'
+      ],
+      answer: 1,
+      explain: '<p><strong>200個</strong> です。前工程費は<mark>始点投入の直接材料費と同じ扱い</mark>になるため、進捗度を掛けません。</p><p>理由は進捗度の意味にあります。第2工程の月末仕掛品が進捗50%というのは「<strong>第2工程の作業が</strong>半分済んだ」という意味です。この仕掛品は第1工程を通り抜けて第2工程に入ってきたものなので、<mark>第1工程はすでに100%終わっています。</mark>だから第1工程でかかった原価は、この仕掛品に丸ごと1個分乗っています。</p><p>選択肢1を選ぶのが、この論点で最も多い誤りです。完成品原価と月末仕掛品原価の両方を狂わせ、第3工程がある問題では下流の全部を巻き込みます。ボックス図に「前工程費（数量で按分）」と書き込んでから計算を始めてください。</p><p>なお第2工程の<strong>加工費</strong>は、同じ月末仕掛品について 200 × 50% ＝ 100個分 で按分します。同じ仕掛品に対して按分に使う量が違う、という非対称が核心です。</p>'
+    },
+    {
+      text: '組別総合原価計算における「組直接費」の説明として、最も適切なものはどれですか。',
+      choices: [
+        '直接材料費と直接労務費のこと。製造間接費は必ず組間接費になる',
+        'どの組の製品のために発生したかが分かる原価。製造間接費であっても、特定の組のものと分かれば組直接費になる',
+        '組の数で等分される原価のこと',
+        '完成品に対応する原価。月末仕掛品に対応する分は組間接費として処理する'
+      ],
+      answer: 1,
+      explain: '<p>組直接費とは<strong>「どの組のものか分かる原価」</strong>であって、費目の名前で決まるのではありません。</p><p>たとえば<mark>A組製品専用の機械の減価償却費</mark>は、製造間接費（どの製品1個分かは分けられない）ですが、A組のものだと分かるので<strong>組直接費</strong>です。この場合はA組の箱に賦課します。</p><p>選択肢1は誤りです。この覚え方をしていると「A組専用設備の減価償却費」という書き方をされたときに、製造間接費だから配賦、と早合点します。<mark>配賦するかどうかは費目ではなく、組に紐づけられるかどうかで決まります。</mark></p><p>選択肢3は誤りです。組間接費は配賦基準にもとづいて配賦するのであって、等分ではありません。選択肢4も誤りで、完成品と月末仕掛品の区別は組直接費・組間接費の区別とは無関係です。</p>'
+    },
+    {
+      text: '当月の組間接費 1,680,000円 を直接作業時間（A組 1,600時間、B組 800時間）で配賦したとき、A組への配賦額はいくらですか。',
+      choices: [
+        '840,000円',
+        '1,120,000円',
+        '1,344,000円',
+        '560,000円'
+      ],
+      answer: 1,
+      invariant: [
+        ['1680000 / (1600 + 800) * 1600', 'answer'],
+        ['1680000 / (1600 + 800) * 1600 + 1680000 / (1600 + 800) * 800', '1680000']
+      ],
+      explain: '<p>配賦率 ＝ 1,680,000 ÷ (1,600 ＋ 800 ＝ 2,400時間) ＝ @700円。<br>A組 ＝ @700 × 1,600時間 ＝ <strong>1,120,000円</strong></p><p>選択肢1の 840,000円 は、組の数で等分した額です（1,680,000 ÷ 2）。<mark>組間接費は等分するのではなく、配賦基準の比で配ります。</mark>A組はB組の2倍の直接作業時間を使っているので、配賦額も2倍になります。</p><p>選択肢4の 560,000円 はB組への配賦額です。検算：1,120,000 ＋ 560,000 ＝ 1,680,000円。配賦後の合計は配賦前の総額に必ず戻ります。</p>'
+    },
+    {
+      text: '組別総合原価計算と等級別総合原価計算の違いについて、正しい説明はどれですか。',
+      choices: [
+        '組別は原価をボックス図を解いた後に分け、等級別は解く前に分ける',
+        '組別も等級別も、製品の種類の数だけボックス図を描く',
+        '組別は原価をボックス図を解く前に組へ分け、等級別はボックス図を1つ解いた後に完成品原価を等級へ分ける',
+        '組別は同種製品に、等級別は異種製品に適用する'
+      ],
+      answer: 2,
+      explain: '<p><strong>組別は「分けてから解く」、等級別は「解いてから分ける」</strong>です。</p><p>組別では、組直接費を賦課し組間接費を配賦して<mark>原価を組ごとの箱に入れてから</mark>、組の数だけボックス図を解きます。うどんとそばは製品として別物なので、最初から分けなければ意味のある計算になりません。</p><p>等級別では、工場全体の原価を<strong>1つのボックス図</strong>で完成品総合原価と月末仕掛品原価に分け、<mark>その後で完成品総合原価だけを等価係数で按分します。</mark>同じラインを流れる同じ中身の製品を、最初から分けて集計するのは手間に見合わないためです。</p><p>選択肢1は前後が逆です。選択肢2は誤りで、等級別のボックス図は1つだけです。選択肢4も逆で、組別が異種製品、等級別が同種製品（大きさ・品位が違うもの）に適用されます。</p>'
+    },
+    {
+      text: '等級別総合原価計算において、等価係数だけで完成品総合原価を按分してはいけない理由として、最も適切なものはどれですか。',
+      choices: [
+        '等価係数は1個あたりの原価の重みにすぎず、各等級の取り分は重み × 完成品数量で決まるため',
+        '等価係数は工場ごとに異なり、標準的な値が存在しないため',
+        '等価係数には月末仕掛品の進捗度が反映されていないため',
+        '等価係数の合計が1.0にならない場合、按分の分母が確定しないため'
+      ],
+      answer: 0,
+      explain: '<p>等価係数 1.0 : 0.8 : 0.5 でそのまま按分するのは誤りです。<mark>作った個数を無視しているからです。</mark></p><p>等価係数が意味するのは「等級Bの1個は等級Aの0.8個ぶんの原価がかかる」ということだけです。等級Aを100個、等級Bを10,000個 作った月もあれば、その逆の月もあります。原価の総額に対する取り分は<strong>1個あたりの重み × 個数</strong>で決まります。</p><p>この「等価係数 × 完成品数量」が<strong>積数</strong>であり、積数こそが按分の基準です。等価係数はその材料にすぎません。</p><p>選択肢3は誤りです。等級別では月末仕掛品を等級に分けないため、進捗度は等価係数と無関係です。選択肢4も誤りで、等価係数の合計が1.0になる必要はありません。</p>'
+    },
+    {
+      text: '等級製品A（等価係数1.0・完成品1,800個）、B（0.8・1,500個）、C（0.5・1,200個）について、当月の完成品総合原価 4,860,000円 を按分したとき、B等級製品に配分される原価はいくらですか。',
+      choices: [
+        '1,296,000円',
+        '1,620,000円',
+        '1,944,000円',
+        '2,430,000円'
+      ],
+      answer: 1,
+      invariant: [
+        ['4860000 * (0.8 * 1500) / (1.0 * 1800 + 0.8 * 1500 + 0.5 * 1200)', 'answer'],
+        ['4860000 / (1.0 * 1800 + 0.8 * 1500 + 0.5 * 1200) * (0.8 * 1500)', '1620000']
+      ],
+      explain: '<p>積数：A ＝ 1.0 × 1,800 ＝ 1,800／B ＝ 0.8 × 1,500 ＝ 1,200／C ＝ 0.5 × 1,200 ＝ 600。合計 3,600。<br>積数1あたり ＝ 4,860,000 ÷ 3,600 ＝ @1,350円。<br>B ＝ @1,350 × 1,200 ＝ <strong>1,620,000円</strong></p><p>選択肢4の 2,430,000円 はA等級製品の原価です。選択肢1の 1,296,000円 は、Bの積数 1,200 を<strong>積数合計 3,600 ではなく完成品数量の合計 4,500 で割ってしまった</strong>値です（4,860,000 × 1,200 ÷ 4,500）。<mark>分子に積数を使うなら、分母も積数合計でなければ比になりません。</mark></p><p>検算：Bの単位原価 ＝ 1,620,000 ÷ 1,500個 ＝ @1,080円。等価係数 0.8 で割ると @1,350円 となり、積数1あたりの原価と一致します。</p>'
+    },
+    {
+      text: '工程別総合原価計算（累加法）において、第1工程の完成品を第2工程へ振り替える仕訳として正しいものはどれですか。',
+      choices: [
+        '借方 製品 ／ 貸方 第1工程仕掛品',
+        '借方 第2工程仕掛品 ／ 貸方 第1工程仕掛品',
+        '借方 第1工程仕掛品 ／ 貸方 第2工程仕掛品',
+        '借方 第2工程仕掛品 ／ 貸方 製品'
+      ],
+      answer: 1,
+      explain: '<p><strong>借方 第2工程仕掛品 ／ 貸方 第1工程仕掛品</strong> です。原価が第1工程の箱から出て、第2工程の箱に入ります。</p><p>選択肢1は誤りです。第1工程が終わっただけで、製品としてはまだ未完成です。<mark>製品勘定に振り替えるのは最終工程が完成したときの1回だけです。</mark>工程が3つなら、振替仕訳は工程間に2本（1→2、2→3）と、最終の製品勘定への1本の合計3本になります。</p><p>選択肢3は借方と貸方が逆で、原価が後ろから前へ流れることになります。<strong>工程間の原価の流れは必ず一方向です。</strong>選択肢4も誤りで、製品勘定から仕掛品勘定へ戻ることはありません。</p>'
+    },
+    {
+      text: '単価が割り切れない場合の月末仕掛品原価の求め方として、最も適切なものはどれですか。なお問題文に端数処理の指示はないものとします。',
+      choices: [
+        '単価を円未満四捨五入してから数量を掛け、完成品も同じ単価で計算する',
+        '月末仕掛品を按分の比で直接求め、完成品は投入額との差額で求める',
+        '単価を切り捨ててから数量を掛け、端数は翌月に繰り越す',
+        '完成品を按分の比で先に求め、月末仕掛品は差額で求める'
+      ],
+      answer: 1,
+      explain: '<p><strong>月末仕掛品を按分の比で先に求め、完成品は差額で求めます。</strong></p><p>選択肢1のように単価を丸めてから数量を掛けると、<mark>完成品と月末仕掛品の合計が投入額と一致しなくなります。</mark>ボックス図の左右が合わなくなるのは致命的です。</p><p>差額法なら、丸めの影響を完成品側が吸収するため合計は必ず一致します。<strong>月末仕掛品のほうを先に出すのは、数量が少なく丸めの影響が小さいからです。</strong>選択肢4のように完成品を先に出すと、少額の月末仕掛品に誤差が集中し、相対的な誤りが大きくなります。</p><p>選択肢3の「端数を翌月に繰り越す」という処理は存在しません。なお問題文に「単価は円未満四捨五入」と明示された場合は、その指示に従います。</p>'
+    },
+    {
+      text: '2級の出題範囲に含まれるものとして、正しい組み合わせはどれですか。',
+      choices: [
+        '累加法による工程別総合原価計算と、副産物の処理',
+        '非累加法による工程別総合原価計算と、連産品の計算',
+        '累加法による工程別総合原価計算と、等級別総合原価計算',
+        '加工費工程別総合原価計算と、組別総合原価計算'
+      ],
+      answer: 2,
+      explain: '<p>2級で扱うのは<strong>累加法による工程別総合原価計算</strong>、<strong>組別総合原価計算</strong>、<strong>等級別総合原価計算</strong>の3つです。</p><p>出題区分表で<mark>1級</mark>とされているのは次のものです。<br><strong>非累加法</strong>（累加法に「（非累加法）」と1級の注記が付く）<br><strong>加工費工程別総合原価計算</strong><br><strong>副産物の処理と評価</strong><br><strong>連産品の計算</strong></p><p>特に<strong>連産品と等級別は混同されやすい</strong>ので注意してください。等級別は「同種製品を等価係数で按分する」2級の論点、連産品は「必然的に生じる異種製品に結合原価を配分する」1級の論点で、扱いは正反対です。<mark>問題文に「連産品」と書かれていたら、2級の範囲ではありません。</mark></p>'
+    },
+    {
+      text: '3つの総合原価計算について、仕掛品勘定の数とつながり方の説明として正しいものはどれですか。',
+      choices: [
+        '工程別は工程の数だけ直列、組別は組の数だけ並列、等級別は1つ',
+        '工程別は工程の数だけ並列、組別は組の数だけ直列、等級別は等級の数だけ',
+        '工程別・組別・等級別のいずれも、製品の種類の数だけ用意する',
+        '工程別は1つ、組別は組の数だけ、等級別は等級の数だけ'
+      ],
+      answer: 0,
+      explain: '<p><strong>工程別</strong>は「第1工程仕掛品」「第2工程仕掛品」を工程の数だけ置き、<mark>直列につなぎます。</mark>第1工程仕掛品から第2工程仕掛品へ振り替えるからです。</p><p><strong>組別</strong>は「A組仕掛品」「B組仕掛品」を組の数だけ置きますが、<mark>並列で互いに独立です。</mark>A組仕掛品からB組仕掛品への振替は起こりません。最初から最後まで別々のラインです。</p><p><strong>等級別</strong>は仕掛品勘定が<mark>1つだけ</mark>です。工場全体で1つのボックス図を解き、完成品原価を出した後にA等級製品・B等級製品・C等級製品へ分岐します。<strong>分岐が起きるのは製品勘定からで、これが「ボックス図を解いた後で分ける」ことの記帳上の現れです。</strong></p><p>試験で「これは何別か」を判定するときは、<strong>仕掛品勘定がいくつ必要になるか</strong>を考えると迷いません。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-sogo-shurui', {
+  title: '用語の穴埋め — 総合原価計算の種類',
+  questions: [
+    {
+      text: '製品が複数の工程を順に経て完成する場合に、工程ごとに原価を集計する総合原価計算を何といいますか。',
+      answer: ['工程別総合原価計算', 'こうていべつそうごうげんかけいさん'],
+      explain: '<p><strong>工程別総合原価計算</strong>。工場全体の総額しか持たないと、原価が上がったときに<mark>どの工程が原因か切り分けられません。</mark>工程ごとに集計しておけば、はじめて打ち手が出てきます。化学・製紙・製鉄・食品が典型です。</p>'
+    },
+    {
+      text: '工程別総合原価計算のうち、前の工程の完成品総合原価を次の工程の投入原価として引き継いでいく方法を何といいますか。2級で扱うのはこの方法です。',
+      answer: ['累加法', 'るいかほう'],
+      explain: '<p><strong>累加法</strong>。出題区分表では「全原価要素工程別総合原価計算の方法と記帳（累加法）」と書かれています。<mark>原価が工程を進むたびに積み上がる</mark>ので累加といいます。もう1つの方法である非累加法は1級の範囲です。</p>'
+    },
+    {
+      text: '累加法において、前の工程から引き継がれた原価を、次の工程では何と呼びますか。',
+      answer: ['前工程費', 'ぜんこうていひ'],
+      explain: '<p><strong>前工程費</strong>。第1工程の完成品総合原価が、名前を変えて第2工程の当月投入になります。金額は1円も変わりません。<mark>按分するときは始点投入の直接材料費と同じ扱いで、進捗度を掛けずに数量で按分します。</mark>第2工程に入った時点で第1工程は100%終わっているからです。</p>'
+    },
+    {
+      text: '同じ工場で種類の異なる製品を製造している場合に、製品の種類ごとに原価を集計する総合原価計算を何といいますか。',
+      answer: ['組別総合原価計算', 'くみべつそうごうげんかけいさん'],
+      explain: '<p><strong>組別総合原価計算</strong>。うどんとそばのように製品として別物なので、数量を足して平均すること自体に意味がありません。<mark>原価をボックス図を解く前に組へ分けます。</mark>製麺・衣料・電子部品が典型です。</p>'
+    },
+    {
+      text: '組別総合原価計算において、どの組の製品のために発生したかが分からず、配賦基準にもとづいて各組に配賦される原価を何といいますか。',
+      answer: ['組間接費', 'くみかんせつひ'],
+      explain: '<p><strong>組間接費</strong>。工場の電気代・建物の減価償却費・工場長の給料のように、複数の組のために使われていて伝票では分けられない原価です。<mark>いったん組間接費勘定に集めてから、配賦率を通して各組の仕掛品勘定へ配ります。</mark>対になるのが組直接費（賦課する）です。</p>'
+    },
+    {
+      text: '同じ種類の製品であるが、大きさや品位が異なる製品を製造している場合に用いる総合原価計算を何といいますか。',
+      answer: ['等級別総合原価計算', 'とうきゅうべつそうごうげんかけいさん'],
+      explain: '<p><strong>等級別総合原価計算</strong>。大缶・中缶・小缶のように中身も製造ラインも同一で、違うのは容量だけという場合に使います。<mark>ボックス図は1つだけ描き、完成品総合原価を出した後で等級に分けます。</mark>缶詰・製粉・鋳物が典型です。</p>'
+    },
+    {
+      text: '等級別総合原価計算において、各等級製品の1個あたりの原価の相対的な重みを表す数値を何といいますか。',
+      answer: ['等価係数', 'とうかけいすう'],
+      explain: '<p><strong>等価係数</strong>。「等級Bの1個は等級Aの0.8個ぶんの原価がかかる」という重みです。<mark>これだけで按分してはいけません。</mark>作った個数を無視することになるからです。等価係数は按分の材料にすぎず、基準になるのは次の設問の値です。</p>'
+    },
+    {
+      text: '等級別総合原価計算において、等価係数に完成品数量を掛けて求めた、完成品総合原価を按分する基準となる数値を何といいますか。',
+      answer: ['積数', 'せきすう'],
+      explain: '<p><strong>積数</strong>（＝ 等価係数 × 完成品数量）。原価の取り分は<mark>1個あたりの重み × 個数</mark>で決まるため、積数こそが按分の基準です。<br>実務上は「積数1あたりの原価 ＝ 完成品総合原価 ÷ 積数合計」を先に1回だけ出し、各等級の積数を掛けるほうが電卓が速く、丸め誤差も1箇所に閉じ込められます。この値は等価係数1.0の等級の単位原価と一致します。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>
