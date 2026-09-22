@@ -369,6 +369,19 @@
   // 入力中にカーソル位置を保つのは、キャレット右側の数字の個数を数え直す方法でしか
   // できない。区切りが増減しても右側の桁数は変わらないため。
   function groupAmt(inp) {
+    // 区切りを消すとinputハンドラが同じ位置に入れ直すため、何も消えないように見える。
+    // 消える文字が区切りのときだけキャレットを桁側へ寄せ、削除は既定の動作に任せる。
+    inp.addEventListener('keydown', function (e) {
+      if (e.key !== 'Backspace' && e.key !== 'Delete') return;
+      if (inp.selectionStart !== inp.selectionEnd) return;
+      var pos = inp.selectionStart;
+      if (e.key === 'Backspace') {
+        while (pos > 0 && inp.value[pos - 1] === ',') pos--;
+      } else {
+        while (pos < inp.value.length && inp.value[pos] === ',') pos++;
+      }
+      inp.setSelectionRange(pos, pos);
+    });
     inp.addEventListener('input', function () {
       var tail = inp.value.slice(inp.selectionEnd).replace(/\D/g, '').length;
       var half = inp.value.replace(/[０-９]/g, function (c) {
