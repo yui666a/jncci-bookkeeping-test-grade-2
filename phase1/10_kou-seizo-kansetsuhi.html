@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第八-1-0,工-第八-2-0,工-第八-3-0,工-第八-4-0,工-第八-5-0,工-第八-6-0,工-第八-6-ア">
+<title>製造間接費 — 日商簿記2級 Phase 1 W3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 10 製造間接費</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 10 ／ 6時間 ／ 工業簿記</p>
+    <h1>製造間接費<br>— 予定配賦と差異分析</h1>
+    <p class="lead">材料費・労務費・経費を費目別に集め終えました。そのうち<strong>製品ごとにひもづけられなかったもの</strong>が、製造間接費という箱に溜まっています。この単元では、その箱の中身をどうやって製品に配り、配った額と実際にかかった額のズレをどう読み解くかを扱います。<mark>W1の材料消費価格差異、W2の賃率差異と同じ型が、もう一段複雑になって現れます</mark>。差異が2つに割れる理由さえ掴めば、あとは同じ面積図の読み方です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 6h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 12問</span>
+      <span class="chip">計算ドリル 10問</span>
+      <span class="chip">確認テスト 12問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">製造間接費は勘定連絡図のどこにいるか</a></li>
+      <li><a href="#s2">製造間接費の分類 — 3つの費目が合流する</a></li>
+      <li><a href="#s3">証ひょうと帳簿 — 金額はどこから来るのか</a></li>
+      <li><a href="#s4">実際配賦の2つの弱点</a></li>
+      <li><a href="#s5">予定配賦率 — 予算額と基準操業度</a></li>
+      <li><a href="#s6">配賦基準の選び方</a></li>
+      <li><a href="#s7">予定配賦の仕訳と勘定の動き</a></li>
+      <li><a href="#s8">固定予算と公式法変動予算</a></li>
+      <li><a href="#s9">なぜ差異が2つに割れるのか</a></li>
+      <li><a href="#s10">シュラッター図で差異を読む（公式法変動予算）</a></li>
+      <li><a href="#s11">固定予算の場合の差異分析</a></li>
+      <li><a href="#s12">配賦差額の処理 — 売上原価加減法</a></li>
+      <li><a href="#s13">仕訳ドリル 12問</a></li>
+      <li><a href="#s14">計算ドリル 10問</a></li>
+      <li><a href="#s15">確認テスト 12問</a></li>
+      <li><a href="#s16">用語の穴埋め 8問</a></li>
+      <li><a href="#s17">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>製造間接費は勘定連絡図のどこにいるか</h2>
+
+  <p>ここまでの3単元で、工場で使ったお金を費目ごとに集めてきました。もう一度並べ直します。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="card__label">UNIT 04</div>
+      <p><strong>材料費</strong></p>
+      <p class="small">直接材料費 → 仕掛品へ直課<br>間接材料費 → 製造間接費へ</p>
+    </div>
+    <div class="card">
+      <div class="card__label">UNIT 07 前半</div>
+      <p><strong>労務費</strong></p>
+      <p class="small">直接労務費 → 仕掛品へ直課<br>間接労務費 → 製造間接費へ</p>
+    </div>
+    <div class="card">
+      <div class="card__label">UNIT 07 後半</div>
+      <p><strong>経費</strong></p>
+      <p class="small">直接経費 → 仕掛品へ直課<br>間接経費 → 製造間接費へ</p>
+    </div>
+  </div>
+
+  <p>3つの費目がすべて同じ形で2つに割れていました。<mark>その「割れた下側」が3本とも合流する先が、製造間接費です。</mark>図で見ます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 330" style="width:100%;height:auto;min-width:700px" role="img" aria-label="材料費・労務費・経費の間接分が製造間接費に合流し、そこから仕掛品へ配賦される勘定連絡図">
+      <g font-size="14" fill="var(--text)">
+        <rect x="20" y="30" width="130" height="48" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="85" y="60" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">材料費</text>
+        <rect x="20" y="96" width="130" height="48" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="85" y="126" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">労務費</text>
+        <rect x="20" y="162" width="130" height="48" rx="6" fill="var(--debit-bg)" stroke="var(--border-2)" stroke-width="1.5"/>
+        <text x="85" y="192" text-anchor="middle" font-size="15" font-weight="700" fill="var(--debit)">経費</text>
+
+        <!-- 直接分 上へ -->
+        <path d="M155 44 L 250 44 L 250 90 L 560 90" stroke="var(--debit)" stroke-width="2.5" fill="none" marker-end="url(#m1)"/>
+        <text x="380" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--debit)">直接費 — そのまま直課</text>
+
+        <!-- 間接分 下へ集約 -->
+        <path d="M155 64 L 200 64 L 200 250 L 300 250" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#m2)"/>
+        <path d="M155 130 L 215 130 L 215 250 L 300 250" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#m2)"/>
+        <path d="M155 196 L 230 196 L 230 250 L 300 250" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#m2)"/>
+        <text x="232" y="290" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--credit)">間接費</text>
+
+        <!-- 製造間接費 -->
+        <rect x="305" y="215" width="185" height="72" rx="6" fill="var(--credit-bg)" stroke="var(--accent-br)" stroke-width="2.5"/>
+        <text x="397" y="248" text-anchor="middle" font-size="17" font-weight="700" fill="var(--credit)">製造間接費</text>
+        <text x="397" y="271" text-anchor="middle" font-size="11.5" fill="var(--muted)">この単元で扱う箱</text>
+
+        <!-- 配賦 -->
+        <path d="M495 240 L 610 240 L 610 145" stroke="var(--credit)" stroke-width="2.5" fill="none" marker-end="url(#m2)"/>
+        <text x="558" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="var(--credit)">配賦</text>
+        <text x="558" y="212" text-anchor="middle" font-size="11.5" fill="var(--muted)">基準で配り直す</text>
+
+        <!-- 仕掛品 -->
+        <rect x="560" y="68" width="140" height="75" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="630" y="112" text-anchor="middle" font-size="17" font-weight="700">仕掛品</text>
+
+        <path d="M705 105 L 748 105" stroke="var(--muted)" stroke-width="2.5" fill="none" marker-end="url(#m3)"/>
+        <rect x="753" y="68" width="100" height="75" rx="6" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="803" y="112" text-anchor="middle" font-size="17" font-weight="700">製品</text>
+
+        <rect x="298" y="205" width="200" height="92" rx="10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 4"/>
+      </g>
+      <defs>
+        <marker id="m1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--debit)"/>
+        </marker>
+        <marker id="m2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--credit)"/>
+        </marker>
+        <marker id="m3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+    </svg>
+    </div>
+    <p class="figure__cap">3本の間接分が1つの箱に集まり、そこから1本の矢印で仕掛品へ出ていく。この出ていく矢印の金額をどう決めるかが、この単元のすべて。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ「配賦」という手続が要るのか</span>
+    <p>直接費は、出庫伝票や作業時間報告書に<strong>製造指図書の番号が書いてある</strong>ので、どの製品の原価かが伝票の上で決まります。迷う余地がありません。<br>ところが工場の電気代は、No.101のテーブルと No.102のイスのどちらのために使われたのか、伝票のどこにも書いてありません。<mark>書いていないのではなく、そもそも分けられないから間接費なのです。</mark><br>それでも製品1個あたりの原価は出さなければなりません。売値を決めるにも、在庫の金額を決めるにも要ります。分けられないものを、それでも分けなければならない。この矛盾に対する答えが<strong>配賦</strong>です。「厳密には分けられないが、もっともらしい基準を決めて、その基準に比例させて配る」という割り切りをします。</p>
+  </div>
+
+  <p class="small muted">配賦は「正しい答えを求める計算」ではなく「決めた約束に従って配る計算」です。だから基準が変われば製品原価も変わります。これは計算間違いではなく、配賦という手続の性質そのものです。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>製造間接費の分類 — 3つの費目が合流する</h2>
+
+  <p>製造間接費の中身は、費目別計算で「間接」に分類されたものの集まりです。<strong>新しい費目が増えるわけではありません。</strong>W1・W2で学んだものが、ここで一堂に会するだけです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>分類</th><th>中身</th><th>具体例</th></tr></thead>
+    <tbody>
+      <tr><td><strong>間接材料費</strong></td><td>補助材料費・工場消耗品費・消耗工具器具備品費</td><td>接着剤、塗料、燃料、ウエス、軍手、スパナ、ドライバー</td></tr>
+      <tr><td><strong>間接労務費</strong></td><td>直接工の間接作業時間・手待時間ぶんの賃金、間接工の賃金の全額、給料、従業員賞与手当、退職給付費用、法定福利費</td><td>工場長の給料、修理工の賃金、運搬工の賃金、賞与、社会保険料の会社負担分</td></tr>
+      <tr><td><strong>間接経費</strong></td><td>直接経費（外注加工賃・特許権使用料）以外の経費のほぼすべて</td><td>工場の減価償却費、電力料、水道光熱費、保険料、修繕料、棚卸減耗費</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">経費は「ほとんどが間接経費」だと覚えてよい</span>
+    <p>直接経費になり得るのは<strong>外注加工賃と特許権使用料</strong>がほぼすべてでした。裏を返せば、<mark>経費の大半はそのまま製造間接費に入ります</mark>。工場の減価償却費も電力料も保険料も、製品ごとに分けられないからです。<br>一方、材料費と労務費は直接分のほうが金額としては大きくなるのがふつうです。「材料費と労務費は直接が主役、経費は間接が主役」という感覚を持っておくと、費目別計算の集計で手が止まりません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">工場の費用でなければ製造間接費に入らない</span>
+    <p>同じ「減価償却費」でも、<strong>工場の建物・機械なら製造間接費、本社の建物・備品なら販売費及び一般管理費</strong>です。保険料も電力料も同じ線引きをします。<br>製造間接費は製品を作るための原価であり、いずれ製品原価を通って売上原価になります。本社の事務所の家賃を製品原価に含めたら、売れ残った在庫の金額に本社の家賃が紛れ込みます。<mark>問題文が「工場の」と書いているかどうかを、毎回必ず確かめてください。</mark>これは第3問（製造業の決算）でも繰り返し問われます。</p>
+  </div>
+
+  <h3>製造間接費に集めるときの仕訳</h3>
+
+  <p>間接材料費 180,000円、間接労務費 420,000円、間接経費 260,000円を製造間接費に振り替えた、という場面です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製造間接費</td><td class="d amt">860,000</td><td class="c">材料</td><td class="c amt">180,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">賃金・給料</td><td class="c amt">420,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">経費</td><td class="c amt">260,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>借方が1つにまとまり、貸方が3つに割れています。<strong>費目別計算のときとちょうど逆の形</strong>です。あちらは1つの費目が直接・間接の2つに割れましたが、こちらは3つの費目の間接分が1つに集まります。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>証ひょうと帳簿 — 金額はどこから来るのか</h2>
+
+  <p>材料費には材料元帳が、労務費には作業時間報告書がありました。製造間接費にも専用の帳簿があります。ただし役割が少し違います。<mark>製造間接費の帳簿は「集めた金額を記録する」だけでなく「配った金額を記録する」ためにあります。</mark></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>名称</th><th>何を記録するか</th><th>どこで使うか</th></tr></thead>
+    <tbody>
+      <tr><td><strong>製造間接費配賦表</strong></td><td>当月の製造間接費を、配賦基準の数値に応じて各製造指図書へ配った計算の一覧。指図書ごとの配賦基準量と配賦額が並ぶ</td><td>配賦額の計算そのもの。原価計算表の製造間接費欄のもとになる</td></tr>
+      <tr><td><strong>製造間接費元帳</strong><br><span class="small muted">製造間接費明細表</span></td><td>製造間接費の実際発生額を費目ごとに記録した補助元帳。間接材料費・間接労務費・間接経費の内訳が分かる</td><td>実際発生額の把握。差異分析で「どの費目が予算を超えたか」を追うときに見る</td></tr>
+      <tr><td><strong>原価計算表</strong></td><td>製造指図書ごとに、直接材料費・直接労務費・直接経費・製造間接費配賦額を集計した表</td><td>製品1個あたりの原価。仕掛品勘定の内訳にあたる</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">配賦表と元帳は、同じ金額を別の方向から見ている</span>
+    <p>製造間接費元帳は<strong>費目の方向</strong>（電力料がいくら、減価償却費がいくら）で、配賦表は<strong>製品の方向</strong>（No.101にいくら、No.102にいくら）で、同じ製造間接費を切っています。<br>実際配賦をしているなら、この2つの合計は一致します。<mark>ところが予定配賦をすると一致しなくなります。</mark>配賦表に載るのは予定額、元帳に載るのは実際額だからです。その不一致こそが、この単元の後半で扱う配賦差異です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>実際配賦の2つの弱点</h2>
+
+  <p>いちばん素直なやり方から考えます。<strong>月末に製造間接費の実際発生額を集計し、それを実際の配賦基準量で割って、1時間あたりの金額を出す。</strong>これが実際配賦です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">実際配賦率</span>
+    <p><strong>実際配賦率 ＝ 当月の製造間接費実際発生額 ÷ 当月の実際配賦基準量</strong><br>基準が直接作業時間なら、1時間あたりいくらになるかが出ます。これに各製品の実際作業時間を掛ければ、その製品への配賦額です。</p>
+  </div>
+
+  <p>理屈は通っています。それでも実務ではほとんど使われません。<strong>2つの弱点があるからです。両方とも自分の言葉で言えるようにしてください。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">弱点① 月末まで製品原価が決まらない</span>
+    <p>実際配賦率を出すには、<mark>当月の製造間接費が全部出そろうのを待たなければなりません。</mark>電力料は検針の翌月に請求が来ます。減価償却費は月割で計算できても、修繕費はいつ発生するか分かりません。<br>すると、月の初めに完成して出荷した製品の原価が、月末になるまで決まりません。「この製品はいくらでできましたか」と聞かれて「月末にならないと分かりません」では、売値も決められず、在庫の金額も出せません。<br>W1の材料の予定価格、W2の予定賃率で出てきたのと<strong>まったく同じ困りごと</strong>です。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">弱点② 操業度が季節で変動すると、製品原価が揺れる</span>
+    <p>こちらが製造間接費に特有の、そして深刻なほうです。<br>ある工場の製造間接費が、毎月ほぼ 3,600,000円 で安定しているとします。中身の大半は減価償却費・工場建物の賃借料・工場長の給料といった<strong>操業度に関係なく毎月同じだけ出ていく費用</strong>です。<br>ところが受注には波があります。忙しい月は 4,000時間 動き、暇な月は 2,400時間 しか動きません。実際配賦率を計算するとこうなります。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th></th><th class="amt">忙しい月</th><th class="amt">暇な月</th></tr></thead>
+      <tbody>
+        <tr><td>製造間接費 実際発生額</td><td class="amt">3,600,000円</td><td class="amt">3,600,000円</td></tr>
+        <tr><td>実際直接作業時間</td><td class="amt">4,000時間</td><td class="amt">2,400時間</td></tr>
+        <tr><td><strong>実際配賦率</strong></td><td class="amt"><strong>@900円</strong></td><td class="amt"><strong>@1,500円</strong></td></tr>
+        <tr><td>10時間かかった製品への配賦額</td><td class="amt">9,000円</td><td class="amt"><strong>15,000円</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>まったく同じ製品を、同じ作り方で、同じ10時間かけて作ったのに、暇な月に作ったというだけで原価が 1.67倍 になります。</mark>作り方は何も変わっていません。変わったのは工場全体の忙しさだけです。<br>これでは製品原価を売値の根拠に使えませんし、月ごとの原価を比べても意味がありません。<strong>操業度という、その製品とは無関係な要因が、製品原価に混入している</strong>からです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">弱点②は、材料費・労務費には無かった問題</span>
+    <p>材料の予定価格を使う理由は「市場価格の変動を切り離すため」、予定賃率を使う理由は「賃率の変動を切り離すため」でした。どちらも<strong>単価の変動</strong>が相手です。<br>製造間接費で切り離したいのは<mark>単価の変動ではなく、操業度の変動</mark>です。製造間接費の大半が固定費であるために、分母が動くだけで単価（配賦率）が動いてしまう。ここが材料費・労務費とは事情が違うところで、だからこそ差異が<strong>2つ</strong>に割れることになります。9章で詳しく扱います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>予定配賦率 — 予算額と基準操業度</h2>
+
+  <p>2つの弱点への答えは同じです。<strong>配賦率を、月末を待たずに、あらかじめ決めておく。</strong>これが予定配賦です。</p>
+
+  <div class="term">
+    <span class="term__w">予定配賦率</span><span class="term__r">よていはいふりつ</span>
+    <p>期首にあらかじめ決めておく、配賦基準1単位あたりの製造間接費の金額。年間の製造間接費予算額を年間の基準操業度で割って求めます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">予定配賦率と予定配賦額</span>
+    <p><strong>予定配賦率 ＝ 製造間接費予算額 ÷ 基準操業度</strong><br><strong>予定配賦額 ＝ 予定配賦率 × <mark>実際</mark>操業度</strong><br>予定するのは<strong>率だけ</strong>で、掛ける操業度は実際のものを使います。W1・W2とまったく同じ構造です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>単元</th><th>予定するもの</th><th>実際のまま使うもの</th><th>差異の名前</th></tr></thead>
+    <tbody>
+      <tr><td>UNIT 04 材料費</td><td>予定価格（単価）</td><td>消費量</td><td>材料消費価格差異</td></tr>
+      <tr><td>UNIT 07 労務費</td><td>予定賃率（単価）</td><td>就業時間</td><td>賃率差異</td></tr>
+      <tr><td><strong>UNIT 10 製造間接費</strong></td><td><strong>予定配賦率</strong></td><td><strong>操業度</strong></td><td><strong>製造間接費配賦差異</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>3行とも同じ形をしています。<mark>違うのは、いちばん下の行だけ差異がさらに2つに分解されること</mark>です。そこが9章以降の中心になります。</p>
+
+  <h3>分子 — 製造間接費予算額</h3>
+
+  <p>年間にいくら製造間接費がかかるかの見積りです。過去の実績と来期の計画から決めます。<strong>年間の金額で与えられることが多いので、月次で使うときは12で割ります。</strong></p>
+
+  <h3>分母 — 基準操業度</h3>
+
+  <div class="term">
+    <span class="term__w">基準操業度</span><span class="term__r">きじゅんそうぎょうど</span>
+    <p>予定配賦率を計算するときに分母に置く、1年間（または1か月）の操業度の見積り。「この工場は年間でこれだけ動くはずだ」という前提の数値です。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">基準操業度は「実際にどれだけ動いたか」ではない</span>
+    <p>ここを取り違えると、9章の操業度差異がまったく理解できなくなります。<br>基準操業度は<strong>予定を立てた時点での見込み</strong>です。実際にその通り動くとは限りません。むしろ一致しないのがふつうです。<br><mark>固定費は「基準操業度だけ動く前提で」製品原価に配られています。</mark>実際の操業度がそれを下回れば、配りきれない固定費が残ります。上回れば、配りすぎになります。この配り残し・配りすぎが操業度差異の正体です。基準操業度が何を意味する数値なのかが分かっていないと、この説明が読めません。</p>
+  </div>
+
+  <h3>計算してみる</h3>
+
+  <div class="card">
+    <div class="card__label">設例 — この単元を通して使う数値</div>
+    <ul class="small">
+      <li>年間の製造間接費予算額　43,200,000円（うち変動費 14,400,000円、固定費 28,800,000円）</li>
+      <li>年間の基準操業度　直接作業時間 48,000時間</li>
+    </ul>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li>月間の予算額 ＝ 43,200,000 ÷ 12 ＝ <strong>3,600,000円</strong>（変動費 1,200,000円 ＋ 固定費 2,400,000円）</li>
+      <li>月間の基準操業度 ＝ 48,000 ÷ 12 ＝ <strong>4,000時間</strong></li>
+      <li>予定配賦率 ＝ 3,600,000 ÷ 4,000 ＝ <strong>@900円</strong></li>
+    </ol>
+  </div>
+
+  <p>年間で計算しても同じです。43,200,000 ÷ 48,000 ＝ @900円。<strong>どちらで割っても率は変わりません。</strong>月次に直すときは分子と分母の両方を12で割るので、比が保たれるからです。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">分子だけ12で割る、分母だけ12で割るのが最頻出の事故</span>
+    <p>年間予算額と<strong>月間の</strong>基準操業度が与えられている、あるいはその逆、という出題があります。単位をそろえずに割ると、率が12倍または12分の1になり、そこから先の配賦額・差異がすべて崩れます。<br>予定配賦率を出す前に、<mark>分子と分母が同じ期間の数値かを必ず確認してください。</mark>「年間予算 ÷ 月間基準操業度」という式を書いた瞬間に、手を止める習慣をつけます。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>予定配賦率は、この先の計算すべての土台になります。一度出したら<strong>メモリに入れて</strong>使い回すと、打ち直しによる取り違えが減ります。<br>43,200,000 ÷ 48,000 ＝ と打って @900 を出したら、そのまま <strong>M+</strong> で記憶します。以降は実際操業度を打って × <strong>MR</strong> ＝ で予定配賦額が出ます。別の問題に移る前に <strong>MC</strong>（または AC の長押しではなくメモリクリア操作）でメモリを消すのを手順に入れてください。前問の率が残ったまま次の問題を解くと、桁は合っているのに答だけ違うという、いちばん気づきにくい誤りになります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>配賦基準の選び方</h2>
+
+  <p>「何に比例させて配るか」が配賦基準です。分けられないものを配るのですから、<strong>どれが正解ということはありません。</strong>それでも、でたらめに決めてよいわけでもありません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">配賦基準に求められる条件</span>
+    <p><strong>製造間接費の発生と、できるだけ強い因果関係があること。</strong>その基準の数値が大きい製品ほど、実際に製造間接費を多く使っているはずだ、と言える関係です。加えて、<strong>製品ごとに測定できること</strong>（測れない基準は使えません）。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>配賦基準</th><th>何に比例させるか</th><th>向いている工場</th></tr></thead>
+    <tbody>
+      <tr><td><strong>直接作業時間</strong></td><td>人が作業した時間</td><td>手作業が中心の工場。人が動いている時間だけ工場の設備・照明・管理が使われる</td></tr>
+      <tr><td><strong>機械運転時間</strong></td><td>機械が動いた時間</td><td>機械化が進んだ工場。製造間接費の大半が機械の減価償却費・電力料・修繕費なら、機械が動いた時間に比例する</td></tr>
+      <tr><td><strong>直接労務費</strong></td><td>直接工の賃金額</td><td>作業時間を記録していない場合の代用。<strong>賃率がほぼ一律の工場に限る</strong>。職種で賃率が違うと、熟練工の担当製品に時間以上の額が配られてしまう</td></tr>
+      <tr><td><strong>直接材料費</strong></td><td>投入した材料の金額</td><td>材料の取扱い・保管に関する間接費が大きい工場</td></tr>
+      <tr><td><strong>生産量</strong></td><td>作った個数</td><td>単一製品、または製品が似通っている工場</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">機械化された工場で直接作業時間を使うと何が起きるか</span>
+    <p>全自動の機械が24時間動き、人は月に数時間の監視をするだけ、という工程を考えます。この工程の製造間接費は機械の減価償却費が大半です。<br>ここで直接作業時間を基準にすると、<mark>人がほとんど触らない製品には、ほとんど製造間接費が配られません</mark>。実際には機械を長時間占有して、莫大な減価償却費を消費しているのにです。その分は、人手のかかる別の製品に押し付けられます。<br>結果として、機械中心の製品は原価が安く見え、手作業中心の製品は原価が高く見える。この歪んだ数字をもとに「手作業の製品は儲からないからやめよう」と判断したら、工場は間違った方向へ進みます。<strong>基準と因果関係を合わせることが求められるのは、こういう誤った意思決定を防ぐためです。</strong></p>
+  </div>
+
+  <p class="small muted">試験では配賦基準は問題文で指定されます。自分で選ぶ必要はありません。ただし「機械運転時間を基準とする」と書いてあるのに直接作業時間の数値を拾ってしまう、という取り違えは起こります。問題文に複数の時間数値が並んでいたら、どちらを使うのか指示を読み直してください。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>予定配賦の仕訳と勘定の動き</h2>
+
+  <p>5章の設例（予定配賦率 @900円）で、実際の月の動きを追います。</p>
+
+  <div class="card">
+    <div class="card__label">当月の実績</div>
+    <ul class="small">
+      <li>実際直接作業時間　3,800時間（基準操業度 4,000時間 に対して 200時間 不足）</li>
+      <li>製造間接費の実際発生額　3,640,000円</li>
+    </ul>
+  </div>
+
+  <h3>① 配賦時 — 予定配賦率で仕掛品へ振り替える</h3>
+
+  <p>予定配賦額 ＝ @900 × 3,800時間 ＝ <strong>3,420,000円</strong>。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="d amt">3,420,000</td><td class="c">製造間接費</td><td class="c amt">3,420,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>この仕訳は<strong>月末を待たずに書けます</strong>。実際発生額がいくらになるかを知らなくても、作業時間さえ分かれば計算できるからです。これが予定配賦の目的そのものでした。</p>
+
+  <h3>② 実際発生額の集計</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製造間接費</td><td class="d amt">3,640,000</td><td class="c">材料</td><td class="c amt">640,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">賃金・給料</td><td class="c amt">1,850,000</td></tr>
+      <tr><td class="d"></td><td class="d amt"></td><td class="c">経費</td><td class="c amt">1,150,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>③ 配賦差異の把握</h3>
+
+  <p>製造間接費勘定の借方に実際 3,640,000円、貸方に予定 3,420,000円。<strong>借方に 220,000円 の残高が残ります。</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製造間接費配賦差異</td><td class="d amt">220,000</td><td class="c">製造間接費</td><td class="c amt">220,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">製造間接費</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>材料（間接材料費）</span><span>640,000</span></div>
+          <div class="l"><span>賃金・給料（間接労務費）</span><span>1,850,000</span></div>
+          <div class="l"><span>経費（間接経費）</span><span>1,150,000</span></div>
+          <div class="l"><span><strong>借方合計</strong></span><span><strong>3,640,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>仕掛品（予定配賦額）</span><span>3,420,000</span></div>
+          <div class="l"><span><strong>製造間接費配賦差異</strong></span><span><strong>220,000</strong></span></div>
+          <div class="l"><span><strong>貸方合計</strong></span><span><strong>3,640,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">製造間接費配賦差異</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>製造間接費</span><span>220,000</span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>（年度末に売上原価へ）</span><span>220,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">検算：借方 640,000 ＋ 1,850,000 ＋ 1,150,000 ＝ 3,640,000円。貸方 3,420,000 ＋ 220,000 ＝ 3,640,000円。差異を貸方に立てることで、製造間接費勘定の貸借が一致して締まります。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">配賦差異の符号と向き</span>
+    <p><strong>製造間接費配賦差異 ＝ 予定配賦額 − 実際発生額</strong><br>マイナス（予定 ＜ 実際）なら<strong>借方差異（不利差異）</strong>。製品原価に入れきれなかった分です。<br>プラス（予定 ＞ 実際）なら<strong>貸方差異（有利差異）</strong>。製品原価に入れすぎた分です。<br>この設例では 3,420,000 − 3,640,000 ＝ △220,000円 なので<mark>借方差異（不利差異）</mark>です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">製造間接費勘定は借方が実際、貸方が予定</span>
+    <p>材料勘定では<strong>借方が実際（購入原価）、貸方が予定（予定価格での払出）</strong>でした。賃金・給料勘定でも<strong>借方が実際（支払額）、貸方が予定（予定賃率での消費）</strong>でした。<br>製造間接費勘定も同じです。<mark>実際額は借方から入り、予定額は貸方から出ていく。</mark>3つの勘定すべてで同じ構造をしています。だから差異はいつも<strong>「借方の実際と貸方の予定の差を、貸借が合うように埋める」</strong>形で出てきます。この形を覚えておくと、差異を借方・貸方どちらに書くかで迷いません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>固定予算と公式法変動予算</h2>
+
+  <p>ここから差異分析に入ります。その前に、<strong>予算の立て方が2種類ある</strong>ことを押さえます。この違いが、差異の計算方法をそのまま決めます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「予算を超えたかどうか」を判定するには、何と比べるのか</span>
+    <p>実際発生額が 3,640,000円 でした。これは使いすぎでしょうか。<br>判定するには比べる相手が要ります。<strong>月間予算 3,600,000円 と比べればよい</strong>——と言いたいところですが、その予算は<mark>4,000時間 動く前提で立てた金額</mark>です。実際には 3,800時間 しか動いていません。<br>200時間 動かなかったぶん、電力料も消耗品費も少なくて済んだはずです。それなのに 4,000時間 の予算とそのまま比べたら、実際には無駄遣いしていても「予算内」に見えてしまいます。<br>ここで立場が2つに分かれます。<strong>それでも 4,000時間 の予算と比べる</strong>のが固定予算、<strong>3,800時間 なら本来いくらのはずかを計算し直して比べる</strong>のが変動予算です。</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">固定予算</div>
+      <p><strong>基準操業度における予算額を、そのまま比較の相手にする</strong></p>
+      <p class="small">操業度がいくらであっても、予算額は動かさない。上の例なら、実際が 3,800時間 でも 3,000時間 でも、比べる相手はいつも 3,600,000円。</p>
+      <p class="small muted">計算は単純。ただし操業度が動いたぶんの影響が予算差異に混ざる。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">公式法変動予算</div>
+      <p><strong>製造間接費を変動費と固定費に分け、実際操業度に合わせて予算額を計算し直す</strong></p>
+      <p class="small">変動費率 × 実際操業度 ＋ 固定費予算額。上の例なら 3,800時間 に対応する予算額を出して比べる。</p>
+      <p class="small muted">計算は一手間増える。そのかわり、操業度の影響を予算差異から取り除ける。<strong>2級の中心はこちら。</strong></p>
+    </div>
+  </div>
+
+  <div class="term">
+    <span class="term__w">予算許容額</span><span class="term__r">よさんきょようがく</span>
+    <p>公式法変動予算のもとで、<strong>実際の操業度において許される製造間接費の金額</strong>。「その操業度なら、ここまでは使ってよかった」という上限です。<br><strong>予算許容額 ＝ 変動費率 × 実際操業度 ＋ 固定費予算額</strong></p>
+  </div>
+
+  <h3>設例で両方を計算する</h3>
+
+  <p>5章の年間予算を月次に直します。変動費 14,400,000 ÷ 12 ＝ 1,200,000円、固定費 28,800,000 ÷ 12 ＝ 2,400,000円。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>変動費率</strong> ＝ 月間変動費予算 1,200,000 ÷ 基準操業度 4,000時間 ＝ <strong>@300円</strong></li>
+      <li><strong>固定費率</strong> ＝ 月間固定費予算 2,400,000 ÷ 基準操業度 4,000時間 ＝ <strong>@600円</strong></li>
+      <li><strong>予定配賦率</strong> ＝ @300 ＋ @600 ＝ <strong>@900円</strong>（5章で出した率と一致します）</li>
+      <li><strong>予算許容額</strong>（実際 3,800時間）＝ @300 × 3,800 ＋ 2,400,000 ＝ 1,140,000 ＋ 2,400,000 ＝ <strong>3,540,000円</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">予定配賦率は変動費率と固定費率に分解できる</span>
+    <p><strong>予定配賦率 ＝ 変動費率 ＋ 固定費率</strong>。どちらも分母は同じ基準操業度なので、足し合わせると予算額全体を基準操業度で割ったものになります。<br>この分解が差異分析の鍵です。<mark>変動費率は実際の操業度に素直についてくるのに対し、固定費率は基準操業度でしか正しくない</mark>——この非対称が、差異を2つに割ります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">固定予算と「固定費」は別の話</span>
+    <p>言葉が似ていて混同しますが、まったく別の概念です。<br><strong>固定予算</strong>は<mark>予算の立て方</mark>の名前です。操業度が動いても予算額を動かさない、というやり方を指します。<br><strong>固定費</strong>は<mark>費用の性質</mark>の名前です。操業度が動いても金額が変わらない費用（減価償却費・賃借料など）のことです。<br>公式法変動予算でも、固定費はちゃんと存在します。むしろ固定費と変動費を分けるからこそ公式法変動予算が成り立ちます。「変動予算だから固定費がない」ではありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>なぜ差異が2つに割れるのか</h2>
+
+  <p>7章で、配賦差異の総額が 220,000円（借方・不利）と出ました。<strong>この単元がW1・W2と違うのは、この総額をさらに2つに分けるところです。</strong>なぜ分ける必要があるのかを先に押さえます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">差異が出た原因は、性質の異なる2つが混ざっている</span>
+    <p>製造間接費が予定より多く（または少なく）なる原因を考えると、2種類あります。</p>
+    <div class="steps">
+      <ol>
+        <li><strong>使いすぎた・節約した</strong>　電力を無駄に使った、消耗品を余分に使った、修繕費が想定外にかさんだ。これは<mark>工場が責任を負うべき</mark>、管理可能な原因です。</li>
+        <li><strong>工場が予定ほど動かなかった・想定より動いた</strong>　受注が減って稼働が落ちた。これは工場の使い方の問題であって、現場の節約努力とは別の話です。</li>
+      </ol>
+    </div>
+    <p>この2つを合算した 220,000円 だけを見ても、<strong>どちらが原因か分かりません。</strong>現場に「220,000円 の不利差異が出た」と伝えても、節約すべきなのか受注を取るべきなのか、打つ手が決まりません。<br>だから分けます。①が<strong>予算差異</strong>、②が<strong>操業度差異</strong>です。</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">予算差異</div>
+      <p><strong>予算許容額 − 実際発生額</strong></p>
+      <p class="small">「その操業度なら、ここまでは使ってよかった」という金額と、実際に使った金額の差。<mark>使いすぎ・節約を表す</mark>。</p>
+      <p class="small muted">現場の管理努力が反映される差異。不利なら「無駄遣いがあった」と読める。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">操業度差異</div>
+      <p><strong>固定費率 ×（実際操業度 − 基準操業度）</strong></p>
+      <p class="small">予定していたほど工場が動かなかったために、<mark>固定費を製品原価に配りきれなかった分</mark>（またはその逆）。</p>
+      <p class="small muted">設備の利用度を表す差異。不利なら「設備を遊ばせた」と読める。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">操業度差異が「固定費だけ」の話である理由</span>
+    <p>変動費は操業度についてきます。3,800時間 しか動かなければ、変動費も 3,800時間 ぶんしか発生しません。<mark>配賦額も変動費率 × 3,800時間 なので、ぴったり対応します。過不足が出ようがありません。</mark><br>ところが固定費は違います。2,400,000円 は、工場が何時間動こうが出ていきます。それを @600円 という率で製品に配っているのは、<strong>4,000時間 動けば 2,400,000円 ちょうど配り終わる</strong>という前提があるからです。<br>3,800時間 しか動かなければ、@600 × 3,800 ＝ 2,280,000円 しか配れません。残りの 120,000円 は<strong>製品原価に入れる先がないまま残ります</strong>。これが操業度差異です。<br>だから操業度差異の計算式に変動費率は出てきません。<strong>固定費率だけ</strong>です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2つの差異は必ず総額に戻る</span>
+    <p><strong>製造間接費配賦差異 ＝ 予算差異 ＋ 操業度差異</strong><br>差異分析をしたら、<mark>最後にこの足し算で検算してください。</mark>分析は総額を分解する作業なので、分解した2つを足せば必ず元に戻ります。戻らなければどこかで計算を間違えています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>シュラッター図で差異を読む（公式法変動予算）</h2>
+
+  <p>差異の向きを式の暗記で乗り切ろうとすると必ず取り違えます。<strong>図を描いて、面積として読んでください。</strong>W1の材料消費価格差異でボックス図を描いたのと同じ発想で、軸の意味が変わるだけです。</p>
+
+  <p>この図を<strong>シュラッター図</strong>と呼びます（考案した2人の名前をとって<strong>シュラッター＝シュラッター図</strong>と呼ぶこともあります）。横軸に操業度、縦軸に金額をとります。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 760 460" style="width:100%;height:auto;min-width:660px" role="img" aria-label="公式法変動予算のシュラッター図。予定配賦線と予算線の2本の直線に、実際発生額の点を加え、予算差異と操業度差異を面積として示す">
+      <g font-size="13" fill="var(--text)">
+        <!-- 軸 -->
+        <path d="M90 40 L 90 390" stroke="var(--border-2)" stroke-width="2"/>
+        <path d="M90 390 L 700 390" stroke="var(--border-2)" stroke-width="2"/>
+        <text x="84" y="394" text-anchor="end" font-size="12" fill="var(--muted)">0</text>
+        <text x="40" y="32" font-size="12.5" fill="var(--muted)">金額</text>
+        <text x="690" y="418" text-anchor="middle" font-size="12.5" fill="var(--muted)">操業度</text>
+
+        <!-- 固定費の水平線（高さ 2,400,000 → y=270） -->
+        <path d="M90 270 L 620 270" stroke="var(--muted)" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <text x="84" y="274" text-anchor="end" font-size="11.5" fill="var(--muted)">2,400,000</text>
+        <text x="150" y="335" font-size="12" fill="var(--muted)">固定費予算 2,400,000</text>
+
+        <!-- 予算線: (0, 2400000) → (4000h, 3600000) ; y: 270 → 210 -->
+        <path d="M90 270 L 560 210" stroke="var(--credit)" stroke-width="2.5" fill="none"/>
+        <text x="600" y="208" font-size="12.5" font-weight="700" fill="var(--credit)">予算線</text>
+        <text x="600" y="225" font-size="11" fill="var(--muted)">変動費率@300＋固定費</text>
+
+        <!-- 予定配賦線: 原点 → (4000h, 3600000) ; y: 390 → 210 -->
+        <path d="M90 390 L 560 210" stroke="var(--debit)" stroke-width="2.5" fill="none"/>
+        <text x="600" y="255" font-size="12.5" font-weight="700" fill="var(--debit)">予定配賦線</text>
+        <text x="600" y="272" font-size="11" fill="var(--muted)">予定配賦率@900</text>
+
+        <!-- 縦線: 実際操業度 3800h → x = 90 + 470*(3800/4000) = 90+446.5 = 536.5 -->
+        <path d="M536 390 L 536 150" stroke="var(--text)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="536" y="410" text-anchor="middle" font-size="12.5" font-weight="700">3,800h</text>
+        <text x="536" y="428" text-anchor="middle" font-size="11" fill="var(--muted)">実際操業度</text>
+
+        <!-- 縦線: 基準操業度 4000h → x = 560 -->
+        <path d="M560 390 L 560 150" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <text x="620" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--accent)">4,000h</text>
+        <text x="620" y="428" text-anchor="middle" font-size="11" fill="var(--muted)">基準操業度</text>
+
+        <!-- 予定配賦線上の点（3800h）: y = 390 - 180*(3800/4000) = 390-171 = 219 -->
+        <circle cx="536" cy="219" r="5" fill="var(--debit)"/>
+        <!-- 予算線上の点（3800h）: y = 270 - 60*(3800/4000)= 270-57 = 213 -->
+        <circle cx="536" cy="213" r="5" fill="var(--credit)"/>
+        <!-- 実際発生額 3,640,000 → 予算線の 3,540,000 より 100,000 上。スケール: 1,200,000→60px なので 100,000→5px。213-5=208 -->
+        <circle cx="536" cy="208" r="5.5" fill="var(--danger)"/>
+
+        <!-- 実際発生額ラベル -->
+        <path d="M536 208 L 400 120" stroke="var(--danger)" stroke-width="1.3"/>
+        <text x="396" y="112" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--danger)">実際発生額 3,640,000</text>
+
+        <!-- 予算許容額ラベル -->
+        <path d="M536 213 L 300 160" stroke="var(--credit)" stroke-width="1.3"/>
+        <text x="296" y="156" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--credit)">予算許容額 3,540,000</text>
+
+        <!-- 予定配賦額ラベル -->
+        <path d="M536 219 L 250 198" stroke="var(--debit)" stroke-width="1.3"/>
+        <text x="246" y="194" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--debit)">予定配賦額 3,420,000</text>
+
+        <!-- 差異の帯（拡大して右に表示） -->
+        <rect x="650" y="150" width="14" height="24" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="1.5"/>
+        <text x="672" y="160" font-size="11.5" font-weight="700" fill="var(--danger)">予算差異</text>
+        <text x="672" y="174" font-size="11.5" fill="var(--danger)">100,000（不利）</text>
+
+        <rect x="650" y="186" width="14" height="28" fill="var(--credit-bg)" stroke="var(--credit)" stroke-width="1.5"/>
+        <text x="672" y="196" font-size="11.5" font-weight="700" fill="var(--credit)">操業度差異</text>
+        <text x="672" y="210" font-size="11.5" fill="var(--credit)">120,000（不利）</text>
+
+        <!-- 3本の点をつなぐ強調 -->
+        <path d="M528 208 L 528 213" stroke="var(--danger)" stroke-width="7" opacity="0.55"/>
+        <path d="M528 213 L 528 219" stroke="var(--credit)" stroke-width="7" opacity="0.55"/>
+
+        <text x="120" y="60" font-size="12.5" fill="var(--muted)">縦線 3,800h 上に3つの点が並ぶ。上から順に</text>
+        <text x="120" y="78" font-size="12.5" fill="var(--muted)">実際発生額 ／ 予算許容額 ／ 予定配賦額</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">実際操業度 3,800時間 の縦線の上に3つの点が並ぶ。上2つの間が予算差異、下2つの間が操業度差異。どちらも上が実際に近い側なので、いまは両方とも不利差異。</p>
+  </div>
+
+  <h3>図の読み方を手順にする</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>斜めの直線を2本引く。</strong>原点から基準操業度の点へ伸びるのが<strong>予定配賦線</strong>（傾き＝予定配賦率 @900）。縦軸の固定費予算額から出発して基準操業度の点へ伸びるのが<strong>予算線</strong>（傾き＝変動費率 @300、切片＝固定費予算 2,400,000）。<mark>2本は基準操業度の真上で必ず交わります。</mark></li>
+      <li><strong>実際操業度に縦線を引く。</strong>この縦線と2本の直線が交わる点が、予定配賦額と予算許容額です。</li>
+      <li><strong>実際発生額を点で打つ。</strong>直線の上ではなく、実際にかかった金額の高さに打ちます。</li>
+      <li><strong>上2つの差が予算差異、下2つの差が操業度差異。</strong>実際発生額と予算許容額の差、予算許容額と予定配賦額の差です。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2本の直線が基準操業度で交わる理由</span>
+    <p>予定配賦線の高さは @900 × 操業度。予算線の高さは @300 × 操業度 ＋ 2,400,000。<br>基準操業度 4,000時間 では、前者が 3,600,000円、後者も @300 × 4,000 ＋ 2,400,000 ＝ 3,600,000円。<strong>一致します。</strong><br>当然です。<mark>予定配賦率は「基準操業度で予算額をちょうど配り終わる率」として決めた</mark>のですから、基準操業度では配賦額と予算額が一致するように作られています。<br>そして<strong>基準操業度から離れるほど、2本の線の開きが大きくなります。</strong>その開きが操業度差異です。基準操業度ちょうどで操業すれば、操業度差異はゼロになります。</p>
+  </div>
+
+  <h3>数字で確かめる</h3>
+
+  <div class="steps">
+    <ol>
+      <li><strong>予算差異</strong> ＝ 予算許容額 3,540,000 − 実際発生額 3,640,000 ＝ <strong>△100,000円（借方・不利差異）</strong></li>
+      <li><strong>操業度差異</strong> ＝ 固定費率 @600 ×（実際 3,800 − 基準 4,000）＝ @600 × △200時間 ＝ <strong>△120,000円（借方・不利差異）</strong></li>
+      <li><strong>検算</strong>　△100,000 ＋ △120,000 ＝ <strong>△220,000円</strong>。7章で出した配賦差異の総額と一致します。</li>
+    </ol>
+  </div>
+
+  <p>意味を言葉にします。<strong>予算差異 100,000円 の不利</strong>は、3,800時間 なら 3,540,000円 で足りたはずなのに 3,640,000円 使ってしまった、という<mark>使いすぎ</mark>です。<strong>操業度差異 120,000円 の不利</strong>は、4,000時間 動く前提で固定費を配る率を決めたのに 3,800時間 しか動かず、<mark>固定費 120,000円 を配りきれなかった</mark>ということです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">操業度差異は「実際 − 基準」の符号がそのまま答え</span>
+    <p><strong>操業度差異 ＝ 固定費率 ×（実際操業度 − 基準操業度）</strong><br>実際が基準を<strong>下回れば</strong>マイナス ＝ 借方差異（不利差異）。設備を遊ばせた分です。<br>実際が基準を<strong>上回れば</strong>プラス ＝ 貸方差異（有利差異）。予定以上に設備を使った分です。<br><mark>引き算の順番を「実際 − 基準」に固定してください。</mark>逆に引くと符号が反転し、有利・不利を取り違えます。予算差異も同じ考え方で、<strong>予算許容額 − 実際発生額</strong>に固定します。どちらも「基準になる側 − 実際にかかった側」ではなく、式の形として丸ごと覚えるのが安全です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">操業度差異は現場を責める材料にならない</span>
+    <p>操業度差異が不利だったとして、それは現場の作業員の責任でしょうか。違います。<mark>工場が予定ほど動かなかったのは、受注が取れなかったからであり、設備の規模を大きくしすぎたからです。</mark>どちらも現場の努力の外にあります。<br>一方、予算差異は現場の管理努力を反映します。だから2つを分けることに意味があります。<strong>合算した 220,000円 だけ見て「現場の努力が足りない」と結論するのが、分析しないことの害です。</strong><br>試験では有利・不利の判定と金額を答えるだけですが、この意味づけを持っていると符号の取り違えが減ります。「操業度が足りない → 遊ばせた → 損 → 不利」と物語で追えるからです。</p>
+  </div>
+
+  <h3>実際操業度が基準操業度を上回った場合</h3>
+
+  <p>符号が反転する場合を確認します。変動費率 @250円、月間固定費予算 1,800,000円、基準操業度 3,000時間、実際操業度 3,200時間、実際発生額 2,540,000円 とします。</p>
+
+  <div class="steps">
+    <ol>
+      <li>固定費率 ＝ 1,800,000 ÷ 3,000 ＝ <strong>@600円</strong>　／　予定配賦率 ＝ @250 ＋ @600 ＝ <strong>@850円</strong></li>
+      <li>予定配賦額 ＝ @850 × 3,200 ＝ <strong>2,720,000円</strong></li>
+      <li>予算許容額 ＝ @250 × 3,200 ＋ 1,800,000 ＝ 800,000 ＋ 1,800,000 ＝ <strong>2,600,000円</strong></li>
+      <li>予算差異 ＝ 2,600,000 − 2,540,000 ＝ <strong>＋60,000円（貸方・有利差異）</strong></li>
+      <li>操業度差異 ＝ @600 ×（3,200 − 3,000）＝ <strong>＋120,000円（貸方・有利差異）</strong></li>
+      <li>検算　60,000 ＋ 120,000 ＝ 180,000円。配賦差異 ＝ 2,720,000 − 2,540,000 ＝ <strong>180,000円（貸方・有利差異）</strong>。一致します。</li>
+    </ol>
+  </div>
+
+  <p>今度は両方とも有利差異です。<strong>予定より節約でき、予定より多く動いた</strong>からです。シュラッター図では、縦線が基準操業度の<strong>右側</strong>に立ちます。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">2つの差異の符号は、それぞれ別に決まる</span>
+    <p>この設例では両方が有利差異になりましたが、<strong>2つが必ず揃うわけではありません。</strong>操業度差異の符号は「実際操業度 − 基準操業度」だけで決まり、予算差異の符号は「予算許容額 − 実際発生額」だけで決まります。<mark>互いに独立です。</mark></p>
+    <p>実際操業度が基準を上回っていても、その操業度から見て使いすぎていれば予算差異は不利になります（計算ドリル10がその形です）。<strong>「操業度が多いほうだから両方とも有利だろう」と決めつけないでください。</strong>符号は必ず2つとも計算して確かめます。差異を2つに分ける意味は、まさにこの食い違いを見つけることにあります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>固定予算の場合の差異分析</h2>
+
+  <p>固定予算では、比べる相手が<strong>いつも基準操業度における予算額</strong>です。実際操業度がいくらであっても動かしません。したがって予算許容額という考え方が出てきません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">固定予算の差異分析</span>
+    <p><strong>予算差異 ＝ 製造間接費予算額 − 実際発生額</strong><br><strong>操業度差異 ＝ 予定配賦率 ×（実際操業度 − 基準操業度）</strong><br>公式法変動予算との違いは2か所です。予算差異の相手が<mark>予算許容額ではなく予算額そのもの</mark>になること、操業度差異に掛ける率が<mark>固定費率ではなく予定配賦率</mark>になることです。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ固定予算では予定配賦率を掛けるのか</span>
+    <p>固定予算では、<strong>製造間接費を変動費と固定費に分けていません。</strong>分けていないのだから、固定費率という数値がそもそも存在しません。<br>手元にあるのは予定配賦率 @900 だけです。だから操業度差異も @900 で計算します。<br>言い換えると、<mark>固定予算は「製造間接費は全部が固定費のようなものだ」と扱っている</mark>ことになります。実際には変動費も混ざっているのに、その分まで操業度差異に押し込むのです。これが固定予算の粗さです。</p>
+  </div>
+
+  <h3>同じ数値で両方を計算して比べる</h3>
+
+  <p>7章の設例（予算額 3,600,000円、基準操業度 4,000時間、予定配賦率 @900円、実際 3,800時間、実際発生額 3,640,000円）を、固定予算として分析します。</p>
+
+  <div class="steps">
+    <ol>
+      <li>予算差異 ＝ 3,600,000 − 3,640,000 ＝ <strong>△40,000円（借方・不利差異）</strong></li>
+      <li>操業度差異 ＝ @900 ×（3,800 − 4,000）＝ @900 × △200 ＝ <strong>△180,000円（借方・不利差異）</strong></li>
+      <li>検算　△40,000 ＋ △180,000 ＝ <strong>△220,000円</strong>。配賦差異の総額は変わりません。</li>
+    </ol>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th class="amt">公式法変動予算</th><th class="amt">固定予算</th></tr></thead>
+    <tbody>
+      <tr><td><strong>予算差異</strong></td><td class="amt">△100,000円（不利）</td><td class="amt">△40,000円（不利）</td></tr>
+      <tr><td><strong>操業度差異</strong></td><td class="amt">△120,000円（不利）</td><td class="amt">△180,000円（不利）</td></tr>
+      <tr><td><strong>合計（配賦差異）</strong></td><td class="amt"><strong>△220,000円</strong></td><td class="amt"><strong>△220,000円</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">総額は同じなのに、内訳が違う</span>
+    <p>総額が一致するのは当然です。<mark>配賦差異は「予定配賦額 − 実際発生額」であり、予算の立て方に関係なく決まる</mark>からです。予算の立て方は、その総額をどう2つに切るかだけを変えます。<br>切り方が違うと、何が変わるでしょうか。固定予算では予算差異が 40,000円 の不利にとどまり、「そこまで無駄遣いはしていない」ように見えます。<br>しかし実際は 3,800時間 しか動いていないのだから、その操業度なら 3,540,000円 で済んだはずでした。<strong>公式法変動予算はそこまで踏まえて 100,000円 の使いすぎを検出します。</strong>固定予算が見落とした 60,000円 は、操業度差異のほうに紛れ込んでいます（180,000 − 120,000 ＝ 60,000）。<br><mark>操業度が落ちたぶん変動費も減るはずだ、という当たり前のことを、固定予算は織り込めていません。</mark>これが「固定予算では操業度の影響が予算差異に混ざる」ということの中身です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">どちらの予算か、問題文で必ず確かめる</span>
+    <p>同じ数値でも、固定予算か公式法変動予算かで予算差異・操業度差異の答えが変わります。<mark>総額だけは一致するので、合計で検算しても取り違えに気づけません。</mark><br>見分け方ははっきりしています。<strong>変動費率または変動費予算額が与えられていれば公式法変動予算</strong>です。分けられていないなら固定予算です。問題文に「公式法変動予算による」「固定予算による」と明記されるのがふつうですが、資料の形からも判断できるようにしておいてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>配賦差額の処理 — 売上原価加減法</h2>
+
+  <p>把握した差異を、最後にどこへ持っていくかです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">原価差異は会計年度末に売上原価へ賦課する</span>
+    <p>製造間接費配賦差異は、<strong>会計年度末に売上原価に賦課します</strong>。これを<mark>売上原価加減法</mark>といいます。<br><strong>不利差異（借方残高）なら売上原価を増やす</strong>（売上原価が借方）。<br><strong>有利差異（貸方残高）なら売上原価を減らす</strong>（売上原価が貸方）。<br>W1の材料消費価格差異・材料副費差異、W2の賃率差異と同じ扱いです。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ売上原価に持っていくのか</span>
+    <p>差異は<strong>「製品原価に入れそこねた（または入れすぎた）金額」</strong>です。本来なら製品原価の一部として、売れた分は売上原価に、売れ残った分は棚卸資産に、按分して振り分けるのが理屈に合っています。<br>しかし2級では、原則として<mark>全額を売上原価に入れてしまいます</mark>。差異は正常な範囲であれば金額が小さく、按分の手間に見合わないからです。また、差異は「その期の製造活動における能率の良し悪し」を示すものなので、<strong>資産として翌期に繰り越すより、その期の損益に反映させるほうが実態に合う</strong>という考え方もあります。</p>
+  </div>
+
+  <h3>仕訳</h3>
+
+  <p>製造間接費配賦差異勘定に借方残高 220,000円（不利差異）がある状態で会計年度末を迎えた場合です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">220,000</td><td class="c">製造間接費配賦差異</td><td class="c amt">220,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>有利差異（貸方残高 180,000円）なら、借方と貸方が逆になります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">製造間接費配賦差異</td><td class="d amt">180,000</td><td class="c">売上原価</td><td class="c amt">180,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">月末にやることと年度末にやることを混同しない</span>
+    <p><strong>月末</strong>　製造間接費勘定の残高を製造間接費配賦差異勘定に振り替える（7章③の仕訳）。差異勘定に月々の差異が積み上がっていきます。<br><strong>会計年度末</strong>　積み上がった差異勘定の残高を売上原価に賦課する（この章の仕訳）。<br>問題文が「月末に差異を計上した」と言っているのか「会計年度末に売上原価に賦課した」と言っているのかで、書く仕訳が変わります。<mark>この2つは別の手続です。</mark>W1の材料副費差異でも同じ注意をしました。工業簿記の差異はすべてこの2段構えです。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">予算差異勘定・操業度差異勘定に分けて振り替えることもある</span>
+    <p>差異の分析結果を勘定にまで反映させる場合、製造間接費配賦差異勘定を使わず、<strong>予算差異勘定と操業度差異勘定へ直接振り替える</strong>形を採ることがあります。上の設例なら、借方に予算差異 100,000円 と操業度差異 120,000円 を立て、貸方に製造間接費 220,000円 とします。<br>どちらの形で答えるかは<mark>問題文の指定または答案用紙の勘定科目欄</mark>で決まります。指定がなければ製造間接費配賦差異勘定でまとめて処理して構いません。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この単元で使う勘定科目</span>
+    <p><strong>製造間接費配賦差異</strong>　配賦差異の総額を受ける勘定。<br><strong>予算差異</strong>　分析した予算差異を受ける勘定。<br><strong>操業度差異</strong>　分析した操業度差異を受ける勘定。<br>どれも<mark>差異勘定であり、資産でも負債でもありません</mark>。年度末に売上原価へ消えていく、一時的な受け皿です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 12問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-kansetsuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル 10問</h2>
+
+  <p>電卓を使って構いません。<strong>差異の問題は、必ずシュラッター図を描いてから符号を判断してください。</strong>図を描かずに式だけで解くと、有利・不利を落とします。</p>
+
+  <div id="num-kansetsuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>確認テスト 12問</h2>
+
+  <div id="quiz-kansetsuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s16"><span class="num">16</span>用語の穴埋め 8問</h2>
+
+  <p class="small muted">漢字で答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-kansetsuhi"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s17"><span class="num">17</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u10check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u10check">0 / 0 完了（0%）</div>
+
+  <div id="u10check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u10-1"><label for="k1"><span class="cl__t">製造間接費が勘定連絡図のどこにあり、何が合流して何が出ていくかを図に描ける</span><span class="cl__d">間接材料費・間接労務費・間接経費の3本が合流し、配賦によって仕掛品へ1本で出ていく</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u10-2"><label for="k2"><span class="cl__t">配賦という手続が必要な理由を、直接費との対比で言える</span><span class="cl__d">直接費は伝票に製造指図書番号が書いてあるが、間接費はそもそも製品ごとに分けられない。それでも製品原価は出さなければならないので、もっともらしい基準で配る</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u10-3"><label for="k3"><span class="cl__t">製造間接費の3分類を、それぞれ具体例つきで挙げられる</span><span class="cl__d">間接材料費（補助材料費・工場消耗品費・消耗工具器具備品費）／間接労務費（間接工賃金の全額・直接工の間接作業分・賞与・法定福利費）／間接経費（工場の減価償却費・電力料・保険料・棚卸減耗費）</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u10-4"><label for="k4"><span class="cl__t">本社の費用は製造間接費に入らないと分かり、問題文の「工場の」を毎回確認する</span><span class="cl__d">工場の減価償却費は製造間接費、本社の減価償却費は販売費及び一般管理費。混ぜると在庫の金額に本社費用が紛れ込む</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u10-5"><label for="k5"><span class="cl__t">製造間接費配賦表と製造間接費元帳が、同じ金額を別方向から見たものだと説明できる</span><span class="cl__d">元帳は費目の方向、配賦表は製品の方向。予定配賦をすると配賦表は予定額、元帳は実際額になり一致しなくなる</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u10-6"><label for="k6"><span class="cl__t">実際配賦の弱点を2つとも言える</span><span class="cl__d">①製造間接費が出そろう月末まで製品原価が決まらない ②操業度が季節変動すると、同じ製品でも作った月によって原価が揺れる</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u10-7"><label for="k7"><span class="cl__t">弱点②が製造間接費に特有である理由を、固定費の存在から説明できる</span><span class="cl__d">製造間接費の大半が固定費なので、分母（操業度）が動くだけで配賦率が動く。材料費・労務費で切り離したかったのは単価の変動だった</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u10-8"><label for="k8"><span class="cl__t">予定配賦率＝製造間接費予算額÷基準操業度 を書け、単位をそろえて計算できる</span><span class="cl__d">年間予算と月間基準操業度を混ぜない。分子と分母が同じ期間かを割る前に確認する</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u10-9"><label for="k9"><span class="cl__t">基準操業度が「実際にどれだけ動いたか」ではないと説明できる</span><span class="cl__d">予定を立てた時点での操業度の見込み。固定費はこの操業度だけ動く前提で配られているので、下回れば配り残しが出る</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u10-10"><label for="k10"><span class="cl__t">配賦基準を4つ以上挙げ、機械化された工場で直接作業時間を使うと何が起きるか言える</span><span class="cl__d">直接作業時間・機械運転時間・直接労務費・直接材料費・生産量。機械中心の製品の原価が不当に安く見え、手作業中心の製品に押し付けられる</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u10-11"><label for="k11"><span class="cl__t">予定配賦の仕訳3本（配賦・実際額の集計・差異の把握）を書ける</span><span class="cl__d">配賦は借方 仕掛品／貸方 製造間接費。実際額は借方 製造間接費。差異は製造間接費勘定の残高を差異勘定へ</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u10-12"><label for="k12"><span class="cl__t">製造間接費勘定は借方が実際・貸方が予定であり、材料勘定・賃金勘定と同じ構造だと言える</span><span class="cl__d">実際額は借方から入り、予定額は貸方から出ていく。差異は貸借を合わせるための埋め合わせとして出てくる</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u10-13"><label for="k13"><span class="cl__t">固定予算と公式法変動予算の違いを、比べる相手の違いとして言える</span><span class="cl__d">固定予算は操業度が動いても予算額を動かさない。公式法変動予算は実際操業度に合わせて予算許容額を計算し直す</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u10-14"><label for="k14"><span class="cl__t">予算許容額＝変動費率×実際操業度＋固定費予算額 を書ける</span><span class="cl__d">その操業度なら、ここまでは使ってよかったという上限。固定費予算額は操業度によらず全額が入る</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u10-15"><label for="k15"><span class="cl__t">「固定予算」と「固定費」が別の概念だと説明できる</span><span class="cl__d">固定予算は予算の立て方の名前、固定費は費用の性質の名前。公式法変動予算でも固定費は存在する</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u10-16"><label for="k16"><span class="cl__t">差異を2つに分ける理由を、原因の性質の違いとして言える</span><span class="cl__d">使いすぎ・節約（現場の管理努力）と、操業度の過不足（受注・設備規模）は性質が違う。合算すると打つ手が決まらない</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u10-17"><label for="k17"><span class="cl__t">操業度差異の式に変動費率が出てこない理由を説明できる</span><span class="cl__d">変動費は操業度についてくるので配賦額と過不足なく対応する。配りきれないのは固定費だけ</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u10-18"><label for="k18"><span class="cl__t">公式法変動予算のシュラッター図を、何も見ずに描ける</span><span class="cl__d">原点から基準操業度へ伸びる予定配賦線と、固定費予算額から基準操業度へ伸びる予算線。2本は基準操業度の真上で交わる。実際操業度の縦線上に3点が並び、上2つが予算差異・下2つが操業度差異</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u10-19"><label for="k19"><span class="cl__t">公式法変動予算の予算差異・操業度差異を計算し、合計で検算できる</span><span class="cl__d">予算差異＝予算許容額−実際発生額／操業度差異＝固定費率×（実際操業度−基準操業度）／合計＝予定配賦額−実際発生額</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u10-20"><label for="k20"><span class="cl__t">固定予算の予算差異・操業度差異を計算でき、変動予算との違いを2か所とも言える</span><span class="cl__d">予算差異の相手が予算許容額ではなく予算額そのもの。操業度差異に掛ける率が固定費率ではなく予定配賦率</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u10-21"><label for="k21"><span class="cl__t">予算の立て方が違っても配賦差異の総額は変わらないと分かり、合計の検算では取り違えに気づけないと知っている</span><span class="cl__d">総額は「予定配賦額−実際発生額」で決まる。予算の立て方は総額の切り方だけを変える</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u10-22"><label for="k22"><span class="cl__t">有利差異・不利差異と借方差異・貸方差異の対応を即座に判定できる</span><span class="cl__d">予定＜実際なら借方差異＝不利差異、予定＞実際なら貸方差異＝有利差異。操業度差異は実際操業度が基準を下回れば不利</span></label></li>
+    <li><input type="checkbox" id="k23" data-key="p1u10-23"><label for="k23"><span class="cl__t">売上原価加減法による差異の処理を書け、月末の手続と区別できる</span><span class="cl__d">月末は製造間接費勘定の残高を差異勘定へ。会計年度末に差異勘定の残高を売上原価へ賦課する。不利差異なら売上原価が借方</span></label></li>
+    <li><input type="checkbox" id="k24" data-key="p1u10-24"><label for="k24"><span class="cl__t">仕訳ドリル12問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k25" data-key="p1u10-25"><label for="k25"><span class="cl__t">計算ドリル10問・確認テスト12問を全問正解した</span><span class="cl__d">特に固定予算と公式法変動予算の取り違え、操業度差異の符号を落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元で、費目別計算（W1・W2）が完成しました。製造間接費という箱に集まったものを、製品へ配る道筋がついたからです。<br>次のW4では、この箱を<strong>いったん部門ごとに分けてから</strong>配る方法（部門別計算）に進みます。配賦という手続が1段階増えるだけで、<mark>予定配賦率を決めて、実際操業度を掛けて、差異を予算差異と操業度差異に分ける</mark>という骨格は変わりません。<br>さらにW6の標準原価計算では、この差異分析に<strong>数量の差</strong>が加わります。製造間接費の差異分析は、そこで能率差異が増えて3分法・4分法になります。<strong>この単元のシュラッター図が、そのまま土台になります。</strong>ここで図を描けるようにしておいてください。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W3 ／ UNIT 10 製造間接費</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var KANSETSU_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '製造間接費配賦差異', '予算差異', '操業度差異',
+  '材料消費価格差異', '賃率差異',
+  '電力料', '修繕料', '保険料', '減価償却費', '棚卸減耗費',
+  '従業員賞与手当', '退職給付費用', '法定福利費', '外注加工賃',
+  '現金', '当座預金', '普通預金', '未払金', '未払費用', '前払費用',
+  '買掛金', '預り金',
+  '機械減価償却累計額', '建物減価償却累計額', '販売費', '一般管理費'
+];
+
+BokiJournal.mount('#drill-kansetsuhi', {
+  title: '仕訳ドリル — 製造間接費',
+  accounts: KANSETSU_ACCOUNTS,
+  questions: [
+    {
+      text: '当月の間接材料費 180,000円、間接労務費 420,000円、間接経費 260,000円を製造間接費勘定に振り替えた。貸方はそれぞれ材料、賃金・給料、経費とする。',
+      debit: [['製造間接費', 860000]],
+      credit: [['材料', 180000], ['賃金・給料', 420000], ['経費', 260000]],
+      hint: '3つの費目の間接分が1つの箱に集まります。借方は何行になるでしょうか。',
+      explain: '<p>間接材料費・間接労務費・間接経費の3本が、<strong>製造間接費という1つの勘定に合流</strong>します。借方は 180,000 ＋ 420,000 ＋ 260,000 ＝ <strong>860,000円</strong> の1行だけです。</p><p>費目別計算では1つの費目が直接・間接の2つに割れましたが、ここではちょうど逆に、3つの費目の間接分が1つに集まります。<mark>借方1行・貸方3行という形</mark>を覚えておいてください。</p>'
+    },
+    {
+      text: '当月の製造間接費を予定配賦した。予定配賦率は @900円、当月の実際直接作業時間は 3,800時間である。',
+      debit: [['仕掛品', 3420000]],
+      credit: [['製造間接費', 3420000]],
+      hint: '予定配賦額 ＝ 予定配賦率 × 実際操業度。掛ける操業度は予定でしょうか実際でしょうか。',
+      explain: '<p>予定配賦額 ＝ @900 × 3,800時間 ＝ <strong>3,420,000円</strong>。製造間接費勘定の貸方から仕掛品へ振り替えます。</p><p><mark>予定するのは率だけで、掛ける操業度は実際のものを使います。</mark>W1の材料費（予定価格 × 実際消費量）、W2の労務費（予定賃率 × 実際就業時間）とまったく同じ構造です。<br>この仕訳は<strong>月末を待たずに書けます</strong>。実際発生額がいくらになるかを知らなくても、作業時間さえ分かれば計算できるからです。それが予定配賦の目的でした。</p>'
+    },
+    {
+      text: '当月の製造間接費の実際発生額を集計した。内訳は間接材料費 640,000円（貸方は材料）、間接労務費 1,850,000円（貸方は賃金・給料）、間接経費 1,150,000円（貸方は経費）である。',
+      debit: [['製造間接費', 3640000]],
+      credit: [['材料', 640000], ['賃金・給料', 1850000], ['経費', 1150000]],
+      hint: '実際発生額は製造間接費勘定のどちら側に入るでしょうか。',
+      explain: '<p>実際発生額 ＝ 640,000 ＋ 1,850,000 ＋ 1,150,000 ＝ <strong>3,640,000円</strong>。製造間接費勘定の<strong>借方</strong>に入ります。</p><p><mark>製造間接費勘定は借方が実際、貸方が予定</mark>です。材料勘定（借方が実際の購入原価、貸方が予定価格での払出）、賃金・給料勘定（借方が実際の支払額、貸方が予定賃率での消費）と同じ構造をしています。</p>'
+    },
+    {
+      text: '月末に、製造間接費勘定の残高を製造間接費配賦差異勘定に振り替えた。当月の予定配賦額は 3,420,000円、実際発生額は 3,640,000円である。',
+      debit: [['製造間接費配賦差異', 220000]],
+      credit: [['製造間接費', 220000]],
+      hint: '借方に実際 3,640,000、貸方に予定 3,420,000。残高はどちら側にいくら残っていますか。',
+      explain: '<p>配賦差異 ＝ 予定配賦額 3,420,000 − 実際発生額 3,640,000 ＝ <strong>△220,000円</strong>。マイナスなので<strong>借方差異（不利差異）</strong>です。</p><p>製造間接費勘定は借方 3,640,000／貸方 3,420,000 で、<mark>借方に 220,000円 の残高</mark>が残っています。これを貸方に立てて差異勘定の借方へ移すと、製造間接費勘定の貸借が一致して締まります。<br>実際にかかった分を製品原価に入れきれていない状態なので不利差異です。</p>'
+    },
+    {
+      text: '月末に、製造間接費勘定の残高を製造間接費配賦差異勘定に振り替えた。当月の予定配賦額は 2,720,000円、実際発生額は 2,540,000円である。',
+      debit: [['製造間接費', 180000]],
+      credit: [['製造間接費配賦差異', 180000]],
+      hint: '今度は予定のほうが実際より大きくなっています。前問と借方・貸方が逆になります。',
+      explain: '<p>配賦差異 ＝ 2,720,000 − 2,540,000 ＝ <strong>＋180,000円</strong>。プラスなので<strong>貸方差異（有利差異）</strong>です。</p><p>製造間接費勘定は借方 2,540,000／貸方 2,720,000 で、<mark>貸方に 180,000円 の残高</mark>が残っています。製品原価に入れすぎた状態なので、借方に戻して差異勘定の貸方に立てます。<br>前問と借方・貸方がそっくり入れ替わることを確認してください。</p>'
+    },
+    {
+      text: '月末に、製造間接費の配賦差異 220,000円（借方差異）を、予算差異と操業度差異に分けて各差異勘定に振り替えた。公式法変動予算による分析の結果、予算差異は 100,000円の不利差異、操業度差異は 120,000円の不利差異であった。',
+      debit: [['予算差異', 100000], ['操業度差異', 120000]],
+      credit: [['製造間接費', 220000]],
+      hint: 'どちらも不利差異です。不利差異は差異勘定のどちら側に立つでしょうか。',
+      explain: '<p>不利差異は<strong>借方</strong>に立ちます。予算差異 100,000円 と操業度差異 120,000円 をそれぞれ借方に計上し、貸方で製造間接費勘定の残高 220,000円 を消します。</p><p>検算：100,000 ＋ 120,000 ＝ <strong>220,000円</strong>。<mark>2つの差異は必ず総額に戻ります。</mark>戻らなければどこかで計算を間違えています。<br>差異の分析結果を勘定にまで反映させる場合、製造間接費配賦差異勘定を使わずこの形を採ります。どちらの形で答えるかは問題文の指定または答案用紙の勘定科目欄で決まります。</p>'
+    },
+    {
+      text: '月末に、製造間接費の配賦差異を予算差異と操業度差異に分けて各差異勘定に振り替えた。分析の結果、予算差異は 60,000円の有利差異、操業度差異は 120,000円の有利差異であった。',
+      debit: [['製造間接費', 180000]],
+      credit: [['予算差異', 60000], ['操業度差異', 120000]],
+      hint: '有利差異は差異勘定のどちら側に立ちますか。前問とすべてが逆になります。',
+      explain: '<p>有利差異は<strong>貸方</strong>に立ちます。予算差異 60,000円 と操業度差異 120,000円 を貸方に計上し、借方で製造間接費勘定の貸方残高 180,000円 を消します。</p><p>合計 60,000 ＋ 120,000 ＝ <strong>180,000円</strong>。予定より節約でき、かつ予定より多く操業したため、両方とも有利差異になっています。<br><mark>借方＝不利、貸方＝有利</mark>という対応は、差異の種類が何であっても変わりません。</p>'
+    },
+    {
+      text: '会計年度末となったため、製造間接費配賦差異勘定の借方残高 220,000円を売上原価に賦課した。',
+      debit: [['売上原価', 220000]],
+      credit: [['製造間接費配賦差異', 220000]],
+      hint: '借方残高は不利差異。売上原価を増やすのか減らすのか。',
+      explain: '<p>借方残高の差異は<strong>不利差異</strong>で、実際にかかった分を製品原価に入れきれなかったことを意味します。会計年度末に売上原価を<strong>増やす</strong>方向で処理するので、売上原価が借方に来ます。これが<mark>売上原価加減法</mark>です。</p><p>差異勘定の借方残高を消すには貸方に立てる必要があり、相手科目が売上原価の借方になる、という順で考えても同じ答えになります。<br><strong>月末の差異計上と、年度末の売上原価への賦課は別の手続です。</strong>問題文がどちらを求めているかを読み分けてください。</p>'
+    },
+    {
+      text: '会計年度末となったため、予算差異勘定の貸方残高 45,000円と操業度差異勘定の借方残高 160,000円を、いずれも売上原価に賦課した。',
+      debit: [['売上原価', 115000], ['予算差異', 45000]],
+      credit: [['操業度差異', 160000]],
+      hint: '有利差異と不利差異が混ざっています。売上原価への影響は差引でいくらでしょうか。',
+      explain: '<p>予算差異は<strong>貸方残高＝有利差異 45,000円</strong>（売上原価を減らす）、操業度差異は<strong>借方残高＝不利差異 160,000円</strong>（売上原価を増やす）です。</p><p>それぞれの残高を消すため、予算差異は借方に 45,000円、操業度差異は貸方に 160,000円 を立てます。売上原価は差引 160,000 − 45,000 ＝ <strong>115,000円</strong> の借方です。</p><p>仕訳の形は、借方に 売上原価 115,000 と 予算差異 45,000、貸方に 操業度差異 160,000 となります。<mark>有利差異と不利差異が混在しても、それぞれの残高を反対側に立てて消すという原則は変わりません。</mark></p>'
+    },
+    {
+      text: '当月の製造間接費を予定配賦した。年間の製造間接費予算額は 24,000,000円、月間の基準操業度は機械運転時間 2,000時間である。当月の実際機械運転時間は 1,850時間であった。',
+      debit: [['仕掛品', 1850000]],
+      credit: [['製造間接費', 1850000]],
+      hint: '予算額は年間、基準操業度は月間で与えられています。そのまま割ってはいけません。',
+      explain: '<p>予算額は<strong>年間</strong>、基準操業度は<strong>月間</strong>で与えられています。<mark>そのまま 24,000,000 ÷ 2,000 と割ると @12,000円 になり、率が12倍になります。</mark></p><p>月間の予算額 ＝ 24,000,000 ÷ 12 ＝ 2,000,000円。<br>予定配賦率 ＝ 2,000,000 ÷ 2,000時間 ＝ <strong>@1,000円</strong>。<br>予定配賦額 ＝ @1,000 × 1,850時間 ＝ <strong>1,850,000円</strong>。</p><p>年間どうしで計算しても同じです（年間基準操業度 2,000 × 12 ＝ 24,000時間、24,000,000 ÷ 24,000 ＝ @1,000円）。<strong>分子と分母が同じ期間の数値かを、割る前に必ず確認してください。</strong>率が12倍または12分の1になると、そこから先の配賦額・差異がすべて崩れます。</p>'
+    },
+    {
+      text: '当月の製造間接費を予定配賦した。年間の製造間接費予算額は 43,200,000円、年間の基準操業度は直接作業時間 48,000時間である。当月の実際直接作業時間は 3,650時間であった。',
+      debit: [['仕掛品', 3285000]],
+      credit: [['製造間接費', 3285000]],
+      hint: '年間の予算額を年間の基準操業度で割れば率が出ます。月次に直す必要はありません。',
+      explain: '<p>予定配賦率 ＝ 43,200,000 ÷ 48,000時間 ＝ <strong>@900円</strong>。<br>予定配賦額 ＝ @900 × 3,650時間 ＝ <strong>3,285,000円</strong>。</p><p>年間の数値どうしで割っても、月間の数値どうしで割っても率は同じです（43,200,000 ÷ 12 ＝ 3,600,000円、48,000 ÷ 12 ＝ 4,000時間、3,600,000 ÷ 4,000 ＝ @900円）。<mark>分子と分母の期間がそろっていれば、どちらで計算しても構いません。</mark></p><p>やってはいけないのは<strong>年間予算を月間基準操業度で割る</strong>ことです。率が12倍になり、そこから先の配賦額・差異がすべて崩れます。割る前に期間を確認する習慣をつけてください。</p>'
+    },
+    {
+      text: '会計年度末において、製造間接費配賦差異の残高が 380,000円（借方残高）であった。この差異を売上原価に賦課する。',
+      debit: [['売上原価', 380000]],
+      credit: [['製造間接費配賦差異', 380000]],
+      hint: '借方残高ということは、どちらの差異でしょうか。それを消すには反対側に置きます。',
+      explain: '<p>配賦差異が<strong>借方残高</strong>ということは、予定配賦額より実際発生額のほうが大きかった、つまり<mark>不利差異</mark>です。予定より多く使ってしまった状態です。</p><p>借方にある残高を消すには<strong>貸方に置きます</strong>。相手科目は売上原価です。不利差異なので<strong>売上原価が 380,000円 増えます。</strong>予定配賦で少なく見積もっていた分を、期末に上乗せして実際の発生額に合わせる、という意味です。</p><p>貸方残高（有利差異）ならこの逆で、借方 製造間接費配賦差異／貸方 売上原価となり、売上原価が減ります。<strong>差異の科目をどちらに置くかは、残高がどちら側にあるかで決まります。</strong>有利・不利を先に判定してから仕訳の形を決めてください。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-kansetsuhi', {
+  title: '計算ドリル — 製造間接費',
+  badge: '計算ドリル 10問',
+  questions: [
+    {
+      text: '年間の製造間接費予算額は 43,200,000円、年間の基準操業度は直接作業時間 48,000時間である。① 予定配賦率、② 月間の製造間接費予算額、③ 月間の基準操業度を求めなさい。',
+      answer: [900, 3600000, 4000],
+      formula: ['43200000 / 48000', '43200000 / 12', '48000 / 12'],
+      labels: ['① 予定配賦率（円）', '② 月間予算額（円）', '③ 月間基準操業度（時間）'],
+      hint: '年間の数値どうしで割っても、月間の数値どうしで割っても率は同じになります。',
+      explain: '<p>① 予定配賦率 ＝ 43,200,000 ÷ 48,000 ＝ <strong>@900円</strong><br>② 月間予算額 ＝ 43,200,000 ÷ 12 ＝ <strong>3,600,000円</strong><br>③ 月間基準操業度 ＝ 48,000 ÷ 12 ＝ <strong>4,000時間</strong></p><p>検算：3,600,000 ÷ 4,000 ＝ @900円。①と一致します。<mark>分子と分母の両方を12で割るので、比が保たれて率は変わりません。</mark><br>やってはいけないのは、年間予算を月間基準操業度で割ること（3,600,000 ÷ 48,000 や 43,200,000 ÷ 4,000）です。率が12分の1または12倍になります。</p>'
+    },
+    {
+      text: '月間の製造間接費予算額は 3,600,000円（変動費 1,200,000円、固定費 2,400,000円）、月間の基準操業度は直接作業時間 4,000時間である。① 変動費率、② 固定費率、③ 予定配賦率を求めなさい。',
+      answer: [300, 600, 900],
+      formula: ['1200000 / 4000', '2400000 / 4000', '1200000 / 4000 + 2400000 / 4000'],
+      labels: ['① 変動費率（円）', '② 固定費率（円）', '③ 予定配賦率（円）'],
+      hint: '変動費も固定費も、同じ基準操業度で割ります。',
+      explain: '<p>① 変動費率 ＝ 1,200,000 ÷ 4,000 ＝ <strong>@300円</strong><br>② 固定費率 ＝ 2,400,000 ÷ 4,000 ＝ <strong>@600円</strong><br>③ 予定配賦率 ＝ @300 ＋ @600 ＝ <strong>@900円</strong></p><p><mark>予定配賦率 ＝ 変動費率 ＋ 固定費率</mark>。どちらも分母が同じ基準操業度なので、足し合わせると予算額全体を基準操業度で割ったものになります（3,600,000 ÷ 4,000 ＝ @900）。<br>この分解が差異分析の鍵です。操業度差異の計算に使うのは<strong>固定費率だけ</strong>なので、②を出せないと先へ進めません。</p>'
+    },
+    {
+      text: '変動費率 @300円、月間の固定費予算額 2,400,000円、月間の基準操業度 4,000時間である。当月の実際直接作業時間は 3,800時間、製造間接費の実際発生額は 3,640,000円であった。① 予定配賦額、② 予算許容額、③ 製造間接費配賦差異の金額（絶対値）を求めなさい。',
+      answer: [3420000, 3540000, 220000],
+      formula: ['(300 + 2400000 / 4000) * 3800', '300 * 3800 + 2400000', '3640000 - (300 + 2400000 / 4000) * 3800'],
+      labels: ['① 予定配賦額（円）', '② 予算許容額（円）', '③ 配賦差異（絶対値・円）'],
+      hint: '予算許容額の式に予定配賦率は出てきません。変動費率と固定費予算額だけです。',
+      explain: '<p>予定配賦率 ＝ @300 ＋（2,400,000 ÷ 4,000 ＝ @600）＝ @900円。<br>① 予定配賦額 ＝ @900 × 3,800時間 ＝ <strong>3,420,000円</strong><br>② 予算許容額 ＝ @300 × 3,800 ＋ 2,400,000 ＝ 1,140,000 ＋ 2,400,000 ＝ <strong>3,540,000円</strong><br>③ 配賦差異 ＝ 3,420,000 − 3,640,000 ＝ △220,000 → <strong>220,000円の借方差異（不利差異）</strong></p><p><mark>予算許容額の固定費部分は 2,400,000円 が丸ごと入ります。</mark>操業度が 3,800時間 に落ちても、固定費は 4,000分の3,800 に減ったりしません。そこが「固定」費である理由です。</p>'
+    },
+    {
+      text: '前問と同じ条件（変動費率 @300円、月間固定費予算額 2,400,000円、基準操業度 4,000時間、実際操業度 3,800時間、実際発生額 3,640,000円）について、<strong>公式法変動予算</strong>により ① 予算差異、② 操業度差異の金額（絶対値）を求めなさい。',
+      answer: [100000, 120000],
+      formula: ['3640000 - (300 * 3800 + 2400000)', '(2400000 / 4000) * (4000 - 3800)'],
+      labels: ['① 予算差異（絶対値・円）', '② 操業度差異（絶対値・円）'],
+      hint: '予算差異＝予算許容額−実際発生額。操業度差異＝固定費率×（実際操業度−基準操業度）。',
+      explain: '<p>① 予算差異 ＝ 予算許容額 3,540,000 − 実際発生額 3,640,000 ＝ △100,000 → <strong>100,000円の不利差異</strong><br>② 操業度差異 ＝ 固定費率 @600 ×（3,800 − 4,000）＝ @600 × △200 ＝ △120,000 → <strong>120,000円の不利差異</strong></p><p>この設例は<strong>両方とも不利差異</strong>です。実際操業度が基準を下回り、かつその操業度から見ても使いすぎた、という状態です。<mark>ただし2つの符号は独立に決まります。</mark>計算ドリル10では予算差異が不利・操業度差異が有利という食い違った組み合わせが出るので、必ず両方を計算して判定してください。</p><p><strong>検算：</strong>100,000 ＋ 120,000 ＝ 220,000円。前問③の配賦差異と一致します。<mark>差異分析をしたら必ずこの足し算をしてください。</mark></p><p>意味を言葉にすると、予算差異は「3,800時間 なら 3,540,000円 で足りたはずなのに 3,640,000円 使った＝使いすぎ」、操業度差異は「4,000時間 動く前提で固定費を配る率を決めたのに 3,800時間 しか動かず、固定費 120,000円 を配りきれなかった」です。</p>'
+    },
+    {
+      text: '製造間接費の月間予算額は 3,600,000円、月間の基準操業度は 4,000時間である。当月の実際直接作業時間は 3,800時間、実際発生額は 3,640,000円であった。<strong>固定予算</strong>により ① 予定配賦率、② 予算差異の金額（絶対値）、③ 操業度差異の金額（絶対値）を求めなさい。',
+      answer: [900, 40000, 180000],
+      formula: ['3600000 / 4000', '3640000 - 3600000', '(3600000 / 4000) * (4000 - 3800)'],
+      labels: ['① 予定配賦率（円）', '② 予算差異（絶対値・円）', '③ 操業度差異（絶対値・円）'],
+      hint: '固定予算では、比べる相手が予算額そのものです。操業度差異に掛ける率も変わります。',
+      explain: '<p>① 予定配賦率 ＝ 3,600,000 ÷ 4,000 ＝ <strong>@900円</strong><br>② 予算差異 ＝ 予算額 3,600,000 − 実際発生額 3,640,000 ＝ △40,000 → <strong>40,000円の不利差異</strong><br>③ 操業度差異 ＝ <mark>予定配賦率 @900</mark> ×（3,800 − 4,000）＝ △180,000 → <strong>180,000円の不利差異</strong></p><p>検算：40,000 ＋ 180,000 ＝ 220,000円。公式法変動予算で分析したときと<strong>総額は同じ</strong>です。</p><p>しかし内訳は違います（変動予算では 100,000 と 120,000）。固定予算は変動費と固定費を分けていないので、<mark>操業度差異に掛ける率も予定配賦率しかありません</mark>。その結果、操業度が落ちたぶん変動費も減るはずだという当たり前のことを織り込めず、その 60,000円 が操業度差異に紛れ込んでいます。</p>'
+    },
+    {
+      text: '変動費率 @250円、月間の固定費予算額 1,800,000円、月間の基準操業度 3,000時間である。当月の実際直接作業時間は 3,200時間、製造間接費の実際発生額は 2,540,000円であった。公式法変動予算により ① 予定配賦率、② 予定配賦額、③ 予算許容額を求めなさい。',
+      answer: [850, 2720000, 2600000],
+      formula: ['250 + 1800000 / 3000', '(250 + 1800000 / 3000) * 3200', '250 * 3200 + 1800000'],
+      labels: ['① 予定配賦率（円）', '② 予定配賦額（円）', '③ 予算許容額（円）'],
+      hint: '今度は実際操業度が基準操業度を上回っています。',
+      explain: '<p>固定費率 ＝ 1,800,000 ÷ 3,000 ＝ @600円。<br>① 予定配賦率 ＝ @250 ＋ @600 ＝ <strong>@850円</strong><br>② 予定配賦額 ＝ @850 × 3,200時間 ＝ <strong>2,720,000円</strong><br>③ 予算許容額 ＝ @250 × 3,200 ＋ 1,800,000 ＝ 800,000 ＋ 1,800,000 ＝ <strong>2,600,000円</strong></p><p>実際操業度 3,200時間 が基準操業度 3,000時間 を<mark>上回っています</mark>。このとき予定配賦額（2,720,000）が予算許容額（2,600,000）を上回ります。<br>シュラッター図では、実際操業度の縦線が基準操業度の<strong>右側</strong>に立ち、予定配賦線が予算線の上に出ます。</p>'
+    },
+    {
+      text: '前問と同じ条件（変動費率 @250円、月間固定費予算額 1,800,000円、基準操業度 3,000時間、実際操業度 3,200時間、実際発生額 2,540,000円）について、① 予算差異、② 操業度差異、③ 配賦差異の金額（絶対値）を求めなさい。',
+      answer: [60000, 120000, 180000],
+      formula: ['(250 * 3200 + 1800000) - 2540000', '(1800000 / 3000) * (3200 - 3000)', '(250 + 1800000 / 3000) * 3200 - 2540000'],
+      labels: ['① 予算差異（絶対値・円）', '② 操業度差異（絶対値・円）', '③ 配賦差異（絶対値・円）'],
+      hint: '3つとも符号を確かめてください。前問までと逆になります。',
+      explain: '<p>① 予算差異 ＝ 予算許容額 2,600,000 − 実際発生額 2,540,000 ＝ ＋60,000 → <strong>60,000円の有利差異（貸方差異）</strong><br>② 操業度差異 ＝ 固定費率 @600 ×（3,200 − 3,000）＝ ＋120,000 → <strong>120,000円の有利差異（貸方差異）</strong><br>③ 配賦差異 ＝ 予定配賦額 2,720,000 − 実際発生額 2,540,000 ＝ ＋180,000 → <strong>180,000円の有利差異</strong></p><p>検算：60,000 ＋ 120,000 ＝ 180,000円。一致します。</p><p><mark>今度は両方とも有利差異です。</mark>3,200時間 なら 2,600,000円 まで使ってよかったのに 2,540,000円 で済んだ（節約）、そして基準の 3,000時間 を 200時間 上回って操業したので固定費を配りすぎた（設備をよく使った）、という2つの意味です。</p>'
+    },
+    {
+      text: '変動費率 @400円、月間の固定費予算額 1,260,000円、月間の基準操業度は機械運転時間 2,100時間である。当月の実際機械運転時間は 2,000時間、製造間接費の実際発生額は 2,090,000円であった。公式法変動予算により ① 固定費率、② 予算差異、③ 操業度差異の金額（絶対値）を求めなさい。',
+      answer: [600, 30000, 60000],
+      formula: ['1260000 / 2100', '2090000 - (400 * 2000 + 1260000)', '(1260000 / 2100) * (2100 - 2000)'],
+      labels: ['① 固定費率（円）', '② 予算差異（絶対値・円）', '③ 操業度差異（絶対値・円）'],
+      hint: '配賦基準が機械運転時間になっただけで、計算の手順は変わりません。',
+      explain: '<p>① 固定費率 ＝ 1,260,000 ÷ 2,100時間 ＝ <strong>@600円</strong>。予定配賦率 ＝ @400 ＋ @600 ＝ @1,000円。<br>② 予算許容額 ＝ @400 × 2,000 ＋ 1,260,000 ＝ 800,000 ＋ 1,260,000 ＝ 2,060,000円。<br>予算差異 ＝ 2,060,000 − 2,090,000 ＝ △30,000 → <strong>30,000円の不利差異</strong><br>③ 操業度差異 ＝ @600 ×（2,000 − 2,100）＝ △60,000 → <strong>60,000円の不利差異</strong></p><p>検算：予定配賦額 ＝ @1,000 × 2,000 ＝ 2,000,000円。配賦差異 ＝ 2,000,000 − 2,090,000 ＝ △90,000円。30,000 ＋ 60,000 ＝ 90,000円。一致します。</p><p><mark>配賦基準が直接作業時間でも機械運転時間でも、計算は何も変わりません。</mark>ただし問題文に両方の時間数値が並んでいることがあるので、どちらを使えと指示されているかは必ず確認してください。</p>'
+    },
+    {
+      text: '製造間接費の実際発生額が 3,600,000円で毎月安定している工場がある。実際配賦を行った場合、① 実際直接作業時間が 4,000時間であった月の実際配賦率、② 2,400時間であった月の実際配賦率、③ 10時間かかる同一の製品について、②の月の配賦額が①の月の配賦額より何円多くなるかを求めなさい。',
+      answer: [900, 1500, 6000],
+      formula: ['3600000 / 4000', '3600000 / 2400', '(3600000 / 2400) * 10 - (3600000 / 4000) * 10'],
+      labels: ['① 忙しい月の実際配賦率（円）', '② 暇な月の実際配賦率（円）', '③ 配賦額の差（円）'],
+      hint: '分子は同じで分母だけが変わります。これが実際配賦の弱点②です。',
+      explain: '<p>① 3,600,000 ÷ 4,000 ＝ <strong>@900円</strong><br>② 3,600,000 ÷ 2,400 ＝ <strong>@1,500円</strong><br>③ @1,500 × 10 ＝ 15,000円、@900 × 10 ＝ 9,000円。差は <strong>6,000円</strong>（1.67倍）</p><p><mark>まったく同じ製品を、同じ作り方で、同じ10時間かけて作ったのに、暇な月に作ったというだけで原価が 6,000円 高くなります。</mark></p><p>製造間接費の大半が固定費（減価償却費・賃借料・工場長の給料）で、操業度が変わっても金額が変わらないためです。分子が動かないまま分母だけが動くので、配賦率がそのまま反比例します。<br>これが予定配賦を使う理由②です。予定配賦率なら期を通じて @900円 に固定され、操業度の変動は操業度差異として別に切り出されます。</p>'
+    },
+    {
+      text: '月間の製造間接費予算額 4,500,000円（変動費 1,500,000円、固定費 3,000,000円）、月間の基準操業度 5,000時間の工場がある。当月の実際直接作業時間は 5,400時間、製造間接費の実際発生額は 4,680,000円であった。公式法変動予算により ① 予定配賦額、② 予算差異、③ 操業度差異の金額（絶対値）を求めなさい。',
+      answer: [4860000, 60000, 240000],
+      formula: ['(1500000 / 5000 + 3000000 / 5000) * 5400', '4680000 - ((1500000 / 5000) * 5400 + 3000000)', '(3000000 / 5000) * (5400 - 5000)'],
+      labels: ['① 予定配賦額（円）', '② 予算差異（絶対値・円）', '③ 操業度差異（絶対値・円）'],
+      hint: '変動費率と固定費率を先に出してください。実際操業度は基準を上回っています。',
+      explain: '<p>変動費率 ＝ 1,500,000 ÷ 5,000 ＝ @300円／固定費率 ＝ 3,000,000 ÷ 5,000 ＝ @600円／予定配賦率 ＝ @900円。<br>① 予定配賦額 ＝ @900 × 5,400 ＝ <strong>4,860,000円</strong><br>② 予算許容額 ＝ @300 × 5,400 ＋ 3,000,000 ＝ 1,620,000 ＋ 3,000,000 ＝ 4,620,000円。<br>予算差異 ＝ 4,620,000 − 4,680,000 ＝ △60,000 → <strong>60,000円の不利差異</strong><br>③ 操業度差異 ＝ @600 ×（5,400 − 5,000）＝ ＋240,000 → <strong>240,000円の有利差異</strong></p><p>検算：配賦差異 ＝ 4,860,000 − 4,680,000 ＝ ＋180,000円。△60,000 ＋ 240,000 ＝ ＋180,000円。一致します。</p><p><mark>予算差異が不利で操業度差異が有利という、符号が食い違う組み合わせです。</mark>「予定より多く操業したが、その操業度から見ても少し使いすぎた」という状態です。合計だけ見ると有利差異なので、分析しなければ使いすぎに気づけません。これが差異を2つに分ける意味です。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-kansetsuhi', {
+  title: '確認テスト — 製造間接費',
+  questions: [
+    {
+      text: '製造間接費に「配賦」という手続が必要な理由として、最も適切なものはどれですか。',
+      choices: [
+        '製造間接費は金額が大きいため、分割して計上しないと勘定が見づらくなるから',
+        '製造間接費は製品ごとにひもづけられないが、それでも製品1個あたりの原価を出す必要があるから',
+        '製造間接費を直接費に変換するために、法律上の手続が定められているから',
+        '製造間接費は期間の費用なので、製品原価に含めてはいけないから'
+      ],
+      answer: 1,
+      explain: '<p>直接費は出庫伝票や作業時間報告書に製造指図書番号が書かれているため、伝票の上で製品が決まります。ところが工場の電気代は、どの製品のために使われたか<mark>そもそも分けられません。だから間接費なのです。</mark></p><p>それでも製品1個あたりの原価は、売値を決めるにも在庫の金額を決めるにも必要です。「分けられないが、それでも分けなければならない」という矛盾への答えが配賦であり、もっともらしい基準を決めて比例配分するという割り切りをします。</p><p>選択肢4は誤りです。製造間接費は製品原価の一部であり、配賦を通じて仕掛品・製品・売上原価へ流れます。</p>'
+    },
+    {
+      text: '次のうち、製造間接費に含まれるものはどれですか。',
+      choices: [
+        '本社事務所の建物に対する減価償却費',
+        '特定の製造指図書のために支払った外注加工賃',
+        '工場の機械に対する減価償却費',
+        '製品を顧客に発送するための運送料'
+      ],
+      answer: 2,
+      explain: '<p><strong>工場の</strong>機械の減価償却費は、製品ごとに分けられない<mark>間接経費</mark>なので製造間接費に入ります。</p><p>選択肢1の本社事務所の減価償却費は<strong>販売費及び一般管理費</strong>です。同じ「減価償却費」でも、工場のものか本社のものかで行き先が変わります。本社の費用を製品原価に含めると、売れ残った在庫の金額に本社の費用が紛れ込みます。</p><p>選択肢2の外注加工賃は<strong>直接経費</strong>で、製造間接費を経由せず仕掛品へ直課されます。選択肢4の発送運送料は製造活動ではなく販売活動の費用なので、販売費です。</p>'
+    },
+    {
+      text: '実際配賦の弱点として指摘される「操業度の季節変動」の問題を、最もよく説明しているものはどれですか。',
+      choices: [
+        '操業度が変わると材料の購入価格が変わるため、製品原価が揺れる',
+        '製造間接費の大半が固定費であるため、操業度が下がると分母だけが小さくなり、同じ製品でも作った月によって配賦額が変わる',
+        '操業度が変わると直接工の賃率が変わるため、製品原価が揺れる',
+        '操業度が変わると製造間接費の実際発生額が比例して変わるため、配賦率が一定にならない'
+      ],
+      answer: 1,
+      explain: '<p>実際配賦率 ＝ 製造間接費実際発生額 ÷ 実際操業度。製造間接費の大半は減価償却費・賃借料・工場長の給料といった<strong>固定費</strong>なので、分子はあまり動きません。<mark>分子が動かないまま分母だけが動くので、配賦率が反比例して大きく変わります。</mark></p><p>その結果、同じ製品を同じ作り方で同じ時間かけて作っても、暇な月に作ったというだけで原価が高く見えます。製品とは無関係な「工場全体の忙しさ」が、製品原価に混入している状態です。</p><p>選択肢4は逆です。製造間接費が操業度に比例して変わるのなら、配賦率は一定になり、この問題は起きません。<strong>比例しないからこそ起きる問題です。</strong></p>'
+    },
+    {
+      text: '基準操業度についての説明として、正しいものはどれですか。',
+      choices: [
+        '当月に実際に操業した時間のこと',
+        '予定配賦率を計算するときに分母に置く、操業度の見積りのこと',
+        '工場が物理的に稼働できる最大の時間のこと',
+        '損益分岐点における操業度のこと'
+      ],
+      answer: 1,
+      explain: '<p>基準操業度は<strong>予定を立てた時点での操業度の見込み</strong>であり、予定配賦率の分母に置きます。実際にその通り動くとは限らず、むしろ一致しないのがふつうです。</p><p>この区別が操業度差異の理解に直結します。<mark>固定費は「基準操業度だけ動く前提で」製品原価に配られています。</mark>実際の操業度がそれを下回れば、配りきれない固定費が残る。それが操業度差異です。</p><p>選択肢1の実際操業度と取り違えると、操業度差異の式（実際操業度 − 基準操業度）が意味を成さなくなります。</p>'
+    },
+    {
+      text: '機械化が進んだ工場で、製造間接費の配賦基準に直接作業時間を用いた場合に起きることとして、最も適切なものはどれですか。',
+      choices: [
+        '製造間接費の実際発生額そのものが増える',
+        '機械中心で人手がかからない製品の原価が不当に安く見え、手作業の多い製品にその分が押し付けられる',
+        '製造間接費の総額が配りきれず、必ず不利差異が生じる',
+        '配賦率が計算できなくなる'
+      ],
+      answer: 1,
+      explain: '<p>機械化された工場の製造間接費は、機械の減価償却費・電力料・修繕費が大半です。これらは<strong>機械が動いた時間</strong>に比例して発生します。</p><p>ところが直接作業時間を基準にすると、人がほとんど触らない製品にはほとんど配賦されません。<mark>実際には機械を長時間占有して莫大な減価償却費を消費しているのにです。</mark>配りきれなかった分は、人手のかかる別の製品に回ります。</p><p>その結果「手作業の製品は儲からない」という誤った判断を招きます。配賦基準と製造間接費の発生に因果関係を求めるのは、こうした誤った意思決定を防ぐためです。<br>なお配賦の総額は基準を変えても変わらないので、選択肢3のように必ず不利差異が生じるわけではありません。</p>'
+    },
+    {
+      text: '予定配賦率 @800円、当月の実際直接作業時間 2,500時間、製造間接費の実際発生額 2,080,000円であった。製造間接費配賦差異について正しい記述はどれですか。',
+      choices: [
+        '80,000円の貸方差異（有利差異）',
+        '80,000円の借方差異（不利差異）',
+        '2,000,000円の借方差異（不利差異）',
+        '差異は生じない'
+      ],
+      answer: 1,
+      invariant: [
+        ['800 * 2500', '2000000'],
+        ['2080000 - 800 * 2500', 'answer']
+      ],
+      explain: '<p>予定配賦額 ＝ @800 × 2,500時間 ＝ 2,000,000円。<br>配賦差異 ＝ 予定配賦額 2,000,000 − 実際発生額 2,080,000 ＝ <strong>△80,000円</strong>。マイナスなので<strong>借方差異（不利差異）</strong>です。</p><p><mark>予定 ＜ 実際 → 借方差異（不利差異）。</mark>実際にかかった分を製品原価に入れきれていない状態です。<br>選択肢3の 2,000,000円 は予定配賦額そのものです。差異は予定と実際の<strong>差</strong>であって、予定配賦額ではありません。</p>'
+    },
+    {
+      text: '公式法変動予算における「予算許容額」の計算式として正しいものはどれですか。',
+      choices: [
+        '予定配賦率 × 実際操業度',
+        '変動費率 × 実際操業度 ＋ 固定費予算額',
+        '変動費率 × 基準操業度 ＋ 固定費予算額',
+        '予定配賦率 × 基準操業度'
+      ],
+      answer: 1,
+      explain: '<p><strong>予算許容額 ＝ 変動費率 × 実際操業度 ＋ 固定費予算額</strong>。「その操業度なら、ここまでは使ってよかった」という上限です。</p><p>固定費予算額は<mark>操業度によらず全額が入ります。</mark>操業度が基準を下回っても、固定費が比例して減ったりはしません。そこが「固定」費である理由です。</p><p>選択肢1は予定配賦額です。選択肢3は基準操業度における予算額（＝固定予算の予算額）で、実際操業度を使っていません。選択肢4も同じく基準操業度における予算額に一致します。</p>'
+    },
+    {
+      text: '操業度差異の計算式に変動費率が現れない理由として、最も適切なものはどれですか。',
+      choices: [
+        '変動費は製造間接費に含まれないから',
+        '変動費は操業度に比例して発生するため、配賦額と過不足なく対応し、配り残しが生じないから',
+        '変動費率は固定費率より小さいため、無視してよいから',
+        '変動費は直接費として処理されるから'
+      ],
+      answer: 1,
+      explain: '<p>変動費は操業度についてきます。3,800時間 しか動かなければ変動費も 3,800時間 ぶんしか発生し、配賦額も変動費率 × 3,800時間 なので<mark>ぴったり対応します。過不足が出ようがありません。</mark></p><p>ところが固定費は、工場が何時間動こうが定額で出ていきます。それを固定費率という単価で配っているのは「基準操業度だけ動けばちょうど配り終わる」という前提があるからです。実際の操業度が下回れば、配りきれない固定費が残る。<strong>操業度差異はこの配り残し（または配りすぎ）だけを測っています。</strong></p><p>選択肢1・4は誤りです。変動費も製造間接費に含まれており（間接材料費や電力料など）、間接費である以上は直接費として処理されません。</p>'
+    },
+    {
+      text: '変動費率 @300円、月間の固定費予算額 2,400,000円、月間の基準操業度 4,000時間である。当月の実際直接作業時間 3,800時間、製造間接費の実際発生額 3,640,000円であった。公式法変動予算による予算差異はいくらですか。',
+      choices: [
+        '100,000円の不利差異',
+        '40,000円の不利差異',
+        '120,000円の不利差異',
+        '220,000円の不利差異'
+      ],
+      answer: 0,
+      invariant: [
+        ['3640000 - (300 * 3800 + 2400000)', 'answer']
+      ],
+      explain: '<p>予算許容額 ＝ @300 × 3,800 ＋ 2,400,000 ＝ 1,140,000 ＋ 2,400,000 ＝ 3,540,000円。<br>予算差異 ＝ 3,540,000 − 3,640,000 ＝ <strong>△100,000円（不利差異）</strong>。</p><p>選択肢2の 40,000円 は<mark>固定予算で計算した場合の予算差異</mark>です（3,600,000 − 3,640,000）。実際操業度に合わせて予算を計算し直していないため、金額が違います。<br>選択肢3の 120,000円 は操業度差異、選択肢4の 220,000円 は配賦差異の総額です。<strong>問題文が「公式法変動予算による」と指定していることを読み落とさないでください。</strong></p>'
+    },
+    {
+      text: '前問と同じ条件（変動費率 @300円、月間固定費予算額 2,400,000円、基準操業度 4,000時間、実際操業度 3,800時間、実際発生額 3,640,000円）における操業度差異はいくらですか。',
+      choices: [
+        '120,000円の有利差異',
+        '120,000円の不利差異',
+        '180,000円の不利差異',
+        '60,000円の不利差異'
+      ],
+      answer: 1,
+      invariant: [
+        ['(2400000 / 4000) * (4000 - 3800)', '120000'],
+        ['(2400000 / 4000) * (4000 - 3800)', 'answer']
+      ],
+      explain: '<p>固定費率 ＝ 2,400,000 ÷ 4,000 ＝ @600円。<br>操業度差異 ＝ @600 ×（実際 3,800 − 基準 4,000）＝ @600 × △200時間 ＝ <strong>△120,000円（不利差異）</strong>。</p><p><mark>実際操業度が基準操業度を下回ったので不利差異</mark>です。4,000時間 動く前提で固定費を配る率を決めたのに 3,800時間 しか動かず、固定費 120,000円 を製品原価に配りきれなかった、という意味です。</p><p>選択肢3の 180,000円 は<strong>固定予算で計算した場合</strong>の操業度差異（@900 × △200）です。公式法変動予算では<mark>固定費率 @600 を掛ける</mark>のであって、予定配賦率 @900 ではありません。ここが最も取り違えやすい点です。</p>'
+    },
+    {
+      text: '固定予算と公式法変動予算について、正しい記述はどれですか。',
+      choices: [
+        '予算の立て方が違うと、製造間接費配賦差異の総額も変わる',
+        '予算の立て方が違っても配賦差異の総額は同じだが、予算差異と操業度差異への分かれ方が変わる',
+        '固定予算では操業度差異が生じない',
+        '公式法変動予算では固定費を考慮しない'
+      ],
+      answer: 1,
+      explain: '<p>配賦差異の総額は「予定配賦額 − 実際発生額」で決まり、<mark>予算の立て方に関係ありません。</mark>予算の立て方は、その総額をどう2つに切るかだけを変えます。</p><p>設例では、公式法変動予算なら予算差異 100,000・操業度差異 120,000、固定予算なら予算差異 40,000・操業度差異 180,000。どちらも合計 220,000円 です。</p><p><strong>総額だけは一致するので、合計で検算しても取り違えに気づけません。</strong>問題文がどちらの予算かを指定しているかを必ず確認してください。変動費率または変動費予算額が与えられていれば公式法変動予算です。</p><p>選択肢4は誤りです。公式法変動予算はむしろ<strong>固定費と変動費を分けるからこそ</strong>成り立ちます。「変動予算だから固定費がない」ではありません。</p>'
+    },
+    {
+      text: '会計年度末に、製造間接費配賦差異勘定の貸方残高 150,000円を売上原価に賦課します。この仕訳として正しいものはどれですか。',
+      choices: [
+        '借方：売上原価 150,000　貸方：製造間接費配賦差異 150,000',
+        '借方：製造間接費配賦差異 150,000　貸方：売上原価 150,000',
+        '借方：製造間接費 150,000　貸方：製造間接費配賦差異 150,000',
+        '借方：仕掛品 150,000　貸方：製造間接費配賦差異 150,000'
+      ],
+      answer: 1,
+      invariant: [['150000', 'answer']],
+      explain: '<p>貸方残高の差異は<strong>有利差異</strong>で、製品原価に入れすぎた分を意味します。会計年度末には売上原価を<strong>減らす</strong>方向で処理するので、<mark>売上原価が貸方</mark>に来ます。これが売上原価加減法です。</p><p>差異勘定の貸方残高を消すには借方に立てる必要があり、相手科目が売上原価の貸方になる、という順で考えても同じ答えになります。</p><p>不利差異（借方残高）なら選択肢1の形になり、売上原価が増えます。<br>なお、月末に製造間接費勘定の残高を差異勘定へ振り替えるのと、年度末に差異勘定の残高を売上原価へ賦課するのは<strong>別の手続</strong>です。問題文がどちらを求めているかを読み分けてください。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-kansetsuhi', {
+  title: '用語の穴埋め — 製造間接費',
+  questions: [
+    {
+      text: '製品ごとに直接ひもづけられない原価を、一定の基準に比例させて各製品に割り当てる手続を何といいますか。',
+      answer: ['配賦', 'はいふ'],
+      explain: '<p><strong>配賦</strong>。直接費のように伝票の上で製品が決まらないものを、もっともらしい基準で配る手続です。「正しい答えを求める計算」ではなく「決めた約束に従って配る計算」なので、基準が変われば製品原価も変わります。</p>'
+    },
+    {
+      text: '予定配賦率を計算するときに分母に置く、1年間または1か月の操業度の見積りを何といいますか。',
+      answer: ['基準操業度', 'きじゅんそうぎょうど'],
+      explain: '<p><strong>基準操業度</strong>。予定配賦率 ＝ 製造間接費予算額 ÷ 基準操業度。<mark>実際に操業した時間ではなく、予定を立てた時点での見込み</mark>です。固定費はこの操業度だけ動く前提で配られているため、実際が下回れば配り残しが出ます。</p>'
+    },
+    {
+      text: '操業度が変動しても予算額を変えず、基準操業度における予算額をそのまま比較の相手とする予算の立て方を何といいますか。',
+      answer: ['固定予算', 'こていよさん'],
+      explain: '<p><strong>固定予算</strong>。予算差異 ＝ 予算額 − 実際発生額、操業度差異 ＝ 予定配賦率 ×（実際操業度 − 基準操業度）。<br>変動費と固定費を分けていないため操業度差異にも予定配賦率を掛けます。「固定予算」は予算の立て方の名前で、「固定費」という費用の性質とは別の概念です。</p>'
+    },
+    {
+      text: '製造間接費を変動費と固定費に分け、実際の操業度に応じて予算額を計算し直す予算の立て方を何といいますか。',
+      answer: ['公式法変動予算', 'こうしきほうへんどうよさん', '変動予算', 'へんどうよさん'],
+      explain: '<p><strong>公式法変動予算</strong>。2級の差異分析の中心です。実際操業度に合わせて予算許容額を計算し直すため、<mark>操業度が落ちたぶん変動費も減るはずだ</mark>という事実を織り込めます。固定予算ではそれができず、その分が操業度差異に紛れ込みます。</p>'
+    },
+    {
+      text: '公式法変動予算のもとで、実際の操業度において許される製造間接費の金額を何といいますか。',
+      answer: ['予算許容額', 'よさんきょようがく'],
+      explain: '<p><strong>予算許容額</strong> ＝ 変動費率 × 実際操業度 ＋ 固定費予算額。「その操業度なら、ここまでは使ってよかった」という上限です。<mark>固定費予算額は操業度によらず全額が入ります。</mark></p>'
+    },
+    {
+      text: '予算許容額と実際発生額との差額として把握され、使いすぎや節約という現場の管理努力を表す差異を何といいますか。',
+      answer: ['予算差異', 'よさんさい'],
+      explain: '<p><strong>予算差異</strong> ＝ 予算許容額 − 実際発生額。マイナスなら借方差異（不利差異）で使いすぎ、プラスなら貸方差異（有利差異）で節約です。<br>現場の管理努力が反映される差異であり、操業度差異とは性質が違います。だから2つに分けることに意味があります。</p>'
+    },
+    {
+      text: '実際の操業度が基準操業度と異なったために、固定費を製品原価に配りきれなかった（または配りすぎた）ことから生じる差異を何といいますか。',
+      answer: ['操業度差異', 'そうぎょうどさい'],
+      explain: '<p><strong>操業度差異</strong> ＝ 固定費率 ×（実際操業度 − 基準操業度）。実際が基準を下回れば不利差異（設備を遊ばせた）、上回れば有利差異です。<br><mark>式に変動費率が出てこない</mark>のは、変動費が操業度についてきて配賦額と過不足なく対応するためです。配りきれないのは固定費だけです。</p>'
+    },
+    {
+      text: '会計年度末に、原価差異を売上原価に加算または減算して処理する方法を何といいますか。',
+      answer: ['売上原価加減法', 'うりあげげんかかげんほう'],
+      explain: '<p><strong>売上原価加減法</strong>。不利差異（借方残高）なら売上原価を増やし、有利差異（貸方残高）なら減らします。<br>本来は売れた分と売れ残った分に按分するのが理屈に合いますが、正常な範囲の差異は金額が小さく按分の手間に見合わないため、2級では原則として全額を売上原価に入れます。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>

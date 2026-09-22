@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-5-g2,商-第二-5-イ,商-第二-5-ウ,商-第二-6-イ,商-第二-6-ウ">
+<meta name="boki-subject" content="商">
+<title>手形・電子記録債権債務・債権の譲渡 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 08 手形・電子記録債権債務・債権の譲渡</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W3 商業簿記 ／ UNIT 08 ／ 3時間</p>
+    <h1>手形・電子記録債権債務・債権の譲渡<br>— 期日まで待てない、期日までに払えない</h1>
+    <p class="lead">3級では、手形は「振り出す・受け取る・期日に決済する」の3つだけでした。2級では<strong>その先が崩れたとき</strong>を扱います。期日に払えないから期日を延ばす（更改）、期日が来たのに払ってもらえない（不渡）、期日まで待てないから先に換金する（割引・譲渡）。どれも<mark>「予定どおりにいかなかった」ことを帳簿に書く技術</mark>です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">3級の手形と、2級で崩れるところ</a></li>
+      <li><a href="#s2">営業外支払手形・営業外受取手形 — 何を買ったかで科目が変わる</a></li>
+      <li><a href="#s3">手形の更改 — 期日を先に延ばす</a></li>
+      <li><a href="#s4">手形の不渡 — 期日に払ってもらえなかった</a></li>
+      <li><a href="#s5">不渡手形が最後にどうなるか</a></li>
+      <li><a href="#s6">手形の裏書譲渡 — 手形で支払う</a></li>
+      <li><a href="#s7">手形の割引 — 期日前に銀行で換金する</a></li>
+      <li><a href="#s8">電子記録債権・電子記録債務</a></li>
+      <li><a href="#s9">その他の債権の譲渡 — 売掛金を売る</a></li>
+      <li><a href="#s10">3つの「売却損」を並べて整理する</a></li>
+      <li><a href="#s11">仕訳ドリル 14問</a></li>
+      <li><a href="#s12">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s13">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>3級の手形と、2級で崩れるところ</h2>
+
+  <p>約束手形は、<strong>「◯月◯日に、この金額を払います」と紙に書いて渡す</strong>仕組みです。3級で習ったのは、次の2つの場面だけでした。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>場面</th><th>振出人（払う側）</th><th>受取人（もらう側）</th></tr></thead>
+      <tbody>
+        <tr><td>手形を振り出した／受け取った</td><td class="c">支払手形（負債）が増える</td><td class="d">受取手形（資産）が増える</td></tr>
+        <tr><td>期日に決済された</td><td class="c">支払手形が減り、当座預金が減る</td><td class="d">受取手形が減り、当座預金が増える</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>この表は<strong>すべてが予定どおりに進んだ場合</strong>の話です。ところが現実の取引では、予定が3通りに崩れます。</p>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>払う側が間に合わない</h3>
+      <p class="small">期日が来たが資金が足りない。相手に頼んで<strong>期日を先に延ばして</strong>もらう。→ <strong>更改</strong></p>
+    </div>
+    <div class="card">
+      <h3>払う側が払わなかった</h3>
+      <p class="small">期日に取立てに出したが、決済されずに戻ってきた。→ <strong>不渡</strong></p>
+    </div>
+    <div class="card">
+      <h3>もらう側が待てない</h3>
+      <p class="small">期日は3か月先だが、今すぐ資金が要る。他人に渡す（<strong>裏書</strong>）か、銀行で換金する（<strong>割引</strong>）。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ2級でこの3つを学ぶのか</span>
+    <p>いずれも<strong>受取手形・支払手形のままでは実態を表せなくなる</strong>場面だからです。</p>
+    <p>不渡になった手形を「受取手形」として資産に並べたままにすると、期日どおりに回収できる普通の手形と区別がつきません。財務諸表を見る人は、回収が危ういものが混ざっていることに気づけません。だから<strong>別の科目に移し替える</strong>——それが2級の手形論点の中身です。</p>
+    <p>割引・譲渡も同じで、手元から手形が出ていった以上、資産として残しておくわけにはいきません。<strong>科目を移し替えて、いま何を持っているのかを正しく見せる</strong>という一貫した目的があります。</p>
+  </div>
+
+  <p>この単元では、あわせて<strong>電子記録債権・電子記録債務</strong>も扱います。紙の手形と同じ役割を電子的な記録で果たす仕組みで、3級では発生と消滅だけを習いました。2級では<strong>譲渡</strong>が加わります。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>営業外支払手形・営業外受取手形 — 何を買ったかで科目が変わる</h2>
+
+  <p>商品を仕入れて、代金として手形を振り出した。これは3級で習った<strong>支払手形</strong>です。では、<strong>営業用の車を買って</strong>、代金として手形を振り出したらどうなるでしょうか。</p>
+
+  <p>同じ約束手形で、紙の上の文言も同じです。それでも2級では科目を分けます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>何の代金か</th><th>振り出した側</th><th>受け取った側</th></tr></thead>
+      <tbody>
+        <tr><td><strong>商品の売買</strong>（本業の取引）</td><td class="c">支払手形</td><td class="d">受取手形</td></tr>
+        <tr><td><strong>それ以外</strong>（固定資産の売買など）</td><td class="c">営業外支払手形</td><td class="d">営業外受取手形</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ分けるのか — 3級の「売掛金と未収入金」とまったく同じ理由</span>
+    <p>3級で、商品を掛けで売れば<strong>売掛金</strong>、備品を売った代金が未回収なら<strong>未収入金</strong>と分けました。理由は<mark>本業から生じた債権と、それ以外から生じた債権を混ぜないため</mark>です。</p>
+    <p>売掛金の残高は「どれだけ商品を売って、まだ回収していないか」を表す数字であり、そこに備品の売却代金が混ざると、本業の規模も回収状況も読めなくなります。</p>
+    <p>手形もまったく同じです。<strong>受取手形の残高は「商品を売った代金のうち、手形で受け取ってまだ期日が来ていない額」</strong>でなければなりません。車を売った代金の手形が混ざると、この数字が意味を失います。</p>
+    <p>覚え方としては、<strong>売掛金 : 未収入金 ＝ 受取手形 : 営業外受取手形</strong> という対応で見ておくのが確実です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>営業用の車両 2,400,000円を購入し、代金は約束手形を振り出して支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">車両運搬具</td><td class="d amt">2,400,000</td><td class="c">営業外支払手形</td><td class="c amt">2,400,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>受け取る側から見た形も置いておきます。備品を売却し、代金を手形で受け取った場合です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>帳簿価額 500,000円（取得原価 800,000円・減価償却累計額 300,000円）の備品を 540,000円で売却し、代金は約束手形で受け取った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">備品減価償却累計額</td><td class="d amt">300,000</td><td class="c">備品</td><td class="c amt">800,000</td></tr>
+        <tr><td class="d">営業外受取手形</td><td class="d amt">540,000</td><td class="c">固定資産売却益</td><td class="c amt">40,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>固定資産を売った部分の計算（帳簿価額と売却額の差が売却損益）は3級で習ったとおりです。<strong>2級で新しいのは、代金の受け皿が「未収入金」ではなく「営業外受取手形」になる点だけ</strong>です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">判定するのは「自社にとって本業かどうか」</span>
+    <p>分かれ目は<strong>手形を何に使ったかではなく、その取引が自社の営業取引かどうか</strong>です。</p>
+    <p>自動車販売会社が<strong>販売用の車</strong>を仕入れて手形を振り出せば、それは商品の仕入なので<strong>支払手形</strong>です。同じ会社が<strong>社用車</strong>を買って手形を振り出せば<strong>営業外支払手形</strong>になります。車という物は同じでも、自社にとっての位置づけが違います。</p>
+    <p>問題文では「商品」「仕入」「売上」という語が本業の合図、「備品」「建物」「車両」「土地」「機械」が営業外の合図になります。ただし上の例のように、会社の業種で逆転することがあるので、<strong>語だけで機械的に決めず一度は立ち止まってください。</strong></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">電子記録債権にも同じ区別がある</span>
+    <p>固定資産の代金を電子記録債権債務で決済した場合も、同じ理由で<strong>営業外電子記録債権・営業外電子記録債務</strong>という科目が用意されています。考え方は手形とまったく同じで、本業から生じたものと混ぜないためです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>手形の更改 — 期日を先に延ばす</h2>
+
+  <p>期日が明日に迫っているのに、手形を振り出した側に支払う資金がありません。このまま期日を迎えれば不渡になり、信用を失います。</p>
+
+  <p>そこで相手に頼み込みます。「<strong>3か月待ってください。そのかわり利息を払います。</strong>」相手が承諾すれば、古い手形を破棄し、期日を延ばした新しい手形を振り出し直します。これが<span class="term"><span class="term__w">手形の更改</span><span class="term__r">てがたのこうかい</span></span>（手形の書換え）です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ利息が発生するのか</span>
+    <p>受け取る側から見ると、<strong>本来もらえるはずだった日に資金が入らず、3か月間そのお金を使えなくなります。</strong>その間の資金を貸しているのと同じ状態です。</p>
+    <p>お金を貸せば利息を取るのが当然であるように、支払いを待つ側も利息を受け取ります。<strong>更改の利息は、延長期間ぶんの資金の貸借に対する対価</strong>です。だから振出人にとっては支払利息（費用）、受取人にとっては受取利息（収益）になります。</p>
+  </div>
+
+  <h3>基本の形 — 古い手形を消し、新しい手形を立てる</h3>
+
+  <p>更改の仕訳の骨格は、どちらの立場でも同じです。</p>
+
+  <ol class="steps">
+    <li><strong>古い手形を消す</strong><br>振出人なら支払手形を借方に、受取人なら受取手形を貸方に書いて消します。</li>
+    <li><strong>新しい手形を立てる</strong><br>振出人なら支払手形を貸方に、受取人なら受取手形を借方に書きます。</li>
+    <li><strong>利息を処理する</strong><br>ここが2通りに分かれます。<strong>この分岐が更改の出題そのもの</strong>です。</li>
+  </ol>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「支払手形／支払手形」と書いてよい</span>
+    <p>借方と貸方に同じ科目が並ぶと間違えたように見えますが、これで正しいのです。<strong>消えた古い手形と、新しく生まれた手形は、別の手形です。</strong>同じ「支払手形」という科目の中で、一方が減り、一方が増えています。</p>
+    <p>「打ち消し合うのだから書かなくてよい」と考えて省略しないでください。手形記入帳では1枚ずつ管理されており、古い手形が消えて新しい手形が生まれた事実を記録する必要があります。</p>
+  </div>
+
+  <h3>パターン① 利息を現金などで別に受け払いする</h3>
+
+  <p>手形の額面はそのままで、利息だけを現金でやりとりする形です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>【振出人】支払手形 800,000円の支払期日延期を申し入れ、承諾された。新手形を振り出し、延期にともなう利息 12,000円は現金で支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">支払手形</td><td class="d amt">800,000</td><td class="c">支払手形</td><td class="c amt">800,000</td></tr>
+        <tr><td class="d">支払利息</td><td class="d amt">12,000</td><td class="c">現金</td><td class="c amt">12,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>【受取人】上記の相手側。受取手形 800,000円について延期を承諾し、新手形を受け取った。利息 12,000円は現金で受け取った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">受取手形</td><td class="d amt">800,000</td><td class="c">受取手形</td><td class="c amt">800,000</td></tr>
+        <tr><td class="d">現金</td><td class="d amt">12,000</td><td class="c">受取利息</td><td class="c amt">12,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>新手形の額面は 800,000円</strong>です。利息は手形とは無関係に現金で決済されているので、手形の金額には触れません。</p>
+
+  <h3>パターン② 利息を新手形の額面に含める</h3>
+
+  <p>利息ぶんの現金を用意できないなら、<strong>利息も含めた金額の手形</strong>を振り出せば済みます。同じ条件で、利息 12,000円を新手形に含める形です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>【振出人】新手形の額面に利息 12,000円を含めた（新手形の額面 812,000円）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">支払手形</td><td class="d amt">800,000</td><td class="c">支払手形</td><td class="c amt">812,000</td></tr>
+        <tr><td class="d">支払利息</td><td class="d amt">12,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>【受取人】上記の相手側</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">受取手形</td><td class="d amt">812,000</td><td class="c">受取手形</td><td class="c amt">800,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">受取利息</td><td class="c amt">12,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">2つのパターンで違うのは「新手形の金額」だけ</span>
+    <p>どちらのパターンでも、<strong>消す古い手形は 800,000円、利息は 12,000円</strong>で変わりません。違うのは<mark>新手形の額面を 800,000円にするか 812,000円にするか</mark>だけです。</p>
+    <p>判定は問題文の一文で決まります。</p>
+    <ul>
+      <li>「利息は<strong>現金で支払った</strong>」「利息は小切手を振り出して支払った」→ パターン①。新手形は 800,000円</li>
+      <li>「利息を<strong>含めた</strong>額面の新手形を振り出した」「利息を加算した手形を振り出した」→ パターン②。新手形は 812,000円</li>
+    </ul>
+    <p>利息の金額が問題文に直接書かれず、「<strong>年利率◯%、期間3か月</strong>」という形で与えられることもあります。その場合は 800,000 × 年利率 × 3 ÷ 12 で自分で計算します。<strong>年利率に月数の按分を忘れて1年分の利息を出す</strong>のが最も多い失点です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>手形の不渡 — 期日に払ってもらえなかった</h2>
+
+  <p>受け取った手形を期日に銀行へ持ち込んだところ、<strong>振出人の口座に資金がなく、決済されずに戻ってきました。</strong>これが<span class="term"><span class="term__w">不渡</span><span class="term__r">ふわたり</span></span>です。</p>
+
+  <p>手形が不渡になっても、<strong>代金を請求する権利そのものは消えません。</strong>振出人は依然として払う義務を負っています。ただし、<mark>期日どおりに回収できる普通の手形とは、回収できる見込みがまったく違います。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ受取手形のままにしておけないのか</span>
+    <p>受取手形の残高は、財務諸表を見る人にとって「近いうちに確実に入ってくる資金」を表しています。そこに<strong>すでに一度支払いを拒まれた手形</strong>が混ざっていると、その読み方が成り立たなくなります。</p>
+    <p>そこで、不渡になった時点で<span class="term"><span class="term__w">不渡手形</span><span class="term__r">ふわたりてがた</span></span>という別の資産科目へ移します。<strong>資産であることは変わりません。</strong>権利は残っているからです。変わるのは<mark>「危ういもの」として分けて表示する</mark>という点だけです。</p>
+    <p>決算では、不渡手形は<strong>回収可能性の低い債権として個別に貸倒引当金を見積もる対象</strong>になります。普通の受取手形と同じ率で引き当てるわけにはいきません（個別評価の詳細はUNIT 09の引当金で扱います）。</p>
+  </div>
+
+  <h3>不渡になったときの仕訳</h3>
+
+  <p>不渡になると、手形の所持人は振出人に対して<strong>手形金額に加えて、拒絶証書の作成費用や期日以後の利息も請求できます。</strong>これを<span class="term"><span class="term__w">償還請求</span><span class="term__r">しょうかんせいきゅう</span></span>といいます。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">償還請求のためにかかった費用も不渡手形に含める</span>
+    <p>拒絶証書の作成費用などを自社が立て替えて支払っても、<strong>費用（支払手数料など）にはしません。</strong>これらは<mark>振出人に請求できる金額</mark>だからです。請求できるものは費用ではなく債権であり、手形金額と一緒に<strong>不渡手形</strong>に含めます。</p>
+    <p>「払ったのだから費用」と考えると落とします。判断の軸は<strong>誰に請求できるか</strong>であって、誰がいま払ったかではありません。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>受取手形 600,000円が期日に決済されず不渡となった。拒絶証書の作成費用 8,000円と期日以後の延滞利息 3,000円を現金で支払い、あわせて振出人に償還請求した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">不渡手形</td><td class="d amt">611,000</td><td class="c">受取手形</td><td class="c amt">600,000</td></tr>
+        <tr><td class="d"></td><td class="d amt"></td><td class="c">現金</td><td class="c amt">11,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>不渡手形の金額は 600,000 ＋ 8,000 ＋ 3,000 ＝ <strong>611,000円</strong>です。手形の額面ではなく、<mark>振出人に請求できる総額</mark>が不渡手形の残高になります。</p>
+
+  <h3>裏書・割引した手形が不渡になった場合</h3>
+
+  <p>他人に裏書譲渡したり、銀行で割り引いたりした手形が不渡になると、<strong>譲り受けた側から自社に請求が回ってきます。</strong>手形を渡した側は、その手形が決済されることを保証しているからです。</p>
+
+  <p>この場合、自社はいったん銀行などに支払い、<strong>その金額を振出人に請求できる債権として不渡手形に立てます。</strong>形は上の仕訳と同じで、貸方が受取手形ではなく当座預金などになるだけです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>かつて割り引いた手形 400,000円が不渡となり、銀行から償還請求を受けたため、手形金額と延滞利息 6,000円をあわせて当座預金から支払った。同額を振出人に請求した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">不渡手形</td><td class="d amt">406,000</td><td class="c">当座預金</td><td class="c amt">406,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>受取手形を消す行がありません。<strong>その手形はとっくに手元を離れており、帳簿上も割引・裏書の時点で消してあるから</strong>です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>不渡手形が最後にどうなるか</h2>
+
+  <p>不渡手形は<strong>一時的な置き場所</strong>です。資産として抱えたまま何年も放置するものではなく、最終的には2つのどちらかに決着します。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 300" style="width:100%;height:auto;min-width:560px" role="img" aria-label="不渡手形は回収できれば現金等になり、回収不能なら貸倒れとして費用になることを示す図。">
+      <g font-size="13" fill="var(--text)">
+        <rect x="30" y="120" width="200" height="60" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="130" y="145" text-anchor="middle" font-size="13.5" font-weight="700">受取手形が不渡</text>
+        <text x="130" y="165" text-anchor="middle" font-size="12.5" fill="var(--muted)">手形金額 ＋ 諸費用</text>
+
+        <rect x="270" y="120" width="160" height="60" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="350" y="145" text-anchor="middle" font-size="14" font-weight="700">不渡手形</text>
+        <text x="350" y="165" text-anchor="middle" font-size="12.5" fill="var(--muted)">資産（危ういもの）</text>
+
+        <path d="M230 150 L262 150" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M270 150 l-10 -4 l0 8 z" fill="var(--muted)"/>
+
+        <rect x="470" y="30" width="200" height="80" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="6"/>
+        <text x="570" y="56" text-anchor="middle" font-size="13.5" font-weight="700">回収できた</text>
+        <text x="570" y="78" text-anchor="middle" font-size="12.5" fill="var(--muted)">現金・当座預金／不渡手形</text>
+        <text x="570" y="98" text-anchor="middle" font-size="12.5" fill="var(--muted)">損益は動かない</text>
+        <path d="M430 140 L455 100 L470 82" fill="none" stroke="var(--ok)" stroke-width="2"/>
+        <path d="M470 82 l-11 2 l4 8 z" fill="var(--ok)"/>
+
+        <rect x="470" y="190" width="200" height="80" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2" rx="6"/>
+        <text x="570" y="216" text-anchor="middle" font-size="13.5" font-weight="700">回収できなくなった</text>
+        <text x="570" y="238" text-anchor="middle" font-size="12.5" fill="var(--muted)">貸倒引当金を先に取り崩す</text>
+        <text x="570" y="258" text-anchor="middle" font-size="12.5" fill="var(--muted)">足りない分が貸倒損失</text>
+        <path d="M430 160 L455 200 L470 218" fill="none" stroke="var(--danger)" stroke-width="2"/>
+        <path d="M470 218 l-11 -2 l4 -8 z" fill="var(--danger)"/>
+
+        <text x="350" y="215" text-anchor="middle" font-size="12.5" fill="var(--muted)">どちらかに必ず決着する</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">不渡手形は通過点です。回収できれば損益を動かさずに現金等へ置き換わり、回収不能が確定すれば費用になります。<strong>不渡になった時点では、まだどちらとも決まっていない</strong>——だから別の科目で保留しています。</p>
+  </div>
+
+  <h3>ケース① あとで回収できた</h3>
+
+  <p>相手が資金繰りを立て直し、請求額を払ってくれた場合です。<strong>損益は動きません。</strong>請求できる額をそのまま回収しただけだからです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>不渡手形 611,000円について、全額が当座預金に入金された</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">611,000</td><td class="c">不渡手形</td><td class="c amt">611,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>ケース② 回収できないことが確定した</h3>
+
+  <p>振出人が倒産し、回収の見込みがなくなった場合です。ここで初めて<strong>損失が確定</strong>します。</p>
+
+  <p>処理は3級で習った貸倒れとまったく同じ順序です。<strong>まず貸倒引当金を取り崩し、足りない分だけを貸倒損失にします。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>不渡手形 611,000円が回収不能となった。この債権に対し貸倒引当金 400,000円を設定している</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">貸倒引当金</td><td class="d amt">400,000</td><td class="c">不渡手形</td><td class="c amt">611,000</td></tr>
+        <tr><td class="d">貸倒損失</td><td class="d amt">211,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>貸倒損失は 611,000 − 400,000 ＝ <strong>211,000円</strong>です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">取り崩すのは「貸し倒れた金額まで」</span>
+    <p>引当金を取り崩す額は、<strong>貸し倒れた債権額が上限</strong>です。引当金の残高がそれより多くても、余分まで取り崩すことはしません。残高が足りなければ、足りない分だけが<strong>貸倒損失</strong>になります。</p>
+    <p>この問題のように<strong>「この債権に対し貸倒引当金◯◯円を設定している」</strong>と個別に紐づけて書かれている場合は、その金額を取り崩して差額が貸倒損失です。問題文がどちらの書き方をしているかを必ず読んでください。</p>
+    <p>逆に、<strong>引当金をまったく設定していない債権</strong>が貸し倒れることもあります。その場合は全額が貸倒損失です。問題文に引当金の記載があるかどうかを必ず確認してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>手形の裏書譲渡 — 手形で支払う</h2>
+
+  <p>3か月後が期日の手形を持っています。いま買掛金 500,000円を払わなければなりません。現金はありません。</p>
+
+  <p>ここで、<strong>持っている手形を仕入先に渡して支払いに充てる</strong>ことができます。手形の裏面に署名して相手に渡すので、<span class="term"><span class="term__w">裏書譲渡</span><span class="term__r">うらがきじょうと</span></span>といいます。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">手形がお金の代わりになる</span>
+    <p>受け取った仕入先は、期日が来ればその手形で 500,000円を回収できます。<strong>現金と同じ価値があるからこそ、支払いに使えます。</strong></p>
+    <p>渡した側から見ると、手形（資産）が出ていって買掛金（負債）が消えます。現金で払ったときとまったく同じ構造で、<mark>出ていく資産が現金ではなく手形になっただけ</mark>です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>買掛金 500,000円の支払いのため、所有する約束手形 500,000円を裏書譲渡した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">買掛金</td><td class="d amt">500,000</td><td class="c">受取手形</td><td class="c amt">500,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>受け取る側は、手形を受け取った以上ふつうに<strong>受取手形</strong>で処理します。裏書されたものだからといって特別な科目は使いません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">損も益も出ない</span>
+    <p>裏書譲渡では<strong>金額がそのまま動くだけ</strong>で、損益は発生しません。500,000円の手形で 500,000円の買掛金を消しています。この点が、次に見る割引との決定的な違いです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>手形の割引 — 期日前に銀行で換金する</h2>
+
+  <p>裏書譲渡は「手形を受け取ってくれる相手」がいて初めて成り立ちます。相手がいない、そもそも現金が要る、という場合は<strong>銀行に手形を買い取ってもらいます。</strong>これが<span class="term"><span class="term__w">手形の割引</span><span class="term__r">てがたのわりびき</span></span>です。</p>
+
+  <p>ただし、銀行は額面どおりの金額をくれません。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ額面より少ない金額しかもらえないのか</span>
+    <p>期日が3か月先の 500,000円の手形を、銀行が今日 500,000円で買い取ったとします。銀行は3か月間 500,000円を寝かせたうえで、同じ 500,000円を回収するだけです。<strong>これでは銀行に何の利益もありません。</strong></p>
+    <p>実質的に、銀行は<mark>手形を担保に3か月間お金を貸している</mark>のと同じです。だから3か月ぶんの利息に相当する金額を額面から差し引き、残りを渡します。この差引額を<strong>割引料</strong>といいます。</p>
+    <p>「割引」という語は、商品の値引きとは無関係です。<strong>期日までの利息を前もって引いておく</strong>という意味での割引です。</p>
+  </div>
+
+  <h3>差し引かれた金額は手形売却損</h3>
+
+  <p>額面 500,000円の手形を割り引き、割引料 6,000円を差し引かれて 494,000円が当座預金に入金された場合です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>受取手形 500,000円を銀行で割り引き、割引料 6,000円を差し引かれた手取金が当座預金に振り込まれた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">494,000</td><td class="c">受取手形</td><td class="c amt">500,000</td></tr>
+        <tr><td class="d">手形売却損</td><td class="d amt">6,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>受取手形は<strong>額面の 500,000円で消します。</strong>手元を離れたのは 500,000円の手形であって、494,000円の手形ではないからです。差額 6,000円が<span class="term"><span class="term__w">手形売却損</span><span class="term__r">てがたばいきゃくそん</span></span>（費用）になります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「支払利息」ではなく「手形売却損」</span>
+    <p>実質は利息なのに、科目名は売却損です。<strong>形式上は手形という資産を額面より安く売却した</strong>という形を取るため、この名前になっています。</p>
+    <p>2級の答案では<strong>手形売却損</strong>と書きます。実質が利息だからといって支払利息にすると誤りです。</p>
+  </div>
+
+  <h3>割引料を自分で計算する</h3>
+
+  <p>割引料が問題文に直接書かれず、<strong>「年利率◯%、割引日から満期日まで◯日」</strong>という形で与えられることがあります。計算式はこうです。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">割引料 ＝ 手形の額面 × 年利率 × 割引日から満期日までの日数 ÷ 365</span>
+    <p>かける対象は<strong>手形の額面</strong>です。手取金ではありません。手取金は割引料を引いたあとの結果なので、それに利率をかけると循環してしまいます。</p>
+    <p>期間が月数で与えられれば ÷ 12、日数で与えられれば ÷ 365 です。<strong>問題文が日数と月数のどちらで書いているかを必ず確認してください。</strong></p>
+  </div>
+
+  <p>例：額面 730,000円の手形を、満期日まで<strong>60日</strong>を残して年利率<strong>7.3%</strong>で割り引いた場合。</p>
+
+  <p>割引料 ＝ 730,000 × 0.073 × 60 ÷ 365 ＝ <strong>8,760円</strong>。手取金は 730,000 − 8,760 ＝ <strong>721,240円</strong>です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">2級では保証債務を計上しない</span>
+    <p>手形を割り引いたり裏書譲渡したりすると、その手形が不渡になったときに自社が肩代わりする義務が残ります（第4節で見たとおりです）。この義務を<strong>保証債務</strong>として時価評価し計上・取崩する処理がありますが、<mark>それは1級の範囲です。</mark></p>
+    <p>2級の答案では、割引・裏書の仕訳に保証債務は登場しません。上で示した2行・1行の仕訳がそのまま完成形です。</p>
+    <p class="small muted">UNIT 06で扱った<strong>保証債務見返・保証債務</strong>は、他社の借入金の保証人になった場合の<strong>対照勘定</strong>（備忘記録）で、2級の範囲です。損益は動きません。ここで言う1級の保証債務は、割引・裏書で残る遡及義務を<strong>時価評価して費用を計上する</strong>別の処理です。名前が似ているだけの別物なので、UNIT 06の処理をここへ持ち込まないでください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>電子記録債権・電子記録債務</h2>
+
+  <p>紙の手形には、作成の手間、印紙税、紛失や盗難のリスク、郵送の時間といった不便がつきまといます。これを電子的な記録に置き換えたのが<span class="term"><span class="term__w">電子記録債権</span><span class="term__r">でんしきろくさいけん</span></span>です。</p>
+
+  <p>電子債権記録機関が管理する記録原簿に「<strong>A社がB社に◯月◯日に◯円を払う</strong>」と記録することで、手形と同じ効力を持つ債権債務が生まれます。</p>
+
+  <h3>発生と消滅（3級の範囲）</h3>
+
+  <p>すでに存在する売掛金・買掛金について、電子記録債権債務へ移し替える形が基本です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>【債権者】売掛金 300,000円について、取引銀行を通じて電子記録債権の発生記録が行われた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">電子記録債権</td><td class="d amt">300,000</td><td class="c">売掛金</td><td class="c amt">300,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>【債務者】買掛金 300,000円について、電子記録債務の発生記録が行われた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">買掛金</td><td class="d amt">300,000</td><td class="c">電子記録債務</td><td class="c amt">300,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>期日が来て決済されれば、当座預金などと引き換えに消えます。ここまでは3級で扱った内容です。</p>
+
+  <h3>譲渡（2級の範囲）</h3>
+
+  <p>電子記録債権は<strong>他人に譲り渡すことができます。</strong>紙の手形で言えば裏書譲渡・割引にあたる部分で、ここが2級で新しく加わります。</p>
+
+  <p>買掛金の支払いに充てる形（裏書譲渡に相当）は、損益が動きません。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>買掛金 250,000円の支払いのため、電子記録債権 250,000円の譲渡記録を行った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">買掛金</td><td class="d amt">250,000</td><td class="c">電子記録債権</td><td class="c amt">250,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>期日前に銀行などへ売却して換金する形（割引に相当）では、額面より少ない金額しか受け取れません。<strong>その差額は電子記録債権売却損</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>電子記録債権 400,000円を銀行に 392,000円で譲渡し、手取金が当座預金に振り込まれた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">392,000</td><td class="c">電子記録債権</td><td class="c amt">400,000</td></tr>
+        <tr><td class="d">電子記録債権売却損</td><td class="d amt">8,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">科目名を「手形売却損」にしない</span>
+    <p>構造は手形の割引とまったく同じですが、<strong>電子記録債権の売却損には専用の科目があります。</strong>電子記録債権を売却したのだから電子記録債権売却損、手形を割り引いたのだから手形売却損です。</p>
+    <p>逆に、買掛金の支払いに充てた場合はどちらも損益が出ないので、科目を迷う場面自体がありません。<mark>売却損の科目を選ぶのは「換金した」ときだけ</mark>です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>その他の債権の譲渡 — 売掛金を売る</h2>
+
+  <p>譲渡できるのは手形と電子記録債権だけではありません。<strong>売掛金も他人に売ることができます。</strong></p>
+
+  <p>回収期日まで待てない会社が、債権を専門の業者や金融機関に買い取ってもらう取引です。買い取る側は回収の手間と貸倒れのリスクを引き受けるので、<strong>額面より安い金額でしか買いません。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>売掛金 800,000円を 770,000円で譲渡し、代金が当座預金に振り込まれた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">当座預金</td><td class="d amt">770,000</td><td class="c">売掛金</td><td class="c amt">800,000</td></tr>
+        <tr><td class="d">債権売却損</td><td class="d amt">30,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>差額 800,000 − 770,000 ＝ <strong>30,000円</strong>が<span class="term"><span class="term__w">債権売却損</span><span class="term__r">さいけんばいきゃくそん</span></span>（費用）です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">貸倒れではない</span>
+    <p>30,000円を回収できていないので貸倒損失にしたくなりますが、違います。<strong>貸倒れは「相手が払えなくなった」結果として生じる損失</strong>であり、こちらは<mark>自分から安く売ることを選んだ結果の損失</mark>です。</p>
+    <p>相手はまだ払える状態にあります。早く現金化するために自社が譲歩した金額なので、貸倒引当金を取り崩す対象にもなりません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>3つの「売却損」を並べて整理する</h2>
+
+  <p>この単元には、名前の似た3つの費用科目が出てきました。<strong>何を売ったかで機械的に決まります。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>売ったもの</th><th>差額の科目</th><th>消す側の科目と金額</th></tr></thead>
+      <tbody>
+        <tr><td>手形（割引）</td><td class="d"><strong>手形売却損</strong></td><td>受取手形を<strong>額面</strong>で消す</td></tr>
+        <tr><td>電子記録債権</td><td class="d"><strong>電子記録債権売却損</strong></td><td>電子記録債権を<strong>額面</strong>で消す</td></tr>
+        <tr><td>売掛金など</td><td class="d"><strong>債権売却損</strong></td><td>売掛金を<strong>額面</strong>で消す</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>共通しているのは、<mark>消す債権はつねに額面、受け取った金額との差額が費用</mark>という形です。3つとも仕訳の構造は同じで、科目名だけが違います。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">「支払いに充てる」なら損は出ない</span>
+    <p>同じ債権を手放す取引でも、<strong>買掛金などの支払いに充てた場合は損益が発生しません。</strong>額面 500,000円の手形で額面 500,000円の買掛金を消しているだけだからです。</p>
+    <p>損が出るのは<strong>現金化したとき</strong>——つまり期日前に現金を手に入れる対価として、額面より少ない金額を受け入れたときだけです。この一点で、裏書譲渡と割引を見分けられます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">この単元で新しく使う勘定科目</span>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>科目</th><th>区分</th><th>いつ使うか</th></tr></thead>
+        <tbody>
+          <tr><td class="d">営業外受取手形</td><td>資産</td><td>固定資産の売却など、営業取引以外で手形を受け取った</td></tr>
+          <tr><td class="c">営業外支払手形</td><td>負債</td><td>固定資産の購入など、営業取引以外で手形を振り出した</td></tr>
+          <tr><td class="d">不渡手形</td><td>資産</td><td>手形が不渡になり、請求できる総額を別建てにした</td></tr>
+          <tr><td class="d">手形売却損</td><td>費用</td><td>手形を割り引いたときの割引料</td></tr>
+          <tr><td class="d">電子記録債権売却損</td><td>費用</td><td>電子記録債権を額面より安く譲渡したときの差額</td></tr>
+          <tr><td class="d">債権売却損</td><td>費用</td><td>売掛金などを額面より安く譲渡したときの差額</td></tr>
+          <tr><td class="d">営業外電子記録債権</td><td>資産</td><td>営業取引以外で電子記録債権が発生した</td></tr>
+          <tr><td class="c">営業外電子記録債務</td><td>負債</td><td>営業取引以外で電子記録債務が発生した</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>仕訳ドリル 14問</h2>
+
+  <p>解答欄は4行ありますが、実際に使う行数は問題ごとに違います。<strong>空いた行は無視されます</strong>ので、行数から科目数を推測しないでください。本番の第1問も同じ条件です。</p>
+
+  <div id="drill-tegata"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>この単元の失点は、科目を間違えるより<strong>金額を間違える</strong>ほうが多くなります。割引料の日割り、不渡手形に含める諸費用、貸倒引当金との差額。それぞれ独立に確認します。</p>
+
+  <div id="num-tegata"></div>
+
+  <div id="quiz-tegata"></div>
+
+  <div id="fill-tegata"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。<strong>仕訳の形そのものは難しくありません。</strong>迷うのは科目の選択と金額の計算に集中しているので、そこを一つずつ潰します。</p>
+
+  <div class="progressbar" data-progress-for="#u8check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u8check">0 / 0 完了（0%）</div>
+
+  <div id="u8check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u08-w3u8-1"><label for="c1"><span class="cl__t">営業外受取手形・営業外支払手形を使う場面を言える</span><span class="cl__d">固定資産の売買など、自社にとっての営業取引以外で手形を用いた場合。売掛金と未収入金を分けるのと同じ理由</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u08-w3u8-2"><label for="c2"><span class="cl__t">営業取引かどうかは自社の業種で決まると言える</span><span class="cl__d">自動車販売会社の販売用の車は商品なので支払手形、同じ会社の社用車なら営業外支払手形</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u08-w3u8-3"><label for="c3"><span class="cl__t">手形の更改で利息が発生する理由を説明できる</span><span class="cl__d">受け取る側は本来もらえる日に資金が入らず、延長期間ぶん資金を貸しているのと同じ状態になる</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u08-w3u8-4"><label for="c4"><span class="cl__t">更改の仕訳を、利息の2つのパターンで書き分けられる</span><span class="cl__d">現金で受け払いするなら新手形は旧額面のまま。新手形に含めるなら新手形の額面＝旧額面＋利息</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u08-w3u8-5"><label for="c5"><span class="cl__t">「支払手形／支払手形」という仕訳になる理由を説明できる</span><span class="cl__d">消えた古い手形と新しく生まれた手形は別物。同じ科目の中で一方が減り一方が増えている。打ち消して省略しない</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u08-w3u8-6"><label for="c6"><span class="cl__t">不渡になった手形を受取手形のままにしない理由を言える</span><span class="cl__d">期日どおり回収できる手形と回収の危ういものを混ぜると、受取手形の残高が意味を失う</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u08-w3u8-7"><label for="c7"><span class="cl__t">償還請求のための諸費用を費用にせず不渡手形に含める理由を説明できる</span><span class="cl__d">振出人に請求できる金額だから。判断の軸は誰に請求できるかであって、誰がいま払ったかではない</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u08-w3u8-8"><label for="c8"><span class="cl__t">不渡手形の金額が手形の額面と一致しないことがあると言える</span><span class="cl__d">手形金額 ＋ 拒絶証書作成費用 ＋ 期日以後の利息の合計。請求できる総額が残高になる</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u08-w3u8-9"><label for="c9"><span class="cl__t">割引・裏書した手形が不渡になったときの仕訳を書ける</span><span class="cl__d">自社が支払った額を不渡手形として立てる。受取手形を消す行は出てこない。その手形はすでに帳簿から消えている</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u08-w3u8-10"><label for="c10"><span class="cl__t">不渡手形の最終的な行き先を2つとも言える</span><span class="cl__d">回収できれば現金等へ置き換わり損益は動かない。回収不能なら貸倒引当金を取り崩し、不足分が貸倒損失</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u08-w3u8-11"><label for="c11"><span class="cl__t">裏書譲渡で損益が出ない理由を説明できる</span><span class="cl__d">額面どおりの金額で負債を消しているだけ。現金で払ったのと構造が同じで、出ていく資産が手形になっただけ</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u08-w3u8-12"><label for="c12"><span class="cl__t">割引で額面より少ない金額しか受け取れない理由を説明できる</span><span class="cl__d">銀行は実質的に手形を担保に期日まで貸している。その期間の利息に相当する額が割引料として引かれる</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u08-w3u8-13"><label for="c13"><span class="cl__t">割引の仕訳で受取手形を額面で消せる</span><span class="cl__d">手元を離れたのは額面の手形。手取金で消すと差額が出ず、手形売却損が立たない</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u08-w3u8-14"><label for="c14"><span class="cl__t">割引料を額面・年利率・期間から計算できる</span><span class="cl__d">額面 × 年利率 × 日数 ÷ 365（月数なら ÷ 12）。手取金にかけない。1年分を出さない</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u08-w3u8-15"><label for="c15"><span class="cl__t">割引・裏書で保証債務を計上しないと言える<span class="chip">級の境界</span></span><span class="cl__d">保証債務の計上・取崩は1級の範囲。2級の答案には登場しない</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u08-w3u8-16"><label for="c16"><span class="cl__t">電子記録債権の発生・譲渡・消滅の仕訳が書ける</span><span class="cl__d">発生は売掛金／買掛金からの振替、支払充当なら損益なし、換金なら差額が電子記録債権売却損</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u08-w3u8-17"><label for="c17"><span class="cl__t">手形売却損・電子記録債権売却損・債権売却損を使い分けられる</span><span class="cl__d">何を売ったかで決まる。手形なら手形売却損、電子記録債権なら電子記録債権売却損、売掛金なら債権売却損</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u08-w3u8-18"><label for="c18"><span class="cl__t">債権売却損が貸倒れではないと説明できる</span><span class="cl__d">相手はまだ払える。早く現金化するために自社が譲歩した金額なので、貸倒引当金を取り崩す対象にならない</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u08-w3u8-19"><label for="c19"><span class="cl__t">「支払いに充てる」と「換金する」で損益の有無が変わると言える</span><span class="cl__d">額面で負債を消すなら損益なし。期日前の現金化の対価として額面を下回る額を受け入れたときだけ損が出る</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u08-w3u8-20"><label for="c20"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>この単元の論点は<strong>第1問（仕訳）で単発に出る形</strong>が中心です。1問4点なので、科目と金額を取り切れるかがそのまま得点になります。毎週の仕訳ドリル1.5時間の枠に、割引料の計算がある問題を混ぜ続けてください。</p>
+    <p>不渡手形は<strong>次のUNIT 09（引当金）で再登場します。</strong>回収可能性の低い債権を個別に評価して貸倒引当金を設定する、という場面の代表例が不渡手形だからです。「不渡手形は危ういものとして分けて表示する」という今回の理解が、そのまま個別評価の話につながります。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W3 UNIT 08 手形・電子記録債権債務・債権の譲渡</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金',
+    '受取手形', '営業外受取手形', '不渡手形',
+    '電子記録債権', '営業外電子記録債権',
+    '売掛金', '未収入金', '繰越商品',
+    '備品', '車両運搬具', '建物', '土地', '機械装置',
+    '備品減価償却累計額', '建物減価償却累計額', '車両運搬具減価償却累計額',
+    '貸倒引当金',
+    '支払手形', '営業外支払手形',
+    '電子記録債務', '営業外電子記録債務',
+    '買掛金', '未払金', '借入金', '手形借入金',
+    '資本金',
+    '売上', '受取利息', '固定資産売却益', '償却債権取立益',
+    '仕入', '発送費',
+    '手形売却損', '電子記録債権売却損', '債権売却損',
+    '貸倒損失', '貸倒引当金繰入', '支払利息', '支払手数料',
+    '固定資産売却損', '減価償却費', '租税公課'
+  ];
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  BokiJournal.mount('#drill-tegata', {
+    title: '仕訳ドリル — 手形・電子記録債権債務・債権の譲渡（14問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '営業用の車両 <strong>3,200,000円</strong> を購入し、代金は<strong>約束手形を振り出して</strong>支払った。',
+        debit: [['車両運搬具', 3200000]],
+        credit: [['営業外支払手形', 3200000]],
+        hint: '当社にとって、車両の購入は本業の取引でしょうか。',
+        explain: '<p>購入したのは営業用の車両であり、<strong>商品の仕入ではありません。</strong>自社にとって営業取引以外の取引で手形を振り出したので、支払手形ではなく<strong>営業外支払手形</strong>（負債）を使います。</p><p>3級で、商品を掛けで仕入れれば買掛金、備品を買って代金が未払いなら未払金と分けたのと同じ理由です。<mark>支払手形の残高は「商品を仕入れて手形で払い、まだ期日が来ていない額」</mark>でなければならず、そこに車両の代金が混ざると意味を失います。</p><p>覚え方は<strong>買掛金 : 未払金 ＝ 支払手形 : 営業外支払手形</strong> という対応です。</p>'
+      },
+      {
+        text: '取得原価 <strong>1,500,000円</strong>、減価償却累計額 <strong>900,000円</strong> の備品を <strong>640,000円</strong> で売却し、代金は<strong>先方振出の約束手形</strong>で受け取った。',
+        debit: [['備品減価償却累計額', 900000], ['営業外受取手形', 640000]],
+        credit: [['備品', 1500000], ['固定資産売却益', 40000]],
+        hint: '固定資産の売却部分は3級と同じです。新しいのは代金の受け皿だけです。',
+        explain: '<p>まず固定資産を消します。取得原価 1,500,000円を貸方に、減価償却累計額 900,000円を借方に落とします。帳簿価額は 1,500,000 − 900,000 ＝ <strong>600,000円</strong>です。</p><p>売却額 640,000円が帳簿価額 600,000円を上回るので、差額 <strong>40,000円</strong> が<strong>固定資産売却益</strong>（収益）になります。</p><p>代金は手形で受け取りましたが、<strong>備品の売却は営業取引ではありません。</strong>したがって受取手形ではなく<strong>営業外受取手形</strong>（資産）を 640,000円で計上します。</p><p>手形で受け取らなければ未収入金になる場面です。<mark>未収入金の位置に手形が入ると営業外受取手形</mark>と考えると迷いません。</p>'
+      },
+      {
+        text: '当社が振り出した約束手形 <strong>900,000円</strong> について支払期日の延期を申し入れ、承諾を得た。<strong>新しい約束手形を振り出す</strong>とともに、延期にともなう利息 <strong>18,000円</strong> は<strong>現金で支払った</strong>。',
+        debit: [['支払手形', 900000], ['支払利息', 18000]],
+        credit: [['支払手形', 900000], ['現金', 18000]],
+        hint: '利息を現金で払っています。新手形の額面は変わるでしょうか。',
+        explain: '<p>手形の更改です。やることは3つです。</p><ol><li><strong>古い手形を消す</strong>：支払手形 900,000円を借方に。</li><li><strong>新しい手形を立てる</strong>：支払手形 900,000円を貸方に。<strong>利息を現金で別に払っているので、新手形の額面は 900,000円のまま</strong>です。</li><li><strong>利息を処理する</strong>：支払利息 18,000円／現金 18,000円。</li></ol><p>借方と貸方に同じ「支払手形」が並びますが、これで正しいのです。<strong>消えた古い手形と新しく生まれた手形は別の手形</strong>で、同じ科目の中で一方が減り一方が増えています。打ち消し合うからといって省略してはいけません。</p><p>利息が発生するのは、受け取る側が本来もらえるはずの日に資金を受け取れず、延長期間ぶん資金を貸しているのと同じ状態になるからです。</p>'
+      },
+      {
+        text: '当社が所有する約束手形 <strong>600,000円</strong> について、振出人から支払期日の延期を申し入れられ、これを承諾した。<strong>延期にともなう利息 9,000円を加えた額面の新しい約束手形</strong>を受け取り、旧手形と交換した。',
+        debit: [['受取手形', 609000]],
+        credit: [['受取手形', 600000], ['受取利息', 9000]],
+        hint: '受け取る側の立場です。利息は新手形の額面に含まれています。',
+        explain: '<p>更改を受け取る側から見た形です。</p><ol><li><strong>古い手形を消す</strong>：受取手形 600,000円を貸方に。</li><li><strong>新しい手形を立てる</strong>：利息を含めた額面なので 600,000 ＋ 9,000 ＝ <strong>609,000円</strong> を借方に。</li><li><strong>利息を処理する</strong>：受取利息 9,000円（収益）を貸方に。</li></ol><p>利息を現金で受け取る形なら、新手形は 600,000円のままで「現金 9,000／受取利息 9,000」が別に立ちます。<mark>2つのパターンで違うのは新手形の額面だけ</mark>で、消す古い手形の金額も利息の金額も変わりません。</p><p>問題文の「<strong>利息を加えた額面の</strong>」という一文がこの分岐を決めています。</p>'
+      },
+      {
+        text: '得意先から受け取っていた約束手形 <strong>750,000円</strong> が満期日に決済されず、<strong>不渡</strong>となった。拒絶証書の作成費用 <strong>9,000円</strong> および期日以後の延滞利息 <strong>4,000円</strong> を<strong>現金で支払い</strong>、これらとあわせて振出人に償還請求した。',
+        debit: [['不渡手形', 763000]],
+        credit: [['受取手形', 750000], ['現金', 13000]],
+        hint: '振出人に請求できる金額はいくらでしょうか。支払った諸費用の行き先を考えてください。',
+        explain: '<p>不渡になっても<strong>請求する権利そのものは消えません。</strong>ただし期日どおりに回収できる手形とは危うさが違うので、<strong>不渡手形</strong>（資産）という別の科目に移します。</p><p>金額は<mark>振出人に請求できる総額</mark>です。750,000 ＋ 9,000 ＋ 4,000 ＝ <strong>763,000円</strong>。</p><p>拒絶証書作成費用と延滞利息を<strong>費用にしないのがこの問題の要</strong>です。これらは振出人に請求できる金額なので、費用ではなく債権として不渡手形に含めます。判断の軸は<strong>誰に請求できるか</strong>であって、誰がいま払ったかではありません。</p><p>貸方は、受取手形 750,000円を消すぶんと、現金で支払った 9,000 ＋ 4,000 ＝ 13,000円です。</p>'
+      },
+      {
+        text: 'かつて銀行で割り引いた約束手形 <strong>500,000円</strong> が不渡となり、銀行から償還請求を受けた。手形金額に延滞利息 <strong>7,000円</strong> を加えた金額を<strong>当座預金から支払い</strong>、同額を振出人に請求した。',
+        debit: [['不渡手形', 507000]],
+        credit: [['当座預金', 507000]],
+        hint: 'この手形は割り引いた時点で帳簿から消えています。受取手形を消す行は出てくるでしょうか。',
+        explain: '<p>手形を割り引いたり裏書譲渡したりすると、その手形が不渡になったときに<strong>自社が肩代わりする義務</strong>が残ります。今回それが現実になりました。</p><p>銀行に支払った 500,000 ＋ 7,000 ＝ <strong>507,000円</strong> は、振出人に請求できる金額です。したがって全額を<strong>不渡手形</strong>（資産）として立てます。</p><p><strong>受取手形を消す行はありません。</strong>この手形は割り引いた時点で「当座預金・手形売却損／受取手形」という仕訳で帳簿から消えています。もう一度消すものが存在しません。</p><p>なお2級では、割引時に保証債務を計上していません。保証債務の計上・取崩は1級の範囲なので、取り崩す行も出てきません。</p>'
+      },
+      {
+        text: '不渡手形 <strong>763,000円</strong> について、振出人が倒産し<strong>全額が回収不能</strong>となった。この債権に対し<strong>貸倒引当金 500,000円</strong> を設定している。',
+        debit: [['貸倒引当金', 500000], ['貸倒損失', 263000]],
+        credit: [['不渡手形', 763000]],
+        hint: '順序は3級の貸倒れと同じです。どちらを先に使うでしょうか。',
+        explain: '<p>回収不能が確定し、ここで初めて<strong>損失が確定</strong>します。処理の順序は3級の貸倒れとまったく同じです。</p><ol><li><strong>まず貸倒引当金を取り崩す</strong>：500,000円。将来の貸倒れに備えて前もって計上してあった分です。</li><li><strong>足りない分を貸倒損失にする</strong>：763,000 − 500,000 ＝ <strong>263,000円</strong>。</li></ol><p>貸方は不渡手形 763,000円を全額消します。</p><p><strong>いきなり全額を貸倒損失にしないでください。</strong>引当金は「この債権が貸し倒れたときのため」に積んであるものなので、実際に貸し倒れた以上、先に使うのが筋です。引当金を残したまま損失だけ計上すると、同じ損失を二重に計上することになります。</p>'
+      },
+      {
+        text: '買掛金 <strong>420,000円</strong> の支払いのため、かねて得意先から受け取っていた約束手形 <strong>420,000円</strong> を<strong>裏書譲渡</strong>した。',
+        debit: [['買掛金', 420000]],
+        credit: [['受取手形', 420000]],
+        hint: '手形をそのまま支払いに使いました。損は出るでしょうか。',
+        explain: '<p>手形の裏面に署名して相手に渡し、支払いに充てる<strong>裏書譲渡</strong>です。受け取った側は期日が来れば 420,000円を回収できるので、<strong>現金と同じ価値のものを渡した</strong>ことになります。</p><p>手形（資産）が出ていって買掛金（負債）が消えます。現金で払ったときとまったく同じ構造で、<mark>出ていく資産が現金ではなく手形になっただけ</mark>です。</p><p><strong>損益は発生しません。</strong>額面 420,000円の手形で額面 420,000円の買掛金を消しており、金額がそのまま動いただけだからです。次の割引との決定的な違いがここにあります。</p>'
+      },
+      {
+        text: '得意先振出の約束手形 <strong>800,000円</strong> を取引銀行で割り引き、<strong>割引料 14,000円</strong> を差し引かれた手取金が<strong>当座預金</strong>に入金された。',
+        debit: [['当座預金', 786000], ['手形売却損', 14000]],
+        credit: [['受取手形', 800000]],
+        hint: '受取手形を消す金額は、額面でしょうか手取金でしょうか。',
+        explain: '<p>割引です。手取金は 800,000 − 14,000 ＝ <strong>786,000円</strong>。</p><p><strong>受取手形は額面の 800,000円で消します。</strong>手元を離れたのは 800,000円の手形であって、786,000円の手形ではありません。ここを手取金で消すと差額が出ず、費用が立たなくなります。</p><p>差額 14,000円は<strong>手形売却損</strong>（費用）です。実質は期日までの利息ですが、<strong>形式上は手形という資産を額面より安く売却した</strong>という形を取るため、この名前になっています。支払利息と書くと誤りです。</p><p>銀行が額面どおり払わないのは、実質的に<mark>手形を担保に期日まで資金を貸している</mark>からです。その期間の利息に相当する金額を先に差し引いています。</p>'
+      },
+      {
+        text: '得意先振出の約束手形 <strong>1,460,000円</strong> を、<strong>満期日までの日数 45日</strong> を残して取引銀行で割り引いた。割引率は<strong>年 7.3%</strong>（1年を365日とする）であり、手取金は<strong>当座預金</strong>に入金された。',
+        debit: [['当座預金', 1446860], ['手形売却損', 13140]],
+        credit: [['受取手形', 1460000]],
+        hint: '割引料は額面にかけます。手取金にかけないでください。',
+        explain: '<p>割引料を自分で計算する形です。</p><p><strong>割引料 ＝ 額面 × 年利率 × 日数 ÷ 365</strong><br>＝ 1,460,000 × 0.073 × 45 ÷ 365 ＝ <strong>13,140円</strong></p><p>手取金は 1,460,000 − 13,140 ＝ <strong>1,446,860円</strong>です。</p><p>かける対象は<strong>額面</strong>です。手取金にかけてはいけません。手取金は割引料を引いたあとの結果なので、それに利率をかけると循環します。</p><p>また、<strong>年利率をそのまま掛けて1年分の利息を出さないでください。</strong>ここでの失点が最も多くなります。期間が日数で与えられていれば ÷ 365、月数なら ÷ 12 です。問題文がどちらで書いているかを必ず確認します。</p><p>受取手形は額面 1,460,000円で消し、差額 13,140円が<strong>手形売却損</strong>です。</p>'
+      },
+      {
+        text: '得意先に対する売掛金 <strong>350,000円</strong> について、取引銀行を通じて<strong>電子記録債権の発生記録</strong>が行われた。',
+        debit: [['電子記録債権', 350000]],
+        credit: [['売掛金', 350000]],
+        hint: '新しい債権が生まれたのではなく、すでにある債権の形が変わりました。',
+        explain: '<p>電子記録債権は、電子債権記録機関の記録原簿に「誰が誰にいつ いくら払う」と記録することで、手形と同じ効力を持たせる仕組みです。</p><p>この取引では<strong>新しい債権が増えたわけではありません。</strong>すでにある売掛金 350,000円が、電子記録債権という形に変わっただけです。したがって売掛金を貸方で消し、電子記録債権を借方に立てます。</p><p><strong>金額は動きません。</strong>売上が増えることも、損益が動くこともありません。</p><p>債務者側では逆に「買掛金 350,000／電子記録債務 350,000」という仕訳になります。</p>'
+      },
+      {
+        text: '買掛金 <strong>280,000円</strong> の支払いのため、当社が保有する<strong>電子記録債権 280,000円</strong> の<strong>譲渡記録</strong>を行った。',
+        debit: [['買掛金', 280000]],
+        credit: [['電子記録債権', 280000]],
+        hint: '紙の手形でいえば、どの取引にあたるでしょうか。',
+        explain: '<p>電子記録債権を支払いに充てる取引で、紙の手形でいえば<strong>裏書譲渡</strong>にあたります。</p><p>電子記録債権（資産）が出ていって買掛金（負債）が消えます。<strong>損益は発生しません。</strong>額面 280,000円の債権で額面 280,000円の買掛金を消しているだけだからです。</p><p>売却損の科目を選ぶ必要があるのは<strong>換金したとき</strong>——つまり額面より少ない金額しか受け取れなかったときだけです。支払いに充てた場合は差額が生じないので、科目を迷う場面自体がありません。</p>'
+      },
+      {
+        text: '当社が保有する<strong>電子記録債権 600,000円</strong> を取引銀行に <strong>588,000円</strong> で譲渡し、<strong>当座預金</strong>に入金された。',
+        debit: [['当座預金', 588000], ['電子記録債権売却損', 12000]],
+        credit: [['電子記録債権', 600000]],
+        hint: '手形の割引と構造は同じですが、売ったものが違います。',
+        explain: '<p>期日前に換金するために銀行へ譲渡した取引で、紙の手形でいえば<strong>割引</strong>にあたります。</p><p>電子記録債権は<strong>額面の 600,000円で消します。</strong>差額 600,000 − 588,000 ＝ <strong>12,000円</strong> が費用です。</p><p>科目は<strong>電子記録債権売却損</strong>です。構造は手形の割引とまったく同じですが、<mark>売ったのは手形ではなく電子記録債権</mark>なので、手形売却損にすると誤りになります。専用の科目が用意されています。</p><p><strong>何を売ったかで科目が機械的に決まります。</strong>手形なら手形売却損、電子記録債権なら電子記録債権売却損、売掛金なら債権売却損です。</p>'
+      },
+      {
+        text: '得意先に対する売掛金 <strong>900,000円</strong> を、資金調達のため他社に <strong>864,000円</strong> で譲渡し、代金は<strong>当座預金</strong>に振り込まれた。',
+        debit: [['当座預金', 864000], ['債権売却損', 36000]],
+        credit: [['売掛金', 900000]],
+        hint: '回収できなかった36,000円は、貸倒れでしょうか。',
+        explain: '<p>売掛金も他人に売ることができます。買い取る側は回収の手間と貸倒れのリスクを引き受けるので、<strong>額面より安い金額でしか買いません。</strong></p><p>売掛金は額面 900,000円で消し、差額 900,000 − 864,000 ＝ <strong>36,000円</strong> が<strong>債権売却損</strong>（費用）です。</p><p><strong>貸倒損失ではありません。</strong>貸倒れは「相手が払えなくなった」結果として生じる損失ですが、ここでは<mark>自分から安く売ることを選んだ結果</mark>の損失です。得意先はまだ払える状態にあります。</p><p>したがって<strong>貸倒引当金を取り崩す対象にもなりません。</strong>早く現金化するために自社が譲歩した金額だからです。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-tegata', {
+    title: '計算ドリル — 金額を出す（5問）',
+    unit: '円',
+    questions: [
+      {
+        text: '額面 <strong>1,200,000円</strong> の約束手形を、満期日までの日数 <strong>73日</strong> を残して<strong>年利率 5%</strong> で割り引いた（1年を365日とする）。<strong>割引料</strong>と<strong>手取金</strong>を求めなさい。',
+        labels: ['割引料', '手取金'],
+        answer: [12000, 1188000],
+        formula: ['1200000*0.05*73/365', '1200000-1200000*0.05*73/365'],
+        hint: '額面に年利率をかけ、日数で按分します。手取金にかけないでください。',
+        explain: '<p><strong>割引料</strong>：1,200,000 × 0.05 × 73 ÷ 365 ＝ <strong>12,000円</strong>。</p><p>73日は1年の5分の1にあたるので、1年分の利息 60,000円の5分の1と考えても同じ値になります。</p><p><strong>手取金</strong>：1,200,000 − 12,000 ＝ <strong>1,188,000円</strong>。</p><p>仕訳は「当座預金 1,188,000・手形売却損 12,000／受取手形 1,200,000」。<mark>受取手形は額面で消す</mark>点を忘れないでください。</p>'
+      },
+      {
+        text: '額面 <strong>2,400,000円</strong> の約束手形を、満期日まで <strong>3か月</strong> を残して<strong>年利率 4%</strong> で割り引いた。<strong>割引料</strong>と<strong>手取金</strong>を求めなさい。',
+        labels: ['割引料', '手取金'],
+        answer: [24000, 2376000],
+        formula: ['2400000*0.04*3/12', '2400000-2400000*0.04*3/12'],
+        hint: '今度は日数ではなく月数で与えられています。割る数が変わります。',
+        explain: '<p><strong>割引料</strong>：2,400,000 × 0.04 × 3 ÷ 12 ＝ <strong>24,000円</strong>。</p><p>期間が<strong>月数</strong>で与えられているので <strong>÷ 12</strong> です。前問のように ÷ 365 とすると値がまったく違ってしまいます。問題文が日数と月数のどちらで書いているかを必ず確認してください。</p><p><strong>手取金</strong>：2,400,000 − 24,000 ＝ <strong>2,376,000円</strong>。</p><p>なお、年利率をそのまま掛けて 96,000円としてしまうのが最も多い失点です。<strong>期間の按分を必ず入れます。</strong></p>'
+      },
+      {
+        text: '受取手形 <strong>1,050,000円</strong> が不渡となり、拒絶証書の作成費用 <strong>12,000円</strong> と期日以後の延滞利息 <strong>6,500円</strong> を現金で支払った。<strong>不渡手形</strong>として計上する金額を求めなさい。',
+        labels: ['不渡手形'],
+        answer: [1068500],
+        formula: ['1050000+12000+6500'],
+        hint: '振出人に請求できるのは、手形金額だけでしょうか。',
+        explain: '<p>1,050,000 ＋ 12,000 ＋ 6,500 ＝ <strong>1,068,500円</strong>。</p><p>拒絶証書作成費用と延滞利息は、いずれも<strong>振出人に請求できる金額</strong>です。したがって費用（支払手数料など）にせず、手形金額と一緒に不渡手形に含めます。</p><p>不渡手形の残高は<mark>振出人に請求できる総額</mark>であって、手形の額面ではありません。手形の額面のまま 1,050,000円としないでください。</p><p>仕訳は「不渡手形 1,068,500／受取手形 1,050,000・現金 18,500」です。</p>'
+      },
+      {
+        text: '不渡手形 <strong>1,068,500円</strong> が回収不能となった。この債権に対し<strong>貸倒引当金 700,000円</strong> を設定している。取り崩す<strong>貸倒引当金</strong>の金額と、計上する<strong>貸倒損失</strong>の金額を求めなさい。',
+        labels: ['貸倒引当金', '貸倒損失'],
+        answer: [700000, 368500],
+        formula: ['700000', '1068500-700000'],
+        hint: '先に使うのはどちらでしょうか。3級の貸倒れと順序は同じです。',
+        explain: '<p><strong>貸倒引当金</strong>：設定額の <strong>700,000円</strong> を全額取り崩します。この債権が貸し倒れたときのために積んであるものなので、実際に貸し倒れた以上、先に使うのが筋です。</p><p><strong>貸倒損失</strong>：1,068,500 − 700,000 ＝ <strong>368,500円</strong>。引当金で足りない分だけが費用になります。</p><p>いきなり全額 1,068,500円を貸倒損失にすると、引当金を積んだ期に計上した費用と合わせて<strong>同じ損失を二重に計上する</strong>ことになります。</p><p>逆に、引当金をまったく設定していない債権が貸し倒れた場合は、全額が貸倒損失です。<strong>問題文に引当金の記載があるかどうかを必ず確認してください。</strong></p>'
+      },
+      {
+        text: '当社は次の取引を行った。①売掛金 <strong>500,000円</strong> を <strong>485,000円</strong> で譲渡した。②電子記録債権 <strong>300,000円</strong> を <strong>294,000円</strong> で銀行に譲渡した。③買掛金 <strong>200,000円</strong> の支払いのため電子記録債権 <strong>200,000円</strong> を譲渡した。<strong>債権売却損</strong>の金額と<strong>電子記録債権売却損</strong>の金額をそれぞれ求めなさい。',
+        labels: ['債権売却損', '電子記録債権売却損'],
+        answer: [15000, 6000],
+        formula: ['500000-485000', '300000-294000'],
+        hint: '取引が3つあります。損が出ない取引が混ざっています。',
+        explain: '<p><strong>債権売却損</strong>：①の売掛金の譲渡だけが対象です。500,000 − 485,000 ＝ <strong>15,000円</strong>。</p><p><strong>電子記録債権売却損</strong>：②の換金だけが対象です。300,000 − 294,000 ＝ <strong>6,000円</strong>。</p><p>③は<strong>損が出ません。</strong>額面 200,000円の電子記録債権で額面 200,000円の買掛金を消しているだけだからです。<mark>損が出るのは期日前に現金化したときだけ</mark>で、支払いに充てた場合は金額がそのまま動くだけです。</p><p>科目は<strong>何を売ったかで決まります。</strong>売掛金なら債権売却損、電子記録債権なら電子記録債権売却損。②を債権売却損にまとめたり、手形売却損にしたりすると誤りです。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-tegata', {
+    title: '確認テスト — 科目と分岐の判断（7問）',
+    questions: [
+      {
+        text: '<strong>文房具の製造販売を営む当社</strong>が、営業所で使用する応接セットを購入し、代金として約束手形を振り出しました。このとき使用する科目として正しいものはどれですか。',
+        choices: [
+          '支払手形',
+          '営業外支払手形',
+          '未払金'
+        ],
+        answer: 1,
+        explain: '<p>当社の本業は文房具の製造販売です。応接セットの購入は<strong>商品の仕入ではなく、備品の購入</strong>なので営業取引にあたりません。したがって<strong>営業外支払手形</strong>（負債）を使います。</p><p>3級で、商品を掛けで仕入れれば買掛金、備品を買って代金が未払いなら未払金と分けたのと同じ理由です。支払手形の残高が「商品を仕入れて手形で払った額」を表すためには、備品の代金を混ぜられません。</p><p>未払金は<strong>手形を振り出していない場合</strong>の科目です。今回は約束手形を振り出しているので、受け皿は営業外支払手形になります。</p>'
+      },
+      {
+        text: '手形の更改において、<strong>利息を新手形の額面に含めた</strong>場合と、<strong>利息を現金で別に支払った</strong>場合とで異なるのはどれですか。',
+        choices: [
+          '消去する旧手形の金額',
+          '利息として計上する金額',
+          '新たに計上する手形の金額'
+        ],
+        answer: 2,
+        explain: '<p>どちらのパターンでも、<strong>消す旧手形の金額</strong>（もとの額面）と<strong>利息の金額</strong>は変わりません。違うのは<mark>新手形の額面を旧額面のままにするか、利息を加えた金額にするか</mark>だけです。</p><p>利息を現金で受け払いするなら、手形の金額には触れないので新手形は旧額面と同じです。利息を新手形に含めるなら、新手形の額面は「旧額面 ＋ 利息」になります。</p><p>判定は問題文の一文で決まります。「利息は現金で支払った」ならパターン①、「利息を含めた額面の新手形を振り出した」ならパターン②です。</p>'
+      },
+      {
+        text: '手形が不渡となり、拒絶証書の作成費用を当社が現金で支払いました。この費用の処理として正しいものはどれですか。',
+        choices: [
+          '支払手数料として費用処理する',
+          '不渡手形の金額に含める',
+          '手形売却損として費用処理する'
+        ],
+        answer: 1,
+        explain: '<p>拒絶証書の作成費用は<strong>振出人に請求できる金額</strong>です。請求できるものは費用ではなく債権なので、手形金額と一緒に<strong>不渡手形</strong>（資産）に含めます。</p><p>「自社が払ったのだから費用」と考えると落とします。判断の軸は<mark>誰に請求できるか</mark>であって、誰がいま払ったかではありません。</p><p>したがって不渡手形の残高は、手形の額面ではなく<strong>振出人に請求できる総額</strong>（手形金額 ＋ 諸費用 ＋ 期日以後の利息）になります。手形売却損は手形を割り引いたときの割引料に使う科目であり、この場面とは無関係です。</p>'
+      },
+      {
+        text: '所有する約束手形を<strong>買掛金の支払いのために裏書譲渡</strong>した場合と、<strong>銀行で割り引いた</strong>場合の違いとして正しいものはどれですか。',
+        choices: [
+          '裏書譲渡では受取手形を消さないが、割引では消す',
+          'どちらも受取手形を額面で消すが、割引では額面を下回る対価を受け取るため差額が費用になる',
+          '裏書譲渡では手形売却損が生じるが、割引では生じない'
+        ],
+        answer: 1,
+        explain: '<p>どちらの取引でも手形は手元を離れるので、<strong>受取手形は額面で消します。</strong>ここは共通です。</p><p>違うのは受け取る対価です。裏書譲渡は<strong>額面どおりの金額で買掛金を消している</strong>ので差額が生じず、損益は発生しません。割引は<strong>期日前に現金化する対価として額面を下回る手取金を受け入れる</strong>ので、差額が<strong>手形売却損</strong>（費用）になります。</p><p>この一点で両者を見分けられます。<mark>損が出るのは換金したときだけ</mark>です。</p>'
+      },
+      {
+        text: '手形の割引において、銀行が額面より少ない金額しか支払わない理由として正しいものはどれですか。',
+        choices: [
+          '手形の振出人が倒産する確率を見積もって、その分を貸倒引当金として差し引いているため',
+          '実質的に手形を担保として満期日まで資金を貸しているため、その期間の利息に相当する額を先に差し引いているため',
+          '手形の額面には消費税が含まれており、銀行が消費税相当額を控除するため'
+        ],
+        answer: 1,
+        explain: '<p>銀行は、満期日が来るまで資金を寝かせたうえで手形金額を回収します。額面どおりの金額を今日支払えば、銀行に何の利益もありません。</p><p>実質的には<mark>手形を担保に満期日まで資金を貸している</mark>のと同じであり、その期間の利息に相当する金額を額面から差し引きます。これが<strong>割引料</strong>です。だからこそ「額面 × 年利率 × 期間」という利息と同じ式で計算できます。</p><p>「割引」という語は商品の値引きとは無関係で、<strong>期日までの利息を前もって引いておく</strong>という意味です。なお、手元に残るリスクの扱いとして保証債務を計上する処理は1級の範囲であり、2級の答案には登場しません。</p>'
+      },
+      {
+        text: '売掛金を額面より低い金額で他社に譲渡したときに生じる差額の処理として正しいものはどれですか。',
+        choices: [
+          '債権売却損として費用処理する。貸倒引当金は取り崩さない',
+          '貸倒損失として費用処理する。ただし貸倒引当金があれば先に取り崩す',
+          '手形売却損として費用処理する'
+        ],
+        answer: 0,
+        explain: '<p>差額は<strong>債権売却損</strong>（費用）です。売掛金は額面で消し、受け取った金額との差額を計上します。</p><p><strong>貸倒れではありません。</strong>貸倒れは「相手が払えなくなった」結果として生じる損失ですが、こちらは<mark>早く現金化するために自社から安く売ることを選んだ結果</mark>の損失です。得意先はまだ払える状態にあるので、貸倒引当金を取り崩す対象にもなりません。</p><p>手形売却損は手形を割り引いたときの科目です。<strong>何を売ったかで科目が決まる</strong>ので、売掛金を売ったなら債権売却損、電子記録債権を売ったなら電子記録債権売却損になります。</p>'
+      },
+      {
+        text: '電子記録債権を<strong>買掛金の支払いのために譲渡</strong>した場合、電子記録債権売却損はいくら計上されますか。なお、買掛金と電子記録債権の額面は同額とします。',
+        choices: [
+          '電子記録債権の額面の全額',
+          '買掛金と電子記録債権の額面の差額',
+          '計上されない（0円）'
+        ],
+        answer: 2,
+        explain: '<p>額面どおりの金額で買掛金を消しているだけなので、<strong>差額が生じず、損益は発生しません。</strong>紙の手形でいえば裏書譲渡にあたる取引です。</p><p>仕訳は「買掛金 ×××／電子記録債権 ×××」の1行だけになります。</p><p>電子記録債権売却損が生じるのは、<mark>期日前に銀行などへ換金したとき</mark>——つまり額面より少ない金額しか受け取れなかったときだけです。問題文が「支払いのため」と書いているか「譲渡して入金された」と書いているかで見分けます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-tegata', {
+    title: '穴埋め — 用語と科目を書けるようにする（8問）',
+    questions: [
+      {
+        text: '固定資産の購入など、自社にとって営業取引以外の取引で約束手形を振り出したときに用いる<strong>負債</strong>の勘定科目は何ですか。',
+        answer: ['営業外支払手形', 'えいぎょうがいしはらいてがた'],
+        explain: '<p>支払手形の残高が「商品を仕入れて手形で払い、まだ期日が来ていない額」を表すために、営業取引以外のものを分けます。買掛金と未払金を分けるのとまったく同じ理由です。受け取る側なら営業外受取手形になります。</p>'
+      },
+      {
+        text: '支払期日に資金が足りないため、相手の承諾を得て古い手形を破棄し、期日を延ばした新しい手形を振り出し直すことを何といいますか。',
+        answer: ['手形の更改', '更改', '手形の書換え', '書換え', 'てがたのこうかい', 'こうかい'],
+        explain: '<p>手形の書換えともいいます。受け取る側は本来もらえる日に資金が入らないため、延長期間ぶんの利息を受け取ります。利息を現金で受け払いするか、新手形の額面に含めるかの2パターンがあり、違うのは<strong>新手形の額面だけ</strong>です。</p>'
+      },
+      {
+        text: '手形が満期日に決済されなかったとき、その手形の所持人が振出人などに対して手形金額や諸費用の支払いを求めることを何といいますか。',
+        answer: ['償還請求', 'しょうかんせいきゅう'],
+        explain: '<p>請求できるのは手形金額だけではなく、拒絶証書の作成費用や期日以後の利息も含まれます。これらは振出人に請求できる金額なので費用にせず、手形金額と一緒に不渡手形に含めます。</p>'
+      },
+      {
+        text: '満期日に決済されなかった手形について、振出人に請求できる総額を、通常の受取手形と区別して計上する<strong>資産</strong>の勘定科目は何ですか。',
+        answer: ['不渡手形', 'ふわたりてがた'],
+        explain: '<p>請求する権利そのものは消えないので資産のままですが、期日どおりに回収できる手形とは危うさがまったく違うため、別の科目に移します。決算では回収可能性の低い債権として個別に貸倒引当金を見積もる対象になります。</p>'
+      },
+      {
+        text: '所有する手形の裏面に署名して他人に渡し、買掛金などの支払いに充てることを何といいますか。',
+        answer: ['裏書譲渡', '裏書', 'うらがきじょうと', 'うらがき'],
+        explain: '<p>受け取った側は期日が来ればその手形で回収できるので、現金と同じ価値があります。額面どおりの金額で負債を消しているだけなので<strong>損益は発生しません</strong>。この点が割引との決定的な違いです。</p>'
+      },
+      {
+        text: '満期日前の手形を銀行に買い取ってもらって換金したとき、額面から差し引かれた金額を計上する<strong>費用</strong>の勘定科目は何ですか。',
+        answer: ['手形売却損', 'てがたばいきゃくそん'],
+        explain: '<p>実質は満期日までの利息ですが、形式上は手形という資産を額面より安く売却した形を取るため、この名前になっています。<strong>支払利息と書くと誤りです。</strong>受取手形は額面で消し、手取金との差額をこの科目にします。</p>'
+      },
+      {
+        text: '電子記録債権を額面より低い金額で銀行などに譲渡して換金したとき、その差額を計上する<strong>費用</strong>の勘定科目は何ですか。',
+        answer: ['電子記録債権売却損', 'でんしきろくさいけんばいきゃくそん'],
+        explain: '<p>構造は手形の割引とまったく同じですが、売ったのは手形ではないので専用の科目を使います。手形売却損と書くと誤りです。なお、買掛金の支払いに充てた場合は差額が生じないため、この科目は登場しません。</p>'
+      },
+      {
+        text: '売掛金などを額面より低い金額で他社に譲渡したとき、その差額を計上する<strong>費用</strong>の勘定科目は何ですか。',
+        answer: ['債権売却損', 'さいけんばいきゃくそん'],
+        explain: '<p>貸倒損失ではありません。貸倒れは相手が払えなくなった結果の損失ですが、こちらは早く現金化するために自社から安く売ることを選んだ結果の損失です。相手はまだ払える状態にあるため、貸倒引当金を取り崩す対象にもなりません。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

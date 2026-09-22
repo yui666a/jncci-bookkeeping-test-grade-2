@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第二-7-ア,商-第二-7-イ,商-第二-7-ウ,商-第二-7-エ,商-第二-7-オ">
+<meta name="boki-subject" content="商">
+<title>引当金 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 09 引当金</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W3 商業簿記 ／ UNIT 09 ／ 3時間</p>
+    <h1>引当金<br>— 貸倒引当金の個別評価と一括評価、その他の引当金</h1>
+    <p class="lead">3級で習った貸倒引当金は、引当金という大きな仕組みのひとつの例にすぎません。2級では<strong>同じ考え方で作られた引当金が5種類</strong>出てきます。ばらばらに暗記すると必ず崩れるので、まず「なぜ来年払う金を今年の費用にするのか」という1本の原理を押さえ、そこから各引当金を派生として見ていきます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 15問</span>
+      <span class="chip">計算・確認テスト・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">なぜ来年の支出を今年の費用にするのか</a></li>
+      <li><a href="#s2">引当金の4要件 — 1つでも欠けたら計上しない</a></li>
+      <li><a href="#s3">評価性引当金と負債性引当金</a></li>
+      <li><a href="#s4">貸倒引当金 — 3級から何が増えるのか</a></li>
+      <li><a href="#s5">一括評価と個別評価を足し合わせる</a></li>
+      <li><a href="#s6">営業債権と営業外債権 — 損益計算書の区分が分かれる</a></li>
+      <li><a href="#s7">商品保証引当金 — 設定・取崩し・戻入</a></li>
+      <li><a href="#s8">退職給付引当金</a></li>
+      <li><a href="#s9">修繕引当金 — 資本的支出との区別</a></li>
+      <li><a href="#s10">賞与引当金</a></li>
+      <li><a href="#s11">5つの引当金を1枚に整理する</a></li>
+      <li><a href="#s12">仕訳ドリル 15問</a></li>
+      <li><a href="#s13">計算ドリル・確認テスト・穴埋め</a></li>
+      <li><a href="#s14">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>なぜ来年の支出を今年の費用にするのか</h2>
+
+  <p>家電量販店が3月に冷蔵庫を売り、「5年間の保証をお付けします」と約束したとします。売上は3月に立ちました。ところが、故障して修理費がかかるのは来年かもしれないし、3年後かもしれません。</p>
+
+  <p>修理費を「実際に払った年の費用」にすると、何が起きるでしょうか。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>売った年（今年）</h3>
+      <p class="small">売上だけが計上される。修理費はゼロ。<strong>利益が実力より大きく見える。</strong></p>
+    </div>
+    <div class="card">
+      <h3>修理した年（来年以降）</h3>
+      <p class="small">修理費だけが計上される。その商品の売上はもう計上済み。<strong>利益が実力より小さく見える。</strong></p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">収益と費用が別の年度にちぎれてしまう</span>
+    <p>保証付きで売るという商売は、<strong>「売って代金をもらう」と「あとで修理する」がセットで1つ</strong>です。それなのに収益だけ今年、費用だけ来年に載ると、どちらの年度の利益も会社の実力を表しません。</p>
+    <p>この「原因が起きた年度に、その結果である費用も載せる」という考え方を<span class="term"><span class="term__w">費用収益対応の原則</span><span class="term__r">ひようしゅうえきたいおうのげんそく</span></span>といいます。引当金はこの原則を、<strong>まだ支払いが起きていない場面にまで押し広げる</strong>ための道具です。</p>
+  </div>
+
+  <p>やることは2つだけです。</p>
+
+  <ol class="steps">
+    <li><strong>将来かかりそうな金額を見積もり、当期の費用として計上する</strong><br>科目名は「◯◯引当金繰入」。費用（P/L）です。</li>
+    <li><strong>同額を、将来払う義務の見込みとして貸方に置く</strong><br>科目名は「◯◯引当金」。負債または資産の控除項目（B/S）です。</li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、商品保証費用 300,000円を見積もって引き当てた</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">商品保証引当金繰入</td><td class="d amt">300,000</td><td class="c">商品保証引当金</td><td class="c amt">300,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>現金は1円も動いていません。それでも当期の利益は 300,000円 減ります。<mark>引当金とは「まだ出ていない金を、出たことにして利益から先に引いておく」仕組み</mark>だと考えてください。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「引当金を積む」は貯金ではない</span>
+    <p>引当金を計上しても、その金額の現金がどこかに取り分けられるわけではありません。<strong>会社の銀行口座の残高は1円も変わりません。</strong></p>
+    <p>引当金は、<strong>利益の計算を正しくするための帳簿上の操作</strong>です。「将来の支払いに備えて現金を準備した」という意味には一切なりません。実際に修理費を払う段になって現金が足りない、ということは普通に起こります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>引当金の4要件 — 1つでも欠けたら計上しない</h2>
+
+  <p>「将来かかりそうだから今年の費用にしてよい」という理屈を無制限に認めると、困ったことになります。<strong>利益が出すぎた年に架空の引当金を積んで利益を圧縮する</strong>、といった操作が自由にできてしまうからです。</p>
+
+  <p>そこで、引当金を計上してよい場面は4つの条件で縛られています。<strong>4つすべてを満たしたときだけ計上でき、1つでも欠けたら計上してはいけません。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>要件</th><th>意味</th><th>欠けるとどうなるか</th></tr></thead>
+      <tbody>
+        <tr><td class="d">① 将来の費用または損失である</td><td>支出そのものは来期以降に起きる</td><td>すでに起きているなら、普通に費用計上すればよい</td></tr>
+        <tr><td class="d">② 発生原因が当期以前の事象にある</td><td>当期に売った・当期に働いてもらった、といった原因が済んでいる</td><td>来期の営業活動が原因なら、来期の費用</td></tr>
+        <tr><td class="d">③ 発生の可能性が高い</td><td>「起こるかもしれない」ではなく、起こると見込まれる</td><td>可能性が低いものまで積むと、利益操作になる</td></tr>
+        <tr><td class="d">④ 金額を合理的に見積ることができる</td><td>過去の実績率などの根拠がある</td><td>根拠のない数字は、見積りではなくただの数字</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">②が「当期以前の事象」である意味</span>
+    <p>4要件のうち、判断が分かれるのは②です。</p>
+    <p>たとえば「来期に新店舗を出すので、その開店費用を今期に引き当てる」はできません。新店舗を出すという行為は<strong>来期の営業活動</strong>であり、当期に原因が存在しないからです。</p>
+    <p>いっぽう商品保証は、<strong>当期に保証付きで売った</strong>という事実が当期に完結しています。修理が来期になるだけで、原因は当期にある。だから引き当てられます。<mark>「もう起きてしまったことの後始末か、それともこれからやることか」</mark>が分かれ目です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で出会う引当金は、すべて4要件を満たしている</span>
+    <p>この単元で扱う5つ（貸倒・商品保証・退職給付・修繕・賞与）は、いずれも4要件を満たす典型例として教科書に載っているものです。<strong>試験で「この引当金は計上してよいか」を一から判定させる問題は出ません。</strong></p>
+    <p>4要件を覚える目的は、各引当金がなぜそこに存在するのかを説明できるようにすることと、<strong>「4つ挙げよ」という形の問題に答えられるようにすること</strong>です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>評価性引当金と負債性引当金</h2>
+
+  <p>引当金は、貸借対照表のどこに載るかで2つに分かれます。この区別は<strong>第3問（財務諸表）で表示位置を問われる</strong>ため、早い段階で分けておきます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 700 300" style="width:100%;height:auto;min-width:560px" role="img" aria-label="貸倒引当金は資産の部で売掛金から控除する形で表示され、その他の引当金は負債の部に表示されることを示す図。">
+      <g font-size="13" fill="var(--text)">
+        <text x="20" y="28" font-size="14" font-weight="700">貸借対照表</text>
+
+        <!-- 資産の部 -->
+        <rect x="20" y="45" width="310" height="230" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="175" y="70" text-anchor="middle" font-size="13.5" font-weight="700">資産の部</text>
+        <rect x="40" y="88" width="270" height="92" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="6"/>
+        <text x="60" y="112" font-size="12.5">売掛金　　　　　　　　 3,000,000</text>
+        <text x="60" y="136" font-size="12.5" fill="var(--muted)">貸倒引当金　　　　　 △ 60,000</text>
+        <line x1="60" y1="146" x2="290" y2="146" stroke="var(--border-2)" stroke-width="1"/>
+        <text x="60" y="168" font-size="12.5" font-weight="700">　　　　　　　　　　 2,940,000</text>
+        <text x="175" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">評価性引当金</text>
+        <text x="175" y="228" text-anchor="middle" font-size="12" fill="var(--muted)">資産から差し引く形で表示する</text>
+        <text x="175" y="250" text-anchor="middle" font-size="12" fill="var(--muted)">（貸倒引当金）</text>
+
+        <!-- 負債の部 -->
+        <rect x="360" y="45" width="320" height="230" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="520" y="70" text-anchor="middle" font-size="13.5" font-weight="700">負債の部</text>
+        <rect x="380" y="88" width="280" height="92" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="398" y="110" font-size="12.5">商品保証引当金</text>
+        <text x="398" y="130" font-size="12.5">修繕引当金</text>
+        <text x="398" y="150" font-size="12.5">賞与引当金</text>
+        <text x="398" y="170" font-size="12.5">退職給付引当金</text>
+        <text x="520" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="var(--warn)">負債性引当金</text>
+        <text x="520" y="228" text-anchor="middle" font-size="12" fill="var(--muted)">負債として独立の科目で表示する</text>
+        <text x="520" y="250" text-anchor="middle" font-size="12" fill="var(--muted)">（貸倒引当金以外のすべて）</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">2級で扱う引当金のうち、<strong>評価性引当金は貸倒引当金だけ</strong>です。残りはすべて負債性引当金なので、「貸倒引当金かそれ以外か」で覚えれば足ります。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ貸倒引当金だけ扱いが違うのか</span>
+    <p>貸倒引当金は「誰かに金を払う義務」ではありません。<strong>売掛金 3,000,000円のうち 60,000円は取れそうにない</strong>という、<mark>資産の金額の訂正</mark>です。払う相手がいないのだから、負債にはなりえません。</p>
+    <p>いっぽう商品保証引当金は、修理業者や顧客に対して<strong>将来おカネかサービスを提供する義務</strong>です。相手が存在するので負債です。</p>
+    <p>退職給付引当金も同じで、従業員に退職金を払う義務ですから負債です。<strong>「払う相手がいるか」で分けられます。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>貸倒引当金 — 3級から何が増えるのか</h2>
+
+  <p>3級では、期末の売掛金・受取手形の合計に一定率を掛けて貸倒引当金を計算しました。既存の残高との差額だけを繰り入れる<strong>差額補充法</strong>も習っています。2級でもこの計算と仕訳はそのまま使います。</p>
+
+  <p>2級で上乗せされるのは次の2つです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>① 債権を2つのグループに分ける</h3>
+      <p class="small">普通に回収できそうな債権と、相手の経営が危ない債権とを分け、<strong>別々の方法で見積もる</strong>（一括評価と個別評価）。</p>
+    </div>
+    <div class="card">
+      <h3>② 繰入額をP/Lの2箇所に振り分ける</h3>
+      <p class="small">売掛金に対する繰入と貸付金に対する繰入とでは、<strong>損益計算書に載る区分が違う</strong>。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ一律の実績率ではいけないのか</span>
+    <p>貸倒実績率は、過去に貸し倒れた割合の平均です。たとえば2％なら、100社に売れば2社が倒れる、という平均の話です。</p>
+    <p>ところがその100社のうち1社が、<strong>すでに手形の不渡りを出して倒産寸前</strong>だったとします。この1社にも「平均2％」を当てはめるのは明らかにおかしい。その1社だけは、<mark>平均ではなく、その相手の状況を見て個別に見積もる</mark>べきです。</p>
+    <p>これが個別評価の発想です。<strong>ひとまとめにできる相手はまとめ、事情が特殊な相手だけ切り出す。</strong></p>
+  </div>
+
+  <h3>一括評価 — 平均でまとめて見積もる</h3>
+
+  <p>特に問題のない一般の債権は、まとめて<strong>貸倒実績率</strong>を掛けます。3級でやったことと同じです。</p>
+
+  <p class="small muted">債権の区分を厳密に定義し、財務内容評価法・キャッシュ・フロー見積法で計算するのは1級の範囲です。2級では、問題文が「一般債権は◯％」「A社に対する債権は個別に◯％」と指示してくるので、その指示どおりに計算します。</p>
+
+  <h3>個別評価 — 相手ごとに見積もる</h3>
+
+  <p>経営が悪化して回収が危ぶまれる相手（<span class="term"><span class="term__w">貸倒懸念債権</span><span class="term__r">かしだおれけねんさいけん</span></span>）については、その債権だけを取り出して、高い率を掛けます。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">担保があるときは、担保の分を引いてから率を掛ける</span>
+    <p>個別評価の問題では、しばしば<strong>「担保処分見込額」</strong>が与えられます。担保として不動産などを押さえてあるなら、相手が倒れてもその分は回収できます。<mark>回収できる見込みのある部分に貸倒れの心配はない</mark>ので、そこを除いてから率を掛けます。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>与えられる条件</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">B社に対する売掛金</td><td class="amt">800,000</td></tr>
+          <tr><td class="d">うち担保処分見込額</td><td class="amt">300,000</td></tr>
+          <tr><td class="d">貸倒設定率</td><td class="amt">50％</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>計算は（800,000 − 300,000）× 50％ ＝ <strong>250,000円</strong> です。800,000 × 50％ ＝ 400,000円 としないこと。<strong>担保を引き忘れる誤りは、金額が大きくずれるうえ本人は気づきません。</strong>問題文に担保の記述があったら、率を掛ける前に必ず引いてください。</p>
+  </div>
+
+  <h3>不渡手形は、個別評価の代表例</h3>
+
+  <p>個別評価の対象は売掛金だけではありません。<strong>UNIT 08 で扱った<span class="term"><span class="term__w">不渡手形</span><span class="term__r">ふわたりてがた</span></span>が、その代表例</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ不渡手形が個別評価になるのか</span>
+    <p>不渡手形は、支払期日に決済されなかった手形を、普通の受取手形から切り離した科目でした。<strong>切り離した理由がそのまま、個別評価する理由になります。</strong></p>
+    <p>一度不渡りを出した相手は、すでに「平均的に2％が貸し倒れる母集団」の一員ではありません。回収できない可能性が目の前で現実になった相手です。<mark>そこへ一般の貸倒実績率を当てはめるのは、実態から離れすぎています。</mark></p>
+    <p>受取手形として他の手形に紛れたままだと、この区別ができません。だから科目を分けておき、決算で個別に見積もるのです。</p>
+  </div>
+
+  <p>計算の形は売掛金の個別評価とまったく同じです。差し入れられた不動産などがあれば、その<strong>担保処分見込額</strong>を債権額から引いてから率を掛けます。2級の問題文はこの金額を「担保処分見込額」という語で与えてくるので、それをそのまま控除してください。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>与えられる条件</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">F社に対する不渡手形</td><td class="amt">1,200,000</td></tr>
+        <tr><td class="d">うち担保処分見込額</td><td class="amt">450,000</td></tr>
+        <tr><td class="d">貸倒設定率</td><td class="amt">60％</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>（1,200,000 − 450,000）× 60％ ＝ <strong>450,000円</strong>。担保処分見込額と答えがたまたま同額になりますが、別の数字です。<strong>引いてから掛ける</strong>という順序は売掛金のときと変わりません。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">不渡手形は営業債権として扱う</span>
+    <p>不渡手形はもともと<strong>受取手形</strong>、つまり商品を売った代金として受け取った手形です。不渡りになって科目が変わっても、<mark>その債権が本業の売上から生じたという性質は変わりません。</mark></p>
+    <p>したがって不渡手形に対する貸倒引当金繰入は、損益計算書の<strong>販売費及び一般管理費</strong>に載ります。科目名が受取手形でなくなったことに引きずられて営業外費用にしないでください。</p>
+    <p class="small muted">ただし、貸付金が回収できなくなって受け取った手形が不渡りになった、というように<strong>もとが営業外債権</strong>であれば営業外費用です。判定はつねに「その債権が商品・サービスを売った代金かどうか」で行います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>一括評価と個別評価を足し合わせる</h2>
+
+  <p>期末に計上すべき貸倒引当金の額は、<strong>2つの評価額の合計</strong>です。そして仕訳に書く金額は、その合計から<strong>すでにある引当金の残高を引いた差額</strong>です（差額補充法）。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">手順は必ずこの3段階で書く</span>
+    <ol class="steps">
+      <li><strong>一括評価の分を計算する</strong><br>（債権合計 − 個別評価する債権）× 貸倒実績率</li>
+      <li><strong>個別評価の分を計算する</strong><br>（個別評価する債権 − 担保処分見込額）× 個別の設定率</li>
+      <li><strong>①＋② から期末の引当金残高を引く</strong><br>この差額が「貸倒引当金繰入」の金額</li>
+    </ol>
+    <p>①で<strong>個別評価する債権を債権合計から除く</strong>のを忘れると、その相手の債権に一括の率と個別の率が二重に掛かります。合計額はわずかに大きくなるだけなので、検算しても違和感が出ません。</p>
+  </div>
+
+  <h3>具体例</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>資料</th><th class="amt">金額・率</th></tr></thead>
+      <tbody>
+        <tr><td class="d">期末の売掛金残高（合計）</td><td class="amt">5,000,000</td></tr>
+        <tr><td class="d">うちC社に対する売掛金（貸倒懸念債権）</td><td class="amt">1,000,000</td></tr>
+        <tr><td class="d">C社の債権に対する担保処分見込額</td><td class="amt">400,000</td></tr>
+        <tr><td class="d">C社に対する債権の貸倒設定率（個別評価）</td><td class="amt">50％</td></tr>
+        <tr><td class="d">その他の債権の貸倒実績率（一括評価）</td><td class="amt">2％</td></tr>
+        <tr><td class="d">貸倒引当金の期末残高</td><td class="amt">90,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>一括評価</strong>：（5,000,000 − 1,000,000）× 2％ ＝ <strong>80,000円</strong><br>C社の分を先に抜いてから率を掛けます。</li>
+    <li><strong>個別評価</strong>：（1,000,000 − 400,000）× 50％ ＝ <strong>300,000円</strong><br>担保処分見込額を引いてから率を掛けます。</li>
+    <li><strong>設定すべき残高</strong>：80,000 ＋ 300,000 ＝ <strong>380,000円</strong></li>
+    <li><strong>繰入額</strong>：380,000 − 90,000 ＝ <strong>290,000円</strong></li>
+  </ol>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、貸倒引当金を差額補充法により設定した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">貸倒引当金繰入</td><td class="d amt">290,000</td><td class="c">貸倒引当金</td><td class="c amt">290,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">設定額のほうが残高より小さいときは「戻入」になる</span>
+    <p>設定すべき残高が 380,000円 ではなく 60,000円で、既存残高が 90,000円 だったとします。このときは引当金が積みすぎの状態なので、<strong>差額 30,000円を減らします。</strong></p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>設定額 60,000円に対し、貸倒引当金の残高が 90,000円ある場合</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">貸倒引当金</td><td class="d amt">30,000</td><td class="c">貸倒引当金戻入</td><td class="c amt">30,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>貸方の<strong>貸倒引当金戻入</strong>は収益です。繰入の仕訳と借方・貸方がそっくり入れ替わります。<mark>差額補充法は「足りなければ足す、多ければ戻す」の両方向</mark>であって、増やす方向専用ではありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>営業債権と営業外債権 — 損益計算書の区分が分かれる</h2>
+
+  <p>ここが2級で新しく問われる、もう1つの上乗せです。貸倒引当金繰入は、<strong>どの債権に対する繰入かによって、損益計算書のどこに載るかが変わります。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>債権の種類</th><th>具体例</th><th>P/Lの区分</th></tr></thead>
+      <tbody>
+        <tr><td class="d">営業債権</td><td>売掛金、受取手形、電子記録債権（売上取引から生じたもの）</td><td><strong>販売費及び一般管理費</strong></td></tr>
+        <tr><td class="c">営業外債権</td><td>貸付金、未収入金</td><td><strong>営業外費用</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ区分を分けるのか</span>
+    <p>損益計算書は、利益を<strong>段階ごとに</strong>計算します。売上総利益、営業利益、経常利益——と順に積み上がる構造です。</p>
+    <p>このうち<strong>営業利益は「本業でどれだけ稼いだか」</strong>を表します。商品を売った代金が回収できない見込みは、本業に付随して必ず起こることなので、営業利益の計算に含めるべきです。だから販売費及び一般管理費に入ります。</p>
+    <p>いっぽう他社にお金を貸して回収できない見込みは、<strong>本業とは関係のない、資金運用上の損</strong>です。これを営業利益から引くと「本業の稼ぐ力」がゆがみます。だから営業外費用に入れ、営業利益を計算し終えたあとで引きます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">仕訳の科目は同じ。分かれるのは表示だけ</span>
+    <p>営業債権に対する繰入も営業外債権に対する繰入も、<strong>仕訳で使う科目はどちらも「貸倒引当金繰入／貸倒引当金」</strong>です。仕訳の段階では区別がつきません。</p>
+    <p>分かれるのは<strong>損益計算書を作るとき</strong>です。第3問で財務諸表を作らされるときに、「貸倒引当金繰入」という1つの合計額を、<mark>販売費及び一般管理費の行と営業外費用の行に分けて書く</mark>必要があります。</p>
+    <p>したがって、決算整理で貸倒引当金を計算するときは<strong>営業債権の分と営業外債権の分を最初から別々に計算しておく</strong>のが正解です。合計してしまうと、あとから分けられません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">未収入金は営業外債権</span>
+    <p>未収入金は「売掛金に似た名前の資産」ですが、<strong>商品以外のものを売った代金の未回収額</strong>です。本業の売上から生じたものではないので営業外債権です。</p>
+    <p>判定は科目名ではなく<strong>「商品・サービスを売った代金かどうか」</strong>で行います。売掛金・受取手形・電子記録債権（売上から生じたもの）が営業債権、貸付金・未収入金が営業外債権、という対応をそのまま覚えて構いません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>商品保証引当金 — 設定・取崩し・戻入</h2>
+
+  <p>第1節の冷蔵庫の例がこれです。商品に保証を付けて販売した場合、<strong>将来の修理費を当期の費用として見積計上します。</strong>製造業なら「製品保証引当金」になりますが、処理は同じです。</p>
+
+  <p>この引当金は<strong>3つの場面</strong>で仕訳が出ます。この3つを順に追えるかどうかが、すべての負債性引当金に共通する理解の核になります。</p>
+
+  <h3>場面① 決算で設定する</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、当期の売上高に対して 1％の商品保証引当金を設定する（当期売上高 40,000,000円）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">商品保証引当金繰入</td><td class="d amt">400,000</td><td class="c">商品保証引当金</td><td class="c amt">400,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>場面② 翌期に実際の修理が発生した</h3>
+
+  <p>翌期になり、保証期間中の商品について修理を行い、費用 250,000円を現金で支払いました。ここが引当金のいちばんの山場です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ修理費（費用）としないのか</span>
+    <p>この 250,000円は、<strong>すでに前期の費用として計上済み</strong>です。前期末に「商品保証引当金繰入 400,000」として利益から引いてあります。</p>
+    <p>ここでもう一度費用にすると、<mark>同じ支出を2年続けて費用にする二重計上</mark>になります。だから当期は費用にせず、<strong>前期に積んでおいた引当金を取り崩す</strong>のです。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>前期に販売した商品の保証修理を行い、250,000円を現金で支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">商品保証引当金</td><td class="d amt">250,000</td><td class="c">現金</td><td class="c amt">250,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>借方に引当金を書くことで負債が減り、貸方で現金が減ります。<strong>当期の損益は1円も動きません。</strong>それが「前期に費用処理済み」ということの意味です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">引当金の残高を超えた分だけは、当期の費用になる</span>
+    <p>引当金は見積りですから、実際の修理費が見積りを超えることがあります。引当金残高 400,000円に対し、修理費が 470,000円かかった場合です。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <caption>保証修理 470,000円を現金で支払った（商品保証引当金の残高は 400,000円。超過額は修繕費とする）</caption>
+        <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+        <tbody>
+          <tr><td class="d">商品保証引当金</td><td class="d amt">400,000</td><td class="c">現金</td><td class="c amt">470,000</td></tr>
+          <tr><td class="d">修繕費</td><td class="d amt">70,000</td><td class="c"></td><td class="c amt"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>引当金は<strong>残高の限度までしか取り崩せません。</strong>マイナス残高の負債という状態は存在しないからです。超過した 70,000円は前期に費用処理していない分なので、当期の費用になります。</p>
+    <p class="small muted">超過分をどの費用科目で処理するかは<strong>問題文が指示します。</strong>修繕費のほか、その支出の性質に応じた費用科目が指定されることもあります。自分で科目を決める場面ではありません。</p>
+  </div>
+
+  <h3>場面③ 保証期間が過ぎ、引当金が余った</h3>
+
+  <p>保証期間が経過すれば、もう修理を求められることはありません。それでも引当金が残っている場合、<strong>その負債はもはや存在しない</strong>ので消します。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>保証期間が経過したため、商品保証引当金の残高 150,000円を取り崩す</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">商品保証引当金</td><td class="d amt">150,000</td><td class="c">商品保証引当金戻入</td><td class="c amt">150,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>貸方の<strong>商品保証引当金戻入</strong>は収益です。<strong>前期に積みすぎた費用を、当期に返してもらう</strong>という意味の収益であり、商売で儲けたわけではありません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">取崩しと戻入は「貸方が何か」で見分ける</span>
+    <p>場面②と場面③は、どちらも借方に引当金を書いて負債を減らします。違うのは貸方です。</p>
+    <ul>
+      <li><strong>実際に支出した</strong> → 貸方は現金・当座預金など。<mark>お金が出ていく</mark></li>
+      <li><strong>不要になった</strong> → 貸方は◯◯引当金戻入（収益）。<mark>お金は動かない</mark></li>
+    </ul>
+    <p>問題文が「修理を行い支払った」と言っていれば②、「保証期間が経過した」「不要となった」と言っていれば③です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>退職給付引当金</h2>
+
+  <p>従業員が退職するとき、会社は退職金を払います。この退職金は、退職した年に突然発生したものではありません。<strong>その従業員が在職中ずっと働いてくれたことへの報酬</strong>が、退職時にまとめて支払われるだけです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">退職金は「勤務した各年度の費用」である</span>
+    <p>30年勤めた従業員に 2,000万円の退職金を払うとして、これを退職した年の費用にすると、その年だけが2,000万円の損を背負います。しかし会社がその従業員の労働から利益を得ていたのは、<strong>30年間ずっと</strong>です。</p>
+    <p>だから、<mark>従業員が1年働くたびに、その年の退職金相当額を費用として計上していく</mark>のが正しい姿です。費用の科目は<strong>退職給付費用</strong>、積み上がっていく負債が<strong>退職給付引当金</strong>です。</p>
+  </div>
+
+  <h3>毎期の費用計上</h3>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、当期の退職給付費用 1,800,000円を計上した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">退職給付費用</td><td class="d amt">1,800,000</td><td class="c">退職給付引当金</td><td class="c amt">1,800,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">繰入額の計算は問われない。金額は与えられる</span>
+    <p>他の引当金と違い、退職給付費用の金額を自分で計算することはありません。<strong>退職給付債務の計算（将来の退職金を現在価値に割り引く計算）は1級の範囲</strong>だからです。</p>
+    <p>2級では、問題文が「退職給付費用 1,800,000円を計上する」「年間見積額 ◯◯円の12分の1を計上する」といった形で<strong>金額または計算方法を与えてきます。</strong>与えられた金額を、退職給付費用と退職給付引当金に書くところまでが2級です。</p>
+    <p class="small muted">また、<strong>繰入の科目名が「退職給付費用」</strong>である点にも注意してください。他の引当金が「◯◯引当金繰入」で揃っているなかで、これだけ名前が違います。勘定科目表では「退職給付引当金繰入」も許容科目として認められていますが、<strong>標準科目は退職給付費用</strong>なので、本教材はこちらに統一します。</p>
+  </div>
+
+  <h3>実際に退職金を支払ったとき</h3>
+
+  <p>従業員が退職し、退職金 5,000,000円を当座預金から支払いました。この 5,000,000円は、その従業員の在職中に毎年少しずつ費用計上してきた金額の集大成です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>従業員が退職し、退職金 5,000,000円を当座預金から支払った</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">退職給付引当金</td><td class="d amt">5,000,000</td><td class="c">当座預金</td><td class="c amt">5,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>商品保証引当金の場面②とまったく同じ形です。<strong>費用計上は済んでいるので、当期は引当金を取り崩すだけ。</strong>当期の損益は動きません。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">退職金の支払いを「給料」や「退職金費用」としない</span>
+    <p>支払った 5,000,000円を費用にしたくなりますが、それをやると在職中に計上した分と<strong>二重計上</strong>になります。引当金が積んである以上、取り崩すのが正しい処理です。</p>
+    <p>引当金の残高が足りない場合に超過分が当期の費用になるのは、商品保証引当金と同じ考え方です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>修繕引当金 — 資本的支出との区別</h2>
+
+  <p>工場の機械は、毎年1回の定期修繕を前提に動いています。ところが今期は都合がつかず、修繕を来期に延期したとします。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">修繕を延期しても、傷んだのは今期である</span>
+    <p>機械が傷んだのは<strong>今期に使ったから</strong>です。修繕を来期にずらしたからといって、傷んだ原因が来期に移るわけではありません。</p>
+    <p>原因が当期にあり、支出が来期になる。これは引当金の要件そのものです。だから<strong>当期に修繕費を見積もって引き当てます。</strong></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、当期に行うべき修繕を次期に延期したため、修繕引当金 700,000円を設定した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">修繕引当金繰入</td><td class="d amt">700,000</td><td class="c">修繕引当金</td><td class="c amt">700,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>翌期に実際に修繕を行ったときは、他の引当金と同じく取り崩します。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>機械の修繕を行い、代金 700,000円を小切手を振り出して支払った（修繕引当金の残高 700,000円）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">修繕引当金</td><td class="d amt">700,000</td><td class="c">当座預金</td><td class="c amt">700,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>修繕費にならない支出がある</h3>
+
+  <p>修繕引当金でいちばん狙われるのは、<strong>支払った金額のすべてが修繕費とは限らない</strong>という点です。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">収益的支出と資本的支出を分ける</span>
+    <p>建物や機械にお金をかけたとき、その支出は2つに分かれます。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>区分</th><th>内容</th><th>処理</th></tr></thead>
+        <tbody>
+          <tr><td class="d">収益的支出</td><td>元の性能を<strong>維持・回復</strong>させる支出（壊れた箇所の修理、定期的な塗り替え）</td><td><strong>修繕費（費用）</strong>。引当金があればそれを取り崩す</td></tr>
+          <tr><td class="c">資本的支出</td><td>元の性能を<strong>向上させる・耐用年数を延ばす</strong>支出（非常階段の設置、耐震補強）</td><td><strong>建物などの固定資産に加算</strong>。以後、減価償却する</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>資本的支出は、支出によって資産の価値そのものが増えています。これを費用にすると<mark>資産の価値が上がったのに帳簿では上がらない</mark>という食い違いが残ります。だから資産に足し込み、減価償却を通じて将来にわたって費用化します。</p>
+    <p>試験では「建物の改修工事 3,000,000円を支払った。このうち 1,200,000円は<strong>建物の価値を高める資本的支出</strong>であり、残額は<strong>現状維持のための収益的支出</strong>である」という形で、問題文が分けてくれます。<strong>金額の判定を自分で行う必要はありませんが、分けずに全額を修繕費にすると2箇所の科目が同時に誤ります。</strong></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>建物の改修工事 3,000,000円を小切手で支払った。うち 1,200,000円は資本的支出、残額は収益的支出である。なお、修繕引当金の残高が 1,000,000円ある</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">建物</td><td class="d amt">1,200,000</td><td class="c">当座預金</td><td class="c amt">3,000,000</td></tr>
+        <tr><td class="d">修繕引当金</td><td class="d amt">1,000,000</td><td class="c"></td><td class="c amt"></td></tr>
+        <tr><td class="d">修繕費</td><td class="d amt">800,000</td><td class="c"></td><td class="c amt"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>収益的支出は 3,000,000 − 1,200,000 ＝ <strong>1,800,000円</strong>。そのうち引当金で賄える 1,000,000円は引当金を取り崩し、超過した 800,000円が当期の修繕費です。<strong>引当金は収益的支出の部分にしか充てられません。</strong>資本的支出は費用ではないからです。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>賞与引当金</h2>
+
+  <p>多くの会社は、たとえば6月と12月に賞与を支給します。6月に支給される賞与は、その計算対象期間（たとえば12月〜5月）に働いたことへの報酬です。</p>
+
+  <p>決算日が3月31日だとすると、<strong>12月〜3月の4か月分は、すでに当期に働いてもらった分</strong>です。支給は6月ですが、原因は当期にあります。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>決算にあたり、翌期6月支給予定の賞与 9,000,000円のうち、当期に属する4か月分を賞与引当金として計上した</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">賞与引当金繰入</td><td class="d amt">6,000,000</td><td class="c">賞与引当金</td><td class="c amt">6,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>9,000,000 × 4か月 ÷ 6か月 ＝ <strong>6,000,000円</strong>。支給見込額を、計算対象期間のうち当期に属する月数で按分します。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">按分するのは「賞与の計算対象期間」であって決算日からの月数ではない</span>
+    <p>分母は賞与の計算対象期間の月数（この例では6か月）、分子は<strong>そのうち当期末までに経過した月数</strong>（4か月）です。決算日から支給日までの月数（3か月）ではありません。</p>
+    <p>問題文には「支給対象期間は12月1日から5月31日まで」といった形で必ず期間が書かれています。<strong>そこを読まずに月数を決めない</strong>でください。</p>
+  </div>
+
+  <h3>実際に賞与を支給したとき</h3>
+
+  <p>翌期6月に賞与 9,000,000円を支給し、所得税の源泉徴収額 900,000円を差し引いて当座預金から支払いました。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>賞与 9,000,000円を支給し、源泉所得税 900,000円を差し引いて当座預金から支払った（賞与引当金の残高 6,000,000円）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">賞与引当金</td><td class="d amt">6,000,000</td><td class="c">所得税預り金</td><td class="c amt">900,000</td></tr>
+        <tr><td class="d">賞与</td><td class="d amt">3,000,000</td><td class="c">当座預金</td><td class="c amt">8,100,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">3つの金額が違う理由を分けて考える</span>
+    <ul>
+      <li><strong>6,000,000円（引当金）</strong>：<strong>前期</strong>（12月〜3月）に働いてもらった4か月分。前期の決算で費用計上済みなので、取り崩すだけで支給年度の費用にならない</li>
+      <li><strong>3,000,000円（賞与）</strong>：<strong>支給年度</strong>（4月・5月）に働いた2か月分。前期末にはまだ働いていないので引き当てられておらず、<mark>この年度の費用</mark>になる</li>
+      <li><strong>900,000円（所得税預り金）</strong>：従業員から預かって税務署に納める分。会社の費用ではなく負債</li>
+    </ul>
+    <p>当座預金から出るのは 9,000,000 − 900,000 ＝ <strong>8,100,000円</strong>。源泉徴収した分は会社の手元に残り、後日まとめて納付します。3級の給料支払いと同じ形です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>5つの引当金を1枚に整理する</h2>
+
+  <p>ここまでの5つを並べます。<strong>繰入時の科目名と、B/S上の位置だけが違い、構造はすべて同じ</strong>であることを確認してください。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>引当金</th><th>繰入時の費用科目</th><th>B/S区分</th><th>取り崩す場面</th></tr></thead>
+      <tbody>
+        <tr><td class="d">貸倒引当金</td><td>貸倒引当金繰入</td><td><strong>資産の控除</strong>（評価性）</td><td>前期以前に発生した債権が貸し倒れたとき</td></tr>
+        <tr><td class="d">商品(製品)保証引当金</td><td>商品(製品)保証引当金繰入</td><td>負債</td><td>保証期間中の修理を行ったとき</td></tr>
+        <tr><td class="d">退職給付引当金</td><td><strong>退職給付費用</strong></td><td>負債（固定負債）</td><td>退職金を支払ったとき</td></tr>
+        <tr><td class="d">修繕引当金</td><td>修繕引当金繰入</td><td>負債</td><td>修繕を行ったとき（収益的支出の部分のみ）</td></tr>
+        <tr><td class="d">賞与引当金</td><td>賞与引当金繰入</td><td>負債</td><td>賞与を支給したとき</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">どの引当金でも、3つの型は共通している</span>
+    <ol class="steps">
+      <li><strong>設定</strong>：◯◯引当金繰入（費用）／ ◯◯引当金（負債）<br>現金は動かない。当期の利益が減る</li>
+      <li><strong>取崩し</strong>：◯◯引当金（借方）／ 現金・当座預金など<br>残高を超えた分だけ当期の費用。当期の損益は超過分しか動かない</li>
+      <li><strong>戻入</strong>：◯◯引当金（借方）／ ◯◯引当金戻入（収益）<br>不要になったので消す。現金は動かない</li>
+    </ol>
+    <p>①と②はどの引当金でも同じ形です。覚える例外は<strong>退職給付引当金だけ①の費用科目が「退職給付費用」になる</strong>という1点で、残りは科目名を入れ替えるだけです。</p>
+    <p class="small muted">ただし③の戻入は、勘定科目表に戻入の科目があるものに限られます。2級で使えるのは<strong>貸倒引当金戻入・修繕引当金戻入・商品(製品)保証引当金戻入</strong>の3つです。賞与引当金と退職給付引当金には戻入の科目がなく、2級で戻入を書く場面もありません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">貸倒引当金の取崩しには、3級で習った分岐がある</span>
+    <p>貸倒引当金だけは、取り崩す場面に条件がつきます。<strong>当期に発生した売掛金が当期中に貸し倒れた場合、引当金は取り崩せません。</strong></p>
+    <p>引当金は前期末の債権残高に対して設定したものだからです。当期に発生した債権は、その計算に入っていません。<mark>前期以前に発生した債権の貸倒れ → 貸倒引当金を取り崩す。当期に発生した債権の貸倒れ → 貸倒損失（費用）</mark>という分岐になります。</p>
+    <p>3級で扱った内容ですが、個別評価・一括評価の計算に気を取られると落としやすい箇所です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>仕訳ドリル 15問</h2>
+
+  <p>解答欄は4行ありますが、実際に使う行数は問題ごとに違います。<strong>空いた行は無視されます</strong>ので、行数から科目数を推測しないでください。本番の第1問も同じ条件です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">選択肢の括弧は、答案で書く必要のない部分</span>
+    <p>科目の候補に「商品(製品)保証引当金」「(特別)修繕引当金」「(役員)賞与引当金」という表記が出てきます。これは<strong>商業簿記標準・許容勘定科目表の書き方</strong>をそのまま載せたもので、括弧の中は<mark>そう書いてもよい、という任意の部分</mark>です。</p>
+    <p>製造業なら「製品保証引当金」、役員に対する賞与なら「役員賞与引当金」となります。<strong>答案に括弧を書くわけではありません。</strong>ふだんは括弧を外した「商品保証引当金」「修繕引当金」「賞与引当金」で構いません。</p>
+  </div>
+
+  <div id="drill-honmon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>計算ドリル・確認テスト・穴埋め</h2>
+
+  <p>引当金は仕訳の形が単純なぶん、<strong>金額を出す段階と、どの区分に載せるかの判断で差がつきます。</strong>それぞれ独立に確認します。</p>
+
+  <div id="num-kingaku"></div>
+
+  <div id="quiz-handan"></div>
+
+  <div id="fill-yougo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。引当金は<strong>第3問（決算）で毎回出る</strong>論点です。ここが曖昧なまま第3問の演習に入ると、決算整理の1行目でつまずきます。</p>
+
+  <div class="progressbar" data-progress-for="#u9check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u9check">0 / 0 完了（0%）</div>
+
+  <div id="u9check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u09-w3u9-1"><label for="c1"><span class="cl__t">引当金を計上する理由を、費用収益対応の原則で説明できる</span><span class="cl__d">原因が当期にあり支出が来期になると、収益と費用が別の年度にちぎれる。どちらの年度の利益も実力を表さなくなる</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u09-w3u9-2"><label for="c2"><span class="cl__t">引当金の4要件を挙げられる</span><span class="cl__d">将来の費用・損失／発生原因が当期以前の事象／発生の可能性が高い／金額を合理的に見積ることができる。4つすべてを満たしたときだけ計上する</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u09-w3u9-3"><label for="c3"><span class="cl__t">引当金の計上が現金の準備ではないと言える</span><span class="cl__d">利益計算を正しくするための帳簿上の操作。銀行口座の残高は1円も変わらない</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u09-w3u9-4"><label for="c4"><span class="cl__t">評価性引当金と負債性引当金を分けられる</span><span class="cl__d">2級では貸倒引当金だけが評価性で、資産から控除して表示する。残りはすべて負債性で負債の部に載る。分かれ目は「払う相手がいるか」</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u09-w3u9-5"><label for="c5"><span class="cl__t">一括評価と個別評価を使い分ける理由を説明できる</span><span class="cl__d">貸倒実績率は平均。倒産寸前の相手にまで平均を当てはめるのはおかしいので、事情が特殊な相手だけ切り出して個別に見積もる</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u09-w3u9-6"><label for="c6"><span class="cl__t">個別評価で担保処分見込額を控除してから率を掛けられる</span><span class="cl__d">担保で回収できる部分に貸倒れの心配はない。（債権額 − 担保処分見込額）× 設定率</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u09-w3u9-7"><label for="c7"><span class="cl__t">一括評価の対象から個別評価の債権を除いて計算できる</span><span class="cl__d">除かないと同じ債権に一括と個別の率が二重に掛かる。金額がわずかにずれるだけなので検算しても気づかない</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u09-w3u9-8"><label for="c8"><span class="cl__t">設定額の合計から期末残高を引いて繰入額を出せる</span><span class="cl__d">差額補充法。設定額が残高より小さければ逆に貸倒引当金戻入（収益）になる</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u09-w3u9-9"><label for="c9"><span class="cl__t">営業債権と営業外債権でP/Lの区分が分かれると言える</span><span class="cl__d">売掛金・受取手形に対する繰入は販売費及び一般管理費、貸付金・未収入金に対する繰入は営業外費用。仕訳の科目は同じで、分かれるのは表示だけ</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u09-w3u9-10"><label for="c10"><span class="cl__t">区分を分ける理由を、営業利益の意味から説明できる</span><span class="cl__d">営業利益は本業の稼ぐ力を表す。本業と関係のない貸付金の貸倒見込みを営業利益から引くと、その意味がゆがむ</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u09-w3u9-11"><label for="c11"><span class="cl__t">商品保証引当金の設定・取崩し・戻入の3つを書ける</span><span class="cl__d">設定は繰入／引当金、取崩しは引当金／現金など、戻入は引当金／戻入（収益）。取崩しと戻入は貸方が何かで見分ける</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u09-w3u9-12"><label for="c12"><span class="cl__t">引当金を取り崩すとき、当期の費用にしない理由を説明できる</span><span class="cl__d">その金額は前期に費用計上済み。再び費用にすると同じ支出を2年続けて費用にする二重計上になる</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u09-w3u9-13"><label for="c13"><span class="cl__t">引当金残高を超えた支出の処理を書ける</span><span class="cl__d">引当金は残高の限度までしか取り崩せない。超過分は前期に費用処理していないので当期の費用になる</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u09-w3u9-14"><label for="c14"><span class="cl__t">退職給付費用と退職給付引当金の関係を説明できる</span><span class="cl__d">退職金は在職中の労働への報酬なので、1年働くたびにその年の費用として計上する。支払時は引当金を取り崩すだけ</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u09-w3u9-15"><label for="c15"><span class="cl__t">退職給付だけ繰入の科目名が違うことを覚えている</span><span class="cl__d">標準科目は「退職給付費用」（「退職給付引当金繰入」も許容されるが標準ではない）。金額も自分で計算せず問題文から与えられる（退職給付債務の計算は1級）</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u09-w3u9-16"><label for="c16"><span class="cl__t">修繕引当金を設定する場面を言える</span><span class="cl__d">当期に行うべき修繕を次期に延期したとき。傷んだ原因は当期の使用にあり、修繕を延ばしても原因は移らない</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u09-w3u9-17"><label for="c17"><span class="cl__t">収益的支出と資本的支出を分けて仕訳できる</span><span class="cl__d">性能の維持・回復は修繕費（引当金を充てられる）、性能の向上・耐用年数の延長は固定資産に加算して減価償却する</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u09-w3u9-18"><label for="c18"><span class="cl__t">賞与引当金を支給対象期間で按分できる</span><span class="cl__d">分母は賞与の計算対象期間の月数、分子はそのうち当期末までに経過した月数。決算日から支給日までの月数ではない</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u09-w3u9-19"><label for="c19"><span class="cl__t">賞与支給時の3つの金額を書き分けられる</span><span class="cl__d">引当金（前期計上済み・費用にならない）／賞与（当期分・費用になる）／源泉所得税の預り金（負債）</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u09-w3u9-20"><label for="c20"><span class="cl__t">当期発生の売掛金が貸し倒れたときに引当金を使わないと言える</span><span class="cl__d">引当金は前期末の債権残高に対して設定したもの。当期発生の債権はその計算に入っていないので貸倒損失とする</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u09-w3u9-21"><label for="c21"><span class="cl__t">仕訳ドリル15問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="c22" data-key="p1u09-w3u9-22"><label for="c22"><span class="cl__t">不渡手形を個別評価の対象として処理できる</span><span class="cl__d">一括評価の対象から外し、担保処分見込額を控除して設定率を掛ける。P/Lの区分は<strong>不渡になる前が何だったか</strong>で決まる（受取手形なら販売費及び一般管理費、貸付金なら営業外費用）</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>引当金は<strong>第3問（決算）でほぼ毎回出ます。</strong>特に貸倒引当金は、個別評価と一括評価を合算し、営業債権と営業外債権に分けて表示するところまでが一続きです。W8の第3問独立週で、他の決算整理と組み合わせた形をまとめて演習します。</p>
+    <p>それまでは、毎週の仕訳ドリル1.5時間の枠に<strong>取崩しの仕訳</strong>を混ぜ続けてください。設定の仕訳は覚えやすい一方、取崩しは「費用にしない」という反直観的な処理なので、間隔を空けると真っ先に抜けます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W3 UNIT 09 引当金</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '売掛金', '受取手形', '不渡手形', '電子記録債権',
+    '貸付金', '長期貸付金', '未収入金', '繰越商品', '建物', '機械装置', '備品',
+    '貸倒引当金',
+    '買掛金', '支払手形', '未払金', '所得税預り金', '社会保険料預り金',
+    '商品(製品)保証引当金', '(特別)修繕引当金', '(役員)賞与引当金', '退職給付引当金',
+    '貸倒引当金戻入', '商品(製品)保証引当金戻入', '修繕引当金戻入', '償却債権取立益',
+    '貸倒引当金繰入', '貸倒損失',
+    '商品(製品)保証引当金繰入',
+    '(特別)修繕引当金繰入', '修繕費',
+    '(役員)賞与引当金繰入', '(役員)賞与',
+    '退職給付費用',
+    '給料', '減価償却費', '支払利息', '広告宣伝費'
+  ];
+
+  /* ========== 仕訳ドリル 15問 ========== */
+  BokiJournal.mount('#drill-honmon', {
+    title: '仕訳ドリル — 引当金の設定・取崩し・戻入（15問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '決算にあたり、売掛金の期末残高 <strong>4,000,000円</strong> に対して <strong>2％</strong> の貸倒引当金を差額補充法により設定する。なお、貸倒引当金の期末残高は <strong>35,000円</strong> である。すべて一般債権であり、個別に評価すべき債権はない。',
+        debit: [['貸倒引当金繰入', 45000]],
+        credit: [['貸倒引当金', 45000]],
+        hint: '設定すべき残高をまず出し、そこから既存の残高を引きます。',
+        explain: '<p><strong>設定すべき残高</strong>：4,000,000 × 2％ ＝ <strong>80,000円</strong>。</p><p><strong>繰入額</strong>：80,000 − 35,000 ＝ <strong>45,000円</strong>。差額補充法なので、すでにある 35,000円は活かし、不足分だけを繰り入れます。</p><p>3級で習った処理そのままです。2級ではここに個別評価が加わりますが、計算の骨格は変わりません。</p>'
+      },
+      {
+        text: '決算にあたり、貸倒引当金を設定する。売掛金の期末残高は <strong>6,000,000円</strong> で、このうち <strong>D社に対する 1,500,000円</strong> は貸倒懸念債権であり、<strong>担保処分見込額 500,000円</strong> を控除した残額に <strong>50％</strong> を設定する。その他の売掛金には <strong>3％</strong> の貸倒実績率を適用する。貸倒引当金の期末残高は <strong>120,000円</strong> である。',
+        debit: [['貸倒引当金繰入', 515000]],
+        credit: [['貸倒引当金', 515000]],
+        hint: '一括評価の対象からD社の分を抜くこと、個別評価で担保を引くこと。2つとも忘れやすい箇所です。',
+        explain: '<p><strong>① 一括評価</strong>：（6,000,000 − 1,500,000）× 3％ ＝ <strong>135,000円</strong>。D社の 1,500,000円を先に抜きます。抜かないとD社の債権に一括の率と個別の率が二重に掛かります。</p><p><strong>② 個別評価</strong>：（1,500,000 − 500,000）× 50％ ＝ <strong>500,000円</strong>。担保で回収できる 500,000円に貸倒れの心配はないので、控除してから率を掛けます。</p><p><strong>③ 設定すべき残高</strong>：135,000 ＋ 500,000 ＝ <strong>635,000円</strong>。</p><p><strong>④ 繰入額</strong>：635,000 − 120,000 ＝ <strong>515,000円</strong>。</p><p>設定額が既存残高より大きいので繰入（費用）になります。</p>'
+      },
+      {
+        text: '決算にあたり、貸倒引当金を設定する。<strong>売掛金 2,500,000円・受取手形 1,500,000円</strong> には <strong>2％</strong>、<strong>貸付金 3,000,000円</strong> には <strong>4％</strong> を設定する。貸倒引当金の期末残高は <strong>50,000円</strong> であり、そのうち <strong>30,000円</strong> が営業債権に対するもの、<strong>20,000円</strong> が貸付金に対するものである。差額補充法による。',
+        debit: [['貸倒引当金繰入', 150000]],
+        credit: [['貸倒引当金', 150000]],
+        hint: '仕訳で使う科目は1つですが、営業債権と営業外債権を別々に計算しておく必要があります。',
+        explain: '<p><strong>営業債権</strong>（売掛金・受取手形）：（2,500,000 ＋ 1,500,000）× 2％ ＝ 80,000円。残高 30,000円を引いて繰入は <strong>50,000円</strong>。これは損益計算書の<strong>販売費及び一般管理費</strong>に載ります。</p><p><strong>営業外債権</strong>（貸付金）：3,000,000 × 4％ ＝ 120,000円。残高 20,000円を引いて繰入は <strong>100,000円</strong>。これは<strong>営業外費用</strong>に載ります。</p><p><strong>仕訳の金額</strong>：50,000 ＋ 100,000 ＝ <strong>150,000円</strong>。仕訳では「貸倒引当金繰入」1科目にまとまります。</p><p>それでも別々に計算しておくのは、<strong>財務諸表を作るときに2つの区分へ分けて書く必要がある</strong>からです。合計してしまうと、あとから分けられません。</p>'
+      },
+      {
+        text: '<strong>前期に発生した</strong>売掛金 <strong>180,000円</strong> が、得意先の倒産により貸倒れとなった。なお、貸倒引当金の残高は <strong>250,000円</strong> である。',
+        debit: [['貸倒引当金', 180000]],
+        credit: [['売掛金', 180000]],
+        hint: '前期に発生した債権であり、引当金の残高も足りています。',
+        explain: '<p>前期に発生した売掛金は、<strong>前期末の貸倒引当金の計算に含まれていた債権</strong>です。したがって、その貸倒れは前期に費用として見込み済みであり、引当金を取り崩します。</p><p>残高 250,000円 ＞ 貸倒額 180,000円 なので全額を引当金で賄えます。<strong>当期の損益は1円も動きません。</strong></p>'
+      },
+      {
+        text: '<strong>当期に発生した</strong>売掛金 <strong>140,000円</strong> が、得意先の倒産により貸倒れとなった。なお、貸倒引当金の残高は <strong>300,000円</strong> ある。',
+        debit: [['貸倒損失', 140000]],
+        credit: [['売掛金', 140000]],
+        hint: '引当金の残高は十分にありますが、それを使ってよい債権でしょうか。',
+        explain: '<p>引当金の残高は足りていますが、<strong>取り崩してはいけません。</strong></p><p>貸倒引当金は<strong>前期末の債権残高に対して設定したもの</strong>です。当期に発生した売掛金は、その計算に一切入っていません。前期に費用として見込んでいない損失なので、<strong>当期の費用（貸倒損失）</strong>とします。</p><p>問題文の「当期に発生した」「前期に発生した」という一文だけがこの分岐を決めます。金額も引当金残高も判断材料になりません。</p>'
+      },
+      {
+        text: '決算にあたり、当期の売上高 <strong>60,000,000円</strong> の <strong>1.5％</strong> にあたる金額を、商品保証引当金として設定する。',
+        debit: [['商品(製品)保証引当金繰入', 900000]],
+        credit: [['商品(製品)保証引当金', 900000]],
+        hint: '売上に対する率を掛けるだけです。差額補充ではありません。',
+        explain: '<p>60,000,000 × 1.5％ ＝ <strong>900,000円</strong>。</p><p>当期に保証付きで販売したという事実は<strong>当期に完結</strong>しており、修理費が来期以降に発生するだけです。原因が当期にある以上、費用も当期に計上します。</p><p>現金は1円も動きませんが、当期の利益は 900,000円 減ります。<strong>これが引当金の役割です。</strong></p>'
+      },
+      {
+        text: '前期に保証付きで販売した商品について修理の申し出があり、修理費用 <strong>320,000円</strong> を現金で支払った。なお、商品保証引当金の残高は <strong>900,000円</strong> である。',
+        debit: [['商品(製品)保証引当金', 320000]],
+        credit: [['現金', 320000]],
+        hint: 'この320,000円は、いつの費用として計上済みでしょうか。',
+        explain: '<p>修理費 320,000円は、<strong>前期末に「商品保証引当金繰入」として費用計上済み</strong>です。ここで修繕費などの費用科目にすると、<strong>同じ支出を2年続けて費用にする二重計上</strong>になります。</p><p>だから借方は<strong>商品保証引当金</strong>。引当金（負債）を取り崩すだけで、当期の損益は動きません。</p><p>残高 900,000円 ＞ 修理費 320,000円 なので全額を引当金で賄えます。</p>'
+      },
+      {
+        text: '前期に保証付きで販売した商品について保証期間内の修理を行い、修理費用 <strong>480,000円</strong> を当座預金から支払った。なお、商品保証引当金の残高は <strong>350,000円</strong> であり、<strong>引当金の残高を超える額は修繕費として処理する</strong>。',
+        debit: [['商品(製品)保証引当金', 350000], ['修繕費', 130000]],
+        credit: [['当座預金', 480000]],
+        hint: '引当金の残高では足りません。足りない分はどう扱うべきでしょうか。',
+        explain: '<p>引当金は<strong>残高の限度までしか取り崩せません。</strong>マイナス残高の負債という状態は存在しないからです。</p><ul><li><strong>商品保証引当金 350,000円</strong>：残高を全額取り崩す</li><li><strong>修繕費 130,000円</strong>：480,000 − 350,000 ＝ 130,000円。前期に費用処理していない分なので<strong>当期の費用</strong></li></ul><p>貸方は当座預金 480,000円。見積りが実際より少なかった分だけが、当期の損益に影響します。</p><p>超過分をどの費用科目で処理するかは<strong>問題文が指示します。</strong>自分で科目を決める場面ではありません。</p>'
+      },
+      {
+        text: '商品の保証期間が経過したため、商品保証引当金の残高 <strong>210,000円</strong> を全額取り崩すこととした。',
+        debit: [['商品(製品)保証引当金', 210000]],
+        credit: [['商品(製品)保証引当金戻入', 210000]],
+        hint: '修理は発生しませんでした。現金は動きません。',
+        explain: '<p>保証期間が過ぎれば、もう修理を求められることはありません。<strong>将来の支出という負債が存在しなくなった</strong>ので、引当金を消します。</p><p>貸方は<strong>商品保証引当金戻入</strong>（収益）です。前期に積みすぎた費用を当期に返してもらう、という意味の収益であり、商売で儲けたわけではありません。</p><p>取崩しとの見分けは<strong>貸方が何か</strong>です。実際に支出したなら現金・当座預金、不要になったなら戻入（収益）になります。</p>'
+      },
+      {
+        text: '決算にあたり、当期の<strong>退職給付費用 2,400,000円</strong> を計上する。',
+        debit: [['退職給付費用', 2400000]],
+        credit: [['退職給付引当金', 2400000]],
+        hint: '繰入の科目名が、他の引当金とは違います。',
+        explain: '<p>退職金は、退職した年に突然発生したものではなく、<strong>在職中の労働に対する報酬</strong>です。だから従業員が1年働くたびに、その年の分を費用計上していきます。</p><p>借方の科目名は<strong>「退職給付引当金繰入」ではなく「退職給付費用」</strong>です。他の引当金が「◯◯引当金繰入」で揃っているなかで、これだけ名前が違います。</p><p>金額を自分で計算しない点も他と違います。<strong>退職給付債務の計算は1級の範囲</strong>なので、2級では問題文が金額か計算方法を与えてきます。</p>'
+      },
+      {
+        text: '従業員が退職したため、退職一時金 <strong>7,000,000円</strong> を当座預金から支払った。なお、退職給付引当金の残高は <strong>25,000,000円</strong> である。',
+        debit: [['退職給付引当金', 7000000]],
+        credit: [['当座預金', 7000000]],
+        hint: 'この7,000,000円は、その従業員の在職中に少しずつ費用計上してきたものです。',
+        explain: '<p>支払った 7,000,000円は、その従業員が在職していた各年度に<strong>退職給付費用として計上済み</strong>です。ここで費用にすると二重計上になります。</p><p>借方は<strong>退職給付引当金</strong>。積み上げてきた負債を取り崩すだけで、当期の損益は動きません。商品保証引当金の取崩しとまったく同じ構造です。</p><p>残高 25,000,000円 ＞ 支払額 7,000,000円 なので全額を引当金で賄えます。</p>'
+      },
+      {
+        text: '決算にあたり、当期に行う予定であった機械の定期修繕を次期に延期したため、<strong>修繕引当金 850,000円</strong> を設定する。',
+        debit: [['(特別)修繕引当金繰入', 850000]],
+        credit: [['(特別)修繕引当金', 850000]],
+        hint: '修繕を来期にずらしても、機械が傷んだ原因はどの年度にありますか。',
+        explain: '<p>機械が傷んだのは<strong>当期に使ったから</strong>です。修繕を来期にずらしても、傷んだ原因が来期に移るわけではありません。</p><p>原因が当期にあり支出が来期になる——引当金の要件そのものなので、当期に修繕費を見積もって引き当てます。</p><p>借方は<strong>修繕引当金繰入</strong>（費用）、貸方は<strong>修繕引当金</strong>（負債）。この時点で現金は動きません。</p>'
+      },
+      {
+        text: '建物の改修工事を行い、代金 <strong>4,000,000円</strong> を小切手を振り出して支払った。このうち <strong>1,500,000円</strong> は建物の耐用年数を延長させる<strong>資本的支出</strong>であり、残額は現状を維持するための<strong>収益的支出</strong>である。なお、修繕引当金の残高は <strong>1,800,000円</strong> である。',
+        debit: [['建物', 1500000], ['(特別)修繕引当金', 1800000], ['修繕費', 700000]],
+        credit: [['当座預金', 4000000]],
+        hint: '引当金を充てられるのは、支出のうちどの部分でしょうか。',
+        explain: '<p>まず支出を2つに分けます。</p><ul><li><strong>資本的支出 1,500,000円</strong>：耐用年数を延長させる支出。資産の価値そのものが増えているので<strong>建物</strong>に加算し、以後減価償却します。費用ではありません</li><li><strong>収益的支出 1,800,000 ＋ 700,000 ＝ 2,500,000円</strong>：4,000,000 − 1,500,000。現状維持のための支出なので費用の性質を持ちます</li></ul><p>次に、収益的支出 2,500,000円に引当金を充てます。<strong>引当金は残高の 1,800,000円までしか取り崩せません。</strong>超過した 2,500,000 − 1,800,000 ＝ <strong>700,000円</strong> が当期の修繕費です。</p><p><strong>引当金を資本的支出に充てることはできません。</strong>資本的支出は費用ではないからです。全額を修繕費にしたり、引当金を 2,500,000円 取り崩したりすると、複数の科目が同時に誤ります。</p>'
+      },
+      {
+        text: '決算（3月31日）にあたり、賞与引当金を計上する。翌期<strong>6月に支給予定の賞与は 12,000,000円</strong> と見込まれ、その<strong>支給対象期間は12月1日から5月31日まで</strong>である。当期に属する分を月割で計上する。',
+        debit: [['(役員)賞与引当金繰入', 8000000]],
+        credit: [['(役員)賞与引当金', 8000000]],
+        hint: '分母は支給対象期間の月数、分子は当期末までに経過した月数です。',
+        explain: '<p><strong>支給対象期間</strong>は12月1日〜5月31日の<strong>6か月</strong>。このうち決算日（3月31日）までに経過しているのは12月・1月・2月・3月の<strong>4か月</strong>です。</p><p>12,000,000 × 4か月 ÷ 6か月 ＝ <strong>8,000,000円</strong>。</p><p>支給は6月ですが、その4か月分は<strong>すでに当期に働いてもらった分</strong>なので、当期の費用として引き当てます。</p><p>決算日から支給日までの月数（3か月）で計算しないこと。按分するのは<strong>賞与の計算対象期間</strong>であって、支給までの待ち時間ではありません。</p>'
+      },
+      {
+        text: '決算にあたり、貸倒引当金を設定する。期末の債権は<strong>売掛金 5,400,000円</strong>、<strong>受取手形 2,600,000円</strong>、および<strong>不渡手形 1,000,000円</strong> である。不渡手形は<strong>担保処分見込額 400,000円</strong> を控除した残額に <strong>50％</strong> を個別に設定し、売掛金と受取手形には <strong>2％</strong> の貸倒実績率を適用する。貸倒引当金の期末残高は <strong>110,000円</strong> であり、差額補充法による。',
+        debit: [['貸倒引当金繰入', 350000]],
+        credit: [['貸倒引当金', 350000]],
+        hint: '不渡手形が個別評価の対象です。一括評価の対象に不渡手形を混ぜないでください。',
+        explain: '<p><strong>① 一括評価</strong>：（5,400,000 ＋ 2,600,000）× 2％ ＝ <strong>160,000円</strong>。対象は売掛金と受取手形だけです。不渡手形は個別に評価するので、ここには含めません。</p><p><strong>② 個別評価</strong>：（1,000,000 − 400,000）× 50％ ＝ <strong>300,000円</strong>。担保で回収できる 400,000円を控除してから率を掛けます。</p><p><strong>③ 設定すべき残高</strong>：160,000 ＋ 300,000 ＝ <strong>460,000円</strong>。</p><p><strong>④ 繰入額</strong>：460,000 − 110,000 ＝ <strong>350,000円</strong>。</p><p>不渡手形が個別評価の代表例なのは、<strong>一度不渡りを出した相手が、もう「平均的に2％が貸し倒れる母集団」の一員ではない</strong>からです。受取手形から科目を切り離しておく理由が、そのまま個別に見積もる理由になります。</p><p>なお、不渡手形はもともと商品の売上から生じた受取手形なので<strong>営業債権</strong>です。この繰入額は損益計算書の<strong>販売費及び一般管理費</strong>に載ります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-kingaku', {
+    title: '計算ドリル — 設定額と繰入額を出す（5問）',
+    unit: '円',
+    questions: [
+      {
+        text: '期末の売掛金残高は <strong>8,000,000円</strong> で、このうち <strong>E社に対する 2,000,000円</strong> は貸倒懸念債権として個別に評価する。E社の債権には <strong>担保処分見込額 600,000円</strong> があり、これを控除した残額に <strong>40％</strong> を設定する。その他の債権には貸倒実績率 <strong>2.5％</strong> を適用する。<strong>一括評価による設定額</strong>、<strong>個別評価による設定額</strong>、および<strong>期末に設定すべき貸倒引当金の合計額</strong>を求めなさい。',
+        labels: ['一括評価', '個別評価', '設定額の合計'],
+        answer: [150000, 560000, 710000],
+        formula: ['(8000000-2000000)*0.025', '(2000000-600000)*0.4', '(8000000-2000000)*0.025+(2000000-600000)*0.4'],
+        hint: '一括評価の対象から個別評価の債権を抜くこと、個別評価で担保を引くこと。順番を守ってください。',
+        explain: '<p><strong>一括評価</strong>：（8,000,000 − 2,000,000）× 2.5％ ＝ <strong>150,000円</strong>。E社の 2,000,000円を先に抜きます。抜かないと 8,000,000 × 2.5％ ＝ 200,000円 となり、E社の債権に一括と個別の率が二重に掛かります。</p><p><strong>個別評価</strong>：（2,000,000 − 600,000）× 40％ ＝ <strong>560,000円</strong>。担保で回収できる部分に貸倒れの心配はないので、控除してから率を掛けます。控除を忘れると 2,000,000 × 40％ ＝ 800,000円 になります。</p><p><strong>合計</strong>：150,000 ＋ 560,000 ＝ <strong>710,000円</strong>。これが期末に貸倒引当金として計上されているべき<strong>残高</strong>です。仕訳に書く繰入額ではありません。</p>'
+      },
+      {
+        text: '期末に設定すべき貸倒引当金は <strong>710,000円</strong> と算定された。決算整理前の貸倒引当金の残高が <strong>230,000円</strong> であるとき、差額補充法による<strong>貸倒引当金繰入の金額</strong>を求めなさい。また、同じ設定額に対して決算整理前の残高が <strong>780,000円</strong> であった場合に計上される<strong>貸倒引当金戻入の金額</strong>も求めなさい。',
+        labels: ['貸倒引当金繰入', '貸倒引当金戻入'],
+        answer: [480000, 70000],
+        formula: ['710000-230000', '780000-710000'],
+        hint: '設定額と残高の大小で、繰入と戻入のどちらになるかが決まります。',
+        explain: '<p><strong>繰入</strong>：710,000 − 230,000 ＝ <strong>480,000円</strong>。設定額のほうが大きいので不足分を足します。「貸倒引当金繰入 480,000／貸倒引当金 480,000」。</p><p><strong>戻入</strong>：780,000 − 710,000 ＝ <strong>70,000円</strong>。設定額のほうが小さく積みすぎの状態なので、超過分を減らします。「貸倒引当金 70,000／貸倒引当金戻入 70,000」。</p><p><mark>差額補充法は「足りなければ足す、多ければ戻す」の両方向</mark>です。増やす方向専用ではありません。</p>'
+      },
+      {
+        text: '決算にあたり貸倒引当金を設定する。<strong>売掛金 3,600,000円</strong>、<strong>受取手形 2,400,000円</strong> には <strong>2％</strong>、<strong>貸付金 5,000,000円</strong>、<strong>未収入金 1,000,000円</strong> には <strong>3％</strong> を設定する。決算整理前の貸倒引当金残高は <strong>70,000円</strong>（うち営業債権に対するもの <strong>45,000円</strong>、営業外債権に対するもの <strong>25,000円</strong>）である。損益計算書の<strong>販売費及び一般管理費</strong>に載る金額と<strong>営業外費用</strong>に載る金額を、それぞれ差額補充法により求めなさい。',
+        labels: ['販売費及び一般管理費', '営業外費用'],
+        answer: [75000, 155000],
+        formula: ['(3600000+2400000)*0.02-45000', '(5000000+1000000)*0.03-25000'],
+        hint: '営業債権は売掛金と受取手形、営業外債権は貸付金と未収入金です。それぞれ対応する残高を引きます。',
+        explain: '<p><strong>営業債権</strong>（売掛金・受取手形）：（3,600,000 ＋ 2,400,000）× 2％ ＝ 120,000円。残高 45,000円を引いて <strong>75,000円</strong>。これが<strong>販売費及び一般管理費</strong>に載ります。</p><p><strong>営業外債権</strong>（貸付金・未収入金）：（5,000,000 ＋ 1,000,000）× 3％ ＝ 180,000円。残高 25,000円を引いて <strong>155,000円</strong>。これが<strong>営業外費用</strong>に載ります。</p><p>仕訳では「貸倒引当金繰入 230,000／貸倒引当金 230,000」と1本にまとまりますが、<strong>財務諸表では2箇所に分けて書きます。</strong>未収入金は名前が売掛金に似ていても<strong>営業外債権</strong>である点に注意してください。本業の売上から生じた債権ではないからです。</p>'
+      },
+      {
+        text: '決算（3月31日）にあたり、賞与引当金を計上する。翌期<strong>6月10日に支給予定の賞与は 15,000,000円</strong> と見込まれ、その<strong>支給対象期間は12月1日から5月31日まで</strong>である。当期に計上する<strong>賞与引当金繰入の金額</strong>を求めなさい。また、翌期6月に実際に賞与 15,000,000円を支給したとき、<strong>翌期の費用となる賞与の金額</strong>を求めなさい。',
+        labels: ['賞与引当金繰入', '翌期の費用となる賞与'],
+        answer: [10000000, 5000000],
+        formula: ['15000000*4/6', '15000000-15000000*4/6'],
+        hint: '支給対象期間は6か月です。決算日までに経過したのは何か月でしょうか。',
+        explain: '<p><strong>賞与引当金繰入</strong>：支給対象期間は12月1日〜5月31日の<strong>6か月</strong>。うち決算日（3月31日）までに経過したのは12月・1月・2月・3月の<strong>4か月</strong>です。15,000,000 × 4 ÷ 6 ＝ <strong>10,000,000円</strong>。</p><p><strong>翌期の費用となる賞与</strong>：15,000,000 − 10,000,000 ＝ <strong>5,000,000円</strong>。これは翌期の4月・5月に働いた2か月分で、前期には引き当てていないので翌期の費用になります。</p><p>支給時の仕訳は「賞与引当金 10,000,000・賞与 5,000,000／（源泉所得税の預り金）・当座預金など」という形です。<strong>引当金の分は費用にならず、引き当てていない分だけが費用になります。</strong></p>'
+      },
+      {
+        text: '建物の改修工事を行い、代金 <strong>6,000,000円</strong> を支払った。このうち <strong>2,200,000円</strong> は建物の価値を高める<strong>資本的支出</strong>であり、残額は<strong>収益的支出</strong>である。修繕引当金の残高が <strong>2,500,000円</strong> であるとき、<strong>建物として資産計上される金額</strong>、<strong>取り崩される修繕引当金の金額</strong>、および<strong>当期の費用となる修繕費の金額</strong>を求めなさい。',
+        labels: ['建物', '修繕引当金', '修繕費'],
+        answer: [2200000, 2500000, 1300000],
+        formula: ['2200000', '2500000', '(6000000-2200000)-2500000'],
+        hint: '引当金を充てられるのは収益的支出の部分だけです。しかも残高の限度までです。',
+        explain: '<p><strong>建物</strong>：資本的支出 <strong>2,200,000円</strong>。価値を高める支出なので資産に加算し、以後減価償却します。費用ではないので引当金を充てることもできません。</p><p><strong>収益的支出</strong>：6,000,000 − 2,200,000 ＝ 3,800,000円。この部分にだけ引当金を充てます。</p><p><strong>修繕引当金</strong>：残高の <strong>2,500,000円</strong> を全額取り崩します。引当金は残高の限度までしか取り崩せません。</p><p><strong>修繕費</strong>：3,800,000 − 2,500,000 ＝ <strong>1,300,000円</strong>。引当金で賄えなかった分が当期の費用です。</p><p>仕訳は「建物 2,200,000・修繕引当金 2,500,000・修繕費 1,300,000／当座預金など 6,000,000」。貸借の合計はどちらも 6,000,000円になります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 確認テスト（概念判定のみ） ========== */
+  BokiQuiz.mount('#quiz-handan', {
+    title: '確認テスト — 分岐の判断（7問）',
+    questions: [
+      {
+        text: '引当金を計上するための4要件に<strong>含まれないもの</strong>はどれですか。',
+        choices: [
+          '発生原因が当期以前の事象にあること',
+          '将来の支出に充てるための現金を、あらかじめ別口座に確保していること',
+          '発生の可能性が高く、かつ金額を合理的に見積ることができること'
+        ],
+        answer: 1,
+        explain: '<p>引当金の4要件は、①将来の費用または損失である、②発生原因が当期以前の事象にある、③発生の可能性が高い、④金額を合理的に見積ることができる——の4つです。<strong>現金を確保することは要件に入っていません。</strong></p><p>引当金は<strong>利益の計算を正しくするための帳簿上の操作</strong>であり、資金を取り分ける手続きではありません。引当金を計上しても銀行口座の残高は1円も変わらず、実際の支払い時に現金が足りないことも普通に起こります。</p>'
+      },
+      {
+        text: '貸借対照表における貸倒引当金の表示として正しいものはどれですか。',
+        choices: [
+          '負債の部に独立した科目として表示する',
+          '資産の部で、売掛金などの債権から控除する形で表示する',
+          '純資産の部に、利益剰余金の内訳として表示する'
+        ],
+        answer: 1,
+        explain: '<p>貸倒引当金は<strong>評価性引当金</strong>で、資産の部に債権から差し引く形で表示します。</p><p>これは「誰かに金を払う義務」ではなく、<mark>売掛金のうちこれだけは取れそうにない、という資産の金額の訂正</mark>だからです。払う相手が存在しないので、負債にはなりえません。</p><p>いっぽう商品保証引当金・修繕引当金・賞与引当金・退職給付引当金は、修理業者や従業員に対して将来おカネやサービスを提供する義務なので<strong>負債性引当金</strong>となり、負債の部に載ります。2級で扱う引当金のうち評価性は貸倒引当金だけです。</p>'
+      },
+      {
+        text: '<strong>貸付金</strong>に対して設定した貸倒引当金繰入額は、損益計算書のどの区分に表示されますか。',
+        choices: [
+          '販売費及び一般管理費',
+          '営業外費用',
+          '特別損失'
+        ],
+        answer: 1,
+        explain: '<p>貸付金は<strong>営業外債権</strong>です。他社に金を貸して回収できない見込みは、本業とは関係のない資金運用上の損なので、<strong>営業外費用</strong>に表示します。</p><p>営業利益は「本業でどれだけ稼いだか」を表す段階利益です。本業と無関係な貸倒見込みを営業利益から引くと、その意味がゆがみます。</p><p>いっぽう売掛金・受取手形といった<strong>営業債権</strong>に対する繰入は、本業に付随して必ず起こるものなので<strong>販売費及び一般管理費</strong>に入ります。<strong>仕訳で使う科目はどちらも「貸倒引当金繰入」で同じ</strong>であり、分かれるのは表示だけです。</p>'
+      },
+      {
+        text: '前期に保証付きで販売した商品について、保証期間中の修理を行い代金を支払いました。商品保証引当金の残高は十分にあります。このときの処理として正しいものはどれですか。',
+        choices: [
+          '支払額の全額を当期の費用（修繕費）として計上する',
+          '支払額の全額について商品保証引当金を取り崩し、当期の費用は計上しない',
+          '支払額の半額を引当金から取り崩し、残りを当期の費用とする'
+        ],
+        answer: 1,
+        explain: '<p>この修理費は<strong>前期末に「商品保証引当金繰入」として費用計上済み</strong>です。当期にもう一度費用にすると、同じ支出を2年続けて費用にする<strong>二重計上</strong>になります。</p><p>したがって借方は商品保証引当金。引当金（負債）を取り崩すだけで、<strong>当期の損益は1円も動きません。</strong></p><p>ただし引当金は<strong>残高の限度までしか取り崩せません。</strong>実際の修理費が残高を超えた場合は、超過分だけが当期の費用になります。この問題では残高が十分にあるため、全額を引当金で賄います。</p>'
+      },
+      {
+        text: '建物の改修工事のうち、<strong>耐用年数を延長させる部分</strong>の支出について正しい処理はどれですか。',
+        choices: [
+          '修繕費として当期の費用とし、修繕引当金があれば取り崩す',
+          '建物の取得原価に加算し、以後減価償却を通じて費用化する',
+          '修繕引当金を追加で設定し、翌期以降に取り崩す'
+        ],
+        answer: 1,
+        explain: '<p>耐用年数を延長させる支出は<strong>資本的支出</strong>です。支出によって資産の価値そのものが増えているので、<strong>建物の取得原価に加算</strong>し、以後の減価償却を通じて将来にわたって費用化します。</p><p>これを費用にすると、資産の価値が上がったのに帳簿では上がらないという食い違いが残ります。</p><p><strong>修繕引当金を充てることはできません。</strong>引当金が対応しているのは、性能の維持・回復のための支出（収益的支出）であって、資産の価値を増やす支出ではないからです。</p>'
+      },
+      {
+        text: '退職給付引当金を設定するときの借方に書く、<strong>標準の勘定科目</strong>はどれですか。',
+        choices: [
+          '退職給付引当金繰入',
+          '退職給付費用',
+          '退職金'
+        ],
+        answer: 1,
+        explain: '<p>標準科目は<strong>退職給付費用</strong>です。他の引当金が「◯◯引当金繰入」で揃っているなかで、これだけ名前が違います。</p><p class="small muted">選択肢1の「退職給付引当金繰入」は勘定科目表のB欄（許容科目）にあり、答案に書いても正解になります。ただし標準はA欄の退職給付費用なので、迷ったらこちらを書いてください。</p><p>また、金額を自分で計算しない点も他の引当金と違います。<strong>退職給付債務の計算（将来の退職金を現在価値に割り引く計算）は1級の範囲</strong>なので、2級では問題文が金額または計算方法を与えてきます。</p><p>なお「退職金」は、実際に退職者へ支払う金銭そのものを指す語です。支払時は積み上げた退職給付引当金を取り崩すので、この科目を借方に書く場面は引当金が不足したときに限られます。</p>'
+      },
+      {
+        text: '<strong>当期に発生した</strong>売掛金が、得意先の倒産により当期中に貸倒れとなりました。貸倒引当金の残高は十分にあります。このときの処理として正しいものはどれですか。',
+        choices: [
+          '貸倒引当金を取り崩す',
+          '貸倒損失として当期の費用に計上する',
+          '貸倒引当金を取り崩し、同額の貸倒引当金戻入を計上する'
+        ],
+        answer: 1,
+        explain: '<p>引当金の残高は足りていますが、<strong>取り崩してはいけません。</strong></p><p>貸倒引当金は<strong>前期末の債権残高に対して設定したもの</strong>です。当期に発生した売掛金は、その計算に一切入っていません。前期に費用として見込んでいない損失なので、<strong>当期の費用（貸倒損失）</strong>とします。</p><p>判定材料は金額でも引当金残高でもなく、<mark>「その債権が前期以前に発生したか、当期に発生したか」</mark>だけです。問題文のその一文を読み落とすと確実に間違えます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-yougo', {
+    title: '穴埋め — 用語を書けるようにする（7問）',
+    questions: [
+      {
+        text: '収益が計上された年度に、その収益を得るために要した費用も計上すべきであるという考え方を何といいますか。引当金はこの考え方を、まだ支払いが起きていない場面にまで押し広げたものです。',
+        answer: ['費用収益対応の原則', 'ひようしゅうえきたいおうのげんそく', '費用収益対応'],
+        explain: '<p>保証付き販売のように「売る」と「あとで修理する」がセットになっている商売では、収益だけ当期、費用だけ来期に載ると、どちらの年度の利益も会社の実力を表しません。引当金はこのずれを埋める道具です。</p>'
+      },
+      {
+        text: '貸借対照表で負債の部に計上されるのではなく、売掛金などの資産から控除する形で表示される引当金のことを何といいますか。2級で扱うもののうち、これに該当するのは貸倒引当金だけです。',
+        answer: ['評価性引当金', 'ひょうかせいひきあてきん'],
+        explain: '<p>貸倒引当金は「誰かに金を払う義務」ではなく、資産の金額の訂正です。払う相手が存在しないので負債にはなりえません。これに対し、商品保証引当金・修繕引当金・賞与引当金・退職給付引当金は将来おカネやサービスを提供する義務なので<strong>負債性引当金</strong>となり、負債の部に載ります。</p>'
+      },
+      {
+        text: '経営状態が悪化し、回収が危ぶまれる相手に対する債権のことを何といいますか。この債権は他の債権とまとめず、相手ごとに貸倒見積額を計算します。',
+        answer: ['貸倒懸念債権', 'かしだおれけねんさいけん'],
+        explain: '<p>貸倒実績率は過去に貸し倒れた割合の平均です。すでに倒産寸前の相手にまで平均を当てはめるのは実態に合わないため、その相手だけを切り出して高い率で見積もります。これが<strong>個別評価</strong>です。残りの一般の債権はまとめて実績率を掛ける<strong>一括評価</strong>で処理します。</p>'
+      },
+      {
+        text: '個別評価の計算において、債権額から差し引いてから貸倒設定率を掛ける金額のことを何といいますか。不動産などを押さえてあれば、相手が倒れてもその分は回収できます。',
+        answer: ['担保処分見込額', 'たんぽしょぶんみこみがく'],
+        explain: '<p>回収できる見込みのある部分に貸倒れの心配はないので、控除してから率を掛けます。（債権額 − 担保処分見込額）× 設定率。この控除を忘れると金額が大きくずれますが、計算過程には矛盾が出ないため本人は気づきません。</p>'
+      },
+      {
+        text: '売掛金や受取手形のように、商品やサービスを売った代金として生じた債権を何といいますか。これに対する貸倒引当金繰入額は、損益計算書の販売費及び一般管理費に表示されます。',
+        answer: ['営業債権', 'えいぎょうさいけん'],
+        explain: '<p>商品を売った代金が回収できない見込みは、本業に付随して必ず起こることなので、営業利益の計算に含めます。これに対し貸付金・未収入金は<strong>営業外債権</strong>で、その貸倒引当金繰入額は<strong>営業外費用</strong>に表示されます。未収入金は名前が売掛金に似ていますが、本業の売上から生じた債権ではないので営業外債権です。</p>'
+      },
+      {
+        text: '建物や機械への支出のうち、元の性能を向上させたり耐用年数を延長させたりするものを何といいますか。修繕費とはせず、固定資産の取得原価に加算します。',
+        answer: ['資本的支出', 'しほんてきししゅつ'],
+        explain: '<p>支出によって資産の価値そのものが増えているため、費用にせず資産に足し込み、減価償却を通じて将来にわたって費用化します。<strong>修繕引当金を充てることはできません。</strong>引当金が対応しているのは、元の性能を維持・回復させる<strong>収益的支出</strong>のほうです。</p>'
+      },
+      {
+        text: '引当金が不要になったとき、借方に引当金を書いて消し、貸方に計上する収益の科目名に共通してつく語は何ですか。たとえば商品保証引当金なら「商品保証引当金◯◯」となります。',
+        answer: ['戻入', 'もどしいれ', 'れいにゅう'],
+        explain: '<p>保証期間が経過したなど、将来の支出という負債が存在しなくなった場合に使います。前期に積みすぎた費用を当期に返してもらう、という意味の収益であり、商売で儲けたわけではありません。</p><p>取崩しとの見分けは<strong>貸方が何か</strong>です。実際に支出したなら現金・当座預金など、不要になったなら戻入（収益）になります。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>
