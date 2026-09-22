@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第六-11-0">
+<meta name="boki-subject" content="商">
+<title>連結精算表と連結財務諸表 — 通し演習 — 日商簿記2級 Phase 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 2 目次</a>
+    <span class="topbar__title">UNIT 13 連結精算表と連結財務諸表</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W9 商業簿記 ／ UNIT 13 ／ 3時間 ＋ 通し演習4時間</p>
+    <h1>連結精算表と連結財務諸表<br>— 仕訳を答案用紙に落とし込む</h1>
+    <p class="lead">連結修正仕訳が書けても、それだけでは点になりません。第2問で問われるのは<strong>連結精算表や連結財務諸表の空欄を埋めること</strong>です。仕訳の金額を、どの行のどちら側に、どんな符号で書き込むのか。ここでつまずくと、正しい仕訳を書いたのに得点がゼロということが起こります。この単元では<mark>支配獲得から連結財務諸表まで、一気通貫の通し演習</mark>で仕上げます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 3h ＋ 演習 4h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 10問</span>
+      <span class="chip">通し演習・計算・確認テストつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">連結財務諸表には何があるか</a></li>
+      <li><a href="#s2">連結精算表の構造</a></li>
+      <li><a href="#s3">符号を間違えない — 加減の向きの決め方</a></li>
+      <li><a href="#s4">当期純利益から下の3行</a></li>
+      <li><a href="#s5">通し演習 — 資料</a></li>
+      <li><a href="#s6">通し演習 — 連結修正仕訳を全部書く</a></li>
+      <li><a href="#s7">通し演習 — 連結損益計算書</a></li>
+      <li><a href="#s8">通し演習 — 連結貸借対照表</a></li>
+      <li><a href="#s9">検算 — 合っているかを自分で確かめる</a></li>
+      <li><a href="#s10">本番での解く順序と時間配分</a></li>
+      <li><a href="#s11">仕訳ドリル 10問</a></li>
+      <li><a href="#s12">確認テスト・計算ドリル・穴埋め</a></li>
+      <li><a href="#s13">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>連結財務諸表には何があるか</h2>
+
+  <p>まず、何を作るのかを確認します。2級で作成が求められるのは次の3つです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>2級で問われる連結財務諸表</caption>
+    <thead><tr><th>名称</th><th>何を示すか</th><th>2級で特有の行</th></tr></thead>
+    <tbody>
+      <tr><td><strong>連結損益計算書</strong></td><td>グループ全体の1年間の成績</td><td>のれん償却、非支配株主に帰属する当期純利益</td></tr>
+      <tr><td><strong>連結貸借対照表</strong></td><td>グループ全体の期末の財産状態</td><td>のれん、非支配株主持分</td></tr>
+      <tr><td><strong>連結株主資本等変動計算書</strong></td><td>純資産が1年でどう動いたか</td><td>非支配株主持分当期変動額</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">個別の財務諸表と見比べると、増える行は4つだけ</span>
+    <p>連結財務諸表は、見た目こそ個別の財務諸表と似ていますが、<strong>個別には絶対に出てこない行</strong>が4つあります。この4つがどこに載るかを押さえるだけで、精算表の見通しがぐっとよくなります。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>行</th><th>載る場所</th><th>正体</th></tr></thead>
+      <tbody>
+        <tr><td>のれん</td><td>連結BS 固定資産（無形固定資産）</td><td>子会社株式の取得原価が、手に入れた純資産の持分を上回った額の未償却残高</td></tr>
+        <tr><td>のれん償却</td><td>連結PL 販売費及び一般管理費</td><td>のれんの当期償却額</td></tr>
+        <tr><td>非支配株主持分</td><td>連結BS 純資産（株主資本とは別区分）</td><td>子会社の純資産のうち、親会社が持っていない部分</td></tr>
+        <tr><td>非支配株主に帰属する当期純利益</td><td>連結PL 当期純利益の下</td><td>子会社の当期純利益のうち、非支配株主の取り分</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>この4行が答案用紙にあれば、そこは連結の問題です。</mark>逆にいえば、この4行の金額を出せれば連結特有の部分は片づきます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：非支配株主持分は「純資産」であって負債ではない</span>
+    <p>非支配株主持分は、グループの外にいる株主のものです。しかし<strong>負債ではありません。</strong>返す義務のあるお金ではないからです。</p>
+    <p>連結貸借対照表では、純資産の部のなかで<mark>株主資本とは別の区分</mark>に表示されます。株主資本（資本金・資本剰余金・利益剰余金）は親会社株主のもの、非支配株主持分はそれ以外、という並びです。</p>
+    <p>負債の区分に書くと、総資産や自己資本比率といった数字がすべてずれます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>連結精算表の構造</h2>
+
+  <p>連結精算表は、個別の財務諸表から連結財務諸表へ至る道筋を1枚の表にしたものです。横方向に4つの欄が並びます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結精算表の欄の構成</caption>
+    <thead><tr><th>科目</th><th class="amt">P社</th><th class="amt">S社</th><th class="amt">修正・消去 借方</th><th class="amt">修正・消去 貸方</th><th class="amt">連結財務諸表</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td class="amt">…</td><td class="amt">…</td><td class="amt">…</td><td class="amt">…</td><td class="amt">…</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>個別財務諸表の欄</strong> … P社とS社が作った財務諸表の金額がそのまま入っている。ここは与えられる</li>
+      <li><strong>修正・消去の欄</strong> … 連結修正仕訳の借方・貸方をそのまま書き込む。仕訳が書けていれば、ここは機械的に埋まる</li>
+      <li><strong>連結財務諸表の欄</strong> … 個別の合計に修正を加減した結果。ここが答えになる</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">精算表が求めているのは、実は足し算と引き算だけ</span>
+    <p>連結精算表の本体は<strong>「P社 ＋ S社 ± 修正 ＝ 連結」</strong>という1本の計算です。難しいのは修正の中身であって、表そのものではありません。</p>
+    <p>だから、<mark>連結修正仕訳をすべて書き出してから精算表に向かう</mark>のが確実な順序です。精算表を埋めながら仕訳を考えると、どの行まで反映したかを見失います。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">連結財務諸表を直接作らせる出題もあります</span>
+    <p>精算表を経由せず、連結損益計算書と連結貸借対照表の空欄を直接埋めさせる形式もあります。<strong>やることは同じ</strong>です。連結修正仕訳を書き、該当する科目の金額を集計します。</p>
+    <p>この場合、下書き用紙に自分で簡単な集計表を作るのが有効です。<mark>科目ごとに「個別合算 ± 修正」を並べれば、精算表を自分で書いているのと変わりません。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>符号を間違えない — 加減の向きの決め方</h2>
+
+  <p>ここが、仕訳は書けるのに点にならない人のつまずきどころです。</p>
+
+  <p>修正・消去欄に書き込んだ借方・貸方を、連結欄では<strong>足すのか引くのか。</strong>科目の性質ごとにルールを決めておきます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結欄での加減の向き</caption>
+    <thead><tr><th>科目の性質</th><th>ホームポジション</th><th>修正欄の借方は</th><th>修正欄の貸方は</th></tr></thead>
+    <tbody>
+      <tr><td>資産（商品・土地・のれんなど）</td><td>借方</td><td><strong>足す</strong></td><td><strong>引く</strong></td></tr>
+      <tr><td>費用（売上原価・のれん償却など）</td><td>借方</td><td><strong>足す</strong></td><td><strong>引く</strong></td></tr>
+      <tr><td>負債（買掛金・借入金など）</td><td>貸方</td><td><strong>引く</strong></td><td><strong>足す</strong></td></tr>
+      <tr><td>純資産（資本金・非支配株主持分など）</td><td>貸方</td><td><strong>引く</strong></td><td><strong>足す</strong></td></tr>
+      <tr><td>収益（売上高・受取利息など）</td><td>貸方</td><td><strong>引く</strong></td><td><strong>足す</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この表は暗記しなくていい</span>
+    <p>やっていることは<strong>ふつうの簿記と同じ</strong>です。ホームポジションと同じ側に書けば増え、反対側に書けば減る。それだけです。</p>
+    <p>資産は借方がホームポジションなので、借方に書けば増えます。負債は貸方がホームポジションなので、借方に書けば減ります。<mark>3級の最初に習ったことがそのまま効いています。</mark></p>
+    <p>表を覚えるのではなく、<strong>その科目のホームポジションはどちらかを毎回考える</strong>ほうが、本番で迷いません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：売上原価の貸方は「引く」</span>
+    <p>内部売上高の相殺で「売上高 ／ 売上原価」と書いたとき、精算表では<strong>売上高も売上原価も減ります。</strong></p>
+    <p>売上原価は費用でホームポジションが借方です。修正欄の<mark>貸方に書かれているので減る</mark>、という読み方をします。</p>
+    <p>ここを足してしまうと、連結上の売上原価が実際より大きくなり、利益が過少になります。<strong>売上原価は借方に書かれることも貸方に書かれることもある</strong>科目なので、1行ずつ向きを確認してください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">同じ科目に複数の修正が入ることがあります</span>
+    <p>通し演習で見るように、売上原価には<strong>内部売上高の相殺・期首商品の未実現利益・期末商品の未実現利益</strong>の3つが同時に入ることがあります。</p>
+    <p>このとき、借方に入るものと貸方に入るものが混在します。<mark>1つずつ符号をつけて足し合わせる</mark>のが確実です。まとめて処理しようとすると符号を取り違えます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>当期純利益から下の3行</h2>
+
+  <p>連結損益計算書の末尾には、個別にはない構造があります。ここは形を覚えてしまうのが速いところです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結損益計算書の末尾</caption>
+    <thead><tr><th>行</th><th>意味</th></tr></thead>
+    <tbody>
+      <tr><td><strong>当期純利益</strong></td><td>グループ全体の利益。ここまでは個別と同じ構造で計算する</td></tr>
+      <tr><td><strong>非支配株主に帰属する当期純利益</strong></td><td>そのうち、非支配株主の取り分。当期純利益から<strong>差し引く</strong></td></tr>
+      <tr><td><strong>親会社株主に帰属する当期純利益</strong></td><td>差し引いた残り。これが連結上の「最終的な利益」</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ2段階になっているのか</span>
+    <p>連結損益計算書は、まず<strong>グループ全体で稼いだ利益</strong>を示します。子会社が稼いだ利益も、持分比率にかかわらず全額が含まれます。</p>
+    <p>ところが、その利益のすべてが親会社の株主のものではありません。<mark>子会社の利益のうち 30%（非支配株主の持分）は、グループの外にいる株主のもの</mark>です。</p>
+    <p>そこで、全体の利益をいったん示したうえで、非支配株主の取り分を差し引きます。残りが親会社株主に帰属する当期純利益です。</p>
+    <p><strong>連結貸借対照表の利益剰余金に積み上がるのは、この「親会社株主に帰属する当期純利益」</strong>のほうです。非支配株主の取り分は、非支配株主持分に積み上がります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：利益剰余金に足すのはどちらか</span>
+    <p>連結貸借対照表の利益剰余金を計算するとき、足すのは<strong>親会社株主に帰属する当期純利益</strong>です。当期純利益（非支配株主分を含む全体）ではありません。</p>
+    <p>式にするとこうです。</p>
+    <div class="callout callout--ok">
+      <p><strong>連結 利益剰余金（期末）＝ 連結 利益剰余金（当期首）＋ 親会社株主に帰属する当期純利益 − 剰余金の配当</strong></p>
+      <p class="small">剰余金の配当は、<mark>親会社が行った配当だけ</mark>です。子会社の配当は連結修正仕訳で全額消えています。</p>
+    </div>
+    <p>ここを取り違えると、利益剰余金と非支配株主持分の両方が狂い、貸借対照表が合わなくなります。<strong>合わないことには気づけるので、検算する価値があります。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>通し演習 — 資料</h2>
+
+  <p>ここから、支配獲得から連結財務諸表まで一気に通します。<strong>手を動かしてください。</strong>読むだけでは身につきません。</p>
+
+  <p class="small muted">紙と電卓を用意し、まず自分で連結修正仕訳を全部書き出してから §6 へ進むことを勧めます。</p>
+
+  <div class="card">
+    <div class="card__label">資料1 — 支配獲得の経緯</div>
+    <p>P社は <strong>X1年3月31日</strong>、S社の発行済株式の <strong>70%</strong> を <strong>340,000円</strong> で取得し、S社を支配した。</p>
+    <p>支配獲得日のS社の純資産は、<strong>資本金 300,000円</strong>、<strong>利益剰余金 100,000円</strong> であった。なお、S社の資産および負債の帳簿価額と時価に差異はない。</p>
+    <p><strong>のれんは支配獲得の翌年度から10年間にわたり定額法で償却する。</strong></p>
+  </div>
+
+  <div class="card">
+    <div class="card__label">資料2 — 第1年度（X1年4月1日〜X2年3月31日）</div>
+    <p>S社の当期純利益は <strong>50,000円</strong> であり、剰余金の配当は行っていない。</p>
+    <p>したがって X2年3月31日のS社の利益剰余金は <strong>150,000円</strong> である。</p>
+  </div>
+
+  <div class="card">
+    <div class="card__label">資料3 — 第2年度（X2年4月1日〜X3年3月31日）の個別財務諸表</div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <caption>損益計算書（単位：円）</caption>
+      <thead><tr><th>科目</th><th class="amt">P社</th><th class="amt">S社</th></tr></thead>
+      <tbody>
+        <tr><td>売上高</td><td class="amt">2,000,000</td><td class="amt">900,000</td></tr>
+        <tr><td>売上原価</td><td class="amt">1,400,000</td><td class="amt">640,000</td></tr>
+        <tr><td>販売費及び一般管理費</td><td class="amt">380,000</td><td class="amt">194,000</td></tr>
+        <tr><td>受取利息</td><td class="amt">6,000</td><td class="amt">—</td></tr>
+        <tr><td>受取配当金</td><td class="amt">14,000</td><td class="amt">—</td></tr>
+        <tr><td>固定資産売却益</td><td class="amt">30,000</td><td class="amt">—</td></tr>
+        <tr><td>支払利息</td><td class="amt">—</td><td class="amt">6,000</td></tr>
+        <tr><td><strong>当期純利益</strong></td><td class="amt"><strong>270,000</strong></td><td class="amt"><strong>60,000</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="tablewrap">
+    <table class="jnl">
+      <caption>貸借対照表（単位：円）</caption>
+      <thead><tr><th>科目</th><th class="amt">P社</th><th class="amt">S社</th></tr></thead>
+      <tbody>
+        <tr><td>現金預金</td><td class="amt">116,000</td><td class="amt">70,000</td></tr>
+        <tr><td>売掛金</td><td class="amt">400,000</td><td class="amt">200,000</td></tr>
+        <tr><td>商品</td><td class="amt">300,000</td><td class="amt">150,000</td></tr>
+        <tr><td>土地</td><td class="amt">500,000</td><td class="amt">330,000</td></tr>
+        <tr><td>貸付金</td><td class="amt">100,000</td><td class="amt">—</td></tr>
+        <tr><td>子会社株式</td><td class="amt">340,000</td><td class="amt">—</td></tr>
+        <tr><td><strong>資産合計</strong></td><td class="amt"><strong>1,756,000</strong></td><td class="amt"><strong>750,000</strong></td></tr>
+        <tr><td>買掛金</td><td class="amt">346,000</td><td class="amt">160,000</td></tr>
+        <tr><td>借入金</td><td class="amt">—</td><td class="amt">100,000</td></tr>
+        <tr><td>資本金</td><td class="amt">800,000</td><td class="amt">300,000</td></tr>
+        <tr><td>利益剰余金</td><td class="amt">610,000</td><td class="amt">190,000</td></tr>
+        <tr><td><strong>負債・純資産合計</strong></td><td class="amt"><strong>1,756,000</strong></td><td class="amt"><strong>750,000</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small muted">利益剰余金の当期首残高は、P社 400,000円、S社 150,000円である。当期の剰余金の配当は、P社 60,000円、S社 20,000円である。</p>
+  </div>
+
+  <div class="card">
+    <div class="card__label">資料4 — 第2年度の連結に関する事項</div>
+    <ol>
+      <li>S社は当期中に <strong>剰余金の配当 20,000円</strong> を行った。P社はその持分に応じた金額を受取配当金として計上している。</li>
+      <li>当期中に、S社はP社に対して商品 <strong>300,000円</strong> を販売した。S社がP社に販売する商品の<strong>売上高利益率は 20%</strong> である。</li>
+      <li>P社の<strong>期首商品のうち 50,000円</strong>、<strong>期末商品のうち 100,000円</strong> は、S社から仕入れたものである。期首商品は当期中にすべて外部へ販売された。</li>
+      <li>当期中に、P社は帳簿価額 <strong>120,000円</strong> の土地を、S社に <strong>150,000円</strong> で売却した。S社は当期末現在この土地を保有している。</li>
+      <li>当期末において、S社のP社に対する<strong>買掛金 80,000円</strong> と、P社のS社に対する<strong>売掛金 80,000円</strong> が残っている。</li>
+      <li>P社はS社に対して <strong>100,000円</strong> を貸し付けており、当期末現在全額が未回収である。当期中にこの貸付金に係る<strong>利息 6,000円</strong> の受け払いが行われている。</li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>通し演習 — 連結修正仕訳を全部書く</h2>
+
+  <p>答え合わせです。自分で書いたものと突き合わせてください。<strong>抜けていた仕訳に印をつけて、なぜ気づけなかったかを確かめる</strong>ことが、この演習のいちばんの収穫です。</p>
+
+  <h3>ステップ1 — 開始仕訳</h3>
+
+  <p>支配獲得日から当期首までに積み上がったものを再現します。まず、のれんと非支配株主持分を計算します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">支配獲得日の計算</span>
+    <ul>
+      <li>S社の純資産＝300,000 ＋ 100,000 ＝ <strong>400,000円</strong></li>
+      <li>P社の持分＝400,000 × 70% ＝ <strong>280,000円</strong></li>
+      <li>非支配株主持分＝400,000 × 30% ＝ <strong>120,000円</strong></li>
+      <li>のれん＝340,000 − 280,000 ＝ <strong>60,000円</strong>（10年償却なので年 6,000円）</li>
+    </ul>
+  </div>
+
+  <p>第1年度に起きたことは2つです。のれんを1年分償却し、S社の当期純利益 50,000円の 30% を非支配株主に按分しました。</p>
+
+  <ul>
+    <li>のれん償却 1年分＝<strong>6,000円</strong> → のれん残高 60,000 − 6,000 ＝ <strong>54,000円</strong></li>
+    <li>第1年度の非支配株主への按分＝50,000 × 30% ＝ <strong>15,000円</strong> → 非支配株主持分 120,000 ＋ 15,000 ＝ <strong>135,000円</strong></li>
+    <li>利益剰余金当期首残高の減少＝100,000（支配獲得時）＋ 6,000（のれん償却）＋ 15,000（按分）＝ <strong>121,000円</strong></li>
+  </ul>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 開始仕訳（資本連結分）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金当期首残高</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">340,000</td></tr>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">121,000</td><td class="c">非支配株主持分当期首残高</td><td class="c amt">135,000</td></tr>
+      <tr><td class="d">のれん</td><td class="d amt">54,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">貸借の確認：借方 300,000 ＋ 121,000 ＋ 54,000 ＝ 475,000円。貸方 340,000 ＋ 135,000 ＝ 475,000円。一致します。</p>
+
+  <h3>ステップ2 — 期首商品の未実現利益（開始仕訳分）</h3>
+
+  <p>前期末のP社の商品に、S社からの未実現利益が含まれていました。期首商品 50,000円 × 20% ＝ <strong>10,000円</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 期首商品の未実現利益の再現</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">10,000</td><td class="c">商品</td><td class="c amt">10,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ ②の非支配株主への按分（アップストリームなので必要）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主持分当期首残高</td><td class="d amt">3,000</td><td class="c">利益剰余金当期首残高</td><td class="c amt">3,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>按分額は 10,000 × 30% ＝ 3,000円です。<strong>S社がP社に売っているのでアップストリーム</strong>、だから按分が要ります。</p>
+
+  <h3>ステップ3 — 当期の資本連結</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>④ のれんの償却（当期分）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">のれん償却</td><td class="d amt">6,000</td><td class="c">のれん</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑤ S社の当期純利益の按分（60,000 × 30%）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">18,000</td><td class="c">非支配株主持分当期変動額</td><td class="c amt">18,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑥ S社の配当金の修正</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">受取配当金</td><td class="d amt">14,000</td><td class="c">剰余金の配当</td><td class="c amt">20,000</td></tr>
+      <tr><td class="d">非支配株主持分当期変動額</td><td class="d amt">6,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">配当金の修正が2行になる理由</span>
+    <p>S社が配当した 20,000円は、<strong>行き先が2つに分かれています。</strong></p>
+    <ul>
+      <li><strong>P社へ 14,000円</strong>（20,000 × 70%）… P社は受取配当金として計上している。グループ内でお金が移動しただけなので消す</li>
+      <li><strong>非支配株主へ 6,000円</strong>（20,000 × 30%）… こちらは本当にグループの外へ出ていった。非支配株主の取り分が減ったので、非支配株主持分を減らす</li>
+    </ul>
+    <p>貸方の「剰余金の配当」20,000円は、S社が行った配当を全額取り消しています。<mark>連結上の配当は、親会社が行ったものだけ</mark>だからです。</p>
+  </div>
+
+  <h3>ステップ4 — 成果連結と未実現利益</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑦ 期首商品の未実現利益の実現</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">商品</td><td class="d amt">10,000</td><td class="c">売上原価</td><td class="c amt">10,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑧ ⑦の非支配株主への按分</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">3,000</td><td class="c">非支配株主持分当期変動額</td><td class="c amt">3,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑨ 内部売上高の相殺</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上高</td><td class="d amt">300,000</td><td class="c">売上原価</td><td class="c amt">300,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑩ 期末商品の未実現利益（100,000 × 20%）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">20,000</td><td class="c">商品</td><td class="c amt">20,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑪ ⑩の非支配株主への按分</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主持分当期変動額</td><td class="d amt">6,000</td><td class="c">非支配株主に帰属する当期純利益</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑫ 土地の未実現利益（150,000 − 120,000）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">固定資産売却益</td><td class="d amt">30,000</td><td class="c">土地</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">土地はダウンストリームなので按分がありません</span>
+    <p>土地を売ったのは<strong>P社（親会社）</strong>です。商品の売買（S社 → P社）とは向きが逆になっています。</p>
+    <p><mark>同じ問題のなかで向きが混在します。</mark>「この問題はアップストリームだ」と決めつけて全部に按分をつけると、土地のところで間違えます。<strong>取引ごとに売った側を確認してください。</strong></p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑬ 債権債務の相殺</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">買掛金</td><td class="d amt">80,000</td><td class="c">売掛金</td><td class="c amt">80,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑭ 貸付金と借入金の相殺</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">借入金</td><td class="d amt">100,000</td><td class="c">貸付金</td><td class="c amt">100,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>⑮ 利息の相殺</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">受取利息</td><td class="d amt">6,000</td><td class="c">支払利息</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">全部で15本。抜けやすいのは次の4本です</span>
+    <ol>
+      <li><strong>③ 期首商品の未実現利益の按分（開始仕訳分）</strong> … 開始仕訳のなかに按分があることを忘れやすい</li>
+      <li><strong>⑧ 期首商品の実現にともなう按分</strong> … ⑦は書けても⑧が抜ける</li>
+      <li><strong>⑪ 期末商品の未実現利益の按分</strong> … アップストリームの按分の典型的な漏れ</li>
+      <li><strong>⑮ 利息の相殺</strong> … 貸付金と借入金だけ消して終わりにしてしまう</li>
+    </ol>
+    <p>自分が抜かしたものがこのリストにあれば、<mark>それは多くの人がつまずくところ</mark>です。次に同じ問題を解くときに意識してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>通し演習 — 連結損益計算書</h2>
+
+  <p>仕訳を科目ごとに集計します。<strong>個別の合算に、修正を符号つきで足していく</strong>だけです。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結損益計算書の集計（単位：円）</caption>
+    <thead><tr><th>科目</th><th class="amt">P社</th><th class="amt">S社</th><th class="amt">単純合算</th><th>修正</th><th class="amt">連結</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td class="amt">2,000,000</td><td class="amt">900,000</td><td class="amt">2,900,000</td><td>⑨ −300,000</td><td class="amt"><strong>2,600,000</strong></td></tr>
+      <tr><td>売上原価</td><td class="amt">1,400,000</td><td class="amt">640,000</td><td class="amt">2,040,000</td><td>⑦ −10,000<br>⑨ −300,000<br>⑩ ＋20,000</td><td class="amt"><strong>1,750,000</strong></td></tr>
+      <tr><td>販売費及び一般管理費</td><td class="amt">380,000</td><td class="amt">194,000</td><td class="amt">574,000</td><td>—</td><td class="amt"><strong>574,000</strong></td></tr>
+      <tr><td>のれん償却</td><td class="amt">—</td><td class="amt">—</td><td class="amt">—</td><td>④ ＋6,000</td><td class="amt"><strong>6,000</strong></td></tr>
+      <tr><td>受取利息</td><td class="amt">6,000</td><td class="amt">—</td><td class="amt">6,000</td><td>⑮ −6,000</td><td class="amt"><strong>0</strong></td></tr>
+      <tr><td>受取配当金</td><td class="amt">14,000</td><td class="amt">—</td><td class="amt">14,000</td><td>⑥ −14,000</td><td class="amt"><strong>0</strong></td></tr>
+      <tr><td>固定資産売却益</td><td class="amt">30,000</td><td class="amt">—</td><td class="amt">30,000</td><td>⑫ −30,000</td><td class="amt"><strong>0</strong></td></tr>
+      <tr><td>支払利息</td><td class="amt">—</td><td class="amt">6,000</td><td class="amt">6,000</td><td>⑮ −6,000</td><td class="amt"><strong>0</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">売上原価の計算を追う</span>
+    <p>3つの修正が同時に入る唯一の科目です。1つずつ符号をつけます。</p>
+    <ul>
+      <li>単純合算＝1,400,000 ＋ 640,000 ＝ <strong>2,040,000円</strong></li>
+      <li>⑦ 期首商品の実現 … 貸方 10,000 なので <strong>−10,000</strong></li>
+      <li>⑨ 内部売上高の相殺 … 貸方 300,000 なので <strong>−300,000</strong></li>
+      <li>⑩ 期末商品の未実現 … 借方 20,000 なので <strong>＋20,000</strong></li>
+      <li>合計＝2,040,000 − 10,000 − 300,000 ＋ 20,000 ＝ <strong>1,750,000円</strong></li>
+    </ul>
+    <p><mark>期首の分は引き、期末の分は足す。</mark>向きが逆であることを、ここで実際に確かめてください。</p>
+  </div>
+
+  <h3>当期純利益から下</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">計算</span>
+    <ul>
+      <li>収益合計＝2,600,000 ＋ 0 ＋ 0 ＋ 0 ＝ <strong>2,600,000円</strong></li>
+      <li>費用合計＝1,750,000 ＋ 574,000 ＋ 6,000 ＋ 0 ＝ <strong>2,330,000円</strong></li>
+      <li><strong>当期純利益</strong>＝2,600,000 − 2,330,000 ＝ <strong>270,000円</strong></li>
+    </ul>
+    <p>非支配株主に帰属する当期純利益は、⑤⑧⑪の3本を集計します。</p>
+    <ul>
+      <li>⑤ S社の当期純利益の按分 … 借方 18,000 なので <strong>＋18,000</strong></li>
+      <li>⑧ 期首商品の実現の按分 … 借方 3,000 なので <strong>＋3,000</strong></li>
+      <li>⑪ 期末商品の未実現の按分 … 貸方 6,000 なので <strong>−6,000</strong></li>
+      <li>合計＝18,000 ＋ 3,000 − 6,000 ＝ <strong>15,000円</strong></li>
+    </ul>
+    <p><strong>親会社株主に帰属する当期純利益</strong>＝270,000 − 15,000 ＝ <strong>255,000円</strong></p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結損益計算書（完成・単位：円）</caption>
+    <thead><tr><th>科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td class="amt">2,600,000</td></tr>
+      <tr><td>売上原価</td><td class="amt">1,750,000</td></tr>
+      <tr><td><strong>売上総利益</strong></td><td class="amt"><strong>850,000</strong></td></tr>
+      <tr><td>販売費及び一般管理費</td><td class="amt">574,000</td></tr>
+      <tr><td>のれん償却</td><td class="amt">6,000</td></tr>
+      <tr><td><strong>当期純利益</strong></td><td class="amt"><strong>270,000</strong></td></tr>
+      <tr><td>非支配株主に帰属する当期純利益</td><td class="amt">15,000</td></tr>
+      <tr><td><strong>親会社株主に帰属する当期純利益</strong></td><td class="amt"><strong>255,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">売上総利益の検算：2,600,000 − 1,750,000 ＝ 850,000円。当期純利益の検算：850,000 − 574,000 − 6,000 ＝ 270,000円。営業外の収益・費用はすべて相殺されてゼロになっています。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>通し演習 — 連結貸借対照表</h2>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結貸借対照表の集計（単位：円）</caption>
+    <thead><tr><th>科目</th><th class="amt">P社</th><th class="amt">S社</th><th class="amt">単純合算</th><th>修正</th><th class="amt">連結</th></tr></thead>
+    <tbody>
+      <tr><td>現金預金</td><td class="amt">116,000</td><td class="amt">70,000</td><td class="amt">186,000</td><td>—</td><td class="amt"><strong>186,000</strong></td></tr>
+      <tr><td>売掛金</td><td class="amt">400,000</td><td class="amt">200,000</td><td class="amt">600,000</td><td>⑬ −80,000</td><td class="amt"><strong>520,000</strong></td></tr>
+      <tr><td>商品</td><td class="amt">300,000</td><td class="amt">150,000</td><td class="amt">450,000</td><td>② −10,000<br>⑦ ＋10,000<br>⑩ −20,000</td><td class="amt"><strong>430,000</strong></td></tr>
+      <tr><td>土地</td><td class="amt">500,000</td><td class="amt">330,000</td><td class="amt">830,000</td><td>⑫ −30,000</td><td class="amt"><strong>800,000</strong></td></tr>
+      <tr><td>貸付金</td><td class="amt">100,000</td><td class="amt">—</td><td class="amt">100,000</td><td>⑭ −100,000</td><td class="amt"><strong>0</strong></td></tr>
+      <tr><td>子会社株式</td><td class="amt">340,000</td><td class="amt">—</td><td class="amt">340,000</td><td>① −340,000</td><td class="amt"><strong>0</strong></td></tr>
+      <tr><td>のれん</td><td class="amt">—</td><td class="amt">—</td><td class="amt">—</td><td>① ＋54,000<br>④ −6,000</td><td class="amt"><strong>48,000</strong></td></tr>
+      <tr><td>買掛金</td><td class="amt">346,000</td><td class="amt">160,000</td><td class="amt">506,000</td><td>⑬ −80,000</td><td class="amt"><strong>426,000</strong></td></tr>
+      <tr><td>借入金</td><td class="amt">—</td><td class="amt">100,000</td><td class="amt">100,000</td><td>⑭ −100,000</td><td class="amt"><strong>0</strong></td></tr>
+      <tr><td>資本金</td><td class="amt">800,000</td><td class="amt">300,000</td><td class="amt">1,100,000</td><td>① −300,000</td><td class="amt"><strong>800,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">連結上の資本金は、親会社の資本金と一致する</span>
+    <p>開始仕訳でS社の資本金を全額消しているので、<strong>連結貸借対照表の資本金は P社の資本金 800,000円そのまま</strong>になります。</p>
+    <p>これは<mark>強力な検算</mark>です。資本金が 1,100,000円のまま残っていたら、開始仕訳を書いていないか、精算表への転記を落としています。答案を書いたら必ず確かめてください。</p>
+  </div>
+
+  <h3>利益剰余金</h3>
+
+  <p>利益剰余金は、当期首残高から順に積み上げて計算します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">連結上の利益剰余金 当期首残高</span>
+    <ul>
+      <li>単純合算＝400,000（P社）＋ 150,000（S社）＝ <strong>550,000円</strong></li>
+      <li>① 開始仕訳 … 借方 121,000 なので <strong>−121,000</strong></li>
+      <li>② 期首商品の未実現 … 借方 10,000 なので <strong>−10,000</strong></li>
+      <li>③ ②の按分 … 貸方 3,000 なので <strong>＋3,000</strong></li>
+      <li>合計＝550,000 − 121,000 − 10,000 ＋ 3,000 ＝ <strong>422,000円</strong></li>
+    </ul>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">連結上の利益剰余金 当期末残高</span>
+    <p><strong>422,000 ＋ 255,000 − 60,000 ＝ 617,000円</strong></p>
+    <ul>
+      <li>足すのは<strong>親会社株主に帰属する当期純利益 255,000円</strong>。当期純利益 270,000円ではありません</li>
+      <li>引くのは<strong>P社の配当 60,000円だけ</strong>。S社の配当 20,000円は⑥で全額取り消しています</li>
+    </ul>
+  </div>
+
+  <h3>非支配株主持分</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">積み上げて計算する</span>
+    <ul>
+      <li>① 開始仕訳（当期首残高）… <strong>135,000円</strong></li>
+      <li>③ 期首商品の未実現の按分 … 借方 3,000 なので <strong>−3,000</strong></li>
+      <li>⑤ S社の当期純利益の按分 … 貸方 18,000 なので <strong>＋18,000</strong></li>
+      <li>⑥ 配当の修正 … 借方 6,000 なので <strong>−6,000</strong></li>
+      <li>⑧ 期首商品の実現の按分 … 貸方 3,000 なので <strong>＋3,000</strong></li>
+      <li>⑪ 期末商品の未実現の按分 … 借方 6,000 なので <strong>−6,000</strong></li>
+      <li>合計＝135,000 − 3,000 ＋ 18,000 − 6,000 ＋ 3,000 − 6,000 ＝ <strong>141,000円</strong></li>
+    </ul>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結貸借対照表（完成・単位：円）</caption>
+    <thead><tr><th>資産の部</th><th class="amt">金額</th><th>負債・純資産の部</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td>現金預金</td><td class="amt">186,000</td><td>買掛金</td><td class="amt">426,000</td></tr>
+      <tr><td>売掛金</td><td class="amt">520,000</td><td><strong>負債合計</strong></td><td class="amt"><strong>426,000</strong></td></tr>
+      <tr><td>商品</td><td class="amt">430,000</td><td>資本金</td><td class="amt">800,000</td></tr>
+      <tr><td>土地</td><td class="amt">800,000</td><td>利益剰余金</td><td class="amt">617,000</td></tr>
+      <tr><td>のれん</td><td class="amt">48,000</td><td>非支配株主持分</td><td class="amt">141,000</td></tr>
+      <tr><td><strong>資産合計</strong></td><td class="amt"><strong>1,984,000</strong></td><td><strong>負債・純資産合計</strong></td><td class="amt"><strong>1,984,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">資産合計の検算：186,000 ＋ 520,000 ＋ 430,000 ＋ 800,000 ＋ 48,000 ＝ 1,984,000円。負債・純資産合計の検算：426,000 ＋ 800,000 ＋ 617,000 ＋ 141,000 ＝ 1,984,000円。一致します。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>検算 — 合っているかを自分で確かめる</h2>
+
+  <p>連結の答案は、<strong>間違えていても間違えたことに気づけません。</strong>部分点を積む問題なので、途中で破綻して止まることがないからです。だから検算の手を自分で持つ必要があります。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">検算1 — 貸借対照表の貸借が一致するか</span>
+    <p>最も強力な検算です。<strong>資産合計 ＝ 負債・純資産合計</strong>になっているか。</p>
+    <p>連結修正仕訳はすべて貸借が一致しているので、正しく転記できていれば必ず合います。<mark>合わなければ、転記のどこかで符号を間違えたか、仕訳を1本落としています。</mark></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">検算2 — 資本金が親会社の資本金と一致するか</span>
+    <p>開始仕訳で子会社の資本金は全額消えるので、<strong>連結上の資本金＝親会社の資本金</strong>です。この演習では 800,000円。</p>
+    <p>一致しなければ開始仕訳に問題があります。10秒で確かめられる割に、効果の大きい検算です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">検算3 — 非支配株主持分を別の道筋から出す</span>
+    <p>非支配株主持分は、<strong>積み上げずに直接計算することもできます。</strong>2つの道筋が一致すれば、まず正しいと考えてよいでしょう。</p>
+    <ul>
+      <li>S社の期末純資産＝資本金 300,000 ＋ 利益剰余金 190,000 ＝ <strong>490,000円</strong></li>
+      <li>その 30%＝490,000 × 30% ＝ <strong>147,000円</strong></li>
+      <li>アップストリームの期末未実現利益の負担＝20,000 × 30% ＝ <strong>6,000円</strong>を差し引く</li>
+      <li>147,000 − 6,000 ＝ <strong>141,000円</strong></li>
+    </ul>
+    <p>§8で積み上げた結果と一致しました。</p>
+    <p class="small"><strong>なぜこの式で出せるのか。</strong>非支配株主持分とは、要するに「子会社の純資産のうち非支配株主の取り分」です。連結上の子会社の純資産は、個別の純資産からアップストリームの未実現利益を除いたものなので、それに持分比率を掛ければ出ます。<mark>ダウンストリーム（この演習では土地）は差し引きません。</mark>親会社が計上した利益なので、子会社の純資産には含まれていないからです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">検算3で土地を引いてしまわない</span>
+    <p>この演習には土地の未実現利益 30,000円もありますが、<strong>検算3では差し引きません。</strong>土地を売ったのはP社（親会社）だからです。</p>
+    <p>差し引くのは<mark>子会社が計上した未実現利益だけ</mark>です。向きを取り違えると、検算のほうが間違って「合わない」と判断してしまいます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>本番での解く順序と時間配分</h2>
+
+  <p>第2問で連結が出た場合、20分前後で処理する必要があります。順序を決めておかないと、資料を行ったり来たりして時間を溶かします。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>答案用紙を先に見る。</strong>何を答えさせられるのかを確認します。連結損益計算書だけなら、貸借対照表の科目は計算しなくて済みます</li>
+      <li><strong>支配獲得日の情報を拾い、のれんと非支配株主持分を計算する。</strong>ここは資料の冒頭にあります</li>
+      <li><strong>開始仕訳を書く。</strong>支配獲得から当期首までに何年経っているかを必ず確認します。のれん償却も利益の按分も、その年数分だけ積み上がっています</li>
+      <li><strong>当期の資本連結（のれん償却・利益の按分・配当）を書く。</strong>この3本はほぼ必ず出ます</li>
+      <li><strong>成果連結を書く。</strong>債権債務、内部取引高、未実現利益。資料の番号順に処理すると漏れません</li>
+      <li><strong>答案用紙の科目を1つずつ埋める。</strong>仕訳から拾う形にします。仕訳を見ながら精算表を埋めるほうが、記憶に頼るより確実です</li>
+      <li><strong>検算する。</strong>§9の3つを回します</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">全部解こうとしない</span>
+    <p>連結の問題は、解答欄が10〜15個あるのがふつうです。<strong>全部埋める必要はありません。</strong>第2問で14点を狙うなら、確実に取れるところから埋めます。</p>
+    <p>取りやすいのは次の順です。</p>
+    <ul>
+      <li><strong>売上高</strong> … 単純合算から内部売上高を引くだけ</li>
+      <li><strong>のれん・のれん償却</strong> … 支配獲得日の情報だけで出る</li>
+      <li><strong>資本金</strong> … 親会社の資本金そのまま</li>
+      <li><strong>売掛金・買掛金</strong> … 相殺するだけ</li>
+    </ul>
+    <p>逆に時間がかかるのは<strong>利益剰余金と非支配株主持分</strong>です。ほぼすべての仕訳が影響するので、他を終えてから取りかかります。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>連結の集計は「単純合算に修正を符号つきで足す」形なので、<strong>メモリ機能（M＋ / M− / MR）がそのまま使えます。</strong></p>
+    <p>売上原価のように修正が3つ入る科目では、単純合算を M＋ し、修正を符号どおりに M＋ / M− して、最後に MR で読み出します。<mark>途中結果を紙に書き写さないぶん、転記ミスが減ります。</mark></p>
+    <p>使い終わったら必ず MC でメモリを消してください。次の科目に前の科目の残りが混ざると、原因の分からない狂い方をします。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>仕訳ドリル 10問</h2>
+
+  <p>通し演習で出てきた論点を、単独で問い直します。<strong>解答欄は常に4行あります。</strong></p>
+
+  <p class="small muted">すべてP社が親会社、S社が子会社という前提です。ドリルでは勘定科目表の科目名を使うため、開始仕訳の科目は<strong>「利益剰余金」「非支配株主持分」</strong>と入力してください（本番では答案用紙の行名に従います）。</p>
+
+  <div id="drill-seisanhyo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>確認テスト・計算ドリル・穴埋め</h2>
+
+  <p>集計の力と、符号の判断を分けて確認します。</p>
+
+  <div id="quiz-hyouji"></div>
+
+  <div id="num-shukei"></div>
+
+  <div id="fill-seisanhyo"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。通し演習は<strong>1回では足りません。</strong>1日空けてもう一度、資料だけを見て最初から作れるかを試してください。</p>
+
+  <div class="progressbar" data-progress-for="#u13check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u13check">0 / 0 完了（0%）</div>
+
+  <div id="u13check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p2u13-1"><label for="c1"><span class="cl__t">連結財務諸表にだけ現れる4つの行を挙げ、載る場所を言える</span><span class="cl__d">のれん（BS固定資産）、のれん償却（PL販管費）、非支配株主持分（BS純資産）、非支配株主に帰属する当期純利益（PL当期純利益の下）</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p2u13-2"><label for="c2"><span class="cl__t">非支配株主持分が純資産であって負債でないと理解している</span><span class="cl__d">返す義務のあるお金ではない。純資産の部で、株主資本とは別の区分に表示する</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p2u13-3"><label for="c3"><span class="cl__t">連結精算表の構造を「P社＋S社±修正＝連結」と言える</span><span class="cl__d">難しいのは修正の中身で、表そのものは足し算と引き算。仕訳を全部書き出してから精算表に向かう</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p2u13-4"><label for="c4"><span class="cl__t">修正欄の借方・貸方を、連結欄で足すか引くか判断できる</span><span class="cl__d">ホームポジションと同じ側なら増え、反対側なら減る。表を暗記せず、科目のホームポジションを毎回考える</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p2u13-5"><label for="c5"><span class="cl__t">当期純利益から下の3行の構造を書ける</span><span class="cl__d">当期純利益 − 非支配株主に帰属する当期純利益 ＝ 親会社株主に帰属する当期純利益</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p2u13-6"><label for="c6"><span class="cl__t">連結上の利益剰余金の計算式を書ける</span><span class="cl__d">当期首残高 ＋ 親会社株主に帰属する当期純利益 − 親会社の配当。当期純利益ではない。子会社の配当は含めない</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p2u13-7"><label for="c7"><span class="cl__t">子会社の配当の修正が2行になる理由を説明できる</span><span class="cl__d">親会社が受け取った分は受取配当金と相殺、非支配株主が受け取った分は非支配株主持分を減らす。行き先が2つに分かれている</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p2u13-8"><label for="c8"><span class="cl__t">通し演習の連結修正仕訳15本を、資料だけ見て自力で書けた</span><span class="cl__d">抜けやすいのは開始仕訳の按分、期首商品の実現の按分、期末商品の按分、利息の相殺の4本</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p2u13-9"><label for="c9"><span class="cl__t">売上原価に3つの修正が入るとき、符号をつけて集計できる</span><span class="cl__d">期首商品の実現は引き、内部売上高の相殺は引き、期末商品の未実現は足す。1つずつ符号をつける</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p2u13-10"><label for="c10"><span class="cl__t">同じ問題のなかで取引の向きが混在しうると知っている</span><span class="cl__d">通し演習では商品がアップストリーム、土地がダウンストリーム。取引ごとに売った側を確認する</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p2u13-11"><label for="c11"><span class="cl__t">検算を3つ挙げられる</span><span class="cl__d">貸借対照表の貸借一致、資本金＝親会社の資本金、非支配株主持分を別の道筋から出す</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p2u13-12"><label for="c12"><span class="cl__t">非支配株主持分を直接計算する式を書ける</span><span class="cl__d">子会社の期末純資産 × 非支配株主の持分比率 − アップストリームの期末未実現利益 × 同比率。ダウンストリームは引かない</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p2u13-13"><label for="c13"><span class="cl__t">本番で取りやすい解答欄を先に埋める判断ができる</span><span class="cl__d">売上高、のれん、資本金、売掛金・買掛金が取りやすい。利益剰余金と非支配株主持分は最後に回す</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p2u13-14"><label for="c14"><span class="cl__t">通し演習を1日空けてもう一度、最初から作れた</span><span class="cl__d">1回目は答えを見ながらでよい。2回目に資料だけで作れるかが、本番で使えるかの分かれ目</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p2u13-15"><label for="c15"><span class="cl__t">仕訳ドリル10問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>連結のインプットはこれで完了です。あとは<strong>忘れないようにする</strong>ことだけが課題になります。</p>
+    <p>連結は2級で最も忘れやすい論点です。この週で仕上げても、2週間触らなければ開始仕訳の書き方から怪しくなります。<mark>本番までの毎週、連結の問題を最低1題は解いてください。</mark>1題は 20〜30分です。その時間を確保する価値があります。</p>
+    <p>優先するのは<strong>通し演習の再演</strong>です。新しい問題を次々に解くより、同じ問題を資料だけ見て最初から作り直すほうが、手順が定着します。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 2 教材 ／ W9 UNIT 13 連結精算表と連結財務諸表</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-hyouji', {
+    title: '理解チェック — 表示と符号',
+    questions: [
+      {
+        text: '非支配株主持分は、連結貸借対照表のどこに表示されますか。',
+        choices: [
+          '負債の部',
+          '純資産の部（株主資本とは別の区分）',
+          '純資産の部の株主資本のなか'
+        ],
+        answer: 1,
+        explain: '<p>選択肢2が正解です。<strong>純資産の部のなかで、株主資本とは別の区分</strong>に表示されます。</p><p>負債ではありません。返す義務のあるお金ではないからです。一方で株主資本でもありません。株主資本は<strong>親会社株主</strong>のものを示す区分だからです。</p><p>負債の区分に書くと、総資産や自己資本比率といった数字がすべてずれます。</p>'
+      },
+      {
+        text: '内部売上高の相殺消去「売上高 ／ 売上原価」を連結精算表に転記した。連結欄で<strong>売上原価</strong>はどうなりますか。',
+        choices: ['増える', '減る', '変わらない'],
+        answer: 1,
+        explain: '<p><strong>減ります。</strong>売上原価は費用でホームポジションが借方です。修正欄の<strong>貸方</strong>に書かれているので、反対側になり減ります。</p><p>ここを足してしまうと、連結上の売上原価が実際より大きくなり、利益が過少になります。</p><p><mark>売上原価は借方に書かれることも貸方に書かれることもある科目です。</mark>内部売上高の相殺では貸方、期末商品の未実現利益の消去では借方、期首商品の実現では貸方。1行ずつ向きを確認してください。</p>'
+      },
+      {
+        text: '連結貸借対照表の利益剰余金（期末）を計算するとき、当期首残高に足すのはどれですか。',
+        choices: [
+          '当期純利益',
+          '親会社株主に帰属する当期純利益',
+          '非支配株主に帰属する当期純利益'
+        ],
+        answer: 1,
+        explain: '<p>選択肢2の<strong>親会社株主に帰属する当期純利益</strong>です。</p><p>当期純利益（選択肢1）は、非支配株主の取り分を含んだグループ全体の利益です。そのうち非支配株主の取り分は<strong>非支配株主持分</strong>に積み上がるので、利益剰余金に足してはいけません。</p><p>式は「当期首残高 ＋ 親会社株主に帰属する当期純利益 − 剰余金の配当」。<mark>剰余金の配当は親会社が行ったものだけ</mark>で、子会社の配当は連結修正仕訳で全額取り消されています。</p><p>ここを取り違えると利益剰余金と非支配株主持分の両方が狂い、貸借対照表が合わなくなります。</p>'
+      },
+      {
+        text: '連結貸借対照表の<strong>資本金</strong>は、どうなりますか。なお、親会社は当期中に増資を行っていません。',
+        choices: [
+          '親会社の資本金と子会社の資本金の合計',
+          '親会社の資本金と一致する',
+          '親会社の資本金に持分比率を掛けた額'
+        ],
+        answer: 1,
+        explain: '<p>選択肢2が正解です。<strong>親会社の資本金と一致します。</strong></p><p>開始仕訳（投資と資本の相殺消去）で、子会社の資本金は<strong>全額</strong>消えるからです。持分比率を掛けた額だけを消すのではありません。</p><p>これは<mark>強力な検算</mark>になります。答案の資本金が単純合算のままなら、開始仕訳を書いていないか、転記を落としています。10秒で確かめられます。</p>'
+      },
+      {
+        text: '子会社が当期に剰余金の配当 <strong>50,000円</strong> を行った。親会社の持分比率は 80%、非支配株主の持分比率は 20% である。連結修正仕訳で<strong>非支配株主持分</strong>を減らす金額はいくらですか。',
+        choices: ['50,000円', '40,000円', '10,000円'],
+        answer: 2,
+        invariant: [
+          // 持分比率は問題文が 80% と 20% の両方を示している。
+          ['50000 * 20 / (80 + 20)', '10000'],
+          ['50000 * 80 / (80 + 20) + 50000 * 20 / (80 + 20)', '50000'],
+          ['50000 * 20 / (80 + 20)', 'answer']
+        ],
+        explain: '<p><strong>10,000円</strong>です。50,000 × 20% ＝ 10,000円。</p><p>子会社の配当 50,000円は、行き先が2つに分かれます。</p><ul><li><strong>親会社へ 40,000円</strong>（80%）… 親会社は受取配当金として計上しているので、それと相殺する</li><li><strong>非支配株主へ 10,000円</strong>（20%）… 本当にグループの外へ出ていったお金。非支配株主の取り分が減ったので、非支配株主持分を減らす</li></ul><p>仕訳は「受取配当金 40,000 ／ 剰余金の配当 50,000」と「非支配株主持分 10,000」を借方に並べた形になります。貸方の 50,000円は、子会社が行った配当を全額取り消しています。</p>'
+      },
+      {
+        text: '連結損益計算書の「のれん償却」は、どの区分に表示されますか。',
+        choices: [
+          '販売費及び一般管理費',
+          '営業外費用',
+          '特別損失'
+        ],
+        answer: 0,
+        explain: '<p><strong>販売費及び一般管理費</strong>です。したがって営業利益の計算に含まれます。</p><p>のれんは子会社を支配するために支払った超過額であり、その償却は営業活動にともなう費用と位置づけられています。</p><p>営業外費用や特別損失に書くと、営業利益の金額がずれます。答案用紙に「のれん償却」の行があらかじめ印刷されていることが多いので、その位置を確認してください。</p>'
+      },
+      {
+        text: '連結精算表を埋め終えたが、連結貸借対照表の資産合計と負債・純資産合計が一致しなかった。最も考えにくい原因はどれですか。',
+        choices: [
+          '連結修正仕訳を1本書き落とした',
+          '修正欄から連結欄へ転記するときに符号を間違えた',
+          '連結修正仕訳の貸借が一致していなかった'
+        ],
+        answer: 2,
+        explain: '<p>選択肢3が<strong>最も考えにくい</strong>原因です。連結修正仕訳は必ず貸借が一致するように書くもので、一致していない仕訳はそもそも仕訳として成立していません。</p><p>実際に多いのは選択肢1と2です。<strong>すべての仕訳の貸借が一致していれば、正しく転記した結果の貸借対照表も必ず一致します。</strong>裏を返すと、合わないのは「仕訳を落とした」か「転記で符号を間違えた」のどちらかです。</p><p>だからこの検算は強力です。<mark>合わないという事実が、原因を2つに絞り込んでくれます。</mark></p>'
+      },
+      {
+        text: '子会社の期末純資産は 600,000円（資本金 400,000円、利益剰余金 200,000円）であり、親会社の持分比率は 75%、非支配株主の持分比率は 25% である。また、子会社から親会社への販売（アップストリーム）にともなう<strong>期末商品の未実現利益が 40,000円</strong>ある。連結上の非支配株主持分はいくらですか。',
+        choices: ['150,000円', '140,000円', '160,000円'],
+        answer: 1,
+        invariant: [
+          // 子会社の純資産から、子会社が計上した未実現利益を除いた額の 25%
+          ['400000 + 200000', '600000'],
+          ['(600000 - 40000) * 25 / (75 + 25)', '140000'],
+          ['(600000 - 40000) * 25 / (75 + 25)', 'answer']
+        ],
+        explain: '<p><strong>140,000円</strong>です。</p><ul><li>連結上の子会社の純資産＝600,000 − 40,000 ＝ <strong>560,000円</strong></li><li>非支配株主持分＝560,000 × 25% ＝ <strong>140,000円</strong></li></ul><p>別の書き方をすると、600,000 × 25% ＝ 150,000円から、未実現利益の負担 40,000 × 25% ＝ 10,000円を引いて 140,000円です。</p><p>選択肢1の 150,000円は、未実現利益を引き忘れた誤りです。<strong>アップストリームの未実現利益は子会社が計上したものなので、非支配株主も負担します。</strong></p><p>なお、ダウンストリーム（親会社が計上した未実現利益）であれば引きません。子会社の純資産には含まれていないからです。<mark>向きを確かめてから引いてください。</mark></p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-shukei', {
+    title: '計算ドリル — 集計する',
+    badge: '計算ドリル',
+    unit: '円',
+    questions: [
+      {
+        text: 'P社とS社の個別損益計算書の売上原価は、それぞれ <strong>1,800,000円</strong> と <strong>950,000円</strong> である。当期の連結修正仕訳には次の3本が含まれる。連結損益計算書の売上原価はいくらか。<br><span class="small">（1）内部売上高の相殺「売上高 400,000 ／ 売上原価 400,000」<br>（2）期首商品の未実現利益の実現「商品 25,000 ／ 売上原価 25,000」<br>（3）期末商品の未実現利益「売上原価 35,000 ／ 商品 35,000」</span>',
+        answer: [2360000],
+        labels: ['連結上の売上原価'],
+        formula: ['1800000 + 950000 - 400000 - 25000 + 35000'],
+        hint: '売上原価は費用でホームポジションが借方です。修正欄の借方なら足し、貸方なら引きます。',
+        explain: '<ul><li>単純合算＝1,800,000 ＋ 950,000 ＝ <strong>2,750,000円</strong></li><li>（1）貸方 400,000 なので <strong>−400,000</strong></li><li>（2）貸方 25,000 なので <strong>−25,000</strong></li><li>（3）借方 35,000 なので <strong>＋35,000</strong></li><li>合計＝2,750,000 − 400,000 − 25,000 ＋ 35,000 ＝ <strong>2,360,000円</strong></li></ul><p><mark>期首の分は引き、期末の分は足す。</mark>この向きの違いが、この論点でいちばん狂いやすいところです。</p><p>3つの修正が同時に入るのは売上原価だけです。1つずつ符号をつけて足し合わせてください。まとめて処理しようとすると取り違えます。</p>'
+      },
+      {
+        text: 'P社はX1年3月31日にS社株式の <strong>80%</strong> を <strong>520,000円</strong> で取得した。支配獲得日のS社の純資産は資本金 <strong>400,000円</strong>、利益剰余金 <strong>200,000円</strong> であった。のれんは<strong>10年間</strong>で定額償却する。X3年3月31日（支配獲得から2年後）の連結貸借対照表に計上されるのれんの金額はいくらか。',
+        answer: [32000],
+        labels: ['のれんの未償却残高'],
+        formula: ['(520000 - (400000 + 200000) * 80 / 100) - (520000 - (400000 + 200000) * 80 / 100) / 10 * 2'],
+        hint: 'まず支配獲得日ののれんを出し、そこから2年分の償却額を引きます。',
+        explain: '<ul><li>S社の純資産＝400,000 ＋ 200,000 ＝ <strong>600,000円</strong></li><li>P社の持分＝600,000 × 80% ＝ <strong>480,000円</strong></li><li>のれん＝520,000 − 480,000 ＝ <strong>40,000円</strong></li><li>年償却額＝40,000 ÷ 10年 ＝ <strong>4,000円</strong></li><li>2年後の残高＝40,000 − 4,000 × 2 ＝ <strong>32,000円</strong></li></ul><p>のれんは<strong>支配獲得日の情報だけで計算できる</strong>ので、本番では取りやすい解答欄です。他の資料を読む前に片づけてしまうのが有効です。</p><p>なお、非支配株主持分（支配獲得日）は 600,000 × 20% ＝ 120,000円です。のれんの計算で使った 80% とは別の比率なので、混同しないでください。</p>'
+      },
+      {
+        text: '連結上の利益剰余金の当期首残高は <strong>380,000円</strong> である。当期の連結損益計算書では、<strong>当期純利益 240,000円</strong>、<strong>非支配株主に帰属する当期純利益 30,000円</strong> であった。当期中に親会社は <strong>50,000円</strong>、子会社は <strong>20,000円</strong> の剰余金の配当を行っている。連結貸借対照表の利益剰余金（期末）はいくらか。',
+        answer: [540000],
+        labels: ['連結上の利益剰余金（期末）'],
+        formula: ['380000 + (240000 - 30000) - 50000'],
+        hint: '足すのは親会社株主に帰属する当期純利益です。引く配当はどちらの会社のものでしょうか。',
+        explain: '<ul><li>親会社株主に帰属する当期純利益＝240,000 − 30,000 ＝ <strong>210,000円</strong></li><li>利益剰余金（期末）＝380,000 ＋ 210,000 − 50,000 ＝ <strong>540,000円</strong></li></ul><p><strong>足すのは当期純利益 240,000円ではありません。</strong>そのうち 30,000円は非支配株主の取り分であり、非支配株主持分に積み上がります。</p><p><strong>引くのは親会社の配当 50,000円だけです。</strong>子会社の配当 20,000円は連結修正仕訳で全額取り消されているので、ここには出てきません。連結上の配当は、グループの外へ出ていったもの（親会社が株主に行った配当）だけです。</p>'
+      },
+      {
+        text: '子会社の期末純資産は <strong>700,000円</strong>、親会社の持分比率は <strong>75%</strong> である。子会社から親会社へのアップストリーム取引による<strong>期末商品の未実現利益が 60,000円</strong>、親会社から子会社へのダウンストリーム取引による<strong>土地の未実現利益が 80,000円</strong>ある。連結上の非支配株主持分はいくらか。',
+        answer: [160000],
+        labels: ['非支配株主持分'],
+        formula: ['(700000 - 60000) * (100 - 75) / 100'],
+        hint: '引くのは子会社が計上した未実現利益だけです。向きを確かめてください。',
+        explain: '<ul><li>非支配株主の持分比率＝100% − 75% ＝ <strong>25%</strong></li><li>連結上の子会社の純資産＝700,000 − 60,000 ＝ <strong>640,000円</strong></li><li>非支配株主持分＝640,000 × 25% ＝ <strong>160,000円</strong></li></ul><p><strong>土地の未実現利益 80,000円は引きません。</strong>これはダウンストリーム、つまり親会社が計上した利益なので、子会社の純資産には含まれていないからです。</p><p>引くのは<mark>子会社が計上した未実現利益だけ</mark>です。両方を引いて（700,000 − 60,000 − 80,000）× 25% ＝ 140,000円とするのが典型的な誤りです。</p><p>この計算は、積み上げ方式で出した非支配株主持分の<strong>検算</strong>としても使えます。2つの道筋が一致すれば、まず正しいと考えてよいでしょう。</p>'
+      },
+      {
+        text: '通し演習（§5〜§8）の資料について、<strong>連結上の非支配株主に帰属する当期純利益</strong>を計算しなさい。S社の当期純利益は <strong>60,000円</strong>、非支配株主の持分比率は <strong>30%</strong>、期首商品の未実現利益は <strong>10,000円</strong>、期末商品の未実現利益は <strong>20,000円</strong> で、いずれもアップストリームである。',
+        answer: [15000],
+        labels: ['非支配株主に帰属する当期純利益'],
+        formula: ['60000 * 30 / 100 + 10000 * 30 / 100 - 20000 * 30 / 100'],
+        hint: '3つの要素があります。子会社の当期純利益の按分、期首商品の実現の按分、期末商品の未実現の按分。符号に注意してください。',
+        explain: '<ul><li>S社の当期純利益の按分＝60,000 × 30% ＝ <strong>＋18,000円</strong></li><li>期首商品の実現の按分＝10,000 × 30% ＝ <strong>＋3,000円</strong>（子会社の当期の利益が増えたから）</li><li>期末商品の未実現の按分＝20,000 × 30% ＝ <strong>−6,000円</strong>（子会社の当期の利益が減ったから）</li><li>合計＝18,000 ＋ 3,000 − 6,000 ＝ <strong>15,000円</strong></li></ul><p>符号は<strong>子会社の当期の利益がどちらに動いたか</strong>で決まります。期首商品の未実現利益は当期に実現して利益を増やし、期末商品の未実現利益は当期の利益を減らします。</p><p>この 15,000円を連結上の当期純利益 270,000円から差し引くと、親会社株主に帰属する当期純利益 255,000円が出ます。</p>'
+      }
+    ]
+  });
+
+  /* ========== 穴埋め ========== */
+  BokiFill.mount('#fill-seisanhyo', {
+    title: '穴埋め — 連結財務諸表の用語',
+    questions: [
+      {
+        text: '連結損益計算書で、当期純利益から非支配株主に帰属する当期純利益を差し引いた残りの行を何といいますか。',
+        answer: ['親会社株主に帰属する当期純利益'],
+        explain: '<p><strong>親会社株主に帰属する当期純利益</strong>です。連結上の「最終的な利益」であり、連結貸借対照表の利益剰余金に積み上がるのはこの金額です。</p>'
+      },
+      {
+        text: '子会社の純資産のうち、親会社が持っていない部分を表す科目は何ですか。連結貸借対照表では純資産の部に表示されます。',
+        answer: ['非支配株主持分'],
+        explain: '<p><strong>非支配株主持分</strong>です。負債ではありません。返す義務のあるお金ではないためです。純資産の部のなかで、株主資本とは別の区分に表示されます。</p>'
+      },
+      {
+        text: '子会社株式の取得原価が、取得した子会社の純資産の持分を上回った額を何といいますか。連結貸借対照表では無形固定資産に表示されます。',
+        answer: ['のれん'],
+        explain: '<p><strong>のれん</strong>です。2級では20年以内の期間で定額法により償却し、その償却額は連結損益計算書の<strong>販売費及び一般管理費</strong>に「のれん償却」として表示されます。</p>'
+      },
+      {
+        text: '個別財務諸表から連結財務諸表へ至る計算過程を1枚の表にまとめたものを何といいますか。「P社＋S社±修正＝連結」という構造を持ちます。',
+        answer: ['連結精算表'],
+        explain: '<p><strong>連結精算表</strong>です。個別財務諸表の欄、修正・消去の欄、連結財務諸表の欄で構成されます。連結修正仕訳をすべて書き出してから表に向かうのが確実な順序です。</p>'
+      },
+      {
+        text: '連結上の資本金は、どの会社の資本金と一致しますか。会社名ではなく、その立場を答えなさい。',
+        answer: ['親会社', '親会社の資本金'],
+        explain: '<p><strong>親会社</strong>です。開始仕訳で子会社の資本金は全額消えるため、連結貸借対照表の資本金は親会社の資本金そのままになります。</p><p>これは強力な検算になります。単純合算のままなら、開始仕訳を書いていないか転記を落としています。</p>'
+      },
+      {
+        text: '連結修正仕訳がどの会社の帳簿にも残らないため、毎期、過去の修正をやり直すところから始める必要があります。この仕訳を何といいますか。',
+        answer: ['開始仕訳'],
+        explain: '<p><strong>開始仕訳</strong>です。支配獲得から当期首までに何年経っているかを必ず確認してください。のれんの償却も子会社の利益の按分も、その年数分だけ積み上がっています。</p>'
+      }
+    ]
+  });
+
+  /* ========== 仕訳ドリル 10問 ========== */
+  var ACC = [
+    '現金預金', '売掛金', '商品', '土地', '貸付金', '子会社株式', 'のれん',
+    '買掛金', '借入金', '資本金', '利益剰余金', '非支配株主持分',
+    '売上', '売上原価', '受取利息', '受取配当金', '固定資産売却益',
+    '支払利息', 'のれん償却', '非支配株主に帰属する当期純利益'
+  ];
+
+  BokiJournal.mount('#drill-seisanhyo', {
+    title: '仕訳ドリル — 連結財務諸表の作成 10問',
+    accounts: ACC,
+    questions: [
+      {
+        text: 'P社はX1年3月31日にS社の発行済株式の <strong>70%</strong> を <strong>340,000円</strong> で取得し、支配を獲得した。支配獲得日のS社の純資産は<strong>資本金 300,000円</strong>、<strong>利益剰余金 100,000円</strong> であった。<br><span class="small muted">支配獲得日における投資と資本の相殺消去の仕訳を示しなさい。</span>',
+        debit: [['資本金', 300000], ['利益剰余金', 100000], ['のれん', 60000]],
+        credit: [['子会社株式', 340000], ['非支配株主持分', 120000]],
+        hint: '子会社の純資産は全額消します。そのうち非支配株主の取り分を計上し、差額がのれんです。',
+        explain: '<p>子会社の純資産を<strong>全額</strong>消し、非支配株主持分を計上し、差額をのれんとします。</p><ul><li>S社の純資産＝300,000 ＋ 100,000 ＝ <strong>400,000円</strong></li><li>非支配株主持分＝400,000 × 30% ＝ <strong>120,000円</strong></li><li>のれん＝340,000 − 400,000 × 70% ＝ 340,000 − 280,000 ＝ <strong>60,000円</strong></li></ul><p>貸借の確認：借方 300,000 ＋ 100,000 ＋ 60,000 ＝ 460,000円。貸方 340,000 ＋ 120,000 ＝ 460,000円。一致します。</p><p><mark>子会社の資本金は持分比率を掛けずに全額消します。</mark>だから連結上の資本金は親会社の資本金と一致します。</p>'
+      },
+      {
+        text: '前問の支配獲得から2年が経過した。のれんは<strong>10年間</strong>にわたり定額法で償却している。<br><span class="small muted">当期（第2年度）ののれんの償却に関する仕訳を示しなさい。</span>',
+        debit: [['のれん償却', 6000]],
+        credit: [['のれん', 6000]],
+        hint: '当期1年分だけを答えます。',
+        explain: '<p><strong>のれん償却 6,000 ／ のれん 6,000</strong> です。60,000 ÷ 10年 ＝ 6,000円。</p><p>この設問が求めているのは<strong>当期1年分</strong>です。過去の償却は開始仕訳のなかで処理済みなので、ここで2年分を書いてはいけません。</p><p>のれん償却は連結損益計算書の<strong>販売費及び一般管理費</strong>に表示され、営業利益の計算に含まれます。営業外費用ではありません。</p>'
+      },
+      {
+        text: 'S社の当期純利益は <strong>80,000円</strong> であった。P社のS社に対する持分比率は <strong>70%</strong> である。<br><span class="small muted">当期純利益の按分に関する仕訳を示しなさい。</span>',
+        debit: [['非支配株主に帰属する当期純利益', 24000]],
+        credit: [['非支配株主持分', 24000]],
+        hint: '按分するのは非支配株主の取り分です。比率は 70% ではありません。',
+        explain: '<p><strong>非支配株主に帰属する当期純利益 24,000 ／ 非支配株主持分 24,000</strong> です。80,000 × 30% ＝ 24,000円。</p><p>連結損益計算書では、まずグループ全体の当期純利益を示し、そこから非支配株主の取り分を差し引きます。<strong>非支配株主に帰属する当期純利益</strong>は、その差し引かれる行です。</p><p>同額が非支配株主持分（純資産）に積み上がります。子会社が利益を出せば、非支配株主の取り分も増えるからです。</p><p>比率は <strong>30%</strong>。問題文が与えるのは親会社の持分比率なので、100% から引く手順が要ります。</p>'
+      },
+      {
+        text: 'S社は当期中に <strong>剰余金の配当 40,000円</strong> を行った。P社のS社に対する持分比率は <strong>70%</strong> であり、P社はその持分に応じた金額を受取配当金として計上している。<br><span class="small muted">配当金の修正に関する仕訳を示しなさい。答案の「剰余金の配当」は「利益剰余金」として処理すること。</span>',
+        debit: [['受取配当金', 28000], ['非支配株主持分', 12000]],
+        credit: [['利益剰余金', 40000]],
+        hint: '配当 40,000円の行き先は2つに分かれます。',
+        explain: '<p>配当 40,000円は<strong>行き先が2つに分かれます。</strong></p><ul><li><strong>P社へ 28,000円</strong>（40,000 × 70%）… P社が受取配当金として計上しているので、それと相殺します。グループ内でお金が移動しただけだからです</li><li><strong>非支配株主へ 12,000円</strong>（40,000 × 30%）… こちらは本当にグループの外へ出ていきました。非支配株主の取り分が減ったので、非支配株主持分を減らします</li></ul><p>貸方の 40,000円は、S社が行った配当を<strong>全額取り消しています。</strong><mark>連結上の配当は、親会社が行ったものだけ</mark>だからです。</p><p>貸借の確認：借方 28,000 ＋ 12,000 ＝ 40,000円。貸方 40,000円。一致します。</p>'
+      },
+      {
+        text: '当期中に、S社はP社に商品 <strong>500,000円</strong> を販売した。<br><span class="small muted">内部売上高の相殺に関する仕訳を示しなさい。答案は連結精算表である。</span>',
+        debit: [['売上', 500000]],
+        credit: [['売上原価', 500000]],
+        hint: '売った側の収益と、買った側の費用を同額消します。',
+        explain: '<p><strong>売上 500,000 ／ 売上原価 500,000</strong> です。</p><p>同額を消しているので<strong>利益は変わりません。</strong>消しているのは表示上の数字だけです。</p><p>連結精算表では、売上高も売上原価も<strong>減ります。</strong>売上高は収益（ホームポジション貸方）で借方に書かれているので減り、売上原価は費用（ホームポジション借方）で貸方に書かれているので減ります。</p>'
+      },
+      {
+        text: 'S社はP社に商品を販売しており、<strong>売上高利益率は 20%</strong> である。P社の<strong>期末商品のうち 150,000円</strong> はS社から仕入れたものである。P社のS社に対する持分比率は <strong>70%</strong> である。<br><span class="small muted">必要な連結修正仕訳をすべて示しなさい。答案は連結精算表である。</span>',
+        debit: [['売上原価', 30000], ['非支配株主持分', 9000]],
+        credit: [['商品', 30000], ['非支配株主に帰属する当期純利益', 9000]],
+        hint: 'アップストリームなので2本です。',
+        explain: '<p>2本必要です。</p><ul><li><strong>売上原価 30,000 ／ 商品 30,000</strong> … 150,000 × 20% ＝ 30,000円</li><li><strong>非支配株主持分 9,000 ／ 非支配株主に帰属する当期純利益 9,000</strong> … 30,000 × 30% ＝ 9,000円</li></ul><p>S社がP社に売っているので<strong>アップストリーム</strong>。利益を計上したのは子会社なので、非支配株主も 30% を負担します。</p><p>2本目を忘れると、<mark>非支配株主持分と親会社株主に帰属する当期純利益の両方が狂います。</mark>1つの漏れが複数の解答欄に波及するので、失点が大きくなります。</p>'
+      },
+      {
+        text: '当期中に、P社は帳簿価額 <strong>250,000円</strong> の土地を、S社に <strong>310,000円</strong> で売却した。S社は当期末現在この土地を保有している。P社のS社に対する持分比率は <strong>70%</strong> である。<br><span class="small muted">必要な連結修正仕訳をすべて示しなさい。</span>',
+        debit: [['固定資産売却益', 60000]],
+        credit: [['土地', 60000]],
+        hint: '売ったのはどちらの会社でしょうか。前問と向きが違います。',
+        explain: '<p><strong>固定資産売却益 60,000 ／ 土地 60,000</strong> の1本だけです。310,000 − 250,000 ＝ 60,000円。</p><p>売ったのは<strong>P社（親会社）</strong>なのでダウンストリームです。按分は不要です。</p><p><mark>同じ問題のなかで向きが混在します。</mark>前問の商品はアップストリーム、この土地はダウンストリーム。「この問題はアップストリームだ」と決めつけて全部に按分をつけると、ここで間違えます。<strong>取引ごとに売った側を確認してください。</strong></p><p>持分比率 70% が与えられていますが、この問題では使いません。</p>'
+      },
+      {
+        text: 'P社はS社に対して <strong>200,000円</strong> を貸し付けており、当期末現在全額が未回収である。当期中にこの貸付金に係る<strong>利息 10,000円</strong> の受け払いが行われている。<br><span class="small muted">必要な連結修正仕訳をすべて示しなさい。</span>',
+        debit: [['借入金', 200000], ['受取利息', 10000]],
+        credit: [['貸付金', 200000], ['支払利息', 10000]],
+        hint: '貸借対照表の科目と損益計算書の科目を、別々に消します。',
+        explain: '<p>2本必要です。</p><ul><li><strong>借入金 200,000 ／ 貸付金 200,000</strong> … 貸借対照表の科目</li><li><strong>受取利息 10,000 ／ 支払利息 10,000</strong> … 損益計算書の科目</li></ul><p>貸付金と借入金を消しても、利息は自動的に消えません。<mark>貸し借りを見たら必ず利息を探す</mark>のが手順です。</p><p>問題文に利息の記載があるのに1本で終わらせるのは、通し演習でも抜けやすい典型的な失点です。</p>'
+      },
+      {
+        text: 'S社はP社に商品を販売しており、<strong>売上高利益率は 25%</strong> である。P社の<strong>期首商品のうち 80,000円</strong> はS社から仕入れたものであり、当期中にすべて外部へ販売された。P社のS社に対する持分比率は <strong>60%</strong> である。<br><span class="small muted">必要な連結修正仕訳をすべて示しなさい。開始仕訳と当期の実現をまとめた形で答えること。</span>',
+        debit: [['利益剰余金', 20000], ['非支配株主に帰属する当期純利益', 8000]],
+        credit: [['売上原価', 20000], ['非支配株主持分', 8000]],
+        hint: '2本です。期首商品なので、前期の利益を減らして当期の利益を増やします。按分の向きに注意してください。',
+        explain: '<p>2本必要です。未実現利益＝80,000 × 25% ＝ <strong>20,000円</strong>。</p><ul><li><strong>利益剰余金 20,000 ／ 売上原価 20,000</strong> … 前期の利益を減らし、当期の利益を増やす。利益の引っ越しです</li><li><strong>非支配株主に帰属する当期純利益 8,000 ／ 非支配株主持分 8,000</strong> … 20,000 × 40% ＝ 8,000円</li></ul><p>按分の向きは<strong>期末商品のときと逆</strong>です。期首商品の未実現利益は当期に実現して<mark>子会社の当期の利益を増やす</mark>ので、非支配株主の取り分も増えます。だから非支配株主持分が貸方（増加）になります。</p><p>比率は 100% − 60% ＝ 40%。60% を掛けて 12,000円とするのが典型的な誤りです。</p>'
+      },
+      {
+        text: '当期末において、P社のS社に対する<strong>売掛金 120,000円</strong> と、S社のP社に対する<strong>買掛金 120,000円</strong> が残っている。P社は売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を設定している。<br><span class="small muted">債権債務の相殺に関する仕訳のみを答えなさい。</span>',
+        debit: [['買掛金', 120000]],
+        credit: [['売掛金', 120000]],
+        hint: '設問が限定しているのは債権債務の相殺だけです。',
+        explain: '<p><strong>買掛金 120,000 ／ 売掛金 120,000</strong> です。</p><p>グループを1つの会社とみなすと、この 120,000円は自分が自分に対して持っている債権です。外部に対する権利でも義務でもないので消します。</p><p><strong>この問題では答えていません</strong>が、実際の答案では貸倒引当金の修正「貸倒引当金 2,400 ／ 貸倒引当金繰入 2,400」（120,000 × 2%）も必要です。<mark>連結上は存在しない債権に引当金を設定することはできない</mark>からです。</p><p>問題文に貸倒引当金の設定率が書いてあり、かつグループ内の債権が期末に残っているなら、修正が要ると考えてください。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+
+</body>
+</html>

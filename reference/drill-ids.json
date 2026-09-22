@@ -739,5 +739,237 @@
     "2db71c9e",
     "a1b9df32",
     "b07ad5e4"
+  ],
+  "phase2/01_shou-kessan-seiri#drill-seiri": [
+    "ea77dbd8",
+    "44c18fc4",
+    "3811d63f",
+    "17fcf75d",
+    "6ff87ef7",
+    "5ed21bbd",
+    "98139023",
+    "01a77920",
+    "d0c6a85f",
+    "aa740796",
+    "6d78eeca",
+    "8bfa6615",
+    "6dab7fe1",
+    "60c162b7"
+  ],
+  "phase2/01_shou-kessan-seiri#fill-seiri": [
+    "4c282922",
+    "880a41b5",
+    "0288cf3b",
+    "9e48e348",
+    "8d29ca13",
+    "b5d4e19d"
+  ],
+  "phase2/01_shou-kessan-seiri#num-seiri": [
+    "94d48b77",
+    "772524d2",
+    "8b2a5008",
+    "f001e4e1",
+    "b14db969",
+    "3700b66f",
+    "f8063dca",
+    "9503979c"
+  ],
+  "phase2/01_shou-kessan-seiri#quiz-seiri": [
+    "c73be221",
+    "f396390a",
+    "6d2ea653",
+    "e9307ff0",
+    "3521b088",
+    "12d8700f",
+    "10ace59b",
+    "8f05446c"
+  ],
+  "phase2/02_shou-zaimu-shohyo#drill-hyouji": [
+    "d54148cb",
+    "73b7cd18",
+    "fc21e251",
+    "9a4b02ab",
+    "b8b5b4aa",
+    "053f23b6",
+    "56f5230d",
+    "c61665a1"
+  ],
+  "phase2/02_shou-zaimu-shohyo#fill-hyouji": [
+    "76c26af7",
+    "a52071cc",
+    "7cb62272",
+    "5dd32bef",
+    "5f0b440e",
+    "d078f529"
+  ],
+  "phase2/02_shou-zaimu-shohyo#num-hyouji": [
+    "65f1b1ee",
+    "09c1393a",
+    "442131a8",
+    "2b3065ca",
+    "49bfc705",
+    "754d03a4"
+  ],
+  "phase2/02_shou-zaimu-shohyo#quiz-kubun": [
+    "1c362852",
+    "9ee4fa56",
+    "c831b0fd",
+    "9ce62857",
+    "fd71cbf2",
+    "cb9633a5",
+    "995cd52d",
+    "c88ca22c",
+    "3578c324",
+    "5b28e6dd",
+    "8c672f3e",
+    "025911f1",
+    "35ef6f95",
+    "9554431b",
+    "36a6e68d",
+    "4458a8e2",
+    "bb1084d8",
+    "a5c5edb8",
+    "5e1ecc11",
+    "a7e1f41a"
+  ],
+  "phase2/03_shou-seizogyo-kessan#fill-seizo": [
+    "ac513106",
+    "a183f3df",
+    "dd1108cb",
+    "81b77e4f",
+    "167b2e45"
+  ],
+  "phase2/03_shou-seizogyo-kessan#num-seizo": [
+    "4028cd0c",
+    "8098c15f",
+    "ee49c3ae",
+    "39fb679c",
+    "175851ee",
+    "7a98dc7f"
+  ],
+  "phase2/03_shou-seizogyo-kessan#quiz-seizo": [
+    "8f08ca77",
+    "e072b92c",
+    "8631750a",
+    "e7898da4",
+    "b7e4452f",
+    "ebd1d13a"
+  ],
+  "phase2/11_shou-renketsu-seika#drill-seika": [
+    "759a48fd",
+    "0d02e318",
+    "0ff15b30",
+    "c2690478",
+    "145093df",
+    "259b9aaa",
+    "05277f46",
+    "5cfcd369",
+    "3850bb84",
+    "e5ad062e",
+    "19ec7ec3",
+    "a07985a2"
+  ],
+  "phase2/11_shou-renketsu-seika#fill-seika": [
+    "f86d30c4",
+    "3909901d",
+    "873166f6",
+    "fdbc773d",
+    "febbba17",
+    "ae7516a7"
+  ],
+  "phase2/11_shou-renketsu-seika#num-sousai": [
+    "2f4eb51a",
+    "a471f908",
+    "fe4b08a2",
+    "4800f389"
+  ],
+  "phase2/11_shou-renketsu-seika#quiz-sousai": [
+    "b903cbf8",
+    "b163b0c6",
+    "e54aef78",
+    "0faa6ff1",
+    "e4a831de",
+    "96bfd1b8",
+    "4ea94f34",
+    "0612966c"
+  ],
+  "phase2/12_shou-renketsu-mijitsugen#drill-mijitsugen": [
+    "6a88d229",
+    "f722ce16",
+    "61f49ab8",
+    "f3e6fc8e",
+    "fffe3413",
+    "1dc7fdaf",
+    "f275186e",
+    "f8145d30",
+    "5a1b9c70",
+    "7b6d60bc",
+    "fc3363bb",
+    "0f6cbea7",
+    "2a8d1601",
+    "20b50e79"
+  ],
+  "phase2/12_shou-renketsu-mijitsugen#fill-mijitsugen": [
+    "6d083a4e",
+    "398302b3",
+    "97f78bb3",
+    "d940cb19",
+    "90d26433",
+    "94963583",
+    "4a65bb38"
+  ],
+  "phase2/12_shou-renketsu-mijitsugen#num-mijitsugen": [
+    "2e5773a2",
+    "1a6f37e6",
+    "fdafcb86",
+    "8fa995cf",
+    "82fd1827"
+  ],
+  "phase2/12_shou-renketsu-mijitsugen#quiz-mukiwake": [
+    "ef2a0495",
+    "97a81e87",
+    "c0479fd9",
+    "4e72ada4",
+    "08a9bfbd",
+    "776c8901",
+    "bd3941a1",
+    "c89223cd"
+  ],
+  "phase2/13_shou-renketsu-seisanhyo#drill-seisanhyo": [
+    "fb56baa6",
+    "763ea846",
+    "83998b99",
+    "8368d5f3",
+    "d7bf1c06",
+    "9d9e973c",
+    "44e5dad4",
+    "02b7bc5a",
+    "b0064ebf",
+    "dadd499e"
+  ],
+  "phase2/13_shou-renketsu-seisanhyo#fill-seisanhyo": [
+    "3f418b0f",
+    "fc06156a",
+    "1e9571db",
+    "4d4c8fdc",
+    "7d83632a",
+    "02383437"
+  ],
+  "phase2/13_shou-renketsu-seisanhyo#num-shukei": [
+    "51622720",
+    "c4b794bd",
+    "c16ed8e9",
+    "bdc8958a",
+    "29cde839"
+  ],
+  "phase2/13_shou-renketsu-seisanhyo#quiz-hyouji": [
+    "6d70f17e",
+    "f845f3b3",
+    "3fdd34a0",
+    "4e097805",
+    "d8917743",
+    "bcf3f898",
+    "b8a70395",
+    "ba49c156"
   ]
 }

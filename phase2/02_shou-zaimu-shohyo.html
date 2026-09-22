@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第三-9-0,商-第三-10-0,商-第三-11-g2">
+<meta name="boki-subject" content="商">
+<title>財務諸表の表示区分と株主資本等変動計算書 — 日商簿記2級 Phase 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 2 目次</a>
+    <span class="topbar__title">UNIT 02 財務諸表の表示区分と株主資本等変動計算書</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W8 商業簿記 ／ UNIT 02 ／ 6時間</p>
+    <h1>財務諸表の表示区分<br>— 金額が合っていても、置き場所を間違えれば0点</h1>
+    <p class="lead">第3問で問われるのは仕訳ではなく<strong>完成した損益計算書と貸借対照表</strong>です。仕訳が正しく切れても、その金額をどの区分に書くかを誤れば点になりません。この単元では<mark>科目を見た瞬間に置き場所が浮かぶ状態</mark>を作り、あわせて精算表と株主資本等変動計算書を扱います。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 6h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">区分判定 20問</span>
+      <span class="chip">計算・仕訳・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">報告式 — 5つの利益が階段になっている</a></li>
+      <li><a href="#s2">損益計算書の7区分と、そこに入る科目</a></li>
+      <li><a href="#s3">売上原価の内訳をどう書くか</a></li>
+      <li><a href="#s4">営業利益と経常利益の境目</a></li>
+      <li><a href="#s5">特別損益に入るものは意外に少ない</a></li>
+      <li><a href="#s6">貸借対照表 — 1年基準と正常営業循環基準</a></li>
+      <li><a href="#s7">流動・固定の判定が割れる科目</a></li>
+      <li><a href="#s8">控除形式で書く科目 — 貸倒引当金と減価償却累計額</a></li>
+      <li><a href="#s9">純資産の部の構造</a></li>
+      <li><a href="#s10">表示科目名が帳簿の科目名と違うもの</a></li>
+      <li><a href="#s11">精算表 — 何のために書くのか</a></li>
+      <li><a href="#s12">株主資本等変動計算書</a></li>
+      <li><a href="#s13">区分判定ドリル 20問</a></li>
+      <li><a href="#s14">計算ドリル・仕訳ドリル・穴埋め</a></li>
+      <li><a href="#s15">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>報告式 — 5つの利益が階段になっている</h2>
+
+  <p>3級で書いた損益計算書は<strong>勘定式</strong>でした。左に費用、右に収益を並べ、差額が当期純利益になる形です。2級では<strong>報告式</strong>に変わります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ報告式に変えるのか</span>
+    <p>勘定式は<strong>最終的な利益が1つしか出てきません。</strong>当期純利益が500万円だった、という情報だけです。</p>
+    <p>ところが読む人が知りたいのは「その500万円は<strong>どこから来たのか</strong>」です。本業で稼いだのか、株の売却益なのか、土地を売って一時的に出たものなのか。これが分からないと、来年も同じ利益が出るかどうかを判断できません。</p>
+    <p>報告式は上から下へ1本の列で書き、<mark>途中で5回、利益を区切って表示します。</mark>どの段階でいくら稼いだかが見えるため、利益の性質が読み取れます。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 660 400" style="width:100%;height:auto;min-width:560px" role="img" aria-label="損益計算書の5つの利益が階段状に並ぶ図。売上高から売上原価を引いて売上総利益、販売費及び一般管理費を引いて営業利益、営業外損益を加減して経常利益、特別損益を加減して税引前当期純利益、法人税等を引いて当期純利益。">
+      <g font-size="12.5" fill="var(--text)">
+        <rect x="20" y="20" width="270" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="35" y="42" font-size="13" font-weight="700">売上高</text>
+        <text x="300" y="42" font-size="12" fill="var(--muted)">− 売上原価</text>
+
+        <rect x="20" y="62" width="380" height="34" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="4"/>
+        <text x="35" y="84" font-size="13" font-weight="700" fill="var(--ok)">① 売上総利益</text>
+        <text x="410" y="84" font-size="12" fill="var(--muted)">商品でいくら稼いだか</text>
+
+        <rect x="20" y="104" width="270" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="35" y="126" font-size="12.5">− 販売費及び一般管理費</text>
+
+        <rect x="20" y="146" width="380" height="34" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="4"/>
+        <text x="35" y="168" font-size="13" font-weight="700" fill="var(--ok)">② 営業利益</text>
+        <text x="410" y="168" font-size="12" fill="var(--muted)">本業でいくら稼いだか</text>
+
+        <rect x="20" y="188" width="270" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="35" y="210" font-size="12.5">± 営業外収益・営業外費用</text>
+
+        <rect x="20" y="230" width="380" height="34" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="4"/>
+        <text x="35" y="252" font-size="13" font-weight="700" fill="var(--warn)">③ 経常利益</text>
+        <text x="410" y="252" font-size="12" fill="var(--muted)">毎年くり返し稼げる額</text>
+
+        <rect x="20" y="272" width="270" height="34" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="35" y="294" font-size="12.5">± 特別利益・特別損失</text>
+
+        <rect x="20" y="314" width="380" height="30" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="35" y="334" font-size="13" font-weight="700">④ 税引前当期純利益</text>
+
+        <rect x="20" y="352" width="270" height="30" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="4"/>
+        <text x="35" y="372" font-size="12.5">− 法人税等 ± 法人税等調整額</text>
+        <text x="300" y="372" font-size="13" font-weight="700" fill="var(--danger)">→ ⑤ 当期純利益</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap">上の区分ほど<strong>本業に近く、毎年くり返される</strong>性質を持ちます。下に行くほど一時的・臨時的な要素が混じります。この「上ほど反復性が高い」という軸が、<strong>どの科目をどこに置くかを決める原理</strong>です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">区分の名前を先に覚える</span>
+    <p>答案には区分の見出しも書きます。<strong>売上高／売上原価／販売費及び一般管理費／営業外収益／営業外費用／特別利益／特別損失</strong>の7つと、利益の名前5つです。</p>
+    <p>とくに「<strong>販売費及び一般管理費</strong>」は長いうえ、「販売費および一般管理費」と書いても構いませんが、<mark>「販売管理費」と略してはいけません。</mark>答案に書く名称は問題の解答欄の様式に従います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>損益計算書の7区分と、そこに入る科目</h2>
+
+  <p>科目をどこに置くかは、次の一覧で決まります。<strong>この表を覚えることが、この単元の中心です。</strong></p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>区分</th><th>入る科目</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="d"><strong>売上高</strong></td>
+          <td>売上（＋役務収益）</td>
+        </tr>
+        <tr>
+          <td class="d"><strong>売上原価</strong></td>
+          <td>期首商品棚卸高・当期商品仕入高・期末商品棚卸高<br><span class="small muted">問題文の指示があれば 棚卸減耗損・商品評価損 もここに含める</span></td>
+        </tr>
+        <tr>
+          <td class="d"><strong>販売費及び<br>一般管理費</strong></td>
+          <td>給料・法定福利費・広告宣伝費・発送費・支払家賃・水道光熱費・通信費・旅費交通費・消耗品費・租税公課・保険料・支払手数料・修繕費・<strong>減価償却費</strong>・<strong>のれん償却</strong>・特許権償却・ソフトウェア償却・<strong>貸倒引当金繰入（営業債権分）</strong>・退職給付費用・賞与引当金繰入・研究開発費・棚卸減耗損（売上原価に含めない場合）</td>
+        </tr>
+        <tr>
+          <td class="c"><strong>営業外収益</strong></td>
+          <td>受取利息・<strong>有価証券利息</strong>・受取配当金・有価証券評価益・<strong>有価証券売却益</strong>・受取家賃・受取地代・<strong>為替差益</strong>・貸倒引当金戻入（営業外債権分）・雑益</td>
+        </tr>
+        <tr>
+          <td class="c"><strong>営業外費用</strong></td>
+          <td>支払利息・<strong>手形売却損</strong>・有価証券評価損・<strong>有価証券売却損</strong>・<strong>為替差損</strong>・<strong>貸倒引当金繰入（営業外債権分）</strong>・雑損</td>
+        </tr>
+        <tr>
+          <td class="c"><strong>特別利益</strong></td>
+          <td><strong>固定資産売却益</strong>・<strong>投資有価証券売却益</strong>・保険差益・<strong>負ののれん発生益</strong>・国庫補助金受贈益</td>
+        </tr>
+        <tr>
+          <td class="c"><strong>特別損失</strong></td>
+          <td><strong>固定資産売却損</strong>・固定資産除却損・固定資産廃棄損・<strong>投資有価証券売却損</strong>・<strong>火災損失</strong>・災害損失・固定資産圧縮損</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「有価証券」と「投資有価証券」で区分が変わる</span>
+    <p>同じ「有価証券を売った益」でも、<strong>どの有価証券かで区分が違います。</strong></p>
+    <ul>
+      <li><strong>売買目的有価証券</strong>を売った益 → <strong>有価証券売却益（営業外収益）</strong>。売買目的なのだから、売るのは想定内の行為。毎年くり返されうるので経常の範囲</li>
+      <li><strong>その他有価証券</strong>を売った益 → <strong>投資有価証券売却益（特別利益）</strong>。売るつもりで持っていなかったものを売ったのだから、臨時の出来事</li>
+    </ul>
+    <p>科目名の「投資」の2文字が区分を切り替えます。<mark>問題文が「売買目的」と書いているか「その他有価証券」と書いているかを、必ず確認してください。</mark></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">貸倒引当金繰入は、債権の種類で区分が変わる</span>
+    <p>同じ貸倒引当金繰入でも、対象がどの債権かで置き場所が違います。</p>
+    <ul>
+      <li><strong>売掛金・受取手形など営業債権</strong>に対する繰入 → <strong>販売費及び一般管理費</strong></li>
+      <li><strong>貸付金・未収入金など営業外債権</strong>に対する繰入 → <strong>営業外費用</strong></li>
+    </ul>
+    <p>本業の取引から生じた債権の焦げ付きは、本業のコストです。本業と関係のない貸付金の焦げ付きは、本業のコストではありません。<strong>営業利益に影響するかどうかが変わる</strong>ので、両方の債権がある問題では必ず分けて計算します。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>売上原価の内訳をどう書くか</h2>
+
+  <p>売上原価の区分は、1行ではなく<strong>内訳を積み上げる形</strong>で書きます。ここは答案の書き方そのものが問われます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>売上原価の区分（棚卸減耗損・商品評価損をともに売上原価の内訳項目とする場合）</caption>
+      <thead><tr><th>行</th><th class="amt">金額</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td class="d">Ⅱ 売上原価</td><td class="amt"></td><td></td></tr>
+        <tr><td class="d">　1 期首商品棚卸高</td><td class="amt">1,450,000</td><td>決算整理前の繰越商品</td></tr>
+        <tr><td class="d">　2 当期商品仕入高</td><td class="amt">18,600,000</td><td>決算整理前の仕入</td></tr>
+        <tr><td class="d">　　　合計</td><td class="amt">20,050,000</td><td>1 ＋ 2</td></tr>
+        <tr><td class="d">　3 期末商品棚卸高</td><td class="amt">1,720,000</td><td><strong>帳簿</strong>棚卸高（減耗前）</td></tr>
+        <tr><td class="d">　　　差引</td><td class="amt">18,330,000</td><td>合計 − 3</td></tr>
+        <tr><td class="d">　4 棚卸減耗損</td><td class="amt">80,000</td><td>指示があるときだけ</td></tr>
+        <tr><td class="d">　5 商品評価損</td><td class="amt">130,000</td><td>指示があるときだけ</td></tr>
+        <tr><td class="c">　　　売上原価</td><td class="amt">18,540,000</td><td>差引 ＋ 4 ＋ 5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>検算します。1,450,000 ＋ 18,600,000 ＝ 20,050,000円。20,050,000 − 1,720,000 ＝ 18,330,000円。18,330,000 ＋ 80,000 ＋ 130,000 ＝ <strong>18,540,000円</strong>。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">期末商品棚卸高に書くのは「帳簿」の金額</span>
+    <p>3行目の期末商品棚卸高に、貸借対照表に載る商品の金額（実地数量 × 正味売却価額）を書いてしまう誤りが非常に多いです。</p>
+    <p>ここに書くのは<strong>帳簿棚卸数量 × 原価</strong>です。減耗も評価損も、まだ引いていない金額です。<mark>減耗損と評価損は、その下の行で別々に加算する</mark>形になっているので、先に引いてしまうと二重に引くことになります。</p>
+    <p>貸借対照表の商品 598,500円と、損益計算書の期末商品棚卸高 720,000円が違う金額になるのは正常です。<strong>この2つは別の数字</strong>だと割り切ってください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">売上原価に含めない場合の置き場所</span>
+    <p>問題文が「売上原価の内訳項目としない」と指示した場合、上の表の4行目・5行目がなくなり、売上原価は 18,330,000円で終わります。減耗損と評価損は別の区分に置きます。</p>
+    <ul>
+      <li><strong>棚卸減耗損</strong>：原価性があるもの（通常発生する範囲）は<strong>販売費及び一般管理費</strong>。異常なものは特別損失</li>
+      <li><strong>商品評価損</strong>：売上原価に含めないときは<strong>独立の項目</strong>として表示する形が示されることが多い</li>
+    </ul>
+    <p>いずれも<strong>問題の解答欄の様式が答えを教えてくれます。</strong>解答欄に「棚卸減耗損」という行がどの区分にあるかを先に見てください。自分で置き場所を決める場面はほとんどありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>営業利益と経常利益の境目</h2>
+
+  <p>この境目が、表示区分でいちばん問われます。判断の基準は<strong>「本業か、本業以外か」</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「本業」は会社ごとに違う</span>
+    <p>不動産賃貸を営む会社にとって、受取家賃は<strong>売上高</strong>です。本業そのものだからです。</p>
+    <p>ところが商品売買を営む会社が、使っていない建物の一室を貸して家賃を受け取っているなら、それは<strong>営業外収益</strong>です。本業ではなく、副次的な収入だからです。</p>
+    <p>つまり<mark>科目名だけで機械的に決まるわけではありません。</mark>ただし第3問で扱う会社はたいてい商品売買業なので、<strong>受取家賃・受取地代は営業外収益</strong>として扱う形がほとんどです。問題文が会社の業種を書いているのはこのためです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「割戻」と「割引」を読み分ける</span>
+    <p>名前が似ているのに、指しているものがまったく違います。区分を決める前に、問題文がどちらを言っているかを確定させてください。</p>
+    <div class="tablewrap">
+      <table class="jnl">
+        <thead><tr><th>用語</th><th>中身</th><th>損益計算書での扱い</th></tr></thead>
+        <tbody>
+          <tr><td class="d">仕入割戻</td><td>大量に買ったことによる<strong>代金の返戻</strong></td><td>仕入から控除（売上原価が減る）</td></tr>
+          <tr><td class="c">売上割戻</td><td>大量に売ったことによる<strong>代金の返戻</strong></td><td>売上から控除（売上高が減る）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>割戻は取引量に応じた値引きであり、商品の売買そのものに紐づきます。だから売上高や仕入から直接引きます。</p>
+    <p>いっぽう<strong>「割引」は、支払期日より早くお金を動かしたことへの対価</strong>であり、取引量とは関係がありません。したがって<mark>「割引」と書いてあったら、それは売上高や仕入のマイナスではない</mark>——この判断までが2級で必要なところです。仕入割引・売上割引の処理そのものは出題区分表（2022年度版）で<strong>1級</strong>に置かれており、標準的な勘定科目表にも「仕入割引」「売上割引」という科目はありません。2級の答案でこれらを書く場面はありません。</p>
+    <p>逆に、割戻の問題文を「割引」と読み違えて控除をやめてしまうのが、ここでいちばん多い失点です。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">手形売却損は営業外費用</span>
+    <p>受取手形を割り引いたときに生じる手形売却損は、<strong>営業外費用</strong>です。手形の割引は「期日前に現金化する代わりに利息相当額を負担する」行為であり、これも実質的に利息だからです。</p>
+    <p>本業の売上から生じた手形なので販売費及び一般管理費かと考えたくなりますが、負担しているのは<strong>資金調達のコスト</strong>です。同じ理由で支払利息も営業外費用に置かれます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>特別損益に入るものは意外に少ない</h2>
+
+  <p>特別損益は「臨時的・偶発的に生じたもの」に限られます。<strong>該当するものはかなり少ない</strong>ので、覚えるならこちらを覚えたほうが早いです。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>特別利益に入るもの</h3>
+      <ul class="small">
+        <li>固定資産売却益</li>
+        <li>投資有価証券売却益</li>
+        <li>保険差益</li>
+        <li>負ののれん発生益</li>
+        <li>国庫補助金受贈益</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>特別損失に入るもの</h3>
+      <ul class="small">
+        <li>固定資産売却損</li>
+        <li>固定資産除却損・廃棄損</li>
+        <li>投資有価証券売却損</li>
+        <li>火災損失・災害損失</li>
+        <li>固定資産圧縮損</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">共通しているのは「固定資産と投資有価証券」</span>
+    <p>上の一覧を見ると、大半が<strong>固定資産</strong>か<strong>投資有価証券</strong>に関するものです。どちらも<mark>長く持ち続ける前提の資産</mark>であり、それを売ったり失ったりするのは日常的な出来事ではありません。だから臨時と扱われます。</p>
+    <p>逆に言えば、<strong>売買目的有価証券と商品は特別損益に出てきません。</strong>売ることが前提の資産なので、売って損益が出るのは想定内です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">のれん償却は販売費及び一般管理費、負ののれん発生益は特別利益</span>
+    <p>名前が対になっているのに、区分が正反対です。</p>
+    <ul>
+      <li><strong>のれん償却</strong>：毎期継続して計上する費用。減価償却費と同じ性質なので<strong>販売費及び一般管理費</strong></li>
+      <li><strong>負ののれん発生益</strong>：合併のときに一度だけ発生する。臨時の出来事なので<strong>特別利益</strong></li>
+    </ul>
+    <p>判断の軸は<mark>「毎期くり返されるか、一度きりか」</mark>です。償却は10年なり20年なり続きますが、負ののれんの発生は合併した年に1回だけです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>貸借対照表 — 1年基準と正常営業循環基準</h2>
+
+  <p>貸借対照表では、資産を<strong>流動資産・固定資産・繰延資産</strong>に、負債を<strong>流動負債・固定負債</strong>に分けます。分け方の基準は2つあり、<strong>適用する順番が決まっています。</strong></p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 660 260" style="width:100%;height:auto;min-width:540px" role="img" aria-label="流動固定分類のフローチャート。まず正常営業循環基準を当て、営業サイクルの中にあれば流動。該当しなければ1年基準で判定し、1年以内なら流動、超えるなら固定とする。">
+      <g font-size="12.5" fill="var(--text)">
+        <rect x="200" y="15" width="260" height="40" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="330" y="40" text-anchor="middle" font-size="13" font-weight="700">ある資産・負債を分類したい</text>
+
+        <path d="M330 57 L330 78" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M330 86 l-4 -10 l8 0 z" fill="var(--muted)"/>
+
+        <rect x="170" y="90" width="320" height="52" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2" rx="6"/>
+        <text x="330" y="112" text-anchor="middle" font-size="13" font-weight="700">① 正常営業循環基準</text>
+        <text x="330" y="131" text-anchor="middle" font-size="12" fill="var(--muted)">本業のサイクルの中にあるか</text>
+
+        <path d="M170 116 L90 116 L90 200" fill="none" stroke="var(--ok)" stroke-width="2"/>
+        <path d="M90 208 l-4 -10 l8 0 z" fill="var(--ok)"/>
+        <text x="128" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ok)">ある</text>
+
+        <path d="M330 144 L330 168" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M330 176 l-4 -10 l8 0 z" fill="var(--muted)"/>
+        <text x="365" y="162" font-size="12" fill="var(--muted)">ない</text>
+
+        <rect x="180" y="178" width="300" height="46" fill="var(--surface-2)" stroke="var(--border-2)" stroke-width="1.5" rx="6"/>
+        <text x="330" y="198" text-anchor="middle" font-size="13" font-weight="700">② 1年基準</text>
+        <text x="330" y="216" text-anchor="middle" font-size="12" fill="var(--muted)">決算日の翌日から1年以内か</text>
+
+        <rect x="30" y="210" width="120" height="38" fill="var(--ok-bg)" stroke="var(--ok)" stroke-width="2" rx="6"/>
+        <text x="90" y="234" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ok)">流動</text>
+
+        <path d="M480 201 L560 201" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <path d="M568 201 l-10 -4 l0 8 z" fill="var(--muted)"/>
+        <rect x="520" y="228" width="120" height="30" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="2" rx="4"/>
+        <text x="580" y="248" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--danger)">超える → 固定</text>
+        <text x="580" y="195" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">1年以内 → 流動</text>
+      </g>
+    </svg>
+    </div>
+    <p class="figure__cap"><strong>正常営業循環基準が先</strong>です。営業サイクルの中にあるものは、回収が1年を超えても流動資産に入ります。この順番を逆にすると、長期の売掛金を固定資産に置いてしまいます。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ正常営業循環基準が先なのか</span>
+    <p>流動・固定を分ける目的は<strong>短期の支払能力を見せること</strong>です。1年以内に現金化できる資産と、1年以内に払う負債を並べれば、資金繰りが危ういかどうかが分かります。</p>
+    <p>ところが業種によっては、本業のサイクルが1年を超えます。長期の工事を請け負う会社なら、売掛金の回収まで2年かかることもある。それを固定資産に置くと、<mark>本業に投じている資産が「長期に寝ている資産」に見えてしまいます。</mark></p>
+    <p>本業のサイクルの中にあるものは、たとえ時間がかかってもいずれ必ず現金に戻ります。だから<strong>期間ではなく、サイクルの中にあるかどうかを先に見る</strong>のです。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>営業サイクルの中にあるもの（＝無条件で流動）</th></tr></thead>
+      <tbody>
+        <tr><td class="d">受取手形・売掛金・電子記録債権・契約資産・商品・前払金</td></tr>
+        <tr><td class="c">支払手形・買掛金・電子記録債務・契約負債・前受金</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>これら以外は<strong>1年基準</strong>で判定します。貸付金・借入金・未収入金・未払金・有価証券などが対象です。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>流動・固定の判定が割れる科目</h2>
+
+  <p>同じ科目名でも、条件によって流動と固定に分かれるものがあります。<strong>第3問で必ず問われる</strong>ところです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>帳簿上の科目</th><th>流動になる場合</th><th>固定になる場合</th></tr></thead>
+      <tbody>
+        <tr><td class="d">貸付金</td><td>返済期限が1年以内<br><span class="small muted">表示は<strong>短期貸付金</strong></span></td><td>返済期限が1年超<br><span class="small muted">表示は<strong>長期貸付金</strong>（投資その他の資産）</span></td></tr>
+        <tr><td class="d">借入金</td><td>返済期限が1年以内<br><span class="small muted">表示は<strong>短期借入金</strong></span></td><td>返済期限が1年超<br><span class="small muted">表示は<strong>長期借入金</strong>（固定負債）</span></td></tr>
+        <tr><td class="d">前払費用</td><td>1年以内に費用になる分<br><span class="small muted">表示は<strong>前払費用</strong></span></td><td>1年を超えて費用になる分<br><span class="small muted">表示は<strong>長期前払費用</strong>（投資その他の資産）</span></td></tr>
+        <tr><td class="d">有価証券</td><td>売買目的<br><span class="small muted">表示は<strong>有価証券</strong></span></td><td>その他有価証券・子会社株式・関連会社株式・満期が1年超の満期保有目的債券<br><span class="small muted">表示は<strong>投資有価証券</strong>／<strong>関係会社株式</strong>（投資その他の資産）</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">1年基準の起算日は「決算日の翌日」</span>
+    <p>1年以内かどうかは、<strong>決算日の翌日から1年</strong>で数えます。借りた日からでも、契約した日からでもありません。</p>
+    <p>決算日が3月31日なら、翌年3月31日までに返済期限が来るものが流動、それ以降が固定です。「3年前に借りた5年ローン」でも、残りの返済期間が1年を切っていれば<mark>流動負債です。</mark>当初の契約期間で判断すると誤ります。</p>
+    <p>問題文には「返済期限は×年×月×日である」と書いてあるので、<strong>決算日と見比べて数えてください。</strong></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">満期保有目的債券は満期までの期間で分かれる</span>
+    <p>満期保有目的債券は、決算日の翌日から<strong>満期までが1年以内なら流動資産</strong>（表示は「有価証券」）、<strong>1年超なら投資その他の資産</strong>（表示は「投資有価証券」）になります。</p>
+    <p>保有目的が「満期まで持つ」ことなので、満期が近づけば自然に流動へ移ります。他の分類と違い、<strong>時間の経過だけで区分が変わる</strong>点が特徴です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>控除形式で書く科目 — 貸倒引当金と減価償却累計額</h2>
+
+  <p>貸倒引当金と減価償却累計額は、<strong>負債ではありません。</strong>どちらも資産の側に、マイナスの形で書きます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>貸借対照表の資産の部（控除形式の例）</caption>
+      <thead><tr><th>科目</th><th class="amt">内訳</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">Ⅰ 流動資産</td><td class="amt"></td><td class="amt"></td></tr>
+        <tr><td class="d">　売掛金</td><td class="amt">3,200,000</td><td class="amt"></td></tr>
+        <tr><td class="d">　　貸倒引当金</td><td class="amt">△ 64,000</td><td class="amt">3,136,000</td></tr>
+        <tr><td class="d">Ⅱ 固定資産</td><td class="amt"></td><td class="amt"></td></tr>
+        <tr><td class="d">　建物</td><td class="amt">8,000,000</td><td class="amt"></td></tr>
+        <tr><td class="d">　　減価償却累計額</td><td class="amt">△ 2,400,000</td><td class="amt">5,600,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>検算します。3,200,000 − 64,000 ＝ <strong>3,136,000円</strong>。8,000,000 − 2,400,000 ＝ <strong>5,600,000円</strong>。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ控除形式にするのか</span>
+    <p>「売掛金が 3,136,000円ある」とだけ書くと、<strong>もともといくらあって、いくら回収できないと見込んでいるのか</strong>が分かりません。</p>
+    <p>控除形式なら、3,200,000円の債権のうち 64,000円が回収不能見込みだと読み取れます。<mark>引当率が適切かどうかを、読む人が自分で判断できます。</mark>建物の減価償却も同じで、取得原価と償却の進み具合の両方が見えます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">解答欄の様式が「純額」なら純額で書く</span>
+    <p>問題によっては、解答欄に内訳の欄がなく<strong>1行しかない</strong>ことがあります。その場合は控除後の金額（純額）だけを書きます。</p>
+    <p>また、貸倒引当金を<strong>受取手形と売掛金の合計から一括で控除する</strong>様式もあります。どちらで書くかは<strong>解答欄が決めます。</strong>答案用紙の形を先に見てから金額を埋めてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">貸倒引当金を負債の部に書かない</span>
+    <p>「引当金」という名前から負債だと考えてしまう誤りです。退職給付引当金・賞与引当金・修繕引当金は確かに負債ですが、<strong>貸倒引当金だけは違います。</strong></p>
+    <p>他の引当金は<strong>将来お金を払う義務</strong>の見積もりです。貸倒引当金は<strong>将来お金が入ってこない見込み</strong>であって、払う義務ではありません。だから資産を減らす形で表示します。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>純資産の部の構造</h2>
+
+  <p>2級の純資産の部は、<strong>株主資本</strong>と<strong>評価・換算等差額等</strong>の2本立てです。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>大区分</th><th>中区分</th><th>科目</th></tr></thead>
+      <tbody>
+        <tr><td class="d" rowspan="4"><strong>Ⅰ 株主資本</strong></td><td>資本金</td><td>資本金</td></tr>
+        <tr><td>資本剰余金</td><td>資本準備金・その他資本剰余金</td></tr>
+        <tr><td>利益剰余金</td><td>利益準備金・その他利益剰余金（任意積立金・<strong>繰越利益剰余金</strong>）</td></tr>
+        <tr><td colspan="2" class="small muted">株主が出したお金と、稼いで貯めたお金</td></tr>
+        <tr><td class="c"><strong>Ⅱ 評価・換算等<br>差額等</strong></td><td>—</td><td><strong>その他有価証券評価差額金</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ その他有価証券評価差額金だけ株主資本の外にあるのか</span>
+    <p>株主資本は「株主が出したお金」と「稼いで貯めたお金」です。どちらも<strong>会社が実際に手にした金額</strong>です。</p>
+    <p>いっぽう その他有価証券評価差額金は、<strong>まだ売っていない株の含み損益</strong>にすぎません。手にしていないし、売らなければ手に入りません。株主資本に混ぜると「稼いだお金」と区別がつかなくなります。</p>
+    <p>そこで<mark>株主資本の外に、別の区分を設けて置く</mark>ことにしました。これが「評価・換算等差額等」です。名前が抽象的なのは、株主資本にも負債にも当てはまらないものを集める場所だからです。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">資本準備金と利益準備金を混ぜない</span>
+    <p>どちらも「準備金」ですが、出どころが違います。</p>
+    <ul>
+      <li><strong>資本準備金</strong>：株主が払い込んだお金のうち、資本金にしなかった分。<strong>資本剰余金</strong>の中にある</li>
+      <li><strong>利益準備金</strong>：稼いだ利益を配当したときに、強制的に積み立てさせられる分。<strong>利益剰余金</strong>の中にある</li>
+    </ul>
+    <p>株主資本等変動計算書では、この2つが別の列になります。<mark>剰余金の配当をしたとき、どちらの準備金を積み立てるかは、財源がどちらの剰余金かで決まります。</mark>繰越利益剰余金を財源にしたなら利益準備金、その他資本剰余金を財源にしたなら資本準備金です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>表示科目名が帳簿の科目名と違うもの</h2>
+
+  <p>財務諸表に書く名前が、帳簿の勘定科目名と違うことがあります。<strong>帳簿の科目名をそのまま書くと誤答になる</strong>ので、対応を覚えます。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>帳簿の勘定科目</th><th>財務諸表での表示</th><th>置く区分</th></tr></thead>
+      <tbody>
+        <tr><td class="d">繰越商品</td><td><strong>商品</strong></td><td>流動資産</td></tr>
+        <tr><td class="d">仕入</td><td><strong>当期商品仕入高</strong></td><td>売上原価の内訳</td></tr>
+        <tr><td class="d">売上</td><td><strong>売上高</strong></td><td>売上高</td></tr>
+        <tr><td class="d">売買目的有価証券</td><td><strong>有価証券</strong></td><td>流動資産</td></tr>
+        <tr><td class="d">その他有価証券</td><td><strong>投資有価証券</strong></td><td>投資その他の資産</td></tr>
+        <tr><td class="d">子会社株式・関連会社株式</td><td><strong>関係会社株式</strong></td><td>投資その他の資産</td></tr>
+        <tr><td class="d">有価証券評価損益</td><td>貸方残なら<strong>有価証券評価益</strong><br>借方残なら<strong>有価証券評価損</strong></td><td>営業外収益<br>営業外費用</td></tr>
+        <tr><td class="d">貸付金（1年以内）</td><td><strong>短期貸付金</strong></td><td>流動資産</td></tr>
+        <tr><td class="d">貸付金（1年超）</td><td><strong>長期貸付金</strong></td><td>投資その他の資産</td></tr>
+        <tr><td class="d">借入金（1年超）</td><td><strong>長期借入金</strong></td><td>固定負債</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">「繰越商品 → 商品」は毎回出る</span>
+    <p>貸借対照表に「繰越商品」と書いてはいけません。<strong>商品</strong>です。逆に、精算表や試算表では「繰越商品」のままです。</p>
+    <p>損益計算書の「当期商品仕入高」も同じで、帳簿では「仕入」ですが表示は違います。<mark>どちらの書類を書いているかで、使う名前が変わる</mark>ということです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>精算表 — 何のために書くのか</h2>
+
+  <p>精算表は、決算整理前残高試算表から財務諸表までを<strong>1枚の表の上で一気に通す</strong>ための作業用紙です。2級で出るのは<strong>8桁精算表</strong>です。</p>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>欄</th><th>桁数</th><th>中身</th></tr></thead>
+      <tbody>
+        <tr><td class="d">残高試算表</td><td>借方・貸方の2桁</td><td>決算整理<strong>前</strong>の各勘定残高</td></tr>
+        <tr><td class="d">修正記入</td><td>借方・貸方の2桁</td><td>決算整理仕訳</td></tr>
+        <tr><td class="c">損益計算書</td><td>借方・貸方の2桁</td><td>費用・収益の科目の整理後残高</td></tr>
+        <tr><td class="c">貸借対照表</td><td>借方・貸方の2桁</td><td>資産・負債・純資産の科目の整理後残高</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">精算表は下書きであって、提出物ではない</span>
+    <p>実務で株主や銀行に見せるのは損益計算書と貸借対照表であり、精算表ではありません。精算表は<strong>決算の作業を間違えていないかを自分で確かめるための道具</strong>です。</p>
+    <p>それでも試験に出るのは、<mark>精算表を正しく埋められること自体が、決算整理を正しく理解している証拠になる</mark>からです。表示区分を問わずに決算整理の力だけを測れるので、出題する側にとって使いやすい形式でもあります。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">埋め方の手順は1つだけ</span>
+    <ol class="steps">
+      <li><strong>決算整理仕訳を修正記入欄に書く</strong><br>借方・貸方をそのまま横に置きます。既存の行にない科目（棚卸減耗損など）は、下の空欄行に科目名ごと書き足します。</li>
+      <li><strong>各行を横に足し引きして、右の2欄へ送る</strong><br>資産・負債・純資産の行は貸借対照表欄へ、費用・収益の行は損益計算書欄へ。<mark>行き先は科目の性質だけで決まります。</mark></li>
+      <li><strong>損益計算書欄の借方と貸方の差額を出す</strong><br>貸方（収益）のほうが大きければ、その差額が<strong>当期純利益</strong>です。借方側に書いて釣り合わせます。</li>
+      <li><strong>同じ金額を貸借対照表欄の貸方に書く</strong><br>利益は純資産を増やすので貸方です。これで貸借対照表欄も釣り合います。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">当期純利益を書く位置を逆にしない</span>
+    <p>当期純利益は、<strong>損益計算書欄では借方、貸借対照表欄では貸方</strong>に書きます。これが逆になる誤りが頻発します。</p>
+    <p>理屈で考えれば迷いません。損益計算書欄は収益（貸方）が費用（借方）より大きいから利益が出ています。<strong>釣り合わせるには足りない借方に書く</strong>しかありません。貸借対照表欄では、利益は繰越利益剰余金を増やす要素なので<strong>貸方</strong>です。</p>
+    <p>当期純損失の場合は両方が逆になります。<mark>「差額をどちら側に書けば釣り合うか」だけを見れば、暗記せずに毎回導けます。</mark></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">精算表の繰越利益剰余金は、整理前のまま動かない</span>
+    <p>決算整理では繰越利益剰余金に触りません。当期の利益を繰越利益剰余金へ振り替えるのは<strong>帳簿の締切</strong>の手続であり、決算整理ではないからです。</p>
+    <p>したがって精算表の貸借対照表欄に載る繰越利益剰余金は<strong>期首の金額のまま</strong>で、その下に当期純利益が別行で載ります。財務諸表を作る問題では繰越利益剰余金に利益を足した金額を書くので、<strong>精算表と財務諸表で扱いが違う</strong>点に注意してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>株主資本等変動計算書</h2>
+
+  <p><span class="term"><span class="term__w">株主資本等変動計算書</span><span class="term__r">かぶぬししほんとうへんどうけいさんしょ</span></span>は、<strong>純資産の部が1年間にどう動いたかを示す表</strong>です。第2問での出題が中心ですが、第3問の一部として問われることもあります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜこの表が必要なのか</span>
+    <p>貸借対照表は<strong>決算日という一瞬の残高</strong>しか示しません。資本金が 5,000万円だと書いてあっても、<strong>期首から増えたのか、ずっと同じなのか</strong>は分かりません。</p>
+    <p>損益計算書は利益の動きを説明しますが、純資産のうち説明できるのは<strong>繰越利益剰余金の一部だけ</strong>です。増資による資本金の増加も、配当による減少も、準備金の積立も、損益計算書には出てきません。</p>
+    <p>そこで<mark>純資産の各項目について、期首残高 ＋ 当期の変動 ＝ 期末残高 を一覧にする表</mark>が要ります。これが株主資本等変動計算書です。</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="jnl">
+      <caption>株主資本等変動計算書の骨格（金額の単位は円）</caption>
+      <thead><tr><th></th><th class="amt">資本金</th><th class="amt">資本準備金</th><th class="amt">利益準備金</th><th class="amt">繰越利益<br>剰余金</th><th class="amt">その他有価証券<br>評価差額金</th></tr></thead>
+      <tbody>
+        <tr><td class="d"><strong>当期首残高</strong></td><td class="amt">20,000,000</td><td class="amt">3,000,000</td><td class="amt">1,200,000</td><td class="amt">4,500,000</td><td class="amt">180,000</td></tr>
+        <tr><td class="d">新株の発行</td><td class="amt">5,000,000</td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt"></td></tr>
+        <tr><td class="d">剰余金の配当</td><td class="amt"></td><td class="amt"></td><td class="amt">200,000</td><td class="amt">△2,200,000</td><td class="amt"></td></tr>
+        <tr><td class="d">当期純利益</td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt">3,800,000</td><td class="amt"></td></tr>
+        <tr><td class="d">株主資本以外の項目の<br>当期変動額（純額）</td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt">100,000</td></tr>
+        <tr><td class="c"><strong>当期末残高</strong></td><td class="amt">25,000,000</td><td class="amt">3,000,000</td><td class="amt">1,400,000</td><td class="amt">6,100,000</td><td class="amt">280,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>この新株の発行は、払込金額 5,000,000円の<strong>全額を資本金に組み入れた</strong>ものです（会社法が原則とする処理）。したがって資本準備金の列は動きません。</p>
+
+  <p>各列を縦に検算します。資本金：20,000,000 ＋ 5,000,000 ＝ <strong>25,000,000円</strong>。資本準備金：変動がないので <strong>3,000,000円</strong> のまま。利益準備金：1,200,000 ＋ 200,000 ＝ <strong>1,400,000円</strong>。繰越利益剰余金：4,500,000 − 2,200,000 ＋ 3,800,000 ＝ <strong>6,100,000円</strong>。その他有価証券評価差額金：180,000 ＋ 100,000 ＝ <strong>280,000円</strong>。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">配当額と繰越利益剰余金の減少額は一致しない</span>
+    <p>上の表で、配当として株主に払うのは 2,000,000円です。ところが繰越利益剰余金は <strong>2,200,000円</strong>減っています。</p>
+    <p>差の 200,000円は<strong>利益準備金への積立</strong>です。会社法により、配当するときは配当額の10分の1を準備金として積み立てなければなりません。この積立も繰越利益剰余金から出ていくので、<mark>繰越利益剰余金の減少額 ＝ 配当額 ＋ 準備金の積立額</mark>になります。</p>
+    <p>2,000,000 × 1/10 ＝ 200,000円。2,000,000 ＋ 200,000 ＝ 2,200,000円です。検算が合います。</p>
+    <p class="small muted">準備金の積立には上限があり、資本準備金と利益準備金の合計が資本金の4分の1に達していれば積み立てる必要がありません。上の表では準備金の合計が 3,000,000 ＋ 1,200,000 ＝ 4,200,000円で、資本金の4分の1（期首 5,000,000円・期末 6,250,000円）を下回っているため、200,000円を満額積み立てます。第2問ではこの上限が問われることがあります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">株主資本以外は「純額」で1行にまとめる</span>
+    <p>その他有価証券評価差額金のような株主資本以外の項目は、<strong>変動の内訳を書かず、当期の増減を純額で1行</strong>にまとめます。行の名前は「株主資本以外の項目の当期変動額（純額）」です。</p>
+    <p>理由は、これらが<strong>時価の変動という単一の原因で動く</strong>ためです。株主資本のように「増資で増えた」「配当で減った」と原因を分ける意味がありません。</p>
+    <p>2級で扱う株主資本以外の項目は<strong>その他有価証券評価差額金だけ</strong>です。他の項目が出てきたら級を越えています。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">埋める順番</span>
+    <ol class="steps">
+      <li><strong>当期首残高を写す</strong><br>前期末の貸借対照表の純資産の部がそのまま当期首残高です。</li>
+      <li><strong>当期の取引を1件ずつ、該当する列に書く</strong><br>増資・配当・準備金の積立・当期純利益。どの列が動くかは仕訳を思い浮かべれば分かります。</li>
+      <li><strong>縦に足して当期末残高を出す</strong><br>各列について、当期首残高 ＋ 変動額の合計。</li>
+      <li><strong>横に足して合計欄を確かめる</strong><br>合計欄がある様式なら、横の合計が縦の計算と一致するかを見ます。これが検算になります。</li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>区分判定ドリル 20問</h2>
+
+  <p>科目を見て、置き場所を即答できるかを確認します。<strong>迷った問題は、なぜそこなのかを言葉で説明できるまで戻ってください。</strong>理由なしに覚えた区分は、似た科目が出た瞬間に崩れます。</p>
+
+  <div id="quiz-kubun"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル・仕訳ドリル・穴埋め</h2>
+
+  <div id="num-hyouji"></div>
+
+  <div id="drill-hyouji"></div>
+
+  <div id="fill-hyouji"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。表示区分は<strong>覚えた量がそのまま点になる</strong>領域です。曖昧な項目を1つずつ潰してください。</p>
+
+  <div class="progressbar" data-progress-for="#u2check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u2check">0 / 0 完了（0%）</div>
+
+  <div id="u2check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p2u02-w8u2-1"><label for="c1"><span class="cl__t">報告式の損益計算書に5つの利益を順に書ける</span><span class="cl__d">売上総利益・営業利益・経常利益・税引前当期純利益・当期純利益。上ほど本業に近く反復性が高い</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p2u02-w8u2-2"><label for="c2"><span class="cl__t">7つの区分の見出しを正しい名前で書ける</span><span class="cl__d">売上高／売上原価／販売費及び一般管理費／営業外収益／営業外費用／特別利益／特別損失</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p2u02-w8u2-3"><label for="c3"><span class="cl__t">売上原価の区分を内訳の行まで書ける</span><span class="cl__d">期首商品棚卸高 ＋ 当期商品仕入高 − 期末商品棚卸高（＋指示があれば棚卸減耗損・商品評価損）</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p2u02-w8u2-4"><label for="c4"><span class="cl__t">期末商品棚卸高に帳簿の金額を書くと言える</span><span class="cl__d">減耗も評価損も引く前の金額。減耗損と評価損はその下の行で別々に加算する</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p2u02-w8u2-5"><label for="c5"><span class="cl__t">問題文の「割戻」と「割引」を読み分けられる</span><span class="cl__d">割戻は取引量に応じた値引きなので売上高・仕入から直接控除する。割引と書いてあればそれは控除ではない（処理そのものは2級の範囲外）</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p2u02-w8u2-6"><label for="c6"><span class="cl__t">有価証券売却益と投資有価証券売却益の区分を書き分けられる</span><span class="cl__d">売買目的は営業外収益、その他有価証券は特別利益。売るつもりで持っていたかどうかで分かれる</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p2u02-w8u2-7"><label for="c7"><span class="cl__t">貸倒引当金繰入を営業債権分と営業外債権分に分けられる</span><span class="cl__d">営業債権分は販売費及び一般管理費、営業外債権分は営業外費用。営業利益に影響するかが変わる</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p2u02-w8u2-8"><label for="c8"><span class="cl__t">のれん償却と負ののれん発生益の区分の違いを言える</span><span class="cl__d">償却は毎期続くので販売費及び一般管理費、負ののれん発生益は合併時に一度だけなので特別利益</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p2u02-w8u2-9"><label for="c9"><span class="cl__t">手形売却損が営業外費用である理由を説明できる</span><span class="cl__d">期日前に現金化する代わりに負担する利息相当額。資金調達のコストなので営業外</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p2u02-w8u2-10"><label for="c10"><span class="cl__t">特別損益に入る科目をひととおり挙げられる</span><span class="cl__d">固定資産と投資有価証券に関するものが中心。売ることが前提の商品・売買目的有価証券は入らない</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p2u02-w8u2-11"><label for="c11"><span class="cl__t">正常営業循環基準を1年基準より先に当てる理由を言える</span><span class="cl__d">本業のサイクルの中にあるものは、回収に1年を超えてもいずれ必ず現金に戻る。期間より先にサイクルを見る</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p2u02-w8u2-12"><label for="c12"><span class="cl__t">1年基準の起算日が決算日の翌日であると言える</span><span class="cl__d">借りた日でも契約日でもない。当初5年のローンでも残りが1年を切れば流動負債</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p2u02-w8u2-13"><label for="c13"><span class="cl__t">有価証券を保有目的別に4つの表示区分へ振り分けられる</span><span class="cl__d">売買目的は流動資産の有価証券、その他有価証券は投資有価証券、子会社・関連会社株式は関係会社株式、満期保有目的債券は満期までの期間で分かれる</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p2u02-w8u2-14"><label for="c14"><span class="cl__t">貸倒引当金が負債でない理由を説明できる</span><span class="cl__d">払う義務ではなく、入ってこない見込み。資産から控除する形で表示する</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p2u02-w8u2-15"><label for="c15"><span class="cl__t">純資産の部を株主資本と評価・換算等差額等に分けて書ける</span><span class="cl__d">その他有価証券評価差額金はまだ売っていない含み損益なので、稼いだお金と区別して株主資本の外に置く</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p2u02-w8u2-16"><label for="c16"><span class="cl__t">資本準備金と利益準備金の出どころの違いを言える</span><span class="cl__d">資本準備金は株主の払込み、利益準備金は稼いだ利益の配当時の強制積立。財源に応じてどちらを積むかが決まる</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p2u02-w8u2-17"><label for="c17"><span class="cl__t">帳簿の科目名と表示科目名が違うものを挙げられる</span><span class="cl__d">繰越商品→商品、仕入→当期商品仕入高、売上→売上高、売買目的有価証券→有価証券、その他有価証券→投資有価証券</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p2u02-w8u2-18"><label for="c18"><span class="cl__t">精算表で当期純利益を書く位置を導ける</span><span class="cl__d">損益計算書欄は借方、貸借対照表欄は貸方。「差額をどちら側に書けば釣り合うか」で毎回導ける</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p2u02-w8u2-19"><label for="c19"><span class="cl__t">株主資本等変動計算書が必要な理由を説明できる</span><span class="cl__d">貸借対照表は一瞬の残高しか示さず、損益計算書は純資産の動きの一部しか説明しない。期首＋変動＝期末を一覧にする</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p2u02-w8u2-20"><label for="c20"><span class="cl__t">繰越利益剰余金の減少額が配当額と一致しない理由を言える</span><span class="cl__d">配当額に加えて利益準備金の積立額も繰越利益剰余金から出ていく。減少額 ＝ 配当額 ＋ 積立額</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p2u02-w8u2-21"><label for="c21"><span class="cl__t">株主資本以外の項目を純額で1行にまとめると言える</span><span class="cl__d">時価の変動という単一の原因で動くため内訳を分ける意味がない。2級で扱うのはその他有価証券評価差額金だけ</span></label></li>
+    <li><input type="checkbox" id="c22" data-key="p2u02-w8u2-22"><label for="c22"><span class="cl__t">区分判定ドリル20問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>表示区分は<strong>短時間で何度も回す</strong>のが効きます。この単元の区分判定ドリル20問は、1日1回、W8の6日間で6周してください。1周は5分もかかりません。</p>
+    <p>次の UNIT 03 では、商業簿記の第3問に工業簿記の勘定が混ざる<strong>製造業を営む会社の決算</strong>を扱います。表示区分の考え方はそのまま使いますが、売上原価の中身が変わります。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 2 教材 ／ W8 UNIT 02 財務諸表の表示区分と株主資本等変動計算書</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  var POOL = [
+    '現金', '当座預金', '普通預金', '受取手形', '売掛金', '電子記録債権',
+    '繰越商品', '商品', '貯蔵品', '前払費用', '未収収益', '未収入金',
+    '短期貸付金', '長期貸付金', '仮払法人税等', '繰延税金資産',
+    '売買目的有価証券', '満期保有目的債券', '投資有価証券', '関係会社株式',
+    '建物', '備品', '土地', 'のれん', '特許権', 'ソフトウェア',
+    '貸倒引当金', '建物減価償却累計額', '備品減価償却累計額',
+    '支払手形', '買掛金', '電子記録債務', '借入金', '長期借入金',
+    '未払金', '未払費用', '前受収益', '未払消費税', '未払法人税等',
+    '未払配当金', '繰延税金負債', '退職給付引当金',
+    '資本金', '資本準備金', 'その他資本剰余金', '利益準備金',
+    '別途積立金', '繰越利益剰余金', 'その他有価証券評価差額金',
+    '売上', '受取利息', '有価証券利息', '受取配当金', '受取家賃',
+    '貸倒引当金戻入', '為替差損益', '固定資産売却益', '保険差益',
+    '仕入', '棚卸減耗損', '商品評価損', '給料', '広告宣伝費', '支払家賃',
+    '減価償却費', 'のれん償却', '貸倒引当金繰入', '退職給付費用',
+    '支払利息', '手形売却損', '有価証券評価損益', '固定資産売却損',
+    '火災損失', '法人税、住民税及び事業税', '法人税等調整額', '損益'
+  ];
+
+  /* ========== 区分判定ドリル 20問 ========== */
+  BokiQuiz.mount('#quiz-kubun', {
+    title: '区分判定ドリル — 科目をどこに置くか（20問）',
+    questions: [
+      {
+        text: '<strong>減価償却費</strong>（本社建物および営業用備品に係るもの）を、損益計算書のどの区分に表示しますか。',
+        choices: ['売上原価', '販売費及び一般管理費', '営業外費用', '特別損失'],
+        answer: 1,
+        explain: '<p>本社や営業用の固定資産の減価償却費は、<strong>販売費及び一般管理費</strong>です。本業を営むために必要な設備の費用であり、毎期継続して発生します。</p><p>なお、製造業で工場の機械や建物に係る減価償却費は製造原価となり、売上原価を通じて損益計算書に反映されます。商業簿記の第3問で単に「減価償却費」と出た場合は販売費及び一般管理費です。</p>'
+      },
+      {
+        text: '<strong>のれん償却</strong>を、損益計算書のどの区分に表示しますか。',
+        choices: ['売上原価', '販売費及び一般管理費', '営業外費用', '特別損失'],
+        answer: 1,
+        explain: '<p>のれん償却は<strong>販売費及び一般管理費</strong>です。合併によって取得したのれんを、20年以内の期間にわたって毎期継続して費用化していくものだからです。</p><p>性質としては減価償却費と同じで、<strong>長期にわたり毎期くり返される費用</strong>です。特許権償却・ソフトウェア償却も同じ区分になります。</p><p>いっぽう<strong>負ののれん発生益は特別利益</strong>です。合併した年に一度だけ発生する臨時の利益なので、区分が正反対になります。名前が対になっているぶん取り違えやすいところです。</p>'
+      },
+      {
+        text: '<strong>有価証券利息</strong>（満期保有目的債券から生じたもの）を、損益計算書のどの区分に表示しますか。',
+        choices: ['売上高', '販売費及び一般管理費', '営業外収益', '特別利益'],
+        answer: 2,
+        explain: '<p>有価証券利息は<strong>営業外収益</strong>です。債券を保有していることから生じる利息であり、商品売買という本業とは関係がありません。</p><p>受取利息・受取配当金も同じ区分です。いずれも<strong>資金を運用したことによる収益</strong>であり、本業の成果ではないため営業利益には含めません。</p><p>償却原価法による加減額も有価証券利息として処理するので、同じく営業外収益（または営業外費用）に表示されます。</p>'
+      },
+      {
+        text: '外貨建の売掛金を決算日の相場で換算し直した結果生じた<strong>為替差益</strong>を、損益計算書のどの区分に表示しますか。なお当期の為替差損益は、相殺すると差益が残るものとする。',
+        choices: ['売上高に加算する', '売上原価から控除する', '営業外収益', '特別利益'],
+        answer: 2,
+        explain: '<p>為替差益は<strong>営業外収益</strong>です。換算し直した相手が売掛金という営業債権であっても、利益の源は<strong>相場が動いたこと</strong>であって商品を売ったことではありません。本業の成果ではないので営業外に置きます。</p><p>為替差損と為替差益は<strong>相殺して純額で表示</strong>します。相殺して差損が残れば営業外費用、差益が残れば営業外収益です。つまり同じ科目が期によって左右どちらにも出ます。</p><p>売掛金に紐づくからといって売上高を増減させないこと。売上高は取引時の相場で換算した金額のまま動きません。</p>'
+      },
+      {
+        text: '売買目的有価証券を売却して生じた<strong>有価証券売却益</strong>を、損益計算書のどの区分に表示しますか。',
+        choices: ['売上高', '営業外収益', '特別利益', '販売費及び一般管理費から控除する'],
+        answer: 1,
+        explain: '<p>売買目的有価証券の売却益は<strong>営業外収益</strong>です。売買目的で保有している以上、売却することは想定内の行為であり、毎年くり返されうるからです。</p><p>これに対し、<strong>その他有価証券</strong>を売却したときの益は<strong>投資有価証券売却益</strong>として<strong>特別利益</strong>に表示します。売るつもりで持っていなかったものを売ったのだから、臨時の出来事だという判断です。</p><p>同じ「有価証券を売った益」でも区分が変わります。<strong>問題文が「売買目的」と書いているか「その他有価証券」と書いているかを必ず確認してください。</strong></p>'
+      },
+      {
+        text: '<strong>火災損失</strong>（火災により焼失した建物について、保険金額が確定した結果生じたもの）を、損益計算書のどの区分に表示しますか。',
+        choices: ['販売費及び一般管理費', '営業外費用', '特別損失', '売上原価'],
+        answer: 2,
+        explain: '<p>火災損失は<strong>特別損失</strong>です。火災は臨時かつ偶発的な出来事であり、毎期くり返されるものではありません。</p><p>同じ火災から生じても、保険金額のほうが帳簿価額より大きかった場合の<strong>保険差益は特別利益</strong>になります。どちらも臨時の出来事から生じた損益です。</p><p>特別損益に入るものは、固定資産の売却・除却・廃棄、投資有価証券の売却、災害による損失など、<strong>長く持ち続ける前提の資産に関する臨時の出来事</strong>が中心です。</p>'
+      },
+      {
+        text: '<strong>貸付金に対して設定した貸倒引当金の繰入額</strong>を、損益計算書のどの区分に表示しますか。',
+        choices: ['販売費及び一般管理費', '営業外費用', '特別損失', '売上原価'],
+        answer: 1,
+        explain: '<p>貸付金は<strong>営業外債権</strong>です。商品売買という本業から生じた債権ではなく、資金を貸したことによる債権だからです。</p><p>したがって、その焦げ付きに備える費用も本業のコストではなく、<strong>営業外費用</strong>に表示します。</p><p>いっぽう<strong>売掛金や受取手形といった営業債権</strong>に対する繰入は、<strong>販売費及び一般管理費</strong>です。本業の取引から生じた債権の焦げ付きは、本業を営むうえでのコストだからです。</p><p>同じ「貸倒引当金繰入」でも、<mark>営業利益に影響するかどうかが変わります。</mark>両方の債権がある問題では、必ず分けて計算してください。</p>'
+      },
+      {
+        text: '<strong>手形売却損</strong>（受取手形を銀行で割り引いた際に生じたもの）を、損益計算書のどの区分に表示しますか。',
+        choices: ['売上高から控除する', '販売費及び一般管理費', '営業外費用', '特別損失'],
+        answer: 2,
+        explain: '<p>手形売却損は<strong>営業外費用</strong>です。手形の割引は「期日前に現金化する代わりに、期日までの利息相当額を負担する」行為であり、<strong>実質的に利息</strong>だからです。</p><p>本業の売上から生じた手形なので販売費及び一般管理費かと考えたくなりますが、ここで負担しているのは<strong>資金調達のコスト</strong>です。同じ理由で支払利息も営業外費用に置かれます。<mark>「早くお金を動かすための対価」は、すべて営業外に集まります。</mark></p>'
+      },
+      {
+        text: '<strong>退職給付引当金</strong>を、貸借対照表のどの区分に表示しますか。',
+        choices: ['流動負債', '固定負債', '流動資産から控除する', '純資産'],
+        answer: 1,
+        explain: '<p>退職給付引当金は<strong>固定負債</strong>です。従業員が退職するときに支払う見積額であり、<strong>支払いが1年以内に来るとは限らない</strong>からです。</p><p>他の引当金——賞与引当金・修繕引当金・商品保証引当金——は、いずれも翌期中に支払いや履行が見込まれるため<strong>流動負債</strong>になります。</p><p>貸倒引当金だけは負債ですらありません。払う義務ではなく<strong>入ってこない見込み</strong>なので、該当する債権から控除する形で資産の部に表示します。</p>'
+      },
+      {
+        text: '決算日の翌日から<strong>返済期限まで1年を超える借入金</strong>を、貸借対照表にどう表示しますか。',
+        choices: ['借入金として流動負債', '短期借入金として流動負債', '長期借入金として固定負債', '長期借入金として流動負債'],
+        answer: 2,
+        explain: '<p>返済期限が1年を超える借入金は<strong>長期借入金</strong>という表示科目で<strong>固定負債</strong>に置きます。</p><p>1年基準の起算日は<strong>決算日の翌日</strong>です。借りた日でも契約した日でもありません。当初5年のローンであっても、決算日時点で残りの返済期間が1年を切っていれば<strong>短期借入金として流動負債</strong>になります。</p><p>帳簿上の科目名は「借入金」のままでも、財務諸表では期間に応じて表示科目が変わります。貸付金も同じで、1年以内なら短期貸付金（流動資産）、1年超なら長期貸付金（投資その他の資産）です。</p>'
+      },
+      {
+        text: '<strong>その他有価証券</strong>（子会社株式・関連会社株式には該当しない）を、貸借対照表にどう表示しますか。',
+        choices: ['有価証券として流動資産', '投資有価証券として投資その他の資産', '関係会社株式として投資その他の資産', '有価証券として投資その他の資産'],
+        answer: 1,
+        explain: '<p>その他有価証券は<strong>投資有価証券</strong>という表示科目で、固定資産の中の<strong>投資その他の資産</strong>に置きます。すぐ売る前提で持っているものではないためです。</p><p>保有目的ごとの表示は次のとおりです。</p><ul><li><strong>売買目的有価証券</strong> → 有価証券（流動資産）</li><li><strong>その他有価証券</strong> → 投資有価証券（投資その他の資産）</li><li><strong>子会社株式・関連会社株式</strong> → 関係会社株式（投資その他の資産）</li><li><strong>満期保有目的債券</strong> → 満期まで1年以内なら有価証券（流動資産）、1年超なら投資有価証券（投資その他の資産）</li></ul><p>帳簿の科目名と表示科目名が違う点に注意してください。</p>'
+      },
+      {
+        text: '<strong>売掛金</strong>のうち、回収期限が決算日の翌日から1年を超えるものがあります。この売掛金は貸借対照表のどの区分に表示しますか。',
+        choices: ['1年を超える分は投資その他の資産に表示する', '全額を流動資産に表示する', '1年を超える分は固定負債に表示する', '1年を超える分は繰延資産に表示する'],
+        answer: 1,
+        explain: '<p>売掛金は<strong>正常営業循環基準</strong>により、回収に1年を超えても<strong>全額を流動資産</strong>に表示します。</p><p>流動・固定の判定は、<mark>まず正常営業循環基準を当て、それに該当しないものだけを1年基準で判定します。</mark>この順番が逆になると、本業のサイクルの中にある売掛金を固定資産に置いてしまいます。</p><p>本業のサイクルの中にあるものは、たとえ時間がかかってもいずれ必ず現金に戻ります。だから期間ではなく、サイクルの中にあるかどうかを先に見るのです。</p><p>受取手形・電子記録債権・契約資産・商品・前払金、そして買掛金・支払手形・電子記録債務・契約負債・前受金も同じく無条件で流動です。</p>'
+      },
+      {
+        text: '<strong>その他有価証券評価差額金</strong>を、貸借対照表のどの区分に表示しますか。',
+        choices: ['株主資本の利益剰余金', '株主資本の資本剰余金', '評価・換算等差額等', '固定負債'],
+        answer: 2,
+        explain: '<p>その他有価証券評価差額金は、純資産の部の中の<strong>評価・換算等差額等</strong>という区分に置きます。株主資本の外です。</p><p>株主資本は「株主が出したお金」と「稼いで貯めたお金」であり、どちらも<strong>会社が実際に手にした金額</strong>です。いっぽう評価差額金は<strong>まだ売っていない株の含み損益</strong>にすぎません。株主資本に混ぜると、稼いだお金と区別がつかなくなります。</p><p>2級の純資産の部で、株主資本以外の区分に入るのは<strong>この科目だけ</strong>です。他の項目が出てきたら級を越えています。</p>'
+      },
+      {
+        text: '<strong>繰越利益剰余金</strong>を、貸借対照表のどの区分に表示しますか。',
+        choices: ['株主資本 ＞ 資本剰余金', '株主資本 ＞ 利益剰余金 ＞ その他利益剰余金', '評価・換算等差額等', '株主資本 ＞ 資本金'],
+        answer: 1,
+        explain: '<p>繰越利益剰余金は、<strong>株主資本 ＞ 利益剰余金 ＞ その他利益剰余金</strong>に属します。稼いだ利益のうち、まだ配当も積立もしていない残りだからです。</p><p>利益剰余金は<strong>利益準備金</strong>と<strong>その他利益剰余金</strong>に分かれ、後者はさらに<strong>任意積立金</strong>（別途積立金など）と<strong>繰越利益剰余金</strong>に分かれます。</p><p>資本剰余金と混同しないでください。資本剰余金（資本準備金・その他資本剰余金）は<strong>株主が払い込んだお金</strong>が出どころで、稼いだ利益とは別の性質を持ちます。この区別は株主資本等変動計算書で列が分かれる根拠にもなっています。</p>'
+      },
+      {
+        text: '問題文に「<strong>棚卸減耗損および商品評価損は売上原価の内訳項目として表示する</strong>」とある場合、売上総利益はどうなりますか。',
+        choices: [
+          '内訳項目としない場合と比べて、棚卸減耗損と商品評価損の合計額だけ小さくなる',
+          '内訳項目としない場合と比べて、棚卸減耗損と商品評価損の合計額だけ大きくなる',
+          '内訳項目とするかどうかにかかわらず、売上総利益は変わらない',
+          '商品評価損の分だけ小さくなるが、棚卸減耗損は影響しない'
+        ],
+        answer: 0,
+        explain: '<p>売上原価の内訳項目とすると、その分だけ<strong>売上原価が大きくなります。</strong>売上総利益は 売上高 − 売上原価 なので、<strong>棚卸減耗損と商品評価損の合計額だけ小さくなります。</strong></p><p>内訳項目としない場合、これらは販売費及び一般管理費や独立の項目として売上総利益より下に置かれます。<mark>営業利益より下の利益はどちらでも同じ</mark>ですが、売上総利益だけが変わります。</p><p>金額はどちらも正しく計算されているのに、置き場所が違うだけで利益が変わります。<strong>問題文の指示を読み落とすと、売上総利益から下の利益がすべてずれます。</strong></p>'
+      },
+      {
+        text: '損益計算書の<strong>売上原価の区分にある「期末商品棚卸高」</strong>に書く金額として正しいものはどれですか。',
+        choices: [
+          '実地棚卸数量 × 正味売却価額（貸借対照表の商品と同じ金額）',
+          '帳簿棚卸数量 × 原価（棚卸減耗も評価損も引く前の金額）',
+          '実地棚卸数量 × 原価（棚卸減耗だけを引いた金額）',
+          '帳簿棚卸数量 × 正味売却価額'
+        ],
+        answer: 1,
+        explain: '<p>期末商品棚卸高に書くのは<strong>帳簿棚卸数量 × 原価</strong>です。棚卸減耗も商品評価損も、まだ引いていない金額です。</p><p>減耗損と評価損は、<strong>その下の行で別々に加算する</strong>形になっています。先に引いてしまうと二重に引くことになります。</p><p>貸借対照表に載る商品の金額（実地数量 × 正味売却価額）と、損益計算書の期末商品棚卸高が違う金額になるのは<strong>正常です。</strong>この2つは別の数字だと割り切ってください。</p>'
+      },
+      {
+        text: '精算表において、<strong>当期純利益</strong>を書く位置として正しいものはどれですか。なお当期は利益が生じているものとします。',
+        choices: [
+          '損益計算書欄の貸方と、貸借対照表欄の借方',
+          '損益計算書欄の借方と、貸借対照表欄の貸方',
+          '損益計算書欄・貸借対照表欄ともに借方',
+          '損益計算書欄・貸借対照表欄ともに貸方'
+        ],
+        answer: 1,
+        explain: '<p>当期純利益は<strong>損益計算書欄では借方、貸借対照表欄では貸方</strong>に書きます。</p><p>理屈で導けます。損益計算書欄は収益（貸方）が費用（借方）より大きいから利益が出ています。<strong>釣り合わせるには足りない借方に書く</strong>しかありません。</p><p>貸借対照表欄では、利益は繰越利益剰余金を増やす要素なので<strong>貸方</strong>です。</p><p>当期純損失の場合は両方が逆になります。<mark>「差額をどちら側に書けば釣り合うか」だけを見れば、暗記せずに毎回導けます。</mark></p>'
+      },
+      {
+        text: '株主資本等変動計算書において、<strong>その他有価証券評価差額金の変動</strong>はどのように記載しますか。',
+        choices: [
+          '増加の原因ごとに行を分けて記載する',
+          '「株主資本以外の項目の当期変動額（純額）」として1行にまとめる',
+          '株主資本の合計欄にのみ記載する',
+          '記載しない。貸借対照表にのみ表示する'
+        ],
+        answer: 1,
+        explain: '<p>株主資本以外の項目は、変動の内訳を書かず<strong>当期の増減を純額で1行</strong>にまとめます。行の名前は「株主資本以外の項目の当期変動額（純額）」です。</p><p>理由は、これらが<strong>時価の変動という単一の原因で動く</strong>ためです。株主資本のように「増資で増えた」「配当で減った」と原因を分ける意味がありません。</p><p>2級で扱う株主資本以外の項目は<strong>その他有価証券評価差額金だけ</strong>です。出題区分表でも、2級の株主資本等変動計算書は株主資本およびその他有価証券評価差額金に係る増減事由に限定されています。</p>'
+      },
+      {
+        text: '繰越利益剰余金を財源として <strong>3,000,000円</strong> の配当を行い、会社法の規定により配当額の <strong>10分の1</strong> を利益準備金として積み立てました。株主資本等変動計算書において、<strong>繰越利益剰余金が減少する金額</strong>はいくらですか。なお、準備金の積立限度には達していないものとします。',
+        choices: ['3,000,000円', '3,300,000円', '2,700,000円', '300,000円'],
+        answer: 1,
+        invariant: [
+          ['3000000 + 3000000 / 10', 'answer'],
+          ['3000000 / 10', '300000']
+        ],
+        explain: '<p>配当するときは、会社法により配当額の<strong>10分の1</strong>を準備金として積み立てなければなりません。3,000,000 ÷ 10 ＝ <strong>300,000円</strong>です。</p><p>この積立も繰越利益剰余金から出ていくので、繰越利益剰余金の減少額は次のようになります。</p><p>3,000,000 ＋ 300,000 ＝ <strong>3,300,000円</strong></p><p>つまり<mark>繰越利益剰余金の減少額 ＝ 配当額 ＋ 準備金の積立額</mark>です。配当額だけを減らすと、利益準備金の増加分と辻褄が合わなくなります。</p><p>財源が繰越利益剰余金なので積み立てるのは<strong>利益準備金</strong>です。その他資本剰余金を財源にした場合は資本準備金を積み立てます。</p><p class="small muted">なお、資本準備金と利益準備金の合計が資本金の4分の1に達している場合は、積み立てる必要がありません。</p>'
+      },
+      {
+        text: '損益計算書において、<strong>経常利益</strong>はどのように計算されますか。',
+        choices: [
+          '売上総利益 − 販売費及び一般管理費',
+          '営業利益 ＋ 営業外収益 − 営業外費用',
+          '税引前当期純利益 ＋ 特別利益 − 特別損失',
+          '営業利益 ＋ 特別利益 − 特別損失'
+        ],
+        answer: 1,
+        explain: '<p>経常利益は<strong>営業利益 ＋ 営業外収益 − 営業外費用</strong>で計算します。</p><p>5つの利益の順序は次のとおりです。</p><ol><li><strong>売上総利益</strong> ＝ 売上高 − 売上原価</li><li><strong>営業利益</strong> ＝ 売上総利益 − 販売費及び一般管理費</li><li><strong>経常利益</strong> ＝ 営業利益 ＋ 営業外収益 − 営業外費用</li><li><strong>税引前当期純利益</strong> ＝ 経常利益 ＋ 特別利益 − 特別損失</li><li><strong>当期純利益</strong> ＝ 税引前当期純利益 − 法人税等 ± 法人税等調整額</li></ol><p>「経常」という名前が示すとおり、経常利益は<strong>毎年くり返し稼げる額</strong>を表します。臨時の出来事である特別損益は、この下で加減します。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-hyouji', {
+    title: '計算ドリル — 区分ごとの金額を出す（6問）',
+    unit: '円',
+    questions: [
+      {
+        text: '次の資料から<strong>売上総利益</strong>と<strong>営業利益</strong>を求めなさい。売上高 <strong>32,000,000円</strong>、期首商品棚卸高 <strong>2,100,000円</strong>、当期商品仕入高 <strong>21,400,000円</strong>、期末商品棚卸高（帳簿）<strong>2,600,000円</strong>、棚卸減耗損 <strong>90,000円</strong>、商品評価損 <strong>150,000円</strong>、給料 <strong>4,800,000円</strong>、減価償却費 <strong>720,000円</strong>、貸倒引当金繰入（売掛金に対するもの）<strong>130,000円</strong>。なお<strong>棚卸減耗損と商品評価損はともに売上原価の内訳項目とする。</strong>',
+        labels: ['売上総利益', '営業利益'],
+        answer: [10860000, 5210000],
+        formula: [
+          '32000000-(2100000+21400000-2600000+90000+150000)',
+          '32000000-(2100000+21400000-2600000+90000+150000)-4800000-720000-130000'
+        ],
+        hint: '売上原価を先に確定させます。減耗損と評価損も内訳に含めます。',
+        explain: '<p><strong>売上原価</strong>：2,100,000 ＋ 21,400,000 − 2,600,000 ＝ 20,900,000円。ここに減耗損と評価損を加えて 20,900,000 ＋ 90,000 ＋ 150,000 ＝ <strong>21,140,000円</strong>。</p><p><strong>売上総利益</strong>：32,000,000 − 21,140,000 ＝ <strong>10,860,000円</strong>。</p><p><strong>販売費及び一般管理費</strong>：給料 4,800,000 ＋ 減価償却費 720,000 ＋ 貸倒引当金繰入 130,000 ＝ 5,650,000円。貸倒引当金繰入は売掛金＝営業債権に対するものなのでこの区分です。</p><p><strong>営業利益</strong>：10,860,000 − 5,650,000 ＝ <strong>5,210,000円</strong>。</p>'
+      },
+      {
+        text: '営業利益が <strong>5,210,000円</strong> である。さらに次の項目がある。受取利息 <strong>60,000円</strong>、有価証券利息 <strong>110,000円</strong>、受取配当金 <strong>45,000円</strong>、支払利息 <strong>280,000円</strong>、手形売却損 <strong>90,000円</strong>、貸倒引当金繰入（貸付金に対するもの）<strong>50,000円</strong>、固定資産売却益 <strong>700,000円</strong>、火災損失 <strong>1,200,000円</strong>。<strong>経常利益</strong>と<strong>税引前当期純利益</strong>を求めなさい。',
+        labels: ['経常利益', '税引前当期純利益'],
+        answer: [5005000, 4505000],
+        formula: [
+          '5210000+60000+110000+45000-280000-90000-50000',
+          '5210000+60000+110000+45000-280000-90000-50000+700000-1200000'
+        ],
+        hint: '固定資産売却益と火災損失は経常利益に含めません。',
+        explain: '<p><strong>営業外収益</strong>：受取利息 60,000 ＋ 有価証券利息 110,000 ＋ 受取配当金 45,000 ＝ 215,000円。いずれも資金を運用したことによる収益であり、本業の成果ではないので営業外収益です。</p><p><strong>営業外費用</strong>：支払利息 280,000 ＋ 手形売却損 90,000 ＋ 貸倒引当金繰入（貸付金分）50,000 ＝ 420,000円。貸付金は営業外債権なので、その繰入も営業外費用です。</p><p><strong>経常利益</strong>：5,210,000 ＋ 215,000 − 420,000 ＝ <strong>5,005,000円</strong>。</p><p><strong>特別損益</strong>：固定資産売却益 700,000（特別利益）、火災損失 1,200,000（特別損失）。</p><p><strong>税引前当期純利益</strong>：5,005,000 ＋ 700,000 − 1,200,000 ＝ <strong>4,505,000円</strong>。</p>'
+      },
+      {
+        text: '税引前当期純利益は <strong>4,505,000円</strong> である。法人税、住民税及び事業税は <strong>1,420,000円</strong>、法人税等調整額は貸方に <strong>65,000円</strong> 計上された。<strong>当期純利益</strong>を求めなさい。また、中間納付額 <strong>600,000円</strong> が仮払法人税等に計上されているとき、貸借対照表に載る<strong>未払法人税等</strong>を求めなさい。',
+        labels: ['当期純利益', '未払法人税等'],
+        answer: [3150000, 820000],
+        formula: ['4505000-1420000+65000', '1420000-600000'],
+        hint: '法人税等調整額が貸方なら、税額を減らす方向に働きます。',
+        explain: '<p><strong>当期純利益</strong>：4,505,000 − 1,420,000 ＋ 65,000 ＝ <strong>3,150,000円</strong>。法人税等調整額が貸方にあるということは、損益計算書上の税負担を減らす方向に働きます。</p><p><strong>未払法人税等</strong>：1,420,000 − 600,000 ＝ <strong>820,000円</strong>。</p><p>注意点は2つです。</p><ul><li>未払法人税等の計算に<strong>法人税等調整額は関係しません。</strong>調整額は損益計算書の見え方を整えるだけで、納税額を1円も変えないからです</li><li>損益計算書に載るのは年間総額 1,420,000円、貸借対照表に載るのは 820,000円。<strong>2つは違う金額です</strong></li></ul>'
+      },
+      {
+        text: '決算整理後の残高が次のとおりである。受取手形 <strong>2,400,000円</strong>、売掛金 <strong>4,100,000円</strong>、貸倒引当金 <strong>130,000円</strong>（全額が受取手形と売掛金に対するもの）、建物 <strong>12,000,000円</strong>、建物減価償却累計額 <strong>4,320,000円</strong>、備品 <strong>3,000,000円</strong>、備品減価償却累計額 <strong>1,875,000円</strong>。貸借対照表に載る<strong>受取手形と売掛金の控除後合計</strong>と、<strong>有形固定資産の合計</strong>（控除後）を求めなさい。',
+        labels: ['受取手形・売掛金の控除後合計', '有形固定資産の控除後合計'],
+        answer: [6370000, 8805000],
+        formula: ['2400000+4100000-130000', '12000000-4320000+3000000-1875000'],
+        hint: '貸倒引当金も減価償却累計額も、資産から控除する形です。',
+        explain: '<p><strong>受取手形・売掛金</strong>：2,400,000 ＋ 4,100,000 ＝ 6,500,000円。ここから貸倒引当金 130,000円を控除して <strong>6,370,000円</strong>。</p><p><strong>有形固定資産</strong>：建物 12,000,000 − 4,320,000 ＝ 7,680,000円。備品 3,000,000 − 1,875,000 ＝ 1,125,000円。合計 <strong>8,805,000円</strong>。</p><p>貸倒引当金も減価償却累計額も<strong>負債ではありません。</strong>どちらも資産の側にマイナスの形で書きます。控除形式で書くことで、もともといくらあって、いくら回収不能と見込んでいるか（どこまで償却が進んでいるか）が読み取れます。</p>'
+      },
+      {
+        text: '株主資本等変動計算書を作成する。繰越利益剰余金の当期首残高は <strong>5,600,000円</strong>。当期中に株主総会で <strong>2,500,000円</strong> の配当を決議し、会社法の規定による最低限度額の利益準備金を積み立てた（積立限度には達していない）。当期純利益は <strong>4,100,000円</strong> であった。<strong>利益準備金の積立額</strong>と<strong>繰越利益剰余金の当期末残高</strong>を求めなさい。',
+        labels: ['利益準備金の積立額', '繰越利益剰余金の当期末残高'],
+        answer: [250000, 6950000],
+        formula: ['2500000/10', '5600000-2500000-2500000/10+4100000'],
+        hint: '繰越利益剰余金からは、配当額と積立額の両方が出ていきます。',
+        explain: '<p><strong>利益準備金の積立額</strong>：2,500,000 ÷ 10 ＝ <strong>250,000円</strong>。会社法により配当額の10分の1を積み立てます。</p><p><strong>繰越利益剰余金の当期末残高</strong>：5,600,000 − 2,500,000 − 250,000 ＋ 4,100,000 ＝ <strong>6,950,000円</strong>。</p><p>減る要素が2つある点が要です。配当 2,500,000円だけでなく、利益準備金への積立 250,000円も<mark>繰越利益剰余金から出ていきます。</mark>合わせて 2,750,000円の減少です。</p><p>株主資本等変動計算書の「剰余金の配当」の行には、繰越利益剰余金の列に △2,750,000、利益準備金の列に 250,000 と記載します。</p>'
+      },
+      {
+        text: '純資産の各項目について、当期首残高と当期変動額が次のとおりである。資本金：当期首 <strong>30,000,000円</strong>、新株発行により <strong>8,000,000円</strong> 増加。資本準備金：当期首 <strong>4,000,000円</strong>、新株発行により <strong>8,000,000円</strong> 増加。利益剰余金合計：当期首 <strong>9,200,000円</strong>、当期変動額は<strong>純増 2,100,000円</strong>。その他有価証券評価差額金：当期首 <strong>350,000円</strong>、当期変動額は<strong>純減 120,000円</strong>。<strong>株主資本の当期末合計</strong>と<strong>純資産の当期末合計</strong>を求めなさい。',
+        labels: ['株主資本の当期末合計', '純資産の当期末合計'],
+        answer: [61300000, 61530000],
+        formula: [
+          '30000000+8000000+4000000+8000000+9200000+2100000',
+          '30000000+8000000+4000000+8000000+9200000+2100000+350000-120000'
+        ],
+        hint: 'その他有価証券評価差額金は株主資本に含まれません。',
+        explain: '<p><strong>株主資本の当期末合計</strong>：資本金 30,000,000 ＋ 8,000,000 ＝ 38,000,000円。資本準備金 4,000,000 ＋ 8,000,000 ＝ 12,000,000円。利益剰余金 9,200,000 ＋ 2,100,000 ＝ 11,300,000円。合計 <strong>61,300,000円</strong>。</p><p><strong>純資産の当期末合計</strong>：その他有価証券評価差額金 350,000 − 120,000 ＝ 230,000円を加えて <strong>61,530,000円</strong>。</p><p>その他有価証券評価差額金は<strong>評価・換算等差額等</strong>であり、株主資本には含まれません。まだ売っていない株の含み損益にすぎず、会社が実際に手にした金額ではないためです。</p><p>株主資本合計と純資産合計が違う金額になるのはこの差によるものです。答案では両方の合計欄を埋める必要があるので、<strong>どちらに何を含めるかを取り違えないでください。</strong></p>'
+      }
+    ]
+  });
+
+  /* ========== 仕訳ドリル ========== */
+  BokiJournal.mount('#drill-hyouji', {
+    title: '仕訳ドリル — 純資産の変動と帳簿の締切（8問）',
+    accounts: POOL,
+    questions: [
+      {
+        text: '株主総会において、繰越利益剰余金を財源として <strong>4,000,000円</strong> の配当を行うことが決議された。あわせて、会社法の規定による最低限度額の<strong>利益準備金</strong>を積み立てる。なお、準備金の積立限度には達していない。配当金はまだ支払っていない。',
+        debit: [['繰越利益剰余金', 4400000]],
+        credit: [['未払配当金', 4000000], ['利益準備金', 400000]],
+        hint: '繰越利益剰余金からは、配当額と積立額の両方が出ていきます。',
+        explain: '<p><strong>利益準備金の積立額</strong>：4,000,000 ÷ 10 ＝ <strong>400,000円</strong>。会社法により、配当するときは配当額の10分の1を準備金として積み立てなければなりません。</p><p><strong>繰越利益剰余金の減少額</strong>：4,000,000 ＋ 400,000 ＝ <strong>4,400,000円</strong>。配当も積立も、どちらも繰越利益剰余金から出ていきます。</p><p>配当金はまだ支払っていないので、貸方は<strong>未払配当金</strong>（負債）です。株主総会で決議した時点では債務が確定しただけで、支払いはこれからです。</p><p>財源が繰越利益剰余金なので積み立てるのは<strong>利益準備金</strong>です。その他資本剰余金を財源にした場合は資本準備金を積み立てます。</p>'
+      },
+      {
+        text: '新株 <strong>2,000株</strong> を1株あたり <strong>6,000円</strong> で発行し、全額の払込みを受けて当座預金とした。なお、<strong>会社法が定める最低限度額</strong>を資本金に組み入れる。',
+        debit: [['当座預金', 12000000]],
+        credit: [['資本金', 6000000], ['資本準備金', 6000000]],
+        hint: '「最低限度額」は払込金額の2分の1です。',
+        explain: '<p><strong>払込金額</strong>：2,000株 × 6,000円 ＝ <strong>12,000,000円</strong>。全額が当座預金に入ります。</p><p>会社法では、払込金額の<strong>2分の1を超えない額</strong>を資本金に組み入れないことができます。つまり資本金に組み入れる最低限度額は<strong>払込金額の2分の1</strong>です。</p><p><strong>資本金</strong>：12,000,000 ÷ 2 ＝ <strong>6,000,000円</strong>。<strong>資本準備金</strong>：残りの <strong>6,000,000円</strong>。</p><p>「最低限度額を資本金とする」「2分の1を資本金とする」という指示があればこの形です。指示がなければ<strong>全額を資本金</strong>にするのが原則なので、問題文を必ず確認してください。</p><p>株主資本等変動計算書では、資本金の列と資本準備金の列の両方が「新株の発行」の行で増加します。</p>'
+      },
+      {
+        text: '決算において、当期純利益 <strong>3,800,000円</strong> を計上した。<strong>損益勘定から繰越利益剰余金へ振り替える</strong>仕訳を示しなさい。',
+        debit: [['損益', 3800000]],
+        credit: [['繰越利益剰余金', 3800000]],
+        hint: '利益は純資産を増やします。',
+        explain: '<p>決算では、収益と費用をすべて<strong>損益</strong>勘定に集めます。収益のほうが大きければ損益勘定は貸方残高になり、その金額が当期純利益です。</p><p>この残高を<strong>繰越利益剰余金</strong>へ振り替えて、損益勘定の残高をゼロにします。借方に損益 3,800,000円、貸方に繰越利益剰余金 3,800,000円です。</p><p>利益は<strong>純資産を増やす</strong>要素なので、繰越利益剰余金は貸方です。</p><p>この振替は<strong>帳簿の締切</strong>の手続であり、決算整理ではありません。そのため精算表では行いません。精算表の貸借対照表欄に載る繰越利益剰余金は期首の金額のままで、当期純利益は別行に載ります。</p><p>当期純損失の場合は借方・貸方が逆になり、繰越利益剰余金が減少します。</p>'
+      },
+      {
+        text: '決算にあたり、その他有価証券（取得原価 <strong>3,200,000円</strong>）の期末時価が <strong>3,500,000円</strong> であった。<strong>全部純資産直入法</strong>により処理する。なお、<strong>税効果会計は適用しない。</strong>',
+        debit: [['投資有価証券', 300000]],
+        credit: [['その他有価証券評価差額金', 300000]],
+        hint: '税効果を適用しないので、差額がそのまま純資産に載ります。',
+        explain: '<p><strong>評価差額</strong>：3,500,000 − 3,200,000 ＝ <strong>300,000円</strong>の評価益です。</p><p>その他有価証券は時価で評価しますが、差額は<strong>損益を通さずに純資産へ直接入れます。</strong>すぐ売る前提がないため、手にしていない値動きを当期の利益に混ぜないという考え方です。</p><p>税効果会計を適用しないので、評価差額 300,000円が<strong>そのまま</strong>その他有価証券評価差額金になります。繰延税金負債は計上しません。</p><p>税効果を適用する場合は、評価差額に税率を掛けた分が繰延税金負債となり、残りが評価差額金になります。<strong>問題文が税効果を適用するかどうかを必ず確認してください。</strong></p><p>貸借対照表では、投資有価証券 3,500,000円が投資その他の資産に、その他有価証券評価差額金 300,000円が純資産の部の評価・換算等差額等に載ります。</p>'
+      },
+      {
+        text: '取得原価 <strong>4,000,000円</strong>、減価償却累計額 <strong>2,800,000円</strong> の備品を <strong>900,000円</strong> で売却し、代金は月末に受け取ることとした。なお、当期分の減価償却費はすでに計上済みである。',
+        debit: [['未収入金', 900000], ['備品減価償却累計額', 2800000], ['固定資産売却損', 300000]],
+        credit: [['備品', 4000000]],
+        hint: '帳簿価額と売却価額を比べます。差額の行き先は特別損益です。',
+        explain: '<p><strong>帳簿価額</strong>：4,000,000 − 2,800,000 ＝ <strong>1,200,000円</strong>。</p><p><strong>売却損益</strong>：900,000 − 1,200,000 ＝ <strong>△300,000円</strong>。帳簿価額より安く売ったので<strong>固定資産売却損</strong>（費用）です。</p><p>備品を帳簿から消すため、取得原価 4,000,000円を貸方に、減価償却累計額 2,800,000円を借方に落とします。代金は月末受取なので<strong>未収入金</strong>（資産）です。商品の売却ではないので売掛金は使いません。</p><p>損益計算書では、<strong>固定資産売却損は特別損失</strong>に表示します。固定資産は長く持ち続ける前提の資産であり、それを売るのは日常的な出来事ではないからです。</p><p>逆に帳簿価額より高く売れた場合は<strong>固定資産売却益</strong>となり、<strong>特別利益</strong>に表示します。</p>'
+      },
+      {
+        text: '決算にあたり、期限が到来した長期借入金 <strong>3,000,000円</strong> について、決算日の翌日から <strong>1年以内に返済期限が到来する</strong>ことが判明した。貸借対照表上の表示を適切にするための<strong>振替仕訳</strong>を示しなさい。なお、帳簿上は「長期借入金」として処理されている。',
+        debit: [['長期借入金', 3000000]],
+        credit: [['借入金', 3000000]],
+        hint: '1年基準の起算日は決算日の翌日です。',
+        explain: '<p>1年基準の起算日は<strong>決算日の翌日</strong>です。借りた日でも契約した日でもありません。当初は長期であっても、<mark>決算日時点で残りの返済期間が1年を切れば流動負債</mark>になります。</p><p>帳簿上の長期借入金を減らし、1年以内返済分を流動負債の借入金へ振り替えます。借方に長期借入金、貸方に借入金です。</p><p>貸借対照表では<strong>短期借入金</strong>（または一年内返済予定長期借入金）として流動負債に表示します。表示科目名は問題の解答欄の様式に従ってください。</p><p>この処理を忘れると、翌期に返済するはずの 3,000,000円が固定負債のまま残り、<strong>流動負債が過少に、固定負債が過大に</strong>なります。短期の支払能力を示すという貸借対照表の目的が損なわれます。</p>'
+      },
+      {
+        text: '当期中に、その他資本剰余金を財源として <strong>1,500,000円</strong> の配当を行うことが決議された。あわせて、会社法の規定による最低限度額の準備金を積み立てる。なお、準備金の積立限度には達しておらず、配当金はまだ支払っていない。',
+        debit: [['その他資本剰余金', 1650000]],
+        credit: [['未払配当金', 1500000], ['資本準備金', 150000]],
+        hint: '財源が資本剰余金なら、積み立てるのはどちらの準備金でしょうか。',
+        explain: '<p><strong>準備金の積立額</strong>：1,500,000 ÷ 10 ＝ <strong>150,000円</strong>。積み立てる割合は財源にかかわらず配当額の10分の1です。</p><p><strong>積み立てる準備金</strong>：財源が<strong>その他資本剰余金</strong>なので<strong>資本準備金</strong>です。繰越利益剰余金を財源にした場合は利益準備金でした。<mark>財源がどちらの剰余金かで、積み立てる準備金が決まります。</mark></p><p><strong>その他資本剰余金の減少額</strong>：1,500,000 ＋ 150,000 ＝ <strong>1,650,000円</strong>。配当も積立も、どちらも財源から出ていきます。</p><p>資本剰余金は株主が払い込んだお金が出どころ、利益剰余金は稼いだ利益が出どころです。<strong>この2つを混ぜないのが会社法の考え方</strong>であり、配当の財源と積み立てる準備金が対応しているのもそのためです。</p>'
+      },
+      {
+        text: '決算において、売上 <strong>28,000,000円</strong> と 受取利息 <strong>120,000円</strong> を<strong>損益勘定へ振り替える</strong>仕訳を示しなさい。',
+        debit: [['売上', 28000000], ['受取利息', 120000]],
+        credit: [['損益', 28120000]],
+        hint: '収益の残高をゼロにする方向を考えてください。',
+        explain: '<p>収益の勘定は<strong>貸方残高</strong>です。残高をゼロにするには借方に同額を書きます。</p><p>売上 28,000,000円と受取利息 120,000円をそれぞれ借方に書き、貸方に<strong>損益 28,120,000円</strong>（＝28,000,000 ＋ 120,000）とまとめます。</p><p>費用の勘定は逆で、借方残高なので貸方に書いて消し、損益勘定の借方に集めます。</p><p>すべての収益と費用を損益勘定へ集めた結果、損益勘定の貸借差額が<strong>当期純利益（または当期純損失）</strong>になります。この差額を繰越利益剰余金へ振り替えて損益勘定も締め切ります。</p><p>この一連の手続が<strong>帳簿の締切</strong>です。決算整理とは別の段階であり、精算表には現れません。</p>'
+      }
+    ]
+  });
+
+  /* ========== 用語の穴埋め ========== */
+  BokiFill.mount('#fill-hyouji', {
+    title: '穴埋め — 表示区分の用語（6問）',
+    questions: [
+      {
+        text: '損益計算書を上から下へ1本の列で書き、途中で5回、段階的に利益を区切って表示する形式を何といいますか。2級ではこの形式で作成します。',
+        answer: ['報告式', 'ほうこくしき'],
+        explain: '<p>左に費用・右に収益を並べる勘定式では、最終的な利益が1つしか出てきません。報告式なら、売上総利益・営業利益・経常利益・税引前当期純利益・当期純利益という5段階が見えるため、利益がどこから来たのかが読み取れます。</p><p>貸借対照表も2級では報告式で作成します。</p>'
+      },
+      {
+        text: '本業のサイクルの中にある資産・負債は、回収や支払いに1年を超えても流動に分類するという基準を何といいますか。1年基準より先に適用します。',
+        answer: ['正常営業循環基準', 'せいじょうえいぎょうじゅんかんきじゅん'],
+        explain: '<p>受取手形・売掛金・電子記録債権・契約資産・商品・前払金と、支払手形・買掛金・電子記録債務・契約負債・前受金がこの基準で無条件に流動となります。</p><p>これに該当しないものだけを1年基準で判定します。順番を逆にすると、本業のサイクルの中にある長期の売掛金を固定資産に置いてしまいます。</p>'
+      },
+      {
+        text: '決算日の翌日から1年以内に現金化・決済されるかどうかで、流動と固定を分ける基準を何といいますか。',
+        answer: ['一年基準', '1年基準', 'いちねんきじゅん', 'ワンイヤールール'],
+        explain: '<p>起算日は決算日の翌日です。借りた日でも契約した日でもありません。当初5年のローンでも、決算日時点で残りの返済期間が1年を切っていれば流動負債になります。</p><p>貸付金・借入金・前払費用・有価証券などが、この基準で流動と固定に分かれます。</p>'
+      },
+      {
+        text: '貸倒引当金や減価償却累計額のように、資産の金額から差し引く形で貸借対照表に表示する方法を何といいますか。',
+        answer: ['控除形式', 'こうじょけいしき', '間接控除形式', '控除方式'],
+        explain: '<p>純額だけを書くと、もともといくらあって、いくら回収不能と見込んでいるのかが分かりません。控除形式なら、債権の総額と引当額の両方が読み取れ、引当率が適切かどうかを読む人が自分で判断できます。</p><p>解答欄が1行しかない様式では純額で書きます。答案用紙の形を先に確認してください。</p>'
+      },
+      {
+        text: '純資産の部のうち、株主資本に含めず別の区分に表示する項目をまとめて何といいますか。2級ではその他有価証券評価差額金だけがここに入ります。',
+        answer: ['評価・換算等差額等', '評価換算等差額等', 'ひょうかかんさんとうさがくとう'],
+        explain: '<p>株主資本は「株主が出したお金」と「稼いで貯めたお金」であり、どちらも会社が実際に手にした金額です。その他有価証券評価差額金はまだ売っていない株の含み損益にすぎないため、株主資本に混ぜると稼いだお金と区別がつかなくなります。</p><p>名前が抽象的なのは、株主資本にも負債にも当てはまらないものを集める場所だからです。</p>'
+      },
+      {
+        text: '純資産の各項目について、当期首残高・当期の変動額・当期末残高を一覧にした財務諸表を何といいますか。',
+        answer: ['株主資本等変動計算書', 'かぶぬししほんとうへんどうけいさんしょ'],
+        explain: '<p>貸借対照表は決算日という一瞬の残高しか示さず、損益計算書は純資産の動きのうち当期純利益しか説明しません。増資・配当・準備金の積立といった動きを示すためにこの表が必要になります。</p><p>2級では、株主資本およびその他有価証券評価差額金に係る増減事由に限定されます。株主資本以外の項目は、内訳を書かず純額で1行にまとめます。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+</body>
+</html>

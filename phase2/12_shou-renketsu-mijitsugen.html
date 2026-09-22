@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第六-5-0,商-第六-5-ア,商-第六-5-イ">
+<meta name="boki-subject" content="商">
+<title>未実現利益の消去 — ダウンストリームとアップストリーム — 日商簿記2級 Phase 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 2 目次</a>
+    <span class="topbar__title">UNIT 12 未実現利益の消去</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W9 商業簿記 ／ UNIT 12 ／ 4時間</p>
+    <h1>未実現利益の消去<br>— まだ儲かっていない儲けを取り消す</h1>
+    <p class="lead">前の単元で消したのは、売上高や債権債務といった<strong>表示上の数字</strong>でした。利益は1円も動いていません。この単元で消すのは<strong>利益そのもの</strong>です。グループの中で商品を売って儲けを出しても、その商品がまだグループの中にあるうちは、外部から1円も入ってきていません。その儲けを取り消します。<mark>誰がその取り消しを負担するのか</mark>が、この単元の山場です。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">確認テスト・計算・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">まだ儲かっていない儲けとは何か</a></li>
+      <li><a href="#s2">2級で消すのは棚卸資産と土地だけ</a></li>
+      <li><a href="#s3">未実現利益の金額を出す — 利益率と付加率</a></li>
+      <li><a href="#s4">ダウンストリーム — 親が子に売った</a></li>
+      <li><a href="#s5">期首商品の未実現利益 — 翌期に持ち越される</a></li>
+      <li><a href="#s6">アップストリーム — 子が親に売った</a></li>
+      <li><a href="#s7">アップストリームの開始仕訳</a></li>
+      <li><a href="#s8">土地の未実現利益</a></li>
+      <li><a href="#s9">どちらの向きか、どう見分けるか</a></li>
+      <li><a href="#s10">仕訳ドリル 14問</a></li>
+      <li><a href="#s11">確認テスト・計算ドリル・穴埋め</a></li>
+      <li><a href="#s12">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>まだ儲かっていない儲けとは何か</h2>
+
+  <p>前の単元では、グループ内の売上高と売上原価を同額ずつ消しました。売上高 300,000円と売上原価 300,000円を消しても、<strong>差し引きの利益は変わりません。</strong></p>
+
+  <p>ところが、これだけでは終わらない場合があります。</p>
+
+  <div class="card">
+    <div class="card__label">場面</div>
+    <p>P社は原価 <strong>90,000円</strong> の商品を、S社に <strong>120,000円</strong> で販売した。S社はこの商品を<strong>まだ外部に売っておらず、倉庫に置いたまま</strong>決算日を迎えた。</p>
+  </div>
+
+  <p>それぞれの帳簿を見ます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">P社の帳簿</div>
+      <p>売上高 120,000円、売上原価 90,000円。<br><strong>利益 30,000円</strong>を計上している。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">S社の帳簿</div>
+      <p>期末商品として <strong>120,000円</strong>（P社から買った値段）を資産に計上している。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え：自分の右手から左手へ、値段をつけて渡す</span>
+    <p>あなたが 90,000円で仕入れた品物を、自分の左手に 120,000円で「売った」としましょう。<strong>あなたは 30,000円儲かりましたか。</strong></p>
+    <p>儲かっていません。品物はまだあなたの手元にあり、外から1円も入ってきていません。<mark>誰かに売れてはじめて、儲けが本物になります。</mark></p>
+    <p>それどころか、この品物の値打ちを 120,000円と帳簿に書くのもおかしな話です。あなたがこの品物に払ったお金は 90,000円だからです。</p>
+  </div>
+
+  <p>グループを1つの会社とみなすと、いま起きているのはこういうことです。</p>
+
+  <ul>
+    <li><strong>グループの利益が 30,000円多すぎる</strong> … 外部に売れていないのに儲けが立っている</li>
+    <li><strong>グループの商品が 30,000円多すぎる</strong> … 外部に払ったのは 90,000円なのに、120,000円で資産計上されている</li>
+  </ul>
+
+  <p>この2つは同じ 30,000円の裏表です。だから1本の仕訳で両方を直せます。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 期末商品の未実現利益の消去</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">30,000</td><td class="c">商品</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>商品（資産）を 30,000円減らし、その分だけ売上原価（費用）を増やします。費用が増えるので<strong>利益が 30,000円減ります。</strong></p>
+
+  <div class="term">
+    <span class="term__w">未実現利益</span><span class="term__r">みじつげんりえき</span>
+    <p><strong>グループ内の取引で計上された利益のうち、その商品や資産がまだグループの外に出ていないために、実現したといえない部分。</strong>連結上はこれを取り消します。外部に売れた時点で、はじめて実現した利益になります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：借方は「売上原価」であって「売上高」ではない</span>
+    <p>消しているのは<strong>利益</strong>であって、売上高ではありません。売上高の相殺は、別の仕訳（内部取引高の相殺消去）ですでに済ませています。</p>
+    <p>ここで売上高を借方に書くと、<mark>内部売上高を二重に消すことになります。</mark>連結損益計算書の売上高が、実際より 30,000円少なくなってしまいます。</p>
+    <p><strong>「商品の値札を、グループが実際に払った額まで下げる」</strong>のがこの仕訳の本質です。商品を下げたぶん、売上原価が増えて利益が減ります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">「商品」と書くか「繰越商品」と書くか</span>
+    <p>貸方の科目は<strong>問題文の答案様式で決まります。</strong>連結精算表・連結貸借対照表を作る問題では「商品」です。連結財務諸表に「繰越商品」という行はありません。</p>
+    <p>連結修正仕訳だけを答えさせる問題で、勘定科目群に「繰越商品」しかなければそちらを使います。<strong>与えられた科目群を見てください。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>2級で消すのは棚卸資産と土地だけ</h2>
+
+  <p>未実現利益は、理屈のうえではグループ内で売買されたあらゆる資産に生じます。建物を売っても、機械を売っても、有価証券を売っても同じです。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2級の出題範囲は限定されています</span>
+    <p>出題区分表は、未実現損益の消去について<strong>「2級では棚卸資産および土地に係るものに限る」</strong>と明記しています。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>資産</th><th>2級で出るか</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>棚卸資産（商品）</td><td>出る</td><td>グループ内の商品売買は日常的に起きる</td></tr>
+        <tr><td>土地</td><td>出る</td><td>減価償却がないので、消去した未実現利益がそのまま残り続ける</td></tr>
+        <tr><td>建物・備品などの償却資産</td><td>出ない</td><td>減価償却を通じて未実現利益が少しずつ実現するため、処理が複雑になる</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>この限定は、学習の範囲を絞るうえで大きな意味があります。<mark>建物の売買が出てきても、未実現利益の消去は求められません。</mark></p>
+  </div>
+
+  <p>棚卸資産と土地では、処理の性格が少し違います。先に見取り図を示します。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">棚卸資産（商品）</div>
+      <p><strong>いずれ外部に売れて実現する</strong></p>
+      <p class="small">期末に残っていた分だけ消します。翌期にその商品が外部へ売れれば、未実現利益は実現するので、翌期に消去を取り消します（§5）。<mark>毎期、消しては戻す</mark>のくり返しです。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">土地</div>
+      <p><strong>売らない限り実現しない</strong></p>
+      <p class="small">土地はふつう持ち続けるので、消去した未実現利益は<mark>消えたまま毎期積み上がります。</mark>翌期以降も開始仕訳で同じ額を消し続けます。戻すことはありません（§8）。</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>未実現利益の金額を出す — 利益率と付加率</h2>
+
+  <p>仕訳の形は単純ですが、<strong>金額を出し間違えると全部が崩れます。</strong>ここは独立して練習する価値があります。</p>
+
+  <p>問題文は、利益の大きさを2通りの書き方で与えてきます。どちらで与えられたかを読み違えると、答えがずれます。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">書き方 ①：利益率（売価に対する割合）</div>
+      <p><strong>「売上高利益率 25%」「利益率は売価の 20%」</strong></p>
+      <p class="small">基準は<mark>売価</mark>です。売価 100 のうち利益が 25、原価が 75。</p>
+      <p class="small"><strong>未実現利益 ＝ 期末に残っている商品の売価 × 利益率</strong></p>
+    </div>
+    <div class="card">
+      <div class="card__label">書き方 ②：付加率（原価に対する割合）</div>
+      <p><strong>「原価に 25% の利益を付加」「原価率 80%」</strong></p>
+      <p class="small">基準は<mark>原価</mark>です。原価 100 に 25 を乗せて売価 125。</p>
+      <p class="small"><strong>未実現利益 ＝ 売価 × 付加率 ÷（1 ＋ 付加率）</strong></p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ付加率のときは割り算が要るのか</span>
+    <p>期末商品として帳簿に載っている金額は、買った側が払った額、つまり<strong>売価</strong>です。付加率は原価を基準にした割合なので、そのまま売価に掛けることができません。</p>
+    <p>原価を 100 とすると、売価は 100 ＋ 25 ＝ <strong>125</strong>。売価 125 のうち利益は 25 なので、<mark>売価に対する利益の割合は 25 ÷ 125 ＝ 20%</mark> です。</p>
+    <p>式にすると 付加率 ÷（1 ＋ 付加率）＝ 0.25 ÷ 1.25 ＝ 0.2。<strong>付加率を利益率に変換してから売価に掛けている</strong>、というのがこの計算の正体です。</p>
+  </div>
+
+  <h3>具体例で確かめる</h3>
+
+  <div class="card">
+    <div class="card__label">例</div>
+    <p>P社はS社に商品を販売しており、S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。P社は<strong>原価に 25% の利益を付加</strong>して販売している。</p>
+  </div>
+
+  <p>付加率で与えられているので、割り算が要ります。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">計算</span>
+    <p>未実現利益 ＝ 150,000 × 0.25 ÷ 1.25 ＝ <strong>30,000円</strong></p>
+    <p>検算をします。この商品の原価は 150,000 − 30,000 ＝ 120,000円。<mark>原価 120,000円に 25% を付加すると 120,000 × 1.25 ＝ 150,000円</mark>で、問題文の金額に戻ります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：付加率をそのまま掛けてしまう</span>
+    <p>150,000 × 25% ＝ 37,500円としてしまうのが、最も多い誤りです。<strong>これは 7,500円も多すぎます。</strong></p>
+    <p>見分け方ははっきりしています。<mark>「原価に」「付加」という語があれば原価基準、「売価の」「売上高利益率」なら売価基準</mark>です。問題文のこの部分に下線を引く習慣をつけてください。</p>
+    <p>そして必ず検算してください。<strong>売価 − 未実現利益 ＝ 原価</strong>になっているか、その原価に付加率を掛けて売価に戻るか。10秒で確かめられます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">原価率で与えられることもあります</span>
+    <p>「原価率 80%」と書かれていたら、売価 100 に対して原価が 80、利益が 20 ということです。<strong>利益率 20% と同じ</strong>なので、売価にそのまま 20% を掛けます。</p>
+    <p>「原価率」と「原価に付加」は字面が似ていますが、基準が違います。<mark>原価率は売価を基準にした割合</mark>です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>ダウンストリーム — 親が子に売った</h2>
+
+  <p>ここから、未実現利益を<strong>誰が負担するか</strong>の話に入ります。これがこの単元の中心です。</p>
+
+  <div class="term">
+    <span class="term__w">ダウンストリーム</span><span class="term__r">downstream</span>
+    <p><strong>親会社が子会社へ販売する取引。</strong>川上（親）から川下（子）へ流れる向きです。未実現利益を計上しているのは<mark>親会社</mark>です。</p>
+  </div>
+
+  <p>§1で見た仕訳が、そのままダウンストリームの処理です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>ダウンストリーム — 期末商品の未実現利益 30,000円の消去</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">30,000</td><td class="c">商品</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">ダウンストリームは1本で終わり</span>
+    <p><strong>非支配株主持分は出てきません。</strong>理由は単純です。</p>
+    <p>消している未実現利益 30,000円は、<mark>親会社が計上した利益</mark>です。親会社の利益は100%が親会社株主のものです。非支配株主は子会社の株主であって、親会社の利益には何の関係もありません。</p>
+    <p>だから、消した利益は全額を親会社株主が負担します。振り分ける相手がいないので、仕訳は1本で終わります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>期首商品の未実現利益 — 翌期に持ち越される</h2>
+
+  <p>前の単元で、債権債務の相殺は翌期に持ち越さないと説明しました。理由は<strong>利益を動かさないから</strong>でした。</p>
+
+  <p>未実現利益の消去は<strong>利益を動かします。</strong>だから持ち越されます。ここを丁寧に見ます。</p>
+
+  <h3>何が起きているか</h3>
+
+  <p>前期末に、S社の商品にP社からの未実現利益 30,000円が含まれていたとします。前期の連結修正仕訳で、これを消しました。</p>
+
+  <p>さて、当期になりました。<mark>この修正は、どちらの会社の帳簿にも残っていません。</mark>S社の帳簿では、期首商品はいまも 150,000円のままです。</p>
+
+  <p>そこで当期の連結でも、まず前期の修正をやり直します。これが<strong>開始仕訳</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 開始仕訳 — 前期末に消した未実現利益を再現する</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">30,000</td><td class="c">商品</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ借方が「利益剰余金当期首残高」になるのか</span>
+    <p>前期の仕訳では、借方は「売上原価」でした。売上原価は費用なので、<strong>前期の損益計算書を通じて、前期末の利益剰余金を 30,000円減らしています。</strong></p>
+    <p>当期の連結では、前期の損益計算書はもう作りません。前期の費用や収益は、すべて<mark>当期首の利益剰余金に集約されている</mark>からです。</p>
+    <p>だから、前期に費用だった項目は、開始仕訳では<strong>「利益剰余金当期首残高」</strong>という名前で現れます。これは連結株主資本等変動計算書の科目です。</p>
+    <p class="small">答案様式によっては単に「利益剰余金」と書く場合もあります。与えられた科目群に従ってください。</p>
+  </div>
+
+  <h3>そして、その商品は当期に売れる</h3>
+
+  <p>前期末に残っていた商品は、ふつう当期中に外部へ売れます。売れた瞬間、<strong>未実現だった利益は実現します。</strong></p>
+
+  <p>だから開始仕訳で消したものを、当期に戻します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 実現 — 期首商品が外部に売れたので、消去を取り消す</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">商品</td><td class="d amt">30,000</td><td class="c">売上原価</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>①と②を合わせると、商品の増減は差し引きゼロになります。残るのは次の形です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>①②をまとめた形（試験でよく問われる形）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">30,000</td><td class="c">売上原価</td><td class="c amt">30,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この仕訳が意味していること</span>
+    <p><strong>利益を前期から当期へ引っ越しさせています。</strong></p>
+    <ul>
+      <li><strong>利益剰余金当期首残高 30,000 減</strong> … 前期の利益を 30,000円減らす。前期には実現していなかったから</li>
+      <li><strong>売上原価 30,000 減 ＝ 当期の利益 30,000 増</strong> … 当期の利益を 30,000円増やす。当期に外部へ売れて実現したから</li>
+    </ul>
+    <p>グループ全体で見れば、この利益は<mark>消えたのではなく、計上する期がずれただけ</mark>です。1年遅れて実現しました。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：期首と期末で、売上原価が逆向きに動く</span>
+    <p>2つの仕訳を並べると、売上原価の向きが逆です。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>対象</th><th>仕訳</th><th>当期の利益への影響</th></tr></thead>
+      <tbody>
+        <tr><td><strong>期首</strong>商品の未実現利益</td><td>利益剰余金当期首残高 ／ <strong>売上原価</strong></td><td>増える（実現したから）</td></tr>
+        <tr><td><strong>期末</strong>商品の未実現利益</td><td><strong>売上原価</strong> ／ 商品</td><td>減る（まだ実現していないから）</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>覚え方はこうです。<mark>期首の分は「売れたから戻す」、期末の分は「売れ残ったから消す」。</mark></p>
+    <p>どちらか一方しか処理しないのが典型的な失点です。<strong>問題文に「期首商品」と「期末商品」の両方が出てきたら、仕訳も2本</strong>だと考えてください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">期首商品が当期中に売れ残ったら</span>
+    <p>問題文が特に指示しない限り、<strong>期首商品は当期中にすべて外部へ売れたものとして扱います。</strong>2級ではこの前提で出題されます。</p>
+    <p>「期首商品のうち○○円が期末にも残っている」といった指示があれば、それに従います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>アップストリーム — 子が親に売った</h2>
+
+  <div class="term">
+    <span class="term__w">アップストリーム</span><span class="term__r">upstream</span>
+    <p><strong>子会社が親会社へ販売する取引。</strong>川下（子）から川上（親）へ遡る向きです。未実現利益を計上しているのは<mark>子会社</mark>です。</p>
+  </div>
+
+  <p>消す金額の出し方も、消す仕訳の1本目も、ダウンストリームとまったく同じです。</p>
+
+  <div class="card">
+    <div class="card__label">場面</div>
+    <p>S社はP社に商品を販売しており、P社の期末商品のうち <strong>100,000円</strong> はS社から仕入れたものである。S社の<strong>売上高利益率は 20%</strong> である。P社はS社株式の 70% を保有している。</p>
+  </div>
+
+  <p>未実現利益は 100,000 × 20% ＝ <strong>20,000円</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 未実現利益の消去（ここまではダウンストリームと同じ）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">売上原価</td><td class="d amt">20,000</td><td class="c">商品</td><td class="c amt">20,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">ここが最大の分かれ目：アップストリームには2本目がある</span>
+    <p><strong>アップストリームとダウンストリームの違いは、この1点だけです。</strong>そしてこの1点が、2級の連結で最も落としやすいところです。</p>
+    <p>消した利益 20,000円は、<mark>子会社が計上した利益</mark>です。子会社の利益は、親会社株主のものだけではありません。<strong>30%は非支配株主のもの</strong>です。</p>
+    <p>だから、消した利益も 30% は非支配株主に負担してもらいます。それが2本目の仕訳です。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 非支配株主への按分（アップストリームだけに必要）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主持分</td><td class="d amt">6,000</td><td class="c">非支配株主に帰属する当期純利益</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>金額は 20,000 × 30% ＝ <strong>6,000円</strong>です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">この仕訳の向きを、意味から導く</span>
+    <p>いきなり形を覚えようとすると、借方と貸方をよく取り違えます。意味から導いてください。</p>
+    <p>①で子会社の利益を 20,000円減らしました。子会社の利益が減ったのだから、<strong>非支配株主の取り分も減ります。</strong>減るのは 20,000 × 30% ＝ 6,000円です。</p>
+    <ul>
+      <li><strong>非支配株主に帰属する当期純利益</strong>は、連結損益計算書で当期純利益から差し引かれる項目です。これを 6,000円<mark>減らす</mark>ので、貸方に書きます</li>
+      <li><strong>非支配株主持分</strong>は貸借対照表の純資産です。取り分が減るので 6,000円<mark>減らし</mark>、借方に書きます</li>
+    </ul>
+    <p>結果として、①で減った利益 20,000円のうち 6,000円は非支配株主が負担し、残り 14,000円を親会社株主が負担します。<strong>これがあるべき姿です。</strong></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2つの向きの違いを、この表だけ覚える</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>　</th><th>ダウンストリーム</th><th>アップストリーム</th></tr></thead>
+      <tbody>
+        <tr><td>向き</td><td>親 → 子</td><td>子 → 親</td></tr>
+        <tr><td>利益を計上したのは</td><td>親会社</td><td>子会社</td></tr>
+        <tr><td>① 未実現利益の消去</td><td>売上原価 ／ 商品</td><td>売上原価 ／ 商品</td></tr>
+        <tr><td>② 非支配株主への按分</td><td><strong>不要</strong></td><td><strong>必要</strong></td></tr>
+        <tr><td>負担するのは</td><td>親会社株主が全額</td><td>持分比率で親会社株主と非支配株主が分担</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><mark>①はまったく同じ。違うのは②があるかないかだけ。</mark>これ以外に違いはありません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">非支配株主持分がゼロなら、アップストリームでも②は不要です</span>
+    <p>親会社が子会社株式を 100% 保有している場合、非支配株主は存在しません。按分する相手がいないので、②は書きません。</p>
+    <p>2級では 60%〜80% 程度の保有割合で出題されるのがふつうですが、<strong>持分比率は必ず問題文で確認してください。</strong>②の金額はこの比率で決まります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>アップストリームの開始仕訳</h2>
+
+  <p>期首商品の未実現利益も、アップストリームなら非支配株主が絡みます。ここは連結でいちばん込み入ったところですが、<strong>§5と§6を組み合わせるだけ</strong>です。</p>
+
+  <p>前期末に、P社の商品にS社からの未実現利益 <strong>10,000円</strong> が含まれていたとします。持分比率は 70%（非支配株主 30%）です。</p>
+
+  <h3>開始仕訳 — 前期の2本を再現する</h3>
+
+  <p>前期には2本の仕訳がありました。それぞれを、損益の科目を「当期首残高」に置き換えて再現します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 前期の未実現利益消去を再現（前期：売上原価 ／ 商品）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">10,000</td><td class="c">商品</td><td class="c amt">10,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② 前期の非支配株主への按分を再現（前期：非支配株主持分 ／ 非支配株主に帰属する当期純利益）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主持分当期首残高</td><td class="d amt">3,000</td><td class="c">利益剰余金当期首残高</td><td class="c amt">3,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>②の貸方が「利益剰余金当期首残高」になるのは、前期の貸方が「非支配株主に帰属する当期純利益」という損益の科目だったためです。<strong>損益の科目は、開始仕訳では利益剰余金当期首残高に置き換わります。</strong></p>
+
+  <p>①②を合わせると、利益剰余金当期首残高は 10,000 − 3,000 ＝ <strong>7,000円</strong>の減少です。これは未実現利益 10,000円のうち親会社株主が負担した分（70%）と一致します。</p>
+
+  <h3>当期の実現 — 前期の2本を逆に戻す</h3>
+
+  <p>期首商品は当期に外部へ売れたので、消去を取り消します。こちらも2本です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ 未実現利益の実現</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">商品</td><td class="d amt">10,000</td><td class="c">売上原価</td><td class="c amt">10,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>④ 実現にともなう非支配株主への按分</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">3,000</td><td class="c">非支配株主持分</td><td class="c amt">3,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>④は、期末商品のときの②と<strong>ちょうど逆向き</strong>です。子会社の当期の利益が 10,000円増えたので、非支配株主の取り分も 3,000円増えます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">まとめると、アップストリームの期首分は4本</span>
+    <p>実務的には、①③をまとめ、②④をまとめた2本の形で書くこともできます。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <caption>①③をまとめた形</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">10,000</td><td class="c">売上原価</td><td class="c amt">10,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="tablewrap">
+    <table class="jnl">
+      <caption>②④をまとめた形</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">非支配株主持分当期首残高</td><td class="d amt">3,000</td><td class="c">利益剰余金当期首残高</td><td class="c amt">3,000</td></tr>
+        <tr><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">3,000</td><td class="c">非支配株主持分当期変動額</td><td class="c amt">3,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">連結精算表を埋めるときは、どの形で書いても最終的な数字は同じになります。<strong>自分が間違えにくい形を1つ決めて、それで通してください。</strong></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：「当期首残高」と「当期変動額」の使い分け</span>
+    <p>非支配株主持分は、連結株主資本等変動計算書では<strong>「当期首残高」と「当期変動額」に分かれます。</strong></p>
+    <ul>
+      <li><strong>当期首残高</strong> … 開始仕訳で動かす分。前期までの積み上げ</li>
+      <li><strong>当期変動額</strong> … 当期の連結修正で動かす分。当期純利益の按分、配当、期末の未実現利益</li>
+    </ul>
+    <p>連結精算表の答案が2行に分かれていれば書き分けが要ります。1行にまとまっていれば「非支配株主持分」とだけ書きます。<mark>答案用紙の行を見てから書いてください。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>土地の未実現利益</h2>
+
+  <p>土地の売買でも未実現利益が生じます。考え方は商品と同じですが、<strong>使う科目と、翌期以降の扱いが違います。</strong></p>
+
+  <div class="card">
+    <div class="card__label">場面</div>
+    <p>当期中に、P社は帳簿価額 <strong>800,000円</strong> の土地を、S社に <strong>950,000円</strong> で売却した。S社は当期末現在、この土地を保有している。</p>
+  </div>
+
+  <p>未実現利益は 950,000 − 800,000 ＝ <strong>150,000円</strong>です。商品と違って、利益率から計算する必要はありません。<mark>売却価額と帳簿価額の差がそのまま未実現利益</mark>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 土地の未実現利益（ダウンストリーム）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">固定資産売却益</td><td class="d amt">150,000</td><td class="c">土地</td><td class="c amt">150,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">借方が「固定資産売却益」になる理由</span>
+    <p>商品のときは「売上原価」でした。土地は商品ではないので、P社は売却時に<strong>固定資産売却益</strong>という科目で利益を計上しています。</p>
+    <p>消すべきはその利益なので、<mark>計上に使われたのと同じ科目を、逆側に書いて消します。</mark>固定資産売却益は収益なので、減らすには借方です。</p>
+    <p>貸方の土地は、S社の帳簿に 950,000円で載っています。グループが外部に払ったのは 800,000円なので、150,000円だけ減らして 800,000円に戻します。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">土地は「毎期、同じ額を消し続ける」</span>
+    <p>商品の未実現利益は、翌期に外部へ売れて実現するので戻しました。<strong>土地は戻しません。</strong></p>
+    <p>S社が土地を持ち続けている限り、この 150,000円は実現しません。だから翌期以降も、開始仕訳で同じ額を消し続けます。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <caption>翌期以降の開始仕訳（土地を保有し続けている限り毎期）</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">150,000</td><td class="c">土地</td><td class="c amt">150,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>借方が「利益剰余金当期首残高」になるのは、商品のときと同じ理屈です。前期の固定資産売却益は、当期首の利益剰余金に集約されています。</p>
+    <p class="small">S社がその土地を外部に売却したときに、はじめて実現します。そこまで問われるのは2級では稀です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：土地でもアップストリームなら按分が要る</span>
+    <p>S社がP社に土地を売った場合、利益を計上したのは<strong>子会社</strong>です。商品のときとまったく同じ理由で、<mark>非支配株主への按分が必要</mark>になります。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <caption>アップストリーム（S → P）の場合 — 2本必要</caption>
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">固定資産売却益</td><td class="d amt">150,000</td><td class="c">土地</td><td class="c amt">150,000</td></tr>
+        <tr><td class="d">非支配株主持分</td><td class="d amt">45,000</td><td class="c">非支配株主に帰属する当期純利益</td><td class="c amt">45,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>按分額は 150,000 × 30% ＝ 45,000円です。<strong>「アップストリームなら按分」は、商品でも土地でも変わりません。</strong>資産の種類ではなく、<mark>誰が利益を計上したか</mark>で決まります。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">売却損が出ている場合</span>
+    <p>帳簿価額より安く売っていれば、固定資産売却損が計上されています。この場合も同じ理屈で消します。仕訳は逆向きで「土地 ／ 固定資産売却損」です。</p>
+    <p>ただし、実際に価値が下がっているために安く売った場合は消さない、という判断もありえます。<strong>2級では売却益のケースが出題の中心です。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>どちらの向きか、どう見分けるか</h2>
+
+  <p>処理の分かれ目は「誰が利益を計上したか」の一点でした。問題文からこれを読み取る手順を決めておきます。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>売ったのはどちらの会社かを探す。</strong>問題文には必ず「P社はS社に商品を販売しており」「S社はP社に対して商品を販売している」といった一文があります</li>
+      <li><strong>売ったのが親会社ならダウンストリーム、子会社ならアップストリーム。</strong>この時点で、仕訳が1本で済むか2本要るかが決まります</li>
+      <li><strong>期末商品のうち、その会社から仕入れた金額を探す。</strong>「期末商品のうち○○円は△社から仕入れたものである」</li>
+      <li><strong>利益率か付加率かを読み分けて、未実現利益を計算する。</strong>検算まで済ませる</li>
+      <li><strong>期首商品についての記載がないか確認する。</strong>あれば、そちらの処理も要ります</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：アップストリームでの按分を忘れる</span>
+    <p><strong>この単元で最も高くつく失点です。</strong>①の仕訳は両方とも同じ形なので、機械的に書けてしまいます。だからこそ、②が抜けても気づきません。</p>
+    <p>連結精算表では、②を忘れると<mark>非支配株主持分と、親会社株主に帰属する当期純利益の両方が狂います。</mark>1つの漏れが複数の解答欄に波及するので、失点が大きくなります。</p>
+    <p>対策は手順の固定です。<strong>未実現利益を消す仕訳を書いたら、その直後に必ず「売ったのはどちらか」を口に出して確認する。</strong>子会社なら②を書く。この確認を、計算より先に習慣にしてください。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">両方向が同時に出ることもあります</span>
+    <p>「P社はS社に商品を販売しており、またS社もP社に商品を販売している」という問題があります。この場合、<strong>ダウンストリーム分とアップストリーム分を別々に処理します。</strong></p>
+    <p>ダウンストリーム分には按分がなく、アップストリーム分には按分がある。<mark>まとめて計算してはいけません。</mark>資料を2つに分けてから手をつけてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>仕訳ドリル 14問</h2>
+
+  <p>向きと、期首・期末をばらして出します。<strong>解答欄は常に4行あります。</strong>行数から正解の科目数は読めません。</p>
+
+  <p class="small muted">すべてP社が親会社、S社が子会社という前提です。持分比率は各問で指定します。答えるのは<strong>連結修正仕訳</strong>です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">このドリルでは「利益剰余金」と入力してください</span>
+    <p>本文では、開始仕訳の科目を<strong>「利益剰余金当期首残高」</strong>と書いてきました。これは連結株主資本等変動計算書の行名で、実際の試験でも答案様式がこの形なら、そのとおりに書きます。</p>
+    <p>ただし<mark>勘定科目表に載っている科目名は「利益剰余金」</mark>です。このドリルは勘定科目表の科目から選ぶ形式なので、該当する場面では<strong>「利益剰余金」</strong>を選んでください。非支配株主持分についても同じで、「当期首残高」「当期変動額」の区別はつけません。</p>
+    <p>本番では<strong>答案用紙の行の名前をそのまま使う</strong>のが原則です。行が「利益剰余金当期首残高」と「利益剰余金当期末残高」に分かれていれば書き分けます。</p>
+  </div>
+
+  <div id="drill-mijitsugen"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>確認テスト・計算ドリル・穴埋め</h2>
+
+  <p>未実現利益は「金額を出す力」と「向きを判断する力」の2つが要ります。分けて確認します。</p>
+
+  <div id="quiz-mukiwake"></div>
+
+  <div id="num-mijitsugen"></div>
+
+  <div id="fill-mijitsugen"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。アップストリームの按分は、連結で最も落としやすい論点です。ここが曖昧なまま次の単元へ進まないでください。</p>
+
+  <div class="progressbar" data-progress-for="#u12check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u12check">0 / 0 完了（0%）</div>
+
+  <div id="u12check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p2u12-1"><label for="c1"><span class="cl__t">未実現利益とは何かを、例を挙げて説明できる</span><span class="cl__d">グループ内の取引で計上された利益のうち、その資産がまだグループの外に出ていないため実現したといえない部分</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p2u12-2"><label for="c2"><span class="cl__t">2級で未実現利益を消すのは棚卸資産と土地だけだと知っている</span><span class="cl__d">出題区分表が明記している。建物・備品などの償却資産は対象外</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p2u12-3"><label for="c3"><span class="cl__t">期末商品の未実現利益を消す仕訳を、借方の科目まで正確に書ける</span><span class="cl__d">売上原価／商品。借方は売上高ではない。売上高の相殺は別の仕訳で済ませている</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p2u12-4"><label for="c4"><span class="cl__t">利益率と付加率を読み分けられる</span><span class="cl__d">「売価の」「売上高利益率」なら売価にそのまま掛ける。「原価に付加」なら 売価 × 付加率 ÷（1＋付加率）</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p2u12-5"><label for="c5"><span class="cl__t">未実現利益を出したら検算する習慣がある</span><span class="cl__d">売価 − 未実現利益 ＝ 原価。その原価に付加率を掛けて売価に戻るか</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p2u12-6"><label for="c6"><span class="cl__t">ダウンストリームとアップストリームを定義できる</span><span class="cl__d">ダウンストリームは親から子、アップストリームは子から親。利益を計上したのがどちらかで決まる</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p2u12-7"><label for="c7"><span class="cl__t">両者の違いが「非支配株主への按分があるかないか」の1点だけだと言える</span><span class="cl__d">未実現利益を消す仕訳そのものは同じ。ダウンストリームは親会社の利益なので按分不要、アップストリームは子会社の利益なので按分必要</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p2u12-8"><label for="c8"><span class="cl__t">アップストリームの按分仕訳を、向きも含めて書ける</span><span class="cl__d">期末分は「非支配株主持分／非支配株主に帰属する当期純利益」。子会社の利益が減ったので非支配株主の取り分も減る</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p2u12-9"><label for="c9"><span class="cl__t">期首商品と期末商品で、売上原価が逆向きに動く理由を説明できる</span><span class="cl__d">期首の分は当期に売れて実現したから戻す（売上原価が減る）。期末の分はまだ売れていないから消す（売上原価が増える）</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p2u12-10"><label for="c10"><span class="cl__t">開始仕訳で損益の科目が「利益剰余金当期首残高」に置き換わる理由を言える</span><span class="cl__d">前期の収益・費用は当期首の利益剰余金に集約されている。当期の連結では前期の損益計算書を作らない</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p2u12-11"><label for="c11"><span class="cl__t">土地の未実現利益を消す仕訳を書ける</span><span class="cl__d">固定資産売却益／土地。未実現利益は売却価額 − 帳簿価額。利益率の計算は要らない</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p2u12-12"><label for="c12"><span class="cl__t">土地の未実現利益を翌期に戻さない理由を説明できる</span><span class="cl__d">保有し続けている限り実現しない。毎期の開始仕訳で同じ額を消し続ける。商品のように戻すことはない</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p2u12-13"><label for="c13"><span class="cl__t">土地でもアップストリームなら按分が要ると理解している</span><span class="cl__d">資産の種類ではなく、誰が利益を計上したかで決まる。子会社が売ったなら按分</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p2u12-14"><label for="c14"><span class="cl__t">仕訳を書いた直後に「売ったのはどちらか」を確認する習慣がある</span><span class="cl__d">アップストリームの按分忘れはこの単元で最も高くつく失点。1つの漏れが複数の解答欄に波及する</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p2u12-15"><label for="c15"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>ここまでで連結修正仕訳の道具はそろいました。<strong>資本連結（UNIT 07）、成果連結（UNIT 11）、未実現利益（この単元）</strong>の3つです。</p>
+    <p>次の UNIT 13 では、これらを<strong>連結精算表と連結財務諸表に落とし込みます。</strong>仕訳が書けることと、精算表の正しい行に正しい符号で書き込めることは別の能力です。通し演習で一気通貫に作り上げます。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 2 教材 ／ W9 UNIT 12 未実現利益の消去</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-mukiwake', {
+    title: '理解チェック — 向きを見分け、按分の要否を判断する',
+    questions: [
+      {
+        text: 'P社（親会社）がS社（子会社）に商品を販売し、期末にS社に売れ残りがある。この取引を何と呼び、非支配株主への按分は必要ですか。',
+        choices: [
+          'ダウンストリーム。按分は不要',
+          'ダウンストリーム。按分が必要',
+          'アップストリーム。按分が必要'
+        ],
+        answer: 0,
+        explain: '<p><strong>ダウンストリームで、按分は不要</strong>です。</p><p>親会社から子会社へ流れているのでダウンストリーム。未実現利益を計上したのは<strong>親会社</strong>であり、親会社の利益は100%が親会社株主のものです。</p><p>非支配株主は子会社の株主であって、親会社の利益には関係しません。<strong>振り分ける相手がいないので、仕訳は1本で終わります。</strong></p>'
+      },
+      {
+        text: 'S社（子会社）がP社（親会社）に商品を販売し、期末にP社に売れ残りがある。必要な連結修正仕訳は何本ですか。なお、P社のS社に対する持分比率は 80% である。',
+        choices: ['1本', '2本', '3本'],
+        answer: 1,
+        explain: '<p><strong>2本</strong>です。アップストリームだからです。</p><ul><li><strong>売上原価 ／ 商品</strong> … 未実現利益を消す。ここはダウンストリームと同じ</li><li><strong>非支配株主持分 ／ 非支配株主に帰属する当期純利益</strong> … 未実現利益の 20%（非支配株主の持分比率）を按分する</li></ul><p>消した利益は<strong>子会社が計上したもの</strong>なので、20%は非支配株主が負担します。この2本目を忘れるのが、連結で最も高くつく失点です。</p>'
+      },
+      {
+        text: '期末商品の未実現利益を消去する仕訳で、<strong>借方</strong>に書く科目はどれですか。答案は連結精算表である。',
+        choices: ['売上高', '売上原価', '商品'],
+        answer: 1,
+        explain: '<p><strong>売上原価</strong>です。仕訳は「売上原価 ／ 商品」。</p><p>消しているのは<strong>利益</strong>であって売上高ではありません。売上高の相殺は、内部取引高の相殺消去という別の仕訳ですでに済ませています。</p><p>ここで売上高を書くと<strong>内部売上高を二重に消す</strong>ことになり、連結損益計算書の売上高が実際より少なくなります。</p><p>この仕訳の本質は「商品の値札を、グループが実際に払った額まで下げる」ことです。商品を下げたぶん、売上原価が増えて利益が減ります。</p>'
+      },
+      {
+        text: '<strong>期首</strong>商品に含まれる未実現利益を処理すると、当期の連結上の利益はどうなりますか。',
+        choices: ['増える', '減る', '変わらない'],
+        answer: 0,
+        explain: '<p><strong>増えます。</strong>仕訳は「利益剰余金当期首残高 ／ 売上原価」で、売上原価（費用）が減るので利益が増えます。</p><p>理由は、<strong>期首商品は当期中に外部へ売れて、未実現だった利益が実現したから</strong>です。前期には計上できなかった利益を、当期に計上します。</p><p>期末商品の処理（売上原価 ／ 商品）とは<strong>ちょうど逆向き</strong>です。期首の分は「売れたから戻す」、期末の分は「売れ残ったから消す」と覚えてください。</p>'
+      },
+      {
+        text: 'P社はS社に商品を販売している。P社は<strong>原価に 20% の利益を付加</strong>しており、S社の期末商品のうち <strong>180,000円</strong> がP社からの仕入分である。未実現利益はいくらですか。<br><span class="small muted">原価を 100 としたとき、売価は 120 にあたる。</span>',
+        choices: ['36,000円', '30,000円', '45,000円'],
+        answer: 1,
+        invariant: [
+          // 付加率 20% は原価基準。売価 180,000 は原価の 120 にあたるので、
+          // 利益は売価を 120 で割って 20 を掛けた額になる。
+          ['180000 * 20 / 120', '30000'],
+          ['180000 * 20 / 120', 'answer']
+        ],
+        explain: '<p><strong>30,000円</strong>です。「原価に付加」なので、そのまま 20% を掛けてはいけません。</p><ul><li>未実現利益＝180,000 × 0.20 ÷ 1.20 ＝ <strong>30,000円</strong></li></ul><p>検算します。この商品の原価は 180,000 − 30,000 ＝ 150,000円。原価 150,000円に 20% を付加すると 150,000 × 1.2 ＝ 180,000円で、問題文の金額に戻ります。</p><p>選択肢1の 36,000円は、付加率をそのまま売価に掛けた誤りです（180,000 × 20%）。<strong>これが最も多い間違いです。</strong>期末商品に載っている金額は買った側が払った額、つまり売価なので、原価基準の割合をそのまま掛けることはできません。</p>'
+      },
+      {
+        text: '当期中にS社（子会社）がP社（親会社）に、帳簿価額 600,000円の土地を 700,000円で売却した。P社は期末現在この土地を保有している。P社のS社に対する持分比率は 60%、非支配株主の持分比率は 40% である。必要な連結修正仕訳として正しい組み合わせはどれですか。',
+        choices: [
+          '固定資産売却益 100,000 ／ 土地 100,000 の1本だけ',
+          '固定資産売却益 100,000 ／ 土地 100,000 と、非支配株主持分 40,000 ／ 非支配株主に帰属する当期純利益 40,000 の2本',
+          '固定資産売却益 100,000 ／ 土地 100,000 と、非支配株主持分 60,000 ／ 非支配株主に帰属する当期純利益 60,000 の2本'
+        ],
+        answer: 1,
+        invariant: [
+          // 未実現利益は 売却価額 − 帳簿価額。按分は非支配株主の持分 40% で行う。
+          ['700000 - 600000', '100000'],
+          ['(700000 - 600000) * 40 / (60 + 40)', '40000']
+        ],
+        explain: '<p>選択肢2が正解です。<strong>アップストリームなので2本必要</strong>です。</p><ul><li>未実現利益＝700,000 − 600,000 ＝ <strong>100,000円</strong>。土地は利益率の計算が要らず、売却価額と帳簿価額の差がそのまま未実現利益です</li><li>按分額＝100,000 × 40%（非支配株主の持分比率）＝ <strong>40,000円</strong></li></ul><p>選択肢1は誤りです。利益を計上したのは<strong>子会社</strong>なので、按分が必要です。<mark>按分の要否は資産の種類ではなく、誰が利益を計上したかで決まります。</mark></p><p>選択肢3は按分の比率を取り違えています。60% は<strong>親会社</strong>の持分であり、非支配株主の持分は 100% − 60% ＝ 40% です。</p>'
+      },
+      {
+        text: '2級の出題範囲で、未実現利益の消去が求められる資産の組み合わせはどれですか。',
+        choices: [
+          '棚卸資産と土地',
+          '棚卸資産と土地と建物',
+          'グループ内で売買されたすべての資産'
+        ],
+        answer: 0,
+        explain: '<p>選択肢1が正解です。出題区分表は<strong>「2級では棚卸資産および土地に係るものに限る」</strong>と明記しています。</p><p>建物や備品などの償却資産が対象外なのは、<strong>減価償却を通じて未実現利益が少しずつ実現していく</strong>ため、処理が複雑になるからです。グループ内で建物を売買したという記述があっても、2級では未実現利益の消去は求められません。</p>'
+      },
+      {
+        text: '土地の未実現利益を消去した翌期、その土地をまだグループ内で保有している。翌期の連結ではどうしますか。',
+        choices: [
+          '開始仕訳で同額を消し、当期中に戻す',
+          '開始仕訳で同額を消し、戻さない',
+          '何もしない'
+        ],
+        answer: 1,
+        explain: '<p>選択肢2が正解です。<strong>開始仕訳で「利益剰余金当期首残高 ／ 土地」として同額を消し、戻しません。</strong></p><p>土地を保有し続けている限り、この利益は実現していないからです。商品のように翌期に外部へ売れることがないので、<mark>消したまま毎期積み上がります。</mark></p><p>選択肢1は商品の扱いです。商品は翌期に外部へ売れて実現するので戻します。<strong>戻すかどうかが、商品と土地の違いです。</strong></p><p>選択肢3も誤りです。連結修正仕訳は帳簿に残らないので、何もしなければ土地が過大なまま連結貸借対照表に載ります。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-mijitsugen', {
+    title: '計算ドリル — 未実現利益の金額を出す',
+    badge: '計算ドリル',
+    unit: '円',
+    questions: [
+      {
+        text: 'P社はS社に商品を販売しており、<strong>売上高利益率は 25%</strong> である。S社の期末商品のうち <strong>240,000円</strong> がP社からの仕入分である。未実現利益はいくらか。また、この商品のグループにとっての原価はいくらか。',
+        answer: [60000, 180000],
+        labels: ['未実現利益', 'グループにとっての原価'],
+        formula: ['240000 * 0.25', '240000 - 240000 * 0.25'],
+        hint: '「売上高利益率」は売価を基準にした割合です。そのまま掛けられます。',
+        explain: '<ul><li>未実現利益＝240,000 × 25% ＝ <strong>60,000円</strong></li><li>原価＝240,000 − 60,000 ＝ <strong>180,000円</strong></li></ul><p>「売上高利益率」は<strong>売価に対する利益の割合</strong>なので、期末商品の金額（＝S社が払った額＝売価）にそのまま掛けられます。割り算は要りません。</p><p>連結修正仕訳は「売上原価 60,000 ／ 商品 60,000」。これで商品が 240,000 − 60,000 ＝ 180,000円となり、グループが外部に払った額に一致します。</p>'
+      },
+      {
+        text: 'S社はP社に商品を販売しており、<strong>原価に 20% の利益を付加</strong>している。P社の期末商品のうち <strong>360,000円</strong> がS社からの仕入分である。P社のS社に対する持分比率は <strong>70%</strong> である。未実現利益と、非支配株主に按分する金額はそれぞれいくらか。',
+        answer: [60000, 18000],
+        labels: ['未実現利益', '非支配株主への按分額'],
+        formula: ['360000 * 0.20 / 1.20', '360000 * 0.20 / 1.20 * 0.30'],
+        hint: 'まず付加率を利益率に直します。按分の比率は非支配株主の持分であって、親会社の持分ではありません。',
+        explain: '<ul><li>未実現利益＝360,000 × 0.20 ÷ 1.20 ＝ <strong>60,000円</strong></li><li>按分額＝60,000 × 30% ＝ <strong>18,000円</strong></li></ul><p>検算：原価は 360,000 − 60,000 ＝ 300,000円。300,000 × 1.2 ＝ 360,000円で問題文に戻ります。</p><p><strong>360,000 × 20% ＝ 72,000円としないでください。</strong>「原価に付加」なので原価基準です。</p><p>按分の比率は <strong>30%</strong>（非支配株主の持分）です。70% は親会社の持分なので使いません。<mark>問題文が与えるのは親会社の持分比率なので、100% から引く手順を忘れないでください。</mark></p><p>仕訳は2本です。「売上原価 60,000 ／ 商品 60,000」と「非支配株主持分 18,000 ／ 非支配株主に帰属する当期純利益 18,000」。</p>'
+      },
+      {
+        text: 'S社はP社に商品を販売しており、<strong>原価率は 75%</strong> である。P社の<strong>期首商品のうち 200,000円</strong>、<strong>期末商品のうち 320,000円</strong> がS社からの仕入分である。期首商品は当期中にすべて外部へ販売された。期首分と期末分の未実現利益はそれぞれいくらか。',
+        answer: [50000, 80000],
+        labels: ['期首商品の未実現利益', '期末商品の未実現利益'],
+        formula: ['200000 * (1 - 0.75)', '320000 * (1 - 0.75)'],
+        hint: '原価率 75% なら利益率は何%でしょうか。原価率は売価を基準にした割合です。',
+        explain: '<p>原価率 75% は<strong>売価を基準にした割合</strong>です。売価 100 のうち原価が 75 なので、利益は 25、つまり<strong>利益率 25%</strong>です。売価にそのまま掛けられます。</p><ul><li>期首分＝200,000 × 25% ＝ <strong>50,000円</strong></li><li>期末分＝320,000 × 25% ＝ <strong>80,000円</strong></li></ul><p><strong>「原価率」と「原価に付加」を取り違えないでください。</strong>原価率は売価基準なので割り算が要りません。「原価に 25% 付加」なら原価基準で、割り算が要ります。</p><p>この問題ではアップストリームなので、期首分・期末分それぞれに非支配株主への按分も必要です。<strong>合計4本の仕訳</strong>になります。</p>'
+      },
+      {
+        text: '当期中に、P社は帳簿価額 <strong>1,200,000円</strong> の土地をS社に <strong>1,500,000円</strong> で売却した。S社は期末現在この土地を保有している。P社のS社に対する持分比率は <strong>60%</strong> である。消去する未実現利益と、非支配株主に按分する金額はそれぞれいくらか。',
+        answer: [300000, 0],
+        labels: ['未実現利益', '非支配株主への按分額'],
+        formula: ['1500000 - 1200000', '0'],
+        hint: '売ったのはどちらの会社でしょうか。向きを確かめてから按分の要否を決めてください。',
+        explain: '<ul><li>未実現利益＝1,500,000 − 1,200,000 ＝ <strong>300,000円</strong>。土地は売却価額と帳簿価額の差がそのまま未実現利益で、利益率の計算は要りません</li><li>按分額＝<strong>0円</strong></li></ul><p>按分がゼロなのは、<strong>売ったのが親会社（ダウンストリーム）</strong>だからです。未実現利益を計上したのはP社であり、親会社の利益は100%が親会社株主のものです。非支配株主には関係しません。</p><p>持分比率 60% という数字が与えられていますが、<mark>この問題では使いません。</mark>問題文に比率が書いてあっても、向きを確かめずに掛けてはいけません。</p><p>仕訳は「固定資産売却益 300,000 ／ 土地 300,000」の1本だけです。</p>'
+      },
+      {
+        text: 'S社はP社に商品を販売しており、<strong>売上高利益率は 30%</strong> である。P社の<strong>期首商品のうち 150,000円</strong>、<strong>期末商品のうち 250,000円</strong> がS社からの仕入分である。期首商品は当期中にすべて外部へ販売された。このとき、連結修正仕訳全体によって<strong>当期の売上原価は差し引きいくら増減するか</strong>。増える場合を正の数で答えなさい。',
+        answer: [30000],
+        labels: ['売上原価の増減（増加が正）'],
+        formula: ['250000 * 0.30 - 150000 * 0.30'],
+        hint: '期首分は売上原価を減らし、期末分は売上原価を増やします。向きが逆です。',
+        explain: '<ul><li>期首分＝150,000 × 30% ＝ 45,000円 … 「利益剰余金当期首残高 ／ 売上原価」なので売上原価が <strong>45,000円減る</strong></li><li>期末分＝250,000 × 30% ＝ 75,000円 … 「売上原価 ／ 商品」なので売上原価が <strong>75,000円増える</strong></li><li>差し引き＝75,000 − 45,000 ＝ <strong>30,000円の増加</strong></li></ul><p>期首と期末で売上原価が<strong>逆向きに動く</strong>のがこの論点の要点です。期首の分は「売れたから戻す」、期末の分は「売れ残ったから消す」。</p><p>どちらか一方しか処理しないと、この差し引きが狂います。<mark>問題文に期首商品と期末商品の両方が出てきたら、仕訳も両方</mark>と反応してください。</p><p>なお、アップストリームなので非支配株主への按分も期首・期末それぞれに必要ですが、按分は売上原価を動かさないため、この設問の答えには影響しません。</p>'
+      }
+    ]
+  });
+
+  /* ========== 穴埋め ========== */
+  BokiFill.mount('#fill-mijitsugen', {
+    title: '穴埋め — 未実現利益の用語',
+    questions: [
+      {
+        text: 'グループ内の取引で計上された利益のうち、その資産がまだグループの外に出ていないために実現したといえない部分を何といいますか。漢字5文字で答えなさい。',
+        answer: ['未実現利益'],
+        explain: '<p><strong>未実現利益</strong>です。連結上はこれを取り消します。外部に売れた時点ではじめて実現した利益になります。</p>'
+      },
+      {
+        text: '親会社が子会社へ販売する取引を、カタカナで何といいますか。',
+        answer: ['ダウンストリーム'],
+        explain: '<p><strong>ダウンストリーム</strong>です。川上（親）から川下（子）へ流れる向き。未実現利益を計上したのは親会社なので、<strong>非支配株主への按分は不要</strong>です。</p>'
+      },
+      {
+        text: '子会社が親会社へ販売する取引を、カタカナで何といいますか。',
+        answer: ['アップストリーム'],
+        explain: '<p><strong>アップストリーム</strong>です。川下（子）から川上（親）へ遡る向き。未実現利益を計上したのは子会社なので、<strong>非支配株主への按分が必要</strong>です。この按分を忘れるのが連結で最も高くつく失点です。</p>'
+      },
+      {
+        text: '期末商品に含まれる未実現利益を消去する連結修正仕訳で、借方に書く勘定科目は何ですか。答案は連結精算表であるものとします。',
+        answer: ['売上原価'],
+        explain: '<p><strong>売上原価</strong>です。仕訳は「売上原価 ／ 商品」。売上高ではありません。売上高の相殺は内部取引高の相殺消去という別の仕訳で済ませています。</p>'
+      },
+      {
+        text: '開始仕訳において、前期の収益や費用の科目が置き換わる先の科目は何ですか。連結株主資本等変動計算書の科目で答えなさい。',
+        answer: ['利益剰余金当期首残高'],
+        explain: '<p><strong>利益剰余金当期首残高</strong>です。当期の連結では前期の損益計算書を作らず、前期の収益・費用はすべて当期首の利益剰余金に集約されているためです。</p>'
+      },
+      {
+        text: '土地の未実現利益を消去する連結修正仕訳で、借方に書く勘定科目は何ですか。売却益が生じている場合とします。',
+        answer: ['固定資産売却益'],
+        explain: '<p><strong>固定資産売却益</strong>です。仕訳は「固定資産売却益 ／ 土地」。売却時にこの科目で利益を計上しているので、同じ科目を逆側に書いて消します。</p><p>未実現利益の金額は<strong>売却価額 − 帳簿価額</strong>で、商品と違って利益率の計算は要りません。</p>'
+      },
+      {
+        text: '出題区分表は、2級における未実現損益の消去の対象を2つの資産に限定しています。棚卸資産と、あと1つは何ですか。',
+        answer: ['土地'],
+        explain: '<p><strong>土地</strong>です。区分表は「2級では棚卸資産および土地に係るものに限る」と明記しています。</p><p>建物や備品などの償却資産が対象外なのは、減価償却を通じて未実現利益が少しずつ実現していくため処理が複雑になるからです。</p>'
+      }
+    ]
+  });
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  var ACC = [
+    '現金預金', '売掛金', '商品', '繰越商品', '土地', '子会社株式',
+    '買掛金', '非支配株主持分', '資本金', '利益剰余金',
+    '売上', '売上原価', '仕入', '固定資産売却益', '固定資産売却損',
+    '非支配株主に帰属する当期純利益', 'のれん', 'のれん償却'
+  ];
+
+  BokiJournal.mount('#drill-mijitsugen', {
+    title: '仕訳ドリル — 未実現利益の消去 14問',
+    accounts: ACC,
+    questions: [
+      {
+        text: 'P社（親会社）はS社（子会社）に商品を販売している。P社の<strong>売上高利益率は 20%</strong> であり、S社の<strong>期末商品のうち 300,000円</strong> はP社から仕入れたものである。<br><span class="small muted">答案は連結精算表である。</span>',
+        debit: [['売上原価', 60000]],
+        credit: [['商品', 60000]],
+        hint: '売ったのは親会社です。按分の相手はいるでしょうか。',
+        explain: '<p><strong>売上原価 60,000 ／ 商品 60,000</strong> の1本だけです。</p><p>未実現利益＝300,000 × 20% ＝ <strong>60,000円</strong>。「売上高利益率」は売価基準なので、そのまま掛けられます。</p><p><strong>ダウンストリーム</strong>（親 → 子）なので、非支配株主への按分は不要です。未実現利益を計上したのは親会社であり、親会社の利益は100%が親会社株主のものだからです。</p><p>この仕訳で商品が 300,000 − 60,000 ＝ 240,000円となり、グループが外部に払った額に一致します。</p>'
+      },
+      {
+        text: 'S社（子会社）はP社（親会社）に商品を販売している。S社の<strong>売上高利益率は 25%</strong> であり、P社の<strong>期末商品のうち 400,000円</strong> はS社から仕入れたものである。P社のS社に対する持分比率は <strong>70%</strong> である。<br><span class="small muted">未実現利益の消去に関する仕訳のみを答えなさい。答案は連結精算表である。</span>',
+        debit: [['売上原価', 100000]],
+        credit: [['商品', 100000]],
+        hint: '1本目はダウンストリームとまったく同じ形です。',
+        explain: '<p><strong>売上原価 100,000 ／ 商品 100,000</strong> です。</p><p>未実現利益＝400,000 × 25% ＝ <strong>100,000円</strong>。</p><p><mark>1本目の形は、ダウンストリームでもアップストリームでもまったく同じ</mark>です。違いが出るのは2本目だけです。</p><p>この問題は1本目に限定していますが、実際の答案では<strong>非支配株主への按分</strong>も必要です。次の問題で扱います。</p>'
+      },
+      {
+        text: '前問と同じ状況（S社がP社に販売、未実現利益 <strong>100,000円</strong>、持分比率 <strong>70%</strong>）について、<br><span class="small muted">非支配株主への按分に関する仕訳のみを答えなさい。</span>',
+        debit: [['非支配株主持分', 30000]],
+        credit: [['非支配株主に帰属する当期純利益', 30000]],
+        hint: '子会社の利益が 100,000円減りました。非支配株主の取り分はどう動くでしょうか。按分の比率は 70% ではありません。',
+        explain: '<p><strong>非支配株主持分 30,000 ／ 非支配株主に帰属する当期純利益 30,000</strong> です。</p><p>按分額＝100,000 × <strong>30%</strong> ＝ 30,000円。<mark>比率は非支配株主の持分 30% であって、親会社の持分 70% ではありません。</mark>問題文が与えるのは親会社の持分比率なので、100% から引く手順が要ります。</p><p>向きを意味から導きます。前問で子会社の利益を 100,000円減らしました。子会社の利益が減れば<strong>非支配株主の取り分も減ります。</strong></p><ul><li><strong>非支配株主に帰属する当期純利益</strong>は損益計算書で当期純利益から差し引かれる項目。これを減らすので貸方</li><li><strong>非支配株主持分</strong>は純資産。取り分が減るので借方</li></ul><p>結果、未実現利益 100,000円のうち 30,000円を非支配株主が、70,000円を親会社株主が負担します。</p>'
+      },
+      {
+        text: 'P社（親会社）はS社（子会社）に商品を販売している。P社は<strong>原価に 25% の利益を付加</strong>しており、S社の<strong>期末商品のうち 250,000円</strong> はP社から仕入れたものである。<br><span class="small muted">答案は連結精算表である。</span>',
+        debit: [['売上原価', 50000]],
+        credit: [['商品', 50000]],
+        hint: '「原価に付加」です。そのまま 25% を掛けてはいけません。',
+        explain: '<p><strong>売上原価 50,000 ／ 商品 50,000</strong> です。</p><p>未実現利益＝250,000 × 0.25 ÷ 1.25 ＝ <strong>50,000円</strong>。</p><p>検算します。原価は 250,000 − 50,000 ＝ 200,000円。200,000 × 1.25 ＝ 250,000円で問題文に戻ります。</p><p><strong>250,000 × 25% ＝ 62,500円としないでください。</strong>期末商品に載っている金額は買った側が払った額（＝売価）なので、原価基準の割合をそのまま掛けることはできません。</p><p>付加率 ÷（1 ＋ 付加率）＝ 0.25 ÷ 1.25 ＝ 0.2 が、売価に対する利益の割合です。<mark>付加率を利益率に変換してから掛けている</mark>のがこの計算の正体です。</p><p>ダウンストリームなので按分は不要、1本で終わりです。</p>'
+      },
+      {
+        text: 'P社（親会社）はS社（子会社）に商品を販売している。S社の<strong>期首商品に含まれる未実現利益は 40,000円</strong> であり、この商品は当期中にすべて外部へ販売された。<br><span class="small muted">開始仕訳と当期の実現をまとめた1本の形で答えなさい。答案は連結精算表である。</span>',
+        debit: [['利益剰余金', 40000]],
+        credit: [['売上原価', 40000]],
+        hint: '前期の利益を減らし、当期の利益を増やします。利益の引っ越しです。',
+        explain: '<p><strong>利益剰余金当期首残高 40,000 ／ 売上原価 40,000</strong> です。</p><p>この仕訳は2つの仕訳をまとめたものです。</p><ul><li><strong>開始仕訳</strong>「利益剰余金当期首残高 40,000 ／ 商品 40,000」… 前期の修正を再現する。前期の借方は売上原価（費用）だったが、前期の損益は当期首の利益剰余金に集約されているため置き換わる</li><li><strong>当期の実現</strong>「商品 40,000 ／ 売上原価 40,000」… 期首商品が外部へ売れて未実現利益が実現したので、消去を取り消す</li></ul><p>商品の増減が相殺されて、上の1本になります。</p><p>意味はこうです。<mark>前期の利益を 40,000円減らし、当期の利益を 40,000円増やす。</mark>グループ全体で見れば、この利益は消えたのではなく<strong>計上する期が1年ずれた</strong>だけです。</p>'
+      },
+      {
+        text: 'S社（子会社）はP社（親会社）に商品を販売している。P社の<strong>期首商品に含まれる未実現利益は 60,000円</strong> であり、この商品は当期中にすべて外部へ販売された。P社のS社に対する持分比率は <strong>80%</strong> である。<br><span class="small muted">売上原価に関する仕訳（開始仕訳と実現をまとめた形）のみを答えなさい。</span>',
+        debit: [['利益剰余金', 60000]],
+        credit: [['売上原価', 60000]],
+        hint: 'この1本の形は、ダウンストリームのときと同じです。',
+        explain: '<p><strong>利益剰余金当期首残高 60,000 ／ 売上原価 60,000</strong> です。</p><p>期首商品が当期に外部へ売れて実現したので、前期の利益を減らし当期の利益を増やします。<mark>ここまでの形はダウンストリームとまったく同じ</mark>です。</p><p>アップストリームなので、これに加えて<strong>非支配株主への按分</strong>が必要です。次の問題で扱います。</p>'
+      },
+      {
+        text: '前問と同じ状況（S社がP社に販売、期首商品の未実現利益 <strong>60,000円</strong>、持分比率 <strong>80%</strong>、当期にすべて外部販売済み）について、<br><span class="small muted">非支配株主に関する仕訳のうち、<strong>当期の実現にともなうもの</strong>のみを答えなさい。</span>',
+        debit: [['非支配株主に帰属する当期純利益', 12000]],
+        credit: [['非支配株主持分', 12000]],
+        hint: '期末商品のときとは逆向きです。子会社の当期の利益が増えたので、非支配株主の取り分も増えます。',
+        explain: '<p><strong>非支配株主に帰属する当期純利益 12,000 ／ 非支配株主持分 12,000</strong> です。</p><p>按分額＝60,000 × <strong>20%</strong>（非支配株主の持分）＝ 12,000円。</p><p>向きを意味から導きます。前問で子会社の当期の利益を 60,000円<strong>増やしました</strong>（売上原価を減らしたので）。子会社の利益が増えたので、<strong>非支配株主の取り分も増えます。</strong></p><ul><li><strong>非支配株主に帰属する当期純利益</strong>を増やすので借方</li><li><strong>非支配株主持分</strong>を増やすので貸方</li></ul><p><mark>期末商品のとき（問題3）とちょうど逆向き</mark>です。期末は「消すから減る」、期首の実現は「戻すから増える」。子会社の利益がどちらに動いたかで決まります。</p>'
+      },
+      {
+        text: '当期中に、P社（親会社）は帳簿価額 <strong>900,000円</strong> の土地を、S社（子会社）に <strong>1,100,000円</strong> で売却した。S社は当期末現在、この土地を保有している。P社のS社に対する持分比率は <strong>75%</strong> である。',
+        debit: [['固定資産売却益', 200000]],
+        credit: [['土地', 200000]],
+        hint: '土地は利益率の計算が要りません。売ったのはどちらでしょうか。',
+        explain: '<p><strong>固定資産売却益 200,000 ／ 土地 200,000</strong> の1本だけです。</p><p>未実現利益＝1,100,000 − 900,000 ＝ <strong>200,000円</strong>。商品と違い、<mark>売却価額と帳簿価額の差がそのまま未実現利益</mark>です。利益率や付加率の計算は要りません。</p><p>借方が<strong>固定資産売却益</strong>なのは、P社が売却時にこの科目で利益を計上しているからです。消すべき利益なので、同じ科目を逆側（収益を減らすので借方）に書きます。</p><p><strong>ダウンストリーム</strong>なので按分は不要です。持分比率 75% は与えられていますが、この問題では使いません。<mark>比率が書いてあっても、向きを確かめずに掛けないでください。</mark></p><p>貸方の土地は、S社の帳簿に 1,100,000円で載っています。200,000円減らして 900,000円に戻します。</p>'
+      },
+      {
+        text: '当期中に、S社（子会社）は帳簿価額 <strong>500,000円</strong> の土地を、P社（親会社）に <strong>620,000円</strong> で売却した。P社は当期末現在、この土地を保有している。P社のS社に対する持分比率は <strong>60%</strong> である。<br><span class="small muted">非支配株主への按分に関する仕訳のみを答えなさい。</span>',
+        debit: [['非支配株主持分', 48000]],
+        credit: [['非支配株主に帰属する当期純利益', 48000]],
+        hint: 'まず未実現利益を出します。按分の比率は 60% ではありません。',
+        explain: '<p><strong>非支配株主持分 48,000 ／ 非支配株主に帰属する当期純利益 48,000</strong> です。</p><ul><li>未実現利益＝620,000 − 500,000 ＝ <strong>120,000円</strong></li><li>按分額＝120,000 × <strong>40%</strong>（非支配株主の持分）＝ <strong>48,000円</strong></li></ul><p>売ったのは<strong>子会社</strong>なのでアップストリームです。按分が必要になります。</p><p><mark>按分の要否は資産の種類ではなく、誰が利益を計上したかで決まります。</mark>土地でも商品でも、子会社が売ったなら按分が要ります。</p><p>比率は 100% − 60% ＝ 40%。60% を掛けて 72,000円とするのが典型的な誤りです。</p><p>この問題では答えていませんが、1本目の「固定資産売却益 120,000 ／ 土地 120,000」も必要です。</p>'
+      },
+      {
+        text: 'P社（親会社）はS社（子会社）に商品を販売している。P社の<strong>原価率は 80%</strong> であり、S社の<strong>期末商品のうち 450,000円</strong> はP社から仕入れたものである。<br><span class="small muted">答案は連結精算表である。</span>',
+        debit: [['売上原価', 90000]],
+        credit: [['商品', 90000]],
+        hint: '原価率 80% なら利益率は何%でしょうか。原価率は売価を基準にした割合です。',
+        explain: '<p><strong>売上原価 90,000 ／ 商品 90,000</strong> です。</p><p>原価率 80% は<strong>売価を基準にした割合</strong>です。売価 100 のうち原価が 80 なので、利益は 20、つまり<strong>利益率 20%</strong>。売価にそのまま掛けられます。</p><ul><li>未実現利益＝450,000 × 20% ＝ <strong>90,000円</strong></li></ul><p><strong>「原価率」と「原価に付加」は字面が似ていますが、基準が違います。</strong>原価率は売価基準なので割り算が要りません。「原価に 20% 付加」なら原価基準で、450,000 × 0.2 ÷ 1.2 ＝ 75,000円になります。<mark>問題文のこの部分に下線を引く習慣をつけてください。</mark></p><p>ダウンストリームなので1本で終わりです。</p>'
+      },
+      {
+        text: 'S社（子会社）はP社（親会社）に商品を販売している。S社の<strong>売上高利益率は 30%</strong> であり、P社の<strong>期末商品のうち 200,000円</strong> はS社から仕入れたものである。P社はS社の発行済株式の <strong>100%</strong> を保有している。<br><span class="small muted">必要な連結修正仕訳をすべて答えなさい。答案は連結精算表である。</span>',
+        debit: [['売上原価', 60000]],
+        credit: [['商品', 60000]],
+        hint: '非支配株主は存在するでしょうか。',
+        explain: '<p><strong>売上原価 60,000 ／ 商品 60,000</strong> の1本だけです。</p><p>未実現利益＝200,000 × 30% ＝ 60,000円。</p><p>アップストリームですが、<strong>持分比率が 100% なので非支配株主が存在しません。</strong>按分する相手がいないので、2本目は書きません。</p><p><mark>「アップストリームなら必ず2本」ではありません。</mark>2本目が要るのは非支配株主が実在するときだけです。持分比率は必ず問題文で確認してください。</p><p>この場合、未実現利益 60,000円は全額を親会社株主が負担します。</p>'
+      },
+      {
+        text: 'S社（子会社）はP社（親会社）に商品を販売している。S社の<strong>売上高利益率は 20%</strong> であり、P社の<strong>期首商品のうち 150,000円</strong>、<strong>期末商品のうち 250,000円</strong> がS社から仕入れたものである。期首商品は当期中にすべて外部へ販売された。<br><span class="small muted">売上原価に関する仕訳を、期首分と期末分をまとめた1本の形で答えなさい。</span>',
+        debit: [['売上原価', 50000], ['利益剰余金', 30000]],
+        credit: [['商品', 50000], ['売上原価', 30000]],
+        hint: '期首分と期末分は売上原価を逆向きに動かします。2本を並べて書いてください。',
+        explain: '<p>2本を並べた形になります。</p><ul><li><strong>売上原価 50,000 ／ 商品 50,000</strong> … 期末分。250,000 × 20% ＝ 50,000円。売れ残っているので消す</li><li><strong>利益剰余金当期首残高 30,000 ／ 売上原価 30,000</strong> … 期首分。150,000 × 20% ＝ 30,000円。売れたので戻す</li></ul><p><mark>売上原価が逆向きに動いている</mark>のがこの論点の要点です。差し引きで売上原価は 50,000 − 30,000 ＝ 20,000円の増加になります。</p><p>どちらか一方しか処理しないのが典型的な失点です。<strong>問題文に期首商品と期末商品の両方が出てきたら、仕訳も両方</strong>と反応してください。</p><p>なお、アップストリームなので非支配株主への按分も期首・期末それぞれに必要です。この問題では売上原価に限定していますが、実際の答案では忘れないでください。</p>'
+      },
+      {
+        text: 'S社（子会社）はP社（親会社）に商品を販売している。P社の<strong>期末商品に含まれる未実現利益は 80,000円</strong> である。P社はS社の発行済株式の <strong>60%</strong> を保有している。<br><span class="small muted">必要な連結修正仕訳をすべて答えなさい。答案は連結精算表である。</span>',
+        debit: [['売上原価', 80000], ['非支配株主持分', 32000]],
+        credit: [['商品', 80000], ['非支配株主に帰属する当期純利益', 32000]],
+        hint: 'アップストリームなので2本です。按分の比率に注意してください。',
+        explain: '<p>2本必要です。</p><ul><li><strong>売上原価 80,000 ／ 商品 80,000</strong> … 未実現利益の消去</li><li><strong>非支配株主持分 32,000 ／ 非支配株主に帰属する当期純利益 32,000</strong> … 80,000 × 40% ＝ 32,000円</li></ul><p>按分の比率は <strong>40%</strong>（100% − 60%）です。<mark>60% は親会社の持分なので使いません。</mark></p><p>結果として、未実現利益 80,000円のうち 32,000円を非支配株主が、48,000円を親会社株主が負担します。これがあるべき姿です。</p><p><strong>2本目を忘れると、非支配株主持分と親会社株主に帰属する当期純利益の両方が狂います。</strong>1つの漏れが複数の解答欄に波及するので、失点が大きくなります。</p>'
+      },
+      {
+        text: 'P社（親会社）はS社（子会社）に商品を販売しており、<strong>売上高利益率は 25%</strong> である。S社の<strong>期末商品のうち 320,000円</strong> がP社からの仕入分である。また、S社はP社に商品を販売しており、S社の<strong>売上高利益率は 20%</strong>、P社の<strong>期末商品のうち 150,000円</strong> がS社からの仕入分である。P社のS社に対する持分比率は <strong>70%</strong> である。<br><span class="small muted">未実現利益の消去に関する仕訳（按分を除く）のみを、まとめて答えなさい。答案は連結精算表である。</span>',
+        debit: [['売上原価', 110000]],
+        credit: [['商品', 110000]],
+        hint: '両方向が同時に出ています。それぞれ別に計算してから合計してください。',
+        explain: '<p><strong>売上原価 110,000 ／ 商品 110,000</strong> です。</p><ul><li>ダウンストリーム分＝320,000 × 25% ＝ <strong>80,000円</strong></li><li>アップストリーム分＝150,000 × 20% ＝ <strong>30,000円</strong></li><li>合計＝80,000 ＋ 30,000 ＝ <strong>110,000円</strong></li></ul><p><mark>利益率が違うので、まとめて計算してはいけません。</mark>資料を2つに分け、それぞれ別に計算してから合計します。</p><p>この問題は消去だけを問うていますが、実際の答案では<strong>アップストリーム分 30,000円についてのみ</strong>非支配株主への按分（30,000 × 30% ＝ 9,000円）が必要です。ダウンストリーム分 80,000円には按分がつきません。</p><p>両方向が出る問題では、<strong>按分の対象になるのはアップストリーム分だけ</strong>です。合計の 110,000円に 30% を掛けてはいけません。</p>'
+      }
+    ]
+  });
+
+})();
+</script>
+
+</body>
+</html>
