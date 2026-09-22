@@ -479,6 +479,7 @@
         <tr><td class="d">売買目的有価証券</td><td><strong>有価証券</strong></td><td>流動資産</td></tr>
         <tr><td class="d">その他有価証券</td><td><strong>投資有価証券</strong></td><td>投資その他の資産</td></tr>
         <tr><td class="d">子会社株式・関連会社株式</td><td><strong>関係会社株式</strong></td><td>投資その他の資産</td></tr>
+        <tr><td class="d">有価証券評価損益</td><td>貸方残なら<strong>有価証券評価益</strong><br>借方残なら<strong>有価証券評価損</strong></td><td>営業外収益<br>営業外費用</td></tr>
         <tr><td class="d">貸付金（1年以内）</td><td><strong>短期貸付金</strong></td><td>流動資産</td></tr>
         <tr><td class="d">貸付金（1年超）</td><td><strong>長期貸付金</strong></td><td>投資その他の資産</td></tr>
         <tr><td class="d">借入金（1年超）</td><td><strong>長期借入金</strong></td><td>固定負債</td></tr>
@@ -556,23 +557,25 @@
       <thead><tr><th></th><th class="amt">資本金</th><th class="amt">資本準備金</th><th class="amt">利益準備金</th><th class="amt">繰越利益<br>剰余金</th><th class="amt">その他有価証券<br>評価差額金</th></tr></thead>
       <tbody>
         <tr><td class="d"><strong>当期首残高</strong></td><td class="amt">20,000,000</td><td class="amt">3,000,000</td><td class="amt">1,200,000</td><td class="amt">4,500,000</td><td class="amt">180,000</td></tr>
-        <tr><td class="d">新株の発行</td><td class="amt">5,000,000</td><td class="amt">5,000,000</td><td class="amt"></td><td class="amt"></td><td class="amt"></td></tr>
+        <tr><td class="d">新株の発行</td><td class="amt">5,000,000</td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt"></td></tr>
         <tr><td class="d">剰余金の配当</td><td class="amt"></td><td class="amt"></td><td class="amt">200,000</td><td class="amt">△2,200,000</td><td class="amt"></td></tr>
         <tr><td class="d">当期純利益</td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt">3,800,000</td><td class="amt"></td></tr>
         <tr><td class="d">株主資本以外の項目の<br>当期変動額（純額）</td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt"></td><td class="amt">100,000</td></tr>
-        <tr><td class="c"><strong>当期末残高</strong></td><td class="amt">25,000,000</td><td class="amt">8,000,000</td><td class="amt">1,400,000</td><td class="amt">6,100,000</td><td class="amt">280,000</td></tr>
+        <tr><td class="c"><strong>当期末残高</strong></td><td class="amt">25,000,000</td><td class="amt">3,000,000</td><td class="amt">1,400,000</td><td class="amt">6,100,000</td><td class="amt">280,000</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p>各列を縦に検算します。資本金：20,000,000 ＋ 5,000,000 ＝ <strong>25,000,000円</strong>。資本準備金：3,000,000 ＋ 5,000,000 ＝ <strong>8,000,000円</strong>。利益準備金：1,200,000 ＋ 200,000 ＝ <strong>1,400,000円</strong>。繰越利益剰余金：4,500,000 − 2,200,000 ＋ 3,800,000 ＝ <strong>6,100,000円</strong>。その他有価証券評価差額金：180,000 ＋ 100,000 ＝ <strong>280,000円</strong>。</p>
+  <p>この新株の発行は、払込金額 5,000,000円の<strong>全額を資本金に組み入れた</strong>ものです（会社法が原則とする処理）。したがって資本準備金の列は動きません。</p>
+
+  <p>各列を縦に検算します。資本金：20,000,000 ＋ 5,000,000 ＝ <strong>25,000,000円</strong>。資本準備金：変動がないので <strong>3,000,000円</strong> のまま。利益準備金：1,200,000 ＋ 200,000 ＝ <strong>1,400,000円</strong>。繰越利益剰余金：4,500,000 − 2,200,000 ＋ 3,800,000 ＝ <strong>6,100,000円</strong>。その他有価証券評価差額金：180,000 ＋ 100,000 ＝ <strong>280,000円</strong>。</p>
 
   <div class="callout callout--trap">
     <span class="callout__t">配当額と繰越利益剰余金の減少額は一致しない</span>
     <p>上の表で、配当として株主に払うのは 2,000,000円です。ところが繰越利益剰余金は <strong>2,200,000円</strong>減っています。</p>
     <p>差の 200,000円は<strong>利益準備金への積立</strong>です。会社法により、配当するときは配当額の10分の1を準備金として積み立てなければなりません。この積立も繰越利益剰余金から出ていくので、<mark>繰越利益剰余金の減少額 ＝ 配当額 ＋ 準備金の積立額</mark>になります。</p>
     <p>2,000,000 × 1/10 ＝ 200,000円。2,000,000 ＋ 200,000 ＝ 2,200,000円です。検算が合います。</p>
-    <p class="small muted">準備金の積立には上限があり、資本準備金と利益準備金の合計が資本金の4分の1に達していれば積み立てる必要がありません。第2問ではこの上限が問われることがあります。</p>
+    <p class="small muted">準備金の積立には上限があり、資本準備金と利益準備金の合計が資本金の4分の1に達していれば積み立てる必要がありません。上の表では準備金の合計が 3,000,000 ＋ 1,200,000 ＝ 4,200,000円で、資本金の4分の1（期首 5,000,000円・期末 6,250,000円）を下回っているため、200,000円を満額積み立てます。第2問ではこの上限が問われることがあります。</p>
   </div>
 
   <div class="callout callout--warn">
