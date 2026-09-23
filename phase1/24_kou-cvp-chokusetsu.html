@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="boki-subject" content="工">
+  <meta name="boki-topics" content="工-第十三-1-0,工-第十三-2-0,工-第十四-1-0,工-第十四-2-0,工-第十五-1-0,工-第十五-2-0,工-第十五-3-0,工-第十七-1-0,工-第十七-2-0,工-第十八-0-g2">
+<title>直接原価計算とCVP分析 — 日商簿記2級 Phase 1 W7</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 24 直接原価計算とCVP分析</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">UNIT 24 ／ 4時間 ／ 工業簿記</p>
+    <h1>直接原価計算とCVP分析<br>— 利益計画のための原価計算</h1>
+    <p class="lead">ここまでの原価計算は、すべて<strong>外部に公表する財務諸表を作るため</strong>のものでした。この単元だけは目的が違います。<mark>来月いくら売れば黒字になるのか、いくら儲けたければ何個売ればいいのか</mark>——経営者が社内で判断するための計算です。目的が変われば計算方法も変わります。固定製造原価を製品原価から外す、というのがその変更点で、そこからCVP分析も固定費調整も一本の線でつながります。<strong>この単元で2級の工業簿記のインプットが完了します。</strong></p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 4h</span>
+      <span class="chip">工業簿記</span>
+      <span class="chip">仕訳ドリル 8問</span>
+      <span class="chip">計算ドリル 12問</span>
+      <span class="chip">確認テスト 12問</span>
+      <span class="chip">穴埋め 8問</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">全部原価計算では何が困るのか</a></li>
+      <li><a href="#s2">同じ売上なのに利益が違う — 数字で見る</a></li>
+      <li><a href="#s3">原価を変動費と固定費に分ける</a></li>
+      <li><a href="#s4">高低点法 — 2点から直線を引く</a></li>
+      <li><a href="#s5">直接原価計算の損益計算書</a></li>
+      <li><a href="#s6">直接原価計算の記帳</a></li>
+      <li><a href="#s7">CVP分析① 損益分岐点</a></li>
+      <li><a href="#s8">CVP分析② 目標利益と安全余裕率</a></li>
+      <li><a href="#s9">損益分岐図表</a></li>
+      <li><a href="#s10">固定費調整 — 全部原価計算の利益に戻す</a></li>
+      <li><a href="#s11">営業費 — 製造原価ではない原価</a></li>
+      <li><a href="#s12">工場会計の独立</a></li>
+      <li><a href="#s13">仕訳ドリル 8問</a></li>
+      <li><a href="#s14">計算ドリル 12問</a></li>
+      <li><a href="#s15">確認テスト 12問</a></li>
+      <li><a href="#s16">用語の穴埋め 8問</a></li>
+      <li><a href="#s17">このユニットの到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>全部原価計算では何が困るのか</h2>
+
+  <p>工場を任された部長が、今月の成績を上げたいと考えたとします。売上を増やすのが王道ですが、それは営業の仕事で、工場からは動かせません。ところが<strong>工場だけでできる手</strong>があります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">作りだめすると、利益が増えて「見える」</span>
+    <p>工場の家賃や機械の減価償却費といった<strong>固定製造原価</strong>は、作っても作らなくても毎月同じ額が出ていきます。ここまでの原価計算（全部原価計算）では、この固定費を<mark>作った製品の個数で頭割り</mark>して製品にくっつけてきました。</p>
+    <p>月 1,800,000円 の固定製造原価があるとします。4,000個 作れば1個あたり 450円 ですが、<strong>5,000個 作れば1個あたり 360円 に下がります。</strong>そして、売れずに倉庫に残った製品にくっついた固定費は、<mark>製品という資産</mark>として翌月に繰り越され、今月の費用から外れます。</p>
+    <p>売上はまったく同じでも、たくさん作った月のほうが利益が大きく出る。これが全部原価計算の性質です。<strong>「売れていないのに利益が増える」という計算は、来月の計画を立てる土台には使えません。</strong></p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">これは全部原価計算の「誤り」ではない</span>
+    <p>作りだめで利益が増えるのは、全部原価計算が間違っているからではありません。<mark>まだ売れていない製品にかかった原価を資産として繰り越す</mark>のは、費用収益対応の原則から出てくる正しい処理です。売れたときに費用にするのですから、筋は通っています。</p>
+    <p>問題は<strong>目的との相性</strong>です。外部報告には全部原価計算が正しく、制度上も義務づけられています。しかし「来月いくら売れば黒字か」を考える場面では、<strong>生産量で動いてしまう利益</strong>は邪魔になります。<mark>どちらかが正しいのではなく、目的によって使い分けます。</mark></p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">直接原価計算</span><span class="term__r">ちょくせつげんかけいさん</span>
+    <p><strong>変動製造原価だけを製品原価とし、固定製造原価は発生した期間の費用（期間原価）として全額その期に落とす</strong>原価計算の方法。変動原価計算ともいいます。</p>
+    <p style="margin-bottom:0">固定製造原価が在庫に乗らないので、<mark>利益が販売量だけで決まり、生産量では動きません。</mark></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">直接原価計算の目的 — 利益計画に使う</span>
+    <p>直接原価計算を採用する目的は<strong>短期利益計画に役立てること</strong>です。具体的には次の3つが答えられれば十分です。</p>
+    <p>① <mark>利益が販売量に連動する</mark>ので、「いくら売れば黒字か」という問いに答えられる。<br>② 原価が変動費と固定費に分かれているので、<mark>CVP分析（損益分岐分析）がそのまま行える。</mark><br>③ 売上高から変動費を引いた<mark>貢献利益</mark>が出るので、製品ごと・部門ごとの収益性を比較できる。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">「直接原価計算」の「直接」は直接費のことではない</span>
+    <p>UNIT 03 で扱った<strong>直接費／間接費</strong>は「特定の製品にひもづくか」を問う分類でした。直接原価計算の「直接」は<mark>それとは別の意味</mark>で、「変動費」を指します。<strong>直接原価計算 ＝ 変動原価計算</strong>です。</p>
+    <p>だから<strong>変動製造間接費は直接原価計算でも製品原価に入ります。</strong>間接費だから外れるのではなく、固定費だから外れるのです。ここを取り違えると、製品原価の集計そのものが崩れます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">直接原価計算で外部公表用の財務諸表は作れない</span>
+    <p>制度会計上、<mark>外部に公表する損益計算書・貸借対照表は全部原価計算で作らなければなりません。</mark>直接原価計算は社内の管理目的に限られます。</p>
+    <p>そのため、社内で直接原価計算をしている会社は、決算のときに<strong>直接原価計算の営業利益を全部原価計算の営業利益に直す</strong>作業が要ります。これが第10章の<strong>固定費調整</strong>です。直接原価計算が制度上認められていない、という事実がそのまま固定費調整の存在理由になっています。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>同じ売上なのに利益が違う — 数字で見る</h2>
+
+  <p>言葉だけでは腹に落ちません。<strong>売上がまったく同じで、生産量だけが違う2つの月</strong>を並べます。この単元の設例は、すべてこの製品Xで通します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption class="small muted" style="text-align:left;padding-bottom:6px">製品X の条件（毎月共通）</caption>
+    <thead><tr><th>項目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td>販売単価</td><td class="amt">@2,000円</td></tr>
+      <tr><td>製品1個あたり<strong>変動製造原価</strong>（直接材料費・直接労務費・変動製造間接費）</td><td class="amt">@1,100円</td></tr>
+      <tr><td>製品1個あたり<strong>変動販売費</strong>（発送運賃・販売手数料など）</td><td class="amt">@100円</td></tr>
+      <tr><td><strong>固定製造原価</strong>（月額）</td><td class="amt">1,800,000円</td></tr>
+      <tr><td><strong>固定販売費及び一般管理費</strong>（月額）</td><td class="amt">600,000円</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>1月は 4,000個 作って 4,000個 売りました。2月も <strong>4,000個 売りました</strong>が、生産は 5,000個 に増やしました。月初の在庫はどちらの月もありません。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">1月 — 生産4,000個・販売4,000個</div>
+      <p class="small">固定製造原価の1個あたり ＝ 1,800,000 ÷ 4,000 ＝ <strong>@450円</strong><br>全部原価計算の製品単位原価 ＝ 1,100 ＋ 450 ＝ <strong>@1,550円</strong></p>
+      <p class="small">月末在庫 <strong>0個</strong>。固定製造原価は全額が売上原価に入ります。</p>
+      <p class="small" style="margin-bottom:0">全部原価計算の営業利益 <strong>800,000円</strong><br>直接原価計算の営業利益 <strong>800,000円</strong>　<mark>一致</mark></p>
+    </div>
+    <div class="card">
+      <div class="card__label">2月 — 生産5,000個・販売4,000個</div>
+      <p class="small">固定製造原価の1個あたり ＝ 1,800,000 ÷ 5,000 ＝ <strong>@360円</strong><br>全部原価計算の製品単位原価 ＝ 1,100 ＋ 360 ＝ <strong>@1,460円</strong></p>
+      <p class="small">月末在庫 <strong>1,000個</strong>。この在庫に固定製造原価が <strong>@360 × 1,000 ＝ 360,000円</strong> 乗ったまま翌月に繰り越されます。</p>
+      <p class="small" style="margin-bottom:0">全部原価計算の営業利益 <strong>1,160,000円</strong><br>直接原価計算の営業利益 <strong>800,000円</strong>　<mark>360,000円 の差</mark></p>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption class="small muted" style="text-align:left;padding-bottom:6px">2月の損益計算書を2つの方法で作ると（売上はどちらも 8,000,000円）</caption>
+    <thead><tr><th>全部原価計算</th><th class="amt">金額</th><th>直接原価計算</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td class="amt">8,000,000</td><td>売上高</td><td class="amt">8,000,000</td></tr>
+      <tr><td>売上原価 @1,460 × 4,000個</td><td class="amt">5,840,000</td><td><strong>変動</strong>売上原価 @1,100 × 4,000個</td><td class="amt">4,400,000</td></tr>
+      <tr><td><strong>売上総利益</strong></td><td class="amt"><strong>2,160,000</strong></td><td><strong>変動製造マージン</strong></td><td class="amt"><strong>3,600,000</strong></td></tr>
+      <tr><td>販売費及び一般管理費</td><td class="amt">1,000,000</td><td>変動販売費 @100 × 4,000個</td><td class="amt">400,000</td></tr>
+      <tr><td></td><td class="amt"></td><td><strong>貢献利益</strong></td><td class="amt"><strong>3,200,000</strong></td></tr>
+      <tr><td></td><td class="amt"></td><td>固定製造原価</td><td class="amt">1,800,000</td></tr>
+      <tr><td></td><td class="amt"></td><td>固定販売費及び一般管理費</td><td class="amt">600,000</td></tr>
+      <tr><td><strong>営業利益</strong></td><td class="amt"><strong>1,160,000</strong></td><td><strong>営業利益</strong></td><td class="amt"><strong>800,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">差の 360,000円 はどこへ行ったのか</span>
+    <p>2月の固定製造原価 1,800,000円 のうち、直接原価計算は<strong>全額</strong>を費用にしました。全部原価計算は <mark>@360 × 1,000個 ＝ 360,000円</mark> を月末製品（資産）に残し、費用にしたのは 1,440,000円 だけです。</p>
+    <p>検算：1,800,000 − 360,000 ＝ 1,440,000円。<br>全部原価計算の営業利益 1,160,000 − 直接原価計算の営業利益 800,000 ＝ <strong>360,000円</strong>。費用にしなかった額と、利益の差はぴったり一致します。</p>
+    <p><strong>利益の差の正体は、在庫に含まれる固定製造原価そのものです。</strong>この一文が第10章の固定費調整のすべてです。公式を覚える前に、ここを押さえてください。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th></th><th>全部原価計算</th><th>直接原価計算</th></tr></thead>
+    <tbody>
+      <tr><td><strong>固定製造原価の扱い</strong></td><td>製品原価（在庫に乗る）</td><td>期間原価（全額その期の費用）</td></tr>
+      <tr><td><strong>利益を動かすもの</strong></td><td>販売量 <strong>と生産量</strong></td><td>販売量<strong>だけ</strong></td></tr>
+      <tr><td><strong>使いみち</strong></td><td>外部報告（制度上の義務）</td><td>社内の利益計画・意思決定</td></tr>
+      <tr><td><strong>利益の呼び名</strong></td><td>売上総利益 → 営業利益</td><td>変動製造マージン → 貢献利益 → 営業利益</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">在庫が増えていなければ、2つの利益は一致する</span>
+    <p>1月がそうでした。<mark>期首在庫も期末在庫もゼロ（または期首＝期末）なら、両者の営業利益は同じ金額になります。</mark>在庫に固定費を繰り延べる余地がないからです。</p>
+    <p>「直接原価計算のほうが利益が小さい」と覚えると、在庫が減った月に間違えます。<strong>在庫が増えた月は全部原価計算のほうが大きく、在庫が減った月は直接原価計算のほうが大きくなります。</strong>どちらが大きいかは在庫の増減で決まります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>原価を変動費と固定費に分ける</h2>
+
+  <p>直接原価計算もCVP分析も、<strong>原価が変動費と固定費に分かれている</strong>ことを前提にしています。ところが現実の帳簿には「電力料 216,000円」としか書いてありません。基本料金と従量料金が混ざった<strong>準変動費</strong>（UNIT 03）です。これを分ける作業を<mark>原価の固変分解</mark>といいます。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2級で扱う分解方法は2つだけ</span>
+    <p>出題区分表で2級とされているのは<strong>費目別精査法</strong>と<strong>高低点法</strong>の2つです。<mark>この2つ以外の名前が選択肢に出てきたら、それは1級の方法です。</mark></p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">方法① 費目別精査法</div>
+      <p><strong>勘定科目を1つずつ人が見て振り分ける</strong></p>
+      <p class="small">過去の資料と経験にもとづいて、勘定科目ごとに「これは変動費」「これは固定費」と判断していく方法です。勘定科目精査法ともいいます。</p>
+      <p class="small">直接材料費は変動費、工場建物の減価償却費は固定費、というように、<mark>性質から明らかなものはこれで片付きます。</mark></p>
+      <p class="small" style="margin-bottom:0"><strong>短所：</strong>判断する人によって結果が変わります。電力料のように両方の性格を持つ費目では、根拠のある分け方ができません。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">方法② 高低点法</div>
+      <p><strong>過去の実績データから直線を引く</strong></p>
+      <p class="small">操業度と原価の実績を集め、<mark>最高の操業度の点と最低の操業度の点</mark>の2つだけを使って直線を引く方法です。</p>
+      <p class="small">直線の<strong>傾きが変動費率</strong>、<strong>切片が固定費</strong>になります。人の判断が入らないので、誰が計算しても同じ答えが出ます。</p>
+      <p class="small" style="margin-bottom:0"><strong>短所：</strong>2点しか使わないので、その2点がたまたま特殊な月だと、直線全体が狂います。この短所への対処が次章の中身です。</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>高低点法 — 2点から直線を引く</h2>
+
+  <p>過去6か月の、直接作業時間（操業度）と製造間接費の実績が次のとおりだったとします。<strong>正常操業圏は月間 2,400時間 〜 4,000時間</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>月</th><th class="amt">直接作業時間</th><th class="amt">製造間接費</th><th>正常操業圏</th></tr></thead>
+    <tbody>
+      <tr><td>4月</td><td class="amt">2,800時間</td><td class="amt">1,616,000円</td><td>内</td></tr>
+      <tr><td>5月</td><td class="amt">3,600時間</td><td class="amt">1,872,000円</td><td>内</td></tr>
+      <tr><td>6月</td><td class="amt">2,000時間</td><td class="amt">1,280,000円</td><td><strong>外（下回る）</strong></td></tr>
+      <tr><td>7月</td><td class="amt">3,200時間</td><td class="amt">1,744,000円</td><td>内</td></tr>
+      <tr><td><strong>8月</strong></td><td class="amt"><strong>4,000時間</strong></td><td class="amt"><strong>2,000,000円</strong></td><td>内 ← <strong>最高</strong></td></tr>
+      <tr><td><strong>9月</strong></td><td class="amt"><strong>2,400時間</strong></td><td class="amt"><strong>1,488,000円</strong></td><td>内 ← <strong>最低</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">正常操業圏の外にあるデータは、最初に捨てる</span>
+    <p>いちばん時間が少ないのは 6月 の 2,000時間 です。しかし<strong>これを最低点に使ってはいけません。</strong>正常操業圏を下回っているからです。</p>
+    <p>正常操業圏とは、その工場が<mark>通常の状態で操業する範囲</mark>のことです。この範囲の外では、原価の発生の仕方そのものが変わります。設備を止めた、臨時の残業を組んだ、といった特殊な事情が混ざっているため、<strong>ふだんの原価の姿を表していません。</strong></p>
+    <p>6月を最低点に使うと、変動費率 @360円・固定費 560,000円 という答えが出ます。正しい答え（@320円・720,000円）とはどちらも違います。<mark>異常なデータを1つ混ぜるだけで、変動費率も固定費も両方が狂います。</mark></p>
+    <p><strong>高低点法の問題を見たら、計算に入る前にまず正常操業圏の記述を探してください。</strong>問題文に正常操業圏が書いてあるのは、必ず除外させるデータが紛れているからです。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>正常操業圏の外のデータを除く。</strong>6月（2,000時間）を除外します。残るのは4月・5月・7月・8月・9月。</li>
+      <li><strong>残ったデータの最高点と最低点を選ぶ。</strong>最高は8月（4,000時間・2,000,000円）、最低は9月（2,400時間・1,488,000円）。<mark>操業度で選びます。</mark>原価の大小で選ぶのではありません。</li>
+      <li><strong>変動費率 ＝ 原価の差 ÷ 操業度の差。</strong><br>（2,000,000 − 1,488,000）÷（4,000 − 2,400）＝ 512,000 ÷ 1,600 ＝ <strong>@320円／時間</strong></li>
+      <li><strong>固定費 ＝ どちらかの点の原価 − 変動費率 × その点の操業度。</strong><br>2,000,000 − @320 × 4,000時間 ＝ 2,000,000 − 1,280,000 ＝ <strong>720,000円</strong></li>
+      <li><strong>もう一方の点で検算する。</strong><br>@320 × 2,400時間 ＋ 720,000 ＝ 768,000 ＋ 720,000 ＝ <strong>1,488,000円</strong>。9月の実績と一致します。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ引き算で変動費率が出るのか</span>
+    <p>2つの月のあいだで、<strong>固定費はどちらも同じ 720,000円</strong> です。定義からそうなります。だから2つの原価を引き算すると、<mark>固定費が消えて、増えた分の変動費だけが残ります。</mark></p>
+    <p>2,000,000 − 1,488,000 ＝ 512,000円。これは 1,600時間 ぶん多く働いたことで<strong>増えた変動費</strong>です。1時間あたりに直せば 512,000 ÷ 1,600 ＝ @320円。</p>
+    <p>公式として覚えるより、<strong>「引き算で固定費を消す」</strong>と理解しておくほうが安全です。どちらの点を引いても同じ答えが出る理由も、これで説明がつきます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">スキャッター・チャート法と回帰分析法は1級</span>
+    <p>固変分解の方法には、実績を散布図に打って目分量で直線を引く<strong>スキャッター・チャート法</strong>や、最小二乗法で統計的に直線を求める<strong>回帰分析法</strong>もあります。<mark>どちらも出題区分表では1級です。</mark></p>
+    <p>2級の答案で書くのは<strong>費目別精査法と高低点法の2つだけ</strong>です。名前だけ知っておけば、選択肢に混ざったときに消去できます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>直接原価計算の損益計算書</h2>
+
+  <p>第2章で並べた損益計算書を、もう一度ひな型として確認します。<strong>この並びを空で書けることが、この単元の最低ラインです。</strong></p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption class="small muted" style="text-align:left;padding-bottom:6px">直接原価計算方式の損益計算書（2月・販売4,000個）</caption>
+    <thead><tr><th>区分</th><th class="amt">金額</th><th>内訳</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ⅰ 売上高</strong></td><td class="amt">8,000,000</td><td class="small">@2,000 × 4,000個</td></tr>
+      <tr><td>Ⅱ 変動売上原価</td><td class="amt">4,400,000</td><td class="small">@1,100 × <mark>4,000個（販売量）</mark></td></tr>
+      <tr><td><strong>　変動製造マージン</strong></td><td class="amt"><strong>3,600,000</strong></td><td class="small">Ⅰ − Ⅱ</td></tr>
+      <tr><td>Ⅲ 変動販売費</td><td class="amt">400,000</td><td class="small">@100 × 4,000個</td></tr>
+      <tr><td><strong>　貢献利益</strong></td><td class="amt"><strong>3,200,000</strong></td><td class="small">変動製造マージン − Ⅲ</td></tr>
+      <tr><td>Ⅳ 固定費</td><td class="amt">2,400,000</td><td class="small">固定製造原価 1,800,000 ＋ 固定販管費 600,000</td></tr>
+      <tr><td><strong>　営業利益</strong></td><td class="amt"><strong>800,000</strong></td><td class="small">貢献利益 − Ⅳ</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="term">
+    <span class="term__w">貢献利益</span><span class="term__r">こうけんりえき</span>
+    <p><strong>売上高 − 変動費</strong>（変動製造原価と変動販売費の両方を引いたもの）。<mark>固定費の回収と利益の獲得に貢献する金額</mark>という意味です。</p>
+    <p style="margin-bottom:0">製品を1個多く売るたびに、この金額だけ固定費の穴が埋まっていきます。埋まりきった瞬間が損益分岐点で、そこから先は1個売るごとにそのまま利益が増えます。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">「貢献」という言葉の意味</span>
+    <p>製品Xを1個売ると、売上 2,000円 が入り、その1個を作って売るために 1,200円（変動費）が出ていきます。手元に残るのは 800円。</p>
+    <p>この 800円 は、そのまま利益になるわけではありません。<mark>まず月 2,400,000円 の固定費を埋めるのに使われます。</mark>3,000個 売れば 800 × 3,000 ＝ 2,400,000円 で固定費がちょうど埋まり、利益ゼロ。3,001個目からは、1個あたり 800円 がまるごと利益として増えていきます。</p>
+    <p>「1個あたりの利益」ではなく「1個あたりが固定費の回収に<strong>貢献</strong>する額」。この言い方が、CVP分析の計算をそのまま説明しています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">変動売上原価に掛けるのは販売量。生産量ではない</span>
+    <p>2月は 5,000個 作って 4,000個 売りました。変動売上原価は <strong>@1,100 × 4,000個</strong> であって、5,000個 ではありません。<mark>売れた分だけが売上原価</mark>という原則は、直接原価計算でも変わりません。</p>
+    <p>固定製造原価だけが例外的に「発生額の全額」を計上します。<strong>変動費は売れた分、固定費は発生した分。</strong>この使い分けが、直接原価計算の損益計算書の骨格です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">変動製造マージンと貢献利益を混同しない</span>
+    <p><strong>変動製造マージン ＝ 売上高 − 変動売上原価</strong>（変動<mark>製造</mark>原価だけを引いた段階）。<br><strong>貢献利益 ＝ 変動製造マージン − 変動販売費</strong>（変動費を<mark>すべて</mark>引いた段階）。</p>
+    <p>CVP分析で使うのは<strong>貢献利益</strong>のほうです。変動販売費を引き忘れると、貢献利益が過大になり、損益分岐点が実際より小さく出ます。<br>2月なら、変動販売費 400,000円 を引き忘れると貢献利益が 3,600,000円 になり、損益分岐点の売上高は 6,000,000円 ではなく 5,333,333円 と計算されてしまいます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>直接原価計算の記帳</h2>
+
+  <p>直接原価計算は考え方だけでなく、<strong>帳簿の付け方も変わります</strong>。変わるのは1点、<mark>固定製造原価を仕掛品勘定に振り替えない</mark>ことです。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">勘定連絡図のどこが変わるか</span>
+    <p>全部原価計算では、製造間接費は変動費も固定費もまとめて仕掛品勘定へ振り替えました。直接原価計算では、<mark>変動製造間接費だけが仕掛品へ行き、固定製造間接費は仕掛品を通らずに直接、損益（月次損益）へ向かいます。</mark></p>
+    <p>仕掛品を通らないということは、<strong>製品にも売上原価にも入らない</strong>ということです。だから在庫に固定費が乗りません。第1章で説明した性質が、そのまま勘定の流れに現れています。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption class="small muted" style="text-align:left;padding-bottom:6px">2月の記帳（直接原価計算）</caption>
+    <thead><tr><th>借方</th><th class="amt">金額</th><th>貸方</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">仕掛品</td><td class="amt">5,500,000</td><td class="c">材料・賃金・給料・製造間接費</td><td class="amt">5,500,000</td></tr>
+      <tr><td colspan="4" class="small muted">変動製造原価 @1,100 × 生産5,000個。固定製造原価 1,800,000円 はここに含めない</td></tr>
+      <tr><td class="d">製品</td><td class="amt">5,500,000</td><td class="c">仕掛品</td><td class="amt">5,500,000</td></tr>
+      <tr><td colspan="4" class="small muted">完成品5,000個（月初・月末の仕掛品なし）</td></tr>
+      <tr><td class="d">売上原価</td><td class="amt">4,400,000</td><td class="c">製品</td><td class="amt">4,400,000</td></tr>
+      <tr><td colspan="4" class="small muted">販売4,000個ぶん。月末製品1,000個＝1,100,000円 が製品勘定に残る（固定費は乗っていない）</td></tr>
+      <tr><td class="d">月次損益</td><td class="amt">1,800,000</td><td class="c">固定製造原価</td><td class="amt">1,800,000</td></tr>
+      <tr><td colspan="4" class="small muted">固定製造原価は期間原価。仕掛品を通さず全額を当月の費用にする</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">月末製品の金額が、全部原価計算と違う</span>
+    <p>直接原価計算の月末製品 ＝ @1,100 × 1,000個 ＝ <strong>1,100,000円</strong>。<br>全部原価計算の月末製品 ＝ @1,460 × 1,000個 ＝ <strong>1,460,000円</strong>。</p>
+    <p>差は <mark>360,000円</mark>。第2章で出した営業利益の差と同じ金額です。<strong>利益の差は、貸借対照表の在庫の差でもあります。</strong>損益計算書の話と貸借対照表の話が、同じ 360,000円 でつながっていることを確認してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>CVP分析① 損益分岐点</h2>
+
+  <div class="term">
+    <span class="term__w">CVP分析</span><span class="term__r">しーぶいぴーぶんせき</span>
+    <p>Cost（原価）・Volume（営業量）・Profit（利益）の関係を分析すること。<strong>損益分岐分析</strong>ともいいます。</p>
+    <p style="margin-bottom:0">「いくら売れば赤字を脱するか」「目標の利益を出すには何個売ればよいか」に答えるための計算です。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">損益分岐点</span><span class="term__r">そんえきぶんきてん</span>
+    <p><strong>営業利益がちょうどゼロになる売上高（または販売量）</strong>。これを下回れば損失、上回れば利益が出る分かれ目です。英語の Break-even point から<strong>BEP</strong> とも書かれます。</p>
+  </div>
+
+  <p>CVP分析の式は、すべて<strong>直接原価計算の損益計算書を逆から読んだもの</strong>です。覚える公式は増えません。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">出発点はこの1本の等式だけ</span>
+    <p style="text-align:center;font-size:1.05em"><strong>売上高 − 変動費 − 固定費 ＝ 営業利益</strong></p>
+    <p style="text-align:center;font-size:1.05em">言いかえると　<strong>貢献利益 − 固定費 ＝ 営業利益</strong></p>
+    <p>損益分岐点は「営業利益 ＝ 0」を代入した状態です。<mark>貢献利益 ＝ 固定費</mark> になる点、つまり<strong>貢献利益で固定費をちょうど回収しきった点</strong>です。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>損益分岐点の販売量 ＝ 固定費 ÷ 単位あたり貢献利益</strong><br>
+      2,400,000円 ÷ @800円 ＝ <strong>3,000個</strong><br>
+      <span class="small muted">単位あたり貢献利益 ＝ @2,000 − @1,200（＝ @1,100 ＋ @100）＝ @800円</span></li>
+      <li><strong>損益分岐点の売上高 ＝ 固定費 ÷ 貢献利益率</strong><br>
+      2,400,000円 ÷ 0.4 ＝ <strong>6,000,000円</strong><br>
+      <span class="small muted">貢献利益率 ＝ 単位あたり貢献利益 ÷ 販売単価 ＝ 800 ÷ 2,000 ＝ 0.4（40%）</span></li>
+      <li><strong>検算する。</strong>3,000個 × @2,000 ＝ 6,000,000円。①と②は同じ点を、個数で見るか金額で見るかの違いです。<br>
+      貢献利益 ＝ 6,000,000 × 0.4 ＝ 2,400,000円 ＝ 固定費。営業利益はゼロ。</li>
+    </ol>
+  </div>
+
+  <div class="term">
+    <span class="term__w">貢献利益率</span><span class="term__r">こうけんりえきりつ</span>
+    <p><strong>貢献利益 ÷ 売上高</strong>。売上高のうち何割が固定費の回収と利益に回るかを表します。</p>
+    <p style="margin-bottom:0">売上高から見た比率なので、<mark>変動費率 ＋ 貢献利益率 ＝ 1</mark> が常に成り立ちます。製品Xなら変動費率 60%、貢献利益率 40%。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">貢献利益率で割るか、単位あたり貢献利益で割るか</span>
+    <p>どちらの式も「固定費 ÷ 何か」の形で、<mark>割る相手を間違えると単位が変わります。</mark></p>
+    <p><strong>個数を聞かれたら 単位あたり貢献利益（円／個）で割る。</strong>2,400,000円 ÷ @800円／個 ＝ 3,000個。<br><strong>金額を聞かれたら 貢献利益率（無名数）で割る。</strong>2,400,000円 ÷ 0.4 ＝ 6,000,000円。</p>
+    <p>迷ったら<strong>単位で確かめてください。</strong>円 ÷（円／個）＝ 個、円 ÷ 比率 ＝ 円。式を覚えていなくても、聞かれている単位から割る相手が決まります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">販売単価が与えられない問題がある</span>
+    <p>「売上高 8,000,000円、変動費 4,800,000円、固定費 2,400,000円」とだけ与えられ、単価も個数も出てこない問題があります。この場合は<strong>個数の式が使えません。</strong></p>
+    <p>貢献利益 ＝ 8,000,000 − 4,800,000 ＝ 3,200,000円。貢献利益率 ＝ 3,200,000 ÷ 8,000,000 ＝ <strong>0.4</strong>。<br>損益分岐点の売上高 ＝ 2,400,000 ÷ 0.4 ＝ <strong>6,000,000円</strong>。</p>
+    <p><mark>総額から貢献利益率を出せば、単価が分からなくても売上高は求まります。</mark>個数を聞かれていないなら、単価を探す必要はありません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>CVP分析② 目標利益と安全余裕率</h2>
+
+  <p>損益分岐点が分かれば、そこから先の問いはすべて同じ式の応用です。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">目標営業利益を達成する売上高</span>
+    <p><strong>貢献利益 − 固定費 ＝ 営業利益</strong> の営業利益に、ゼロではなく目標額を入れるだけです。</p>
+    <p style="text-align:center"><strong>目標売上高 ＝（固定費 ＋ 目標営業利益）÷ 貢献利益率</strong><br><strong>目標販売量 ＝（固定費 ＋ 目標営業利益）÷ 単位あたり貢献利益</strong></p>
+    <p>目標営業利益 1,200,000円 なら、<br>販売量 ＝（2,400,000 ＋ 1,200,000）÷ @800 ＝ 3,600,000 ÷ 800 ＝ <strong>4,500個</strong><br>売上高 ＝（2,400,000 ＋ 1,200,000）÷ 0.4 ＝ <strong>9,000,000円</strong><br>検算：4,500個 × @2,000 ＝ 9,000,000円。一致します。</p>
+    <p><mark>固定費に目標利益を足した額を「回収すべき額」と見る</mark>、というのがこの式の意味です。固定費を埋めたあと、さらに目標利益ぶんを稼ぐまで売る、という順です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">目標「営業利益率」を指定された場合は足し算では済まない</span>
+    <p>「目標営業利益<strong>率</strong> 10%」のように、金額ではなく<strong>売上高に対する割合</strong>で指定されることがあります。このとき目標利益の金額は売上高しだいで動くので、<mark>固定費に足す形では書けません。</mark></p>
+    <p>求める売上高を S として、等式を立てます。<br>0.4S − 2,400,000 ＝ 0.1S<br>0.3S ＝ 2,400,000<br>S ＝ <strong>8,000,000円</strong></p>
+    <p>形としては<strong>（貢献利益率 − 目標営業利益率）で固定費を割る</strong>ことになります。2,400,000 ÷（0.4 − 0.1）＝ 8,000,000円。<br>検算：売上 8,000,000 × 0.4 ＝ 貢献利益 3,200,000。3,200,000 − 2,400,000 ＝ 営業利益 800,000円。800,000 ÷ 8,000,000 ＝ 10%。合っています。</p>
+    <p><strong>「利益」か「利益率」かを読み分けてください。</strong>率なのに足し算で処理すると答えが大きくずれます。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">安全余裕率</span><span class="term__r">あんぜんよゆうりつ</span>
+    <p><strong>（実際の売上高 − 損益分岐点の売上高）÷ 実際の売上高</strong>。安全率ともいいます。</p>
+    <p style="margin-bottom:0">現在の売上高が、損益分岐点からどれだけ余裕を持っているかを表します。<mark>売上が何%落ちるまで赤字にならないか</mark>という読み方をします。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">安全余裕率が何を教えてくれるのか</span>
+    <p>実際の売上高が 8,000,000円（販売4,000個）だとします。損益分岐点は 6,000,000円 でした。</p>
+    <p>安全余裕率 ＝（8,000,000 − 6,000,000）÷ 8,000,000 ＝ 2,000,000 ÷ 8,000,000 ＝ <strong>25%</strong></p>
+    <p>意味はこうです。<mark>今の売上が25%落ちるまでは、まだ黒字でいられる。</mark>25%を超えて落ちると赤字に転落します。同じ営業利益 800,000円 を出している会社でも、安全余裕率が 25% の会社と 5% の会社では、不況への耐性がまるで違います。</p>
+    <p><strong>割る相手は実際の売上高です。</strong>損益分岐点の売上高で割らないでください。「今の売上が何%落ちたら」を問うているので、分母は今の売上高です。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">損益分岐点比率との関係</span>
+    <p><strong>損益分岐点比率 ＝ 損益分岐点の売上高 ÷ 実際の売上高</strong>。6,000,000 ÷ 8,000,000 ＝ <strong>75%</strong>。</p>
+    <p><mark>安全余裕率 ＋ 損益分岐点比率 ＝ 100%</mark> が必ず成り立ちます。25% ＋ 75% ＝ 100%。<br>どちらを聞かれても、片方を出してから引き算すれば求まります。<strong>安全余裕率は高いほどよく、損益分岐点比率は低いほどよい。</strong>向きが逆なので、答案に書く前にどちらを聞かれたか確認してください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>損益分岐図表</h2>
+
+  <p>ここまでの関係を1枚の図にしたものが<strong>損益分岐図表</strong>です。横軸に売上高、縦軸に金額をとり、3本の線を引きます。</p>
+
+  <div class="figure">
+    <div class="svgwrap">
+    <svg viewBox="0 0 880 330" style="width:100%;height:auto;min-width:700px" role="img" aria-label="損益分岐図表。売上高線と総原価線が損益分岐点で交わる">
+      <!-- 軸 -->
+      <line x1="90" y1="40" x2="90" y2="280" stroke="var(--border-2)" stroke-width="1.5"/>
+      <line x1="90" y1="280" x2="830" y2="280" stroke="var(--border-2)" stroke-width="1.5"/>
+      <text x="60" y="44" font-size="11" fill="var(--muted)" text-anchor="end">10,000千円</text>
+      <text x="60" y="284" font-size="11" fill="var(--muted)" text-anchor="end">0</text>
+      <text x="90" y="302" font-size="11" fill="var(--muted)" text-anchor="middle">0</text>
+      <text x="820" y="302" font-size="11" fill="var(--muted)" text-anchor="middle">10,000千円</text>
+      <text x="855" y="284" font-size="12" fill="var(--muted)" font-weight="700">売上高</text>
+      <text x="36" y="26" font-size="12" fill="var(--muted)" font-weight="700">金額</text>
+
+      <!-- 利益の領域（BEPの右、売上高線と総原価線の間） -->
+      <polygon points="528,136 820,40 820,78.4" fill="var(--ok)" opacity="0.18"/>
+      <!-- 損失の領域（BEPの左） -->
+      <polygon points="90,280 90,222.4 528,136" fill="var(--danger)" opacity="0.18"/>
+
+      <!-- 固定費線 -->
+      <line x1="90" y1="222.4" x2="820" y2="222.4" stroke="var(--credit)" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="700" y="238" font-size="12.5" fill="var(--credit)" font-weight="700">固定費 2,400千円</text>
+
+      <!-- 総原価線 -->
+      <line x1="90" y1="222.4" x2="820" y2="78.4" stroke="var(--debit)" stroke-width="2.5"/>
+      <text x="726" y="70" font-size="12.5" fill="var(--debit)" font-weight="700">総原価線</text>
+      <text x="700" y="160" font-size="11" fill="var(--debit)">変動費（傾き0.6）</text>
+
+      <!-- 売上高線 -->
+      <line x1="90" y1="280" x2="820" y2="40" stroke="var(--accent)" stroke-width="2.5"/>
+      <text x="748" y="34" font-size="12.5" fill="var(--accent)" font-weight="700">売上高線（45度）</text>
+
+      <!-- 損益分岐点 -->
+      <circle cx="528" cy="136" r="6" fill="var(--warn)" stroke="var(--surface)" stroke-width="2"/>
+      <line x1="528" y1="136" x2="528" y2="280" stroke="var(--warn)" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <text x="528" y="122" font-size="12.5" fill="var(--warn)" font-weight="700" text-anchor="middle">損益分岐点</text>
+      <text x="528" y="298" font-size="11.5" fill="var(--warn)" font-weight="700" text-anchor="middle">6,000千円</text>
+
+      <!-- 領域ラベル -->
+      <text x="300" y="196" font-size="12.5" fill="var(--danger)" font-weight="700">損失</text>
+      <text x="700" y="104" font-size="12.5" fill="var(--ok)" font-weight="700">利益</text>
+
+      <!-- 実際売上高 -->
+      <line x1="674" y1="88" x2="674" y2="280" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="674" y="298" font-size="11" fill="var(--muted)" text-anchor="middle">8,000千円（実際）</text>
+    </svg>
+    </div>
+    <p class="figure__cap">売上高線と総原価線が交わる点が損益分岐点。交点の左では総原価線が上にあり損失、右では売上高線が上にあり利益になる。</p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>売上高線</strong>——原点から引く傾き1の直線。横軸も縦軸も売上高（金額）なので、必ず<mark>45度</mark>になります。</li>
+      <li><strong>固定費線</strong>——縦軸の 2,400,000円 の高さから引く<mark>水平線</mark>。売上高がいくらであっても固定費は変わらないので水平です。</li>
+      <li><strong>総原価線</strong>——固定費線の左端（縦軸上の 2,400,000円）を出発点として、<mark>傾きが変動費率（0.6）</mark>の直線を引きます。固定費線との縦の隔たりが変動費です。</li>
+      <li><strong>交点が損益分岐点。</strong>売上高線と総原価線が交わる点で、売上高と総原価が等しく、利益がゼロになります。この図では売上高 6,000,000円 の位置です。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">図から読み取れること</span>
+    <p><strong>交点の左側</strong>では総原価線が売上高線より上にあります。原価のほうが多い＝<mark>損失</mark>です。2本の線の隔たりが損失額を表します。</p>
+    <p><strong>交点の右側</strong>では売上高線が上に来ます。<mark>利益</mark>の領域で、隔たりが営業利益です。実際売上高 8,000,000円 の位置で測れば 800,000円 になります。</p>
+    <p>そして<mark>2本の線の開き方（角度の差）が貢献利益率です。</mark>貢献利益率が高いほど交点から先の開きが速く、少し売上が伸びただけで利益が大きく増えます。逆に固定費線の高さが上がると、交点は右へ動きます——<strong>固定費が増えると損益分岐点は上がる</strong>という関係が、図の上で見えます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">総原価線の出発点は固定費の高さ。原点ではない</span>
+    <p>総原価線を原点から引いてしまうと、売上ゼロのときの原価がゼロという図になります。<strong>売上がゼロでも固定費 2,400,000円 は発生します。</strong>だから総原価線は必ず縦軸上の固定費の高さから出発します。</p>
+    <p>また、固定費を下に置いて変動費を上に積む描き方（変動費を固定費の上に重ねる）もあります。どちらの描き方でも<mark>総原価線の位置と損益分岐点は同じ</mark>です。図の見た目に惑わされず、線の意味で読んでください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>固定費調整 — 全部原価計算の利益に戻す</h2>
+
+  <p><strong>2級で最も落としやすいのがここです。</strong>公式を暗記して符号を逆にする誤りが繰り返し起きます。第2章の「利益の差の正体は在庫の固定費」に戻れば、符号は毎回その場で導けます。</p>
+
+  <div class="term">
+    <span class="term__w">固定費調整</span><span class="term__r">こていひちょうせい</span>
+    <p>直接原価計算で計算した営業利益に、<strong>在庫に含まれる固定製造原価の増減を加減して、全部原価計算の営業利益に直す</strong>手続。</p>
+    <p style="margin-bottom:0">外部公表用の財務諸表は全部原価計算で作らなければならないため、社内で直接原価計算を採用している会社に必要になります。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">公式</span>
+    <p style="text-align:center;font-size:1.05em"><strong>全部原価計算の営業利益</strong><br>＝ 直接原価計算の営業利益<br>＋ <mark>期末</mark>棚卸資産に含まれる固定製造原価<br>− <mark>期首</mark>棚卸資産に含まれる固定製造原価</p>
+    <p class="small muted" style="text-align:center;margin-bottom:0">棚卸資産＝期末製品＋期末仕掛品。仕掛品があれば完成品換算量で計算する</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ期末を足し、期首を引くのか</span>
+    <p><strong>期末のぶん（足す）</strong>——期末に在庫が残ると、全部原価計算はその在庫に乗った固定費を<mark>資産として繰り越し、今期の費用から外します。</mark>費用が小さくなるぶん、利益は大きくなります。だから直接原価計算の利益に<strong>足します</strong>。</p>
+    <p><strong>期首のぶん（引く）</strong>——期首在庫には、前期の全部原価計算で繰り越されてきた固定費が乗っています。今期それが売れれば、<mark>前期の固定費が今期の売上原価に入ってきます。</mark>費用が大きくなるぶん、利益は小さくなります。だから<strong>引きます</strong>。</p>
+    <p>要するに<strong>「今期の費用から逃げた分を足し、前期から流れ込んできた分を引く」</strong>です。<mark>足す・引くを覚えるのではなく、費用がどちらに動くかを毎回考えてください。</mark></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">2月の検算（期首在庫なし）</span>
+    <p>直接原価計算の営業利益 800,000円<br>＋ 期末製品 1,000個 に含まれる固定製造原価 @360 × 1,000個 ＝ 360,000円<br>− 期首製品なし 0円<br>＝ <strong>1,160,000円</strong></p>
+    <p>第2章で全部原価計算の損益計算書から直接出した営業利益 1,160,000円 と一致します。</p>
+  </div>
+
+  <p>期首在庫がある場合を見ます。<strong>3月</strong>は、月初に2月から繰り越した製品 1,000個（固定費 @360）があり、当月 3,600個 を生産、4,200個 を販売しました。月末製品は 1,000 ＋ 3,600 − 4,200 ＝ <strong>400個</strong>です。製品の払出しは<strong>先入先出法</strong>によります。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption class="small muted" style="text-align:left;padding-bottom:6px">3月の固定費調整</caption>
+    <thead><tr><th>項目</th><th class="amt">金額</th><th>計算</th></tr></thead>
+    <tbody>
+      <tr><td>直接原価計算の営業利益</td><td class="amt">960,000</td><td class="small">貢献利益 @800 × 4,200個 ＝ 3,360,000 − 固定費 2,400,000</td></tr>
+      <tr><td>＋ 期末製品の固定製造原価</td><td class="amt">200,000</td><td class="small">当月の固定費率 1,800,000 ÷ 3,600個 ＝ @500 × 400個</td></tr>
+      <tr><td>− 期首製品の固定製造原価</td><td class="amt">△360,000</td><td class="small">2月から繰り越した @360 × 1,000個</td></tr>
+      <tr><td><strong>全部原価計算の営業利益</strong></td><td class="amt"><strong>800,000</strong></td><td class="small">960,000 ＋ 200,000 − 360,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">3月は全部原価計算のほうが利益が小さい</span>
+    <p>2月とは向きが逆です。3月は<strong>在庫が 1,000個 から 400個 へ減りました。</strong>減った分だけ、前期に繰り延べていた固定費が今期の費用として流れ込んできます。だから全部原価計算の利益のほうが小さくなります。</p>
+    <p>検算：直接原価計算の営業利益 960,000 − 全部原価計算の営業利益 800,000 ＝ 160,000円。<br>在庫の固定費の減少 360,000 − 200,000 ＝ <strong>160,000円</strong>。一致します。</p>
+    <p><mark>在庫が増えた月は全部原価計算の利益が大きく、減った月は小さい。</mark>この向きを、公式の符号ではなく在庫の動きから毎回確かめてください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">期首と期末で固定費率が違う</span>
+    <p>3月の期首製品に乗っている固定費は <mark>@360円</mark>（2月に 5,000個 作ったときの率）、期末製品に乗るのは <mark>@500円</mark>（3月に 3,600個 作ったときの率）です。<strong>同じ率を使ってはいけません。</strong></p>
+    <p>固定費率は<mark>その月の固定製造原価 ÷ その月の生産量</mark>で決まり、生産量が月ごとに違えば率も変わります。期首在庫は前月に作られたものなので、前月の率が乗ったままです。</p>
+    <p>問題文が期首在庫の固定費を金額で直接与えてくれることも多いので、<strong>与えられていたら自分で計算し直さないでください。</strong>与えられていない場合だけ、前月の生産量から率を出します。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">仕掛品があれば完成品換算量で計算する</span>
+    <p>期末に仕掛品がある場合、そこにも固定製造原価が乗っています。ただし<strong>加工が途中までしか進んでいない</strong>ので、固定費（加工費の一部）は完成品換算量で計算します。</p>
+    <p>期末仕掛品 200個・加工進捗度 50%、固定費率 @500円 なら、乗っている固定費は @500 × 200個 × 50% ＝ <strong>50,000円</strong>。個数そのままの 100,000円 ではありません。</p>
+    <p>UNIT 17 の完成品換算量と同じ考え方です。<mark>固定製造原価は加工費なので、進捗度を掛けます。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>営業費 — 製造原価ではない原価</h2>
+
+  <p>ここまで、工業簿記の関心はほぼ工場の中にありました。しかし製品は作っただけでは利益を生みません。<strong>売る活動と、会社を運営する活動にも原価がかかります。</strong></p>
+
+  <div class="term">
+    <span class="term__w">営業費</span><span class="term__r">えいぎょうひ</span>
+    <p><strong>販売費及び一般管理費</strong>のこと。製品を販売する活動と、会社全体を管理する活動にかかる原価です。</p>
+    <p style="margin-bottom:0"><mark>製造原価ではありません。</mark>製品原価に含めず、発生した期間の費用（期間原価）として処理します。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ営業費を製品原価に入れないのか</span>
+    <p>製造原価は「その製品を作るためにかかったもの」なので、その製品が売れた期の売上と対応させられます。ところが<strong>広告宣伝費や本社の管理部門の給料は、特定の製品と結びつきません。</strong></p>
+    <p>今月の広告が来月どの製品を何個売ることに貢献したのか、跡づけようがない。<mark>対応させる相手が特定できない以上、期間に対応させるほかありません。</mark>UNIT 03 の製品原価／期間原価の話が、そのままここに来ます。</p>
+    <p>なお、営業費は<strong>原価ではある</strong>点に注意してください。製造原価には入らないが総原価には入ります。支払利息のような非原価項目とは区別されます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">営業費の分類</span>
+    <p><strong>機能別</strong>——何をするための費用かで分けます。<mark>販売費</mark>（注文獲得費・注文履行費など。広告宣伝費、販売員給料、発送運賃、販売手数料）と<mark>一般管理費</mark>（本社建物の減価償却費、役員給料、本社事務員の給料）に分かれます。</p>
+    <p><strong>形態別</strong>——何に支払ったかで分けます。給料、減価償却費、通信費、旅費交通費など。製造原価を材料費・労務費・経費に分けたのと同じ発想です。</p>
+    <p><strong>変動費・固定費</strong>——この単元で最も重要な分け方です。<mark>営業費にも変動費と固定費があります。</mark>販売量に比例する発送運賃・販売手数料は変動販売費、販売量と無関係にかかる販売員の月給・広告宣伝費は固定販売費です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">営業費は製造原価ではないが、CVP分析には入る</span>
+    <p>直接原価計算の損益計算書で、変動販売費 @100円 を引いて貢献利益を出しました。<mark>営業費のうち変動費の部分は、貢献利益の計算に必ず入ります。</mark></p>
+    <p>「製造原価ではないから関係ない」と外してしまうと、貢献利益が過大になり、損益分岐点が過小に出ます。<strong>製品原価に入るかどうかと、CVP分析に入るかどうかは別の問題です。</strong>CVP分析に入るのは<mark>変動費か固定費か</mark>という基準だけで、発生場所は関係ありません。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <thead><tr><th>原価</th><th>製造原価か</th><th>変動費か</th><th>製品Xの計算での扱い</th></tr></thead>
+    <tbody>
+      <tr><td>直接材料費</td><td>製造原価</td><td>変動費</td><td>@1,100 に含む（製品原価）</td></tr>
+      <tr><td>変動製造間接費</td><td>製造原価</td><td>変動費</td><td>@1,100 に含む（製品原価）</td></tr>
+      <tr><td>工場建物の減価償却費</td><td>製造原価</td><td>固定費</td><td>固定製造原価 1,800,000円（期間原価）</td></tr>
+      <tr><td>発送運賃・販売手数料</td><td>営業費</td><td>変動費</td><td>変動販売費 @100（貢献利益の計算に入る）</td></tr>
+      <tr><td>本社役員の給料</td><td>営業費</td><td>固定費</td><td>固定販管費 600,000円</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>工場会計の独立</h2>
+
+  <p>工場が本社から離れた場所にあり、規模も大きくなると、工場の取引をいちいち本社へ報告して本社の帳簿に記入する運用は回らなくなります。そこで<strong>工場に帳簿を置き、工場の取引は工場で記帳する</strong>ようにします。これが工場会計の独立です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">帳簿を分けると、貸借が合わなくなる</span>
+    <p>工場が材料 500,000円 を掛けで仕入れたとします。材料は工場に届き、買掛金は本社が負っている。<strong>借方の材料は工場の帳簿、貸方の買掛金は本社の帳簿</strong>になります。</p>
+    <p>このままでは<mark>工場の帳簿は借方だけ、本社の帳簿は貸方だけ</mark>になり、どちらの帳簿も貸借が合いません。帳簿を2つに分けた以上、<strong>それぞれの帳簿の中で貸借を完結させる仕掛けが要ります。</strong></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">本社勘定と工場勘定でつなぐ</span>
+    <p>本社の帳簿に<mark>工場勘定</mark>を、工場の帳簿に<mark>本社勘定</mark>を置きます。相手の帳簿を1つの勘定で代表させ、そこを相手科目にして貸借を締めます。</p>
+    <p>材料 500,000円 を掛けで仕入れた取引なら、</p>
+    <p><strong>本社の帳簿：</strong>（借）工場 500,000 ／（貸）買掛金 500,000<br><strong>工場の帳簿：</strong>（借）材料 500,000 ／（貸）本社 500,000</p>
+    <p>これで両方の帳簿が単独で貸借一致します。<mark>工場勘定と本社勘定は、必ず同額で貸借が逆になります。</mark></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">本支店会計とまったく同じ構造</span>
+    <p>本社に<strong>支店勘定</strong>、支店に<strong>本店勘定</strong>を置き、同額で貸借逆に立てる——本支店会計で使う仕組みと構造が完全に同じです。呼び名が支店から工場に変わっただけで、<mark>照合勘定という考え方も、残高が必ず一致することも、決算で相殺消去して財務諸表から消えることも同じです。</mark></p>
+    <p>違うのは<strong>どの勘定が工場側にあるか</strong>という点だけです。本支店会計では支店が売上も仕入も持ちますが、工場会計では工場が持つのは製造に関係する勘定に限られます。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">どの勘定が工場にあるかは、問題文が指定する</span>
+    <p>工場の帳簿に置く勘定は会社によって違います。<strong>試験では必ず問題文に「工場には次の勘定が設けられている」という指定があります。</strong>この一覧が答案を決めます。</p>
+    <p>典型的な指定は<mark>材料・賃金・給料・製造間接費・仕掛品・製品・本社</mark>です。ここに<strong>ない</strong>勘定は本社の帳簿にあるので、工場の仕訳では<mark>本社</mark>で受けます。</p>
+    <p>たとえば製品が完成して本社の倉庫へ送られる会社なら、工場に製品勘定がありません。その場合、完成の仕訳は工場側で（借）本社／（貸）仕掛品 になります。<strong>指定の一覧を読まずに「製品だろう」と書くと落とします。</strong></p>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li><strong>その取引の借方・貸方の勘定を、ふつうに書く。</strong>材料 500,000 ／ 買掛金 500,000。</li>
+      <li><strong>指定の一覧を見て、どちらが工場の勘定かを判定する。</strong>材料は工場、買掛金は一覧にないので本社。</li>
+      <li><strong>問われているのが工場の仕訳なら、工場にない勘定を「本社」に置き換える。</strong>（借）材料 500,000 ／（貸）本社 500,000。</li>
+      <li><strong>本社の仕訳なら、本社にない勘定を「工場」に置き換える。</strong>（借）工場 500,000 ／（貸）買掛金 500,000。</li>
+    </ol>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">工場内で完結する取引には本社勘定が出てこない</span>
+    <p>材料を工場の倉庫から製造現場へ払い出した、という取引を考えます。<br>（借）仕掛品 ／（貸）材料。<strong>どちらも工場の勘定です。</strong></p>
+    <p>この場合、工場の帳簿の中だけで貸借が完結するので<mark>本社勘定は登場しません。</mark>そして本社の帳簿には<strong>何も記入されません</strong>（仕訳なし）。</p>
+    <p><strong>本社勘定・工場勘定が出るのは、取引が2つの帳簿にまたがるときだけです。</strong>すべての仕訳に本社勘定を書こうとして誤る例が多いので、まず「両方とも工場の勘定か」を確かめてください。</p>
+  </div>
+
+  <div class="taccounts">
+    <div class="tacc">
+      <div class="tacc__name">本社の帳簿：工場</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>買掛金</span><span>500,000</span></div>
+          <div class="l"><span>当座預金</span><span>820,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,320,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>製品</span><span>1,200,000</span></div>
+          <div class="l"><span><strong>残高</strong></span><span><strong>120,000</strong></span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,320,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tacc">
+      <div class="tacc__name">工場の帳簿：本社</div>
+      <div class="tacc__body">
+        <div class="tacc__side dr">
+          <div class="l"><span>製品</span><span>1,200,000</span></div>
+          <div class="l"><span><strong>残高</strong></span><span><strong>120,000</strong></span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,320,000</strong></span></div>
+        </div>
+        <div class="tacc__side cr">
+          <div class="l"><span>材料</span><span>500,000</span></div>
+          <div class="l"><span>賃金・給料</span><span>820,000</span></div>
+          <div class="l"><span><strong>合計</strong></span><span><strong>1,320,000</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="small muted">材料の掛仕入 500,000円、賃金の当座預金からの支払 820,000円、完成品 1,200,000円 の本社倉庫への引渡し（工場に製品勘定がない会社）を記入した状態。工場勘定は借方残高 120,000円、本社勘定は貸方残高 120,000円。<strong>両勘定は残高が必ず同額で、貸借が逆になる。</strong>締切のために反対側へ書いた「残高」を含めれば、どちらも合計 1,320,000円 で締まる。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">残高が一致しなければ、記入漏れか二重記入がある</span>
+    <p>工場勘定と本社勘定は<mark>同じ取引を裏表から記入したもの</mark>なので、残高は必ず一致します（貸借は逆）。</p>
+    <p>一致しないときは、どちらかの帳簿に記入漏れがあるか、二重に記入しています。<strong>答案を書き終えたら、この一致を検算に使ってください。</strong>第4問(1)は工場会計の独立が頻出で、しかも仕訳3題12点は満点を狙う場所です。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 8問</h2>
+
+  <p>解答欄は常に4行あります。<strong>行数から正解の科目数は読み取れません</strong>。使わない行は空欄のままにしてください。</p>
+
+  <div id="drill-cvp"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>計算ドリル 12問</h2>
+
+  <p>電卓を使って構いません。<strong>CVPの計算は、聞かれているのが個数か金額かを先に確かめてから割る相手を決めてください。</strong>固定費調整は在庫の動きから符号を導きます。</p>
+
+  <div id="num-cvp"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>確認テスト 12問</h2>
+
+  <div id="quiz-cvp"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s16"><span class="num">16</span>用語の穴埋め 8問</h2>
+
+  <p class="small muted">漢字またはひらがなで答えてください。空白は無視して採点されます。</p>
+
+  <div id="fill-cvp"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s17"><span class="num">17</span>このユニットの到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。</p>
+
+  <div class="progressbar" data-progress-for="#u24check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u24check">0 / 0 完了（0%）</div>
+
+  <div id="u24check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="k1" data-key="p1u24-1"><label for="k1"><span class="cl__t">全部原価計算で作りだめすると利益が増えて見える理由を説明できる</span><span class="cl__d">固定製造原価が生産量で頭割りされ、売れ残った製品にくっついて資産として繰り越される。今期の費用から外れるぶん利益が大きく出る</span></label></li>
+    <li><input type="checkbox" id="k2" data-key="p1u24-2"><label for="k2"><span class="cl__t">直接原価計算では固定製造原価を期間原価として全額落とすと言える</span><span class="cl__d">製品原価になるのは変動製造原価だけ。在庫に固定費が乗らないので、利益が販売量だけで決まる</span></label></li>
+    <li><input type="checkbox" id="k3" data-key="p1u24-3"><label for="k3"><span class="cl__t">「直接原価計算」の「直接」が直接費ではなく変動費を指すと分かっている</span><span class="cl__d">直接原価計算＝変動原価計算。変動製造間接費は直接原価計算でも製品原価に入る</span></label></li>
+    <li><input type="checkbox" id="k4" data-key="p1u24-4"><label for="k4"><span class="cl__t">直接原価計算で外部公表用の財務諸表は作れないと知っている</span><span class="cl__d">制度会計上は全部原価計算が義務。だから決算で固定費調整をして全部原価計算の利益に直す</span></label></li>
+    <li><input type="checkbox" id="k5" data-key="p1u24-5"><label for="k5"><span class="cl__t">2級の固変分解は費目別精査法と高低点法の2つだけだと分かっている</span><span class="cl__d">スキャッター・チャート法と回帰分析法は1級。選択肢に出てきたら消去できる</span></label></li>
+    <li><input type="checkbox" id="k6" data-key="p1u24-6"><label for="k6"><span class="cl__t">高低点法で、正常操業圏の外のデータを先に除外できる</span><span class="cl__d">異常なデータを1つ混ぜると変動費率も固定費も両方狂う。問題文に正常操業圏が書いてあるのは除外させるデータがあるから</span></label></li>
+    <li><input type="checkbox" id="k7" data-key="p1u24-7"><label for="k7"><span class="cl__t">高低点法で、操業度の高低で点を選ぶ（原価の大小ではない）と言える</span><span class="cl__d">変動費率＝原価の差÷操業度の差。引き算で固定費が消えるのが原理</span></label></li>
+    <li><input type="checkbox" id="k8" data-key="p1u24-8"><label for="k8"><span class="cl__t">直接原価計算の損益計算書のひな型を空で書ける</span><span class="cl__d">売上高 − 変動売上原価 ＝ 変動製造マージン − 変動販売費 ＝ 貢献利益 − 固定費 ＝ 営業利益</span></label></li>
+    <li><input type="checkbox" id="k9" data-key="p1u24-9"><label for="k9"><span class="cl__t">変動売上原価に掛けるのは販売量だと分かっている</span><span class="cl__d">変動費は売れた分、固定費は発生した分。生産量を掛けない</span></label></li>
+    <li><input type="checkbox" id="k10" data-key="p1u24-10"><label for="k10"><span class="cl__t">変動製造マージンと貢献利益を区別できる</span><span class="cl__d">変動製造マージンは変動製造原価だけを引いた段階。貢献利益は変動販売費まで引いた段階。CVP分析で使うのは貢献利益</span></label></li>
+    <li><input type="checkbox" id="k11" data-key="p1u24-11"><label for="k11"><span class="cl__t">損益分岐点の販売量と売上高を、割る相手を使い分けて計算できる</span><span class="cl__d">個数なら単位あたり貢献利益で割る、金額なら貢献利益率で割る。迷ったら単位で確かめる</span></label></li>
+    <li><input type="checkbox" id="k12" data-key="p1u24-12"><label for="k12"><span class="cl__t">目標営業利益を達成する売上高を計算できる</span><span class="cl__d">（固定費＋目標営業利益）÷貢献利益率。固定費に目標利益を足した額を回収すべき額と見る</span></label></li>
+    <li><input type="checkbox" id="k13" data-key="p1u24-13"><label for="k13"><span class="cl__t">目標営業利益「率」の指定は足し算では処理できないと分かっている</span><span class="cl__d">固定費÷（貢献利益率−目標営業利益率）。売上高をSと置いて等式を立てれば導ける</span></label></li>
+    <li><input type="checkbox" id="k14" data-key="p1u24-14"><label for="k14"><span class="cl__t">安全余裕率を計算でき、分母が実際売上高だと言える</span><span class="cl__d">（実際売上高−損益分岐点売上高）÷実際売上高。「今の売上が何%落ちるまで黒字か」なので分母は今の売上高</span></label></li>
+    <li><input type="checkbox" id="k15" data-key="p1u24-15"><label for="k15"><span class="cl__t">安全余裕率と損益分岐点比率の関係を言える</span><span class="cl__d">足すと100%。安全余裕率は高いほどよく、損益分岐点比率は低いほどよい</span></label></li>
+    <li><input type="checkbox" id="k16" data-key="p1u24-16"><label for="k16"><span class="cl__t">損益分岐図表を、3本の線の意味を説明しながら描ける</span><span class="cl__d">売上高線は原点から45度、固定費線は水平、総原価線は縦軸上の固定費の高さから傾き＝変動費率。交点が損益分岐点</span></label></li>
+    <li><input type="checkbox" id="k17" data-key="p1u24-17"><label for="k17"><span class="cl__t">総原価線が原点からではなく固定費の高さから出発する理由を言える</span><span class="cl__d">売上がゼロでも固定費は発生する</span></label></li>
+    <li><input type="checkbox" id="k18" data-key="p1u24-18"><label for="k18"><span class="cl__t">固定費調整の式を、符号を導きながら書ける</span><span class="cl__d">直接原価計算の営業利益＋期末在庫の固定費−期首在庫の固定費。期末は今期の費用から逃げた分、期首は前期から流れ込んだ分</span></label></li>
+    <li><input type="checkbox" id="k19" data-key="p1u24-19"><label for="k19"><span class="cl__t">在庫が増えた月と減った月で、どちらの利益が大きいかを判定できる</span><span class="cl__d">在庫が増えた月は全部原価計算が大きく、減った月は小さい。増減がなければ一致する</span></label></li>
+    <li><input type="checkbox" id="k20" data-key="p1u24-20"><label for="k20"><span class="cl__t">期首と期末で固定費率が違う場合があると分かっている</span><span class="cl__d">固定費率はその月の固定製造原価÷その月の生産量。期首在庫には前月の率が乗ったまま</span></label></li>
+    <li><input type="checkbox" id="k21" data-key="p1u24-21"><label for="k21"><span class="cl__t">期末仕掛品の固定費を完成品換算量で計算できる</span><span class="cl__d">固定製造原価は加工費なので、個数に進捗度を掛ける</span></label></li>
+    <li><input type="checkbox" id="k22" data-key="p1u24-22"><label for="k22"><span class="cl__t">営業費が製造原価ではないが原価ではあると説明できる</span><span class="cl__d">販売費及び一般管理費。製品と対応させられないので期間原価。製造原価には入らないが総原価には入る</span></label></li>
+    <li><input type="checkbox" id="k23" data-key="p1u24-23"><label for="k23"><span class="cl__t">営業費でも変動費の部分はCVP分析に入ると分かっている</span><span class="cl__d">CVP分析の基準は変動費か固定費かだけ。発生場所は関係ない。変動販売費を引き忘れると貢献利益が過大になる</span></label></li>
+    <li><input type="checkbox" id="k24" data-key="p1u24-24"><label for="k24"><span class="cl__t">工場会計の独立で、本社勘定と工場勘定がなぜ要るかを説明できる</span><span class="cl__d">帳簿を2つに分けると取引が両方にまたがり、それぞれの帳簿で貸借が合わなくなる。相手の帳簿を1つの勘定で代表させて締める</span></label></li>
+    <li><input type="checkbox" id="k25" data-key="p1u24-25"><label for="k25"><span class="cl__t">工場勘定と本社勘定の残高が必ず同額・貸借逆になると言え、検算に使える</span><span class="cl__d">同じ取引を裏表から記入したもの。一致しなければ記入漏れか二重記入。本支店会計の支店勘定・本店勘定と同じ構造</span></label></li>
+    <li><input type="checkbox" id="k26" data-key="p1u24-26"><label for="k26"><span class="cl__t">工場内で完結する取引には本社勘定が出てこないと分かっている</span><span class="cl__d">借方も貸方も工場の勘定なら工場の帳簿だけで締まる。本社側は仕訳なし</span></label></li>
+    <li><input type="checkbox" id="k27" data-key="p1u24-27"><label for="k27"><span class="cl__t">工場に置く勘定は問題文の指定で決まると分かっている</span><span class="cl__d">「工場には次の勘定が設けられている」の一覧が答案を決める。一覧にない勘定は本社で受ける</span></label></li>
+    <li><input type="checkbox" id="k28" data-key="p1u24-28"><label for="k28"><span class="cl__t">仕訳ドリル8問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。全問正解になるまで回す</span></label></li>
+    <li><input type="checkbox" id="k29" data-key="p1u24-29"><label for="k29"><span class="cl__t">計算ドリル12問・確認テスト12問を全問正解した</span><span class="cl__d">特に固定費調整の符号と、CVPで割る相手の取り違えを落とさない</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること — 工業簿記のインプット完了</span>
+    <p><strong>この単元で2級の工業簿記のインプットが完了しました。</strong>ここから先は、範囲を広げるのではなく、身についた範囲の精度を上げる時期です。</p>
+    <p>第5問は<mark>標準原価計算（UNIT 20）・CVP分析・直接原価計算</mark>から1問出ます。どれが来ても取れるようにしておけば12点が安定します。この単元で優先して固めるのは3つです。<mark>①直接原価計算の損益計算書のひな型</mark>、<mark>②損益分岐点と目標利益の計算で割る相手を間違えないこと</mark>、<mark>③固定費調整の符号を在庫の動きから導くこと</mark>。</p>
+    <p>第4問(1)の仕訳3題12点は満点を狙う場所で、<strong>工場会計の独立は費目別計算と並ぶ頻出</strong>です。問題文の勘定の一覧を読んでから書く、という手順を体に入れてください。</p>
+    <p>W8以降は工業簿記の新規インプットがありません。<strong>1日1題のペースで第4問・第5問に触れ続けてください。</strong>範囲が狭いぶん、離れると落ちるのも速い分野です。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 W7 ／ UNIT 24 直接原価計算とCVP分析</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+/* 工業簿記の勘定科目は標準・許容勘定科目表に載らないため、
+   正解科目をこのプールに自分で列挙する。 */
+var CVP_ACCOUNTS = [
+  '材料', '賃金・給料', '経費', '製造間接費', '仕掛品', '製品', '売上原価',
+  '変動売上原価', '固定製造原価', '月次損益', '損益',
+  '本社', '工場',
+  '売上', '売掛金', '現金', '当座預金', '買掛金', '未払金',
+  '販売費', '一般管理費', '広告宣伝費', '発送費', '減価償却費',
+  '賃率差異', '製造間接費配賦差異'
+];
+
+BokiJournal.mount('#drill-cvp', {
+  title: '仕訳ドリル — 直接原価計算と工場会計の独立',
+  accounts: CVP_ACCOUNTS,
+  questions: [
+    {
+      text: '<strong>直接原価計算</strong>を採用している。当月の変動製造原価を仕掛品勘定に振り替えた。内訳は直接材料費 3,300,000円（貸方は材料）、直接労務費 1,400,000円（貸方は賃金・給料）、変動製造間接費 800,000円（貸方は製造間接費）である。当月の固定製造原価 1,800,000円 はこの仕訳に含めない。',
+      debit: [['仕掛品', 5500000]],
+      credit: [['材料', 3300000], ['賃金・給料', 1400000], ['製造間接費', 800000]],
+      hint: '直接原価計算で仕掛品勘定に入るのは、変動製造原価だけです。',
+      explain: '<p>3,300,000 ＋ 1,400,000 ＋ 800,000 ＝ <strong>5,500,000円</strong>。@1,100 × 生産5,000個 と一致します。</p><p><mark>変動製造間接費 800,000円 は仕掛品に入ります。</mark>間接費だから外れるのではありません。外れるのは<strong>固定</strong>製造原価だけです。「直接原価計算」の「直接」は変動費のことなので、変動費であれば間接費でも製品原価になります。</p><p>固定製造原価 1,800,000円 は仕掛品を通りません。次の問で、どこへ行くのかを確認します。</p>'
+    },
+    {
+      text: '<strong>直接原価計算</strong>を採用している。当月の固定製造原価 1,800,000円 を月次損益勘定に振り替えた。',
+      debit: [['月次損益', 1800000]],
+      credit: [['固定製造原価', 1800000]],
+      hint: '固定製造原価は期間原価です。製品にくっつけずに、どこへ送るでしょうか。',
+      explain: '<p>固定製造原価は<strong>期間原価</strong>なので、発生した月の費用として全額を損益に送ります。<mark>仕掛品勘定を通りません。</mark></p><p>仕掛品を通らないということは、製品にも売上原価にも入らないということです。だから月末に製品が残っても、そこに固定費は乗りません。これが「利益が生産量で動かない」ことの正体です。</p><p>全部原価計算なら、この 1,800,000円 は製造間接費として仕掛品勘定へ振り替えられ、完成品と月末仕掛品に配分されていました。<strong>行き先が変わる仕訳はこの1本だけで、あとはすべて同じです。</strong></p>'
+    },
+    {
+      text: '<strong>直接原価計算</strong>を採用している。当月に 4,000個 を @2,000円 で掛け販売し、売上原価を計上した。製品の変動製造原価は @1,100円 である。売上と売上原価の仕訳を1つにまとめて示しなさい。',
+      debit: [['売掛金', 8000000], ['売上原価', 4400000]],
+      credit: [['売上', 8000000], ['製品', 4400000]],
+      hint: '売上原価に掛けるのは販売量です。当月の生産量は関係ありません。',
+      explain: '<p>売上 ＝ @2,000 × 4,000個 ＝ <strong>8,000,000円</strong>。<br>売上原価 ＝ @1,100 × <mark>4,000個（販売量）</mark> ＝ <strong>4,400,000円</strong>。</p><p>当月の生産が 5,000個 であっても、売上原価は売れた 4,000個 ぶんです。<strong>変動費は売れた分、固定費は発生した分。</strong>この使い分けが直接原価計算の損益計算書の骨格です。</p><p>残る 1,000個 ＝ 1,100,000円 が月末製品として製品勘定に残ります。全部原価計算なら @1,460 × 1,000個 ＝ 1,460,000円 で、差の 360,000円 が在庫に含まれる固定製造原価です。</p>'
+    },
+    {
+      text: '工場会計を独立させている。<strong>工場の仕訳</strong>を示しなさい。材料 500,000円 を掛けで仕入れ、工場の倉庫に搬入した。工場には材料・賃金・給料・製造間接費・仕掛品・製品・本社の各勘定が設けられている。',
+      debit: [['材料', 500000]],
+      credit: [['本社', 500000]],
+      hint: '買掛金は工場の勘定の一覧にありません。工場の帳簿では何で受けるでしょうか。',
+      explain: '<p>ふつうに書けば（借）材料 ／（貸）買掛金 です。しかし<mark>買掛金は工場の勘定の一覧にありません</mark>ので、本社の帳簿にあります。</p><p>工場の帳簿では、本社にある勘定を<strong>本社</strong>という1つの勘定で代表させます。（借）材料 500,000 ／（貸）<strong>本社</strong> 500,000。</p><p>本社側は（借）工場 500,000 ／（貸）買掛金 500,000 です。<mark>工場勘定と本社勘定は必ず同額で貸借が逆</mark>になります。この一致は答案の検算に使えます。</p>'
+    },
+    {
+      text: '工場会計を独立させている。<strong>本社の仕訳</strong>を示しなさい。工場の従業員に対する賃金 820,000円 を、本社の当座預金から支払った。工場には材料・賃金・給料・製造間接費・仕掛品・製品・本社の各勘定が設けられている。',
+      debit: [['工場', 820000]],
+      credit: [['当座預金', 820000]],
+      hint: '賃金・給料は工場の勘定です。本社の帳簿では何で受けるでしょうか。',
+      explain: '<p>ふつうに書けば（借）賃金・給料 ／（貸）当座預金 です。<mark>賃金・給料は工場の勘定の一覧にある</mark>ので、本社の帳簿にはありません。</p><p>本社の帳簿では、工場にある勘定を<strong>工場</strong>で代表させます。（借）<strong>工場</strong> 820,000 ／（貸）当座預金 820,000。</p><p>工場側は（借）賃金・給料 820,000 ／（貸）本社 820,000 です。<strong>支払ったのは本社なのに、費用は工場に計上される</strong>——この形が工場会計の独立の典型です。お金の出どころと原価の発生場所が分かれている取引ほど、本社勘定・工場勘定が登場します。</p>'
+    },
+    {
+      text: '工場会計を独立させている。<strong>工場の仕訳</strong>を示しなさい。工場の倉庫から材料 460,000円 を払い出した。うち 380,000円 は製品の製造のために直接消費し、残りは間接材料として消費した。工場には材料・賃金・給料・製造間接費・仕掛品・製品・本社の各勘定が設けられている。',
+      debit: [['仕掛品', 380000], ['製造間接費', 80000]],
+      credit: [['材料', 460000]],
+      hint: 'この取引に登場する勘定は、すべて工場の一覧にあります。本社勘定は要るでしょうか。',
+      explain: '<p>間接材料費 ＝ 460,000 − 380,000 ＝ <strong>80,000円</strong>。</p><p>仕掛品・製造間接費・材料は<mark>すべて工場の勘定</mark>です。工場の帳簿の中だけで貸借が完結するので、<strong>本社勘定は登場しません。</strong>そして本社の帳簿には何も記入されません（仕訳なし）。</p><p><strong>本社勘定・工場勘定が出るのは、取引が2つの帳簿にまたがるときだけです。</strong>すべての仕訳に本社勘定を書こうとして誤る例が多いので、まず「借方も貸方も工場の勘定か」を確かめてください。</p>'
+    },
+    {
+      text: '工場会計を独立させている。<strong>工場の仕訳</strong>を示しなさい。当月完成した製品 1,200,000円 を、本社の倉庫へ引き渡した。<strong>工場には材料・賃金・給料・製造間接費・仕掛品・本社の各勘定が設けられており、製品勘定は本社に置かれている。</strong>',
+      debit: [['本社', 1200000]],
+      credit: [['仕掛品', 1200000]],
+      hint: '工場の勘定の一覧に製品がありません。完成品の行き先は何で受けるでしょうか。',
+      explain: '<p>ふつうなら（借）製品 ／（貸）仕掛品 ですが、<mark>この会社は工場に製品勘定を置いていません。</mark>製品は本社の帳簿にあります。</p><p>したがって工場の仕訳は（借）<strong>本社</strong> 1,200,000 ／（貸）仕掛品 1,200,000。本社側は（借）製品 1,200,000 ／（貸）工場 1,200,000 です。</p><p><strong>前の問までは工場に製品勘定がありました。</strong>同じ「完成」という取引でも、勘定の一覧が変われば答案が変わります。<mark>問題文の「工場には次の勘定が設けられている」を読まずに書くと、ここで落とします。</mark></p>'
+    },
+    {
+      text: '工場会計を独立させている。<strong>本社の仕訳</strong>を示しなさい。本社の倉庫にある製品のうち 1,500,000円 を @2,000円 で得意先に掛け販売した。売価の合計は 2,600,000円 である。工場には材料・賃金・給料・製造間接費・仕掛品・本社の各勘定が設けられており、製品勘定は本社に置かれている。売上と売上原価の仕訳を1つにまとめて示しなさい。',
+      debit: [['売掛金', 2600000], ['売上原価', 1500000]],
+      credit: [['売上', 2600000], ['製品', 1500000]],
+      hint: '登場する勘定はすべて本社にあります。工場勘定は要るでしょうか。',
+      explain: '<p>売掛金・売上・売上原価・製品は<mark>すべて本社の勘定</mark>です。本社の帳簿の中だけで完結するので<strong>工場勘定は登場せず、工場側は仕訳なし</strong>です。</p><p>販売活動は本社が行い、工場は製造だけを担当する——この会社の分担がそのまま帳簿に現れています。</p><p>問6が「工場内で完結する取引」だったのに対し、こちらは<strong>本社内で完結する取引</strong>です。どちらの側でも、<mark>まず登場する勘定がどちらの帳簿にあるかを確かめる</mark>という手順は変わりません。</p>'
+    }
+  ]
+});
+
+BokiNum.mount('#num-cvp', {
+  title: '計算ドリル — CVP分析と固定費調整',
+  badge: '計算ドリル 12問',
+  questions: [
+    {
+      text: '製品Xの販売単価は @2,000円、製品1個あたりの変動製造原価は @1,100円、変動販売費は @100円である。月間の固定製造原価は 1,800,000円、固定販売費及び一般管理費は 600,000円 である。① 単位あたり変動費、② 単位あたり貢献利益、③ 貢献利益率（%）、④ 月間の固定費合計を求めなさい。',
+      answer: [1200, 800, 40, 2400000],
+      formula: ['1100 + 100', '2000 - (1100 + 100)', '(2000 - (1100 + 100)) / 2000 * 100', '1800000 + 600000'],
+      labels: ['① 単位あたり変動費（円）', '② 単位あたり貢献利益（円）', '③ 貢献利益率（%）', '④ 固定費合計（円）'],
+      hint: '変動費には変動製造原価だけでなく変動販売費も含めます。',
+      explain: '<p>① @1,100 ＋ @100 ＝ <strong>@1,200円</strong>。<mark>変動販売費を忘れないでください。</mark>製造原価ではありませんが、変動費であればCVP分析に入ります。<br>② @2,000 − @1,200 ＝ <strong>@800円</strong><br>③ 800 ÷ 2,000 ＝ <strong>40%</strong><br>④ 1,800,000 ＋ 600,000 ＝ <strong>2,400,000円</strong>。固定費も製造・販管の両方を合計します。</p><p>この4つがこの単元のすべての計算の入口です。<strong>変動費率は 60%</strong> で、貢献利益率 40% と足して 100% になります。</p>'
+    },
+    {
+      text: '前問と同じ条件である。① 損益分岐点の販売量（個）、② 損益分岐点の売上高（円）を求めなさい。',
+      answer: [3000, 6000000],
+      formula: ['(1800000 + 600000) / (2000 - 1100 - 100)', '(1800000 + 600000) / ((2000 - 1100 - 100) / 2000)'],
+      labels: ['① 損益分岐点の販売量（個）', '② 損益分岐点の売上高（円）'],
+      hint: '個数なら単位あたり貢献利益で割り、金額なら貢献利益率で割ります。',
+      explain: '<p>① 2,400,000 ÷ @800 ＝ <strong>3,000個</strong><br>② 2,400,000 ÷ 0.4 ＝ <strong>6,000,000円</strong></p><p>検算：3,000個 × @2,000 ＝ 6,000,000円。①と②は同じ点を個数で見るか金額で見るかの違いなので、必ずこの関係が成り立ちます。</p><p>意味を確かめます。3,000個 売ると貢献利益は @800 × 3,000 ＝ 2,400,000円 で、固定費 2,400,000円 とちょうど同額。営業利益はゼロです。<mark>貢献利益で固定費をちょうど回収しきった点</mark>が損益分岐点です。</p>'
+    },
+    {
+      text: '製品Xの条件は前問までと同じ（販売単価 @2,000円、単位あたり変動費 @1,200円、月間固定費 2,400,000円）である。目標営業利益 1,200,000円 を達成するための ① 販売量（個）、② 売上高（円）を求めなさい。',
+      answer: [4500, 9000000],
+      formula: ['(2400000 + 1200000) / (2000 - 1200)', '(2400000 + 1200000) / ((2000 - 1200) / 2000)'],
+      labels: ['① 目標販売量（個）', '② 目標売上高（円）'],
+      hint: '損益分岐点の式の「固定費」を「固定費＋目標営業利益」に置き換えるだけです。',
+      explain: '<p>① （2,400,000 ＋ 1,200,000）÷ @800 ＝ 3,600,000 ÷ 800 ＝ <strong>4,500個</strong><br>② （2,400,000 ＋ 1,200,000）÷ 0.4 ＝ <strong>9,000,000円</strong></p><p>検算：4,500個 × @2,000 ＝ 9,000,000円。<br>さらに：貢献利益 @800 × 4,500 ＝ 3,600,000 − 固定費 2,400,000 ＝ 営業利益 <strong>1,200,000円</strong>。目標どおりです。</p><p><mark>固定費に目標利益を足した額を「回収すべき額」と見る</mark>のがこの式の意味です。固定費を埋めたあと、さらに目標利益ぶんを稼ぐまで売る、という順番になっています。</p>'
+    },
+    {
+      text: '製品Xの条件は前問までと同じ（販売単価 @2,000円、単位あたり変動費 @1,200円、月間固定費 2,400,000円）である。<strong>売上高営業利益率 10%</strong> を達成するための売上高（円）を求めなさい。',
+      answer: 8000000,
+      formula: ['2400000 / ((2000 - 1200) / 2000 - 0.1)'],
+      hint: '目標利益が金額ではなく率で与えられています。売上高をSと置いて等式を立ててください。',
+      explain: '<p>求める売上高を S とすると、営業利益は 0.1S です。<br>貢献利益 0.4S − 固定費 2,400,000 ＝ 0.1S<br>0.3S ＝ 2,400,000<br>S ＝ <strong>8,000,000円</strong></p><p>式の形にすれば <mark>固定費 ÷（貢献利益率 − 目標営業利益率）</mark> ＝ 2,400,000 ÷（0.4 − 0.1）です。</p><p>検算：8,000,000 × 0.4 ＝ 貢献利益 3,200,000。3,200,000 − 2,400,000 ＝ 営業利益 800,000円。800,000 ÷ 8,000,000 ＝ 10%。合っています。</p><p><strong>「利益」か「利益率」かを読み分けてください。</strong>率なのに（2,400,000 ＋ 0.1）のような足し算で処理することはできません。目標利益の金額が売上高しだいで動くからです。</p>'
+    },
+    {
+      text: '製品Xの条件は前問までと同じ（販売単価 @2,000円、単位あたり変動費 @1,200円、月間固定費 2,400,000円）である。当月は 4,000個 を販売した。① 当月の売上高（円）、② 当月の営業利益（円）、③ 安全余裕率（%）、④ 損益分岐点比率（%）を求めなさい。',
+      answer: [8000000, 800000, 25, 75],
+      formula: ['2000 * 4000', '(2000 - 1200) * 4000 - 2400000', '(2000 * 4000 - 2400000 / ((2000 - 1200) / 2000)) / (2000 * 4000) * 100', '2400000 / ((2000 - 1200) / 2000) / (2000 * 4000) * 100'],
+      labels: ['① 売上高（円）', '② 営業利益（円）', '③ 安全余裕率（%）', '④ 損益分岐点比率（%）'],
+      hint: '③と④の分母はどちらも実際の売上高です。',
+      explain: '<p>① @2,000 × 4,000個 ＝ <strong>8,000,000円</strong><br>② 貢献利益 @800 × 4,000 ＝ 3,200,000 − 2,400,000 ＝ <strong>800,000円</strong><br>③ （8,000,000 − 6,000,000）÷ 8,000,000 ＝ <strong>25%</strong><br>④ 6,000,000 ÷ 8,000,000 ＝ <strong>75%</strong></p><p>検算：25% ＋ 75% ＝ 100%。<mark>安全余裕率と損益分岐点比率は必ず足して100%</mark>になるので、片方を出してから引き算で求められます。</p><p>③の意味は「今の売上が25%落ちるまでは黒字でいられる」。<strong>分母は実際の売上高です。</strong>損益分岐点の売上高で割らないでください。</p>'
+    },
+    {
+      text: '過去6か月の直接作業時間と製造間接費の実績は次のとおりである。<br>4月 2,800時間・1,616,000円／5月 3,600時間・1,872,000円／6月 2,000時間・1,280,000円／7月 3,200時間・1,744,000円／8月 4,000時間・2,000,000円／9月 2,400時間・1,488,000円<br><strong>正常操業圏は月間 2,400時間 〜 4,000時間 である。</strong>高低点法により ① 変動費率（円／時間）、② 月間固定費（円）を求めなさい。',
+      answer: [320, 720000],
+      formula: ['(2000000 - 1488000) / (4000 - 2400)', '2000000 - (2000000 - 1488000) / (4000 - 2400) * 4000'],
+      labels: ['① 変動費率（円／時間）', '② 月間固定費（円）'],
+      hint: '正常操業圏の外にあるデータを先に除いてください。',
+      explain: '<p><strong>6月（2,000時間）は正常操業圏を下回るので除外します。</strong>最も作業時間が少ない月ですが、最低点には使いません。</p><p>残ったデータの最高は8月（4,000時間・2,000,000円）、最低は9月（2,400時間・1,488,000円）。<br>① （2,000,000 − 1,488,000）÷（4,000 − 2,400）＝ 512,000 ÷ 1,600 ＝ <strong>@320円／時間</strong><br>② 2,000,000 − @320 × 4,000 ＝ 2,000,000 − 1,280,000 ＝ <strong>720,000円</strong></p><p>検算：@320 × 2,400 ＋ 720,000 ＝ 768,000 ＋ 720,000 ＝ 1,488,000円。9月の実績と一致します。</p><p><mark>6月を最低点に使うと @360円・560,000円 という答えが出て、どちらも誤りです。</mark>異常なデータを1つ混ぜるだけで変動費率も固定費も両方狂います。</p>'
+    },
+    {
+      text: '前問で求めた原価分解（変動費率 @320円／時間、月間固定費 720,000円）にもとづき、次月の直接作業時間を 3,400時間 と見込んだ場合の製造間接費の予測額（円）を求めなさい。',
+      answer: 1808000,
+      formula: ['320 * 3400 + 720000'],
+      hint: '変動費率×操業度 ＋ 固定費。UNIT 10 の変動予算と同じ式です。',
+      explain: '<p>@320 × 3,400時間 ＝ 1,088,000円（変動費）<br>＋ 720,000円（固定費）<br>＝ <strong>1,808,000円</strong></p><p>この式は <mark>UNIT 10 の変動予算（公式法変動予算）とまったく同じ</mark>です。「変動費率 × 操業度 ＋ 固定費」という直線で予算を組むには、まず原価を変動費と固定費に分けなければなりません。<strong>高低点法は、その分解を実績データから行う方法です。</strong></p><p>原価予測ができて初めて、予算も立てられ、CVP分析もできます。固変分解が工業簿記のいろいろな場面の土台になっているのはこのためです。</p>'
+    },
+    {
+      text: '当月の生産・販売データは、月初製品なし、当月生産 5,000個、当月販売 4,000個 である。販売単価 @2,000円、製品1個あたりの変動製造原価 @1,100円、変動販売費 @100円、当月の固定製造原価 1,800,000円、固定販売費及び一般管理費 600,000円。<strong>直接原価計算による</strong> ① 変動製造マージン、② 貢献利益、③ 営業利益を求めなさい。',
+      answer: [3600000, 3200000, 800000],
+      formula: ['2000 * 4000 - 1100 * 4000', '2000 * 4000 - 1100 * 4000 - 100 * 4000', '2000 * 4000 - 1100 * 4000 - 100 * 4000 - 1800000 - 600000'],
+      labels: ['① 変動製造マージン（円）', '② 貢献利益（円）', '③ 営業利益（円）'],
+      hint: '変動売上原価に掛けるのは販売量です。生産量5,000個ではありません。',
+      explain: '<p>売上高 ＝ @2,000 × 4,000個 ＝ 8,000,000円<br>① 変動売上原価 ＝ @1,100 × <mark>4,000個</mark> ＝ 4,400,000円。8,000,000 − 4,400,000 ＝ <strong>3,600,000円</strong><br>② 変動販売費 ＝ @100 × 4,000個 ＝ 400,000円。3,600,000 − 400,000 ＝ <strong>3,200,000円</strong><br>③ 3,200,000 − 1,800,000 − 600,000 ＝ <strong>800,000円</strong></p><p><strong>生産量 5,000個 はこの計算のどこにも出てきません。</strong>直接原価計算の営業利益は販売量だけで決まるからです。作りだめしても利益は変わりません。</p><p>①と②の違いを確認してください。<mark>①は変動製造原価だけを引いた段階、②は変動販売費まで引いた段階。</mark>CVP分析で使うのは②です。</p>'
+    },
+    {
+      text: '前問と同じ月について、<strong>全部原価計算</strong>による営業利益を計算する。当月の固定製造原価 1,800,000円 は当月生産量 5,000個 に配賦する。月初製品はない。① 製品1個あたりの全部製造原価、② 月末製品の金額、③ 売上原価、④ 営業利益を求めなさい。',
+      answer: [1460, 1460000, 5840000, 1160000],
+      formula: ['1100 + 1800000 / 5000', '(1100 + 1800000 / 5000) * (5000 - 4000)', '(1100 + 1800000 / 5000) * 4000', '2000 * 4000 - (1100 + 1800000 / 5000) * 4000 - 100 * 4000 - 600000'],
+      labels: ['① 単位原価（円）', '② 月末製品（円）', '③ 売上原価（円）', '④ 営業利益（円）'],
+      hint: '固定製造原価を生産量で頭割りして、変動製造原価に足します。販管費は製品原価に入りません。',
+      explain: '<p>① 固定費率 ＝ 1,800,000 ÷ 5,000個 ＝ @360円。@1,100 ＋ @360 ＝ <strong>@1,460円</strong><br>② 月末製品 ＝ 5,000 − 4,000 ＝ 1,000個。@1,460 × 1,000 ＝ <strong>1,460,000円</strong><br>③ @1,460 × 4,000個 ＝ <strong>5,840,000円</strong><br>④ 売上総利益 ＝ 8,000,000 − 5,840,000 ＝ 2,160,000。販管費 ＝ 変動販売費 400,000 ＋ 固定販管費 600,000 ＝ 1,000,000。2,160,000 − 1,000,000 ＝ <strong>1,160,000円</strong></p><p>前問の直接原価計算の営業利益 800,000円 と比べてください。<mark>売上はまったく同じなのに 360,000円 多く出ています。</mark></p><p>差の正体は月末製品に含まれる固定製造原価 @360 × 1,000個 ＝ <strong>360,000円</strong>。全部原価計算はこれを資産として繰り越し、今月の費用から外しました。</p>'
+    },
+    {
+      text: '当月（3月）の生産・販売データは、月初製品 1,000個（このうち固定製造原価は @360円）、当月生産 3,600個、当月販売 4,200個 である。当月の固定製造原価は 1,800,000円 で、当月生産量に配賦する。製品の払出しは先入先出法による。直接原価計算による営業利益は 960,000円 であった。① 当月の固定費率（円／個）、② 月末製品の個数、③ 月末製品に含まれる固定製造原価（円）、④ 全部原価計算の営業利益（円）を求めなさい。',
+      answer: [500, 400, 200000, 800000],
+      formula: ['1800000 / 3600', '1000 + 3600 - 4200', '1800000 / 3600 * (1000 + 3600 - 4200)', '960000 + 1800000 / 3600 * (1000 + 3600 - 4200) - 360 * 1000'],
+      labels: ['① 当月の固定費率（円／個）', '② 月末製品（個）', '③ 月末製品の固定製造原価（円）', '④ 全部原価計算の営業利益（円）'],
+      hint: '期首と期末で固定費率が違います。期首は @360円、期末は当月の率です。',
+      explain: '<p>① 1,800,000 ÷ 3,600個 ＝ <strong>@500円</strong><br>② 1,000 ＋ 3,600 − 4,200 ＝ <strong>400個</strong><br>③ @500 × 400個 ＝ <strong>200,000円</strong><br>④ 960,000 ＋ 200,000 − <mark>@360 × 1,000個 ＝ 360,000</mark> ＝ <strong>800,000円</strong></p><p><strong>期首の @360円 と期末の @500円 は違います。</strong>固定費率はその月の固定製造原価÷その月の生産量で決まり、生産量が違えば率も変わります。期首在庫は前月に作られたものなので前月の率が乗ったままです。</p><p>今月は在庫が 1,000個 → 400個 へ<mark>減りました</mark>。減った分だけ前月に繰り延べていた固定費が今月の費用として流れ込むので、全部原価計算の利益のほうが小さくなります。<br>検算：960,000 − 800,000 ＝ 160,000円。在庫の固定費の減少 360,000 − 200,000 ＝ 160,000円。一致します。</p>'
+    },
+    {
+      text: '当月の直接原価計算による営業利益は 1,450,000円 であった。当月の固定製造原価は 2,400,000円 で、当月生産量 4,000個 に配賦する。月初製品は 300個（このうち固定製造原価は @550円）、月末製品は 500個 であり、月初・月末とも仕掛品はない。固定費調整により全部原価計算の営業利益（円）を求めなさい。',
+      answer: 1585000,
+      formula: ['1450000 + 2400000 / 4000 * 500 - 550 * 300'],
+      hint: '期末の固定費を足し、期首の固定費を引きます。期末の固定費率は当月の率です。',
+      explain: '<p>当月の固定費率 ＝ 2,400,000 ÷ 4,000個 ＝ @600円。<br>期末製品の固定製造原価 ＝ @600 × 500個 ＝ <strong>300,000円</strong>（足す）<br>期首製品の固定製造原価 ＝ @550 × 300個 ＝ <strong>165,000円</strong>（引く）</p><p>1,450,000 ＋ 300,000 − 165,000 ＝ <strong>1,585,000円</strong></p><p>在庫が 300個 → 500個 へ<mark>増えた</mark>ので、全部原価計算の利益のほうが大きくなります。検算：1,585,000 − 1,450,000 ＝ 135,000円。在庫の固定費の増加 300,000 − 165,000 ＝ 135,000円。一致します。</p><p><strong>符号を覚えるのではなく、在庫が増えたか減ったかで向きを確かめてください。</strong>増えた月は全部原価計算が大きく、減った月は小さくなります。</p>'
+    },
+    {
+      text: '当月の直接原価計算による営業利益は 2,100,000円 であった。当月の固定製造原価は 3,000,000円 で、当月の完成品換算総量 5,000個 に配賦する。月初の製品・仕掛品はない。月末製品は 600個、月末仕掛品は 400個（加工進捗度 50%）である。① 当月の固定費率（円／個）、② 月末仕掛品に含まれる固定製造原価（円）、③ 全部原価計算の営業利益（円）を求めなさい。',
+      answer: [600, 120000, 2580000],
+      formula: ['3000000 / 5000', '3000000 / 5000 * 400 * 0.5', '2100000 + 3000000 / 5000 * 600 + 3000000 / 5000 * 400 * 0.5'],
+      labels: ['① 固定費率（円／個）', '② 月末仕掛品の固定製造原価（円）', '③ 全部原価計算の営業利益（円）'],
+      hint: '仕掛品は加工が途中なので、完成品換算量で計算します。',
+      explain: '<p>① 3,000,000 ÷ 5,000個 ＝ <strong>@600円</strong><br>② @600 × 400個 × <mark>50%</mark> ＝ <strong>120,000円</strong>。個数そのままの 240,000円 ではありません。<br>③ 2,100,000 ＋ @600 × 600個（＝360,000）＋ 120,000 ＝ <strong>2,580,000円</strong></p><p><strong>固定費調整の「期末棚卸資産」には製品だけでなく仕掛品も含みます。</strong>どちらにも固定製造原価が乗っているからです。</p><p>仕掛品に進捗度を掛けるのは、<mark>固定製造原価が加工費だから</mark>です。UNIT 17 の完成品換算量と同じ考え方で、加工が半分しか進んでいない仕掛品には、完成品の半分しか加工費が投入されていません。</p>'
+    }
+  ]
+});
+
+BokiQuiz.mount('#quiz-cvp', {
+  title: '確認テスト — 直接原価計算とCVP分析',
+  questions: [
+    {
+      text: '直接原価計算において、製品原価に含めるものはどれか。',
+      choices: [
+        '変動製造原価のみ',
+        '変動製造原価と変動販売費',
+        '変動製造原価と固定製造原価',
+        '直接材料費・直接労務費・直接経費（直接費のみ）'
+      ],
+      answer: 0,
+      explain: '<p>直接原価計算で製品原価になるのは<strong>変動製造原価だけ</strong>です。固定製造原価は期間原価として全額その期の費用にします。</p><p>選択肢2の変動販売費は製造原価ではないので、製品原価には入りません。ただし<mark>貢献利益の計算には入ります</mark>。製品原価に入るかどうかと、CVP分析に入るかどうかは別の問題です。</p><p>選択肢3は全部原価計算の説明です。<br>選択肢4は取り違えの典型です。<strong>「直接原価計算」の「直接」は直接費ではなく変動費を指します。</strong>直接原価計算＝変動原価計算であり、<mark>変動製造間接費は製品原価に入ります。</mark></p>'
+    },
+    {
+      text: '全部原価計算と直接原価計算の営業利益が<strong>一致する</strong>のはどのような場合か。',
+      choices: [
+        '当期の生産量が販売量を上回った場合',
+        '当期の生産量が販売量を下回った場合',
+        '期首と期末の棚卸資産に含まれる固定製造原価が同額である場合',
+        '固定製造原価が発生しなかった場合のみ'
+      ],
+      answer: 2,
+      explain: '<p>2つの利益の差は<mark>期末棚卸資産の固定費 − 期首棚卸資産の固定費</mark>です。この差がゼロであれば利益は一致します。期首も期末もゼロという場合はその特殊な例にすぎません。</p><p>選択肢1は在庫が増える場合で、<strong>全部原価計算のほうが利益が大きく</strong>なります。<br>選択肢2は在庫が減る場合で、<strong>全部原価計算のほうが利益が小さく</strong>なります。<br>選択肢4は条件として厳しすぎます。固定製造原価があっても、在庫に含まれる固定費が期首・期末で同額なら利益は一致します。</p><p><strong>「直接原価計算のほうが利益が小さい」と覚えると在庫が減った月に間違えます。</strong>どちらが大きいかは在庫の増減で決まります。</p>'
+    },
+    {
+      text: '原価の固変分解の方法のうち、<strong>日商簿記2級の出題範囲に含まれる</strong>ものの組み合わせはどれか。',
+      choices: [
+        '費目別精査法と高低点法',
+        '高低点法とスキャッター・チャート法',
+        'スキャッター・チャート法と回帰分析法',
+        '費目別精査法と回帰分析法'
+      ],
+      answer: 0,
+      explain: '<p>2級で扱うのは<strong>費目別精査法</strong>（勘定科目を1つずつ人が見て振り分ける）と<strong>高低点法</strong>（最高・最低の2点から直線を引く）の2つだけです。</p><p><mark>スキャッター・チャート法（散布図に目分量で直線を引く）と回帰分析法（最小二乗法）は1級です。</mark>名前だけ知っておけば、選択肢に混ざったときに消去できます。</p><p>この2つが1級である理由は方法の難しさにあります。回帰分析法は統計的な計算を要し、スキャッター・チャート法は目分量なので答えが一意に決まりません。</p>'
+    },
+    {
+      text: '高低点法で変動費率を計算するとき、使用する2点の選び方として正しいものはどれか。',
+      choices: [
+        'すべての実績データのうち、原価が最も高い月と最も低い月',
+        'すべての実績データのうち、操業度が最も高い月と最も低い月',
+        '正常操業圏内のデータのうち、操業度が最も高い月と最も低い月',
+        '正常操業圏内のデータのうち、原価が最も高い月と最も低い月'
+      ],
+      answer: 2,
+      explain: '<p>手順は2段階です。<strong>①正常操業圏の外のデータを除く ②残ったデータから操業度の最高点と最低点を選ぶ。</strong></p><p>選択肢1・2は正常操業圏の除外を飛ばしています。正常操業圏の外では原価の発生の仕方そのものが変わっているので、<mark>その点を使うと直線全体が狂います。</mark>問題文に正常操業圏が書いてあるのは、必ず除外させるデータが紛れているからです。</p><p>選択肢4は<strong>操業度ではなく原価で選んでいる</strong>点が誤りです。分解したいのは「操業度に対して原価がどう動くか」なので、基準にするのは操業度です。実際には原価は操業度に連動するため結果が同じになることが多いのですが、判断の根拠としては操業度が正しいものです。</p>'
+    },
+    {
+      text: '直接原価計算方式の損益計算書において、<strong>貢献利益</strong>はどのように計算されるか。',
+      choices: [
+        '売上高 − 変動売上原価',
+        '売上高 − 変動売上原価 − 変動販売費',
+        '売上高 − 変動費 − 固定製造原価',
+        '売上高 − 売上原価'
+      ],
+      answer: 1,
+      explain: '<p><strong>貢献利益 ＝ 売上高 − 変動費（変動売上原価 ＋ 変動販売費）</strong>です。変動費をすべて引いた段階の利益で、<mark>固定費の回収と利益の獲得に貢献する金額</mark>を意味します。</p><p>選択肢1は<strong>変動製造マージン</strong>で、変動製造原価だけを引いた段階です。ここで止めると変動販売費を引き忘れることになり、貢献利益が過大に、損益分岐点が過小に出ます。</p><p>選択肢3は固定製造原価まで引いていますが、固定販管費が残っているので営業利益でもありません。区分のどれにも当たりません。<br>選択肢4は全部原価計算の<strong>売上総利益</strong>です。</p>'
+    },
+    {
+      text: '販売単価 @5,000円、単位あたり変動費 @3,000円、月間固定費 3,600,000円 の製品がある。損益分岐点の売上高はいくらか。',
+      choices: ['7,200,000円', '9,000,000円', '6,000,000円', '12,000,000円'],
+      answer: 1,
+      invariant: [
+        ['3600000 / ((5000 - 3000) / 5000)', 'answer'],
+        ['3600000 / (5000 - 3000) * 5000', '9000000']
+      ],
+      explain: '<p>単位あたり貢献利益 ＝ @5,000 − @3,000 ＝ @2,000円。貢献利益率 ＝ 2,000 ÷ 5,000 ＝ 0.4。</p><p>損益分岐点の売上高 ＝ 3,600,000 ÷ 0.4 ＝ <strong>9,000,000円</strong>。<br>販売量から出しても同じです。3,600,000 ÷ @2,000 ＝ 1,800個。1,800個 × @5,000 ＝ 9,000,000円。</p><p>選択肢3の 6,000,000円 は、<mark>貢献利益率ではなく変動費率 0.6 で割ってしまった</mark>誤りです（3,600,000 ÷ 0.6）。割る相手を取り違えた典型です。<br>選択肢1の 7,200,000円 は固定費の2倍、選択肢4の 12,000,000円 は営業利益率10%を達成する売上高で、この設問の答えではありません。</p>'
+    },
+    {
+      text: '販売単価 @5,000円、単位あたり変動費 @3,000円、月間固定費 3,600,000円 の製品がある。目標営業利益 900,000円 を達成するために必要な販売量は何個か。',
+      choices: ['1,800個', '2,250個', '2,700個', '450個'],
+      answer: 1,
+      invariant: [
+        ['(3600000 + 900000) / (5000 - 3000)', 'answer'],
+        ['(3600000 + 900000) / 2000', '2250']
+      ],
+      explain: '<p>（固定費 3,600,000 ＋ 目標営業利益 900,000）÷ 単位あたり貢献利益 @2,000 ＝ 4,500,000 ÷ 2,000 ＝ <strong>2,250個</strong>。</p><p>検算：貢献利益 @2,000 × 2,250 ＝ 4,500,000。4,500,000 − 3,600,000 ＝ 営業利益 900,000円。目標どおりです。</p><p>選択肢1の 1,800個 は損益分岐点の販売量で、目標利益を足し忘れた答えです。<br>選択肢4の 450個 は目標利益だけを貢献利益で割った値（900,000 ÷ 2,000）で、固定費の回収を忘れています。<mark>固定費を埋めたあと、さらに目標利益ぶんを稼ぐ</mark>という順を思い出せば避けられます。</p>'
+    },
+    {
+      text: '当月の売上高は 15,000,000円、損益分岐点の売上高は 9,000,000円 であった。安全余裕率はいくらか。',
+      choices: ['40%', '60%', '66.7%', '166.7%'],
+      answer: 0,
+      invariant: [
+        ['(15000000 - 9000000) / 15000000 * 100', 'answer'],
+        ['9000000 / 15000000 * 100', '60']
+      ],
+      explain: '<p>安全余裕率 ＝（実際売上高 − 損益分岐点売上高）÷ <mark>実際売上高</mark> ＝（15,000,000 − 9,000,000）÷ 15,000,000 ＝ <strong>40%</strong>。</p><p>意味は「今の売上が40%落ちるまでは黒字でいられる」です。</p><p>選択肢2の 60% は<strong>損益分岐点比率</strong>（9,000,000 ÷ 15,000,000）です。<mark>安全余裕率 ＋ 損益分岐点比率 ＝ 100%</mark> なので、どちらを聞かれたか読み違えるとこの誤答になります。<br>選択肢3の 66.7% は分母を損益分岐点売上高にした誤り（6,000,000 ÷ 9,000,000）です。<strong>分母は実際の売上高</strong>です。</p>'
+    },
+    {
+      text: '損益分岐図表における<strong>総原価線</strong>の説明として正しいものはどれか。',
+      choices: [
+        '原点を出発点とし、傾きは変動費率である',
+        '縦軸上の固定費の高さを出発点とし、傾きは変動費率である',
+        '縦軸上の固定費の高さを出発点とし、傾きは貢献利益率である',
+        '原点を出発点とし、傾きは1（45度）である'
+      ],
+      answer: 1,
+      explain: '<p>総原価線は<strong>縦軸上の固定費の高さから出発し、傾きが変動費率</strong>の直線です。</p><p>出発点が原点ではない理由は、<mark>売上がゼロでも固定費は発生する</mark>からです。原点から引いてしまうと、売上ゼロのときの原価がゼロという図になってしまいます。</p><p>傾きが変動費率なのは、売上が1円増えるごとに変動費が変動費率のぶんだけ増えるからです。選択肢3の貢献利益率は<mark>売上高線と総原価線の開き方</mark>を表すもので、総原価線そのものの傾きではありません。</p><p>選択肢4は<strong>売上高線</strong>の説明です。横軸も縦軸も売上高（金額）なので、売上高線は必ず45度になります。</p>'
+    },
+    {
+      text: '直接原価計算の営業利益から全部原価計算の営業利益を求める固定費調整について、正しいものはどれか。',
+      choices: [
+        '期首棚卸資産に含まれる固定製造原価を加算し、期末棚卸資産に含まれる固定製造原価を減算する',
+        '期末棚卸資産に含まれる固定製造原価を加算し、期首棚卸資産に含まれる固定製造原価を減算する',
+        '期首・期末の棚卸資産に含まれる固定製造原価を、いずれも加算する',
+        '当期の固定製造原価の発生額を全額加算する'
+      ],
+      answer: 1,
+      explain: '<p><strong>全部原価計算の営業利益 ＝ 直接原価計算の営業利益 ＋ 期末棚卸資産の固定製造原価 − 期首棚卸資産の固定製造原価。</strong></p><p>符号は意味から導けます。<mark>期末のぶん（足す）</mark>——全部原価計算は期末在庫に乗った固定費を資産として繰り越し、今期の費用から外します。費用が小さくなるぶん利益が大きくなるので足します。<br><mark>期首のぶん（引く）</mark>——期首在庫に乗っている前期の固定費が今期の売上原価に入ってきます。費用が大きくなるぶん利益が小さくなるので引きます。</p><p>選択肢1は符号が逆で、これが最も多い誤りです。<strong>公式を暗記せず、費用がどちらに動くかを毎回考えてください。</strong><br>選択肢4は、固定製造原価の全額ではなく<mark>在庫に含まれる部分だけ</mark>が調整の対象である点で誤りです。</p>'
+    },
+    {
+      text: '営業費（販売費及び一般管理費）の扱いについて、正しいものはどれか。',
+      choices: [
+        '製造原価ではないため原価ではなく、総原価にも含まれない',
+        '製造原価ではないが原価であり、期間原価として処理する',
+        '製造原価に含めたうえで、期間原価として処理する',
+        '変動費の部分だけが製品原価となり、固定費の部分は期間原価となる'
+      ],
+      answer: 1,
+      explain: '<p>営業費は<strong>製造原価ではありませんが、原価ではあります</strong>。総原価（製造原価＋販売費及び一般管理費）に含まれます。支払利息のような非原価項目とは区別されます。</p><p>製品原価にしないのは、<mark>広告宣伝費や本社の管理部門の給料が特定の製品と結びつかない</mark>からです。対応させる相手が特定できない以上、期間に対応させるほかありません。</p><p>選択肢3は前半が誤りです。営業費は工場の外で発生するので製造原価には入りません。<br>選択肢4は直接原価計算との混同です。<strong>営業費は変動費であっても製品原価にはなりません。</strong>ただし<mark>変動販売費は貢献利益の計算には入ります</mark>。製品原価に入るかどうかと、CVP分析に入るかどうかは別の問題です。</p>'
+    },
+    {
+      text: '工場会計を独立させている会社で、<strong>工場の帳簿に本社勘定が現れない</strong>取引はどれか。工場には材料・賃金・給料・製造間接費・仕掛品・製品・本社の各勘定が設けられている。',
+      choices: [
+        '本社が材料を掛けで仕入れ、工場の倉庫に搬入した',
+        '工場の従業員に対する賃金を、本社の当座預金から支払った',
+        '工場の倉庫から材料を払い出し、製品の製造のために消費した',
+        '工場で発生した水道光熱費を、本社が現金で支払った'
+      ],
+      answer: 2,
+      explain: '<p>選択肢3は（借）仕掛品 ／（貸）材料。<mark>どちらも工場の勘定</mark>なので、工場の帳簿の中だけで貸借が完結します。本社勘定は登場せず、本社側は仕訳なしです。</p><p>残る3つは、いずれも取引が2つの帳簿にまたがります。<br>選択肢1は買掛金が本社にあるので（借）材料／（貸）本社。<br>選択肢2は当座預金が本社にあるので（借）賃金・給料／（貸）本社。<br>選択肢4は現金が本社にあるので（借）製造間接費／（貸）本社。</p><p><strong>本社勘定・工場勘定が出るのは、取引が2つの帳簿にまたがるときだけです。</strong>まず「借方も貸方も工場の勘定か」を確かめてください。すべての仕訳に本社勘定を書こうとする誤りが多いところです。</p>'
+    }
+  ]
+});
+
+BokiFill.mount('#fill-cvp', {
+  title: '用語の穴埋め — 直接原価計算とCVP分析',
+  questions: [
+    {
+      text: '変動製造原価だけを製品原価とし、固定製造原価は発生した期間の費用として全額落とす原価計算の方法を何といいますか。',
+      answer: ['直接原価計算', 'ちょくせつげんかけいさん', '変動原価計算', 'へんどうげんかけいさん'],
+      explain: '<p><strong>直接原価計算</strong>（変動原価計算）。固定製造原価が在庫に乗らないので、<mark>利益が販売量だけで決まり、生産量では動きません。</mark>短期利益計画に使うための方法です。</p><p>「直接」は直接費のことではなく変動費を指します。<strong>変動製造間接費は直接原価計算でも製品原価に入ります。</strong>制度会計上は認められていないため、外部公表用には固定費調整で全部原価計算の利益に直します。</p>'
+    },
+    {
+      text: '売上高から変動費を差し引いた金額で、固定費の回収と利益の獲得に寄与する額を表すものを何といいますか。',
+      answer: ['貢献利益', 'こうけんりえき'],
+      explain: '<p><strong>貢献利益</strong> ＝ 売上高 − 変動費（変動売上原価 ＋ 変動販売費）。</p><p>製品を1個多く売るたびにこの金額だけ固定費の穴が埋まり、埋まりきった点が損益分岐点です。そこから先は1個売るごとにそのまま利益が増えます。<mark>「1個あたりの利益」ではなく「1個あたりが固定費の回収に貢献する額」</mark>という読み方をすると、CVP分析の式が意味として追えます。</p><p>変動売上原価だけを引いた段階は<strong>変動製造マージン</strong>で、貢献利益ではありません。</p>'
+    },
+    {
+      text: '営業利益がちょうどゼロになる売上高、つまり黒字と赤字の分かれ目となる点を何といいますか。',
+      answer: ['損益分岐点', 'そんえきぶんきてん'],
+      explain: '<p><strong>損益分岐点</strong>（Break-even point、BEP）。<mark>貢献利益 ＝ 固定費</mark> になる点です。</p><p>販売量 ＝ 固定費 ÷ 単位あたり貢献利益、売上高 ＝ 固定費 ÷ 貢献利益率。<strong>個数を聞かれたら単位あたり貢献利益で割り、金額を聞かれたら貢献利益率で割ります。</strong>迷ったら単位で確かめてください。円 ÷（円／個）＝ 個、円 ÷ 比率 ＝ 円。</p>'
+    },
+    {
+      text: '実際の売上高が損益分岐点の売上高をどれだけ上回っているかを、実際の売上高に対する割合で表したものを何といいますか。',
+      answer: ['安全余裕率', 'あんぜんよゆうりつ', '安全率', 'あんぜんりつ'],
+      explain: '<p><strong>安全余裕率</strong>（安全率）＝（実際売上高 − 損益分岐点売上高）÷ <mark>実際売上高</mark>。「今の売上が何%落ちるまで黒字でいられるか」を表します。</p><p><strong>分母は実際の売上高です。</strong>損益分岐点の売上高で割らないでください。<br>損益分岐点比率（＝損益分岐点売上高 ÷ 実際売上高）と足すと必ず100%になります。安全余裕率は高いほどよく、損益分岐点比率は低いほどよいので、向きが逆であることに注意してください。</p>'
+    },
+    {
+      text: '過去の実績データのうち、最高の操業度の点と最低の操業度の点の2つを使って、原価を変動費と固定費に分解する方法を何といいますか。',
+      answer: ['高低点法', 'こうていてんほう'],
+      explain: '<p><strong>高低点法</strong>。変動費率 ＝ 原価の差 ÷ 操業度の差、固定費 ＝ 一方の点の原価 − 変動費率 × その点の操業度。</p><p>引き算で変動費率が出るのは、<mark>2つの月で固定費が同額なので、引くと固定費が消えるから</mark>です。</p><p><strong>正常操業圏の外にあるデータは先に除きます。</strong>その範囲の外では原価の発生の仕方そのものが変わっており、1点混ぜるだけで変動費率も固定費も両方狂います。2級のもう1つの分解方法は<mark>費目別精査法</mark>で、スキャッター・チャート法と回帰分析法は1級です。</p>'
+    },
+    {
+      text: '直接原価計算で計算した営業利益に、在庫に含まれる固定製造原価を加減して、全部原価計算の営業利益に直す手続を何といいますか。',
+      answer: ['固定費調整', 'こていひちょうせい'],
+      explain: '<p><strong>固定費調整</strong>。全部原価計算の営業利益 ＝ 直接原価計算の営業利益 ＋ <mark>期末</mark>棚卸資産の固定製造原価 − <mark>期首</mark>棚卸資産の固定製造原価。</p><p>必要になるのは、<strong>外部公表用の財務諸表を全部原価計算で作らなければならない</strong>からです。</p><p>符号は「今期の費用から逃げた分を足し、前期から流れ込んできた分を引く」と考えれば導けます。棚卸資産には製品だけでなく<strong>仕掛品も含み、仕掛品は完成品換算量で計算します。</strong>期首と期末で固定費率が違う点にも注意してください。</p>'
+    },
+    {
+      text: '製品を販売する活動と会社全体を管理する活動にかかる原価で、販売費及び一般管理費とも呼ばれるものを何といいますか。',
+      answer: ['営業費', 'えいぎょうひ'],
+      explain: '<p><strong>営業費</strong>。<mark>製造原価ではありませんが、原価ではあります</mark>（総原価に含まれる）。特定の製品と対応させられないため、期間原価として処理します。</p><p>機能別には販売費と一般管理費に、形態別には給料・減価償却費・通信費などに分かれます。この単元で重要なのは<strong>変動費と固定費の分類</strong>です。</p><p>営業費は製品原価になりませんが、<mark>変動販売費は貢献利益の計算に入ります。</mark>CVP分析に入るかどうかの基準は変動費か固定費かだけで、発生場所は関係ありません。</p>'
+    },
+    {
+      text: '工場に帳簿を独立させたとき、工場の帳簿に設けられ、本社の帳簿にある勘定を代表して貸借を締めるために使われる勘定を何といいますか。',
+      answer: ['本社', '本社勘定', 'ほんしゃ', 'ほんしゃかんじょう'],
+      explain: '<p><strong>本社勘定</strong>。本社の帳簿には対になる<strong>工場勘定</strong>が置かれ、<mark>両者は必ず同額で貸借が逆</mark>になります。残高の一致は答案の検算に使えます。</p><p>本支店会計の<strong>支店勘定・本店勘定</strong>とまったく同じ構造です。照合勘定であること、決算で相殺消去して財務諸表から消えることも同じです。</p><p><strong>工場内で完結する取引には本社勘定は出てきません</strong>（本社側は仕訳なし）。また、どの勘定を工場に置くかは会社によって違うため、試験では必ず問題文の指定を読んでから書いてください。</p>'
+    }
+  ]
+});
+</script>
+
+</body>
+</html>
