@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="商-第六-1-0,商-第六-2-0,商-第六-3-0">
+<meta name="boki-subject" content="商">
+<title>連結会計① 資本連結 — 投資と資本の相殺消去・のれん・非支配株主持分・開始仕訳 — 日商簿記2級 Phase 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <a class="home" href="index.html">← Phase 1 目次</a>
+    <span class="topbar__title">UNIT 23 連結① 資本連結</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">W7 商業簿記 ／ UNIT 23 ／ 5時間</p>
+    <h1>連結会計① 資本連結<br>— 親会社と子会社を1つに束ねる</h1>
+    <p class="lead">親会社が子会社の株式を持っているとき、親会社の貸借対照表には「子会社株式」という資産が1行載っているだけです。その1行の裏にどんな工場があり、どれだけの借金があるのかは見えません。<strong>連結財務諸表</strong>は、その1行を子会社の中身そのものに置き換えて、グループ全体を1つの会社として描き直したものです。この単元では、その置き換えの中核である<mark>投資と資本の相殺消去</mark>と、そこから生まれる<strong>のれん</strong>・<strong>非支配株主持分</strong>、そして連結でいちばん独特な<strong>開始仕訳</strong>を身につけます。</p>
+    <div class="meta">
+      <span class="chip chip--accent">目安 5h</span>
+      <span class="chip">商業簿記</span>
+      <span class="chip">仕訳ドリル 14問</span>
+      <span class="chip">確認テスト・計算・穴埋めつき</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc__t">このページの内容</div>
+    <ol>
+      <li><a href="#s1">親会社の財務諸表だけでは何が見えないのか</a></li>
+      <li><a href="#s2">どこまでを「グループ」とするか — 支配の判定</a></li>
+      <li><a href="#s3">連結財務諸表の作り方 — 帳簿がないところで作る</a></li>
+      <li><a href="#s4">投資と資本の相殺消去 — 資本連結の中核</a></li>
+      <li><a href="#s5">非支配株主持分 — 親会社以外の株主の取り分</a></li>
+      <li><a href="#s6">のれん — 純資産より高く買った分</a></li>
+      <li><a href="#s7">のれんの償却と、負ののれん発生益</a></li>
+      <li><a href="#s8">開始仕訳 — 毎期、去年の修正をやり直す</a></li>
+      <li><a href="#s9">子会社の当期純利益の按分</a></li>
+      <li><a href="#s10">子会社が行った配当の修正</a></li>
+      <li><a href="#s11">2年分を通して書いてみる</a></li>
+      <li><a href="#s12">2級で扱わないこと</a></li>
+      <li><a href="#s13">仕訳ドリル 14問</a></li>
+      <li><a href="#s14">確認テスト・計算ドリル・穴埋め</a></li>
+      <li><a href="#s15">この単元の到達チェック</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s1"><span class="num">1</span>親会社の財務諸表だけでは何が見えないのか</h2>
+
+  <p>連結の仕訳に入る前に、<strong>なぜこんな面倒な手続きが要るのか</strong>を押さえます。ここが腑に落ちていないと、これから出てくる仕訳がただの暗記になります。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">身近な例え：会社ごと買った人の貸借対照表</span>
+    <p>あなたがラーメン店を1軒、店ごと 5,000万円で買ったとします。店には厨房設備があり、従業員がいて、銀行からの借入も 3,000万円あります。</p>
+    <p>ところがあなたの帳簿には、こう1行書かれるだけです。</p>
+    <p><strong>「株式 5,000万円」</strong></p>
+    <p>厨房設備も、従業員も、3,000万円の借金も、どこにも出てきません。<mark>あなたの財産の中身を、この1行は何も語っていません。</mark></p>
+    <p>連結財務諸表は、この1行を消して、代わりに<strong>店の設備・在庫・借金をそのまま自分の貸借対照表に並べる</strong>ものです。「株式 5,000万円」の代わりに「厨房設備 2,000万円、商品 500万円…、借入金 3,000万円」と書きます。</p>
+  </div>
+
+  <p>会社どうしでも同じことが起きます。親会社の個別の貸借対照表には「子会社株式」という1行しかありません。その子会社がどれだけ借金を抱えていようと、親会社の個別財務諸表の負債は1円も増えません。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">個別財務諸表だけだと、都合の悪いものを子会社に移せてしまう</span>
+    <p>借金を子会社に付け替えれば、親会社の貸借対照表から負債が消えます。売れ残った商品を子会社に売りつければ、親会社の帳簿では売上と利益が立ちます。</p>
+    <p>親会社が子会社を思いどおりに動かせる以上、<mark>「どちらの会社に置くか」を親会社が選べてしまう</mark>ということです。それでは投資家は本当の姿を判断できません。</p>
+    <p>だから、支配している会社をすべて合算した<strong>連結財務諸表</strong>を作り、グループ全体で1つの会社として成績と財産を示すことが求められます。上場会社が投資家に対して主に示しているのは、個別ではなくこの連結財務諸表です。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">連結財務諸表</span><span class="term__r">れんけつざいむしょひょう</span>
+    <p><strong>支配従属関係にある2つ以上の会社からなる企業集団を、1つの会社とみなして作成する財務諸表。</strong>親会社が作成し、子会社の財産・負債・損益をすべて取り込みます。2級で作成が問われるのは連結損益計算書・連結貸借対照表・連結株主資本等変動計算書の3つです。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この単元が教材全体のどこに位置するか</span>
+    <p>連結は2級で最も忘れやすい論点なので、この教材では<strong>2回に分けて</strong>学びます。</p>
+    <ul>
+      <li><strong>この単元（W7）</strong> … 資本連結。親会社と子会社の<mark>資本関係</mark>を整理する。投資と資本の相殺消去、のれん、非支配株主持分、開始仕訳</li>
+      <li><strong>Phase 2 の3単元（W9）</strong> … 成果連結（グループ内取引の相殺）、未実現利益の消去、連結精算表・連結財務諸表の作成</li>
+    </ul>
+    <p>W9の3単元は、<strong>この単元で学ぶ開始仕訳の上に乗っています。</strong>2週間空けてから再会することで定着を狙う設計なので、ここでは急がず、<mark>開始仕訳の理屈</mark>まで確実に持って帰ってください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s2"><span class="num">2</span>どこまでを「グループ」とするか — 支配の判定</h2>
+
+  <p>連結の対象にするのは<strong>支配している会社</strong>です。では「支配している」とはどういう状態でしょうか。</p>
+
+  <div class="term">
+    <span class="term__w">親会社・子会社</span><span class="term__r">おやがいしゃ・こがいしゃ</span>
+    <p>他の会社の<strong>意思決定機関を支配している</strong>会社を親会社、支配されている会社を子会社といいます。株主総会の議決権の過半数を持っていれば、取締役を自分の思いどおりに選べるので、支配していることになります。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ「過半数」が境目なのか</span>
+    <p>株主総会の普通決議は<strong>出席した株主の議決権の過半数</strong>で決まります。取締役の選任も解任も普通決議です。</p>
+    <p>つまり議決権の50%超を握っていれば、<mark>取締役を自分が選べる</mark>。取締役が経営するのですから、その会社の経営方針を実質的に決められる、ということです。</p>
+    <p>50%ちょうどでは足りません。反対が50%あれば可決できないからです。<strong>「過半数」であって「半数以上」ではない</strong>ところに注意してください。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>議決権の所有割合と会社の区分（2級で問われる範囲）</caption>
+    <thead><tr><th>議決権の割合</th><th>区分</th><th>個別上の株式の科目</th><th>連結での扱い</th></tr></thead>
+    <tbody>
+      <tr><td><strong>50%超</strong></td><td>子会社</td><td>子会社株式</td><td><strong>連結する</strong>（この単元）</td></tr>
+      <tr><td>20%以上 50%以下</td><td>関連会社</td><td>関連会社株式</td><td>持分法。<strong>1級の範囲</strong></td></tr>
+      <tr><td>20%未満</td><td>—</td><td>売買目的有価証券・その他有価証券など</td><td>連結しない</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>子会社株式・関連会社株式を個別上どう評価するかは UNIT 16 で扱いました。どちらも<strong>取得原価</strong>のまま据え置き、時価評価しません。この単元で相殺の相手になるのは、その取得原価です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">議決権の過半数を持たなくても子会社になる場合があります</span>
+    <p>実際の制度では、議決権が40%程度でも、役員の派遣や資金の供給によって意思決定機関を支配していると認められれば子会社になります（実質支配基準）。</p>
+    <p>ただし<strong>2級の出題では、議決権の過半数を取得して支配した、という形で与えられます。</strong>問題文に「発行済株式の70%を取得し、支配を獲得した」と書いてあれば、そこで判定は終わりです。割合から自分で判定させる出題は想定しなくて構いません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：連結しても子会社が消えるわけではない</span>
+    <p>連結財務諸表を作っても、<strong>子会社は法律上べつの会社のまま</strong>です。子会社は自分の帳簿をつけ続け、自分の決算書を作り続けます。</p>
+    <p>同じW7で学ぶ<strong>合併</strong>と、ここが決定的に違います。合併は相手の会社そのものが消滅して、資産・負債が自社の帳簿に入ってきます。連結は相手が生き続けたまま、<mark>報告書の上でだけ1つに見せる</mark>手続きです。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>　</th><th>合併（UNIT 21）</th><th>連結（この単元）</th></tr></thead>
+      <tbody>
+        <tr><td>相手の会社</td><td>消滅する</td><td>存続する</td></tr>
+        <tr><td>資産・負債の受け入れ</td><td>自社の帳簿に記入する</td><td>帳簿には記入せず、ワークシート上で合算する</td></tr>
+        <tr><td>のれん</td><td>生じる</td><td>生じる</td></tr>
+        <tr><td>非支配株主持分</td><td>生じない</td><td>100%子会社でなければ生じる</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>本支店会計（UNIT 22）とも構造が似ていますが、あちらは<strong>同一会社の中</strong>の話です。連結は別会社どうしを束ねます。「合算して内部を相殺消去する」という手順が共通しているだけで、対象がまったく違います。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s3"><span class="num">3</span>連結財務諸表の作り方 — 帳簿がないところで作る</h2>
+
+  <p>ここが連結のいちばん独特なところで、<strong>この性質からすべての手続きが導かれます。</strong>先に押さえてください。</p>
+
+  <div class="steps">
+    <ol>
+      <li><strong>親会社と子会社が、それぞれ自分の個別財務諸表を作る。</strong>ここはふつうの決算です</li>
+      <li><strong>2つの個別財務諸表を単純に合算する。</strong>売上高も売上高どうし、資産も資産どうし、機械的に足します</li>
+      <li><strong>合算した数字に修正を加える。</strong>これが<strong>連結修正仕訳</strong>です。ダブっているもの、グループ内で完結しているものを消します</li>
+      <li><strong>修正後の数字を、連結財務諸表の様式に並べる</strong></li>
+    </ol>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">連結修正仕訳は、どの会社の帳簿にも記入されない</span>
+    <p>この作業はすべて<strong>ワークシート（連結精算表）の上だけ</strong>で行われます。親会社の総勘定元帳にも、子会社の総勘定元帳にも、連結修正仕訳は1行も書かれません。</p>
+    <p>なぜなら、連結財務諸表を作る「連結会社」という法人は存在しないからです。帳簿を持っている主体がないので、記入する先がありません。</p>
+    <p>帳簿に残らないということは、<mark>翌年度になると去年の修正はきれいに消えている</mark>ということです。親会社の帳簿には去年と同じように「子会社株式」が載ったままだし、子会社の帳簿には去年と同じように「資本金」が載ったままです。</p>
+    <p>だから連結は毎期、<strong>過去にやった修正をもう一度やり直すところから始めます。</strong>これが §8 で扱う<strong>開始仕訳</strong>です。</p>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">決算整理仕訳とは決定的に違う</span>
+    <p>3級で学んだ決算整理仕訳は、<strong>自社の帳簿に書き込みます。</strong>書き込んだ結果が翌期首の残高になるので、翌期にやり直すことはありません。</p>
+    <p>連結修正仕訳は書き込む先がないので、<mark>効果が1期しか持たない</mark>。この違いが、連結を難しく感じさせる最大の原因です。</p>
+    <p>逆にいえば、この一点さえ腹に落ちていれば、開始仕訳は「当たり前のこと」になります。</p>
+  </div>
+
+  <h3>この単元で使う設例</h3>
+
+  <p>以降、断りがない限り次の関係を前提にします。<strong>W9の通し演習でも、同じP社とS社が登場します。</strong></p>
+
+  <div class="card">
+    <div class="card__label">前提</div>
+    <p>P社は <strong>X1年3月31日</strong>、S社の発行済株式の <strong>70%</strong> を <strong>340,000円</strong> で取得し、S社を支配した。</p>
+    <p>支配獲得日のS社の純資産は、<strong>資本金 300,000円</strong>、<strong>利益剰余金 100,000円</strong> であった。</p>
+    <p>両社の会計期間は 4月1日から3月31日までで一致している。</p>
+  </div>
+
+  <p>「P」は parent（親会社）、「S」は subsidiary（子会社）の頭文字です。試験の問題文でもこの記号が使われます。</p>
+
+  <!-- ============================================================ -->
+  <h2 id="s4"><span class="num">4</span>投資と資本の相殺消去 — 資本連結の中核</h2>
+
+  <p>合算した後、まず消さなければならないものがあります。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card__label">P社の帳簿にあるもの</div>
+      <p><strong>子会社株式 340,000円</strong></p>
+      <p class="small">S社に対する<mark>投資</mark>です。</p>
+    </div>
+    <div class="card">
+      <div class="card__label">S社の帳簿にあるもの</div>
+      <p><strong>資本金 300,000円<br>利益剰余金 100,000円</strong></p>
+      <p class="small">S社の<mark>資本</mark>、つまり純資産です。</p>
+    </div>
+  </div>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜこの2つを消すのか — 同じものを2回数えている</span>
+    <p>P社が持っている「子会社株式 340,000円」の中身は何でしょうか。<strong>S社そのもの</strong>です。S社の工場も、商品も、借金も、ぜんぶひっくるめた 70% 分の権利を、株式という形で持っています。</p>
+    <p>ところが連結では、S社の資産と負債を<mark>1つずつ合算して持ち込んでいます。</mark>商品も土地も借入金も、S社の分がすでに加わっています。</p>
+    <p>そこに「子会社株式 340,000円」まで残しておくと、<strong>S社の中身を2回数えたことになります。</strong>本体を持ち込んだのだから、それを表す株式は消さなければなりません。</p>
+    <p>そして、消す相手はS社の純資産です。ラーメン店の例えに戻れば、<mark>「店の株券」を消して「店の設備と借金」を持ち込んだ</mark>ので、持ち込んだ差引の正味＝純資産のほうが株券と対応します。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">投資と資本の相殺消去</span><span class="term__r">とうしとしほんのそうさいしょうきょ</span>
+    <p><strong>親会社の「子会社株式」（投資）と、子会社の「純資産」（資本）を相殺して消す連結修正仕訳。</strong>資本連結の中核であり、支配獲得日に最初に行う手続きです。</p>
+  </div>
+
+  <h3>まず100%子会社で考える</h3>
+
+  <p>非支配株主とのれんを同時に持ち込むと混乱します。<strong>いちばん単純な形から始めます。</strong></p>
+
+  <div class="card">
+    <div class="card__label">単純な例</div>
+    <p>P社はS社の発行済株式の <strong>100%</strong> を <strong>400,000円</strong> で取得した。支配獲得日のS社の純資産は、資本金 300,000円、利益剰余金 100,000円である。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 投資と資本の相殺消去（100%子会社・のれんなし）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">400,000</td></tr>
+      <tr><td class="d">利益剰余金</td><td class="d amt">100,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>子会社の純資産（資本金 ＋ 利益剰余金 ＝ 400,000円）と、子会社株式 400,000円がぴったり打ち消し合いました。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">向きの決め方は、いつもの簿記と同じ</span>
+    <ul>
+      <li><strong>資本金・利益剰余金は純資産</strong>なので、ホームポジションは貸方。減らすには<mark>借方</mark>に書く</li>
+      <li><strong>子会社株式は資産</strong>なので、ホームポジションは借方。減らすには<mark>貸方</mark>に書く</li>
+    </ul>
+    <p>特別な規則はありません。<strong>どちらも「減らす」方向に書いているだけ</strong>です。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：消すのは「支配獲得日」の純資産</span>
+    <p>相殺の相手になるのは、<strong>支配を獲得した日</strong>の子会社の純資産です。当期末の純資産ではありません。</p>
+    <p>P社が投資した 340,000円は、<mark>その日のS社の価値に対して払った金額</mark>です。その後にS社が稼いだ利益は、P社が支配してから生まれたものなので、相殺の対象ではなく、連結上の利益として取り込むべきものです。</p>
+    <p>問題文が「支配獲得日のS社の純資産は…」と書いているのは、そのためです。<strong>当期末の利益剰余金と取り違えると、のれんも非支配株主持分も全部狂います。</strong></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s5"><span class="num">5</span>非支配株主持分 — 親会社以外の株主の取り分</h2>
+
+  <p>実際には100%子会社ばかりではありません。設例のP社はS社株式の<strong>70%</strong>しか持っていません。残りの30%は、グループの外にいる別の株主が持っています。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">100%持っていないのに、子会社を全部取り込んでいいのか</span>
+    <p>連結では、子会社の資産と負債を<strong>持分比率に関係なく全額</strong>合算します。70%だから土地を70%だけ持ち込む、ということはしません。</p>
+    <p>理由は<mark>「支配しているから」</mark>です。70%を握っていれば、S社の土地をどう使うかはP社が決められます。使い道を決められる以上、グループの財産として全額を示すのが実態に合っています。</p>
+    <p>ただし、全額を持ち込んだままだと、<strong>S社の純資産のうち30%分は親会社株主のものではない</strong>という事実が消えてしまいます。だから、その30%分に名前をつけて純資産の中に区分表示します。それが<strong>非支配株主持分</strong>です。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">非支配株主持分</span><span class="term__r">ひしはいかぶぬしもちぶん</span>
+    <p><strong>子会社の純資産のうち、親会社に帰属しない部分。</strong>グループの外にいる子会社の株主（非支配株主）の取り分です。連結貸借対照表では<mark>純資産の部</mark>に、株主資本とは別の区分として表示します。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：非支配株主持分は負債ではない</span>
+    <p>「グループの外の人のもの」と聞くと負債に見えますが、<strong>負債ではありません。</strong>非支配株主に返済しなければならないお金ではないからです。株主は出資した人であって、貸した人ではありません。</p>
+    <p>連結貸借対照表の純資産の部は、次の3つに分かれます。</p>
+    <ul>
+      <li><strong>株主資本</strong>（資本金・資本剰余金・利益剰余金）… <mark>親会社株主</mark>のもの</li>
+      <li><strong>その他の包括利益累計額</strong> … その他有価証券評価差額金など。個別の貸借対照表で「評価・換算等差額等」と呼んでいた区分にあたる</li>
+      <li><strong>非支配株主持分</strong> … 子会社の株主のうち、親会社以外のもの</li>
+    </ul>
+    <p>2級で覚えるのは<strong>非支配株主持分が独立した区分になる</strong>ことです。個別の貸借対照表が株主資本と評価・換算等差額等の2本立てだったのに対し、連結ではそこに1本増えると考えてください。</p>
+    <p>負債の区分に書いてしまうと、負債合計も純資産合計も自己資本比率も、すべて狂います。</p>
+  </div>
+
+  <h3>設例で計算する</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">支配獲得日の計算</span>
+    <ul>
+      <li>S社の純資産＝資本金 300,000 ＋ 利益剰余金 100,000 ＝ <strong>400,000円</strong></li>
+      <li>P社の持分＝400,000 × 70% ＝ <strong>280,000円</strong></li>
+      <li>非支配株主持分＝400,000 × 30% ＝ <strong>120,000円</strong></li>
+    </ul>
+    <p class="small">検算：280,000 ＋ 120,000 ＝ 400,000円。純資産の全額が、親会社の持分と非支配株主持分に分かれています。</p>
+  </div>
+
+  <p>純資産 400,000円を全額消しつつ、そのうち30%分を非支配株主持分として立て直します。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 非支配株主持分を含む相殺（のれんは次節で扱うため、ここでは投資額を 280,000円と仮定）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">280,000</td></tr>
+      <tr><td class="d">利益剰余金</td><td class="d amt">100,000</td><td class="c">非支配株主持分</td><td class="c amt">120,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">貸借の確認：借方 300,000 ＋ 100,000 ＝ 400,000円。貸方 280,000 ＋ 120,000 ＝ 400,000円。一致します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この仕訳が言っていること</span>
+    <p>借方は<strong>「S社の純資産 400,000円を全額いったん消す」</strong>。貸方は<strong>「その行き先は2つ」</strong>です。</p>
+    <ul>
+      <li>280,000円分は、P社が持っていた子会社株式と打ち消し合って消える</li>
+      <li>120,000円分は、非支配株主持分という名前に付け替えて、純資産の中に残す</li>
+    </ul>
+    <p><mark>消えるのは親会社持分の部分だけ</mark>です。非支配株主の分は消えるのではなく、名前が変わるだけだと考えてください。</p>
+  </div>
+
+  <div class="figure">
+    <div class="svgwrap">
+      <svg viewBox="0 0 560 250" role="img" aria-label="子会社の純資産400,000円が、親会社持分280,000円と非支配株主持分120,000円に分かれ、親会社持分が子会社株式と相殺されて消える図">
+        <rect x="20" y="40" width="150" height="160" fill="var(--credit-bg)" stroke="var(--border-2)"/>
+        <text x="95" y="30" text-anchor="middle" font-size="13" fill="var(--text)">S社の純資産</text>
+        <text x="95" y="110" text-anchor="middle" font-size="13" fill="var(--text)">400,000</text>
+        <text x="95" y="130" text-anchor="middle" font-size="11" fill="var(--muted)">資本金 300,000</text>
+        <text x="95" y="146" text-anchor="middle" font-size="11" fill="var(--muted)">利益剰余金 100,000</text>
+
+        <path d="M180 90 L240 90" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar23)"/>
+        <path d="M180 160 L240 160" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar23)"/>
+        <defs>
+          <marker id="ar23" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0 0 L8 4 L0 8 z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+
+        <rect x="250" y="55" width="160" height="70" fill="var(--debit-bg)" stroke="var(--border-2)"/>
+        <text x="330" y="82" text-anchor="middle" font-size="12" fill="var(--text)">親会社持分 70%</text>
+        <text x="330" y="104" text-anchor="middle" font-size="13" fill="var(--text)">280,000</text>
+
+        <rect x="250" y="135" width="160" height="70" fill="var(--accent-br)" stroke="var(--border-2)"/>
+        <text x="330" y="162" text-anchor="middle" font-size="12" fill="var(--text)">非支配株主 30%</text>
+        <text x="330" y="184" text-anchor="middle" font-size="13" fill="var(--text)">120,000</text>
+
+        <path d="M420 90 L470 90" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar23)"/>
+        <path d="M420 170 L470 170" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar23)"/>
+        <text x="478" y="82" font-size="11" fill="var(--muted)">子会社株式と</text>
+        <text x="478" y="97" font-size="11" fill="var(--muted)">相殺して消える</text>
+        <text x="478" y="162" font-size="11" fill="var(--muted)">非支配株主持分</text>
+        <text x="478" y="177" font-size="11" fill="var(--muted)">として残る</text>
+      </svg>
+    </div>
+    <div class="figure__cap">子会社の純資産は、親会社持分と非支配株主持分に分かれる。消えるのは親会社持分のほうだけ。</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s6"><span class="num">6</span>のれん — 純資産より高く買った分</h2>
+
+  <p>いよいよ設例の本番です。P社が実際に払ったのは <strong>340,000円</strong>。ところが手に入れた純資産の持分は <strong>280,000円</strong>でした。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ 280,000円のものに 340,000円払うのか</span>
+    <p>差額の 60,000円は、無駄遣いでしょうか。ふつうはそうではありません。</p>
+    <p>会社の値打ちは、帳簿に載っている財産の差引だけでは決まりません。<strong>長年かけて築いたブランド、常連客、熟練した従業員、仕入先との関係。</strong>どれも帳簿には載っていませんが、確かに稼ぐ力を生んでいます。</p>
+    <p>P社はその稼ぐ力を見込んで、純資産より 60,000円多く払いました。この<mark>超過収益力に対して払った差額</mark>を資産として計上したものが<strong>のれん</strong>です。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">のれん</span><span class="term__r">のれん</span>
+    <p><strong>子会社株式の取得原価が、取得した子会社の純資産の親会社持分を上回る額。</strong>連結貸借対照表では<mark>無形固定資産</mark>に表示します。同じW7で学ぶ合併でも同じ名前・同じ性質のものが生じます。発生の仕方が違うだけで、のれんはのれんです。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">のれんの計算 — この式を覚える</span>
+    <p><strong>のれん ＝ 子会社株式の取得原価 − 子会社の純資産 × 親会社の持分比率</strong></p>
+    <p>設例では、</p>
+    <ul>
+      <li>子会社株式の取得原価＝<strong>340,000円</strong></li>
+      <li>子会社の純資産 × 持分比率＝400,000 × 70% ＝ <strong>280,000円</strong></li>
+      <li>のれん＝340,000 − 280,000 ＝ <strong>60,000円</strong></li>
+    </ul>
+    <p class="small">引く相手は<mark>純資産の全額ではなく、親会社持分の分だけ</mark>です。400,000円をまるごと引くと 340,000 − 400,000 ＝ −60,000円となり、符号まで逆になります。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 支配獲得日の投資と資本の相殺消去（設例・完成形）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">340,000</td></tr>
+      <tr><td class="d">利益剰余金</td><td class="d amt">100,000</td><td class="c">非支配株主持分</td><td class="c amt">120,000</td></tr>
+      <tr><td class="d">のれん</td><td class="d amt">60,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">貸借の確認：借方 300,000 ＋ 100,000 ＋ 60,000 ＝ 460,000円。貸方 340,000 ＋ 120,000 ＝ 460,000円。一致します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この1本が資本連結のすべて</span>
+    <p>支配獲得日に書く仕訳は、これ1本です。<strong>構造を毎回この順で組み立ててください。</strong></p>
+    <div class="steps">
+      <ol>
+        <li><strong>借方に、子会社の純資産をすべて並べる。</strong>資本金・資本剰余金・利益剰余金。問題文が与えたものを全額</li>
+        <li><strong>貸方に、子会社株式を取得原価で置く。</strong>親会社が払った金額そのまま</li>
+        <li><strong>貸方に、非支配株主持分を置く。</strong>子会社の純資産 × 非支配株主の比率</li>
+        <li><strong>貸借の差額をのれんとして借方に置く。</strong>ここで貸借が一致する</li>
+      </ol>
+    </div>
+    <p><mark>のれんは最後に差額で出す。</mark>これが最も間違えにくい順序です。公式を使って計算した額と、差額で出した額が一致すれば、検算にもなります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：非支配株主持分にはのれんを乗せない</span>
+    <p>のれん 60,000円は<strong>親会社が払った分についてだけ</strong>生じます。非支配株主持分は 400,000 × 30% ＝ 120,000円であって、ここにのれん相当額を上乗せすることはありません。</p>
+    <p>理由は、のれんが<mark>「親会社がいくら払ったか」から逆算して出てくるもの</mark>だからです。非支配株主は何も払っていないので、逆算のしようがありません。</p>
+    <p class="small">（親会社が払った金額から非支配株主の分も推定して、のれんを100%分計上する方法もありますが、日本の制度では採用されておらず、2級でも1級でも問われません。）</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s7"><span class="num">7</span>のれんの償却と、負ののれん発生益</h2>
+
+  <p>のれんは資産ですが、<strong>永久に置いておくものではありません。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ償却するのか</span>
+    <p>のれんの正体は、買った時点で見込んだ<strong>超過収益力</strong>でした。ところがその力は、放っておいて続くものではありません。ブランドも常連客も、その後の経営努力によって維持されるものです。</p>
+    <p>買った時点の超過収益力は時とともに薄れ、いま存在する超過収益力は<mark>買った後の自分の努力が生んだもの</mark>に入れ替わっていきます。買った後に自分で築いた価値を資産に計上することは認められていないので、<strong>買ったときののれんは、費用として配分して消していきます。</strong></p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">のれんの償却 — 2級で押さえる3点</span>
+    <ul>
+      <li><strong>20年以内</strong>に償却する。問題文が「10年間で償却する」と年数を指定してきます</li>
+      <li><strong>定額法</strong>による。月割計算が必要な場合は月割りします</li>
+      <li>償却額は<strong>のれん償却</strong>という費用で、連結損益計算書の<mark>販売費及び一般管理費</mark>に表示する</li>
+    </ul>
+    <p class="small">合併で生じたのれんの償却（UNIT 21）も、まったく同じ扱いです。<strong>20年以内・定額法・販売費及び一般管理費。</strong>発生の仕方が違っても、のれんののちの扱いは1つです。</p>
+  </div>
+
+  <p>設例では、のれん 60,000円を<strong>10年間で定額法により償却</strong>します。1年分は 60,000 ÷ 10 ＝ <strong>6,000円</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — のれんの償却（1年分）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">のれん償却</td><td class="d amt">6,000</td><td class="c">のれん</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>のれんは<strong>直接減額</strong>します。有形固定資産の減価償却累計額にあたるものは使いません。連結貸借対照表には、未償却残高だけが「のれん」として載ります。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：支配獲得日の年度には償却しない</span>
+    <p>設例では X1年3月31日に支配を獲得しました。これは<strong>会計期間の最終日</strong>です。</p>
+    <p>この日にのれんが生まれた瞬間、その年度は終わります。<mark>保有していた期間がゼロ</mark>なので、その年度の償却はありません。償却が始まるのは翌年度（X1年4月1日〜）からです。</p>
+    <p>問題文の「のれんは支配獲得の翌年度から10年間にわたり定額法で償却する」という一文は、このことを言っています。</p>
+    <p><strong>期中に支配を獲得した場合は月割りします。</strong>たとえば9月30日に支配を獲得して3月31日が決算日なら、その年度は6か月分だけ償却します。問題文の支配獲得日を必ず確認してください。</p>
+  </div>
+
+  <h3>負ののれん発生益 — 純資産より安く買えた場合</h3>
+
+  <p>逆に、純資産の持分より<strong>安く</strong>買えることもあります。</p>
+
+  <div class="card">
+    <div class="card__label">例</div>
+    <p>P社はS社の発行済株式の <strong>80%</strong> を <strong>230,000円</strong> で取得した。支配獲得日のS社の純資産は、資本金 250,000円、利益剰余金 50,000円である。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">計算</span>
+    <ul>
+      <li>S社の純資産＝250,000 ＋ 50,000 ＝ <strong>300,000円</strong></li>
+      <li>P社の持分＝300,000 × 80% ＝ <strong>240,000円</strong></li>
+      <li>非支配株主持分＝300,000 × 20% ＝ <strong>60,000円</strong></li>
+      <li>差額＝230,000 − 240,000 ＝ <strong>−10,000円</strong>（マイナス）</li>
+    </ul>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 負ののれんが生じる場合</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金</td><td class="d amt">250,000</td><td class="c">子会社株式</td><td class="c amt">230,000</td></tr>
+      <tr><td class="d">利益剰余金</td><td class="d amt">50,000</td><td class="c">非支配株主持分</td><td class="c amt">60,000</td></tr>
+      <tr><td class="d">　</td><td class="d amt">　</td><td class="c">負ののれん発生益</td><td class="c amt">10,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">貸借の確認：借方 250,000 ＋ 50,000 ＝ 300,000円。貸方 230,000 ＋ 60,000 ＋ 10,000 ＝ 300,000円。一致します。</p>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：負ののれんは資産のマイナスではなく、その期の利益</span>
+    <p>のれんが借方に立つ資産なのだから、負ののれんは貸方に立つ負債だろう、と考えたくなります。<strong>違います。</strong></p>
+    <p>負ののれんは<mark>発生した期の利益として一括で計上します。</mark>科目は<strong>負ののれん発生益</strong>で、連結損益計算書の<strong>特別利益</strong>に表示します。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>　</th><th>のれん</th><th>負ののれん発生益</th></tr></thead>
+      <tbody>
+        <tr><td>生じる場面</td><td>純資産の持分より高く買った</td><td>純資産の持分より安く買えた</td></tr>
+        <tr><td>連結上の分類</td><td>資産（無形固定資産）</td><td><strong>収益（特別利益）</strong></td></tr>
+        <tr><td>その後の扱い</td><td>20年以内に定額法で償却</td><td><strong>償却しない。その期で終わり</strong></td></tr>
+        <tr><td>翌期の開始仕訳</td><td>未償却残高を持ち越す</td><td>利益剰余金当期首残高に置き換わる</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>安く買えたということは、その時点で得をしたということです。<strong>得を将来に繰り延べる理由がない</strong>ので、その期の利益にします。償却という発想自体が出てきません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">2級で負ののれんが出る頻度</span>
+    <p>出題の中心はのれん（正の側）です。負ののれん発生益は、<strong>仕訳問題や語句の判定で問われる</strong>程度だと考えてよいでしょう。</p>
+    <p>ただし「科目名」と「特別利益であること」「償却しないこと」の3点は、聞かれたときに即答できる必要があります。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s8"><span class="num">8</span>開始仕訳 — 毎期、去年の修正をやり直す</h2>
+
+  <p><strong>この節が、この単元でいちばん重要です。</strong>Phase 2 で学ぶ成果連結・未実現利益・連結精算表は、すべてここで学ぶ開始仕訳の上に乗っています。</p>
+
+  <p>§3で確認したことを、もう一度思い出してください。<mark>連結修正仕訳は、どの会社の帳簿にも残りません。</mark></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">翌年度の朝、何が起きているか</span>
+    <p>X2年4月1日。連結2年目の仕事が始まります。手元には、P社とS社がそれぞれ作った個別財務諸表があります。</p>
+    <ul>
+      <li>P社の帳簿には、去年と同じように<strong>「子会社株式 340,000円」</strong>が載っている</li>
+      <li>S社の帳簿には、去年と同じように<strong>「資本金 300,000円」</strong>が載っている</li>
+      <li>去年ワークシートの上で立てたのれん 54,000円は、<strong>どこにもない</strong></li>
+      <li>去年立てた非支配株主持分 135,000円も、<strong>どこにもない</strong></li>
+    </ul>
+    <p>去年やった相殺は、記録が残る場所を持たないまま消えました。だから<strong>もう一度やり直します。</strong>これが開始仕訳です。</p>
+  </div>
+
+  <div class="term">
+    <span class="term__w">開始仕訳</span><span class="term__r">かいししわけ</span>
+    <p><strong>過年度に行った連結修正仕訳を、当期の連結作業の冒頭で再現する仕訳。</strong>連結修正仕訳が帳簿に残らないことから必然的に生じる手続きです。支配獲得から当期首までに積み上がったものを、まとめて1本に再現します。</p>
+  </div>
+
+  <h3>ただし、そのまま書き写すのではない</h3>
+
+  <p>去年の仕訳をそっくり書き写せばよい、というわけにはいきません。<strong>1か所だけ書き換えが要ります。</strong></p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">過年度の損益項目は「利益剰余金当期首残高」に置き換える</span>
+    <p>去年、のれんを 6,000円償却しました。仕訳は「のれん償却 6,000 ／ のれん 6,000」。のれん償却は<strong>費用</strong>です。</p>
+    <p>ここで考えてください。<mark>当期の連結で、前期の損益計算書を作りますか。</mark></p>
+    <p>作りません。当期の連結損益計算書に載るのは、当期の収益と費用だけです。前期の「のれん償却 6,000円」を当期の費用として書いたら、二重に費用を計上することになります。</p>
+    <p>では前期の費用や収益はどこへ行ったのか。<strong>前期の損益計算書を通じて、前期末＝当期首の利益剰余金に集約されています。</strong>前期に費用が 6,000円出たということは、当期首の利益剰余金がその分だけ少ない、ということです。</p>
+    <p>だから開始仕訳では、過年度の損益項目をすべて<strong>「利益剰余金当期首残高」</strong>という科目に置き換えます。</p>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">置き換えの規則 — これだけ覚える</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>前期に使った科目</th><th>開始仕訳での科目</th><th>貸借の向き</th></tr></thead>
+      <tbody>
+        <tr><td>のれん償却（費用）</td><td rowspan="3"><strong>利益剰余金当期首残高</strong></td><td rowspan="3">前期と<strong>同じ側</strong>のまま</td></tr>
+        <tr><td>非支配株主に帰属する当期純利益（損益）</td></tr>
+        <tr><td>負ののれん発生益（収益）</td></tr>
+        <tr><td>資本金（純資産）</td><td>資本金当期首残高</td><td>同じ側</td></tr>
+        <tr><td>非支配株主持分（純資産）</td><td>非支配株主持分当期首残高</td><td>同じ側</td></tr>
+        <tr><td>のれん・子会社株式（資産）</td><td><strong>そのまま</strong></td><td>同じ側</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><strong>貸借の向きは一切変わりません。</strong>変わるのは名前だけです。前期に借方に書いたものは借方のまま、貸方に書いたものは貸方のままで開始仕訳に書きます。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">「当期首残高」という言葉について</span>
+    <p>純資産の科目に付く「当期首残高」は、<strong>連結株主資本等変動計算書の行の名前</strong>です。株主資本等変動計算書は、純資産が1年でどう動いたかを「当期首残高 → 当期変動額 → 当期末残高」という形で示します。</p>
+    <p>答案用紙が株主資本等変動計算書の様式なら「利益剰余金当期首残高」と書き、単に「利益剰余金」という行しかなければそちらに書きます。<mark>答案用紙の行の名前をそのまま使う</mark>のが原則です。</p>
+    <p class="small">この単元の仕訳ドリルは勘定科目表の科目から選ぶ形式なので、<strong>「利益剰余金」「非支配株主持分」「資本金」</strong>と入力してください。「当期首残高」の区別はつけません。</p>
+  </div>
+
+  <h3>設例で作ってみる</h3>
+
+  <p>連結2年目（X2年4月1日〜X3年3月31日）の開始仕訳を作ります。まず、第1年度に何が起きたかを整理します。</p>
+
+  <div class="card">
+    <div class="card__label">第1年度（X1年4月1日〜X2年3月31日）に起きたこと</div>
+    <ul>
+      <li>S社の当期純利益は <strong>50,000円</strong>。剰余金の配当は行っていない</li>
+      <li>のれんを1年分償却した</li>
+    </ul>
+  </div>
+
+  <p>第1年度に書いた連結修正仕訳は、次の3本でした。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>第1年度の連結修正仕訳（振り返り）</caption>
+    <thead><tr><th>　</th><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3">① 投資と資本の相殺</td><td class="d">資本金</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">340,000</td></tr>
+      <tr><td class="d">利益剰余金</td><td class="d amt">100,000</td><td class="c">非支配株主持分</td><td class="c amt">120,000</td></tr>
+      <tr><td class="d">のれん</td><td class="d amt">60,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+      <tr><td>② のれんの償却</td><td class="d">のれん償却</td><td class="d amt">6,000</td><td class="c">のれん</td><td class="c amt">6,000</td></tr>
+      <tr><td>③ 当期純利益の按分</td><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">15,000</td><td class="c">非支配株主持分</td><td class="c amt">15,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">③の 15,000円は 50,000 × 30% です。仕組みは §9 で説明します。ここでは「子会社が稼いだ利益の30%は非支配株主のものなので、非支配株主持分を増やす」とだけ押さえてください。</p>
+
+  <p>この3本を、置き換えの規則に従って1本にまとめます。<strong>損益の科目は利益剰余金当期首残高に、純資産の科目は当期首残高に。</strong></p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">科目ごとに積み上げる</span>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>科目</th><th>計算</th><th class="amt">開始仕訳の金額</th></tr></thead>
+      <tbody>
+        <tr><td>資本金当期首残高（借方）</td><td>①のまま</td><td class="amt">300,000</td></tr>
+        <tr><td>利益剰余金当期首残高（借方）</td><td>①100,000 ＋ ②6,000 ＋ ③15,000</td><td class="amt"><strong>121,000</strong></td></tr>
+        <tr><td>のれん（借方）</td><td>①60,000 − ②6,000</td><td class="amt"><strong>54,000</strong></td></tr>
+        <tr><td>子会社株式（貸方）</td><td>①のまま</td><td class="amt">340,000</td></tr>
+        <tr><td>非支配株主持分当期首残高（貸方）</td><td>①120,000 ＋ ③15,000</td><td class="amt"><strong>135,000</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>①②③のいずれも借方だったものは借方に、貸方だったものは貸方に積み上げるだけです。<mark>②のれん償却も③非支配株主に帰属する当期純利益も、どちらも借方だったので、利益剰余金当期首残高の借方に合流します。</mark></p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結2年目の開始仕訳（完成形）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金当期首残高</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">340,000</td></tr>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">121,000</td><td class="c">非支配株主持分当期首残高</td><td class="c amt">135,000</td></tr>
+      <tr><td class="d">のれん</td><td class="d amt">54,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">貸借の確認：借方 300,000 ＋ 121,000 ＋ 54,000 ＝ 475,000円。貸方 340,000 ＋ 135,000 ＝ 475,000円。一致します。</p>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">もう一つの作り方 — 当期首の状態から直接組み立てる</span>
+    <p>過去の仕訳を1本ずつ積み上げる代わりに、<strong>「当期首時点で、それぞれいくらになっているか」を直接計算する</strong>やり方もあります。支配獲得から何年も経っている問題では、こちらが速いです。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>科目</th><th>当期首の金額をどう出すか</th><th class="amt">設例</th></tr></thead>
+      <tbody>
+        <tr><td>資本金当期首残高</td><td>支配獲得日の子会社の資本金（増資がなければ動かない）</td><td class="amt">300,000</td></tr>
+        <tr><td>のれん</td><td>当初ののれん − 経過年数分の償却</td><td class="amt">60,000 − 6,000 ＝ 54,000</td></tr>
+        <tr><td>子会社株式</td><td>取得原価（動かない）</td><td class="amt">340,000</td></tr>
+        <tr><td>非支配株主持分当期首残高</td><td><strong>当期首の子会社の純資産 × 非支配株主の比率</strong></td><td class="amt">450,000 × 30% ＝ 135,000</td></tr>
+        <tr><td>利益剰余金当期首残高</td><td><strong>貸借の差額</strong></td><td class="amt">121,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>当期首のS社の純資産は、資本金 300,000 ＋ 利益剰余金 150,000（＝100,000 ＋ 第1年度の利益 50,000）＝ <strong>450,000円</strong>。その30%が 135,000円で、積み上げた結果と一致します。</p>
+    <p><mark>非支配株主持分は「そのときの子会社の純資産 × 非支配株主の比率」に必ず等しくなります。</mark>これは強力な検算です。積み上げた結果とこの式が食い違ったら、どこかで間違えています。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：支配獲得から何年経っているかを必ず数える</span>
+    <p>開始仕訳で最も多い失点は、<strong>経過年数の数え間違い</strong>です。のれんの償却も、非支配株主への按分も、経過した年数分だけ積み上がっています。</p>
+    <p>問題文の支配獲得日と当期の会計期間を並べて、<mark>指を折って数えてください。</mark>「X1年3月31日に支配を獲得、当期はX3年4月1日〜X4年3月31日」なら、当期首までに経過しているのは<strong>2年分</strong>です。</p>
+    <p>数え間違えると、のれんの残高も非支配株主持分も利益剰余金当期首残高もすべてずれます。<strong>1か所の誤りが答案の広い範囲に波及する</strong>ので、ここに10秒かける価値があります。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：開始仕訳を書かずに当期分だけ処理する</span>
+    <p>問題文が当期の資料だけを詳しく与えてくると、「当期の処理」だけをして終わりにしてしまいがちです。</p>
+    <p>開始仕訳を落とすと、<strong>連結貸借対照表に子会社株式が残り、子会社の資本金も残ります。</strong>連結上の資本金は親会社の資本金と一致するはずなのに、子会社の分が乗ったままになる。<mark>これは目で見て分かる異常です。</mark></p>
+    <p>答案を書き終えたら「連結上の資本金＝親会社の資本金になっているか」を確かめてください。10秒で開始仕訳の有無が検証できます。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s9"><span class="num">9</span>子会社の当期純利益の按分</h2>
+
+  <p>子会社が利益を稼ぐと、非支配株主の取り分も増えます。ここを連結上で反映させる仕訳です。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">なぜ按分が要るのか</span>
+    <p>連結損益計算書には、<strong>子会社の収益と費用が全額</strong>取り込まれています。70%分だけ取り込む、ということはしていません（§5で見たとおりです）。</p>
+    <p>その結果、連結上の当期純利益には<mark>子会社の利益が100%含まれています。</mark>でもそのうち30%は、グループの外にいる非支配株主のものです。</p>
+    <p>そこで、子会社の当期純利益の30%を<strong>非支配株主に帰属する当期純利益</strong>として抜き出し、その分だけ非支配株主持分を増やします。</p>
+  </div>
+
+  <p>設例の第2年度、S社の当期純利益は <strong>60,000円</strong> でした。非支配株主の取り分は 60,000 × 30% ＝ <strong>18,000円</strong>です。</p>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 子会社の当期純利益の按分</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">18,000</td><td class="c">非支配株主持分当期変動額</td><td class="c amt">18,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">向きを意味から導く</span>
+    <ul>
+      <li><strong>非支配株主に帰属する当期純利益</strong>は、連結損益計算書で当期純利益から<mark>差し引かれる</mark>項目です。差し引く額を増やすので<strong>借方</strong>に書きます</li>
+      <li><strong>非支配株主持分</strong>は純資産です。取り分が増えるので<strong>貸方</strong>に書きます</li>
+    </ul>
+    <p>「子会社が稼いだ → 非支配株主の取り分が増える → 非支配株主持分が増える」。<mark>純資産が増えるのだから貸方</mark>、と考えれば迷いません。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：親会社の利益は按分しない</span>
+    <p>按分するのは<strong>子会社の当期純利益だけ</strong>です。親会社の利益も合わせた連結全体の利益を按分してはいけません。</p>
+    <p>非支配株主は<mark>子会社の株主</mark>であって、親会社の利益には何の権利もありません。設例で按分するのは<mark>S社の 60,000円だけ</mark>で、P社がいくら稼いでいても計算に入りません。</p>
+    <p>問題文がP社とS社の当期純利益を並べて書いてくるので、<strong>S社の数字だけを拾ってください。</strong></p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">子会社が当期純損失を出した場合</span>
+    <p>仕訳が逆になります。子会社が損失を出せば、非支配株主の取り分もその分だけ減るからです。</p>
+    <div class="tablewrap">
+    <table class="jnl">
+      <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+      <tbody>
+        <tr><td class="d">非支配株主持分当期変動額</td><td class="d amt">×××</td><td class="c">非支配株主に帰属する当期純損失</td><td class="c amt">×××</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>科目名も<strong>非支配株主に帰属する当期純損失</strong>に変わります。出題の中心は利益のほうですが、損失のケースが来たときに固まらないよう、形を見ておいてください。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s10"><span class="num">10</span>子会社が行った配当の修正</h2>
+
+  <p>子会社が株主に配当を行うと、連結上は2つのことを直す必要があります。</p>
+
+  <p>設例の第2年度、S社は <strong>剰余金の配当 20,000円</strong> を行いました。P社はそのうち持分に応じた 20,000 × 70% ＝ <strong>14,000円</strong> を受取配当金として計上しています。</p>
+
+  <div class="callout callout--why">
+    <span class="callout__t">配当のお金は、どこへ行ったか</span>
+    <p>S社が配った 20,000円は、行き先が2つに分かれています。</p>
+    <ul>
+      <li><strong>P社へ 14,000円</strong>（70%分）… <mark>グループの中でお金が移動しただけ</mark>です。右のポケットから左のポケットへ。グループとしては何も稼いでいないので、P社の受取配当金を消します</li>
+      <li><strong>非支配株主へ 6,000円</strong>（30%分）… <mark>本当にグループの外へ出ていきました。</mark>非支配株主の取り分が減ったので、非支配株主持分を減らします</li>
+    </ul>
+    <p>そして貸方では、S社が行った配当 20,000円を<strong>全額取り消します。</strong>連結財務諸表に載る「剰余金の配当」は、<strong>親会社が行ったものだけ</strong>だからです。子会社が親会社に配当しても、グループの外には1円も出ていきません。</p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結修正仕訳 — 子会社が行った配当の修正</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">受取配当金</td><td class="d amt">14,000</td><td class="c">剰余金の配当</td><td class="c amt">20,000</td></tr>
+      <tr><td class="d">非支配株主持分当期変動額</td><td class="d amt">6,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="small muted">貸借の確認：借方 14,000 ＋ 6,000 ＝ 20,000円。貸方 20,000円。一致します。<strong>借方の2つは、配当金の行き先そのもの</strong>です。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">「剰余金の配当」という科目について</span>
+    <p>貸方の「剰余金の配当」は、<strong>連結株主資本等変動計算書の行の名前</strong>です。利益剰余金の当期変動額のうち、配当によって減った分を表します。</p>
+    <p>答案が勘定科目で答える形式なら、<strong>利益剰余金</strong>として処理します。配当は利益剰余金を減らすものなので、その減少を取り消す＝利益剰余金を貸方に書く、という形になります。</p>
+    <p class="small">この単元の仕訳ドリルでは<strong>「利益剰余金」</strong>と入力してください。</p>
+  </div>
+
+  <div class="callout callout--trap">
+    <span class="callout__t">つまずきやすい所：非支配株主持分を増やす向きに書いてしまう</span>
+    <p>非支配株主持分は<mark>借方</mark>、つまり減らす向きです。</p>
+    <p>非支配株主は配当としてお金を受け取りました。<strong>受け取ったのだから、会社に残っている取り分はその分だけ減ります。</strong>配当は「会社から株主へ財産を渡す」手続きだからです。</p>
+    <p>§9の当期純利益の按分では非支配株主持分が<strong>増え</strong>、ここでは<strong>減る</strong>。<mark>稼げば増え、配れば減る</mark>という、ごく自然な動きです。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s11"><span class="num">11</span>2年分を通して書いてみる</h2>
+
+  <p>ここまでの道具を、設例の第2年度に全部かけます。<strong>手を動かしてください。</strong>資本連結の仕訳だけを扱い、グループ内の売買などの成果連結は Phase 2 に回します。</p>
+
+  <div class="card">
+    <div class="card__label">資料のまとめ</div>
+    <ul>
+      <li>P社は X1年3月31日、S社株式の 70% を 340,000円で取得して支配した</li>
+      <li>支配獲得日のS社の純資産は、資本金 300,000円、利益剰余金 100,000円</li>
+      <li>のれんは支配獲得の翌年度から<strong>10年間</strong>にわたり定額法で償却する</li>
+      <li><strong>第1年度</strong>（X1/4/1〜X2/3/31）：S社の当期純利益 50,000円、配当なし</li>
+      <li><strong>第2年度</strong>（X2/4/1〜X3/3/31）：S社の当期純利益 60,000円、剰余金の配当 20,000円</li>
+    </ul>
+    <p class="small muted">S社の資産・負債の帳簿価額と時価に差異はない。2級ではこの一文が必ず付きます（§12）。</p>
+  </div>
+
+  <h3>第2年度の連結修正仕訳</h3>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>① 開始仕訳（§8 で作ったもの）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">資本金当期首残高</td><td class="d amt">300,000</td><td class="c">子会社株式</td><td class="c amt">340,000</td></tr>
+      <tr><td class="d">利益剰余金当期首残高</td><td class="d amt">121,000</td><td class="c">非支配株主持分当期首残高</td><td class="c amt">135,000</td></tr>
+      <tr><td class="d">のれん</td><td class="d amt">54,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>② のれんの償却（当期分）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">のれん償却</td><td class="d amt">6,000</td><td class="c">のれん</td><td class="c amt">6,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>③ S社の当期純利益の按分（60,000 × 30%）</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">非支配株主に帰属する当期純利益</td><td class="d amt">18,000</td><td class="c">非支配株主持分当期変動額</td><td class="c amt">18,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>④ S社が行った配当の修正</caption>
+    <thead><tr><th>借方科目</th><th class="amt">金額</th><th>貸方科目</th><th class="amt">金額</th></tr></thead>
+    <tbody>
+      <tr><td class="d">受取配当金</td><td class="d amt">14,000</td><td class="c">剰余金の配当</td><td class="c amt">20,000</td></tr>
+      <tr><td class="d">非支配株主持分当期変動額</td><td class="d amt">6,000</td><td class="c">　</td><td class="c amt">　</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">資本連結で毎期必ず出るのはこの4本</span>
+    <p><strong>開始仕訳・のれんの償却・当期純利益の按分・配当の修正。</strong>問題文に子会社の配当がなければ④が落ちて3本になります。</p>
+    <p>Phase 2 で学ぶ成果連結（グループ内の売掛金と買掛金の相殺など）は、<mark>この4本の後ろに足されていきます。</mark>足される本数が増えても、この4本の位置は動きません。</p>
+  </div>
+
+  <h3>結果を確かめる</h3>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">第2年度末の、のれんと非支配株主持分</span>
+    <p><strong>のれんの未償却残高</strong></p>
+    <ul>
+      <li>①で 54,000円立て、②で 6,000円償却 → <strong>48,000円</strong></li>
+      <li>別の道筋：当初 60,000 − 2年分の償却 12,000 ＝ <strong>48,000円</strong>。一致します</li>
+    </ul>
+    <p><strong>非支配株主持分の期末残高</strong></p>
+    <ul>
+      <li>①135,000 ＋ ③18,000 − ④6,000 ＝ <strong>147,000円</strong></li>
+    </ul>
+    <p>別の道筋からも出してみます。第2年度末のS社の純資産は、資本金 300,000 ＋ 利益剰余金（150,000 ＋ 60,000 − 20,000 ＝ 190,000）＝ <strong>490,000円</strong>。</p>
+    <ul>
+      <li>490,000 × 30% ＝ <strong>147,000円</strong>。一致します</li>
+    </ul>
+    <p><mark>非支配株主持分＝そのときの子会社の純資産 × 非支配株主の比率。</mark>この式で必ず検算してください。§8で見た検算と同じものです。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">Phase 2 で再会します</span>
+    <p>このP社とS社は、<strong>W9 の UNIT 13（連結精算表と連結財務諸表）の通し演習に、同じ金額のまま登場します。</strong>そこではグループ内の商品売買・土地の売却・債権債務も加わり、連結損益計算書と連結貸借対照表を最後まで作り上げます。</p>
+    <p>いま作った4本の仕訳は、そのときも<strong>そのままの形で最初の4本</strong>になります。ここで手が動くようにしておくと、W9で新しく覚えることが半分になります。</p>
+  </div>
+
+  <div class="callout callout--mine" data-owner="jw-122cl">
+    <span class="callout__t">手元の1台（カシオ JW-122CL）の場合</span>
+    <p>持分比率の掛け算が連続するので、<strong>定数計算</strong>が効きます。「× 0.3 ＝」を一度入力すれば、以降は金額を入れて「＝」を押すだけで 30% が求まります。60,000 → 18,000、20,000 → 6,000、490,000 → 147,000 を一気に出せます。</p>
+    <p>のれんの償却額のように何度も使う数字は、<strong>M＋ でメモリに入れておく</strong>と、経過年数分をまとめて出すときに MR から引くだけで済みます。</p>
+    <p>次の科目に移る前に MC でメモリを消してください。前の科目の残りが混ざると、原因の分からない狂い方をします。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s12"><span class="num">12</span>2級で扱わないこと</h2>
+
+  <p>連結は市販のテキストによって扱う範囲がまちまちです。<strong>出題区分表で1級とされているものを2級の答案に書く必要はありません。</strong>ここで線を引いておきます。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">子会社の資産・負債の時価評価（評価差額）は1級</span>
+    <p>実際の連結では、支配獲得日に子会社の資産・負債を<strong>時価で評価し直し</strong>、帳簿価額との差額を「評価差額」として純資産に加えてから相殺します。土地の時価が帳簿価額より高ければ、その分だけ子会社の純資産が増えます。</p>
+    <p><strong>2級ではこれを行いません。</strong>出題区分表は、資本連結のうち「子会社の支配獲得時の資産・負債の時価評価」を1級としています。</p>
+    <p>だから2級の問題文には、必ず<mark>「S社の資産および負債の帳簿価額と時価に差異はない」</mark>という一文が付きます。この一文を読んだら「評価差額は出ない」と確認して先へ進んでください。</p>
+    <p>市販のテキストが2級の章で時価評価を扱っていることがありますが、<strong>この試験の2級では、子会社の純資産は帳簿価額のまま使います。</strong></p>
+  </div>
+
+  <div class="tablewrap">
+  <table class="jnl">
+    <caption>連結会計のうち2級で扱わないもの（出題区分表 2022年度版）</caption>
+    <thead><tr><th>論点</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>子会社の資産・負債の時価評価</td><td>支配獲得時に時価で評価し直し、評価差額を計上する</td></tr>
+      <tr><td>段階取得</td><td>何回かに分けて株式を取得し、途中で支配を獲得する</td></tr>
+      <tr><td>子会社株式の追加取得・一部売却</td><td>支配を獲得した後に持分比率が変わる</td></tr>
+      <tr><td>持分法</td><td>関連会社（20%以上50%以下）への適用</td></tr>
+      <tr><td>連結会計上の税効果会計</td><td>連結修正仕訳から生じる一時差異の処理</td></tr>
+      <tr><td>在外子会社の財務諸表項目の換算</td><td>外貨で作られた子会社の財務諸表を円に直す</td></tr>
+      <tr><td>包括利益、その他の包括利益</td><td>連結包括利益計算書の作成</td></tr>
+      <tr><td>セグメント情報</td><td>事業の種類別・所在地別の開示</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">この線引きが効いてくる場面</span>
+    <p>2級の連結では、<strong>支配獲得日の子会社の持分比率は変わりません。</strong>70%で取得したら、以後ずっと70%です。だから非支配株主持分の比率も、按分の割合も、問題を通じて一定です。</p>
+    <p>持分比率が動かないおかげで、<mark>非支配株主持分＝子会社の純資産 × 比率</mark>という検算がいつでも使えます（§11）。追加取得や一部売却が入るとこの単純さが失われますが、2級では入ってきません。</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">税効果会計との関係</span>
+    <p>UNIT 19 で税効果会計を学びましたが、<strong>連結修正仕訳から生じる一時差異への税効果は1級の範囲</strong>です。</p>
+    <p>2級の連結の問題で、未実現利益の消去やのれんの償却に対して繰延税金資産を立てる必要はありません。<mark>連結の答案に「法人税等調整額」は出てきません。</mark></p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="s13"><span class="num">13</span>仕訳ドリル 14問</h2>
+
+  <p>資本連結の仕訳を、順序をばらして出します。<strong>解答欄は常に4行あります。</strong>行数から正解の科目数は読めません。</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__t">このドリルで使う科目名</span>
+    <p>本文では、開始仕訳や株主資本等変動計算書に関わる科目を<strong>「資本金当期首残高」「利益剰余金当期首残高」「非支配株主持分当期首残高」「非支配株主持分当期変動額」「剰余金の配当」</strong>と書いてきました。これらは答案用紙の行の名前です。</p>
+    <p>このドリルは<mark>勘定科目表の科目から選ぶ形式</mark>なので、該当する場面では<strong>「資本金」「利益剰余金」「非支配株主持分」</strong>を選んでください。「当期首残高」「当期変動額」「剰余金の配当」の区別はつけません。</p>
+    <p>本番では<strong>答案用紙の行の名前をそのまま使う</strong>のが原則です。行が分かれていれば書き分けます。</p>
+  </div>
+
+  <p class="small muted">すべてP社が親会社、S社が子会社という前提です。答えるのは<strong>連結修正仕訳</strong>であり、個別会計上の仕訳ではありません。</p>
+
+  <div id="drill-shihon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s14"><span class="num">14</span>確認テスト・計算ドリル・穴埋め</h2>
+
+  <p>仕訳が書けることと、判断の理由を言えること、金額を出せることは別の能力です。独立に確認します。</p>
+
+  <div id="quiz-shihon"></div>
+
+  <div id="num-shihon"></div>
+
+  <div id="fill-shihon"></div>
+
+  <!-- ============================================================ -->
+  <h2 id="s15"><span class="num">15</span>この単元の到達チェック</h2>
+
+  <p class="small muted">チェック状態はこのブラウザに保存されます。この単元は Phase 2 の連結3単元すべての土台です。とくに<strong>開始仕訳</strong>が書けないまま先へ進むと、W9で何をしているのか分からなくなります。</p>
+
+  <div class="progressbar" data-progress-for="#u23check"><i></i></div>
+  <div class="progresstext" data-progress-text-for="#u23check">0 / 0 完了（0%）</div>
+
+  <div id="u23check">
+  <ul class="checklist">
+    <li><input type="checkbox" id="c1" data-key="p1u23-1"><label for="c1"><span class="cl__t">連結財務諸表が要る理由を、個別財務諸表の限界から説明できる</span><span class="cl__d">親会社の帳簿には子会社株式が1行載るだけで、子会社の資産も負債も見えない。借金や在庫を子会社に付け替えれば、親会社の個別財務諸表からは消える</span></label></li>
+    <li><input type="checkbox" id="c2" data-key="p1u23-2"><label for="c2"><span class="cl__t">支配の判定基準を言える</span><span class="cl__d">議決権の過半数（50%超）。取締役の選任は普通決議なので、過半数を握れば経営を実質的に決められる。50%ちょうどでは足りない</span></label></li>
+    <li><input type="checkbox" id="c3" data-key="p1u23-3"><label for="c3"><span class="cl__t">連結修正仕訳がどの会社の帳簿にも残らないことを説明できる</span><span class="cl__d">連結財務諸表を作る法人が存在せず、記入する帳簿がない。作業はワークシート上だけで完結する</span></label></li>
+    <li><input type="checkbox" id="c4" data-key="p1u23-4"><label for="c4"><span class="cl__t">投資と資本の相殺消去を、なぜ行うかまで説明できる</span><span class="cl__d">子会社の資産・負債を合算して持ち込んでいるので、それを表す子会社株式を残すと同じものを2回数えることになる</span></label></li>
+    <li><input type="checkbox" id="c5" data-key="p1u23-5"><label for="c5"><span class="cl__t">相殺の相手が「支配獲得日」の純資産であることを覚えている</span><span class="cl__d">当期末の純資産ではない。支配後に子会社が稼いだ利益は、連結上の利益として取り込むべきもので、相殺の対象ではない</span></label></li>
+    <li><input type="checkbox" id="c6" data-key="p1u23-6"><label for="c6"><span class="cl__t">非支配株主持分が何かを言え、純資産に表示することを知っている</span><span class="cl__d">子会社の純資産のうち親会社に帰属しない部分。負債ではない。純資産の部で株主資本とは別の区分に表示する</span></label></li>
+    <li><input type="checkbox" id="c7" data-key="p1u23-7"><label for="c7"><span class="cl__t">のれんの計算式を書ける</span><span class="cl__d">子会社株式の取得原価 − 子会社の純資産 × 親会社の持分比率。引くのは純資産の全額ではなく親会社持分の分だけ</span></label></li>
+    <li><input type="checkbox" id="c8" data-key="p1u23-8"><label for="c8"><span class="cl__t">支配獲得日の相殺仕訳を、のれんを差額で出す手順で組み立てられる</span><span class="cl__d">借方に子会社の純資産を全額、貸方に子会社株式と非支配株主持分、差額をのれんとして借方に置く</span></label></li>
+    <li><input type="checkbox" id="c9" data-key="p1u23-9"><label for="c9"><span class="cl__t">非支配株主持分にのれんを乗せないことを理解している</span><span class="cl__d">のれんは親会社がいくら払ったかから逆算して出るもの。非支配株主は何も払っていないので逆算できない</span></label></li>
+    <li><input type="checkbox" id="c10" data-key="p1u23-10"><label for="c10"><span class="cl__t">のれんの償却を3点セットで言える</span><span class="cl__d">20年以内・定額法・販売費及び一般管理費。合併で生じたのれんもまったく同じ扱い</span></label></li>
+    <li><input type="checkbox" id="c11" data-key="p1u23-11"><label for="c11"><span class="cl__t">負ののれん発生益が収益であり、償却しないことを知っている</span><span class="cl__d">純資産の持分より安く買えた差額。発生した期の特別利益として一括計上する。資産のマイナスではない</span></label></li>
+    <li><input type="checkbox" id="c12" data-key="p1u23-12"><label for="c12"><span class="cl__t">開始仕訳が要る理由を、連結修正仕訳の性質から導ける</span><span class="cl__d">帳簿に残らないので翌期には消えている。毎期、過去の修正をやり直すところから始める</span></label></li>
+    <li><input type="checkbox" id="c13" data-key="p1u23-13"><label for="c13"><span class="cl__t">開始仕訳で過年度の損益項目が「利益剰余金当期首残高」になる理由を説明できる</span><span class="cl__d">当期の連結では前期の損益計算書を作らない。前期の収益・費用はすべて当期首の利益剰余金に集約されている</span></label></li>
+    <li><input type="checkbox" id="c14" data-key="p1u23-14"><label for="c14"><span class="cl__t">開始仕訳で貸借の向きが変わらないことを覚えている</span><span class="cl__d">変わるのは科目の名前だけ。前期に借方だったものは借方のまま積み上げる</span></label></li>
+    <li><input type="checkbox" id="c15" data-key="p1u23-15"><label for="c15"><span class="cl__t">支配獲得から当期首までの経過年数を数える習慣がある</span><span class="cl__d">のれんの償却も非支配株主への按分も経過年数分だけ積み上がっている。数え間違いは答案の広い範囲に波及する</span></label></li>
+    <li><input type="checkbox" id="c16" data-key="p1u23-16"><label for="c16"><span class="cl__t">子会社の当期純利益の按分仕訳を、向きも含めて書ける</span><span class="cl__d">非支配株主に帰属する当期純利益／非支配株主持分。子会社が稼げば非支配株主の取り分が増えるので、純資産が増える＝貸方</span></label></li>
+    <li><input type="checkbox" id="c17" data-key="p1u23-17"><label for="c17"><span class="cl__t">子会社の配当の修正が借方2行になる理由を説明できる</span><span class="cl__d">配当の行き先が2つ。親会社へ行った分は受取配当金と相殺、非支配株主へ行った分は非支配株主持分を減らす</span></label></li>
+    <li><input type="checkbox" id="c18" data-key="p1u23-18"><label for="c18"><span class="cl__t">非支配株主持分を「子会社の純資産 × 非支配株主の比率」で検算できる</span><span class="cl__d">2級では持分比率が動かないので、いつでもこの式が使える。積み上げた結果と食い違えばどこかで間違えている</span></label></li>
+    <li><input type="checkbox" id="c19" data-key="p1u23-19"><label for="c19"><span class="cl__t">2級では子会社の資産・負債を時価評価しないことを知っている</span><span class="cl__d">時価評価・段階取得・追加取得や一部売却は1級。問題文の「帳簿価額と時価に差異はない」がその確認になる</span></label></li>
+    <li><input type="checkbox" id="c20" data-key="p1u23-20"><label for="c20"><span class="cl__t">資本連結で毎期出る4本を挙げられる</span><span class="cl__d">開始仕訳、のれんの償却、子会社の当期純利益の按分、子会社の配当の修正。配当がなければ3本</span></label></li>
+    <li><input type="checkbox" id="c21" data-key="p1u23-21"><label for="c21"><span class="cl__t">仕訳ドリル14問を全問正解した</span><span class="cl__d">1回目で全問正解でなくてよい。間違えた問題に印をつけ、全問正解になるまで回す</span></label></li>
+  </ul>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn--ghost btn--sm" type="button" data-reset-progress>チェックをリセット</button>
+  </div>
+
+  <div class="callout callout--ok">
+    <span class="callout__t">次にやること</span>
+    <p>連結の前半はここまでです。この単元で扱ったのは<strong>資本連結</strong>、つまり親会社と子会社の<mark>資本関係</mark>を整理する作業でした。</p>
+    <p>連結にはもう一つ、<strong>成果連結</strong>という柱があります。グループ内で売り買いした分、貸し借りした分を消す作業です。こちらは <strong>Phase 2 の W9</strong> で扱います。2週間空けてから再会する設計なので、その間に忘れても構いません。<mark>忘れたことに気づいて思い出し直す</mark>のが、この設計の狙いです。</p>
+    <p>ただし、<strong>開始仕訳だけは手が覚えている状態にしておいてください。</strong>W9の3単元は、いずれも「前期の修正を開始仕訳で再現し、当期の処理を足す」という形で進みます。開始仕訳の理屈が入っていれば、あとは対象が増えるだけです。</p>
+  </div>
+
+  <div data-note></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 目次に戻る</a></span>
+    <span>日商簿記2級 Phase 1 教材 ／ W7 UNIT 23 連結① 資本連結</span>
+  </div>
+
+</div>
+
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+
+  /* ========== 確認テスト ========== */
+  BokiQuiz.mount('#quiz-shihon', {
+    title: '理解チェック — 資本連結の考え方',
+    questions: [
+      {
+        text: '連結修正仕訳について、正しい説明はどれですか。',
+        choices: [
+          '親会社の帳簿に記入し、子会社の帳簿には記入しない',
+          '親会社と子会社の両方の帳簿に記入する',
+          'どちらの会社の帳簿にも記入せず、ワークシート上だけで行う'
+        ],
+        answer: 2,
+        explain: '<p>正解は選択肢3です。</p><p>連結財務諸表を作成する「連結会社」という法人は存在しないため、<strong>記入する帳簿そのものがありません。</strong>作業はすべて連結精算表（ワークシート）の上で行われます。</p><p>この性質から<mark>開始仕訳</mark>が必然的に生じます。帳簿に残らないということは、翌期には去年の修正が消えているということだからです。だから毎期、過去の修正をやり直すところから始めます。</p>'
+      },
+      {
+        text: '投資と資本の相殺消去で消す「資本」とは、子会社のいつの時点の純資産ですか。',
+        choices: [
+          '支配を獲得した日の純資産',
+          '当期末の純資産',
+          '当期首の純資産'
+        ],
+        answer: 0,
+        explain: '<p>正解は選択肢1です。<strong>支配を獲得した日</strong>の純資産と相殺します。</p><p>親会社が支払った投資額は、<mark>その日の子会社の価値に対して払った金額</mark>です。支配獲得後に子会社が稼いだ利益は、親会社が支配してから生まれたものなので、相殺して消すべきものではなく、連結上の利益として取り込むべきものです。</p><p>当期末の利益剰余金と取り違えると、のれんも非支配株主持分も連動して狂います。問題文の「支配獲得日のS社の純資産は…」という一文を必ず探してください。</p>'
+      },
+      {
+        text: '連結貸借対照表で、非支配株主持分はどこに表示されますか。',
+        choices: [
+          '固定負債',
+          '純資産の部（株主資本とは別の区分）',
+          '純資産の部の株主資本の中',
+          '流動負債'
+        ],
+        answer: 1,
+        explain: '<p>正解は選択肢2です。<strong>純資産の部</strong>に、株主資本とは別の区分として表示します。</p><p>非支配株主は<mark>出資した人</mark>であって、貸した人ではありません。返済義務がないので負債ではありません。</p><p>一方で、株主資本（資本金・資本剰余金・利益剰余金）は<strong>親会社株主のもの</strong>を表す区分なので、非支配株主持分をその中に入れることもできません。だから純資産の部の中に、独立した区分を設けます。</p><p>負債に入れてしまうと、負債合計・純資産合計・自己資本比率がすべて狂います。</p>'
+      },
+      {
+        text: 'P社はS社株式の 70% を取得して支配を獲得した。支配獲得日のS社の純資産は 500,000円であり、のれんが生じた。このとき非支配株主持分として計上される金額に、のれんに相当する額は含まれますか。',
+        choices: [
+          '含まれる。のれんを持分比率で按分して非支配株主にも配分する',
+          '含まれない。非支配株主持分は 500,000 × 30% ＝ 150,000円である'
+        ],
+        answer: 1,
+        explain: '<p>正解は選択肢2です。非支配株主持分は <strong>500,000 × 30% ＝ 150,000円</strong>であり、のれんは含まれません。</p><p>のれんは<mark>「親会社が純資産の持分よりいくら多く払ったか」から逆算して出てくるもの</mark>です。非支配株主は何も払っていないので、逆算する元になる金額がありません。</p><p>非支配株主持分は、あくまで<strong>子会社の純資産 × 非支配株主の比率</strong>です。この単純さは、2級で持分比率が動かない（追加取得・一部売却が出ない）ことと合わせて、強力な検算になります。</p>'
+      },
+      {
+        text: '負ののれん発生益の連結損益計算書における表示区分はどれですか。',
+        choices: [
+          '販売費及び一般管理費',
+          '営業外収益',
+          '特別利益',
+          '売上高'
+        ],
+        answer: 2,
+        explain: '<p>正解は選択肢3の<strong>特別利益</strong>です。</p><p>純資産の持分より安く買えたということは、その時点で得をしたということです。臨時的・偶発的な利益なので特別利益に表示し、<mark>発生した期に一括して計上します。</mark></p><p>のれん（正の側）と対比して覚えてください。のれんは<strong>資産</strong>であり<strong>20年以内に定額法で償却</strong>し、償却額は<strong>販売費及び一般管理費</strong>です。負ののれん発生益は<strong>収益</strong>であり<strong>償却しません。</strong></p><p>負ののれんを「負債」や「資産のマイナス」と考えると、その後の扱いまで含めて全部間違えます。</p>'
+      },
+      {
+        text: '開始仕訳で、前期に計上した「のれん償却」はどの科目に置き換わりますか。また、貸借の向きはどうなりますか。',
+        choices: [
+          '利益剰余金当期首残高に置き換わり、前期と同じ借方に書く',
+          '利益剰余金当期首残高に置き換わり、前期と逆の貸方に書く',
+          'のれん償却のまま、前期と同じ借方に書く'
+        ],
+        answer: 0,
+        explain: '<p>正解は選択肢1です。<strong>利益剰余金当期首残高</strong>に置き換わり、<strong>貸借の向きは前期のまま</strong>です。</p><p><strong>科目が変わる理由。</strong>当期の連結では前期の損益計算書を作りません。前期の収益・費用は、前期の損益計算書を通じて<mark>当期首の利益剰余金に集約されています。</mark>のれん償却のまま書くと、当期の費用として二重に計上してしまいます。</p><p><strong>向きが変わらない理由。</strong>開始仕訳がやっているのは「前期と同じ状態を再現する」ことです。逆に書いたら、前期の修正を打ち消してしまいます。</p><p><mark>変わるのは名前だけ、向きは変えない。</mark>この2点が開始仕訳の要点です。</p>'
+      },
+      {
+        text: 'S社が当期に剰余金の配当 30,000円を行った。P社はS社株式の 70% を保有しており、非支配株主の持分比率は 30% である。連結修正仕訳で、非支配株主持分はどちら側にいくら計上されますか。',
+        choices: [
+          '借方に 9,000円',
+          '貸方に 9,000円',
+          '借方に 21,000円',
+          '貸方に 21,000円'
+        ],
+        answer: 0,
+        invariant: [
+          ['30000 * 30 / (70 + 30)', 'answer'],
+          ['30000 * 70 / (70 + 30) + 30000 * 30 / (70 + 30)', '30000']
+        ],
+        explain: '<p>正解は選択肢1、<strong>借方に 9,000円</strong>です。</p><p>金額は 30,000 × 30% ＝ 9,000円。非支配株主が受け取った分です。</p><p><strong>向きが借方になる理由。</strong>非支配株主は配当としてお金を受け取りました。受け取ったのだから、会社に残っている取り分はその分だけ<mark>減ります。</mark>非支配株主持分は純資産なので、減らすには借方です。</p><p>子会社の当期純利益の按分では非支配株主持分が<strong>増え</strong>（貸方）、配当では<strong>減る</strong>（借方）。<mark>稼げば増え、配れば減る</mark>という自然な動きです。</p><p>なお、残りの 21,000円はP社が受け取った分で、こちらは受取配当金を借方に書いて消します。</p>'
+      },
+      {
+        text: '2級の資本連結について、出題区分表の定めとして正しいものはどれですか。',
+        choices: [
+          '支配獲得時に子会社の資産・負債を時価評価し、評価差額を計上する',
+          '子会社の資産・負債は帳簿価額のまま使い、時価評価は行わない'
+        ],
+        answer: 1,
+        explain: '<p>正解は選択肢2です。<strong>2級では子会社の資産・負債を時価評価しません。</strong></p><p>出題区分表は、資本連結のうち「子会社の支配獲得時の資産・負債の時価評価、支配獲得までの段階取得、子会社株式の追加取得・一部売却など」を<mark>1級の範囲</mark>としています。</p><p>そのため2級の問題文には必ず<strong>「子会社の資産および負債の帳簿価額と時価に差異はない」</strong>という一文が付きます。この一文を見つけたら、評価差額は出ないと確認して先へ進んでください。</p><p>市販のテキストが2級の章で時価評価を扱っていることがありますが、この試験の2級では帳簿価額のままで処理します。</p>'
+      }
+    ]
+  });
+
+  /* ========== 計算ドリル ========== */
+  BokiNum.mount('#num-shihon', {
+    title: '計算ドリル — のれん・非支配株主持分・開始仕訳の金額',
+    questions: [
+      {
+        text: 'P社はS社の発行済株式の <strong>80%</strong> を <strong>480,000円</strong> で取得し、支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>500,000円</strong>、利益剰余金 <strong>100,000円</strong> であった。のれんと非支配株主持分の金額はそれぞれいくらか。',
+        answer: [0, 120000],
+        labels: ['のれん', '非支配株主持分'],
+        formula: ['480000 - (500000 + 100000) * 0.8', '(500000 + 100000) * 0.2'],
+        hint: 'まず子会社の純資産を出し、それに親会社の持分比率を掛けてください。',
+        explain: '<ul><li>S社の純資産＝500,000 ＋ 100,000 ＝ <strong>600,000円</strong></li><li>P社の持分＝600,000 × 80% ＝ <strong>480,000円</strong></li><li>のれん＝480,000 − 480,000 ＝ <strong>0円</strong></li><li>非支配株主持分＝600,000 × 20% ＝ <strong>120,000円</strong></li></ul><p>投資額と親会社持分がちょうど一致したので、<strong>のれんは生じません。</strong>のれんが必ず出るとは限らないことを、ここで体験しておいてください。</p><p>仕訳は「資本金 500,000／利益剰余金 100,000 ／／ 子会社株式 480,000／非支配株主持分 120,000」の2行2行になります。</p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>60%</strong> を <strong>480,000円</strong> で取得し、支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>500,000円</strong>、利益剰余金 <strong>100,000円</strong> であった。のれんを <strong>20年</strong> で定額法により償却する場合、1年分の償却額はいくらか。また、支配獲得から3年が経過した時点でののれんの未償却残高はいくらか。',
+        answer: [6000, 102000],
+        labels: ['のれん償却（1年分）', '3年経過後の未償却残高'],
+        formula: ['(480000 - (500000 + 100000) * 0.6) / 20', '(480000 - (500000 + 100000) * 0.6) - (480000 - (500000 + 100000) * 0.6) / 20 * 3'],
+        hint: 'のれんの金額を先に出してください。持分比率が前の問題と違います。',
+        explain: '<ul><li>S社の純資産＝500,000 ＋ 100,000 ＝ <strong>600,000円</strong></li><li>P社の持分＝600,000 × 60% ＝ <strong>360,000円</strong></li><li>のれん＝480,000 − 360,000 ＝ <strong>120,000円</strong></li><li>1年分の償却額＝120,000 ÷ 20 ＝ <strong>6,000円</strong></li><li>3年経過後の未償却残高＝120,000 − 6,000 × 3 ＝ <strong>102,000円</strong></li></ul><p>前の問題と投資額も純資産も同じですが、<strong>持分比率が 60% なのでのれんが 120,000円生じます。</strong>同じ金額を払っても、手に入る持分が少なければそれだけ多く払ったことになります。</p><p>償却額は<mark>販売費及び一般管理費</mark>に表示する「のれん償却」です。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong> にS社株式の <strong>70%</strong> を取得して支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>400,000円</strong>、利益剰余金 <strong>200,000円</strong> であった。その後、S社の当期純利益は第1年度 <strong>80,000円</strong>、第2年度 <strong>100,000円</strong> であり、配当は行っていない。<strong>第3年度（X3年4月1日〜X4年3月31日）の開始仕訳</strong>に計上される非支配株主持分当期首残高はいくらか。',
+        answer: [234000],
+        labels: ['非支配株主持分当期首残高'],
+        formula: ['(400000 + 200000 + 80000 + 100000) * 0.3'],
+        hint: '当期首（X3年4月1日）のS社の純資産はいくらでしょうか。それに非支配株主の比率を掛けます。',
+        explain: '<p>非支配株主持分は、<strong>そのときの子会社の純資産 × 非支配株主の比率</strong>に必ず等しくなります。</p><ul><li>X3年4月1日のS社の純資産＝400,000 ＋ 200,000 ＋ 80,000 ＋ 100,000 ＝ <strong>780,000円</strong></li><li>非支配株主持分当期首残高＝780,000 × 30% ＝ <strong>234,000円</strong></li></ul><p>積み上げる道筋でも確かめます。</p><ul><li>支配獲得日＝600,000 × 30% ＝ 180,000円</li><li>第1年度の按分＝80,000 × 30% ＝ 24,000円</li><li>第2年度の按分＝100,000 × 30% ＝ 30,000円</li><li>合計＝180,000 ＋ 24,000 ＋ 30,000 ＝ <strong>234,000円</strong>。一致します</li></ul><p><mark>支配獲得から当期首まで2年が経過している</mark>ことを数えるのがこの問題の要点です。第3年度の開始仕訳なので、積み上げるのは第1年度と第2年度の2年分です。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong> にS社株式の <strong>70%</strong> を <strong>500,000円</strong> で取得して支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>400,000円</strong>、利益剰余金 <strong>200,000円</strong> であった。のれんは支配獲得の翌年度から <strong>10年</strong> で定額法により償却する。S社の当期純利益は第1年度 <strong>80,000円</strong>、第2年度 <strong>100,000円</strong> であり、配当は行っていない。<strong>第3年度の開始仕訳</strong>における、のれんと利益剰余金当期首残高はそれぞれいくらか。',
+        answer: [64000, 270000],
+        labels: ['のれん', '利益剰余金当期首残高'],
+        formula: ['(500000 - (400000 + 200000) * 0.7) - (500000 - (400000 + 200000) * 0.7) / 10 * 2', '500000 + (400000 + 200000 + 80000 + 100000) * 0.3 - 400000 - ((500000 - (400000 + 200000) * 0.7) - (500000 - (400000 + 200000) * 0.7) / 10 * 2)'],
+        hint: '利益剰余金当期首残高は、開始仕訳の貸借の差額として出すのが確実です。',
+        explain: '<p><strong>のれん</strong></p><ul><li>P社の持分＝600,000 × 70% ＝ 420,000円</li><li>当初ののれん＝500,000 − 420,000 ＝ <strong>80,000円</strong>（年 8,000円）</li><li>当期首までに2年分償却済み → 80,000 − 8,000 × 2 ＝ <strong>64,000円</strong></li></ul><p><strong>利益剰余金当期首残高</strong>は、開始仕訳の貸借の差額で出します。</p><ul><li>貸方：子会社株式 500,000 ＋ 非支配株主持分当期首残高 234,000 ＝ <strong>734,000円</strong></li><li>借方のうち確定分：資本金当期首残高 400,000 ＋ のれん 64,000 ＝ <strong>464,000円</strong></li><li>差額＝734,000 − 464,000 ＝ <strong>270,000円</strong></li></ul><p>積み上げる道筋でも確かめます。支配獲得日の利益剰余金 200,000 ＋ のれん償却2年分 16,000 ＋ 非支配株主への按分2年分（24,000 ＋ 30,000 ＝ 54,000）＝ <strong>270,000円</strong>。一致します。</p><p><mark>差額で出す道筋のほうが速く、計算間違いにも気づきやすい</mark>ので、本番ではこちらを使ってください。</p>'
+      },
+      {
+        text: 'P社はS社株式の <strong>75%</strong> を保有している。当期のS社の当期純利益は <strong>240,000円</strong>、剰余金の配当は <strong>80,000円</strong> であった。当期の連結修正仕訳のうち、<strong>子会社の当期純利益の按分</strong>で計上する非支配株主に帰属する当期純利益と、<strong>配当の修正</strong>で消去する受取配当金はそれぞれいくらか。',
+        answer: [60000, 60000],
+        labels: ['非支配株主に帰属する当期純利益', '消去する受取配当金'],
+        formula: ['240000 * 0.25', '80000 * 0.75'],
+        hint: '按分に使う比率と、受取配当金に使う比率は違います。誰のものかを考えてください。',
+        explain: '<ul><li>非支配株主に帰属する当期純利益＝240,000 × <strong>25%</strong> ＝ <strong>60,000円</strong>（非支配株主の比率）</li><li>消去する受取配当金＝80,000 × <strong>75%</strong> ＝ <strong>60,000円</strong>（親会社の比率）</li></ul><p>偶然どちらも 60,000円になりましたが、<mark>掛けている比率が違います。</mark>ここを取り違えないでください。</p><ul><li><strong>当期純利益の按分</strong>は、非支配株主の取り分を抜き出す作業なので<strong>非支配株主の比率</strong>を掛けます</li><li><strong>受取配当金の消去</strong>は、親会社が受け取った金額を消す作業なので<strong>親会社の比率</strong>を掛けます</li></ul><p>配当の修正では、残りの 80,000 × 25% ＝ 20,000円を非支配株主持分の減少として借方に書きます。仕訳全体は「受取配当金 60,000／非支配株主持分 20,000 ／／ 剰余金の配当 80,000」です。</p>'
+      },
+      {
+        text: 'P社はS社株式の <strong>70%</strong> を保有している。当期末のS社の純資産は、資本金 <strong>300,000円</strong>、資本剰余金 <strong>50,000円</strong>、利益剰余金 <strong>250,000円</strong> であった。連結貸借対照表に計上される非支配株主持分はいくらか。<br><span class="small muted">グループ内の未実現利益はないものとする。</span>',
+        answer: [180000],
+        labels: ['非支配株主持分（期末）'],
+        formula: ['(300000 + 50000 + 250000) * 0.3'],
+        hint: '純資産は資本金だけではありません。3つ全部を足してください。',
+        explain: '<ul><li>S社の期末純資産＝300,000 ＋ 50,000 ＋ 250,000 ＝ <strong>600,000円</strong></li><li>非支配株主持分＝600,000 × 30% ＝ <strong>180,000円</strong></li></ul><p><strong>資本剰余金を足し忘れないでください。</strong>純資産を構成するものは全部、持分比率で按分されます。</p><p>この式は<mark>いつでも使える検算</mark>です。開始仕訳から当期の按分・配当までを積み上げて出した非支配株主持分が、この式の結果と一致するかを必ず確かめてください。食い違えば、積み上げのどこかで間違えています。</p><p class="small">ただしアップストリーム（子会社から親会社への販売）の未実現利益があると、その非支配株主負担分だけこの式から差し引く必要があります。そちらは Phase 2 の UNIT 12・13 で扱います。</p>'
+      }
+    ]
+  });
+
+  /* ========== 穴埋め ========== */
+  BokiFill.mount('#fill-shihon', {
+    title: '穴埋め — 資本連結の用語',
+    questions: [
+      {
+        text: '親会社の「子会社株式」と、子会社の「純資産」を打ち消し合う連結修正仕訳を何といいますか。「◯◯と◯◯の相殺消去」という形の名称で答えなさい。',
+        answer: ['投資と資本の相殺消去', '投資と資本の相殺'],
+        explain: '<p><strong>投資と資本の相殺消去</strong>です。親会社の「投資」＝子会社株式と、子会社の「資本」＝純資産を相殺します。</p><p>子会社の資産・負債を合算して持ち込んでいるので、それを表す子会社株式まで残すと<mark>同じものを2回数える</mark>ことになるためです。</p>'
+      },
+      {
+        text: '子会社の純資産のうち、親会社に帰属しない部分を表す勘定科目は何ですか。',
+        answer: ['非支配株主持分'],
+        explain: '<p><strong>非支配株主持分</strong>です。連結貸借対照表では<mark>純資産の部</mark>に、株主資本とは別の区分として表示します。</p><p>返済義務がないので負債ではありません。一方、株主資本は親会社株主のものを表す区分なので、その中にも入りません。</p>'
+      },
+      {
+        text: '子会社株式の取得原価が、取得した子会社の純資産の親会社持分を上回る額を表す勘定科目は何ですか。ひらがなで答えなさい。',
+        answer: ['のれん'],
+        explain: '<p><strong>のれん</strong>です。連結貸借対照表では<mark>無形固定資産</mark>に表示します。</p><p>正体は、帳簿に載らない超過収益力（ブランド・顧客・従業員の技能など）に対して払った金額です。<strong>20年以内に定額法で償却</strong>し、償却額の科目は「のれん償却」で、連結損益計算書の<strong>販売費及び一般管理費</strong>に表示します。</p>'
+      },
+      {
+        text: '子会社株式の取得原価が、取得した子会社の純資産の親会社持分を下回った場合に計上する勘定科目は何ですか。',
+        answer: ['負ののれん発生益'],
+        explain: '<p><strong>負ののれん発生益</strong>です。連結損益計算書の<mark>特別利益</mark>に表示します。</p><p>負債でも資産のマイナスでもなく、<strong>発生した期の収益</strong>として一括計上します。のれんと違って<strong>償却しません。</strong>安く買えて得をしたのはその時点なので、将来に繰り延べる理由がないためです。</p>'
+      },
+      {
+        text: '連結修正仕訳はどの会社の帳簿にも記入されないため、翌年度には消えています。そこで毎期、過年度に行った連結修正仕訳を再現するところから連結の作業を始めます。この仕訳を何といいますか。漢字4文字で答えなさい。',
+        answer: ['開始仕訳'],
+        explain: '<p><strong>開始仕訳</strong>です。連結財務諸表を作る法人が存在しないため記入する帳簿がなく、作業はワークシート上だけで完結します。だから翌期には去年の修正が消えています。</p><p>作るときの要点は2つ。<strong>過年度の損益項目は「利益剰余金当期首残高」に置き換える</strong>こと、そして<strong>貸借の向きは前期のまま変えない</strong>ことです。</p>'
+      },
+      {
+        text: '開始仕訳では、前期に計上した「のれん償却」や「非支配株主に帰属する当期純利益」といった損益の科目を、別の科目に置き換えて書きます。その科目名を答えなさい。',
+        answer: ['利益剰余金当期首残高', '利益剰余金'],
+        explain: '<p><strong>利益剰余金当期首残高</strong>です（答案様式によっては単に「利益剰余金」）。</p><p>当期の連結では前期の損益計算書を作りません。前期の収益・費用は、前期の損益計算書を通じて<mark>当期首の利益剰余金に集約されています。</mark>のれん償却のまま書くと、前期の費用を当期の費用として二重に計上することになります。</p>'
+      },
+      {
+        text: '議決権の過半数を所有されるなどして、他の会社に意思決定機関を支配されている会社を何といいますか。漢字3文字で答えなさい。',
+        answer: ['子会社'],
+        explain: '<p><strong>子会社</strong>です。支配している側が親会社です。</p><p>境目が「過半数」なのは、取締役の選任が株主総会の普通決議（出席株主の議決権の過半数）で決まるからです。過半数を握れば取締役を自分で選べるので、経営を実質的に決められます。<mark>50%ちょうどでは足りません。</mark></p><p>議決権が20%以上50%以下なら関連会社で、持分法を適用しますが、<strong>持分法は1級の範囲</strong>です。</p>'
+      },
+      {
+        text: '2級の資本連結では、支配獲得時に子会社の資産・負債を時価で評価し直す手続きを行いません。そのため問題文には「子会社の資産および負債の帳簿価額と◯◯に差異はない」という一文が付きます。◯◯に入る語を漢字2文字で答えなさい。',
+        answer: ['時価'],
+        explain: '<p><strong>時価</strong>です。</p><p>出題区分表は、資本連結のうち「子会社の支配獲得時の資産・負債の時価評価、支配獲得までの段階取得、子会社株式の追加取得・一部売却など」を<mark>1級の範囲</mark>としています。</p><p>そのため2級では、子会社の純資産は<strong>帳簿価額のまま</strong>相殺の対象になります。市販のテキストが2級の章で時価評価（評価差額の計上）を扱っていることがありますが、この試験の2級では出ません。</p>'
+      }
+    ]
+  });
+
+  /* ========== 仕訳ドリル 14問 ========== */
+  var ACC = [
+    '子会社株式', '関係会社株式', 'のれん', '商品', '売掛金', '現金預金',
+    '資本金', '資本剰余金', '利益剰余金', '非支配株主持分',
+    'のれん償却', '負ののれん発生益', '受取配当金',
+    '非支配株主に帰属する当期純利益', '非支配株主に帰属する当期純損失'
+  ];
+
+  BokiJournal.mount('#drill-shihon', {
+    title: '仕訳ドリル — 資本連結 14問',
+    accounts: ACC,
+    questions: [
+      {
+        text: 'P社は <strong>X1年3月31日</strong>、S社の発行済株式の <strong>100%</strong> を <strong>700,000円</strong> で取得し、支配を獲得した。支配獲得日のS社の純資産は、<strong>資本金 500,000円</strong>、<strong>利益剰余金 200,000円</strong> である。支配獲得日の連結修正仕訳を示しなさい。<br><span class="small muted">S社の資産および負債の帳簿価額と時価に差異はない。</span>',
+        debit: [['資本金', 500000], ['利益剰余金', 200000]],
+        credit: [['子会社株式', 700000]],
+        hint: '子会社の純資産と、親会社が払った金額を比べてください。100%子会社なので非支配株主はいません。',
+        explain: '<p><strong>資本金 500,000／利益剰余金 200,000 ／／ 子会社株式 700,000</strong> です。</p><p>S社の純資産は 500,000 ＋ 200,000 ＝ 700,000円。P社が払ったのも 700,000円なので、<mark>のれんは生じません。</mark></p><p>100%子会社なので<strong>非支配株主持分も生じません。</strong>親会社以外の株主がいないからです。</p><p>向きはいつもの簿記どおりです。資本金・利益剰余金は純資産なので減らすには借方、子会社株式は資産なので減らすには貸方に書きます。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong>、S社の発行済株式の <strong>70%</strong> を <strong>340,000円</strong> で取得し、支配を獲得した。支配獲得日のS社の純資産は、<strong>資本金 300,000円</strong>、<strong>利益剰余金 100,000円</strong> である。支配獲得日の連結修正仕訳を示しなさい。<br><span class="small muted">S社の資産および負債の帳簿価額と時価に差異はない。</span>',
+        debit: [['資本金', 300000], ['利益剰余金', 100000], ['のれん', 60000]],
+        credit: [['子会社株式', 340000], ['非支配株主持分', 120000]],
+        hint: '借方に純資産を全額並べ、貸方に子会社株式と非支配株主持分を置いて、差額をのれんにします。',
+        explain: '<p><strong>資本金 300,000／利益剰余金 100,000／のれん 60,000 ／／ 子会社株式 340,000／非支配株主持分 120,000</strong> です。</p><ul><li>S社の純資産＝300,000 ＋ 100,000 ＝ <strong>400,000円</strong></li><li>非支配株主持分＝400,000 × 30% ＝ <strong>120,000円</strong></li><li>のれん＝340,000 − 400,000 × 70% ＝ 340,000 − 280,000 ＝ <strong>60,000円</strong></li></ul><p>貸借の確認：借方 300,000 ＋ 100,000 ＋ 60,000 ＝ 460,000円、貸方 340,000 ＋ 120,000 ＝ 460,000円。</p><p><mark>のれんは最後に差額で出す</mark>のがいちばん確実です。公式で計算した額と差額が一致すれば、それ自体が検算になります。</p><p class="small">この設例は本文で使ってきたものと同じで、Phase 2 の通し演習にもそのまま登場します。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong>、S社の発行済株式の <strong>80%</strong> を <strong>230,000円</strong> で取得し、支配を獲得した。支配獲得日のS社の純資産は、<strong>資本金 250,000円</strong>、<strong>利益剰余金 50,000円</strong> である。支配獲得日の連結修正仕訳を示しなさい。<br><span class="small muted">S社の資産および負債の帳簿価額と時価に差異はない。</span>',
+        debit: [['資本金', 250000], ['利益剰余金', 50000]],
+        credit: [['子会社株式', 230000], ['非支配株主持分', 60000], ['負ののれん発生益', 10000]],
+        hint: '親会社の持分より安く買えています。差額はどちら側に出ますか。',
+        explain: '<p><strong>資本金 250,000／利益剰余金 50,000 ／／ 子会社株式 230,000／非支配株主持分 60,000／負ののれん発生益 10,000</strong> です。</p><ul><li>S社の純資産＝250,000 ＋ 50,000 ＝ <strong>300,000円</strong></li><li>P社の持分＝300,000 × 80% ＝ <strong>240,000円</strong></li><li>非支配株主持分＝300,000 × 20% ＝ <strong>60,000円</strong></li><li>差額＝230,000 − 240,000 ＝ <strong>−10,000円</strong></li></ul><p>240,000円の価値のものを 230,000円で買えたので、<mark>その時点で 10,000円得をしています。</mark>この得を<strong>負ののれん発生益</strong>という収益として、貸方に計上します。</p><p>連結損益計算書の<strong>特別利益</strong>に表示し、<mark>償却しません。</mark>のれんのように借方に資産として立てて毎期償却する、という処理にはなりません。</p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>70%</strong> を取得した際に、のれん <strong>60,000円</strong> が生じた。こののれんを <strong>10年間</strong> にわたり定額法により償却する。当期（1年分）の連結修正仕訳を示しなさい。',
+        debit: [['のれん償却', 6000]],
+        credit: [['のれん', 6000]],
+        hint: 'のれんは直接減額します。累計額を使う科目はありません。',
+        explain: '<p><strong>のれん償却 6,000 ／ のれん 6,000</strong> です。</p><p>金額は 60,000 ÷ 10 ＝ <strong>6,000円</strong>。</p><p>のれんは<strong>直接減額</strong>します。有形固定資産の「減価償却累計額」にあたる科目は使いません。連結貸借対照表には未償却残高だけが「のれん」として載ります。</p><p>「のれん償却」は費用で、連結損益計算書の<mark>販売費及び一般管理費</mark>に表示します。営業外費用ではありません。</p><p class="small">合併で生じたのれんの償却も、まったく同じ扱いです。<strong>20年以内・定額法・販売費及び一般管理費。</strong></p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>70%</strong> を保有している。当期のS社の当期純利益は <strong>60,000円</strong> であった。当期純利益の按分に関する連結修正仕訳を示しなさい。',
+        debit: [['非支配株主に帰属する当期純利益', 18000]],
+        credit: [['非支配株主持分', 18000]],
+        hint: '子会社が稼いだ利益のうち、非支配株主の取り分はいくらでしょうか。取り分が増えたら純資産はどう動きますか。',
+        explain: '<p><strong>非支配株主に帰属する当期純利益 18,000 ／ 非支配株主持分 18,000</strong> です。</p><p>金額は 60,000 × 30% ＝ <strong>18,000円</strong>。<mark>掛けるのは非支配株主の比率（30%）</mark>であって、親会社の比率ではありません。</p><p>連結損益計算書にはS社の収益と費用が<strong>全額</strong>取り込まれているため、連結上の当期純利益にはS社の利益が100%含まれています。そのうち30%は非支配株主のものなので、抜き出します。</p><ul><li><strong>非支配株主に帰属する当期純利益</strong>は当期純利益から差し引かれる項目なので、差し引く額を増やす＝<strong>借方</strong></li><li><strong>非支配株主持分</strong>は純資産で、取り分が増えるので<strong>貸方</strong></li></ul><p>按分するのは<mark>子会社の当期純利益だけ</mark>です。親会社の利益や連結全体の利益を按分してはいけません。</p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>70%</strong> を保有している。S社は当期に <strong>剰余金の配当 20,000円</strong> を行い、P社はそのうち持分に応じた金額を受取配当金として計上している。配当に関する連結修正仕訳を示しなさい。<br><span class="small muted">配当により減少した利益剰余金の取り消しは「利益剰余金」で処理する。</span>',
+        debit: [['受取配当金', 14000], ['非支配株主持分', 6000]],
+        credit: [['利益剰余金', 20000]],
+        hint: '配当されたお金の行き先は2つに分かれています。グループの外へ出たのはどちらでしょうか。',
+        explain: '<p><strong>受取配当金 14,000／非支配株主持分 6,000 ／／ 利益剰余金 20,000</strong> です。</p><p>配当 20,000円の行き先は2つです。</p><ul><li><strong>P社へ 14,000円</strong>（20,000 × 70%）… グループの中でお金が移動しただけなので、P社の<strong>受取配当金を消します</strong>（収益を減らすので借方）</li><li><strong>非支配株主へ 6,000円</strong>（20,000 × 30%）… 本当にグループの外へ出ました。取り分が減ったので<strong>非支配株主持分を減らします</strong>（純資産を減らすので借方）</li></ul><p>貸方は、S社が行った配当 20,000円を<strong>全額取り消します。</strong>連結財務諸表に載る配当は<mark>親会社が行ったものだけ</mark>だからです。</p><p class="small">答案が株主資本等変動計算書の様式なら、貸方は「剰余金の配当」、借方の非支配株主持分は「非支配株主持分当期変動額」と書きます。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong> にS社株式の <strong>70%</strong> を <strong>340,000円</strong> で取得して支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>300,000円</strong>、利益剰余金 <strong>100,000円</strong> である。のれんは支配獲得の翌年度から <strong>10年</strong> で定額法により償却する。第1年度（X1年4月1日〜X2年3月31日）のS社の当期純利益は <strong>50,000円</strong> で、配当は行っていない。<br><strong>第2年度（X2年4月1日〜X3年3月31日）の開始仕訳</strong>を示しなさい。',
+        debit: [['資本金', 300000], ['利益剰余金', 121000], ['のれん', 54000]],
+        credit: [['子会社株式', 340000], ['非支配株主持分', 135000]],
+        hint: '当期首のS社の純資産はいくらでしょうか。のれんは1年分償却済みです。',
+        explain: '<p><strong>資本金 300,000／利益剰余金 121,000／のれん 54,000 ／／ 子会社株式 340,000／非支配株主持分 135,000</strong> です。</p><p>当期首（X2年4月1日）の状態を直接計算する道筋が速いです。</p><ul><li><strong>のれん</strong>＝60,000 − 6,000（1年分）＝ <strong>54,000円</strong></li><li><strong>非支配株主持分</strong>＝当期首のS社の純資産 450,000（＝300,000 ＋ 150,000）× 30% ＝ <strong>135,000円</strong></li><li><strong>子会社株式</strong>と<strong>資本金</strong>は動かないので、取得原価と支配獲得日の金額のまま</li><li><strong>利益剰余金</strong>＝貸借の差額＝(340,000 ＋ 135,000) − (300,000 ＋ 54,000) ＝ <strong>121,000円</strong></li></ul><p>積み上げる道筋でも確かめます。支配獲得日の利益剰余金 100,000 ＋ のれん償却 6,000 ＋ 非支配株主への按分 15,000（＝50,000 × 30%）＝ <strong>121,000円</strong>。一致します。</p><p>前期の「のれん償却」も「非支配株主に帰属する当期純利益」も、どちらも<mark>前期は借方</mark>でした。開始仕訳では名前が<strong>利益剰余金当期首残高</strong>に変わりますが、<strong>向きは借方のまま</strong>で合流します。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong> にS社株式の <strong>60%</strong> を <strong>400,000円</strong> で取得して支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>400,000円</strong>、利益剰余金 <strong>200,000円</strong> である。のれんは支配獲得の翌年度から <strong>20年</strong> で定額法により償却する。S社の当期純利益は第1年度 <strong>50,000円</strong>、第2年度 <strong>70,000円</strong> で、配当は行っていない。<br><strong>第3年度の開始仕訳</strong>を示しなさい。',
+        debit: [['資本金', 400000], ['利益剰余金', 252000], ['のれん', 36000]],
+        credit: [['子会社株式', 400000], ['非支配株主持分', 288000]],
+        hint: '支配獲得から当期首まで何年経っていますか。指を折って数えてください。',
+        explain: '<p><strong>資本金 400,000／利益剰余金 252,000／のれん 36,000 ／／ 子会社株式 400,000／非支配株主持分 288,000</strong> です。</p><p>まず<mark>経過年数は2年</mark>（第1年度と第2年度）です。第3年度の開始仕訳なので、そこまでの積み上げを再現します。</p><ul><li>P社の持分＝600,000 × 60% ＝ 360,000円</li><li>当初ののれん＝400,000 − 360,000 ＝ <strong>40,000円</strong>（20年償却なので年 2,000円）</li><li><strong>のれん</strong>＝40,000 − 2,000 × 2 ＝ <strong>36,000円</strong></li><li>当期首のS社の純資産＝資本金 400,000 ＋ 利益剰余金（200,000 ＋ 50,000 ＋ 70,000 ＝ 320,000）＝ <strong>720,000円</strong></li><li><strong>非支配株主持分</strong>＝720,000 × 40% ＝ <strong>288,000円</strong></li><li><strong>利益剰余金</strong>＝貸借の差額＝(400,000 ＋ 288,000) − (400,000 ＋ 36,000) ＝ <strong>252,000円</strong></li></ul><p>積み上げる道筋でも確かめます。支配獲得日の利益剰余金 200,000 ＋ のれん償却2年分 4,000 ＋ 非支配株主への按分2年分（50,000 ＋ 70,000）× 40% ＝ 48,000 → 合計 <strong>252,000円</strong>。一致します。</p><p><mark>経過年数を数え間違えると、のれんも非支配株主持分も利益剰余金もすべてずれます。</mark>問題文の支配獲得日と当期の会計期間を並べて、指を折って数えてください。</p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>100%</strong> を保有している。当期のS社の当期純利益は <strong>80,000円</strong> であった。当期純利益の按分に関する連結修正仕訳を示しなさい。<br><span class="small muted">仕訳が不要な場合は、解答欄に何も入力しないこと。</span>',
+        debit: [],
+        credit: [],
+        hint: '非支配株主は存在しますか。',
+        explain: '<p><strong>仕訳は不要です。</strong></p><p>P社がS社株式を100%保有しているので、<mark>非支配株主が存在しません。</mark>按分する相手がいないので、子会社の当期純利益はすべて親会社株主に帰属します。</p><p>連結損益計算書にも「非支配株主に帰属する当期純利益」の行は出てこず、当期純利益がそのまま親会社株主に帰属する当期純利益になります。</p><p>同じ理由で、100%子会社では<strong>非支配株主持分も生じません</strong>し、<strong>配当の修正も受取配当金の全額を消すだけ</strong>で済みます。</p><p><mark>持分比率は必ず問題文で確認してください。</mark>60%〜80%で出題されるのがふつうですが、100%の設定もありえます。</p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>75%</strong> を保有している。当期のS社は <strong>当期純損失 40,000円</strong> を計上した。当期純損失の按分に関する連結修正仕訳を示しなさい。',
+        debit: [['非支配株主持分', 10000]],
+        credit: [['非支配株主に帰属する当期純損失', 10000]],
+        hint: '子会社が損失を出したら、非支配株主の取り分はどうなりますか。',
+        explain: '<p><strong>非支配株主持分 10,000 ／ 非支配株主に帰属する当期純損失 10,000</strong> です。</p><p>金額は 40,000 × 25% ＝ <strong>10,000円</strong>。</p><p>利益の場合とは<mark>貸借が逆になります。</mark>子会社が損失を出せば、非支配株主の取り分もその分だけ減るからです。非支配株主持分は純資産なので、減らすには借方です。</p><p>科目名も<strong>「非支配株主に帰属する当期純損失」</strong>に変わります。「非支配株主に帰属する当期純利益」をマイナスで書くのではありません。</p><p>連結損益計算書では、当期純利益に<strong>加算</strong>される形になります。非支配株主が損失を引き受けてくれた分だけ、親会社株主に帰属する当期純利益は大きくなります。</p>'
+      },
+      {
+        text: 'P社はS社の発行済株式の <strong>60%</strong> を保有している。S社は当期に <strong>剰余金の配当 50,000円</strong> を行い、P社はそのうち持分に応じた金額を受取配当金として計上している。配当に関する連結修正仕訳を示しなさい。<br><span class="small muted">配当により減少した利益剰余金の取り消しは「利益剰余金」で処理する。</span>',
+        debit: [['受取配当金', 30000], ['非支配株主持分', 20000]],
+        credit: [['利益剰余金', 50000]],
+        hint: '60%と40%に分かれます。どちらがグループの外へ出た分でしょうか。',
+        explain: '<p><strong>受取配当金 30,000／非支配株主持分 20,000 ／／ 利益剰余金 50,000</strong> です。</p><ul><li>P社が受け取った分＝50,000 × 60% ＝ <strong>30,000円</strong> … グループ内の移動なので受取配当金を消す</li><li>非支配株主が受け取った分＝50,000 × 40% ＝ <strong>20,000円</strong> … グループの外へ出たので非支配株主持分を減らす</li></ul><p>貸方はS社が行った配当の全額 50,000円です。<strong>借方の2つを足すと必ず貸方と一致します</strong>（30,000 ＋ 20,000 ＝ 50,000）。配当されたお金の行き先を2つに分けているだけだからです。</p><p>非支配株主持分が<mark>借方＝減る向き</mark>であることに注意してください。配当は会社から株主へ財産を渡す手続きなので、渡した分だけ会社に残る取り分は減ります。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong> にS社株式の <strong>80%</strong> を <strong>230,000円</strong> で取得して支配を獲得し、<strong>負ののれん発生益 10,000円</strong> を計上した。支配獲得日のS社の純資産は、資本金 <strong>250,000円</strong>、利益剰余金 <strong>50,000円</strong> である。第1年度のS社の当期純利益は <strong>40,000円</strong> で、配当は行っていない。<br><strong>第2年度の開始仕訳</strong>を示しなさい。',
+        debit: [['資本金', 250000], ['利益剰余金', 48000]],
+        credit: [['子会社株式', 230000], ['非支配株主持分', 68000]],
+        hint: '負ののれん発生益は収益です。開始仕訳ではどの科目に置き換わりますか。のれんは残りません。',
+        explain: '<p><strong>資本金 250,000／利益剰余金 48,000 ／／ 子会社株式 230,000／非支配株主持分 68,000</strong> です。</p><p><strong>のれんは出てきません。</strong>負ののれん発生益は収益として一括計上済みで、資産が立っていないので、翌期に持ち越す未償却残高がありません。</p><p>前期の2本を置き換えて積み上げます。</p><ul><li><strong>相殺</strong>：資本金 250,000／利益剰余金 50,000 ／／ 子会社株式 230,000／非支配株主持分 60,000／負ののれん発生益 10,000</li><li><strong>按分</strong>：非支配株主に帰属する当期純利益 8,000（＝40,000 × 20%）／ 非支配株主持分 8,000</li></ul><p>損益の科目を<mark>利益剰余金当期首残高</mark>に置き換えると、</p><ul><li>借方の利益剰余金＝50,000（相殺）＋ 8,000（按分）＝ 58,000円</li><li>貸方の利益剰余金＝10,000円（<strong>負ののれん発生益は前期に貸方の収益だったので、貸方のまま</strong>）</li><li>純額＝58,000 − 10,000 ＝ <strong>48,000円</strong>（借方）</li><li>非支配株主持分＝60,000 ＋ 8,000 ＝ <strong>68,000円</strong></li></ul><p>非支配株主持分は別の道筋でも確かめられます。当期首のS社の純資産＝250,000 ＋ (50,000 ＋ 40,000) ＝ 340,000円。その 20% は <strong>68,000円</strong>で一致します。</p><p>貸借の確認：借方 250,000 ＋ 48,000 ＝ 298,000円、貸方 230,000 ＋ 68,000 ＝ 298,000円。</p>'
+      },
+      {
+        text: 'P社は <strong>X1年3月31日</strong> にS社株式の <strong>70%</strong> を <strong>340,000円</strong> で取得して支配を獲得した。支配獲得日のS社の純資産は、資本金 <strong>300,000円</strong>、資本剰余金 <strong>50,000円</strong>、利益剰余金 <strong>100,000円</strong> である。支配獲得日の連結修正仕訳を示しなさい。<br><span class="small muted">S社の資産および負債の帳簿価額と時価に差異はない。</span>',
+        debit: [['資本金', 300000], ['資本剰余金', 50000], ['利益剰余金', 100000], ['のれん', 25000]],
+        credit: [['子会社株式', 340000], ['非支配株主持分', 135000]],
+        hint: '純資産は3つあります。全部を借方に並べてから、非支配株主持分を計算してください。',
+        explain: '<p><strong>資本金 300,000／資本剰余金 50,000／利益剰余金 100,000／のれん 25,000 ／／ 子会社株式 340,000／非支配株主持分 135,000</strong> です。</p><ul><li>S社の純資産＝300,000 ＋ 50,000 ＋ 100,000 ＝ <strong>450,000円</strong></li><li>P社の持分＝450,000 × 70% ＝ <strong>315,000円</strong></li><li>非支配株主持分＝450,000 × 30% ＝ <strong>135,000円</strong></li><li>のれん＝340,000 − 315,000 ＝ <strong>25,000円</strong></li></ul><p>貸借の確認：借方 300,000 ＋ 50,000 ＋ 100,000 ＋ 25,000 ＝ 475,000円、貸方 340,000 ＋ 135,000 ＝ 475,000円。</p><p><strong>資本剰余金を落とさないでください。</strong>純資産を構成するものは全部が相殺の対象であり、持分比率で按分される対象です。資本剰余金を忘れると、非支配株主持分が 400,000 × 30% ＝ 120,000円となり、のれんも 340,000 − 280,000 ＝ 60,000円にずれます。</p><p><mark>のれんは差額で出す</mark>のがいちばん確実です。借方に純資産を全部並べ、貸方に子会社株式と非支配株主持分を置いてから、足りないほうに差額を置きます。</p>'
+      },
+      {
+        text: '前問と同じ状況で、P社はS社の発行済株式の <strong>70%</strong> を <strong>300,000円</strong> で取得したものとする。支配獲得日のS社の純資産は、資本金 <strong>300,000円</strong>、資本剰余金 <strong>50,000円</strong>、利益剰余金 <strong>100,000円</strong> である。支配獲得日の連結修正仕訳を示しなさい。',
+        debit: [['資本金', 300000], ['資本剰余金', 50000], ['利益剰余金', 100000]],
+        credit: [['子会社株式', 300000], ['非支配株主持分', 135000], ['負ののれん発生益', 15000]],
+        hint: '純資産の持分 315,000円のものを、いくらで買いましたか。',
+        explain: '<p><strong>資本金 300,000／資本剰余金 50,000／利益剰余金 100,000 ／／ 子会社株式 300,000／非支配株主持分 135,000／負ののれん発生益 15,000</strong> です。</p><ul><li>S社の純資産＝300,000 ＋ 50,000 ＋ 100,000 ＝ <strong>450,000円</strong></li><li>P社の持分＝450,000 × 70% ＝ <strong>315,000円</strong></li><li>非支配株主持分＝450,000 × 30% ＝ <strong>135,000円</strong></li><li>差額＝300,000 − 315,000 ＝ <strong>−15,000円</strong></li></ul><p>315,000円の価値のものを 300,000円で買えたので、<mark>15,000円の得</mark>です。<strong>負ののれん発生益</strong>として貸方に計上します。</p><p>貸借の確認：借方 450,000円、貸方 300,000 ＋ 135,000 ＋ 15,000 ＝ 450,000円。</p><p>前問と純資産はまったく同じで、<strong>投資額だけが 340,000円から 300,000円に変わりました。</strong>それだけで、借方ののれん 25,000円が、貸方の負ののれん発生益 15,000円に入れ替わります。<mark>差額がどちら側に出るかは、投資額と親会社持分の大小で決まります。</mark></p>'
+      }
+    ]
+  });
+
+})();
+</script>
+
+</body>
+</html>

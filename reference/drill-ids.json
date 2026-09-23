@@ -1263,5 +1263,183 @@
     "be2d6800",
     "3bddc1e6",
     "c1caca57"
+  ],
+  "phase1/24_kou-cvp-chokusetsu#drill-cvp": [
+    "91f8ae26",
+    "1eba25ee",
+    "f499babb",
+    "2d4877c1",
+    "1c1814ba",
+    "bf4117a5",
+    "a2e6607e",
+    "c3677604"
+  ],
+  "phase1/24_kou-cvp-chokusetsu#fill-cvp": [
+    "81e10587",
+    "22c0faaa",
+    "62bcb21c",
+    "c4bac658",
+    "30bb0615",
+    "6041a936",
+    "08e7eeef",
+    "9f7de695"
+  ],
+  "phase1/24_kou-cvp-chokusetsu#num-cvp": [
+    "08694d45",
+    "20433291",
+    "7331ddb4",
+    "d9e88984",
+    "c6f5103f",
+    "5c3e0937",
+    "78e0cd71",
+    "90c11dde",
+    "196b4d6c",
+    "d3997f48",
+    "6383c252",
+    "815aafc6"
+  ],
+  "phase1/24_kou-cvp-chokusetsu#quiz-cvp": [
+    "ec57c970",
+    "29cd8f98",
+    "b82d773b",
+    "84dc37f7",
+    "eced0806",
+    "edad9ce0",
+    "f7314f7d",
+    "db4ca11f",
+    "bb41449a",
+    "4df39b0f",
+    "b64e9bc5",
+    "ec183fb7"
+  ],
+  "phase1/23_shou-renketsu-shihon#drill-shihon": [
+    "eeb16d7d",
+    "d529706e",
+    "9fd82177",
+    "3d1feba9",
+    "06867f27",
+    "7b94db07",
+    "9dfd8fa6",
+    "d03c6b91",
+    "f07470ac",
+    "345a186f",
+    "18f3bde1",
+    "fd9fcf18",
+    "383f4391",
+    "97ef7711"
+  ],
+  "phase1/23_shou-renketsu-shihon#fill-shihon": [
+    "86b5b470",
+    "a844dde8",
+    "01b209e0",
+    "8876a400",
+    "58837f8b",
+    "6cc4b99c",
+    "85983caf",
+    "2cc3a1af"
+  ],
+  "phase1/23_shou-renketsu-shihon#num-shihon": [
+    "43a036ac",
+    "013e0e06",
+    "9b5eb68f",
+    "1a70a074",
+    "8158ff99",
+    "cc7a59f6"
+  ],
+  "phase1/23_shou-renketsu-shihon#quiz-shihon": [
+    "fb37c7be",
+    "24dae057",
+    "b0c10a37",
+    "62fb93b0",
+    "a10537a0",
+    "3e6a7439",
+    "a7ce1b01",
+    "e4279fb8"
+  ],
+  "phase1/21_shou-kabushiki-gappei#drill-kabushiki": [
+    "de021674",
+    "4d9a1a59",
+    "c79730cd",
+    "60a43554",
+    "cf98da4f",
+    "b9c793ea",
+    "a94f6677",
+    "95ecc0d8",
+    "2ddf5a04",
+    "e164fa6a",
+    "b73eeafe",
+    "6d299b5b",
+    "b1f89307",
+    "21a8fa76"
+  ],
+  "phase1/21_shou-kabushiki-gappei#fill-kabushiki": [
+    "fac45797",
+    "400f94e5",
+    "5dcf0f74",
+    "76a08931",
+    "551eb112",
+    "f0c15eb5"
+  ],
+  "phase1/21_shou-kabushiki-gappei#num-kabushiki": [
+    "780f7cb0",
+    "a939f88a",
+    "9148571c",
+    "a687f263",
+    "0ff130e0",
+    "b65b8678"
+  ],
+  "phase1/21_shou-kabushiki-gappei#quiz-kabushiki": [
+    "f61a0816",
+    "1252216d",
+    "1a3e093e",
+    "851e248e",
+    "c4e799d4",
+    "cf1c7ebd",
+    "1b08285c",
+    "62c2fea4",
+    "2b093b8d",
+    "6eb81403"
+  ],
+  "phase1/22_shou-honshiten#drill-honshiten": [
+    "2c4684f1",
+    "31ccc2f4",
+    "af7a0752",
+    "e662b5b3",
+    "ff03ce53",
+    "202eff3b",
+    "07d60c01",
+    "fbd01243",
+    "e8294aa0",
+    "3fd194c3",
+    "c1e75ec1",
+    "eaac67a0",
+    "af865dd3",
+    "a126ce46"
+  ],
+  "phase1/22_shou-honshiten#fill-honshiten": [
+    "f066dcd0",
+    "adbbdd43",
+    "7292b9ba",
+    "3bcf6862",
+    "efb6ce35",
+    "eb930810"
+  ],
+  "phase1/22_shou-honshiten#num-honshiten": [
+    "d7d10169",
+    "ac4ddca0",
+    "3945664a",
+    "cd1cf86d",
+    "765cb381"
+  ],
+  "phase1/22_shou-honshiten#quiz-honshiten": [
+    "93958f6c",
+    "18195b4d",
+    "fe1a7196",
+    "50677db5",
+    "2245b651",
+    "1d110931",
+    "de408131",
+    "e545090e",
+    "013e85ac"
   ]
 }
