@@ -211,6 +211,31 @@ try {
       return BokiProgress.due()[0].last; }),
        '2026-01-05', 'last は最後に間違えた日時');
   });
+
+  // エクスポートはクリップボードが使えなくても、選択済みの欄に JSON を出す。
+  // LAN の http では navigator.clipboard が無く、許可が無ければ writeText が失敗する。
+  for (const [label, stub] of [
+    ['clipboard が無い', 'undefined'],
+    ['writeText が失敗する', '{ writeText: () => Promise.reject(new Error("denied")) }'],
+  ]) {
+    const page = await browser.newPage();
+    await page.addInitScript('Object.defineProperty(navigator, "clipboard", { value: ' + stub + ' });');
+    await page.route('**/*', (route) => {
+      const path = new URL(route.request().url()).pathname.slice(1);
+      try {
+        route.fulfill({ status: 200, body: readFileSync(resolve(path)),
+          contentType: path.endsWith('.html') ? 'text/html' : path.endsWith('.css') ? 'text/css' : 'application/javascript' });
+      } catch { route.fulfill({ status: 404 }); }
+    });
+    await page.goto('https://example.test/progress.html');
+    await page.click('#export');
+    eq(await page.evaluate(() => {
+      const ta = document.getElementById('export-text');
+      return [ta.hidden, typeof JSON.parse(ta.value),
+        ta.selectionStart === 0 && ta.selectionEnd === ta.value.length];
+    }), [false, 'object', true], 'エクスポートのフォールバック: ' + label);
+    await page.close();
+  }
 } finally {
   await browser.close();
 }
