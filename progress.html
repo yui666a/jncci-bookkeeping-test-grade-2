@@ -57,6 +57,7 @@
     <button class="btn" type="button" id="export">クリップボードにコピー</button>
     <span class="small muted" id="export-msg"></span>
   </div>
+  <textarea id="export-text" rows="6" readonly hidden style="width:100%"></textarea>
 
   <h2><span class="num">8</span>記録の全消去</h2>
   <p class="small muted">元に戻せません。エクスポートして転記を済ませてから実行してください。</p>
@@ -260,11 +261,20 @@
   /* 7. エクスポート */
   document.getElementById('export').addEventListener('click', function () {
     var msg = document.getElementById('export-msg');
-    navigator.clipboard.writeText(P.exportJSON()).then(function () {
+    var json = P.exportJSON();
+    function showText() {
+      var ta = document.getElementById('export-text');
+      ta.value = json;
+      ta.hidden = false;
+      ta.focus();
+      ta.select();
+      msg.textContent = '自動でコピーできなかった。下の欄を選択済みなので、そのままコピーしてください。';
+    }
+    // clipboard の存在を前提にしない。http の LAN アドレスなど非セキュアコンテキストでは undefined になる
+    if (!navigator.clipboard) return showText();
+    navigator.clipboard.writeText(json).then(function () {
       msg.textContent = 'コピーした。Claude に貼ってください。';
-    }, function () {
-      msg.textContent = 'コピーできなかった（ブラウザがクリップボードを許可していない）。';
-    });
+    }, showText);
   });
 
   /* 8. 全消去 */
