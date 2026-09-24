@@ -442,16 +442,24 @@
   // qNo は cfg.qNumbers で差し替えられる。復習ページは1つのドリルから
   // 間違えた設問だけを抜いて並べるため、並び順の番号で記録すると、
   // 元の設問とは別のIDが増えていく。
+  // 同じ入力のまま採点し直しても記録しない。連打で連続正解が積み上がると、
+  // 1回しか解いていない設問が復習リストから消える。
+  // 答えを見た後の採点は写しても正解にしない。
   function makeScorer(scoreEl, total, drillBase, qNumbers) {
-    var state = {};
-    return function (id, ok) {
+    var state = {}, lastInput = {}, revealed = {};
+    function report(id, ok, input) {
+      if (id in lastInput && lastInput[id] === input) return;
+      lastInput[id] = input;
+      ok = ok && !revealed[id];
       state[id] = ok;
       var qNo = qNumbers ? qNumbers[id] : id + 1;
       if (drillBase) BokiProgress.record(drillBase + '/q' + qNo, ok);
       var done = 0, right = 0;
       for (var k in state) { done++; if (state[k]) right++; }
       scoreEl.textContent = '正解 ' + right + ' / 解答済 ' + done + '（全' + total + '問）';
-    };
+    }
+    report.reveal = function (id) { revealed[id] = true; };
+    return report;
   }
 
   /* ---------- 勘定科目の検索つき選択 ---------- */
@@ -1035,9 +1043,10 @@
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
           fb.innerHTML = '<div class="fb__head ' + (ok ? 'ok' : 'ng') + '">' +
             (ok ? '正解' : '不正解 — 正しい仕訳はこちら') + '</div>' + (ok ? answerHTML() : answerHTML());
-          report(i, ok);
+          report(i, ok, JSON.stringify([collect('d'), collect('c')]));
         });
         bAns.addEventListener('click', function () {
+          report.reveal(i);
           fb.className = 'fb show fb--ok';
           fb.innerHTML = '<div class="fb__head ok">解答</div>' + answerHTML();
         });
@@ -1098,7 +1107,7 @@
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
           fb.innerHTML = '<div class="fb__head ' + (ok ? 'ok' : 'ng') + '">' + (ok ? '正解' : '不正解') + '</div>' +
             (q.explain ? '<div>' + q.explain + '</div>' : '');
-          report(i, ok);
+          report(i, ok, picked.value);
         });
       });
     }
@@ -1173,9 +1182,10 @@
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
           fb.innerHTML = '<div class="fb__head ' + (ok ? 'ok' : 'ng') + '">' +
             (ok ? '正解' : '不正解 — 正解はこちら') + '</div>' + ansHTML();
-          report(i, ok);
+          report(i, ok, JSON.stringify(inputs.map(function (inp) { return parseAmt(inp.value); })));
         });
         bAns.addEventListener('click', function () {
+          report.reveal(i);
           fb.className = 'fb show fb--ok';
           fb.innerHTML = '<div class="fb__head ok">解答</div>' + ansHTML();
         });
@@ -1226,9 +1236,10 @@
           var ok = q.answer.some(function (a) { return norm(a) === v; });
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
           fb.innerHTML = '<div class="fb__head ' + (ok ? 'ok' : 'ng') + '">' + (ok ? '正解' : '不正解') + '</div>' + ansHTML();
-          report(i, ok);
+          report(i, ok, v);
         });
         b2.addEventListener('click', function () {
+          report.reveal(i);
           fb.className = 'fb show fb--ok';
           fb.innerHTML = '<div class="fb__head ok">解答</div>' + ansHTML();
         });

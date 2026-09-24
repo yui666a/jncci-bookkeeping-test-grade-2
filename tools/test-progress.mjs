@@ -211,6 +211,25 @@ try {
       return BokiProgress.due()[0].last; }),
        '2026-01-05', 'last は最後に間違えた日時');
   });
+
+  // 採点の連打は1回として記録し、答えを見た後の採点は正解にしない。
+  await withApp(browser, 'phase0/x.html', async (page) => {
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      const d = document.createElement('div'); d.id = 'd'; document.body.appendChild(d);
+      BokiFill.mount('#d', { questions: [{ text: 'q', answer: ['仕入'] }] });
+      const [bCheck, bAns] = d.querySelectorAll('button');
+      const inp = d.querySelector('input');
+      const oks = () => BokiProgress.dump().drills['phase0/x#d/q1'].attempts.map((a) => a.ok);
+      inp.value = '仕入';
+      bCheck.click(); bCheck.click(); bCheck.click();
+      const afterMash = oks();
+      inp.value = 'x'; bCheck.click();
+      bAns.click();
+      inp.value = '仕入'; bCheck.click();
+      return [afterMash, oks()]; }),
+       [[true], [true, false, false]], '連打と答えを見た後の採点');
+  });
 } finally {
   await browser.close();
 }
