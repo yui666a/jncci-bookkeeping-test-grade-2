@@ -161,9 +161,9 @@ function targets(args) {
     }
   }
   found.sort();
-  // ダッシュボードと復習ページはフェーズ配下にないが、JSエラーと壊れた
-  // 記録への耐性を見る必要があるため対象に含める。
-  for (const f of ['progress.html', 'review.html']) {
+  // ダッシュボード・復習・横断演習のページはフェーズ配下にないが、JSエラーと
+  // 壊れた記録への耐性を見る必要があるため対象に含める。
+  for (const f of ['progress.html', 'review.html', 'practice.html']) {
     if (existsSync(f)) found.push(f);
   }
   return found;

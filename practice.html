@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="boki-topics" content="なし">
+<title>横断演習 — 日商簿記2級</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__in">
+    <span class="topbar__title">日商簿記2級 ／ 横断演習</span>
+    <span class="topbar__spacer"></span>
+    <button class="theme-btn" type="button">◐ 自動</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">PRACTICE</p>
+    <h1>横断演習</h1>
+    <p class="lead">単元をまたいでドリルを解きます。単元を選び、<strong>順番に</strong>か<strong>ランダムに</strong>かを選んで始めてください。問題タイプ（仕訳ドリル・確認テストなど）でも絞り込めます。
+      商業簿記・工業簿記の見出しのチェックで、その分野の単元をまとめて選べます。
+      解答は単元ページで解いたときと同じ設問として記録され、間違えた設問は <a href="review.html">復習ドリル</a> に集まります。</p>
+  </div>
+
+  <div id="setup"></div>
+  <div id="summary"></div>
+  <div id="drills"></div>
+
+  <div class="footer">
+    <span><a href="index.html">← 教材トップに戻る</a> ／ <a href="progress.html">学習の記録</a></span>
+    <span>日商簿記2級 横断演習</span>
+  </div>
+
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  function el(t, c, x) {
+    var n = document.createElement(t);
+    if (c) n.className = c;
+    if (x !== undefined) n.textContent = x;
+    return n;
+  }
+
+  var setup = document.getElementById('setup');
+  var summary = document.getElementById('summary');
+  var host = document.getElementById('drills');
+  var API = { journal: window.BokiJournal, quiz: window.BokiQuiz,
+              num: window.BokiNum, fill: window.BokiFill };
+
+  // 分野は単元キーの命名（_shou- / _kou-）から決める。別の対応表を持つと、
+  // 単元を足したときに表の更新漏れで「どこにも属さない単元」ができる。
+  // Phase 0 や模試の回し方のように分野を持たない単元は「その他」に置く。
+  var FIELDS = [
+    { key: 'shou', label: '商業簿記', test: /_shou-|shogyo/ },
+    { key: 'kou', label: '工業簿記', test: /_kou-|kogyo/ },
+    { key: 'etc', label: 'その他', test: /./ }
+  ];
+  // 問題タイプはドリルの種類そのもの。見出しは app.js が各ドリルに付ける
+  // 既定のバッジと揃える。総合問題（第3問形式など）は計算ドリルの部品で
+  // 組んであるため、計算ドリルに含まれる。
+  var KINDS = [
+    { key: 'journal', label: '仕訳ドリル', short: '仕訳' },
+    { key: 'quiz', label: '確認テスト', short: '確認' },
+    { key: 'num', label: '計算ドリル（総合問題を含む）', short: '計算' },
+    { key: 'fill', label: '穴埋め', short: '穴埋め' }
+  ];
+  function fieldOf(unit) {
+    for (var i = 0; i < FIELDS.length; i++) if (FIELDS[i].test.test(unit)) return FIELDS[i].key;
+  }
+
+  var req = new XMLHttpRequest();
+  req.open('GET', 'assets/drills.json', true);
+  req.onload = function () {
+    if (req.status !== 200 && req.status !== 0) return fail();
+    var bank;
+    try { bank = JSON.parse(req.responseText); }
+    catch (e) { bank = null; }
+    if (!bank || !bank.units) return fail();
+    renderSetup(bank);
+  };
+  // file:// で開けない理由は review.html と同じ。
+  req.onerror = fail;
+  req.send();
+
+  function fail() {
+    summary.appendChild(el('p', 'small muted',
+      '設問データ（assets/drills.json）を読み込めませんでした。' +
+      'file:// で開いている場合は、教材のフォルダで次を実行し、' +
+      'http://localhost:8000/practice.html を開いてください：  python3 -m http.server'));
+  }
+
+  // ドリルをページ内の順に並べる。出題できない種類のドリルはここで落とす。
+  function drillsOf(bank, unit) {
+    var d = bank.units[unit].drills;
+    return Object.keys(d).map(function (k) { return d[k]; })
+      .filter(function (x) { return API[x.kind] && (x.cfg.questions || []).length; })
+      .sort(function (a, b) { return a.order - b.order; });
+  }
+  // 単元の問題数をタイプ別に数える。{ journal: 8, quiz: 6, ... }
+  function countOf(bank, unit) {
+    var c = {};
+    drillsOf(bank, unit).forEach(function (x) { c[x.kind] = (c[x.kind] || 0) + x.cfg.questions.length; });
+    return c;
+  }
+
+  function renderSetup(bank) {
+    var counts = {};
+    var units = Object.keys(bank.units).sort().filter(function (u) {
+      counts[u] = countOf(bank, u);
+      return Object.keys(counts[u]).length;
+    });
+    var boxes = [];
+
+    FIELDS.forEach(function (f) {
+      var mine = units.filter(function (u) { return fieldOf(u) === f.key; });
+      if (!mine.length) return;
+      var fs = el('fieldset', 'pxfield');
+      var lg = el('legend');
+      var all = el('input'); all.type = 'checkbox';
+      var lgl = el('label');
+      lgl.appendChild(all);
+      lgl.appendChild(document.createTextNode(' ' + f.label + 'をまとめて選択'));
+      lg.appendChild(lgl);
+      fs.appendChild(lg);
+
+      var mineBoxes = mine.map(function (u) {
+        var lb = el('label', 'pxunit');
+        var cb = el('input'); cb.type = 'checkbox'; cb.value = u;
+        lb.appendChild(cb);
+        var parts = KINDS.filter(function (k) { return counts[u][k.key]; })
+          .map(function (k) { return k.short + ' ' + counts[u][k.key]; });
+        lb.appendChild(document.createTextNode(' ' + u.replace(/\/.*$/, '') + ' ' +
+          bank.units[u].title + '（' + parts.join('・') + '）'));
+        fs.appendChild(lb);
+        boxes.push(cb);
+        return cb;
+      });
+      function sync() {
+        var n = mineBoxes.filter(function (b) { return b.checked; }).length;
+        all.checked = n === mineBoxes.length;
+        all.indeterminate = n > 0 && n < mineBoxes.length;
+        refreshKinds();
+      }
+      all.addEventListener('change', function () {
+        mineBoxes.forEach(function (b) { b.checked = all.checked; });
+        sync();
+      });
+      mineBoxes.forEach(function (b) { b.addEventListener('change', sync); });
+      setup.appendChild(fs);
+    });
+
+    var kindRow = el('fieldset', 'pxfield');
+    kindRow.appendChild(el('legend', null, '問題タイプ'));
+    var kindCount = {};
+    KINDS.forEach(function (k) {
+      if (!units.some(function (u) { return counts[u][k.key]; })) return;
+      var lb = el('label', 'pxunit');
+      var cb = el('input'); cb.type = 'checkbox'; cb.name = 'kind'; cb.value = k.key; cb.checked = true;
+      lb.appendChild(cb);
+      lb.appendChild(document.createTextNode(' ' + k.label));
+      kindCount[k.key] = el('span');
+      lb.appendChild(kindCount[k.key]);
+      kindRow.appendChild(lb);
+    });
+    setup.appendChild(kindRow);
+
+    // タイプ別の問題数は選んでいる単元の合計。単元を選んでいないうちは0問と出る。
+    function refreshKinds() {
+      var chosen = boxes.filter(function (b) { return b.checked; });
+      Object.keys(kindCount).forEach(function (k) {
+        var n = chosen.reduce(function (s, b) { return s + (counts[b.value][k] || 0); }, 0);
+        kindCount[k].textContent = '（' + n + '問）';
+      });
+    }
+    refreshKinds();
+
+    var row = el('div', 'btn-row');
+    row.appendChild(el('span', 'small muted', '出題順：'));
+    ['順番に', 'ランダムに'].forEach(function (label, i) {
+      var lb = el('label');
+      var r = el('input'); r.type = 'radio'; r.name = 'order'; r.value = i ? 'random' : 'seq';
+      if (!i) r.checked = true;
+      lb.appendChild(r);
+      lb.appendChild(document.createTextNode(' ' + label));
+      row.appendChild(lb);
+    });
+    var go = el('button', 'btn btn--sm', 'この条件で始める');
+    go.type = 'button';
+    row.appendChild(go);
+    setup.appendChild(row);
+
+    go.addEventListener('click', function () {
+      var chosen = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+      var kinds = {};
+      Array.prototype.forEach.call(setup.querySelectorAll('input[name="kind"]:checked'),
+        function (b) { kinds[b.value] = true; });
+      var random = setup.querySelector('input[name="order"]:checked').value === 'random';
+      start(bank, chosen, kinds, random);
+    });
+  }
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function start(bank, chosen, kinds, random) {
+    host.innerHTML = '';
+    summary.innerHTML = '';
+    if (!chosen.length) {
+      summary.appendChild(el('p', 'small muted', '単元を1つ以上選んでください。'));
+      return;
+    }
+    if (!Object.keys(kinds).length) {
+      summary.appendChild(el('p', 'small muted', '問題タイプを1つ以上選んでください。'));
+      return;
+    }
+
+    // 出題の単位。順番にでは1ドリル＝1ブロック、ランダムでは1問＝1ブロック。
+    // ランダムでもドリル単位で混ぜるだけにすると、同じ単元の設問が
+    // 固まって出て、単元の見出しから論点が読めてしまう。
+    var blocks = [];
+    chosen.forEach(function (u) {
+      drillsOf(bank, u).filter(function (d) { return kinds[d.kind]; }).forEach(function (d) {
+        var nums = d.cfg.questions.map(function (_, i) { return i + 1; });
+        if (random) nums.forEach(function (n) { blocks.push({ unit: u, drill: d, nums: [n] }); });
+        else blocks.push({ unit: u, drill: d, nums: nums });
+      });
+    });
+    if (random) shuffle(blocks);
+    if (!blocks.length) {
+      summary.appendChild(el('p', 'small muted', '選んだ単元に、選んだタイプの問題はありません。'));
+      return;
+    }
+
+    var total = 0;
+    blocks.forEach(function (b, bi) {
+      var unit = bank.units[b.unit];
+      var head = el('div', 'reviewgroup');
+      var a = el('a', 'reviewgroup__unit', unit.title);
+      a.href = unit.href + '#' + b.drill.root;
+      head.appendChild(a);
+      head.appendChild(el('span', 'reviewgroup__meta', random
+        ? (bi + 1) + ' / ' + blocks.length + '　' + (b.drill.cfg.title || '') + ' 第' + b.nums[0] + '問'
+        : b.nums.length + '問'));
+      host.appendChild(head);
+
+      var box = el('div');
+      box.id = 'px' + bi;
+      host.appendChild(box);
+
+      // 設定は単元のものを使い、設問と記録先だけ差し替える（review.html と同じ）。
+      var cfg = {};
+      for (var k in b.drill.cfg) cfg[k] = b.drill.cfg[k];
+      cfg.questions = b.nums.map(function (n) { return b.drill.cfg.questions[n - 1]; });
+      cfg.recordAs = b.unit + '#' + b.drill.root;
+      cfg.qNumbers = b.nums;
+      API[b.drill.kind].mount('#' + box.id, cfg);
+      total += b.nums.length;
+    });
+
+    var s = el('p', 'lead');
+    s.appendChild(el('strong', null, total + '問'));
+    s.appendChild(document.createTextNode('（' + chosen.length + '単元・' + (random ? 'ランダム' : '順番') + '）'));
+    summary.appendChild(s);
+    summary.scrollIntoView();
+  }
+})();
+</script>
+</body>
+</html>

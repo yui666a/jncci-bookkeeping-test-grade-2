@@ -547,6 +547,12 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
   background: var(--accent-2); border-color: var(--accent-br);
   color: var(--accent); font-weight: 700;
 }
+.pxfield {
+  border: 1px solid var(--border-2); border-radius: 8px;
+  padding: 8px 14px 12px; margin: 0 0 14px;
+}
+.pxfield legend { font-weight: 700; padding: 0 6px; }
+.pxunit { display: block; font-size: 13px; padding: 3px 0; }
 .rvdrop { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
 .rvdrop__btn {
   font: inherit; font-size: 12px; cursor: pointer;
