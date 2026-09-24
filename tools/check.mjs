@@ -205,8 +205,15 @@ CHECKS.push(async function checkMounted(page, file, errors) {
 // ゲート1：静的な .jnl と BokiJournal の設問、両方の貸借を検算する。
 CHECKS.push(async function checkBalance(page, file) {
   const data = await page.evaluate(() => {
-    // 「×××」のような伏せ字は金額ではないので 0 として数える。
-    const num = (s) => window.BokiJournal.__parseAmt(s) || 0;
+    // 読めない金額を 0 として数えると、「1,000円」と「900円」の仕訳が 0 = 0 で
+    // 通る。空欄と「×××」の伏せ字だけを 0 とし、それ以外は unreadable に積む。
+    const unreadable = [];
+    const num = (s) => {
+      const v = window.BokiJournal.__parseAmt(s);
+      const t = String(s).trim();
+      if (isNaN(v) && t && !/^×+$/.test(t)) unreadable.push(t);
+      return isNaN(v) ? 0 : v;
+    };
     // 金額は td のみ。見出しの th.amt は「金額」の文字であり合計に含めない。
     //
     // 借方科目 td.d と貸方科目 td.c が同じ行に並ぶ表は仕訳であり、そこの
@@ -217,6 +224,7 @@ CHECKS.push(async function checkBalance(page, file) {
       const journal = [...t.rows].some((r) => r.querySelector('td.d') && r.querySelector('td.c'));
       const sum = { d: 0, c: 0 };
       let counted = 0;
+      unreadable.length = 0;
       for (const row of t.rows) {
         let side = null;
         for (const cell of row.querySelectorAll('td')) {
@@ -232,7 +240,7 @@ CHECKS.push(async function checkBalance(page, file) {
       const numeric = [...t.querySelectorAll('td')]
         .some((c) => !isNaN(window.BokiJournal.__parseAmt(c.textContent)));
       return { id: t.id || ('jnl[' + i + ']'), debit: sum.d, credit: sum.c,
-               unchecked: journal && !counted && numeric };
+               unchecked: journal && !counted && numeric, unreadable: [...unreadable] };
     });
     const drills = [];
     for (const { sel, cfg } of (window.__captured?.journal || [])) {
@@ -246,6 +254,9 @@ CHECKS.push(async function checkBalance(page, file) {
   });
 
   for (const t of data.tables) {
+    for (const v of t.unreadable) {
+      report(file, t.id, '数値として読める金額', v, '仕訳の金額欄を数値として読めない');
+    }
     if (t.unchecked) {
       report(file, t.id, 'td.amt あり', 'なし', '仕訳の金額欄に amt がなく貸借を検算できない');
     }
@@ -870,20 +881,26 @@ CHECKS.push(async function checkDrillIds(page, file) {
       const key = unit + '#' + root;
       const was = base[key];
       const now = d.fingerprints || [];
-      // 登録されていない設問は、あとで並びが動いても検出できない。
-      if (!was || now.length > was.length) {
-        report(u.href, root, (was || []).length + '問を登録', now.length + '問',
-          '記録IDの基準に未登録の設問がある（npm run build:drills で登録してコミットする）');
-        if (!was) continue;
+      if (!was) {
+        report(u.href, root, '登録', '未登録',
+          '記録IDの基準に未登録のドリルがある（npm run build:drills で登録してコミットする）');
+        continue;
       }
       // 末尾への追加は既存の番号を動かさない。先頭からの一致だけを見る。
       const n = Math.min(was.length, now.length);
+      let moved = false;
       for (let i = 0; i < n; i++) {
         if (was[i] !== now[i]) {
           report(u.href, root + '/q' + (i + 1), was[i], now[i],
             '設問の並びが変わり、過去の記録が別の設問を指している');
+          moved = true;
           break;
         }
+      }
+      // 並びが変わったドリルは build:drills が登録しないため、登録の案内は出さない。
+      if (!moved && now.length > was.length) {
+        report(u.href, root, was.length + '問を登録', now.length + '問',
+          '記録IDの基準に未登録の設問がある（npm run build:drills で登録してコミットする）');
       }
       if (now.length < was.length) {
         report(u.href, root, was.length + '問', now.length + '問',
