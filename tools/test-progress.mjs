@@ -231,6 +231,16 @@ try {
       localStorage.setItem('boki2:progress', JSON.stringify(p));
       return BokiProgress.due().map((r) => r.id); }),
        ['b'], '外した後に誤答した設問だけが復習に戻る');
+
+    // 外しても解答の記録は消えず、戻すと再び復習に並ぶ。
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      BokiProgress.record('a', false);
+      BokiProgress.dismiss('a');
+      const off = [BokiProgress.due().length, BokiProgress.dump().drills.a.attempts.length];
+      BokiProgress.dismiss('a', false);
+      return [off, BokiProgress.due().map((r) => r.id)]; }),
+       [[0, 1], ['a']], '外すと復習から消え、戻すと復習に並ぶ');
   });
 
   // 採点の連打は1回として記録し、答えを見た後の採点は正解にしない。
