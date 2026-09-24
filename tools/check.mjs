@@ -241,6 +241,10 @@ CHECKS.push(async function checkAccounts(page, file) {
     return { out, subject: m ? m.content : '商' };
   });
 
+  // 商以外の値は照合を黙って外すことになる。打ち間違いをここで止める。
+  if (data.subject !== '商' && data.subject !== '工') {
+    report(file, '(head)', '商 または 工', data.subject, 'boki-subject の値が不正');
+  }
   for (const q of data.out) {
     const pool = new Set(q.pool);
     for (const name of q.used) {
