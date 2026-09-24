@@ -247,6 +247,10 @@ CHECKS.push(async function checkAccounts(page, file) {
   });
 
   for (const q of data.out) {
+    // 商・工以外の値は照合を黙って外すことになる。打ち間違いをここで止める。
+    if (q.subject !== '商' && q.subject !== '工') {
+      report(file, q.id, '商 または 工', q.subject, 'boki-subject の値が不正');
+    }
     const pool = new Set(q.pool);
     for (const name of q.used) {
       if (!pool.has(name)) {
