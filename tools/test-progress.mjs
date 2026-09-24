@@ -123,6 +123,27 @@ try {
       return BokiProgress.dump().checks['phase0/04_junbi'].k; }),
        false, '移行が新しい記録を上書きしない');
   });
+
+  // ファイル名の違う旧キーは取り込まない。取り込むと他ページのチェックが混ざる。
+  await withApp(browser, 'phase0/04_junbi.html', async (page) => {
+    eq(await page.evaluate(() => {
+      localStorage.clear();
+      localStorage.setItem('boki2:03_dentaku:check', JSON.stringify({ other: true }));
+      BokiProgress.migrateLegacy();
+      return (BokiProgress.dump().checks['phase0/04_junbi'] || {}).other === undefined; }),
+       true, '他ページの旧キーを取り込まない');
+  });
+
+  // 旧キーを書いていた版でチェックボックスがあったのは phase0/* だけ。
+  // 同名の index でも他フェーズには取り込まない。
+  await withApp(browser, 'phase1/index.html', async (page) => {
+    eq(await page.evaluate(() => {
+      localStorage.clear();
+      localStorage.setItem('boki2:index:check', JSON.stringify({ w1: true }));
+      BokiProgress.migrateLegacy();
+      return (BokiProgress.dump().checks['phase1/index'] || {}).w1 === undefined; }),
+       true, 'phase1/index は boki2:index:check を取り込まない');
+  });
   // 極端に短い区間は記録しない。ページを開いて即座に閉じた分が
   // 大量に積もると、集計が読めなくなる。
   await withApp(browser, 'phase0/03_dentaku.html', async (page) => {

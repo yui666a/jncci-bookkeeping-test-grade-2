@@ -107,8 +107,14 @@
         var k = localStorage.key(i);
         var m = k && k.match(/^boki2:(.+):check$/);
         if (!m) continue;
-        // ディレクトリを含まない旧形式のキーは、いま開いている単元のものとみなす。
-        var unit = m[1].indexOf('/') >= 0 ? m[1] : PAGE;
+        // 旧形式のキーはディレクトリを持たないが、チェックボックスがあったのは
+        // phase0/* だけである。ファイル名だけで照合すると boki2:index:check が
+        // phase1/index などにも入る。
+        var unit = m[1];
+        if (unit.indexOf('/') < 0) {
+          if (PAGE !== 'phase0/' + unit) continue;
+          unit = PAGE;
+        }
         var old = LS.get(k, null);
         if (!old || typeof old !== 'object') continue;
         if (!p.checks[unit]) p.checks[unit] = {};
