@@ -450,6 +450,41 @@
   function tagQuestion(wrapQ, root, i) {
     if (root && root.id) wrapQ.id = root.id + '-q' + (i + 1);
   }
+  // 設問の枠と見出し。4種のドリルで同じ形にそろえる。
+  function questionBox(root, q, i) {
+    var wrapQ = el('div', 'q');
+    tagQuestion(wrapQ, root, i);
+    var head = el('p', 'q__text');
+    head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
+    var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
+    wrapQ.appendChild(head);
+    return wrapQ;
+  }
+  // 採点・解答ボタン、ヒント、フィードバック欄を設問の末尾に足す。
+  // ヒントは textContent で入れる。text や explain と違い、ヒントに HTML を
+  // 書いた設問はない。innerHTML にすると「A<B」のような比較が要素として
+  // 解釈されて文字が消える。
+  function controls(wrapQ, q, withAnswer) {
+    var row = el('div', 'btn-row');
+    var check = el('button', 'btn btn--sm', '採点する');
+    row.appendChild(check);
+    var ans = withAnswer ? el('button', 'btn btn--ghost btn--sm', '答えを見る') : null;
+    if (ans) row.appendChild(ans);
+    wrapQ.appendChild(row);
+    if (q.hint) {
+      var bHint = el('button', 'linkbtn', 'ヒント');
+      var hintBox = el('div', 'small muted', 'ヒント：' + q.hint);
+      hintBox.style.display = 'none';
+      bHint.addEventListener('click', function () {
+        hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
+      });
+      row.appendChild(bHint);
+      wrapQ.appendChild(hintBox);
+    }
+    var fb = el('div', 'fb');
+    wrapQ.appendChild(fb);
+    return { check: check, ans: ans, fb: fb };
+  }
 
   // 採点の確定点は4種のドリルで共通してここを通る。記録をここに置けば、
   // 単元HTMLの著者が記録用のコードを書く必要がなくなる。書き忘れが
@@ -701,12 +736,7 @@
 
       cfg.questions.forEach(function (q, i) {
         var accounts = q.accounts || cfg.accounts;
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var span = el('span'); span.innerHTML = q.text; head.appendChild(span);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         // 解答欄は常に4行。行数から正解の科目数が読めてしまうと本番の第1問と条件が変わる。
         // 未選択・未入力の行は collect() が無視するため、余った行は採点に影響しない。
@@ -732,25 +762,7 @@
         }
         t.appendChild(tb); tw.appendChild(t); wrapQ.appendChild(tw);
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var bCheck = el('button', 'btn btn--sm', '採点する');
-        var bAns = el('button', 'btn btn--ghost btn--sm', '答えを見る');
-        row.appendChild(bCheck); row.appendChild(bAns);
-        if (q.hint) {
-          var bHint = el('button', 'linkbtn', 'ヒント');
-          var hintBox = el('div', 'small muted');
-          hintBox.style.display = 'none';
-          hintBox.textContent = 'ヒント：' + q.hint;
-          bHint.addEventListener('click', function () {
-            hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
-          });
-          row.appendChild(bHint);
-          wrapQ.appendChild(row); wrapQ.appendChild(hintBox);
-        } else {
-          wrapQ.appendChild(row);
-        }
-        wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function collect(side) {
@@ -817,12 +829,7 @@
       var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         var box = el('div', 'choices');
         var name = 'q_' + Math.random().toString(36).slice(2) + '_' + i;
@@ -835,11 +842,7 @@
         });
         wrapQ.appendChild(box);
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var b = el('button', 'btn btn--sm', '採点する');
-        row.appendChild(b);
-        wrapQ.appendChild(row); wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, false), fb = ctl.fb, b = ctl.check;
         ui.body.appendChild(wrapQ);
 
         b.addEventListener('click', function () {
@@ -879,12 +882,7 @@
       cfg.questions.forEach(function (q, i) {
         var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
         var labels = q.labels || [];
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         var inputs = [];
         answers.forEach(function (a, ai) {
@@ -898,22 +896,7 @@
           wrapQ.appendChild(line);
         });
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var bCheck = el('button', 'btn btn--sm', '採点する');
-        var bAns = el('button', 'btn btn--ghost btn--sm', '答えを見る');
-        row.appendChild(bCheck); row.appendChild(bAns);
-        if (q.hint) {
-          var bHint = el('button', 'linkbtn', 'ヒント');
-          var hintBox = el('div', 'small muted'); hintBox.style.display = 'none';
-          hintBox.innerHTML = 'ヒント：' + q.hint;
-          bHint.addEventListener('click', function () {
-            hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
-          });
-          row.appendChild(bHint);
-          wrapQ.appendChild(row); wrapQ.appendChild(hintBox);
-        } else { wrapQ.appendChild(row); }
-        wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function ansHTML() {
@@ -957,12 +940,7 @@
       var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         var line = el('div', 'numq');
         var inp = el('input'); inp.type = 'text'; inp.style.width = '240px'; inp.style.textAlign = 'left';
@@ -970,12 +948,7 @@
         line.appendChild(inp);
         wrapQ.appendChild(line);
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var b = el('button', 'btn btn--sm', '採点する');
-        var b2 = el('button', 'btn btn--ghost btn--sm', '答えを見る');
-        row.appendChild(b); row.appendChild(b2);
-        wrapQ.appendChild(row); wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, true), fb = ctl.fb, b = ctl.check, b2 = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function norm(s) { return String(s).replace(/[\s　]/g, ''); }
