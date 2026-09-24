@@ -358,9 +358,12 @@
     return n;
   }
   function fmt(n) { return Number(n).toLocaleString('ja-JP'); }
+  // 日本語入力のまま「-」を打つと「ー」「－」になり、会計では「▲」「△」も負の数を表す。
+  // 先頭のこれらを ASCII の - に寄せないと、符号だけが黙って落ちて誤答になる。
+  var NEG_MARK = /^\s*[-－−ー‐▲△]/;
   function parseAmt(s) {
     if (s === null || s === undefined) return NaN;
-    s = String(s).replace(/[,\s，]/g, '').replace(/[０-９]/g, function (c) {
+    s = String(s).replace(NEG_MARK, '-').replace(/[,\s，]/g, '').replace(/[０-９]/g, function (c) {
       return String.fromCharCode(c.charCodeAt(0) - 0xFEE0);
     });
     if (s === '') return NaN;
@@ -387,7 +390,7 @@
       var half = inp.value.replace(/[０-９]/g, function (c) {
         return String.fromCharCode(c.charCodeAt(0) - 0xFEE0);
       });
-      var neg = /^\s*-/.test(half);
+      var neg = NEG_MARK.test(half);
       var parts = half.replace(/[^\d.]/g, '').split('.');
       var intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       // 小数部は3桁区切りにしない。金額に小数が出るのは単価や率の計算だけで、

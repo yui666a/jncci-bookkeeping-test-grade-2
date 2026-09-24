@@ -1441,5 +1441,152 @@
     "de408131",
     "e545090e",
     "013e85ac"
+  ],
+  "phase2/04_shou-dai3mon-enshu#ex-set1": [
+    "78eec6f3"
+  ],
+  "phase2/04_shou-dai3mon-enshu#ex-set2": [
+    "7a5dd65d"
+  ],
+  "phase2/04_shou-dai3mon-enshu#ex-set3": [
+    "2e4b3915"
+  ],
+  "phase2/04_shou-dai3mon-enshu#ex-set4": [
+    "9644a6a4"
+  ],
+  "phase2/04_shou-dai3mon-enshu#ex-set5": [
+    "8e584ec8"
+  ],
+  "phase2/04_shou-dai3mon-enshu#ex-set6": [
+    "7e859564"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai1": [
+    "c13e8048"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai2": [
+    "8aae9ce6"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai3": [
+    "2ba5259c"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai4": [
+    "149b6b75"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai5": [
+    "a5dc270c"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai6": [
+    "b776cf5f"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai7": [
+    "74ed0fb9"
+  ],
+  "phase2/14_kou-dai4-5mon-enshu#dai8": [
+    "6a0179fc"
+  ],
+  "phase3/01_toki-naoshi#quiz-bunrui": [
+    "50131c86",
+    "5a00d86a",
+    "e6031577",
+    "508f89ee",
+    "c73144f8",
+    "64cba138"
+  ],
+  "phase3/02_mogi1-kogyo#m1-q4a": [
+    "f5c5c6fc",
+    "c5e0ffa8",
+    "6dfc6ea9"
+  ],
+  "phase3/02_mogi1-kogyo#m1-q4b": [
+    "4eba2ff2",
+    "485eba0e",
+    "1bb8c367",
+    "bb748d34"
+  ],
+  "phase3/02_mogi1-kogyo#m1-q5": [
+    "d70fb437",
+    "d18dd422",
+    "fb180a24",
+    "b601f88f"
+  ],
+  "phase3/03_mogi1-shogyo#m1-q1": [
+    "04fa9eac",
+    "204af3de",
+    "26c9bf6c",
+    "5480a90a",
+    "5a2ecf5a"
+  ],
+  "phase3/03_mogi1-shogyo#m1-q2": [
+    "a2fb8722",
+    "12079859",
+    "e8ac884c",
+    "901d2d96",
+    "a4729ec0",
+    "9b640c0c",
+    "0cb36f09",
+    "4a9b2594",
+    "1f821c00",
+    "84f490b3"
+  ],
+  "phase3/03_mogi1-shogyo#m1-q3": [
+    "fce64482",
+    "8244620b",
+    "fdc75de6",
+    "ab9ee63f",
+    "b9c2c529",
+    "9c48df7f",
+    "a837598e",
+    "757d1619",
+    "77b87beb",
+    "78e1d290"
+  ],
+  "phase3/04_cbt-sosa#cbt-quiz": [
+    "690ffc00",
+    "7f9e467b",
+    "2de65340",
+    "f47eafb0",
+    "2b9d115a",
+    "966d40fa",
+    "0799db2b"
+  ],
+  "phase3/04_cbt-sosa#cbt-shiwake": [
+    "991818a4",
+    "d5b04b2d",
+    "887532c0",
+    "8bdd47f4",
+    "3639cb83"
+  ],
+  "phase3/05_chokuzen-sozarai#sozarai-shiwake": [
+    "01012a15",
+    "df928cdf",
+    "ad7d3f4e",
+    "1522f87b",
+    "1cb637f9",
+    "e4d9a9eb",
+    "987e6def",
+    "31a1f95a",
+    "403f56bf",
+    "bb262813",
+    "a1f103f1",
+    "3af811da",
+    "a60abd17",
+    "d89ac756",
+    "4300539e"
+  ],
+  "phase3/06_chokuzen-kogyo-shiwake#kogyo-shiwake": [
+    "1fdf5bfa",
+    "8bc37d44",
+    "2e66eaf7",
+    "858ec144",
+    "a2e3e3fb",
+    "7a5ac6f1",
+    "b5de6d05",
+    "755386e2",
+    "ab87c0c9",
+    "2a79d9b5",
+    "de07d669",
+    "f0897ed3",
+    "95fef0a2",
+    "5e03cafc"
   ]
 }

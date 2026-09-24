@@ -17,7 +17,7 @@
 | `教材制作ルール.md` | 教材の出力形式・執筆方針・品質ゲート |
 | `出題範囲_最新確認メモ.md` | 出題範囲の確認結果 |
 | `assets/` | 共通のスタイルとスクリプト（全フェーズで共有）。`drills.json` は生成物 |
-| `phase0/` `phase1/` | 単元教材（HTML1枚／単元） |
+| `phase0/`〜`phase3/` | 単元教材（HTML1枚／単元） |
 | `reference/` | 出題区分表・勘定科目表の原本と構造化データ |
 | `tools/` | 検証スクリプト |
 | `docs/design/` `docs/adr/` | 設計文書と決定記録 |
@@ -30,7 +30,10 @@
 
 <https://yui666a.github.io/jncci-bookkeeping-test-grade-2/>
 
-手元で見るときは、HTMLをブラウザで直接開く。サーバーは要らない。
+手元で見るときは、HTMLをブラウザで直接開けば単元ページは動く。ただし復習ドリル（`review.html`）は
+`assets/drills.json` を読むため配信が要る（`python3 -m http.server`）。学習記録はブラウザの
+`localStorage` に開き方（`file://`・`http://localhost`・公開版）ごとに別々に残るので、
+最初から同じ開き方で通す。
 
 ```
 open index.html            # トップページ
