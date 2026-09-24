@@ -21,6 +21,7 @@
 | `phase0/`〜`phase3/` | 単元教材（HTML1枚／単元） |
 | `reference/` | 出題区分表・勘定科目表の原本と構造化データ |
 | `tools/` | 検証スクリプト |
+| `ios/` | 教材を同梱する iOS アプリ（WKWebView）。`ios/README.md` |
 | `docs/design/` `docs/adr/` | 設計文書と決定記録 |
 | `.claude/agents/` | 教材制作と検証のサブエージェント |
 | `.claude/skills/` | 学習記録の転記手順 |
