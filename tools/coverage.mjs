@@ -69,3 +69,5 @@ if (unknown.length) {
   console.log('区分表にないIDを指している教材:');
   for (const id of unknown) console.log('    ' + id + '  ' + covered.get(id).join(', '));
 }
+
+if (missing.length || unknown.length) process.exitCode = 1;
