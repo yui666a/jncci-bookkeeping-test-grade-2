@@ -107,8 +107,13 @@
         var k = localStorage.key(i);
         var m = k && k.match(/^boki2:(.+):check$/);
         if (!m) continue;
-        // ディレクトリを含まない旧形式のキーは、いま開いている単元のものとみなす。
-        var unit = m[1].indexOf('/') >= 0 ? m[1] : PAGE;
+        // 旧形式のキーはディレクトリを持たない。ファイル名が一致しない旧キーまで
+        // いま開いている単元に取り込むと、最初に開いた単元へ全ページ分が集まる。
+        var unit = m[1];
+        if (unit.indexOf('/') < 0) {
+          if (PAGE.split('/').pop() !== unit) continue;
+          unit = PAGE;
+        }
         var old = LS.get(k, null);
         if (!old || typeof old !== 'object') continue;
         if (!p.checks[unit]) p.checks[unit] = {};
