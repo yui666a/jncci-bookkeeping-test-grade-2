@@ -10,7 +10,7 @@ for (const [expr, want] of ok) {
   const got = evalFormula(expr);
   if (Math.abs(got - want) > 1e-9) { console.log('NG', expr, got, '!=', want); ng++; }
 }
-for (const bad of ['1+', '(1', 'alert(1)', '1/0', '', 'x*2']) {
+for (const bad of ['1+', '(1', 'alert(1)', '1/0', '', 'x*2', '.5*100', '1.2.3', '5.']) {
   try {
     evalFormula(bad);
     console.log('NG 例外が出ない:', JSON.stringify(bad));

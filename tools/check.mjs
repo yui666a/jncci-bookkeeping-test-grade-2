@@ -63,6 +63,11 @@ export function evalFormula(src) {
   }
   const tokens = String(src).match(/\d+(?:\.\d+)?|[()+\-*/]/g);
   if (!tokens) throw new Error('式が空: ' + src);
+  // 数値の正規表現を広げるだけでは '.5' は拾えても '1.2.3' や '5.' の読み残しを
+  // 取りこぼす。トークンが式を余さず覆っているかで判定する。
+  if (tokens.join('') !== String(src).replace(/\s/g, '')) {
+    throw new Error('数値として読めない箇所がある: ' + src);
+  }
   let i = 0;
   const peek = () => tokens[i];
   const eat = (t) => {
