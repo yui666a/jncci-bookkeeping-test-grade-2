@@ -227,6 +227,11 @@
     }
     updateBars();
 
+    var unfinished = Array.prototype.find.call(document.querySelectorAll('details.week'), function (d) {
+      return d.querySelector('input[type="checkbox"][data-key]:not(:checked)');
+    });
+    if (unfinished) unfinished.open = true;
+
     document.querySelectorAll('[data-reset-progress]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         Array.prototype.forEach.call(boxes, function (b) {
