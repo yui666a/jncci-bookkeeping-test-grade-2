@@ -1,19 +1,12 @@
 /* practice.html のスクリプト。assets/app.js の後に読み込む。 */
 (function () {
   'use strict';
-
-  function el(t, c, x) {
-    var n = document.createElement(t);
-    if (c) n.className = c;
-    if (x !== undefined) n.textContent = x;
-    return n;
-  }
+  var B = window.BokiBank;
+  var el = B.el;
 
   var setup = document.getElementById('setup');
   var summary = document.getElementById('summary');
   var host = document.getElementById('drills');
-  var API = { journal: window.BokiJournal, quiz: window.BokiQuiz,
-              num: window.BokiNum, fill: window.BokiFill };
 
   // 分野は単元キーの命名（_shou- / _kou-）から決める。別の対応表を持つと、
   // 単元を足したときに表の更新漏れで「どこにも属さない単元」ができる。
@@ -36,32 +29,13 @@
     for (var i = 0; i < FIELDS.length; i++) if (FIELDS[i].test.test(unit)) return FIELDS[i].key;
   }
 
-  var req = new XMLHttpRequest();
-  req.open('GET', 'assets/drills.json', true);
-  req.onload = function () {
-    if (req.status !== 200 && req.status !== 0) return fail();
-    var bank;
-    try { bank = JSON.parse(req.responseText); }
-    catch (e) { bank = null; }
-    if (!bank || !bank.units) return fail();
-    renderSetup(bank);
-  };
-  // file:// で開けない理由は review.html と同じ。
-  req.onerror = fail;
-  req.send();
-
-  function fail() {
-    summary.appendChild(el('p', 'small muted',
-      '設問データ（assets/drills.json）を読み込めませんでした。' +
-      'file:// で開いている場合は、教材のフォルダで次を実行し、' +
-      'http://localhost:8000/practice.html を開いてください：  python3 -m http.server'));
-  }
+  B.load(summary, renderSetup);
 
   // ドリルをページ内の順に並べる。出題できない種類のドリルはここで落とす。
   function drillsOf(bank, unit) {
     var d = bank.units[unit].drills;
     return Object.keys(d).map(function (k) { return d[k]; })
-      .filter(function (x) { return API[x.kind] && (x.cfg.questions || []).length; })
+      .filter(function (x) { return B.kinds[x.kind] && (x.cfg.questions || []).length; })
       .sort(function (a, b) { return a.order - b.order; });
   }
   // 単元の問題数をタイプ別に数える。{ journal: 8, quiz: 6, ... }
@@ -220,13 +194,7 @@
       box.id = 'px' + bi;
       host.appendChild(box);
 
-      // 設定は単元のものを使い、設問と記録先だけ差し替える（review.html と同じ）。
-      var cfg = {};
-      for (var k in b.drill.cfg) cfg[k] = b.drill.cfg[k];
-      cfg.questions = b.nums.map(function (n) { return b.drill.cfg.questions[n - 1]; });
-      cfg.recordAs = b.unit + '#' + b.drill.root;
-      cfg.qNumbers = b.nums;
-      API[b.drill.kind].mount('#' + box.id, cfg);
+      B.mount('#' + box.id, b.unit, b.drill, b.nums);
       total += b.nums.length;
     });
 

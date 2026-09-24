@@ -87,6 +87,13 @@
       p.exportedAt = nowISO();
       return JSON.stringify(p);
     },
+    // 記録IDは「単元キー#マウント先のid/q番号」。単元キーはURLのパスから
+    // 作るため # を含まない（# はパスでは %23 になる）。最初の # で切る。
+    parseId: function (id) {
+      var m = /^(.+?)#([^/]+)\/q(\d+)$/.exec(id);
+      if (!m) return null;
+      return { unit: m[1], root: m[2], q: Number(m[3]) };
+    },
     record: function (drillId, ok) {
       var p = loadProgress();
       if (!p.drills[drillId]) p.drills[drillId] = { attempts: [] };
@@ -971,6 +978,50 @@
     }
   };
 
+  /* ---------- 設問バンクからの再出題（review.html / practice.html） ---------- */
+  var KINDS = { journal: BokiJournal, quiz: BokiQuiz, num: BokiNum, fill: BokiFill };
+
+  // 読めなかったときの案内は msgHost に出す。
+  function loadBank(msgHost, onLoad) {
+    function fail() {
+      var page = location.pathname.split('/').pop();
+      msgHost.appendChild(el('p', 'small muted',
+        '設問データ（assets/drills.json）を読み込めませんでした。' +
+        'file:// で開いている場合は、教材のフォルダで次を実行し、' +
+        'http://localhost:8000/' + page + ' を開いてください：  python3 -m http.server'));
+    }
+    var req = new XMLHttpRequest();
+    req.open('GET', 'assets/drills.json', true);
+    req.onload = function () {
+      // onload は 404 でも発火する。status を見ないと、サーバの返した
+      // エラーページを設問として読もうとする。
+      if (req.status !== 200 && req.status !== 0) return fail();
+      var bank;
+      try { bank = JSON.parse(req.responseText); }
+      catch (e) { bank = null; }
+      if (!bank || !bank.units) return fail();
+      onLoad(bank);
+    };
+    // file:// では XHR がブロックされる。単元HTMLは file:// で直接開いて
+    // 動くが、再出題のページは設問バンクを読むため配信が要る。詰まった
+    // ときに何をすればよいか分からないと、復習そのものが止まる。
+    req.onerror = fail;
+    req.send();
+  }
+
+  // 単元での設定をそのまま使い、出題する設問（q番号の配列）と記録先だけ
+  // 差し替える。使う項目を選び直すと、単元と再出題で設問の見た目や挙動がずれる。
+  // 記録は元の単元の設問IDに向ける。開いているページのURLから決めると、
+  // やり直した正解が元の設問に届かず、いつまでも要復習から消えない。
+  function mountFromBank(sel, unit, drill, nums) {
+    var cfg = {};
+    for (var k in drill.cfg) cfg[k] = drill.cfg[k];
+    cfg.questions = nums.map(function (n) { return drill.cfg.questions[n - 1]; });
+    cfg.recordAs = unit + '#' + drill.root;
+    cfg.qNumbers = nums;
+    KINDS[drill.kind].mount(sel, cfg);
+  }
+
   /* ---------- 初期化 ---------- */
   function boot() { initTheme(); initChecklists(); initNotes(); initSession(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
@@ -982,4 +1033,5 @@
   window.BokiFill = BokiFill;
   window.BokiProgress = BokiProgress;
   window.BokiLS = LS;
+  window.BokiBank = { el: el, kinds: KINDS, load: loadBank, mount: mountFromBank };
 })();

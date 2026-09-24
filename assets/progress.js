@@ -2,13 +2,7 @@
 (function () {
   'use strict';
   var P = window.BokiProgress;
-
-  function el(t, c, x) {
-    var n = document.createElement(t);
-    if (c) n.className = c;
-    if (x !== undefined) n.textContent = x;
-    return n;
-  }
+  var el = window.BokiBank.el;
   function hm(sec) {
     var m = Math.round(sec / 60);
     return Math.floor(m / 60) + 'h' + (m % 60) + 'm';
@@ -105,9 +99,9 @@
   // 「マウント先のid-q番号」でidを振っているので、設問そのものへ飛べる。
   var CLEAR_STREAK = P.CLEAR_STREAK;
   function drillLink(id) {
-    var m = /^(.+?)#([^/]+)\/q(\d+)$/.exec(id);
-    if (!m) return null;
-    return { href: m[1] + '.html#' + m[2] + '-q' + m[3], unit: m[1], q: Number(m[3]) };
+    var r = P.parseId(id);
+    if (!r) return null;
+    return { href: r.unit + '.html#' + r.root + '-q' + r.q, unit: r.unit, q: r.q };
   }
 
   // 判定は BokiProgress.due() が持つ。review.html の出題対象と同じものを
