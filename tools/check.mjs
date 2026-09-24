@@ -4,10 +4,9 @@
 // HTMLの解析に正規表現を使わない。Playwright で file:// を開き、DOM と
 // JS ランタイムから読む。mount() に渡された設定オブジェクトの中身には
 // 正規表現では到達できないため。
-import { readdirSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync } from 'node:fs';
 import { chromium } from 'playwright';
-import { failures, report, withPage } from './lib.mjs';
+import { failures, report, withPage, phaseFiles } from './lib.mjs';
 import { checkMounted } from './gates/00-mounted.mjs';
 import { checkBalance } from './gates/01-balance.mjs';
 import { checkAccounts } from './gates/02-accounts.mjs';
@@ -32,14 +31,7 @@ const CHECKS = [
 
 function targets(args) {
   if (args.length) return args;
-  const found = [];
-  for (const dir of readdirSync('.', { withFileTypes: true })) {
-    if (!dir.isDirectory() || !/^phase\d+$/.test(dir.name)) continue;
-    for (const f of readdirSync(dir.name)) {
-      if (f.endsWith('.html')) found.push(join(dir.name, f));
-    }
-  }
-  found.sort();
+  const found = phaseFiles();
   // ダッシュボード・復習・横断演習のページはフェーズ配下にないが、JSエラーと
   // 壊れた記録への耐性を見る必要があるため対象に含める。ルートの目次も
   // 全単元へのリンクを持つため、リンク切れを見る対象に含める。

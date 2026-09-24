@@ -2,16 +2,9 @@
 import { chromium } from 'playwright';
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
+import { eq, failedCount } from './lib.mjs';
 
 const APP = readFileSync(resolve('assets/app.js'), 'utf8');
-let failures = 0;
-
-function eq(actual, expected, label) {
-  const a = JSON.stringify(actual), e = JSON.stringify(expected);
-  if (a === e) return;
-  failures++;
-  console.log('NG ' + label + '  期待=' + e + '  実際=' + a);
-}
 
 // 単元キーを検査するため、任意のパスのページを作って app.js を読ませる。
 async function withApp(browser, pathname, fn) {
@@ -311,5 +304,6 @@ try {
   await browser.close();
 }
 
+const failures = failedCount();
 if (failures) { console.log('\nNG ' + failures + ' 件'); process.exit(1); }
 console.log('OK BokiProgress');

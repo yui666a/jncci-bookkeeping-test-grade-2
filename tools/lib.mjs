@@ -1,12 +1,41 @@
-// check.mjs と各ゲートが共有する道具。import しても YAML もブラウザも読まない。
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+// tools/ のスクリプトが共有する道具。import しても YAML もブラウザも読まない。
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 
 export const failures = [];
 
 export function report(file, id, expected, actual, message) {
   failures.push({ file, id, expected, actual, message });
 }
+
+// phase*/ 直下の HTML。並びは名前順。
+export function phaseFiles() {
+  const found = [];
+  for (const dir of readdirSync('.', { withFileTypes: true })) {
+    if (!dir.isDirectory() || !/^phase\d+$/.test(dir.name)) continue;
+    for (const f of readdirSync(dir.name)) {
+      if (f.endsWith('.html')) found.push(join(dir.name, f));
+    }
+  }
+  return found.sort();
+}
+
+// HTMLソース上の mount 呼び出しの数。捕捉できた数と突き合わせて、
+// アセットの読込失敗で設問が丸ごと欠けたことに気づくために使う。
+export function countMounts(file) {
+  return (readFileSync(file, 'utf8')
+    .match(/\bBoki(?:Journal|Quiz|Num|Fill)\s*\.\s*mount\s*\(/g) || []).length;
+}
+
+// tools/test-*.mjs の比較。JSON にして比べるので、配列も値で比べられる。
+let eqFailures = 0;
+export function eq(actual, expected, label) {
+  const a = JSON.stringify(actual), e = JSON.stringify(expected);
+  if (a === e) return;
+  eqFailures++;
+  console.log('NG ' + label + '  期待=' + e + '  実際=' + a);
+}
+export function failedCount() { return eqFailures; }
 
 // 依存を増やさないための最小YAMLリーダ。
 // 対象は parse-syllabus.py / parse-accounts.py が出力する形だけであり、
