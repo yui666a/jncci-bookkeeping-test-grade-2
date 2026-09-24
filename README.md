@@ -12,6 +12,7 @@
 | `index.html` | 公開サイトのトップページ |
 | `progress.html` | 学習の記録。集計とエクスポート |
 | `review.html` | 復習ドリル。一度でも間違えた設問を単元をまたいで再出題する |
+| `practice.html` | 横断演習。選んだ単元のドリルを順番またはランダムに出題する |
 | `進捗ログ.md` | 学習記録の書き出し先 |
 | `学習カリキュラム.md` | 11週間の学習計画。週次の論点配分 |
 | `教材制作ルール.md` | 教材の出力形式・執筆方針・品質ゲート |
@@ -30,7 +31,7 @@
 
 <https://yui666a.github.io/jncci-bookkeeping-test-grade-2/>
 
-手元で見るときは、HTMLをブラウザで直接開けば単元ページは動く。ただし復習ドリル（`review.html`）は
+手元で見るときは、HTMLをブラウザで直接開けば単元ページは動く。ただし復習ドリル（`review.html`）と横断演習（`practice.html`）は
 `assets/drills.json` を読むため配信が要る（`python3 -m http.server`）。学習記録はブラウザの
 `localStorage` に開き方（`file://`・`http://localhost`・公開版）ごとに別々に残るので、
 最初から同じ開き方で通す。
