@@ -264,6 +264,12 @@ details.acc > summary::before {
 details.acc[open] > summary::before { transform: rotate(90deg); }
 details.acc > div.acc__body { padding: 4px 18px 16px; }
 details.acc > div.acc__body > :first-child { margin-top: 12px; }
+details.week > summary { display: flex; align-items: baseline; gap: 4px 12px; flex-wrap: wrap; }
+details.week > summary::before { align-self: center; }
+.week__w { color: var(--accent); }
+.week__d { font-size: 12.5px; color: var(--muted); font-weight: 400; }
+.week__t { flex: 1 1 16em; min-width: 0; font-weight: 400; }
+.week__p { font-size: 12px; color: var(--muted); font-weight: 400; white-space: nowrap; }
 
 /* ---------- キー表示 ---------- */
 kbd, .kbd {
