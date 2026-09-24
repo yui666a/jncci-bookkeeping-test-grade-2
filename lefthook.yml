@@ -1,6 +1,9 @@
 # https://lefthook.dev/configuration/
 
 pre-push:
+  # 並列にしない。保護ブランチへのpushで止まるときに、20秒前後かかる
+  # 検査の終わりを待たせない。
+  piped: true
   jobs:
     # runではなくscriptで実行する。runはlefthookがpush対象ファイルを数え、
     # 空なら "no matching push files" でジョブごと飛ばす。空コミットや
@@ -12,3 +15,8 @@ pre-push:
     - script: "block-protected-push.sh"
       runner: sh
       use_stdin: true
+    # CIだけに任せない。落ちるものをpushしてからCIで気づくと、直しの
+    # コミットがPRに積もる。
+    - run: npm run check
+    - run: npm test
+    - run: npm run coverage
