@@ -63,6 +63,15 @@ for (const mark of ['-', '－', '−', 'ー', '▲', '△']) {
   eq(await page.$eval(AMT, (el) => el.value), '-26,000', '負号「' + mark + '」が残る');
 }
 
+// IMEで変換中は値に触れず、確定したときに一度だけ整形する。
+eq(await page.$eval(AMT, (el) => {
+  el.value = '１２３４５６';
+  el.dispatchEvent(new InputEvent('input', { isComposing: true }));
+  const during = el.value;
+  el.dispatchEvent(new CompositionEvent('compositionend'));
+  return during + '|' + el.value;
+}), '１２３４５６|123,456', '変換中は書き換えず確定で整形する');
+
 await browser.close();
 console.log(failures ? 'NG ' + failures + ' 件' : 'OK 全件');
 process.exit(failures ? 1 : 0);

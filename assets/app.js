@@ -390,7 +390,13 @@
       }
       inp.setSelectionRange(pos, pos);
     });
-    inp.addEventListener('input', function () {
+    // 変換中に値を書き換えると、IMEが持つ未確定文字列と食い違い二重入力になる。
+    // 変換中の input は見送り、確定した時点で一度だけ整形する。
+    inp.addEventListener('input', function (e) {
+      if (!e.isComposing) format();
+    });
+    inp.addEventListener('compositionend', format);
+    function format() {
       var tail = inp.value.slice(inp.selectionEnd).replace(/\D/g, '').length;
       var half = inp.value.replace(/[０-９]/g, function (c) {
         return String.fromCharCode(c.charCodeAt(0) - 0xFEE0);
@@ -407,7 +413,7 @@
         if (/\d/.test(out[pos - 1])) seen++;
       }
       inp.setSelectionRange(pos, pos);
-    });
+    }
   }
   function shell(root, cfg, badgeText) {
     root.classList.add('drill');
