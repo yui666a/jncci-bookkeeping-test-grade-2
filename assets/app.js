@@ -951,6 +951,9 @@
     // 読みの登録漏れを品質ゲートから検査するための口。
     // YOMI 自体を公開すると、単元HTMLから書き換えられてしまう。
     __hasYomi: function (name) { return Object.prototype.hasOwnProperty.call(YOMI, name); },
+    // 品質ゲート1が静的な仕訳表の金額を読む口。検査側に別の読み方を持たせると、
+    // 全角数字や ▲ の扱いがドリルの採点と食い違う。
+    __parseAmt: parseAmt,
     mount: function (sel, cfg) {
       var root = document.querySelector(sel);
       if (!root) return;
