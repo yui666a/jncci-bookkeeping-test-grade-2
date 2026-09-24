@@ -744,9 +744,48 @@
     });
   }
 
+  // ローマ字をかなに直す。IMEを切り替えずに「urikake」で売掛金を引ける。
+  // 読みをローマ字に直して照合しないのは、「shi/si」「tsu/tu」「fu/hu」の
+  // どちらで打たれても合うように、読み側に綴りの揺れを全部持たせることになるため。
+  var ROMA = {
+    a: 'あ', i: 'い', u: 'う', e: 'え', o: 'お',
+    ya: 'や', yu: 'ゆ', yo: 'よ', wa: 'わ', wo: 'を',
+    shi: 'し', chi: 'ち', tsu: 'つ', fu: 'ふ', ji: 'じ',
+    sha: 'しゃ', shu: 'しゅ', sho: 'しょ', cha: 'ちゃ', chu: 'ちゅ', cho: 'ちょ',
+    ja: 'じゃ', ju: 'じゅ', jo: 'じょ', '-': 'ー'
+  };
+  var ROWS = {
+    k: 'かきくけこ', g: 'がぎぐげご', s: 'さしすせそ', z: 'ざじずぜぞ',
+    t: 'たちつてと', d: 'だぢづでど', n: 'なにぬねの', h: 'はひふへほ',
+    b: 'ばびぶべぼ', p: 'ぱぴぷぺぽ', m: 'まみむめも', r: 'らりるれろ'
+  };
+  Object.keys(ROWS).forEach(function (c) {
+    var row = ROWS[c];
+    'aiueo'.split('').forEach(function (v, j) { ROMA[c + v] = row.charAt(j); });
+    ROMA[c + 'ya'] = row.charAt(1) + 'ゃ';
+    ROMA[c + 'yu'] = row.charAt(1) + 'ゅ';
+    ROMA[c + 'yo'] = row.charAt(1) + 'ょ';
+  });
+  function romaToKana(s) {
+    var out = '', i = 0;
+    while (i < s.length) {
+      var c = s.charAt(i), nx = s.charAt(i + 1);
+      if (c === 'n' && (nx === 'n' || nx === "'")) { out += 'ん'; i += 2; continue; }
+      if (c === 'n' && nx && !/[aiueoy]/.test(nx)) { out += 'ん'; i++; continue; }
+      if (c === nx && /[bcdfghjkmpqrstvwxz]/.test(c)) { out += 'っ'; i++; continue; }
+      var L = 3;
+      while (L > 0 && !ROMA[s.substr(i, L)]) L--;
+      if (L) { out += ROMA[s.substr(i, L)]; i += L; } else { out += c; i++; }
+    }
+    // 打ちかけの子音（「urik」の k）は捨てて、そこまでで絞り込む。
+    return out.replace(/[a-z']+$/, '');
+  }
+
   function matches(name, query) {
     if (!query) return true;
     var q = normalize(query);
+    if (/[a-z]/.test(q)) q = romaToKana(q);
+    if (!q) return true;
     if (normalize(name).indexOf(q) >= 0) return true;
     var y = YOMI[name];
     if (!y) return false;
