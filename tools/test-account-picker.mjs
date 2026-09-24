@@ -3,6 +3,7 @@ import { chromium } from 'playwright';
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
 
+const YOMI = readFileSync(resolve('assets/yomi.js'), 'utf8');
 const APP = readFileSync(resolve('assets/app.js'), 'utf8');
 const ACCOUNTS = ['リース資産', '現金', '売掛金', '未払金', '雑損', '支払手形', '仕入', '建設仮勘定'];
 let failures = 0;
@@ -12,7 +13,7 @@ try {
   const page = await browser.newPage();
   await page.route('**/*', (route) => route.fulfill({
     status: 200, contentType: 'text/html',
-    body: '<!doctype html><meta charset="utf-8"><body><div id="d"></div><script>' + APP + '</script>'
+    body: '<!doctype html><meta charset="utf-8"><body><div id="d"></div><script>' + YOMI + '</script><script>' + APP + '</script>'
       + '<script>BokiJournal.mount("#d", { title: "t", accounts: ' + JSON.stringify(ACCOUNTS)
       + ', questions: [{ text: "q", debit: [["現金", 1]], credit: [["売掛金", 1]] }] });</script>',
   }));

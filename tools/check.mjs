@@ -554,7 +554,7 @@ CHECKS.push(async function checkAccountYomi(page, file) {
   });
   for (const n of missing) {
     report(file, n, '読みを登録', 'なし',
-      'YOMI に読みがなく、かなで検索できない（assets/app.js の YOMI に追加する）');
+      'YOMI に読みがなく、かなで検索できない（assets/yomi.js に追加する）');
   }
 });
 

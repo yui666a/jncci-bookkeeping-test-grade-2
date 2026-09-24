@@ -17,7 +17,8 @@ model: opus
 
 ## 守ること
 
-- 共通アセット（`assets/style.css` / `assets/app.js`）のクラスとAPIだけを使う。
+- 共通アセット（`assets/style.css` / `assets/yomi.js` / `assets/app.js`）のクラスとAPIだけを使う。
+  `yomi.js` は `app.js` の直前に読み込む
   新しいCSSやJSを足さない。必要になったら足さずに報告する
 - 外部CDN・外部フォント・画像URLを参照しない。`file://` で開いて動くこと
 - `<meta name="boki-topics" content="...">` に、その単元がカバーする

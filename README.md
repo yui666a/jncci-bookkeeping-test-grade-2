@@ -42,7 +42,7 @@ open phase0/index.html     # Phase 0 の目次
 ```
 
 外部CDN・外部フォントを参照しないため、オフラインで動く。
-共通アセットは `assets/`（`style.css` と `app.js`）だけで、全フェーズが共有する。
+共通アセットは `assets/`（`style.css`・`yomi.js`・`app.js`）だけで、全フェーズが共有する。
 ドリルは `BokiJournal` / `BokiQuiz` / `BokiNum` / `BokiFill` の4種類。
 ドリルの正誤・学習時間・メモは、教材を使うだけで自動的に記録される。
 
