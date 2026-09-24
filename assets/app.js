@@ -18,7 +18,7 @@
   // 単元キーはディレクトリを含める。ファイル名だけだと phase0/01_... と
   // phase1/01_... が同じキーになり、別単元の記録が混ざる。
   function unitKeyOf(pathname) {
-    var p = pathname.replace(/^\/+/, '').replace(/\.html?$/, '');
+    var p = pathname.replace(/\/$/, '/index').replace(/^\/+/, '').replace(/\.html?$/, '');
     var seg = p.split('/').filter(Boolean);
     if (!seg.length) return 'index';
     return seg.slice(-2).join('/');

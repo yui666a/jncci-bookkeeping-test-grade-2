@@ -37,6 +37,15 @@ try {
        'phase1/03_dentaku', '同名ファイルがフェーズ違いで衝突しない');
   });
 
+  // ディレクトリURLは index.html と同じ単元になる。分かれると、ブックマークから
+  // 開いたときのチェックが別の単元に入る。
+  for (const path of ['phase2/', 'phase2/index.html']) {
+    await withApp(browser, path, async (page) => {
+      eq(await page.evaluate(() => BokiProgress.unitKey()),
+         'phase2/index', path + ' の単元キー');
+    });
+  }
+
   // 空のストアは、集計側が場合分けせずに読める形で返る。
   await withApp(browser, 'phase0/x.html', async (page) => {
     eq(await page.evaluate(() => { BokiProgress._reset(); const d = BokiProgress.dump();
