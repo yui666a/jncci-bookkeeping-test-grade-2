@@ -167,8 +167,9 @@ function targets(args) {
   }
   found.sort();
   // ダッシュボード・復習・横断演習のページはフェーズ配下にないが、JSエラーと
-  // 壊れた記録への耐性を見る必要があるため対象に含める。
-  for (const f of ['progress.html', 'review.html', 'practice.html']) {
+  // 壊れた記録への耐性を見る必要があるため対象に含める。ルートの目次も
+  // 全単元へのリンクを持つため、リンク切れを見る対象に含める。
+  for (const f of ['index.html', 'progress.html', 'review.html', 'practice.html']) {
     if (existsSync(f)) found.push(f);
   }
   return found;
@@ -204,13 +205,42 @@ CHECKS.push(async function checkMounted(page, file, errors) {
 // ゲート1：静的な .jnl と BokiJournal の設問、両方の貸借を検算する。
 CHECKS.push(async function checkBalance(page, file) {
   const data = await page.evaluate(() => {
-    const num = (s) => Number(String(s).replace(/[^\d.-]/g, '')) || 0;
+    // 読めない金額を 0 として数えると、「1,000円」と「900円」の仕訳が 0 = 0 で
+    // 通る。空欄と「×××」の伏せ字だけを 0 とし、それ以外は unreadable に積む。
+    const unreadable = [];
+    const num = (s) => {
+      const v = window.BokiJournal.__parseAmt(s);
+      const t = String(s).trim();
+      if (isNaN(v) && t && !/^×+$/.test(t)) unreadable.push(t);
+      return isNaN(v) ? 0 : v;
+    };
     // 金額は td のみ。見出しの th.amt は「金額」の文字であり合計に含めない。
+    //
+    // 借方科目 td.d と貸方科目 td.c が同じ行に並ぶ表は仕訳であり、そこの
+    // 無印の td.amt は直前の科目の側の金額として数える。td.d.amt / td.c.amt
+    // だけを数えると、無印で書いた仕訳は 0 = 0 で素通りする。行ごとに片側しか
+    // ない表（計算の内訳や区分表示）は仕訳ではないため、無印の td.amt を数えない。
     const tables = [...document.querySelectorAll('table.jnl')].map((t, i) => {
-      let debit = 0, credit = 0;
-      for (const cell of t.querySelectorAll('td.d.amt')) debit += num(cell.textContent);
-      for (const cell of t.querySelectorAll('td.c.amt')) credit += num(cell.textContent);
-      return { id: t.id || ('jnl[' + i + ']'), debit, credit };
+      const journal = [...t.rows].some((r) => r.querySelector('td.d') && r.querySelector('td.c'));
+      const sum = { d: 0, c: 0 };
+      let counted = 0;
+      unreadable.length = 0;
+      for (const row of t.rows) {
+        let side = null;
+        for (const cell of row.querySelectorAll('td')) {
+          const k = cell.classList;
+          const own = k.contains('d') ? 'd' : (k.contains('c') ? 'c' : null);
+          if (!k.contains('amt')) { if (own) side = own; continue; }
+          const s = own || (journal ? side : null);
+          if (!s) continue;
+          sum[s] += num(cell.textContent);
+          counted++;
+        }
+      }
+      const numeric = [...t.querySelectorAll('td')]
+        .some((c) => !isNaN(window.BokiJournal.__parseAmt(c.textContent)));
+      return { id: t.id || ('jnl[' + i + ']'), debit: sum.d, credit: sum.c,
+               unchecked: journal && !counted && numeric, unreadable: [...unreadable] };
     });
     const drills = [];
     for (const { sel, cfg } of (window.__captured?.journal || [])) {
@@ -223,6 +253,14 @@ CHECKS.push(async function checkBalance(page, file) {
     return { tables, drills };
   });
 
+  for (const t of data.tables) {
+    for (const v of t.unreadable) {
+      report(file, t.id, '数値として読める金額', v, '仕訳の金額欄を数値として読めない');
+    }
+    if (t.unchecked) {
+      report(file, t.id, 'td.amt あり', 'なし', '仕訳の金額欄に amt がなく貸借を検算できない');
+    }
+  }
   for (const e of [...data.tables, ...data.drills]) {
     if (e.debit !== e.credit) {
       report(file, e.id, e.debit, e.credit, '貸借が一致しない');
@@ -303,8 +341,9 @@ CHECKS.push(async function checkNum(page, file) {
       report(file, it.id, '評価できる式', it.formula, '式を評価できない: ' + e.message);
       continue;
     }
-    if (Math.abs(got - Number(it.answer)) > 1e-9) {
-      report(file, it.id, got, it.answer, '計算式の値と answer が一致しない');
+    // answer が数値でないと差が NaN になり、> の比較は常に偽で素通りする。
+    if (typeof it.answer !== 'number' || !(Math.abs(got - it.answer) <= 1e-9)) {
+      report(file, it.id, got, JSON.stringify(it.answer), '計算式の値と answer が一致しない');
     }
   }
 });
@@ -413,8 +452,16 @@ CHECKS.push(async function checkRuntime(page, file, errors) {
   }
 
   for (const href of found.rel) {
-    const target = resolve(dirname(file), decodeURIComponent(href.split('#')[0]));
-    if (!existsSync(target)) report(file, href, '存在する', 'なし', 'リンク切れ');
+    let path;
+    try {
+      path = decodeURIComponent(href.split('#')[0].split('?')[0]);
+    } catch (e) {
+      report(file, href, '正しいURLエンコード', href, 'リンクの % エスケープが壊れている');
+      continue;
+    }
+    if (!existsSync(resolve(dirname(file), path))) {
+      report(file, href, '存在する', 'なし', 'リンク切れ');
+    }
   }
 
   // 420px 幅での横スクロール。.grid2 内の表が典型的な原因。
@@ -636,7 +683,7 @@ CHECKS.push(async function checkQuizNumbers(page, file) {
 // 記録の配線が切れても画面には何も現れない。気づくのは数週間後、記録を
 // 書き出そうとして空だったときであり、そのデータはもう戻らない。
 // ゲート0が mount の実行を検査するのと同じ理由で、機械的に見る。
-CHECKS.push(async function checkProgressWiring(page, file) {
+CHECKS.push(async function checkProgressWiring(page, file, errors) {
   const ready = await page.evaluate(() => typeof window.BokiProgress === 'object');
   if (!ready) {
     report(file, '(progress)', 'BokiProgress あり', 'なし',
@@ -659,35 +706,43 @@ CHECKS.push(async function checkProgressWiring(page, file) {
     report(file, sel, 'id あり', 'なし', 'マウント先に id がなく記録できない');
   }
 
-  // 実際に1問解いて採点し、記録が増えることを確かめる。設定の検査だけでは、
-  // 配線が外れていても素通りする。
+  // 全ドリルの全設問を実際に解いて採点し、設問ごとに記録が増えることを
+  // 確かめる。設定の検査だけでは、配線が外れていても素通りする。先頭の
+  // 1問だけでは、2つ目以降のドリルや設問の採点で起きる例外を見落とす。
   //
   // 解答せずにボタンを押すと、BokiQuiz は「選択肢を選んでください」で
   // 早期に戻り採点しない。記録がないのが正しい挙動なので、必ず解答してから
   // 押す。ドリルの種類ごとに解答の与え方が違う。
-  const grew = await page.evaluate(async () => {
-    const drill = document.querySelector('.drill');
-    if (!drill) return null;                  // ドリルのないページは対象外
+  const before = errors.length;
+  const unrecorded = await page.evaluate(async () => {
     window.BokiProgress._reset();
-
-    const radio = drill.querySelector('input[type="radio"]');
-    if (radio) radio.checked = true;          // BokiQuiz
-    for (const sel of drill.querySelectorAll('select')) {
-      if (sel.options.length > 1) sel.selectedIndex = 1;   // BokiJournal
+    const out = [];
+    for (const drill of document.querySelectorAll('.drill')) {
+      [...drill.querySelectorAll('.q')].forEach((q, i) => {
+        const radio = q.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;          // BokiQuiz
+        for (const sel of q.querySelectorAll('select')) {
+          if (sel.options.length > 1) sel.selectedIndex = 1;   // BokiJournal
+        }
+        for (const inp of q.querySelectorAll('input[type="text"]')) {
+          inp.value = '1';                        // BokiNum / BokiFill / 金額欄
+        }
+        const btn = q.querySelector('.btn:not(.btn--ghost)');
+        if (btn) btn.click();
+        const id = drill.id + '/q' + (i + 1);
+        if (!Object.keys(window.BokiProgress.dump().drills).some((k) => k.endsWith('#' + id))) {
+          out.push(id);
+        }
+      });
     }
-    for (const inp of drill.querySelectorAll('input[type="text"]')) {
-      inp.value = '1';                        // BokiNum / BokiFill / 金額欄
-    }
-
-    const btn = drill.querySelector('.btn');
-    if (!btn) return null;
-    btn.click();
     await new Promise((r) => setTimeout(r, 60));
-    return Object.keys(window.BokiProgress.dump().drills).length;
+    return out;
   });
-  if (grew === 0) {
-    report(file, '(progress)', '記録が増える', '増えない',
-      '採点しても学習記録に残らない');
+  for (const id of unrecorded) {
+    report(file, id, '記録が増える', '増えない', '採点しても学習記録に残らない');
+  }
+  for (const e of errors.slice(before)) {
+    report(file, '(progress)', 'エラーなし', e, '採点でJSエラー');
   }
 });
 
@@ -727,10 +782,10 @@ CHECKS.push(async function checkDashboardRobust(page, file, errors) {
   for (const [label, raw] of BROKEN) {
     await page.evaluate((v) => localStorage.setItem('boki2:progress', v), raw);
     errors.length = 0;
-    await page.reload({ waitUntil: 'load' });
     // 復習ページは設問バンクを非同期に読む。読み終わる前に見ると、
-    // 描画中に投げる例外を取りこぼす。
-    await page.waitForTimeout(300);
+    // 描画中に投げる例外を取りこぼす。固定時間の待ちでは、遅い環境で
+    // 読み終わる前に見てしまう。
+    await page.reload({ waitUntil: 'networkidle' });
     const fatal = errors.filter((e) => !/favicon/i.test(e));
     if (fatal.length) {
       report(file, '(robust)', '例外なし', fatal[0],
@@ -801,15 +856,22 @@ CHECKS.push(async function checkDrillBank(page, file) {
 // ドリルは「間違えた覚えのない設問」を出したうえ、その正解を元の設問IDに
 // 積んで一覧から消す。実際に間違えた設問は復習されないまま消滅する。
 //
-// 設問を足すときは末尾に足す。文言の推敲で指紋が変わったときは
-// reference/drill-ids.json を更新してコミットする（その設問の記録は
-// 引き継がれる。中身が同じ設問だという判断は人間が下す）。
+// 設問を足すときは末尾に足す。新しいドリルと末尾の設問は npm run build:drills
+// が reference/drill-ids.json に登録する。文言の推敲で指紋が変わったときは
+// その指紋を手で書き換えてコミットする（その設問の記録は引き継がれる。
+// 中身が同じ設問だという判断は人間が下す）。
 CHECKS.push(async function checkDrillIds(page, file) {
   if (checkDrillIds.done) return;
   checkDrillIds.done = true;
 
   const BASE = 'reference/drill-ids.json';
-  if (!existsSync(BASE) || !existsSync('assets/drills.json')) return;
+  // 設問バンクがないことはゲート12が指摘する。
+  if (!existsSync('assets/drills.json')) return;
+  if (!existsSync(BASE)) {
+    report(BASE, '(ids)', 'あり', 'なし',
+      '記録IDの基準がない（npm run build:drills で生成してコミットする）');
+    return;
+  }
 
   const base = JSON.parse(readFileSync(BASE, 'utf8'));
   const bank = JSON.parse(readFileSync('assets/drills.json', 'utf8'));
@@ -818,17 +880,27 @@ CHECKS.push(async function checkDrillIds(page, file) {
     for (const [root, d] of Object.entries(u.drills)) {
       const key = unit + '#' + root;
       const was = base[key];
-      // 新しいドリルには過去の記録がない。ずれようがないので通す。
-      if (!was) continue;
       const now = d.fingerprints || [];
+      if (!was) {
+        report(u.href, root, '登録', '未登録',
+          '記録IDの基準に未登録のドリルがある（npm run build:drills で登録してコミットする）');
+        continue;
+      }
       // 末尾への追加は既存の番号を動かさない。先頭からの一致だけを見る。
       const n = Math.min(was.length, now.length);
+      let moved = false;
       for (let i = 0; i < n; i++) {
         if (was[i] !== now[i]) {
           report(u.href, root + '/q' + (i + 1), was[i], now[i],
             '設問の並びが変わり、過去の記録が別の設問を指している');
+          moved = true;
           break;
         }
+      }
+      // 並びが変わったドリルは build:drills が登録しないため、登録の案内は出さない。
+      if (!moved && now.length > was.length) {
+        report(u.href, root, was.length + '問を登録', now.length + '問',
+          '記録IDの基準に未登録の設問がある（npm run build:drills で登録してコミットする）');
       }
       if (now.length < was.length) {
         report(u.href, root, was.length + '問', now.length + '問',
@@ -847,16 +919,28 @@ async function main() {
   const browser = await chromium.launch();
   try {
     for (const file of files) {
-      await withPage(browser, file, async (page, errors) => {
-        for (const check of CHECKS) await check(page, file, errors);
-      });
+      // 1つのゲートの例外で検査全体を止めない。止めると、それまでに
+      // 集めた指摘も残りのゲートも失われる。
+      try {
+        await withPage(browser, file, async (page, errors) => {
+          for (const check of CHECKS) {
+            try { await check(page, file, errors); }
+            catch (e) { report(file, check.name, '例外なし', String(e), 'ゲートが例外で止まった'); }
+          }
+        });
+      } catch (e) {
+        report(file, '(open)', '開ける', String(e), 'ページを開けない');
+      }
     }
   } finally {
     await browser.close();
   }
+  finish(files.length);
+}
 
+function finish(pages) {
   if (!failures.length) {
-    console.log('OK ' + files.length + ' ページ、指摘なし');
+    console.log('OK ' + pages + ' ページ、指摘なし');
     process.exit(0);
   }
   for (const f of failures) {
@@ -871,5 +955,8 @@ async function main() {
 // 直接実行されたときだけ検査を走らせる。テストから evalFormula を
 // import しても、ブラウザが起動しないようにする。
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  main();
+  main().catch((e) => {
+    report('(check)', '(main)', '例外なし', String(e), '検査が例外で止まった');
+    finish(0);
+  });
 }

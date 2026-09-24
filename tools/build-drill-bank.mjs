@@ -6,12 +6,13 @@
 // 抽出に正規表現を使わない。check.mjs と同じく Playwright で file:// を
 // 開き、mount() に渡された設定オブジェクトをそのまま捕捉する。設問の
 // explain には HTML 文字列が入り、配列やネストしたオブジェクトも持つ。
-import { readdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { readdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const OUT = 'assets/drills.json';
+const IDS = 'reference/drill-ids.json';
 
 // mount() を横取りして設定を捕まえる。app.js は末尾で window に代入する
 // ため、setter を先に仕込んでおけば確実に掴める。
@@ -160,8 +161,27 @@ export async function build(opts) {
   // のに差分が出て、生成物が最新かの検査が当てにならなくなる。
   const bank = { version: 1, units: sortDeep(units) };
   const text = JSON.stringify(bank, null, 1) + '\n';
-  if (write) writeFileSync(OUT, text);
+  if (write) {
+    writeFileSync(OUT, text);
+    writeFileSync(IDS, registerIds(units));
+  }
   return { ok: true, total, units: Object.keys(units).length, text };
+}
+
+// ゲート13の基準に、新しいドリルと末尾に足した設問だけを登録する。
+// 既存の指紋と食い違うドリルは書き換えない。推敲か差し替えかは機械に
+// 区別できず、ここで上書きするとゲート13が並びの変化を検出できなくなる。
+// 既存のキー順は保つ。並べ直すと、設問が変わっていないのに差分が出る。
+function registerIds(units) {
+  const base = existsSync(IDS) ? JSON.parse(readFileSync(IDS, 'utf8')) : {};
+  for (const [unit, u] of Object.entries(units)) {
+    for (const [root, d] of Object.entries(u.drills)) {
+      const key = unit + '#' + root;
+      const was = base[key] || [];
+      if (was.every((f, i) => f === d.fingerprints[i])) base[key] = d.fingerprints;
+    }
+  }
+  return JSON.stringify(base, null, 2) + '\n';
 }
 
 // 設問文から短い指紋を作る。設問の中身が同じなら同じ値になればよく、
