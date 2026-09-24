@@ -2,14 +2,9 @@
 (function () {
   'use strict';
   var P = window.BokiProgress;
+  var B = window.BokiBank;
+  var el = B.el;
   var CLEAR_STREAK = P.CLEAR_STREAK;
-
-  function el(t, c, x) {
-    var n = document.createElement(t);
-    if (c) n.className = c;
-    if (x !== undefined) n.textContent = x;
-    return n;
-  }
 
   var summary = document.getElementById('summary');
   var filterBar = document.getElementById('filter');
@@ -17,13 +12,6 @@
 
   function say(msg) {
     summary.appendChild(el('p', 'small muted', msg));
-  }
-
-  // 記録IDは「単元キー#マウント先のid/q番号」。
-  function parseId(id) {
-    var m = /^(.+)#([^/]+)\/q(\d+)$/.exec(id);
-    if (!m) return null;
-    return { unit: m[1], root: m[2], q: Number(m[3]) };
   }
 
   // 要復習の判定は BokiProgress.due() が持つ。progress.html の一覧と
@@ -36,7 +24,7 @@
   catch (e) { due = []; }
 
   due = due.map(function (r) {
-    var ref = parseId(r.id);
+    var ref = P.parseId(r.id);
     if (!ref) return null;
     ref.id = r.id;
     ref.streak = r.streak;
@@ -59,29 +47,7 @@
   // 毎回先頭に来て、放置された問題がいつまでも後ろに残る。
   due.sort(function (a, b) { return a.last < b.last ? -1 : (a.last > b.last ? 1 : 0); });
 
-  var req = new XMLHttpRequest();
-  req.open('GET', 'assets/drills.json', true);
-  req.onload = function () {
-    // onload は 404 でも発火する。status を見ないと、サーバの返した
-    // エラーページを設問として読もうとする。
-    if (req.status !== 200 && req.status !== 0) return fail();
-    var bank;
-    try { bank = JSON.parse(req.responseText); }
-    catch (e) { bank = null; }
-    if (!bank || !bank.units) return fail();
-    render(bank);
-  };
-  // file:// では XHR がブロックされる。単元HTMLは file:// で直接開いて
-  // 動くが、このページだけは設問バンクを読むため配信が要る。詰まった
-  // ときに何をすればよいか分からないと、復習そのものが止まる。
-  req.onerror = fail;
-  req.send();
-
-  function fail() {
-    say('設問データ（assets/drills.json）を読み込めませんでした。' +
-      'file:// で開いている場合は、教材のフォルダで次を実行し、' +
-      'http://localhost:8000/review.html を開いてください：  python3 -m http.server');
-  }
+  B.load(summary, render);
 
   // 表示する単元。null はすべて。
   var unitFilter = null;
@@ -169,30 +135,26 @@
 
       // 設問は q番号（1始まり）で引く。並び順ではなく番号で引かないと、
       // 設問を1つ挿しただけで別の問題が出る。
-      var picked = [], numbers = [], meta = [];
+      var numbers = [], meta = [];
       g.items.forEach(function (r) {
-        var q = (src.cfg.questions || [])[r.q - 1];
-        if (!q) { missing++; return; }
-        picked.push(q);
+        if (!(src.cfg.questions || [])[r.q - 1]) { missing++; return; }
         numbers.push(r.q);
         meta.push(r);
       });
-      if (!picked.length) return;
+      if (!numbers.length) return;
 
-      var api = { journal: window.BokiJournal, quiz: window.BokiQuiz,
-                  num: window.BokiNum, fill: window.BokiFill }[src.kind];
       // 見出しを先に足してから種類を確かめると、出題できないドリルの
       // 見出しだけが残る。描画の前に確かめる。
-      if (!api) { missing += picked.length; return; }
+      if (!B.kinds[src.kind]) { missing += numbers.length; return; }
 
-      shown += picked.length;
+      shown += numbers.length;
       mounted++;
 
       var head = el('div', 'reviewgroup');
       var a = el('a', 'reviewgroup__unit', g.unit);
       a.href = unit.href + '#' + g.root;
       head.appendChild(a);
-      head.appendChild(el('span', 'reviewgroup__meta', picked.length + '問'));
+      head.appendChild(el('span', 'reviewgroup__meta', numbers.length + '問'));
       host.appendChild(head);
 
       // 設問ごとに復習から外す。覚えた設問を3回解き直させる理由はない。
@@ -220,16 +182,7 @@
       box.id = mountId;
       host.appendChild(box);
 
-      // 単元での設定をそのまま使い、出題する設問と記録先だけ差し替える。
-      // 使う項目を選び直すと、単元と復習で設問の見た目や挙動がずれる。
-      var cfg = {};
-      for (var k in src.cfg) cfg[k] = src.cfg[k];
-      cfg.questions = picked;
-      // 記録は元の単元の設問IDに向ける。このページのURLから決めると、
-      // やり直した正解が元の設問に届かず、いつまでも一覧から消えない。
-      cfg.recordAs = g.unit + '#' + g.root;
-      cfg.qNumbers = numbers;
-      api.mount('#' + mountId, cfg);
+      B.mount('#' + mountId, g.unit, src, numbers);
     });
 
     var s = el('p', 'lead');

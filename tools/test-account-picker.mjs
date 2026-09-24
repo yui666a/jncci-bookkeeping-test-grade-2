@@ -2,11 +2,11 @@
 import { chromium } from 'playwright';
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
+import { eq, failedCount } from './lib.mjs';
 
 const YOMI = readFileSync(resolve('assets/yomi.js'), 'utf8');
 const APP = readFileSync(resolve('assets/app.js'), 'utf8');
 const ACCOUNTS = ['リース資産', '現金', '売掛金', '未払金', '雑損', '支払手形', '仕入', '建設仮勘定'];
-let failures = 0;
 
 const browser = await chromium.launch();
 try {
@@ -25,10 +25,7 @@ try {
     return page.$$eval('#d .apick__list.open .apick__it', (els) => els.map((e) => e.textContent));
   }
   async function expect(query, want) {
-    const got = await shown(query);
-    if (JSON.stringify(got) === JSON.stringify(want)) return;
-    failures++;
-    console.log('NG 「' + query + '」  期待=' + JSON.stringify(want) + '  実際=' + JSON.stringify(got));
+    eq(await shown(query), want, '「' + query + '」');
   }
 
   await expect('urikake', ['売掛金']);
@@ -50,5 +47,6 @@ try {
 } finally {
   await browser.close();
 }
+const failures = failedCount();
 console.log(failures ? 'NG ' + failures + ' 件' : 'OK 全件');
 process.exit(failures ? 1 : 0);

@@ -3,10 +3,9 @@
 //
 // loadYaml は check.mjs と同じ lib.mjs のものを使う。同じ読み取りを2箇所に置くと、
 // 一方だけ直したときに黙ってずれる。
-import { readdirSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { resolve } from 'node:path';
 import { chromium } from 'playwright';
-import { loadYaml } from './lib.mjs';
+import { loadYaml, phaseFiles } from './lib.mjs';
 
 const topics = loadYaml('reference/syllabus.yml').topics;
 // 2級の教材が扱うべき論点。3級は前提知識であり Phase 0 の総復習で扱う。
@@ -16,17 +15,11 @@ const topics = loadYaml('reference/syllabus.yml').topics;
 // 上乗せ分は2級で初めて学ぶので、grade===2 だけを見ると取りこぼす。
 const required = topics.filter((t) => t.grade === 2 || t.limit_grade2);
 
-const files = [];
-for (const d of readdirSync('.', { withFileTypes: true })) {
-  if (!d.isDirectory() || !/^phase\d+$/.test(d.name)) continue;
-  for (const f of readdirSync(d.name)) {
-    if (f.endsWith('.html') && f !== 'index.html') files.push(join(d.name, f));
-  }
-}
+const files = phaseFiles().filter((f) => !f.endsWith('/index.html'));
 
 const browser = await chromium.launch();
 const covered = new Map();
-for (const file of files.sort()) {
+for (const file of files) {
   const page = await browser.newPage();
   await page.goto('file://' + resolve(file), { waitUntil: 'load' });
   const meta = await page.evaluate(() => {

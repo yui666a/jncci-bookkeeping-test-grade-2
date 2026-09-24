@@ -6,10 +6,11 @@
 // 抽出に正規表現を使わない。check.mjs と同じく Playwright で file:// を
 // 開き、mount() に渡された設定オブジェクトをそのまま捕捉する。設問の
 // explain には HTML 文字列が入り、配列やネストしたオブジェクトも持つ。
-import { readdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
+import { phaseFiles, countMounts } from './lib.mjs';
 
 const OUT = 'assets/drills.json';
 const IDS = 'reference/drill-ids.json';
@@ -37,16 +38,9 @@ const CAPTURE = () => {
   }
 };
 
+// 目次ページに設問はない。開くだけ無駄になる。
 function unitFiles() {
-  const found = [];
-  for (const dir of readdirSync('.', { withFileTypes: true })) {
-    if (!dir.isDirectory() || !/^phase\d+$/.test(dir.name)) continue;
-    for (const f of readdirSync(dir.name)) {
-      // 目次ページに設問はない。開くだけ無駄になる。
-      if (f.endsWith('.html') && f !== 'index.html') found.push(join(dir.name, f));
-    }
-  }
-  return found.sort();
+  return phaseFiles().filter((f) => !f.endsWith('/index.html'));
 }
 
 // 記録IDと同じ規則で単元キーを作る。app.js の unitKeyOf と揃っていないと、
@@ -111,8 +105,7 @@ export async function build(opts) {
       // 捕捉が空になるのは、JSエラーでアセットの読込に失敗したとき。
       // 気づかずに書き出すと、その単元の設問が丸ごと欠けたバンクが
       // できあがる。tools/gates/00-mounted.mjs と同じ理由で、宣言数と突き合わせる。
-      const declared = (readFileSync(file, 'utf8')
-        .match(/\bBoki(?:Journal|Quiz|Num|Fill)\s*\.\s*mount\s*\(/g) || []).length;
+      const declared = countMounts(file);
       if (declared !== mounts.length) {
         problems.push(file + ': mount ' + declared + '件のうち ' +
           mounts.length + '件しか捕捉できなかった' +

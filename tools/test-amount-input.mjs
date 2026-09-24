@@ -2,15 +2,9 @@
 import { chromium } from 'playwright';
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
+import { eq, failedCount } from './lib.mjs';
 
 const APP = readFileSync(resolve('assets/app.js'), 'utf8');
-let failures = 0;
-
-function eq(actual, expected, label) {
-  if (actual === expected) return;
-  failures++;
-  console.log('NG ' + label + '  期待=' + JSON.stringify(expected) + '  実際=' + JSON.stringify(actual));
-}
 
 const browser = await chromium.launch();
 try {
@@ -75,5 +69,6 @@ try {
 } finally {
   await browser.close();
 }
+const failures = failedCount();
 console.log(failures ? 'NG ' + failures + ' 件' : 'OK 全件');
 process.exit(failures ? 1 : 0);

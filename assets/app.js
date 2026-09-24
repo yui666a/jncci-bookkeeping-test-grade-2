@@ -87,6 +87,13 @@
       p.exportedAt = nowISO();
       return JSON.stringify(p);
     },
+    // 記録IDは「単元キー#マウント先のid/q番号」。単元キーはURLのパスから
+    // 作るため # を含まない（# はパスでは %23 になる）。最初の # で切る。
+    parseId: function (id) {
+      var m = /^(.+?)#([^/]+)\/q(\d+)$/.exec(id);
+      if (!m) return null;
+      return { unit: m[1], root: m[2], q: Number(m[3]) };
+    },
     record: function (drillId, ok) {
       var p = loadProgress();
       if (!p.drills[drillId]) p.drills[drillId] = { attempts: [] };
@@ -450,6 +457,41 @@
   function tagQuestion(wrapQ, root, i) {
     if (root && root.id) wrapQ.id = root.id + '-q' + (i + 1);
   }
+  // 設問の枠と見出し。4種のドリルで同じ形にそろえる。
+  function questionBox(root, q, i) {
+    var wrapQ = el('div', 'q');
+    tagQuestion(wrapQ, root, i);
+    var head = el('p', 'q__text');
+    head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
+    var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
+    wrapQ.appendChild(head);
+    return wrapQ;
+  }
+  // 採点・解答ボタン、ヒント、フィードバック欄を設問の末尾に足す。
+  // ヒントは textContent で入れる。text や explain と違い、ヒントに HTML を
+  // 書いた設問はない。innerHTML にすると「A<B」のような比較が要素として
+  // 解釈されて文字が消える。
+  function controls(wrapQ, q, withAnswer) {
+    var row = el('div', 'btn-row');
+    var check = el('button', 'btn btn--sm', '採点する');
+    row.appendChild(check);
+    var ans = withAnswer ? el('button', 'btn btn--ghost btn--sm', '答えを見る') : null;
+    if (ans) row.appendChild(ans);
+    wrapQ.appendChild(row);
+    if (q.hint) {
+      var bHint = el('button', 'linkbtn', 'ヒント');
+      var hintBox = el('div', 'small muted', 'ヒント：' + q.hint);
+      hintBox.style.display = 'none';
+      bHint.addEventListener('click', function () {
+        hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
+      });
+      row.appendChild(bHint);
+      wrapQ.appendChild(hintBox);
+    }
+    var fb = el('div', 'fb');
+    wrapQ.appendChild(fb);
+    return { check: check, ans: ans, fb: fb };
+  }
 
   // 採点の確定点は4種のドリルで共通してここを通る。記録をここに置けば、
   // 単元HTMLの著者が記録用のコードを書く必要がなくなる。書き忘れが
@@ -701,12 +743,7 @@
 
       cfg.questions.forEach(function (q, i) {
         var accounts = q.accounts || cfg.accounts;
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var span = el('span'); span.innerHTML = q.text; head.appendChild(span);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         // 解答欄は常に4行。行数から正解の科目数が読めてしまうと本番の第1問と条件が変わる。
         // 未選択・未入力の行は collect() が無視するため、余った行は採点に影響しない。
@@ -732,25 +769,7 @@
         }
         t.appendChild(tb); tw.appendChild(t); wrapQ.appendChild(tw);
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var bCheck = el('button', 'btn btn--sm', '採点する');
-        var bAns = el('button', 'btn btn--ghost btn--sm', '答えを見る');
-        row.appendChild(bCheck); row.appendChild(bAns);
-        if (q.hint) {
-          var bHint = el('button', 'linkbtn', 'ヒント');
-          var hintBox = el('div', 'small muted');
-          hintBox.style.display = 'none';
-          hintBox.textContent = 'ヒント：' + q.hint;
-          bHint.addEventListener('click', function () {
-            hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
-          });
-          row.appendChild(bHint);
-          wrapQ.appendChild(row); wrapQ.appendChild(hintBox);
-        } else {
-          wrapQ.appendChild(row);
-        }
-        wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function collect(side) {
@@ -817,12 +836,7 @@
       var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         var box = el('div', 'choices');
         var name = 'q_' + Math.random().toString(36).slice(2) + '_' + i;
@@ -835,11 +849,7 @@
         });
         wrapQ.appendChild(box);
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var b = el('button', 'btn btn--sm', '採点する');
-        row.appendChild(b);
-        wrapQ.appendChild(row); wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, false), fb = ctl.fb, b = ctl.check;
         ui.body.appendChild(wrapQ);
 
         b.addEventListener('click', function () {
@@ -879,12 +889,7 @@
       cfg.questions.forEach(function (q, i) {
         var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
         var labels = q.labels || [];
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         var inputs = [];
         answers.forEach(function (a, ai) {
@@ -898,22 +903,7 @@
           wrapQ.appendChild(line);
         });
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var bCheck = el('button', 'btn btn--sm', '採点する');
-        var bAns = el('button', 'btn btn--ghost btn--sm', '答えを見る');
-        row.appendChild(bCheck); row.appendChild(bAns);
-        if (q.hint) {
-          var bHint = el('button', 'linkbtn', 'ヒント');
-          var hintBox = el('div', 'small muted'); hintBox.style.display = 'none';
-          hintBox.innerHTML = 'ヒント：' + q.hint;
-          bHint.addEventListener('click', function () {
-            hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
-          });
-          row.appendChild(bHint);
-          wrapQ.appendChild(row); wrapQ.appendChild(hintBox);
-        } else { wrapQ.appendChild(row); }
-        wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function ansHTML() {
@@ -957,12 +947,7 @@
       var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var wrapQ = el('div', 'q');
-        tagQuestion(wrapQ, root, i);
-        var head = el('p', 'q__text');
-        head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-        var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
-        wrapQ.appendChild(head);
+        var wrapQ = questionBox(root, q, i);
 
         var line = el('div', 'numq');
         var inp = el('input'); inp.type = 'text'; inp.style.width = '240px'; inp.style.textAlign = 'left';
@@ -970,12 +955,7 @@
         line.appendChild(inp);
         wrapQ.appendChild(line);
 
-        var fb = el('div', 'fb');
-        var row = el('div', 'btn-row');
-        var b = el('button', 'btn btn--sm', '採点する');
-        var b2 = el('button', 'btn btn--ghost btn--sm', '答えを見る');
-        row.appendChild(b); row.appendChild(b2);
-        wrapQ.appendChild(row); wrapQ.appendChild(fb);
+        var ctl = controls(wrapQ, q, true), fb = ctl.fb, b = ctl.check, b2 = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function norm(s) { return String(s).replace(/[\s　]/g, ''); }
@@ -998,6 +978,50 @@
     }
   };
 
+  /* ---------- 設問バンクからの再出題（review.html / practice.html） ---------- */
+  var KINDS = { journal: BokiJournal, quiz: BokiQuiz, num: BokiNum, fill: BokiFill };
+
+  // 読めなかったときの案内は msgHost に出す。
+  function loadBank(msgHost, onLoad) {
+    function fail() {
+      var page = location.pathname.split('/').pop();
+      msgHost.appendChild(el('p', 'small muted',
+        '設問データ（assets/drills.json）を読み込めませんでした。' +
+        'file:// で開いている場合は、教材のフォルダで次を実行し、' +
+        'http://localhost:8000/' + page + ' を開いてください：  python3 -m http.server'));
+    }
+    var req = new XMLHttpRequest();
+    req.open('GET', 'assets/drills.json', true);
+    req.onload = function () {
+      // onload は 404 でも発火する。status を見ないと、サーバの返した
+      // エラーページを設問として読もうとする。
+      if (req.status !== 200 && req.status !== 0) return fail();
+      var bank;
+      try { bank = JSON.parse(req.responseText); }
+      catch (e) { bank = null; }
+      if (!bank || !bank.units) return fail();
+      onLoad(bank);
+    };
+    // file:// では XHR がブロックされる。単元HTMLは file:// で直接開いて
+    // 動くが、再出題のページは設問バンクを読むため配信が要る。詰まった
+    // ときに何をすればよいか分からないと、復習そのものが止まる。
+    req.onerror = fail;
+    req.send();
+  }
+
+  // 単元での設定をそのまま使い、出題する設問（q番号の配列）と記録先だけ
+  // 差し替える。使う項目を選び直すと、単元と再出題で設問の見た目や挙動がずれる。
+  // 記録は元の単元の設問IDに向ける。開いているページのURLから決めると、
+  // やり直した正解が元の設問に届かず、いつまでも要復習から消えない。
+  function mountFromBank(sel, unit, drill, nums) {
+    var cfg = {};
+    for (var k in drill.cfg) cfg[k] = drill.cfg[k];
+    cfg.questions = nums.map(function (n) { return drill.cfg.questions[n - 1]; });
+    cfg.recordAs = unit + '#' + drill.root;
+    cfg.qNumbers = nums;
+    KINDS[drill.kind].mount(sel, cfg);
+  }
+
   /* ---------- 初期化 ---------- */
   function boot() { initTheme(); initChecklists(); initNotes(); initSession(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
@@ -1009,4 +1033,5 @@
   window.BokiFill = BokiFill;
   window.BokiProgress = BokiProgress;
   window.BokiLS = LS;
+  window.BokiBank = { el: el, kinds: KINDS, load: loadBank, mount: mountFromBank };
 })();

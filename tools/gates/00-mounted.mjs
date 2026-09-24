@@ -1,5 +1,4 @@
-import { readFileSync } from 'node:fs';
-import { report } from '../lib.mjs';
+import { report, countMounts } from '../lib.mjs';
 
 // ゲート0：ドリルが実際に mount されたか。
 // 検査はページのJSランタイムから設問を読む。app.js の読み込みに失敗すると
@@ -10,8 +9,7 @@ export async function checkMounted(page, file, errors) {
     const c = window.__captured || {};
     return Object.values(c).reduce((a, v) => a + v.length, 0);
   });
-  const declared = (readFileSync(file, 'utf8')
-    .match(/\bBoki(?:Journal|Quiz|Num|Fill)\s*\.\s*mount\s*\(/g) || []).length;
+  const declared = countMounts(file);
   if (declared !== captured) {
     report(file, '(mount)', declared, captured,
       'mount 呼び出しが実行されていない（アセット読込の失敗か）');
