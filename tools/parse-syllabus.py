@@ -293,8 +293,8 @@ def emit(entries):
         lines.append('    title: %s' % yaml_escape(clean(e['title'])))
         lines.append('    grade: %d' % e['grade'])
         lines.append('    advanced: %s' % ('true' if '※' in e['title'] else 'false'))
-        # Why not: 級ごとの入れ子リストにしない。読み手の tools/check.mjs の
-        # YAMLリーダは項目1件を平坦なスカラーの並びとして読むため、入れ子を
+        # Why not: 級ごとの入れ子リストにしない。読み手の tools/lib.mjs の
+        # YAMLリーダ（loadYaml）は項目1件を平坦なスカラーの並びとして読むため、入れ子を
         # 置くと限定文言の行が別の論点として読まれる。
         for grade in sorted(e['notes']):
             lines.append('    limit_grade%d: %s'

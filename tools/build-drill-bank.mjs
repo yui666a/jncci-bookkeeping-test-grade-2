@@ -110,7 +110,7 @@ export async function build(opts) {
 
       // 捕捉が空になるのは、JSエラーでアセットの読込に失敗したとき。
       // 気づかずに書き出すと、その単元の設問が丸ごと欠けたバンクが
-      // できあがる。check.mjs のゲート0と同じ理由で、宣言数と突き合わせる。
+      // できあがる。tools/gates/00-mounted.mjs と同じ理由で、宣言数と突き合わせる。
       const declared = (readFileSync(file, 'utf8')
         .match(/\bBoki(?:Journal|Quiz|Num|Fill)\s*\.\s*mount\s*\(/g) || []).length;
       if (declared !== mounts.length) {
