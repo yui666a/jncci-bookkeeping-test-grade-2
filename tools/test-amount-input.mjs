@@ -56,6 +56,13 @@ await page.type(AMT, '1234567');
 for (let i = 0; i < 7; i++) await page.press(AMT, 'Backspace');
 eq(await page.$eval(AMT, (el) => el.value), '', 'Backspace連打で全桁消える');
 
+// 日本語入力のまま打った負号や会計の▲△も、負の数として残る。
+for (const mark of ['-', '－', '−', 'ー', '▲', '△']) {
+  await page.fill(AMT, '');
+  await page.type(AMT, mark + '26000');
+  eq(await page.$eval(AMT, (el) => el.value), '-26,000', '負号「' + mark + '」が残る');
+}
+
 await browser.close();
 console.log(failures ? 'NG ' + failures + ' 件' : 'OK 全件');
 process.exit(failures ? 1 : 0);
