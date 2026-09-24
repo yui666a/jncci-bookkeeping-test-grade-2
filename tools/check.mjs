@@ -229,16 +229,21 @@ CHECKS.push(async function checkBalance(page, file) {
 CHECKS.push(async function checkAccounts(page, file) {
   const data = await page.evaluate(() => {
     const out = [];
+    const m = document.querySelector('meta[name="boki-subject"]');
+    const pageSubject = m ? m.content : '商';
     for (const { sel, cfg } of (window.__captured?.journal || [])) {
+      // 商業と工業を1ページに並べる単元では、ページのメタだけだと片方の
+      // 科目照合が丸ごと外れる。ドリルの要素に data-boki-subject を書けば上書きできる。
+      const el = document.querySelector(sel);
+      const subject = el?.dataset.bokiSubject || pageSubject;
       (cfg.questions || []).forEach((q, i) => {
         const pool = q.accounts || cfg.accounts || [];
         const used = [...(q.debit || []), ...(q.credit || [])]
           .map((r) => r[0]).filter(Boolean);
-        out.push({ id: sel + '#q' + (i + 1), pool, used });
+        out.push({ id: sel + '#q' + (i + 1), pool, used, subject });
       });
     }
-    const m = document.querySelector('meta[name="boki-subject"]');
-    return { out, subject: m ? m.content : '商' };
+    return { out };
   });
 
   for (const q of data.out) {
@@ -248,7 +253,7 @@ CHECKS.push(async function checkAccounts(page, file) {
         report(file, q.id, 'プールに含む', name,
           '正解科目が accounts プールにない（入力できず必ず不正解になる）');
       }
-      if (data.subject === '商' && !KNOWN_ACCOUNTS.has(name)) {
+      if (q.subject === '商' && !KNOWN_ACCOUNTS.has(name)) {
         report(file, q.id, '勘定科目表に実在', name,
           '標準・許容勘定科目表にない科目名');
       }
