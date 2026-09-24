@@ -8332,7 +8332,7 @@
          "(2000000-800000-480000)*0.400"
         ],
         "hint": "2年目以降に掛ける相手は、取得原価ではありません。",
-        "explain": "<p><strong>1年目</strong>：2,000,000 × 0.400 ＝ <strong>800,000円</strong>。1年目だけは期首帳簿価額＝取得原価です。</p><p><strong>2年目</strong>：期首帳簿価額は 2,000,000 − 800,000 ＝ 1,200,000円。1,200,000 × 0.400 ＝ <strong>480,000円</strong>。</p><p><strong>3年目</strong>：期首帳簿価額は 2,000,000 − 800,000 − 480,000 ＝ 720,000円。720,000 × 0.400 ＝ <strong>288,000円</strong>。</p><p>800,000 → 480,000 → 288,000 と年々小さくなるのが定率法の姿です。毎年すべて 800,000円 になったら、取得原価に掛けてしまっています。</p><div class=\"callout callout--mine\" data-owner=\"jw-122cl\"><span class=\"callout__t\">手元の1台（カシオ JW-122CL）で速く打つ</span><p>メモリに<strong>期首帳簿価額</strong>を置き、毎年「呼び出して × 0.4、出た償却費をメモリから引く」を繰り返します。帳簿価額を紙に書いて打ち直す手間がなくなります。この機種は MR と MC が別キーではなく <kbd>MRC</kbd> 1つで、1回押すと呼び出し、続けて2回押すとメモリを消します。</p><div class=\"keyflow\"><kbd>MRC</kbd><kbd>MRC</kbd><kbd>GT</kbd><kbd>GT</kbd><span class=\"arrow\">→ メモリとGTを空にする</span></div><div class=\"keyflow\"><kbd>2</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>M+</kbd><span class=\"arrow\">→ メモリ 2,000,000</span></div><div class=\"keyflow\"><kbd>MRC</kbd><kbd>×</kbd><kbd>.</kbd><kbd>4</kbd><kbd>=</kbd><span class=\"arrow\">→ 800,000（1年目）</span><kbd>M−</kbd><span class=\"arrow\">→ メモリ 1,200,000</span></div><div class=\"keyflow\"><kbd>MRC</kbd><kbd>×</kbd><kbd>.</kbd><kbd>4</kbd><kbd>=</kbd><span class=\"arrow\">→ 480,000（2年目）</span><kbd>M−</kbd><span class=\"arrow\">→ メモリ 720,000</span></div><div class=\"keyflow\"><kbd>MRC</kbd><kbd>×</kbd><kbd>.</kbd><kbd>4</kbd><kbd>=</kbd><span class=\"arrow\">→ 288,000（3年目）</span><kbd>M−</kbd><span class=\"arrow\">→ メモリ 432,000</span></div><p>3年分を1つの手順で打てるのは、1〜3年目で打つキーがまったく同じだからです。<kbd>MRC</kbd> は<strong>1回だけ</strong>押します。続けて2回押すとメモリが消え、以後の年がすべて狂います。</p><p><strong>検算</strong>：<kbd>=</kbd> で出した償却費はGTに積まれています。<kbd>GT</kbd> を押すと累計 <strong>1,568,000</strong>、<kbd>MRC</kbd> を1回押すと残りの帳簿価額 <strong>432,000</strong>。足して 2,000,000 に戻れば3年分すべて正しく打てています。この 1,568,000 と 432,000 は、次の問題（償却保証額との比較）でそのまま使う数字です。</p><p>メモリは <kbd>AC</kbd> では消えません（取扱説明書 <code>reference/casio_jw-122cl_manual.pdf</code>「メモリー計算」）。次の問題に移る前に <kbd>MRC</kbd><kbd>MRC</kbd> を必ず押してください。</p></div>"
+        "explain": "<p><strong>1年目</strong>：2,000,000 × 0.400 ＝ <strong>800,000円</strong>。1年目だけは期首帳簿価額＝取得原価です。</p><p><strong>2年目</strong>：期首帳簿価額は 2,000,000 − 800,000 ＝ 1,200,000円。1,200,000 × 0.400 ＝ <strong>480,000円</strong>。</p><p><strong>3年目</strong>：期首帳簿価額は 2,000,000 − 800,000 − 480,000 ＝ 720,000円。720,000 × 0.400 ＝ <strong>288,000円</strong>。</p><p>800,000 → 480,000 → 288,000 と年々小さくなるのが定率法の姿です。毎年すべて 800,000円 になったら、取得原価に掛けてしまっています。</p><div class=\"callout callout--mine\" data-owner=\"jw-122cl\"><span class=\"callout__t\">手元の1台（カシオ JW-122CL）で速く打つ</span><p>メモリに<strong>期首帳簿価額</strong>を置き、毎年「呼び出して × 0.4、出た償却費をメモリから引く」を繰り返します。帳簿価額を紙に書いて打ち直す手間がなくなります。この機種は MR と MC が別キーではなく <kbd>MRC</kbd> 1つで、1回押すと呼び出し、続けて2回押すとメモリを消します。</p><div class=\"keyflow\"><kbd>MRC</kbd><kbd>MRC</kbd><kbd>AC</kbd><span class=\"arrow\">→ メモリを空にして計算を始める（取扱説明書の GT の手順例も AC から始まる）</span></div><div class=\"keyflow\"><kbd>2</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>0</kbd><kbd>M+</kbd><span class=\"arrow\">→ メモリ 2,000,000</span></div><div class=\"keyflow\"><kbd>MRC</kbd><kbd>×</kbd><kbd>.</kbd><kbd>4</kbd><kbd>=</kbd><span class=\"arrow\">→ 800,000（1年目）</span><kbd>M−</kbd><span class=\"arrow\">→ メモリ 1,200,000</span></div><div class=\"keyflow\"><kbd>MRC</kbd><kbd>×</kbd><kbd>.</kbd><kbd>4</kbd><kbd>=</kbd><span class=\"arrow\">→ 480,000（2年目）</span><kbd>M−</kbd><span class=\"arrow\">→ メモリ 720,000</span></div><div class=\"keyflow\"><kbd>MRC</kbd><kbd>×</kbd><kbd>.</kbd><kbd>4</kbd><kbd>=</kbd><span class=\"arrow\">→ 288,000（3年目）</span><kbd>M−</kbd><span class=\"arrow\">→ メモリ 432,000</span></div><p>3年分を1つの手順で打てるのは、1〜3年目で打つキーがまったく同じだからです。<kbd>MRC</kbd> は<strong>1回だけ</strong>押します。続けて2回押すとメモリが消え、以後の年がすべて狂います。</p><p><strong>検算</strong>：<kbd>=</kbd> で出した償却費はGTに積まれています。<kbd>GT</kbd> を押すと累計 <strong>1,568,000</strong>、<kbd>MRC</kbd> を1回押すと残りの帳簿価額 <strong>432,000</strong>。足して 2,000,000 に戻れば3年分すべて正しく打てています。この 1,568,000 と 432,000 は、次の問題（償却保証額との比較）でそのまま使う数字です。</p><p>メモリは <kbd>AC</kbd> では消えません（取扱説明書 <code>reference/casio_jw-122cl_manual.pdf</code>「メモリー計算」）。次の問題に移る前に <kbd>MRC</kbd><kbd>MRC</kbd> を必ず押してください。</p></div>"
        },
        {
         "text": "<strong>取得原価 2,000,000円</strong>、<strong>耐用年数5年</strong>の機械装置を、<strong>200％定率法</strong>（償却率 年0.400、<strong>保証率 0.10800</strong>、<strong>改定償却率 0.500</strong>）で償却する。期首に取得している。<strong>償却保証額</strong>、<strong>4年目の期首帳簿価額</strong>、および<strong>4年目の減価償却費</strong>を求めなさい。",
@@ -19566,7 +19566,7 @@
       "badge": "第3問形式",
       "questions": [
        {
-        "text": "<p>商品売買業を営む株式会社の資料にもとづき、<strong>損益計算書（報告式）</strong>の下記の金額を答えなさい。会計期間は×1年4月1日〜×2年3月31日である。</p><p><strong>資料1　決算整理前残高試算表（×2年3月31日・単位：円）</strong></p><div class=\"tablewrap\"><table><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">412,000</td><td>現金</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,561,000</td><td>当座預金</td><td class=\"num\"></td></tr><tr><td class=\"num\">900,000</td><td>受取手形</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,700,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">780,000</td><td>売買目的有価証券</td><td class=\"num\"></td></tr><tr><td class=\"num\">640,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">300,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">6,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,600,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>土地</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>支払手形</td><td class=\"num\">520,000</td></tr><tr><td class=\"num\"></td><td>買掛金</td><td class=\"num\">1,340,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">2,000,000</td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">30,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">1,800,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">700,000</td></tr><tr><td class=\"num\"></td><td>資本金</td><td class=\"num\">8,000,000</td></tr><tr><td class=\"num\"></td><td>利益準備金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>繰越利益剰余金</td><td class=\"num\">1,425,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">12,400,000</td></tr><tr><td class=\"num\"></td><td>受取配当金</td><td class=\"num\">42,000</td></tr><tr><td class=\"num\"></td><td>固定資産売却益</td><td class=\"num\">60,000</td></tr><tr><td class=\"num\">7,420,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,860,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">350,000</td><td>広告宣伝費</td><td class=\"num\"></td></tr><tr><td class=\"num\">96,000</td><td>通信費</td><td class=\"num\"></td></tr><tr><td class=\"num\">180,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">88,000</td><td>租税公課</td><td class=\"num\"></td></tr><tr><td class=\"num\">30,000</td><td>支払利息</td><td class=\"num\"></td></tr><tr><td class=\"num\"><strong>28,917,000</strong></td><td><strong>合計</strong></td><td class=\"num\"><strong>28,917,000</strong></td></tr></tbody></table></div><p><strong>資料2　未処理事項</strong></p><ol><li>得意先から売掛金 200,000円が当座預金口座に振り込まれていたが、未記帳であった。</li></ol><p><strong>資料3　決算整理事項</strong></p><ol><li>期末商品の帳簿棚卸数量は 1,200個（原価 @600円）、実地棚卸数量は 1,150個、正味売却価額は @560円 である。棚卸減耗損と商品評価損は、いずれも売上原価の内訳項目として表示する。</li><li>受取手形と売掛金の期末残高に対して 2% の貸倒引当金を差額補充法により設定する。</li><li>建物は定額法（耐用年数30年・残存価額ゼロ）、備品は定率法（償却率 25%）により減価償却を行う。</li><li>売買目的有価証券の期末時価は 745,000円 である。</li><li>郵便切手 12,000円 と収入印紙 8,000円 が未使用のまま残っている。</li><li>保険料は×1年8月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年6月1日に借り入れたもので、年利3%、利息は毎年5月末と11月末に半年分を後払いしている。</li><li>法人税、住民税及び事業税は、課税所得の 30% を計上する。課税所得は、税引前当期純利益に、当期の貸倒引当金繰入額のうち税務上損金に算入されない 10,000円 を加えて計算する。この 10,000円 には法定実効税率 30% で税効果会計を適用する。なお、期首における一時差異はない。</li></ol>",
+        "text": "<p>商品売買業を営む株式会社の資料にもとづき、<strong>損益計算書（報告式）</strong>の下記の金額を答えなさい。会計期間は×1年4月1日〜×2年3月31日である。減算する項目も正の数で答える。</p><p><strong>資料1　決算整理前残高試算表（×2年3月31日・単位：円）</strong></p><div class=\"tablewrap\"><table><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">412,000</td><td>現金</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,561,000</td><td>当座預金</td><td class=\"num\"></td></tr><tr><td class=\"num\">900,000</td><td>受取手形</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,700,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">780,000</td><td>売買目的有価証券</td><td class=\"num\"></td></tr><tr><td class=\"num\">640,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">300,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">6,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,600,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>土地</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>支払手形</td><td class=\"num\">520,000</td></tr><tr><td class=\"num\"></td><td>買掛金</td><td class=\"num\">1,340,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">2,000,000</td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">30,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">1,800,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">700,000</td></tr><tr><td class=\"num\"></td><td>資本金</td><td class=\"num\">8,000,000</td></tr><tr><td class=\"num\"></td><td>利益準備金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>繰越利益剰余金</td><td class=\"num\">1,425,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">12,400,000</td></tr><tr><td class=\"num\"></td><td>受取配当金</td><td class=\"num\">42,000</td></tr><tr><td class=\"num\"></td><td>固定資産売却益</td><td class=\"num\">60,000</td></tr><tr><td class=\"num\">7,420,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,860,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">350,000</td><td>広告宣伝費</td><td class=\"num\"></td></tr><tr><td class=\"num\">96,000</td><td>通信費</td><td class=\"num\"></td></tr><tr><td class=\"num\">180,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">88,000</td><td>租税公課</td><td class=\"num\"></td></tr><tr><td class=\"num\">30,000</td><td>支払利息</td><td class=\"num\"></td></tr><tr><td class=\"num\"><strong>28,917,000</strong></td><td><strong>合計</strong></td><td class=\"num\"><strong>28,917,000</strong></td></tr></tbody></table></div><p><strong>資料2　未処理事項</strong></p><ol><li>得意先から売掛金 200,000円が当座預金口座に振り込まれていたが、未記帳であった。</li></ol><p><strong>資料3　決算整理事項</strong></p><ol><li>期末商品の帳簿棚卸数量は 1,200個（原価 @600円）、実地棚卸数量は 1,150個、正味売却価額は @560円 である。棚卸減耗損と商品評価損は、いずれも売上原価の内訳項目として表示する。</li><li>受取手形と売掛金の期末残高に対して 2% の貸倒引当金を差額補充法により設定する。</li><li>建物は定額法（耐用年数30年・残存価額ゼロ）、備品は定率法（償却率 25%）により減価償却を行う。</li><li>売買目的有価証券の期末時価は 745,000円 である。</li><li>郵便切手 12,000円 と収入印紙 8,000円 が未使用のまま残っている。</li><li>保険料は×1年8月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年6月1日に借り入れたもので、年利3%、利息は毎年5月末と11月末に半年分を後払いしている。</li><li>法人税、住民税及び事業税は、課税所得の 30% を計上する。課税所得は、税引前当期純利益に、当期の貸倒引当金繰入額のうち税務上損金に算入されない 10,000円 を加えて計算する。この 10,000円 には法定実効税率 30% で税効果会計を適用する。なお、期首における一時差異はない。</li></ol>",
         "unit": "円",
         "labels": [
          "Ⅱ売上原価 ／ 期末商品棚卸高",
@@ -19617,7 +19617,7 @@
       "title": "セット1 — 損益計算書の作成"
      },
      "fingerprints": [
-      "0825bc6b"
+      "78eec6f3"
      ],
      "kind": "num",
      "root": "ex-set1"
@@ -21870,7 +21870,7 @@
         "explain": "<p><strong>単純総合原価計算（①②）</strong></p><ul><li>数量：月初 500 ＋ 投入 2,500 ＝ 3,000個。完成 2,400 ＋ 月末 600 ＝ 3,000個。一致</li><li>直接材料費：先入先出法なので当月投入分で単価を出す。1,250,000 ÷ 2,500個 ＝ @500円。月末 @500 × 600個 ＝ 300,000円</li><li>加工費：当月投入の換算量 ＝ 完成 2,400 ＋ 月末 600 × 50% − 月初 500 × 40% ＝ 2,400 ＋ 300 − 200 ＝ 2,500個。2,350,000 ÷ 2,500 ＝ @940円。月末 @940 × 300個 ＝ 282,000円</li><li>① 月末仕掛品原価 ＝ 300,000 ＋ 282,000 ＝ <strong>582,000円</strong></li><li>② 完成品総合原価 ＝（240,000 ＋ 108,000）＋（1,250,000 ＋ 2,350,000）− 582,000 ＝ <strong>3,366,000円</strong></li></ul><p>検算：3,366,000 ＋ 582,000 ＝ 3,948,000円 ＝ 月初 348,000 ＋ 当月 3,600,000。一致。</p><p><strong>等級製品への按分（③〜⑤）</strong></p><div class=\"tablewrap\"><table><thead><tr><th>等級</th><th class=\"num\">等価係数</th><th class=\"num\">完成品数量</th><th class=\"num\">積数</th><th class=\"num\">按分額</th><th class=\"num\">単位原価</th></tr></thead><tbody><tr><td>A</td><td class=\"num\">1.0</td><td class=\"num\">1,200</td><td class=\"num\">1,200</td><td class=\"num\">1,980,000</td><td class=\"num\">@1,650</td></tr><tr><td>B</td><td class=\"num\">0.8</td><td class=\"num\">800</td><td class=\"num\">640</td><td class=\"num\">1,056,000</td><td class=\"num\">@1,320</td></tr><tr><td>C</td><td class=\"num\">0.5</td><td class=\"num\">400</td><td class=\"num\">200</td><td class=\"num\">330,000</td><td class=\"num\">@825</td></tr><tr><td>合計</td><td class=\"num\">—</td><td class=\"num\">2,400</td><td class=\"num\">2,040</td><td class=\"num\">3,366,000</td><td class=\"num\">—</td></tr></tbody></table></div><ul><li>積数1あたりの原価 ＝ 3,366,000 ÷ 2,040 ＝ @1,650円</li><li>③ A ＝ @1,650 × 1,200 ＝ <strong>1,980,000円</strong></li><li>④ B ＝ @1,650 × 640 ＝ 1,056,000円。単位原価 1,056,000 ÷ 800個 ＝ <strong>@1,320円</strong></li><li>⑤ C ＝ @1,650 × 200 ＝ 330,000円。単位原価 330,000 ÷ 400個 ＝ <strong>@825円</strong></li></ul><p>検算：単位原価の比 1,650 : 1,320 : 825 ＝ 1.0 : 0.8 : 0.5 で、等価係数の比と一致します。按分額の合計 1,980,000 ＋ 1,056,000 ＋ 330,000 ＝ 3,366,000円も完成品総合原価と一致します。</p>"
        }
       ],
-      "title": "第5問 題8 — 等級別総合原価計算"
+      "title": "第4問(2) 題8 — 等級別総合原価計算"
      },
      "fingerprints": [
       "6a0179fc"
@@ -22062,28 +22062,28 @@
       "badge": "第4問(2)",
       "questions": [
        {
-        "text": "第4問(2) ① 月末仕掛品原価のうち<strong>直接材料費</strong>（先入先出法）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>当社は単一製品を量産しており、単純総合原価計算を採用している。次の資料にもとづいて、問いに答えなさい。</p><ul><li>直接材料は工程の始点ですべて投入し、加工費は工程の進捗に応じて発生する。</li><li>原価配分の方法は<strong>先入先出法</strong>による。</li><li>正常仕損は<strong>工程の終点</strong>で発生した。仕損品に処分価額はない。正常仕損費は度外視法により処理し、仕損の発生点を通過した製品に負担させる。</li></ul><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>生産データ</caption><tbody><tr><td>月初仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>当月投入</td><td class=\"num\">2,000個</td></tr><tr><td>合計</td><td class=\"num\">2,400個</td></tr><tr><td>正常仕損</td><td class=\"num\">100個</td></tr><tr><td>月末仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>完成品</td><td class=\"num\">1,900個</td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>原価データ（円）</caption><thead><tr><th></th><th class=\"num\">直接材料費</th><th class=\"num\">加工費</th></tr></thead><tbody><tr><td>月初仕掛品</td><td class=\"num\">160,000</td><td class=\"num\">88,000</td></tr><tr><td>当月製造費用</td><td class=\"num\">840,000</td><td class=\"num\">1,110,000</td></tr></tbody></table></div></div><p class=\"small muted\">（　）内は加工進捗度。</p></div></details>第4問(2) ① 月末仕掛品原価のうち<strong>直接材料費</strong>（先入先出法）",
         "answer": 168000,
         "formula": "840000 / 2000 * 400",
         "unit": "円",
         "explain": "<p>先入先出法では、月末仕掛品は<strong>当月投入分から</strong>できていると考えます。したがって当月投入の単価だけを使います。</p><p>直接材料は始点投入なので、数量で按分します。当月投入 2,000個（＝完成 1,900 − 月初 400 ＋ 仕損 100 ＋ 月末 400）。<br>840,000 ÷ 2,000個 × 400個 ＝ <strong>168,000円</strong>。</p><p>仕損は終点で発生しているので、月末仕掛品（50%の地点）はまだ仕損の発生点を通過していません。<mark>月末仕掛品には仕損費を負担させない</mark>ので、分母に仕損100個を含めたまま按分します。</p>"
        },
        {
-        "text": "第4問(2) ② 月末仕掛品原価のうち<strong>加工費</strong>（先入先出法）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>当社は単一製品を量産しており、単純総合原価計算を採用している。次の資料にもとづいて、問いに答えなさい。</p><ul><li>直接材料は工程の始点ですべて投入し、加工費は工程の進捗に応じて発生する。</li><li>原価配分の方法は<strong>先入先出法</strong>による。</li><li>正常仕損は<strong>工程の終点</strong>で発生した。仕損品に処分価額はない。正常仕損費は度外視法により処理し、仕損の発生点を通過した製品に負担させる。</li></ul><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>生産データ</caption><tbody><tr><td>月初仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>当月投入</td><td class=\"num\">2,000個</td></tr><tr><td>合計</td><td class=\"num\">2,400個</td></tr><tr><td>正常仕損</td><td class=\"num\">100個</td></tr><tr><td>月末仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>完成品</td><td class=\"num\">1,900個</td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>原価データ（円）</caption><thead><tr><th></th><th class=\"num\">直接材料費</th><th class=\"num\">加工費</th></tr></thead><tbody><tr><td>月初仕掛品</td><td class=\"num\">160,000</td><td class=\"num\">88,000</td></tr><tr><td>当月製造費用</td><td class=\"num\">840,000</td><td class=\"num\">1,110,000</td></tr></tbody></table></div></div><p class=\"small muted\">（　）内は加工進捗度。</p></div></details>第4問(2) ② 月末仕掛品原価のうち<strong>加工費</strong>（先入先出法）",
         "answer": 111000,
         "formula": "1110000 / (1900 + 100 + 200 - 200) * 200",
         "unit": "円",
         "explain": "<p>加工費は完成品換算量で按分します。月初 400個 × 50% ＝ 200個、月末 400個 × 50% ＝ 200個。仕損は終点発生なので 100個 × 100% ＝ 100個。</p><p>当月投入の換算量 ＝ 完成 1,900 ＋ 仕損 100 ＋ 月末 200 − 月初 200 ＝ <strong>2,000個</strong>。<br>1,110,000 ÷ 2,000 × 200 ＝ <strong>111,000円</strong>。</p><p>先入先出法で月初分を引き忘れると、分母が 2,200 になって答えがずれます。<mark>先入先出法は「当月に加工した量」で割る</mark>、と式の意味から覚えてください。</p>"
        },
        {
-        "text": "第4問(2) ③ <strong>完成品総合原価</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>当社は単一製品を量産しており、単純総合原価計算を採用している。次の資料にもとづいて、問いに答えなさい。</p><ul><li>直接材料は工程の始点ですべて投入し、加工費は工程の進捗に応じて発生する。</li><li>原価配分の方法は<strong>先入先出法</strong>による。</li><li>正常仕損は<strong>工程の終点</strong>で発生した。仕損品に処分価額はない。正常仕損費は度外視法により処理し、仕損の発生点を通過した製品に負担させる。</li></ul><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>生産データ</caption><tbody><tr><td>月初仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>当月投入</td><td class=\"num\">2,000個</td></tr><tr><td>合計</td><td class=\"num\">2,400個</td></tr><tr><td>正常仕損</td><td class=\"num\">100個</td></tr><tr><td>月末仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>完成品</td><td class=\"num\">1,900個</td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>原価データ（円）</caption><thead><tr><th></th><th class=\"num\">直接材料費</th><th class=\"num\">加工費</th></tr></thead><tbody><tr><td>月初仕掛品</td><td class=\"num\">160,000</td><td class=\"num\">88,000</td></tr><tr><td>当月製造費用</td><td class=\"num\">840,000</td><td class=\"num\">1,110,000</td></tr></tbody></table></div></div><p class=\"small muted\">（　）内は加工進捗度。</p></div></details>第4問(2) ③ <strong>完成品総合原価</strong>",
         "answer": 1919000,
         "formula": "160000 + 88000 + 840000 + 1110000 - 168000 - 111000",
         "unit": "円",
         "explain": "<p>完成品総合原価は、投入した原価の総額から月末仕掛品原価を差し引いた残りです。</p><p>総額 ＝ 160,000 ＋ 88,000 ＋ 840,000 ＋ 1,110,000 ＝ 2,198,000円。<br>月末仕掛品 ＝ 168,000 ＋ 111,000 ＝ 279,000円。<br>完成品総合原価 ＝ 2,198,000 − 279,000 ＝ <strong>1,919,000円</strong>。</p><p>差し引いた残りなので、<mark>正常仕損費は自動的に完成品に含まれています</mark>。これが度外視法です。仕損費を別に計算して足す必要はありません。</p>"
        },
        {
-        "text": "第4問(2) ④ <strong>完成品単位原価</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>当社は単一製品を量産しており、単純総合原価計算を採用している。次の資料にもとづいて、問いに答えなさい。</p><ul><li>直接材料は工程の始点ですべて投入し、加工費は工程の進捗に応じて発生する。</li><li>原価配分の方法は<strong>先入先出法</strong>による。</li><li>正常仕損は<strong>工程の終点</strong>で発生した。仕損品に処分価額はない。正常仕損費は度外視法により処理し、仕損の発生点を通過した製品に負担させる。</li></ul><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>生産データ</caption><tbody><tr><td>月初仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>当月投入</td><td class=\"num\">2,000個</td></tr><tr><td>合計</td><td class=\"num\">2,400個</td></tr><tr><td>正常仕損</td><td class=\"num\">100個</td></tr><tr><td>月末仕掛品</td><td class=\"num\">400個（50%）</td></tr><tr><td>完成品</td><td class=\"num\">1,900個</td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>原価データ（円）</caption><thead><tr><th></th><th class=\"num\">直接材料費</th><th class=\"num\">加工費</th></tr></thead><tbody><tr><td>月初仕掛品</td><td class=\"num\">160,000</td><td class=\"num\">88,000</td></tr><tr><td>当月製造費用</td><td class=\"num\">840,000</td><td class=\"num\">1,110,000</td></tr></tbody></table></div></div><p class=\"small muted\">（　）内は加工進捗度。</p></div></details>第4問(2) ④ <strong>完成品単位原価</strong>",
         "answer": 1010,
         "formula": "1919000 / 1900",
         "unit": "円",
@@ -22093,10 +22093,10 @@
       "title": "第4問(2) 単純総合原価計算（各4点）"
      },
      "fingerprints": [
-      "52741fdd",
-      "68d93fe1",
-      "29112d28",
-      "1c13687b"
+      "4eba2ff2",
+      "485eba0e",
+      "1bb8c367",
+      "bb748d34"
      ],
      "kind": "num",
      "root": "m1-q4b"
@@ -22106,28 +22106,28 @@
       "badge": "第5問",
       "questions": [
        {
-        "text": "第5問 ① 直接材料費の<strong>価格差異</strong>（有利はそのまま、不利は頭に -）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>製品Xを製造する当社は、標準原価計算（パーシャル・プラン）を採用している。次の資料にもとづいて、各差異の金額を求めなさい。<strong>有利差異はそのまま、不利差異は金額の頭に - を付けて</strong>入力すること（例：不利差異 5,000円 なら -5000）。</p><div class=\"tablewrap\"><table><caption>標準原価カード（製品1個あたり）</caption><tbody><tr><td>直接材料費</td><td class=\"num\">標準価格 200円/kg × 標準消費量 5kg</td><td class=\"num\">1,000円</td></tr><tr><td>直接労務費</td><td class=\"num\">標準賃率 1,200円/時 × 標準作業時間 2時間</td><td class=\"num\">2,400円</td></tr><tr><td>製造間接費</td><td class=\"num\">標準配賦率 1,600円/時 × 標準作業時間 2時間</td><td class=\"num\">3,200円</td></tr><tr><td><strong>合計</strong></td><td></td><td class=\"num\"><strong>6,600円</strong></td></tr></tbody></table></div><ul><li>製造間接費は直接作業時間を基準に配賦している。予算は公式法変動予算により、変動費率 700円/時、固定費予算 月額 1,800,000円、基準操業度 月間 2,000時間である。</li><li>当月の生産量は <strong>950個</strong>。月初・月末に仕掛品はない。</li><li>当月の実績：直接材料の実際消費量 4,900kg（実際価格 205円/kg）、実際直接作業時間 1,960時間（実際賃率 1,180円/時）、製造間接費の実際発生額 3,150,000円。</li><li>製造間接費の能率差異は、変動費と固定費の両方から計算する。</li></ul></div></details>第5問 ① 直接材料費の<strong>価格差異</strong>（有利はそのまま、不利は頭に -）",
         "answer": -24500,
         "formula": "(200 - 205) * 4900",
         "unit": "円",
-        "explain": "<p>価格差異 ＝（標準価格 − 実際価格）× <strong>実際</strong>消費量 ＝（200 − 205）× 4,900 ＝ <strong>△24,500円</strong>。マイナスなので<strong>不利差異</strong>で、入力は -24500 です。</p><p>標準消費量（950 × 5 ＝ 4,750kg）を掛けて 23,750円 とする誤りが多い所です。<mark>価格差異は実際に使った量に掛ける</mark>。ボックス図の内側が標準、外側が実際で、価格差異は外側の縦の帯です。</p><p>30,000円 と答えた場合は、数量差異 ＝ 200 ×（4,750 − 4,900）＝ △30,000円 と取り違えています。</p>"
+        "explain": "<p>価格差異 ＝（標準価格 − 実際価格）× <strong>実際</strong>消費量 ＝（200 − 205）× 4,900 ＝ <strong>△24,500円</strong>。マイナスなので<strong>不利差異</strong>で、入力は -24500 です。</p><p>標準消費量（950 × 5 ＝ 4,750kg）を掛けて 23,750円 とする誤りが多い所です。<mark>価格差異は実際に使った量に掛ける</mark>。ボックス図の内側が標準、外側が実際で、価格差異は上端の横の帯（実際消費量の幅 × 単価の差）です。右端の縦の帯は数量差異です。</p><p>30,000円 と答えた場合は、数量差異 ＝ 200 ×（4,750 − 4,900）＝ △30,000円 と取り違えています。</p>"
        },
        {
-        "text": "第5問 ② 直接労務費の<strong>時間差異</strong>（作業時間差異。有利はそのまま、不利は頭に -）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>製品Xを製造する当社は、標準原価計算（パーシャル・プラン）を採用している。次の資料にもとづいて、各差異の金額を求めなさい。<strong>有利差異はそのまま、不利差異は金額の頭に - を付けて</strong>入力すること（例：不利差異 5,000円 なら -5000）。</p><div class=\"tablewrap\"><table><caption>標準原価カード（製品1個あたり）</caption><tbody><tr><td>直接材料費</td><td class=\"num\">標準価格 200円/kg × 標準消費量 5kg</td><td class=\"num\">1,000円</td></tr><tr><td>直接労務費</td><td class=\"num\">標準賃率 1,200円/時 × 標準作業時間 2時間</td><td class=\"num\">2,400円</td></tr><tr><td>製造間接費</td><td class=\"num\">標準配賦率 1,600円/時 × 標準作業時間 2時間</td><td class=\"num\">3,200円</td></tr><tr><td><strong>合計</strong></td><td></td><td class=\"num\"><strong>6,600円</strong></td></tr></tbody></table></div><ul><li>製造間接費は直接作業時間を基準に配賦している。予算は公式法変動予算により、変動費率 700円/時、固定費予算 月額 1,800,000円、基準操業度 月間 2,000時間である。</li><li>当月の生産量は <strong>950個</strong>。月初・月末に仕掛品はない。</li><li>当月の実績：直接材料の実際消費量 4,900kg（実際価格 205円/kg）、実際直接作業時間 1,960時間（実際賃率 1,180円/時）、製造間接費の実際発生額 3,150,000円。</li><li>製造間接費の能率差異は、変動費と固定費の両方から計算する。</li></ul></div></details>第5問 ② 直接労務費の<strong>時間差異</strong>（作業時間差異。有利はそのまま、不利は頭に -）",
         "answer": -72000,
         "formula": "1200 * (950 * 2 - 1960)",
         "unit": "円",
         "explain": "<p>標準作業時間 ＝ 950個 × 2時間 ＝ 1,900時間。<br>時間差異 ＝ <strong>標準</strong>賃率 ×（標準作業時間 − 実際作業時間）＝ 1,200 ×（1,900 − 1,960）＝ <strong>△72,000円</strong>。60時間余計にかかったので<strong>不利差異</strong>です。</p><p>実際賃率 1,180円 を掛けると 70,800円 になります。<mark>時間差異には標準賃率を掛ける</mark>。賃率の違いによる分は、賃率差異（1,200 − 1,180）× 1,960 ＝ 39,200円（有利）に入ります。</p>"
        },
        {
-        "text": "第5問 ③ 製造間接費の<strong>予算差異</strong>（有利はそのまま、不利は頭に -）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>製品Xを製造する当社は、標準原価計算（パーシャル・プラン）を採用している。次の資料にもとづいて、各差異の金額を求めなさい。<strong>有利差異はそのまま、不利差異は金額の頭に - を付けて</strong>入力すること（例：不利差異 5,000円 なら -5000）。</p><div class=\"tablewrap\"><table><caption>標準原価カード（製品1個あたり）</caption><tbody><tr><td>直接材料費</td><td class=\"num\">標準価格 200円/kg × 標準消費量 5kg</td><td class=\"num\">1,000円</td></tr><tr><td>直接労務費</td><td class=\"num\">標準賃率 1,200円/時 × 標準作業時間 2時間</td><td class=\"num\">2,400円</td></tr><tr><td>製造間接費</td><td class=\"num\">標準配賦率 1,600円/時 × 標準作業時間 2時間</td><td class=\"num\">3,200円</td></tr><tr><td><strong>合計</strong></td><td></td><td class=\"num\"><strong>6,600円</strong></td></tr></tbody></table></div><ul><li>製造間接費は直接作業時間を基準に配賦している。予算は公式法変動予算により、変動費率 700円/時、固定費予算 月額 1,800,000円、基準操業度 月間 2,000時間である。</li><li>当月の生産量は <strong>950個</strong>。月初・月末に仕掛品はない。</li><li>当月の実績：直接材料の実際消費量 4,900kg（実際価格 205円/kg）、実際直接作業時間 1,960時間（実際賃率 1,180円/時）、製造間接費の実際発生額 3,150,000円。</li><li>製造間接費の能率差異は、変動費と固定費の両方から計算する。</li></ul></div></details>第5問 ③ 製造間接費の<strong>予算差異</strong>（有利はそのまま、不利は頭に -）",
         "answer": 22000,
         "formula": "700 * 1960 + 1800000 - 3150000",
         "unit": "円",
         "explain": "<p>予算差異は、<strong>実際操業度での予算許容額</strong>と実際発生額の差です。<br>予算許容額 ＝ 700 × 1,960 ＋ 1,800,000 ＝ 3,172,000円。<br>予算差異 ＝ 3,172,000 − 3,150,000 ＝ <strong>＋22,000円</strong>。予算より少なく済んだので<strong>有利差異</strong>で、入力は 22000 です。</p><p>予算許容額を標準操業度 1,900時間 で計算すると 3,130,000円 になり、△20,000円 と答えてしまいます。<mark>予算差異の縦線は実際操業度</mark>。シュラッター図を描けば迷いません。</p><p>操業度差異は 900 ×（1,960 − 2,000）＝ △36,000円 です。固定費率 900円 は 1,800,000 ÷ 2,000時間。</p>"
        },
        {
-        "text": "第5問 ④ 製造間接費の<strong>能率差異</strong>（変動費と固定費の両方から計算する。有利はそのまま、不利は頭に -）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>製品Xを製造する当社は、標準原価計算（パーシャル・プラン）を採用している。次の資料にもとづいて、各差異の金額を求めなさい。<strong>有利差異はそのまま、不利差異は金額の頭に - を付けて</strong>入力すること（例：不利差異 5,000円 なら -5000）。</p><div class=\"tablewrap\"><table><caption>標準原価カード（製品1個あたり）</caption><tbody><tr><td>直接材料費</td><td class=\"num\">標準価格 200円/kg × 標準消費量 5kg</td><td class=\"num\">1,000円</td></tr><tr><td>直接労務費</td><td class=\"num\">標準賃率 1,200円/時 × 標準作業時間 2時間</td><td class=\"num\">2,400円</td></tr><tr><td>製造間接費</td><td class=\"num\">標準配賦率 1,600円/時 × 標準作業時間 2時間</td><td class=\"num\">3,200円</td></tr><tr><td><strong>合計</strong></td><td></td><td class=\"num\"><strong>6,600円</strong></td></tr></tbody></table></div><ul><li>製造間接費は直接作業時間を基準に配賦している。予算は公式法変動予算により、変動費率 700円/時、固定費予算 月額 1,800,000円、基準操業度 月間 2,000時間である。</li><li>当月の生産量は <strong>950個</strong>。月初・月末に仕掛品はない。</li><li>当月の実績：直接材料の実際消費量 4,900kg（実際価格 205円/kg）、実際直接作業時間 1,960時間（実際賃率 1,180円/時）、製造間接費の実際発生額 3,150,000円。</li><li>製造間接費の能率差異は、変動費と固定費の両方から計算する。</li></ul></div></details>第5問 ④ 製造間接費の<strong>能率差異</strong>（変動費と固定費の両方から計算する。有利はそのまま、不利は頭に -）",
         "answer": -96000,
         "formula": "1600 * (950 * 2 - 1960)",
         "unit": "円",
@@ -22137,10 +22137,10 @@
       "title": "第5問 標準原価計算の差異分析（各3点・不利差異は頭に -）"
      },
      "fingerprints": [
-      "45661aae",
-      "efbbc31b",
-      "ccc2693d",
-      "f9217e76"
+      "d70fb437",
+      "d18dd422",
+      "fb180a24",
+      "b601f88f"
      ],
      "kind": "num",
      "root": "m1-q5"
@@ -22317,70 +22317,70 @@
       "badge": "第2問",
       "questions": [
        {
-        "text": "第2問 ① 連結貸借対照表の<strong>貸倒引当金</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ① 連結貸借対照表の<strong>貸倒引当金</strong>",
         "answer": 34400,
         "formula": "24000 + 12000 - 80000 * 2 / 100",
         "unit": "円",
         "explain": "<p>P社がS社に持つ売掛金 80,000円 は、グループの外から見れば存在しない債権なので、S社の買掛金と相殺して消します。</p><p>消した売掛金にも P社は 2% の貸倒引当金を積んでいます。80,000 × 2% ＝ 1,600円 を減らします（相手は貸倒引当金繰入）。<br>24,000 ＋ 12,000 − 1,600 ＝ <strong>34,400円</strong>。</p>"
        },
        {
-        "text": "第2問 ② 連結貸借対照表の<strong>商品</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ② 連結貸借対照表の<strong>商品</strong>",
         "answer": 1170000,
         "formula": "700000 + 500000 - 150000 * 20 / 100",
         "unit": "円",
         "explain": "<p>S社の期末商品のうち P社から仕入れた 150,000円 には、P社が付けた利益（売上総利益率20%）が乗っています。グループの外にまだ売れていないので、その利益は<strong>未実現</strong>です。</p><p>未実現利益 ＝ 150,000 × 20% ＝ 30,000円。<br>商品 ＝ 700,000 ＋ 500,000 − 30,000 ＝ <strong>1,170,000円</strong>。</p><p>売上総利益率は<mark>売価に対する利益の割合</mark>なので、売価 150,000円 にそのまま 20% を掛けます。原価に対する割合（付加率）で与えられたときとは計算が変わります。</p>"
        },
        {
-        "text": "第2問 ③ 連結貸借対照表の<strong>のれん</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ③ 連結貸借対照表の<strong>のれん</strong>",
         "answer": 180000,
         "formula": "1800000 - (1500000 + 500000) * 80 / 100 - (1800000 - 1600000) / 10",
         "unit": "円",
         "explain": "<p>支配獲得日のS社の純資産は 1,500,000 ＋ 500,000 ＝ 2,000,000円。P社の持分は 80% で 1,600,000円。<br>のれん ＝ 取得原価 1,800,000 − 1,600,000 ＝ 200,000円。</p><p>当期は支配獲得の翌年度なので、10年で1年分を償却します。200,000 ÷ 10 ＝ 20,000円。<br>期末ののれん ＝ 200,000 − 20,000 ＝ <strong>180,000円</strong>。</p>"
        },
        {
-        "text": "第2問 ④ 連結貸借対照表の<strong>非支配株主持分</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ④ 連結貸借対照表の<strong>非支配株主持分</strong>",
         "answer": 440000,
         "formula": "(1500000 + 700000) * 20 / 100",
         "unit": "円",
         "explain": "<p>期末のS社の純資産 1,500,000 ＋ 700,000 ＝ 2,200,000円 のうち、非支配株主の持分 20% が非支配株主持分です。2,200,000 × 20% ＝ <strong>440,000円</strong>。</p><p>積み上げでも確かめられます。支配獲得時 2,000,000 × 20% ＝ 400,000円、当期純利益の按分 ＋60,000円、配当の按分 △20,000円。400,000 ＋ 60,000 − 20,000 ＝ 440,000円。</p><p>未実現利益はP社が売り手（ダウンストリーム）なので、非支配株主には按分しません。</p>"
        },
        {
-        "text": "第2問 ⑤ 連結貸借対照表の<strong>利益剰余金</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ⑤ 連結貸借対照表の<strong>利益剰余金</strong>",
         "answer": 1211600,
         "formula": "1100000 + 700000 - 500000 - 300000 * 20 / 100 + 100000 - 80000 - 20000 - 30000 + 1600",
         "unit": "円",
         "explain": "<p>P社とS社の利益剰余金を合算し、連結修正で動いた分を足し引きします。</p><ul><li>合算：1,100,000 ＋ 700,000 ＝ 1,800,000円</li><li>支配獲得時のS社の利益剰余金を消去：△500,000円</li><li>S社の当期純利益のうち非支配株主の分：△60,000円</li><li>S社の配当の取消し：＋100,000円</li><li>P社の受取配当金の消去：△80,000円（配当の残り20,000円は非支配株主持分の減少として処理する）</li><li>のれん償却：△20,000円</li><li>未実現利益の消去：△30,000円</li><li>貸倒引当金の修正：＋1,600円</li></ul><p>1,800,000 − 500,000 − 60,000 ＋ 100,000 − 80,000 − 20,000 − 30,000 ＋ 1,600 ＝ <strong>1,211,600円</strong>。</p><p>別の道筋でも一致します。P社の期首の利益剰余金は 1,100,000 − 680,000 ＝ 420,000円（当期に配当なし）。支配獲得は前期末なので、連結の期首利益剰余金もこの 420,000円 です。これに親会社株主に帰属する当期純利益 791,600円 を足して 1,211,600円。</p>"
        },
        {
-        "text": "第2問 ⑥ 連結損益計算書の<strong>売上高</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ⑥ 連結損益計算書の<strong>売上高</strong>",
         "answer": 6800000,
         "formula": "5000000 + 2400000 - 600000",
         "unit": "円",
         "explain": "<p>P社からS社への売上 600,000円 は、グループの中で商品が移っただけなので消去します（相手はS社の売上原価）。<br>5,000,000 ＋ 2,400,000 − 600,000 ＝ <strong>6,800,000円</strong>。</p>"
        },
        {
-        "text": "第2問 ⑦ 連結損益計算書の<strong>売上原価</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ⑦ 連結損益計算書の<strong>売上原価</strong>",
         "answer": 4630000,
         "formula": "3500000 + 1700000 - 600000 + 30000",
         "unit": "円",
         "explain": "<p>内部取引の消去で 600,000円 減り、未実現利益の消去で 30,000円 増えます。</p><p>未実現利益の消去は（借）売上原価 30,000 ／（貸）商品 30,000。<mark>期末商品を減らすと売上原価は増える</mark>——売上原価 ＝ 期首 ＋ 仕入 − 期末 の式を思い出せば向きを誤りません。<br>3,500,000 ＋ 1,700,000 − 600,000 ＋ 30,000 ＝ <strong>4,630,000円</strong>。</p>"
        },
        {
-        "text": "第2問 ⑧ 連結損益計算書の<strong>のれん償却</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ⑧ 連結損益計算書の<strong>のれん償却</strong>",
         "answer": 20000,
         "formula": "200000 / 10",
         "unit": "円",
         "explain": "<p>のれん 200,000円 を10年で償却するので 1年分 <strong>20,000円</strong>。支配獲得日（×1年3月31日）の翌年度が当期なので、償却は当期が1年目です。</p>"
        },
        {
-        "text": "第2問 ⑨ 連結損益計算書の<strong>非支配株主に帰属する当期純利益</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ⑨ 連結損益計算書の<strong>非支配株主に帰属する当期純利益</strong>",
         "answer": 60000,
         "formula": "300000 * 20 / 100",
         "unit": "円",
         "explain": "<p>S社の当期純利益 300,000円 のうち、非支配株主の持分 20% が非支配株主に帰属します。300,000 × 20% ＝ <strong>60,000円</strong>。</p><p>未実現利益はP社側（ダウンストリーム）で生じているので、S社の利益からは差し引きません。S社が売り手（アップストリーム）なら、消去した未実現利益の20%を非支配株主にも負担させます。</p>"
        },
        {
-        "text": "第2問 ⑩ 連結損益計算書の<strong>親会社株主に帰属する当期純利益</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>P社は、S社を連結子会社として支配している。当期（×1年4月1日〜×2年3月31日）の連結財務諸表を作成するための資料は次のとおりである。下の問いに答えなさい。</p><h3>資料</h3><ol><li>P社は×1年3月31日にS社の発行済株式の<strong>80%</strong>を <strong>1,800,000円</strong> で取得し、支配を獲得した。同日のS社の純資産は、資本金 1,500,000円、利益剰余金 500,000円 であった。S社の資産・負債に時価と帳簿価額の差はない。</li><li>のれんは、支配獲得の翌年度から<strong>10年</strong>にわたり定額法で償却する。</li><li>S社は当期に繰越利益剰余金を財源として <strong>100,000円</strong> の配当を行い、P社はその持分相当額を受取配当金に計上している。P社は当期に配当を行っていない。</li><li>P社は当期からS社に商品を掛けで販売しており、当期の売上高は <strong>600,000円</strong> である。P社の売上総利益率は <strong>20%</strong>。S社の期末商品のうち <strong>150,000円</strong> はP社から仕入れたものである。</li><li>P社の売掛金のうち <strong>80,000円</strong> はS社に対するものである（S社の買掛金に同額が含まれる）。P社・S社とも、売掛金の期末残高に対して <strong>2%</strong> の貸倒引当金を差額補充法で設定している。</li><li>法人税等と税効果会計は考慮しない。</li></ol><div class=\"grid2\"><div class=\"tablewrap\"><table><caption>個別貸借対照表（×2年3月31日・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>現金預金</td><td class=\"num\">820,000</td><td class=\"num\">400,000</td></tr><tr><td>売掛金</td><td class=\"num\">1,200,000</td><td class=\"num\">600,000</td></tr><tr><td>貸倒引当金</td><td class=\"num\">△24,000</td><td class=\"num\">△12,000</td></tr><tr><td>商品</td><td class=\"num\">700,000</td><td class=\"num\">500,000</td></tr><tr><td>土地</td><td class=\"num\">1,500,000</td><td class=\"num\">1,000,000</td></tr><tr><td>S社株式</td><td class=\"num\">1,800,000</td><td class=\"num\">—</td></tr><tr><td><strong>資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr><tr><td>買掛金</td><td class=\"num\">896,000</td><td class=\"num\">288,000</td></tr><tr><td>借入金</td><td class=\"num\">1,000,000</td><td class=\"num\">—</td></tr><tr><td>資本金</td><td class=\"num\">3,000,000</td><td class=\"num\">1,500,000</td></tr><tr><td>利益剰余金</td><td class=\"num\">1,100,000</td><td class=\"num\">700,000</td></tr><tr><td><strong>負債・純資産合計</strong></td><td class=\"num\"><strong>5,996,000</strong></td><td class=\"num\"><strong>2,488,000</strong></td></tr></tbody></table></div><div class=\"tablewrap\"><table><caption>個別損益計算書（当期・円）</caption><thead><tr><th>科目</th><th class=\"num\">P社</th><th class=\"num\">S社</th></tr></thead><tbody><tr><td>売上高</td><td class=\"num\">5,000,000</td><td class=\"num\">2,400,000</td></tr><tr><td>売上原価</td><td class=\"num\">3,500,000</td><td class=\"num\">1,700,000</td></tr><tr><td>販売費及び一般管理費</td><td class=\"num\">900,000</td><td class=\"num\">400,000</td></tr><tr><td>受取配当金</td><td class=\"num\">80,000</td><td class=\"num\">—</td></tr><tr><td><strong>当期純利益</strong></td><td class=\"num\"><strong>680,000</strong></td><td class=\"num\"><strong>300,000</strong></td></tr></tbody></table></div></div><p class=\"small muted\">販売費及び一般管理費には貸倒引当金繰入が含まれている。</p><p><strong>問</strong>　当期の連結損益計算書と連結貸借対照表に記載される次の金額を答えなさい。のれん償却は販売費及び一般管理費とは別の行に記載するものとする。</p></div></details>第2問 ⑩ 連結損益計算書の<strong>親会社株主に帰属する当期純利益</strong>",
         "answer": 791600,
         "formula": "680000 + 300000 - 80000 - 20000 - 30000 + 1600 - 60000",
         "unit": "円",
@@ -22390,16 +22390,16 @@
       "title": "第2問 連結財務諸表（各2点）"
      },
      "fingerprints": [
-      "ea4dfa0d",
-      "e17293d6",
-      "2b0d1f23",
-      "99279179",
-      "e630eaaf",
-      "099d3ae3",
-      "0ab6ae86",
-      "c22c90fb",
-      "f5c821af",
-      "06fdde9c"
+      "a2fb8722",
+      "12079859",
+      "e8ac884c",
+      "901d2d96",
+      "a4729ec0",
+      "9b640c0c",
+      "0cb36f09",
+      "4a9b2594",
+      "1f821c00",
+      "84f490b3"
      ],
      "kind": "num",
      "root": "m1-q2"
@@ -22409,70 +22409,70 @@
       "badge": "第3問",
       "questions": [
        {
-        "text": "第3問 ① 損益計算書の<strong>売上原価</strong>（商品評価損を含む）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ① 損益計算書の<strong>売上原価</strong>（商品評価損を含む）",
         "answer": 5539400,
         "formula": "420000 + 5600000 - 500000 + 970 * 20",
         "unit": "円",
         "explain": "<p>期首商品 420,000 ＋ 当期仕入 5,600,000 − 期末商品（帳簿）1,000個 × 500円 ＝ 5,520,000円。</p><p>商品評価損は、実際に残っている 970個 について原価と正味売却価額の差 20円 を掛けます。970 × 20 ＝ 19,400円。売上原価の内訳に表示するので加えます。<br>5,520,000 ＋ 19,400 ＝ <strong>5,539,400円</strong>。</p><p>棚卸減耗損 30個 × 500円 ＝ 15,000円 は販売費及び一般管理費なので、ここには入りません。評価損を帳簿数量 1,000個 に掛ける誤りに注意してください。<mark>減耗して無くなった30個に評価損は出ない</mark>からです。</p>"
        },
        {
-        "text": "第3問 ② 損益計算書の<strong>貸倒引当金繰入</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ② 損益計算書の<strong>貸倒引当金繰入</strong>",
         "answer": 6000,
         "formula": "(1800000 - 100000 + 700000) * 1 / 100 - 18000",
         "unit": "円",
         "explain": "<p>決算整理事項1の未処理の入金を先に反映すると、売掛金は 1,800,000 − 100,000 ＝ 1,700,000円 に減ります。</p><p>（1,700,000 ＋ 700,000）× 1% ＝ 24,000円。残高 18,000円 との差額 <strong>6,000円</strong> を繰り入れます。</p><p>未処理事項を反映せずに計算すると 7,000円 になります。<mark>貸倒引当金は債権残高が動いた後に計算する</mark>。整理事項の番号順ではなく、依存関係の順に解くことが第3問の手順です。</p>"
        },
        {
-        "text": "第3問 ③ 損益計算書の<strong>減価償却費</strong>（建物と備品の合計）",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ③ 損益計算書の<strong>減価償却費</strong>（建物と備品の合計）",
         "answer": 212500,
         "formula": "3000000 / 30 + (800000 - 350000) * 25 / 100",
         "unit": "円",
         "explain": "<p>建物：3,000,000 ÷ 30年 ＝ 100,000円。</p><p>備品：200%定率法は<strong>期首の帳簿価額</strong>に償却率を掛けます。（800,000 − 350,000）× 0.25 ＝ 112,500円。取得原価 800,000円 に掛けると 200,000円 になります。取得原価に掛け続けると毎年同じ 200,000円 になり、年々小さくなる定率法の償却になりません。</p><p>合計 100,000 ＋ 112,500 ＝ <strong>212,500円</strong>。償却限度超過額 12,500円 は税務上の話で、損益計算書の減価償却費は 212,500円 のままです。</p>"
        },
        {
-        "text": "第3問 ④ 損益計算書の<strong>保険料</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ④ 損益計算書の<strong>保険料</strong>",
         "answer": 120000,
         "formula": "240000 - 180000 * 8 / 12",
         "unit": "円",
         "explain": "<p>×1年12月1日に支払った1年分 180,000円 のうち、当期分は12月〜3月の4か月、翌期分は4月〜11月の<strong>8か月</strong>です。</p><p>前払保険料 ＝ 180,000 × 8/12 ＝ 120,000円。<br>保険料 ＝ 240,000 − 120,000 ＝ <strong>120,000円</strong>。</p>"
        },
        {
-        "text": "第3問 ⑤ 損益計算書の<strong>租税公課</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ⑤ 損益計算書の<strong>租税公課</strong>",
         "answer": 42000,
         "formula": "50000 - 8000",
         "unit": "円",
         "explain": "<p>未使用の収入印紙 8,000円 は当期の費用ではないので、租税公課から<strong>貯蔵品</strong>へ振り替えます。50,000 − 8,000 ＝ <strong>42,000円</strong>。</p><p>貯蔵品は3級の論点で、2級のテキストには載りません。<mark>第3問で毎回のように出るのに、視界に入らないから落とす</mark>典型です。</p>"
        },
        {
-        "text": "第3問 ⑥ 損益計算書の<strong>営業利益</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ⑥ 損益計算書の<strong>営業利益</strong>",
         "answer": 835100,
         "formula": "8400000 - 5539400 - (1450000 + 120000 + 42000 + 6000 + 212500 + 180000 + 15000)",
         "unit": "円",
         "explain": "<p>売上総利益 ＝ 8,400,000 − 5,539,400 ＝ 2,860,600円。</p><p>販売費及び一般管理費：給料 1,450,000、保険料 120,000、租税公課 42,000、貸倒引当金繰入 6,000、減価償却費 212,500、退職給付費用 180,000、棚卸減耗損 15,000。合計 2,025,500円。</p><p>営業利益 ＝ 2,860,600 − 2,025,500 ＝ <strong>835,100円</strong>。</p><p>ここが合わないときは、販売費及び一般管理費の<strong>項目の数</strong>を先に数え直してください。退職給付費用と棚卸減耗損は試算表にない科目なので、書き漏らしやすい行です。</p>"
        },
        {
-        "text": "第3問 ⑦ 損益計算書の<strong>有価証券利息</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ⑦ 損益計算書の<strong>有価証券利息</strong>",
         "answer": 30000,
         "formula": "20000 + (2000000 - 1960000) / 4",
         "unit": "円",
         "explain": "<p>償却原価法（定額法）では、額面との差額 40,000円 を取得日から満期日までの<strong>4年</strong>に均等に配分し、毎期の利息に加えます。40,000 ÷ 4 ＝ 10,000円。</p><p>試算表の 20,000円（当期に受け取った利息）に加えて、20,000 ＋ 10,000 ＝ <strong>30,000円</strong>。営業外収益です。</p>"
        },
        {
-        "text": "第3問 ⑧ 損益計算書の<strong>支払利息</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ⑧ 損益計算書の<strong>支払利息</strong>",
         "answer": 24000,
         "formula": "1200000 * 3 / 100 * 8 / 12",
         "unit": "円",
         "explain": "<p>×1年8月1日から×2年3月31日までの<strong>8か月分</strong>の利息が、まだ支払っていないが当期に発生しています。</p><p>1,200,000 × 3% × 8/12 ＝ <strong>24,000円</strong>（未払利息を計上）。試算表に支払利息がないのは、まだ1回も支払っていないからです。<mark>試算表にない費用は、決算整理事項からしか出てこない</mark>ので、読み落とすと0円のままになります。</p>"
        },
        {
-        "text": "第3問 ⑨ 損益計算書の<strong>法人税、住民税及び事業税</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ⑨ 損益計算書の<strong>法人税、住民税及び事業税</strong>",
         "answer": 256080,
         "formula": "(835100 + 30000 - 24000 + 12500) * 3 / 10",
         "unit": "円",
         "explain": "<p>税引前当期純利益 ＝ 営業利益 835,100 ＋ 有価証券利息 30,000 − 支払利息 24,000 ＝ 841,100円（特別損益はない）。</p><p>課税所得 ＝ 841,100 ＋ 償却限度超過額 12,500 ＝ 853,600円。<br>法人税、住民税及び事業税 ＝ 853,600 × 30% ＝ <strong>256,080円</strong>。</p><p>税効果：損金に算入されなかった 12,500円 は、将来その備品の償却や処分のときに損金になる（将来の税金を減らす）一時差異です。12,500 × 30% ＝ 3,750円 の繰延税金資産を計上し、相手の<strong>法人税等調整額 3,750円 は法人税等から差し引く</strong>形で表示します。</p>"
        },
        {
-        "text": "第3問 ⑩ 損益計算書の<strong>当期純利益</strong>",
+        "text": "<details class=\"acc\"><summary>資料を開く</summary><div class=\"acc__body\"><p>次の決算整理前残高試算表（一部）と決算整理事項等にもとづいて、当期（×1年4月1日〜×2年3月31日）の損益計算書に記載される金額を答えなさい。</p><div class=\"tablewrap\"><table><caption>決算整理前残高試算表（一部・円）</caption><thead><tr><th class=\"num\">借方</th><th>勘定科目</th><th class=\"num\">貸方</th></tr></thead><tbody><tr><td class=\"num\">1,800,000</td><td>売掛金</td><td class=\"num\"></td></tr><tr><td class=\"num\">700,000</td><td>電子記録債権</td><td class=\"num\"></td></tr><tr><td class=\"num\">420,000</td><td>繰越商品</td><td class=\"num\"></td></tr><tr><td class=\"num\">150,000</td><td>仮払法人税等</td><td class=\"num\"></td></tr><tr><td class=\"num\">3,000,000</td><td>建物</td><td class=\"num\"></td></tr><tr><td class=\"num\">800,000</td><td>備品</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,960,000</td><td>満期保有目的債券</td><td class=\"num\"></td></tr><tr><td class=\"num\"></td><td>貸倒引当金</td><td class=\"num\">18,000</td></tr><tr><td class=\"num\"></td><td>借入金</td><td class=\"num\">1,200,000</td></tr><tr><td class=\"num\"></td><td>退職給付引当金</td><td class=\"num\">600,000</td></tr><tr><td class=\"num\"></td><td>建物減価償却累計額</td><td class=\"num\">900,000</td></tr><tr><td class=\"num\"></td><td>備品減価償却累計額</td><td class=\"num\">350,000</td></tr><tr><td class=\"num\"></td><td>売上</td><td class=\"num\">8,400,000</td></tr><tr><td class=\"num\"></td><td>有価証券利息</td><td class=\"num\">20,000</td></tr><tr><td class=\"num\">5,600,000</td><td>仕入</td><td class=\"num\"></td></tr><tr><td class=\"num\">1,450,000</td><td>給料</td><td class=\"num\"></td></tr><tr><td class=\"num\">240,000</td><td>保険料</td><td class=\"num\"></td></tr><tr><td class=\"num\">50,000</td><td>租税公課</td><td class=\"num\"></td></tr></tbody></table></div><h3>決算整理事項等</h3><ol><li>得意先から売掛金 <strong>100,000円</strong> が当座預金口座に振り込まれていたが、未処理である。</li><li>期末商品の帳簿棚卸数量は 1,000個、実地棚卸数量は 970個、原価は 1個 500円、正味売却価額は 1個 480円 である。商品評価損は売上原価の内訳科目として表示し、棚卸減耗損は販売費及び一般管理費に表示する。</li><li>売掛金と電子記録債権の期末残高に対して <strong>1%</strong> の貸倒引当金を差額補充法で設定する。</li><li>建物は定額法（耐用年数30年、残存価額ゼロ）、備品は200%定率法（償却率 0.25）で減価償却を行う。備品の減価償却費のうち <strong>12,500円</strong> は税法上の償却限度額を超えており、損金に算入されない。</li><li>満期保有目的債券は、当期首（×1年4月1日）に額面 2,000,000円 の社債を 1,960,000円 で取得したものである。満期日は×5年3月31日。額面との差額は金利の調整と認められ、償却原価法（定額法）を適用する。利払日は毎年3月末で、当期分の利息は受け取り、記帳済みである。</li><li>退職給付引当金の当期繰入額は <strong>180,000円</strong> である。</li><li>保険料のうち 180,000円 は、×1年12月1日に向こう1年分を支払ったものである。</li><li>借入金は×1年8月1日に借り入れたもので、年利率 3%、利息は元本の返済時に一括して支払う契約である。</li><li>収入印紙の未使用分が <strong>8,000円</strong> ある。購入時に租税公課で処理している。</li><li>法人税、住民税及び事業税は課税所得の30%とする。課税所得は税引前当期純利益に 4. の償却限度超過額を加算して求める。あわせて、4. の一時差異に税効果会計を適用する（法定実効税率30%）。</li></ol></div></details>第3問 ⑩ 損益計算書の<strong>当期純利益</strong>",
         "answer": 588770,
         "formula": "841100 - 256080 + 3750",
         "unit": "円",
@@ -22482,16 +22482,16 @@
       "title": "第3問 損益計算書（各2点）"
      },
      "fingerprints": [
-      "36df10d4",
-      "c6bbd19d",
-      "974bf8f0",
-      "2f26c0a9",
-      "ebe2bc7f",
-      "054b8e29",
-      "433831d8",
-      "5115e2cf",
-      "37a5003d",
-      "8393f586"
+      "fce64482",
+      "8244620b",
+      "fdc75de6",
+      "ab9ee63f",
+      "b9c2c529",
+      "9c48df7f",
+      "a837598e",
+      "757d1619",
+      "77b87beb",
+      "78e1d290"
      ],
      "kind": "num",
      "root": "m1-q3"
@@ -22560,15 +22560,15 @@
         "explain": "<p>画面下部に「第1問」「第2問」…のボタンがあり、押せばその大問へ移動します。統一試験と同じく、好きな順に解けます。<strong>解答順（第4問 → 第5問 → 第1問 → 第3問 → 第2問）はネット試験でもそのまま使えます。</strong></p>"
        },
        {
-        "text": "2026年11月15日の第174回統一試験より前にネット試験を1回受けたい。インターネット申込方式で、正しいのはどれですか。",
+        "text": "統一試験より前にネット試験を1回受けたい。インターネット申込方式で、正しいのはどれですか。",
         "choices": [
-         "11月14日まで受験でき、予約は前日まで取れる",
-         "11月8日までに受験する必要があり、予約は受験日の3日前までに完了させる",
-         "11月12日まで受験でき、予約は当日でも取れる",
+         "ネット試験に休止期間はなく、予約は前日まで取れる",
+         "統一試験の前後に休止期間があり、予約は受験日の3日前までに完了させる",
+         "休止するのは統一試験の当日だけで、予約は当日でも取れる",
          "統一試験の申込者はネット試験を受けられない"
         ],
         "answer": 1,
-        "explain": "<p>第174回に伴う休止期間は<strong>11月9日（月）〜11月18日（水）</strong>なので、11月8日（日）が最終日です。予約は受験日の<strong>3日前まで</strong>に完了させます。統一試験との併願はできますが、ネット試験に合格しても統一試験の受験料は返金されません。</p>"
+        "explain": "<p>年3回の統一試験の<strong>前後</strong>に休止期間があり、その間は受験できません。統一試験の前に受けるなら、休止期間の前日が最終日です。予約は受験日の<strong>3日前まで</strong>に完了させます。具体的な期間は日本商工会議所が年度ごとに公表します。</p><p>統一試験との併願はできますが、ネット試験に合格しても統一試験の受験料は返金されません。</p>"
        },
        {
         "text": "ネット試験を受けた後の振り返りとして、適切なのはどれですか。",
@@ -22590,7 +22590,7 @@
       "2de65340",
       "f47eafb0",
       "2b9d115a",
-      "f2419d6f",
+      "966d40fa",
       "0799db2b"
      ],
      "kind": "quiz",
@@ -22829,7 +22829,7 @@
           10000000
          ]
         ],
-        "explain": "<p>完成前に支払った 20,000,000円 は、まだ建物として使えないので<strong>建設仮勘定</strong>に入れてあります。引渡しを受けたこの時点で、請負金額の総額 30,000,000円 を建物に振り替え、建設仮勘定を消します。残額 10,000,000円 は当座預金。</p><p>建設仮勘定は2級の範囲です。戻る単元：<a href=\"../phase1/11_shou-yukei-kotei.html\">UNIT 11 有形固定資産</a>・<a href=\"../phase0/01_3kyu-review.html\">Phase 0 UNIT 01</a></p>"
+        "explain": "<p>完成前に支払った 20,000,000円 は、まだ建物として使えないので<strong>建設仮勘定</strong>に入れてあります。引渡しを受けたこの時点で、請負金額の総額 30,000,000円 を建物に振り替え、建設仮勘定を消します。残額 10,000,000円 は当座預金。</p><p>建設仮勘定は2級の範囲です。戻る単元：<a href=\"../phase1/11_shou-yukei-kotei.html\">Phase 1 UNIT 11 有形固定資産</a>・<a href=\"../phase0/01_3kyu-review.html\">Phase 0 UNIT 01</a></p>"
        },
        {
         "text": "国庫補助金 <strong>2,000,000円</strong> を受け取って国庫補助金受贈益に計上している。この補助金を充てて機械装置 5,000,000円 を購入し、ただちに補助金相当額について<strong>直接減額方式</strong>による圧縮記帳を行った。圧縮記帳の仕訳を示しなさい。",
@@ -22845,7 +22845,7 @@
           2000000
          ]
         ],
-        "explain": "<p>補助金を受け取ると国庫補助金受贈益（収益）が立ち、そのままでは受け取った年に課税されます。圧縮記帳は、その分だけ<strong>固定資産の帳簿価額を減らし、同額の費用を立てて収益と相殺する</strong>処理です。</p><p>（借）固定資産圧縮損 2,000,000 ／（貸）機械装置 2,000,000。機械装置の帳簿価額は 3,000,000円 になり、以後の減価償却はこの金額で行います。</p><p>戻る単元：<a href=\"../phase1/11_shou-yukei-kotei.html\">UNIT 11 有形固定資産</a></p>"
+        "explain": "<p>補助金を受け取ると国庫補助金受贈益（収益）が立ち、そのままでは受け取った年に課税されます。圧縮記帳は、その分だけ<strong>固定資産の帳簿価額を減らし、同額の費用を立てて収益と相殺する</strong>処理です。</p><p>（借）固定資産圧縮損 2,000,000 ／（貸）機械装置 2,000,000。機械装置の帳簿価額は 3,000,000円 になり、以後の減価償却はこの金額で行います。</p><p>戻る単元：<a href=\"../phase1/11_shou-yukei-kotei.html\">Phase 1 UNIT 11 有形固定資産</a></p>"
        },
        {
         "text": "決算にあたり、その他有価証券（取得原価 <strong>800,000円</strong>）を時価 <strong>900,000円</strong> に評価替えする。全部純資産直入法を採用し、税効果会計を適用する（法定実効税率 30%）。",
@@ -22865,7 +22865,7 @@
           70000
          ]
         ],
-        "explain": "<p>評価差益 100,000円 は、損益を通さず純資産に直接入れます（全部純資産直入法）。</p><p>将来この株式を売れば、その年に 100,000円 の利益に課税されます。その<strong>将来の税金 100,000 × 30% ＝ 30,000円 が繰延税金負債</strong>です。純資産に入るのは残りの 70,000円。</p><p>損益を通っていないので、<strong>法人税等調整額は使いません</strong>。戻る単元：<a href=\"../phase1/16_shou-yukashoken.html\">UNIT 16 有価証券</a>・<a href=\"../phase1/19_shou-gaika-zeikoka.html\">UNIT 19 税効果会計</a></p>"
+        "explain": "<p>評価差益 100,000円 は、損益を通さず純資産に直接入れます（全部純資産直入法）。</p><p>将来この株式を売れば、その年に 100,000円 の利益に課税されます。その<strong>将来の税金 100,000 × 30% ＝ 30,000円 が繰延税金負債</strong>です。純資産に入るのは残りの 70,000円。</p><p>損益を通っていないので、<strong>法人税等調整額は使いません</strong>。戻る単元：<a href=\"../phase1/16_shou-yukashoken.html\">Phase 1 UNIT 16 有価証券</a>・<a href=\"../phase1/19_shou-gaika-zeikoka.html\">Phase 1 UNIT 19 税効果会計</a></p>"
        },
        {
         "text": "当期首に、ファイナンス・リース取引に該当するリース契約（リース期間 5年、リース料 年額 108,000円 を毎年期末に支払い）を結び、備品を借り受けた。この備品の見積現金購入価額は <strong>480,000円</strong> である。<strong>利子抜き法</strong>で処理する。",
@@ -22881,7 +22881,7 @@
           480000
          ]
         ],
-        "explain": "<p>利子抜き法では、リース資産とリース債務を<strong>見積現金購入価額 480,000円</strong> で計上します。リース料総額 108,000 × 5 ＝ 540,000円 との差額 60,000円 は利息にあたり、毎期の支払時に支払利息として計上します。</p><p>利子込み法なら 540,000円 で計上します。どちらの方法かは問題文で指定されるので、必ず読んでから金額を決めてください。戻る単元：<a href=\"../phase1/15_shou-lease.html\">UNIT 15 リース取引</a></p>"
+        "explain": "<p>利子抜き法では、リース資産とリース債務を<strong>見積現金購入価額 480,000円</strong> で計上します。リース料総額 108,000 × 5 ＝ 540,000円 との差額 60,000円 は利息にあたり、毎期の支払時に支払利息として計上します。</p><p>利子込み法なら 540,000円 で計上します。どちらの方法かは問題文で指定されるので、必ず読んでから金額を決めてください。戻る単元：<a href=\"../phase1/15_shou-lease.html\">Phase 1 UNIT 15 リース取引</a></p>"
        },
        {
         "text": "買掛金 <strong>10,000ドル</strong>（仕入時の為替相場 1ドル <strong>140円</strong>）を、1ドル <strong>145円</strong> で当座預金から支払った。為替予約は付していない。",
@@ -22901,7 +22901,7 @@
           1450000
          ]
         ],
-        "explain": "<p>帳簿の買掛金は仕入時の相場で 10,000 × 140 ＝ <strong>1,400,000円</strong>。これを全額消します。</p><p>実際に払ったのは 10,000 × 145 ＝ <strong>1,450,000円</strong>。円安で 50,000円 多く払ったので損です。差額は<strong>為替差損益</strong>の借方に書きます。</p><p>戻る単元：<a href=\"../phase1/19_shou-gaika-zeikoka.html\">UNIT 19 外貨建取引</a></p>"
+        "explain": "<p>帳簿の買掛金は仕入時の相場で 10,000 × 140 ＝ <strong>1,400,000円</strong>。これを全額消します。</p><p>実際に払ったのは 10,000 × 145 ＝ <strong>1,450,000円</strong>。円安で 50,000円 多く払ったので損です。差額は<strong>為替差損益</strong>の借方に書きます。</p><p>戻る単元：<a href=\"../phase1/19_shou-gaika-zeikoka.html\">Phase 1 UNIT 19 外貨建取引</a></p>"
        },
        {
         "text": "得意先と、商品Aと商品Bを合わせて 500,000円 で販売する契約を結んだ。本日、商品A（取引価格の配分額 <strong>200,000円</strong>）を引き渡した。代金は商品Bを引き渡した後に請求する契約であり、商品Aと商品Bの引渡しはそれぞれ独立した履行義務である。",
@@ -22917,7 +22917,7 @@
           200000
          ]
         ],
-        "explain": "<p>商品Aの引渡しという履行義務を果たしたので、売上 200,000円 を計上します。</p><p>ただし代金は商品Bを渡すまで請求できません。<strong>まだ請求できない対価を受け取る権利</strong>は、売掛金ではなく<strong>契約資産</strong>です。商品Bを引き渡した時点で、契約資産を売掛金に振り替えます。</p><p>戻る単元：<a href=\"../phase1/05_shou-shueki-ninshiki.html\">UNIT 05 収益認識</a></p>"
+        "explain": "<p>商品Aの引渡しという履行義務を果たしたので、売上 200,000円 を計上します。</p><p>ただし代金は商品Bを渡すまで請求できません。<strong>まだ請求できない対価を受け取る権利</strong>は、売掛金ではなく<strong>契約資産</strong>です。商品Bを引き渡した時点で、契約資産を売掛金に振り替えます。</p><p>戻る単元：<a href=\"../phase1/05_shou-shueki-ninshiki.html\">Phase 1 UNIT 05 収益認識</a></p>"
        },
        {
         "text": "設計サービスの提供を完了し、対価 <strong>300,000円</strong> は翌月末に受け取ることとした。このサービスのために仕掛品勘定に集計していた <strong>180,000円</strong> を役務原価に振り替える。",
@@ -22941,7 +22941,7 @@
           180000
          ]
         ],
-        "explain": "<p>サービス業では、提供が済むまでにかかった費用を<strong>仕掛品</strong>に集めておき、収益を計上するときに<strong>役務原価</strong>へ振り替えます。商品売買の「売上と売上原価」と同じ組み合わせです。</p><p>収益は<strong>役務収益</strong> 300,000円、相手は売掛金。原価は（借）役務原価 180,000 ／（貸）仕掛品 180,000。1つの仕訳にまとめて示します。</p><p>戻る単元：<a href=\"../phase1/05_shou-shueki-ninshiki.html\">UNIT 05 収益認識</a></p>"
+        "explain": "<p>サービス業では、提供が済むまでにかかった費用を<strong>仕掛品</strong>に集めておき、収益を計上するときに<strong>役務原価</strong>へ振り替えます。商品売買の「売上と売上原価」と同じ組み合わせです。</p><p>収益は<strong>役務収益</strong> 300,000円、相手は売掛金。原価は（借）役務原価 180,000 ／（貸）仕掛品 180,000。1つの仕訳にまとめて示します。</p><p>戻る単元：<a href=\"../phase1/05_shou-shueki-ninshiki.html\">Phase 1 UNIT 05 収益認識</a></p>"
        },
        {
         "text": "売買目的で保有するA社株式 1,000株（帳簿価額 1株あたり <strong>520円</strong>）のうち <strong>600株</strong> を、1株あたり <strong>560円</strong> で売却し、代金は普通預金口座に入金された。",
@@ -22961,7 +22961,7 @@
           24000
          ]
         ],
-        "explain": "<p>売った 600株 の帳簿価額 600 × 520 ＝ <strong>312,000円</strong> を減らします。受け取ったのは 600 × 560 ＝ <strong>336,000円</strong>。差額 24,000円 が有価証券売却益です。</p><p>1,000株 全部の帳簿価額 520,000円 を消してしまう誤りに注意してください。消すのは<strong>売った株数の分だけ</strong>です。戻る単元：<a href=\"../phase1/16_shou-yukashoken.html\">UNIT 16 有価証券</a></p>"
+        "explain": "<p>売った 600株 の帳簿価額 600 × 520 ＝ <strong>312,000円</strong> を減らします。受け取ったのは 600 × 560 ＝ <strong>336,000円</strong>。差額 24,000円 が有価証券売却益です。</p><p>1,000株 全部の帳簿価額 520,000円 を消してしまう誤りに注意してください。消すのは<strong>売った株数の分だけ</strong>です。戻る単元：<a href=\"../phase1/16_shou-yukashoken.html\">Phase 1 UNIT 16 有価証券</a></p>"
        },
        {
         "text": "得意先から受け取っていた約束手形 <strong>300,000円</strong> が不渡りとなったので、振出人に償還請求を行った。その際、償還請求の費用 <strong>5,000円</strong> を現金で支払った。",
@@ -22981,7 +22981,7 @@
           5000
          ]
         ],
-        "explain": "<p>不渡りになった手形は、もう期日に自動で入金されることはありません。通常の受取手形と区別するため、<strong>不渡手形</strong>（資産）に振り替えます。</p><p>償還請求の費用 5,000円 も相手に請求できるので、費用にせず<strong>不渡手形に含めます</strong>。300,000 ＋ 5,000 ＝ 305,000円。戻る単元：<a href=\"../phase1/08_shou-tegata-saiken.html\">UNIT 08 手形・電子記録債権</a></p>"
+        "explain": "<p>不渡りになった手形は、もう期日に自動で入金されることはありません。通常の受取手形と区別するため、<strong>不渡手形</strong>（資産）に振り替えます。</p><p>償還請求の費用 5,000円 も相手に請求できるので、費用にせず<strong>不渡手形に含めます</strong>。300,000 ＋ 5,000 ＝ 305,000円。戻る単元：<a href=\"../phase1/08_shou-tegata-saiken.html\">Phase 1 UNIT 08 手形・電子記録債権</a></p>"
        },
        {
         "text": "株主総会で、繰越利益剰余金を財源として <strong>1,000,000円</strong> の配当を行うことが決議された。会社法の規定による額の利益準備金を積み立てる。決議時点の資本金は <strong>10,000,000円</strong>、資本準備金は <strong>1,600,000円</strong>、利益準備金は <strong>820,000円</strong> である。配当金はまだ支払っていない。",
@@ -23001,7 +23001,7 @@
           80000
          ]
         ],
-        "explain": "<p>積立額は、次の2つのうち<strong>小さいほう</strong>です。</p><ul><li>配当額の10分の1：1,000,000 × 1/10 ＝ 100,000円</li><li>資本金の4分の1に達するまでの残り：10,000,000 × 1/4 −（1,600,000 ＋ 820,000）＝ 2,500,000 − 2,420,000 ＝ <strong>80,000円</strong></li></ul><p>積立額は <strong>80,000円</strong>。繰越利益剰余金は配当額と積立額の合計 1,080,000円 が減ります。</p><p>配当と利益準備金は3級の論点ですが、積立額の上限の計算は2級で問われます。戻る単元：<a href=\"../phase1/21_shou-kabushiki-gappei.html\">UNIT 21 株式会社会計</a></p>"
+        "explain": "<p>積立額は、次の2つのうち<strong>小さいほう</strong>です。</p><ul><li>配当額の10分の1：1,000,000 × 1/10 ＝ 100,000円</li><li>資本金の4分の1に達するまでの残り：10,000,000 × 1/4 −（1,600,000 ＋ 820,000）＝ 2,500,000 − 2,420,000 ＝ <strong>80,000円</strong></li></ul><p>積立額は <strong>80,000円</strong>。繰越利益剰余金は配当額と積立額の合計 1,080,000円 が減ります。</p><p>配当と利益準備金は3級の論点ですが、積立額の上限の計算は2級で問われます。戻る単元：<a href=\"../phase1/21_shou-kabushiki-gappei.html\">Phase 1 UNIT 21 株式会社会計</a></p>"
        },
        {
         "text": "決算にあたり、当期の法人税、住民税及び事業税 <strong>620,000円</strong> を計上する。中間納付額 <strong>280,000円</strong> は仮払法人税等に計上してある。",
@@ -23057,7 +23057,7 @@
           250000
          ]
         ],
-        "explain": "<p>支店の買掛金が消えたので、支店の帳簿で買掛金を減らします（借方）。お金を出したのは本店なので、支店の帳簿の相手は<strong>本店</strong>勘定です。</p><p>本店側は（借）支店 250,000 ／（貸）当座預金 250,000。本店勘定と支店勘定は<strong>同額で貸借が逆</strong>になります。戻る単元：<a href=\"../phase1/22_shou-honshiten.html\">UNIT 22 本支店会計</a></p>"
+        "explain": "<p>支店の買掛金が消えたので、支店の帳簿で買掛金を減らします（借方）。お金を出したのは本店なので、支店の帳簿の相手は<strong>本店</strong>勘定です。</p><p>本店側は（借）支店 250,000 ／（貸）当座預金 250,000。本店勘定と支店勘定は<strong>同額で貸借が逆</strong>になります。戻る単元：<a href=\"../phase1/22_shou-honshiten.html\">Phase 1 UNIT 22 本支店会計</a></p>"
        },
        {
         "text": "研究開発に従事する従業員の給料 <strong>400,000円</strong> と、研究開発のためだけに使う測定機器の購入代金 <strong>600,000円</strong> を、当座預金から支払った。",
@@ -23073,7 +23073,7 @@
           1000000
          ]
         ],
-        "explain": "<p>研究開発にかかった支出は、給料でも機器でも<strong>全額を研究開発費</strong>（費用）にします。研究開発のためだけに使う機器は、固定資産として計上しません。</p><p>給料と機器で科目を分けたくなりますが、どちらも研究開発費なので<strong>1行</strong>です。戻る単元：<a href=\"../phase1/06_shou-saiken-saimu.html\">UNIT 06 研究開発費</a></p>"
+        "explain": "<p>研究開発にかかった支出は、給料でも機器でも<strong>全額を研究開発費</strong>（費用）にします。研究開発のためだけに使う機器は、固定資産として計上しません。</p><p>給料と機器で科目を分けたくなりますが、どちらも研究開発費なので<strong>1行</strong>です。戻る単元：<a href=\"../phase1/06_shou-saiken-saimu.html\">Phase 1 UNIT 06 研究開発費</a></p>"
        },
        {
         "text": "当期首に、建物（取得原価 <strong>5,000,000円</strong>、減価償却累計額 <strong>2,000,000円</strong>、間接法で記帳）が火災で焼失した。この建物には <strong>3,500,000円</strong> の火災保険を掛けており、ただちに保険会社に保険金を請求した。",
@@ -23093,7 +23093,7 @@
           5000000
          ]
         ],
-        "explain": "<p>焼失した建物と減価償却累計額を消します。帳簿価額は 5,000,000 − 2,000,000 ＝ 3,000,000円。</p><p>保険金がいくら入るかは、保険会社の査定が済むまで分かりません。損失なのか利益なのかが決まらないので、帳簿価額 3,000,000円 を<strong>未決算</strong>に入れて待ちます。保険金額 3,500,000円 は上限であって、支払われる額ではありません。</p><p>支払額が決まった時点で、未決算との差額を保険差益または火災損失にします。戻る単元：<a href=\"../phase1/06_shou-saiken-saimu.html\">UNIT 06 未決算</a></p>"
+        "explain": "<p>焼失した建物と減価償却累計額を消します。帳簿価額は 5,000,000 − 2,000,000 ＝ 3,000,000円。</p><p>保険金がいくら入るかは、保険会社の査定が済むまで分かりません。損失なのか利益なのかが決まらないので、帳簿価額 3,000,000円 を<strong>未決算</strong>に入れて待ちます。保険金額 3,500,000円 は上限であって、支払われる額ではありません。</p><p>支払額が決まった時点で、未決算との差額を保険差益または火災損失にします。戻る単元：<a href=\"../phase1/06_shou-saiken-saimu.html\">Phase 1 UNIT 06 未決算</a></p>"
        }
       ],
       "title": "頻出仕訳の総ざらい — 商業簿記 15問"
@@ -23171,7 +23171,7 @@
           12000
          ]
         ],
-        "explain": "<p>材料の購入原価は、購入代価に<strong>引取運賃などの付随費用を加えた額</strong>です。400,000 ＋ 12,000 ＝ <strong>412,000円</strong> を材料の1行で入力します。</p><p>材料副費を予定配賦している場合は、予定配賦額を材料副費勘定から材料に加える処理になります。この問は予定配賦をしていないので、実際にかかった運賃をそのまま加えます。戻る単元：<a href=\"../phase1/04_kou-zairyohi.html\">UNIT 04 材料費</a></p>"
+        "explain": "<p>材料の購入原価は、購入代価に<strong>引取運賃などの付随費用を加えた額</strong>です。400,000 ＋ 12,000 ＝ <strong>412,000円</strong> を材料の1行で入力します。</p><p>材料副費を予定配賦している場合は、予定配賦額を材料副費勘定から材料に加える処理になります。この問は予定配賦をしていないので、実際にかかった運賃をそのまま加えます。戻る単元：<a href=\"../phase1/04_kou-zairyohi.html\">Phase 1 UNIT 04 材料費</a></p>"
        },
        {
         "text": "材料を出庫し、直接材料として <strong>320,000円</strong>、間接材料として <strong>45,000円</strong> を消費した。",
@@ -23191,7 +23191,7 @@
           365000
          ]
         ],
-        "explain": "<p>特定の製品に結びつく<strong>直接材料費は仕掛品</strong>へ、結びつかない<strong>間接材料費は製造間接費</strong>へ。材料から出ていく原価の合計 365,000円 が貸方です。</p><p>戻る単元：<a href=\"../phase1/04_kou-zairyohi.html\">UNIT 04 材料費</a></p>"
+        "explain": "<p>特定の製品に結びつく<strong>直接材料費は仕掛品</strong>へ、結びつかない<strong>間接材料費は製造間接費</strong>へ。材料から出ていく原価の合計 365,000円 が貸方です。</p><p>戻る単元：<a href=\"../phase1/04_kou-zairyohi.html\">Phase 1 UNIT 04 材料費</a></p>"
        },
        {
         "text": "当月の材料の予定消費額 <strong>360,000円</strong> と実際消費額 <strong>372,000円</strong> との差額を、材料消費価格差異勘定に振り替える。",
@@ -23207,7 +23207,7 @@
           12000
          ]
         ],
-        "explain": "<p>材料勘定の貸方には予定消費額 360,000円 しか記入されていませんが、実際には 372,000円 消費しています。<strong>12,000円 分だけ貸方が足りない</strong>ので、材料を貸方に書いて合わせます。</p><p>相手の材料消費価格差異は借方で、予定より多くかかった<strong>不利差異</strong>です。戻る単元：<a href=\"../phase1/04_kou-zairyohi.html\">UNIT 04 材料費</a></p>"
+        "explain": "<p>材料勘定の貸方には予定消費額 360,000円 しか記入されていませんが、実際には 372,000円 消費しています。<strong>12,000円 分だけ貸方が足りない</strong>ので、材料を貸方に書いて合わせます。</p><p>相手の材料消費価格差異は借方で、予定より多くかかった<strong>不利差異</strong>です。戻る単元：<a href=\"../phase1/04_kou-zairyohi.html\">Phase 1 UNIT 04 材料費</a></p>"
        },
        {
         "text": "当月の賃金 <strong>1,250,000円</strong> について、所得税の源泉徴収額 <strong>95,000円</strong> を差し引き、残額を当座預金から支払った。",
@@ -23227,7 +23227,7 @@
           1155000
          ]
         ],
-        "explain": "<p>支給総額 1,250,000円 が賃金・給料の借方です。源泉徴収した 95,000円 は、会社が預かって後で納める<strong>所得税預り金</strong>（負債）。当座預金から出ていくのは 1,250,000 − 95,000 ＝ <strong>1,155,000円</strong>。</p><p>支払いの時点では、まだ仕掛品にも製造間接費にも入りません。消費の仕訳は別に切ります。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">UNIT 07 労務費</a></p>"
+        "explain": "<p>支給総額 1,250,000円 が賃金・給料の借方です。源泉徴収した 95,000円 は、会社が預かって後で納める<strong>所得税預り金</strong>（負債）。当座預金から出ていくのは 1,250,000 − 95,000 ＝ <strong>1,155,000円</strong>。</p><p>支払いの時点では、まだ仕掛品にも製造間接費にも入りません。消費の仕訳は別に切ります。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">Phase 1 UNIT 07 労務費</a></p>"
        },
        {
         "text": "当月の直接工賃金の予定消費額 <strong>1,800,000円</strong> と実際消費額 <strong>1,830,000円</strong> との差額を、賃率差異勘定に振り替える。",
@@ -23243,7 +23243,7 @@
           30000
          ]
         ],
-        "explain": "<p>賃金・給料勘定の貸方は予定消費額 1,800,000円。実際は 1,830,000円 なので、<strong>貸方が 30,000円 足りません</strong>。賃金・給料を貸方に書いて合わせ、相手の賃率差異は借方（不利差異）です。</p><p>材料消費価格差異とまったく同じ形です。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">UNIT 07 労務費</a></p>"
+        "explain": "<p>賃金・給料勘定の貸方は予定消費額 1,800,000円。実際は 1,830,000円 なので、<strong>貸方が 30,000円 足りません</strong>。賃金・給料を貸方に書いて合わせ、相手の賃率差異は借方（不利差異）です。</p><p>材料消費価格差異とまったく同じ形です。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">Phase 1 UNIT 07 労務費</a></p>"
        },
        {
         "text": "製品の加工を外部の業者に依頼し、外注加工賃 <strong>180,000円</strong> を当月の直接経費として消費した。",
@@ -23259,7 +23259,7 @@
           180000
          ]
         ],
-        "explain": "<p>外注加工賃は、特定の製品の加工のためにかかる経費なので<strong>直接経費</strong>です。直接費は仕掛品へ。</p><p>経費のうち直接経費になるものは多くありません。外注加工賃は、その代表として覚えておいてください。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">UNIT 07 経費</a></p>"
+        "explain": "<p>外注加工賃は、特定の製品の加工のためにかかる経費なので<strong>直接経費</strong>です。直接費は仕掛品へ。</p><p>経費のうち直接経費になるものは多くありません。外注加工賃は、その代表として覚えておいてください。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">Phase 1 UNIT 07 経費</a></p>"
        },
        {
         "text": "工場の電力料について、当月の測定額 <strong>64,000円</strong> を間接経費として消費した。",
@@ -23275,7 +23275,7 @@
           64000
          ]
         ],
-        "explain": "<p>電力料は工場全体で使い、特定の製品に結びつかないので<strong>間接経費</strong>です。製造間接費へ。</p><p>電力料は、支払額ではなく<strong>当月に測定した使用量にもとづく額</strong>を消費額とします（測定経費）。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">UNIT 07 経費</a></p>"
+        "explain": "<p>電力料は工場全体で使い、特定の製品に結びつかないので<strong>間接経費</strong>です。製造間接費へ。</p><p>電力料は、支払額ではなく<strong>当月に測定した使用量にもとづく額</strong>を消費額とします（測定経費）。戻る単元：<a href=\"../phase1/07_kou-romuhi-keihi.html\">Phase 1 UNIT 07 経費</a></p>"
        },
        {
         "text": "製造間接費を、予定配賦率 <strong>800円/時</strong> を用いて、当月の直接作業時間 <strong>1,050時間</strong> にもとづき製品に予定配賦した。",
@@ -23291,7 +23291,7 @@
           840000
          ]
         ],
-        "explain": "<p>予定配賦額 ＝ 800 × 1,050 ＝ <strong>840,000円</strong>。製造間接費から出て、仕掛品に入ります。</p><p>予定配賦は、実際発生額の集計を待たずに製品原価を計算するための方法です。実際発生額との差は、月末に製造間接費配賦差異として取り出します。戻る単元：<a href=\"../phase1/10_kou-seizo-kansetsuhi.html\">UNIT 10 製造間接費</a></p>"
+        "explain": "<p>予定配賦額 ＝ 800 × 1,050 ＝ <strong>840,000円</strong>。製造間接費から出て、仕掛品に入ります。</p><p>予定配賦は、実際発生額の集計を待たずに製品原価を計算するための方法です。実際発生額との差は、月末に製造間接費配賦差異として取り出します。戻る単元：<a href=\"../phase1/10_kou-seizo-kansetsuhi.html\">Phase 1 UNIT 10 製造間接費</a></p>"
        },
        {
         "text": "当月に完成した製品の製造原価 <strong>2,400,000円</strong> を、仕掛品勘定から製品勘定に振り替えた。",
@@ -23347,7 +23347,7 @@
           760000
          ]
         ],
-        "explain": "<p>ふつうなら（借）賃金・給料 ／（貸）当座預金 ですが、<mark>賃金・給料は工場の勘定</mark>で、本社の帳簿にはありません。本社の帳簿では、工場にある勘定を<strong>工場</strong>勘定で代表させます。</p><p>工場側は（借）賃金・給料 760,000 ／（貸）本社 760,000。<strong>工場勘定と本社勘定は同額で貸借が逆</strong>になります。戻る単元：<a href=\"../phase1/24_kou-cvp-chokusetsu.html\">UNIT 24 工場会計の独立</a></p>"
+        "explain": "<p>ふつうなら（借）賃金・給料 ／（貸）当座預金 ですが、<mark>賃金・給料は工場の勘定</mark>で、本社の帳簿にはありません。本社の帳簿では、工場にある勘定を<strong>工場</strong>勘定で代表させます。</p><p>工場側は（借）賃金・給料 760,000 ／（貸）本社 760,000。<strong>工場勘定と本社勘定は同額で貸借が逆</strong>になります。戻る単元：<a href=\"../phase1/24_kou-cvp-chokusetsu.html\">Phase 1 UNIT 24 工場会計の独立</a></p>"
        },
        {
         "text": "標準原価計算（パーシャル・プラン）を採用している。当月の直接材料費は、実際発生額 <strong>1,004,500円</strong>、完成品に対する標準原価 <strong>950,000円</strong> であった（月初・月末仕掛品なし）。差額を仕掛品勘定から直接材料費差異勘定に振り替える。",
@@ -23363,7 +23363,7 @@
           54500
          ]
         ],
-        "explain": "<p>パーシャル・プランでは、仕掛品勘定の借方に<strong>実際発生額</strong>、貸方（完成品）に<strong>標準原価</strong>を記入します。借方が 1,004,500 − 950,000 ＝ <strong>54,500円</strong> 多く残るので、仕掛品を貸方に書いて消します。</p><p>相手の直接材料費差異は借方で、標準より多くかかった不利差異です。<mark>パーシャル・プランは差異が仕掛品勘定に出る</mark>。シングル・プランでは材料勘定などの費目別の勘定に出ます。戻る単元：<a href=\"../phase1/20_kou-hyojun-genka.html\">UNIT 20 標準原価計算</a></p>"
+        "explain": "<p>パーシャル・プランでは、仕掛品勘定の借方に<strong>実際発生額</strong>、貸方（完成品）に<strong>標準原価</strong>を記入します。借方が 1,004,500 − 950,000 ＝ <strong>54,500円</strong> 多く残るので、仕掛品を貸方に書いて消します。</p><p>相手の直接材料費差異は借方で、標準より多くかかった不利差異です。<mark>パーシャル・プランは差異が仕掛品勘定に出る</mark>。シングル・プランでは材料勘定などの費目別の勘定に出ます。戻る単元：<a href=\"../phase1/20_kou-hyojun-genka.html\">Phase 1 UNIT 20 標準原価計算</a></p>"
        },
        {
         "text": "会計期間末に、製造間接費配賦差異の借方残高 <strong>30,000円</strong> を売上原価に振り替えた。",
@@ -23379,7 +23379,7 @@
           30000
          ]
         ],
-        "explain": "<p>借方残高は不利差異です。予定配賦で製品原価に入れた額より、実際には多くかかっていました。その不足分を<strong>売上原価に加算</strong>します。</p><p>向きは「残高を消す側」で決めます。借方に 30,000円 残っているので、製造間接費配賦差異を貸方に書きます。戻る単元：<a href=\"../phase1/10_kou-seizo-kansetsuhi.html\">UNIT 10 製造間接費</a></p>"
+        "explain": "<p>借方残高は不利差異です。予定配賦で製品原価に入れた額より、実際には多くかかっていました。その不足分を<strong>売上原価に加算</strong>します。</p><p>向きは「残高を消す側」で決めます。借方に 30,000円 残っているので、製造間接費配賦差異を貸方に書きます。戻る単元：<a href=\"../phase1/10_kou-seizo-kansetsuhi.html\">Phase 1 UNIT 10 製造間接費</a></p>"
        },
        {
         "text": "当月の製造間接費の実際発生額は <strong>820,000円</strong>、予定配賦額は <strong>840,000円</strong> であった。差額を製造間接費勘定から製造間接費配賦差異勘定に振り替える。",
@@ -23395,7 +23395,7 @@
           20000
          ]
         ],
-        "explain": "<p>製造間接費勘定の借方は実際発生額 820,000円、貸方は予定配賦額 840,000円（Q8）。<strong>貸方が 20,000円 多く、貸方残高</strong>が残っています。</p><p>残高を消す側は借方なので、製造間接費を借方に書きます。相手の製造間接費配賦差異は貸方で、予定より少なく済んだ<strong>有利差異</strong>です。会計期間末には、この貸方残高を売上原価から差し引きます（Q13の逆向き）。</p><p>実際が予定より多いときは向きが逆になり、（借）製造間接費配賦差異 ／（貸）製造間接費 です。戻る単元：<a href=\"../phase1/10_kou-seizo-kansetsuhi.html\">UNIT 10 製造間接費</a></p>"
+        "explain": "<p>製造間接費勘定の借方は実際発生額 820,000円、貸方は予定配賦額 840,000円（Q8）。<strong>貸方が 20,000円 多く、貸方残高</strong>が残っています。</p><p>残高を消す側は借方なので、製造間接費を借方に書きます。相手の製造間接費配賦差異は貸方で、予定より少なく済んだ<strong>有利差異</strong>です。会計期間末には、この貸方残高を売上原価から差し引きます（Q13の逆向き）。</p><p>実際が予定より多いときは向きが逆になり、（借）製造間接費配賦差異 ／（貸）製造間接費 です。戻る単元：<a href=\"../phase1/10_kou-seizo-kansetsuhi.html\">Phase 1 UNIT 10 製造間接費</a></p>"
        }
       ],
       "title": "頻出仕訳の総ざらい — 工業簿記 14問"
