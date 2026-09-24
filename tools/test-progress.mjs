@@ -210,6 +210,18 @@ try {
       localStorage.setItem('boki2:progress', JSON.stringify(p));
       return BokiProgress.due()[0].last; }),
        '2026-01-05', 'last は最後に間違えた日時');
+
+    // 外した設問は、外した後に誤答があれば復習に戻る。
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      const p = BokiProgress.dump();
+      p.drills['a'] = { attempts: [{ at: '2026-01-02T10:00:00+09:00', ok: false }] };
+      p.drills['b'] = { attempts: [{ at: '2026-01-02T10:00:00+09:00', ok: false },
+                                   { at: '2026-01-04T10:00:00+09:00', ok: false }] };
+      p.dismissed = { a: '2026-01-03T10:00:00+09:00', b: '2026-01-03T10:00:00+09:00' };
+      localStorage.setItem('boki2:progress', JSON.stringify(p));
+      return BokiProgress.due().map((r) => r.id); }),
+       ['b'], '外した後に誤答した設問だけが復習に戻る');
   });
 } finally {
   await browser.close();

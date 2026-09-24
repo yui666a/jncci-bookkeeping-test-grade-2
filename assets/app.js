@@ -147,8 +147,8 @@
     },
     // 復習の対象から外す・戻す。解答の記録そのものは消さない。誤答した
     // 事実は正解率の分母であり、消すと progress.html の集計が実際に
-    // 解いた回数と食い違う。外した設問は dismissed で覆うだけにして、
-    // いつでも戻せるようにする。
+    // 解いた回数と食い違う。外した設問は dismissed に外した日時を残して
+    // 覆うだけにする。外した後にまた間違えれば due() が復習に戻す。
     dismiss: function (drillId, on) {
       var p = loadProgress();
       if (on === false) delete p.dismissed[drillId];
@@ -161,10 +161,13 @@
     due: function () {
       var p = loadProgress(), out = [];
       for (var id in p.drills) {
-        if (p.dismissed[id]) continue;
         var at = (p.drills[id] || {}).attempts || [];
         var wrong = at.filter(function (a) { return !a.ok; });
         if (!wrong.length) continue;
+        // 日時は Date.parse で比べる。文字列比較だと、時差の違う端末で
+        // 付けた記録が混ざったときに前後が逆転する。
+        var off = p.dismissed[id];
+        if (off && !(Date.parse(wrong[wrong.length - 1].at) > Date.parse(off))) continue;
         var streak = BokiProgress.streakOf(at);
         if (streak >= BokiProgress.CLEAR_STREAK) continue;
         out.push({
