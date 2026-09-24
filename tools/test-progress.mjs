@@ -123,6 +123,27 @@ try {
       return BokiProgress.dump().checks['phase0/04_junbi'].k; }),
        false, '移行が新しい記録を上書きしない');
   });
+
+  // ファイル名の違う旧キーは取り込まない。取り込むと他ページのチェックが混ざる。
+  await withApp(browser, 'phase0/04_junbi.html', async (page) => {
+    eq(await page.evaluate(() => {
+      localStorage.clear();
+      localStorage.setItem('boki2:03_dentaku:check', JSON.stringify({ other: true }));
+      BokiProgress.migrateLegacy();
+      return (BokiProgress.dump().checks['phase0/04_junbi'] || {}).other === undefined; }),
+       true, '他ページの旧キーを取り込まない');
+  });
+
+  // 旧キーを書いていた版でチェックボックスがあったのは phase0/* だけ。
+  // 同名の index でも他フェーズには取り込まない。
+  await withApp(browser, 'phase1/index.html', async (page) => {
+    eq(await page.evaluate(() => {
+      localStorage.clear();
+      localStorage.setItem('boki2:index:check', JSON.stringify({ w1: true }));
+      BokiProgress.migrateLegacy();
+      return (BokiProgress.dump().checks['phase1/index'] || {}).w1 === undefined; }),
+       true, 'phase1/index は boki2:index:check を取り込まない');
+  });
   // 極端に短い区間は記録しない。ページを開いて即座に閉じた分が
   // 大量に積もると、集計が読めなくなる。
   await withApp(browser, 'phase0/03_dentaku.html', async (page) => {
@@ -231,6 +252,16 @@ try {
       localStorage.setItem('boki2:progress', JSON.stringify(p));
       return BokiProgress.due().map((r) => r.id); }),
        ['b'], '外した後に誤答した設問だけが復習に戻る');
+
+    // 外しても解答の記録は消えず、戻すと再び復習に並ぶ。
+    eq(await page.evaluate(() => {
+      BokiProgress._reset();
+      BokiProgress.record('a', false);
+      BokiProgress.dismiss('a');
+      const off = [BokiProgress.due().length, BokiProgress.dump().drills.a.attempts.length];
+      BokiProgress.dismiss('a', false);
+      return [off, BokiProgress.due().map((r) => r.id)]; }),
+       [[0, 1], ['a']], '外すと復習から消え、戻すと復習に並ぶ');
   });
 
   // 採点の連打は1回として記録し、答えを見た後の採点は正解にしない。
@@ -251,6 +282,31 @@ try {
       return [afterMash, oks()]; }),
        [[true], [true, false, false]], '連打と答えを見た後の採点');
   });
+
+  // エクスポートはクリップボードが使えなくても、選択済みの欄に JSON を出す。
+  // LAN の http では navigator.clipboard が無く、許可が無ければ writeText が失敗する。
+  for (const [label, stub] of [
+    ['clipboard が無い', 'undefined'],
+    ['writeText が失敗する', '{ writeText: () => Promise.reject(new Error("denied")) }'],
+  ]) {
+    const page = await browser.newPage();
+    await page.addInitScript('Object.defineProperty(navigator, "clipboard", { value: ' + stub + ' });');
+    await page.route('**/*', (route) => {
+      const path = new URL(route.request().url()).pathname.slice(1);
+      try {
+        route.fulfill({ status: 200, body: readFileSync(resolve(path)),
+          contentType: path.endsWith('.html') ? 'text/html' : path.endsWith('.css') ? 'text/css' : 'application/javascript' });
+      } catch { route.fulfill({ status: 404 }); }
+    });
+    await page.goto('https://example.test/progress.html');
+    await page.click('#export');
+    eq(await page.evaluate(() => {
+      const ta = document.getElementById('export-text');
+      return [ta.hidden, typeof JSON.parse(ta.value),
+        ta.selectionStart === 0 && ta.selectionEnd === ta.value.length];
+    }), [false, 'object', true], 'エクスポートのフォールバック: ' + label);
+    await page.close();
+  }
 } finally {
   await browser.close();
 }
