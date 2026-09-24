@@ -35,7 +35,7 @@ for (const file of files.sort()) {
   });
   await page.close();
   // 'なし' は「2級論点を扱わない単元」の明示。書き忘れの空メタと区別するため
-  // check.mjs のゲート7が要求する値であり、論点IDではない。
+  // tools/gates/07-topics-meta.mjs が要求する値であり、論点IDではない。
   if (meta.trim() === 'なし') continue;
   for (const id of meta.split(',').map((s) => s.trim()).filter(Boolean)) {
     if (!covered.has(id)) covered.set(id, []);
