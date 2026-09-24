@@ -52,8 +52,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/configure-pages@v5
+      # リポジトリ全体は載せない。reference/ の PDF は再配布の可否が未確認で、
+      # .claude/・CLAUDE.md・tools/ は制作用でページから参照されない。
+      - name: 公開物だけを _site に集める
+        run: |
+          mkdir _site
+          cp -R .nojekyll *.html assets phase0 phase1 phase2 phase3 _site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
