@@ -73,6 +73,9 @@ export async function build(opts) {
       await page.addInitScript(CAPTURE);
       await page.goto('file://' + resolve(file), { waitUntil: 'load' });
 
+      // 横断演習ページの単元一覧に出す名前。単元キーだけでは何の単元か読めない。
+      const title = await page.evaluate(() =>
+        ((document.querySelector('.topbar__title') || {}).textContent || document.title).trim());
       const mounts = await page.evaluate(() => {
         // cfg は丸ごと写す。使う項目だけを選んで写すと、あとから
         // mount() に設定を足したとき、復習ページだけ既定値で動く。
@@ -117,8 +120,8 @@ export async function build(opts) {
       }
 
       const unit = unitKeyOf(file);
-      units[unit] = { href: file, drills: {} };
-      for (const m of mounts) {
+      units[unit] = { href: file, title, drills: {} };
+      for (const [order, m] of mounts.entries()) {
         if (!m.root) {
           problems.push(file + ': mount 先に id がない（' + m.sel + '）');
           continue;
@@ -130,6 +133,9 @@ export async function build(opts) {
         }
         units[unit].drills[m.root] = {
           kind: m.kind, root: m.root,
+          // ページ内の並び。drills は id 順に並べ替えて書き出すため、
+          // これがないと横断演習の「順番に」が単元の出題順にならない。
+          order,
           // 設問ごとの指紋。記録IDの q番号は配列の添字であり、途中に
           // 設問を挿すと以降が1つずつずれる。ずれても番号としては有効な
           // ままなので、復習ページは「間違えた覚えのない設問」を出し、
