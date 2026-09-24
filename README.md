@@ -30,7 +30,10 @@
 
 <https://yui666a.github.io/jncci-bookkeeping-test-grade-2/>
 
-手元で見るときは、HTMLをブラウザで直接開く。サーバーは要らない。
+手元で見るときは、HTMLをブラウザで直接開けば単元ページは動く。ただし復習ドリル（`review.html`）は
+`assets/drills.json` を読むため配信が要る（`python3 -m http.server`）。学習記録はブラウザの
+`localStorage` に開き方（`file://`・`http://localhost`・公開版）ごとに別々に残るので、
+最初から同じ開き方で通す。
 
 ```
 open index.html            # トップページ
