@@ -1,12 +1,12 @@
 // 出題区分表の2級論点と、教材がカバーする論点の差分を出す。
 // meta の読み取りに正規表現を使わず、Playwright で DOM から読む。
 //
-// loadYaml は check.mjs のものを使う。同じ読み取りを2箇所に置くと、
+// loadYaml は check.mjs と同じ lib.mjs のものを使う。同じ読み取りを2箇所に置くと、
 // 一方だけ直したときに黙ってずれる。
 import { readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { chromium } from 'playwright';
-import { loadYaml } from './check.mjs';
+import { loadYaml } from './lib.mjs';
 
 const topics = loadYaml('reference/syllabus.yml').topics;
 // 2級の教材が扱うべき論点。3級は前提知識であり Phase 0 の総復習で扱う。

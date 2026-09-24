@@ -1,5 +1,5 @@
 // evalFormula の仕様：四則演算と括弧だけを評価し、それ以外は例外にする。
-import { evalFormula } from './check.mjs';
+import { evalFormula } from './lib.mjs';
 
 let ng = 0;
 const ok = [

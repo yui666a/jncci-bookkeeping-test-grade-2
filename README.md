@@ -92,7 +92,7 @@ HTMLの解析に正規表現を使わない。Playwright で `file://` を開き
 金額・answerインデックス）には、この方法でしか到達できない。
 
 計算式の評価に `eval` と `new Function` を使わない。四則演算と括弧だけを
-受け付ける再帰下降パーサを `tools/check.mjs` に置いている。
+受け付ける再帰下降パーサを `tools/lib.mjs` に置いている。
 
 ## 教材を作る
 
@@ -110,7 +110,7 @@ HTMLの解析に正規表現を使わない。Playwright で `file://` を開き
   ├─ boki-author（本文）
   └─ boki-drill（問題）        ← 並列
         ↓
-  npm run check               ← ゲート0〜7、機械
+  npm run check               ← ゲート1〜6・9〜13、機械
         ↓
   ├─ boki-coverage
   └─ boki-reviewer             ← 並列
