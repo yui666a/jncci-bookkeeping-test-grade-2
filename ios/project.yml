@@ -1,0 +1,36 @@
+# XcodeGen の定義。Boki2.xcodeproj はここから生成し、リポジトリには入れない。
+# project.pbxproj を手で持つと、ファイルを足すたびに差分が読めない ID の羅列になる。
+name: Boki2
+options:
+  bundleIdPrefix: io.github.yui666a
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+targets:
+  Boki2:
+    type: application
+    platform: iOS
+    sources:
+      - path: Boki2
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.yui666a.boki2
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: 簿記2級
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        # copy-web.sh はリポジトリ直下の教材を読む。サンドボックス下では
+        # 入力ファイルを全件宣言しない限り読めず、単元を足すたびに漏れる。
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+    postCompileScripts:
+      - name: Copy web content
+        script: '"${SRCROOT}/scripts/copy-web.sh"'
+        # 依存解析に任せると、HTML だけ直したビルドで古い教材が残る。
+        basedOnDependencyAnalysis: false
