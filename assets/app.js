@@ -6,9 +6,9 @@
   'use strict';
 
   /* ---------- localStorage は失敗しても致命傷にしない ---------- */
-  var LS = {
+  const LS = {
     get: function (k, d) {
-      try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }
+      try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }
       catch (e) { return d; }
     },
     set: function (k, v) {
@@ -18,16 +18,16 @@
   // 単元キーはディレクトリを含める。ファイル名だけだと phase0/01_... と
   // phase1/01_... が同じキーになり、別単元の記録が混ざる。
   function unitKeyOf(pathname) {
-    var p = pathname.replace(/\/$/, '/index').replace(/^\/+/, '').replace(/\.html?$/, '');
-    var seg = p.split('/').filter(Boolean);
+    const p = pathname.replace(/\/$/, '/index').replace(/^\/+/, '').replace(/\.html?$/, '');
+    const seg = p.split('/').filter(Boolean);
     if (!seg.length) return 'index';
     return seg.slice(-2).join('/');
   }
-  var PAGE = unitKeyOf(location.pathname);
+  const PAGE = unitKeyOf(location.pathname);
 
   /* ---------- 学習記録 ---------- */
-  var PROGRESS_KEY = 'boki2:progress';
-  var PROGRESS_VERSION = 1;
+  const PROGRESS_KEY = 'boki2:progress';
+  const PROGRESS_VERSION = 1;
 
   function emptyProgress() {
     return { version: PROGRESS_VERSION, sessions: [], drills: {}, checks: {}, notes: [],
@@ -38,9 +38,9 @@
   // 形が違えば初期値に戻すが、version が未来のものはそのまま保持して
   // 上書きを避ける（新しい版で書かれた記録を古い版が壊さない）。
   function loadProgress() {
-    var raw = LS.get(PROGRESS_KEY, null);
+    const raw = LS.get(PROGRESS_KEY, null);
     if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return emptyProgress();
-    var base = emptyProgress();
+    const base = emptyProgress();
     if (typeof raw.version === 'number') base.version = raw.version;
     if (Array.isArray(raw.sessions)) base.sessions = raw.sessions;
     if (Array.isArray(raw.notes)) base.notes = raw.notes;
@@ -49,9 +49,9 @@
     // 描画が丸ごと止まる。画面には「記録がない」ようにしか見えず、
     // 壊れていることに気づけない。
     if (raw.drills && typeof raw.drills === 'object' && !Array.isArray(raw.drills)) {
-      for (var id in raw.drills) {
-        var d = raw.drills[id];
-        var at = d && Array.isArray(d.attempts) ? d.attempts : [];
+      for (const id in raw.drills) {
+        const d = raw.drills[id];
+        const at = d && Array.isArray(d.attempts) ? d.attempts : [];
         base.drills[id] = { attempts: at.filter(function (a) {
           return a && typeof a === 'object';
         }) };
@@ -69,39 +69,39 @@
   // ローカルタイムゾーン付きの ISO 8601。toISOString() は UTC になり、
   // 深夜に学習した記録が前日にずれて見える。
   function nowISO() {
-    var d = new Date();
-    var off = -d.getTimezoneOffset();
-    var sign = off >= 0 ? '+' : '-';
+    const d = new Date();
+    const off = -d.getTimezoneOffset();
+    const sign = off >= 0 ? '+' : '-';
     function p2(n) { return (n < 10 ? '0' : '') + n; }
     return d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate()) +
       'T' + p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds()) +
       sign + p2(Math.floor(Math.abs(off) / 60)) + ':' + p2(Math.abs(off) % 60);
   }
 
-  var BokiProgress = {
+  const BokiProgress = {
     unitKey: function () { return PAGE; },
     now: nowISO,
     dump: loadProgress,
     exportJSON: function () {
-      var p = loadProgress();
+      const p = loadProgress();
       p.exportedAt = nowISO();
       return JSON.stringify(p);
     },
     // 記録IDは「単元キー#マウント先のid/q番号」。単元キーはURLのパスから
     // 作るため # を含まない（# はパスでは %23 になる）。最初の # で切る。
     parseId: function (id) {
-      var m = /^(.+?)#([^/]+)\/q(\d+)$/.exec(id);
+      const m = /^(.+?)#([^/]+)\/q(\d+)$/.exec(id);
       if (!m) return null;
       return { unit: m[1], root: m[2], q: Number(m[3]) };
     },
     record: function (drillId, ok) {
-      var p = loadProgress();
+      const p = loadProgress();
       if (!p.drills[drillId]) p.drills[drillId] = { attempts: [] };
       p.drills[drillId].attempts.push({ at: nowISO(), ok: !!ok });
       saveProgress(p);
     },
     check: function (unitKey, key, checked) {
-      var p = loadProgress();
+      const p = loadProgress();
       if (!p.checks[unitKey]) p.checks[unitKey] = {};
       p.checks[unitKey][key] = !!checked;
       saveProgress(p);
@@ -109,23 +109,24 @@
     // ページ別キーで保存されていたチェックを取り込む。旧キーは消さない。
     // 消しても得るものがなく、取り込みに失敗したときの復元手段が絶たれる。
     migrateLegacy: function () {
-      var p = loadProgress(), moved = false;
-      for (var i = 0; i < localStorage.length; i++) {
-        var k = localStorage.key(i);
-        var m = k && k.match(/^boki2:(.+):check$/);
+      const p = loadProgress();
+      let moved = false;
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        const m = k && k.match(/^boki2:(.+):check$/);
         if (!m) continue;
         // 旧形式のキーはディレクトリを持たないが、チェックボックスがあったのは
         // phase0/* だけである。ファイル名だけで照合すると boki2:index:check が
         // phase1/index などにも入る。
-        var unit = m[1];
+        let unit = m[1];
         if (unit.indexOf('/') < 0) {
           if (PAGE !== 'phase0/' + unit) continue;
           unit = PAGE;
         }
-        var old = LS.get(k, null);
+        const old = LS.get(k, null);
         if (!old || typeof old !== 'object') continue;
         if (!p.checks[unit]) p.checks[unit] = {};
-        for (var key in old) {
+        for (const key in old) {
           if (p.checks[unit][key] === undefined) { p.checks[unit][key] = !!old[key]; moved = true; }
         }
       }
@@ -136,14 +137,14 @@
     addSession: function (unitKey, startISO, sec) {
       sec = Math.round(sec);
       if (!(sec >= 10)) return;
-      var p = loadProgress();
+      const p = loadProgress();
       p.sessions.push({ unit: unitKey, start: startISO, sec: sec });
       saveProgress(p);
     },
     note: function (text) {
       text = String(text == null ? '' : text).trim();
       if (!text) return;
-      var p = loadProgress();
+      const p = loadProgress();
       p.notes.push({ at: nowISO(), unit: PAGE, text: text });
       saveProgress(p);
     },
@@ -154,8 +155,9 @@
     // 連続正解で数える。通算にすると、正解の貯金が誤答で消えないため、
     // 直前に間違えた設問まで復習から落ちてしまう。
     streakOf: function (attempts) {
-      var at = attempts || [], n = 0;
-      for (var i = at.length - 1; i >= 0 && at[i].ok; i--) n++;
+      const at = attempts || [];
+      let n = 0;
+      for (let i = at.length - 1; i >= 0 && at[i].ok; i--) n++;
       return n;
     },
     // 復習の対象から外す・戻す。解答の記録そのものは消さない。誤答した
@@ -163,7 +165,7 @@
     // 解いた回数と食い違う。外した設問は dismissed に外した日時を残して
     // 覆うだけにする。外した後にまた間違えれば due() が復習に戻す。
     dismiss: function (drillId, on) {
-      var p = loadProgress();
+      const p = loadProgress();
       if (on === false) delete p.dismissed[drillId];
       else p.dismissed[drillId] = nowISO();
       saveProgress(p);
@@ -172,16 +174,16 @@
     // 誤答を含み、まだ連続正解が足りていない設問を、最後に間違えた
     // 日時つきで返す。並び順は呼び出し側が決める。
     due: function () {
-      var p = loadProgress(), out = [];
-      for (var id in p.drills) {
-        var at = (p.drills[id] || {}).attempts || [];
-        var wrong = at.filter(function (a) { return !a.ok; });
+      const p = loadProgress(), out = [];
+      for (const id in p.drills) {
+        const at = (p.drills[id] || {}).attempts || [];
+        const wrong = at.filter(function (a) { return !a.ok; });
         if (!wrong.length) continue;
         // 日時は Date.parse で比べる。文字列比較だと、時差の違う端末で
         // 付けた記録が混ざったときに前後が逆転する。
-        var off = p.dismissed[id];
+        const off = p.dismissed[id];
         if (off && !(Date.parse(wrong[wrong.length - 1].at) > Date.parse(off))) continue;
-        var streak = BokiProgress.streakOf(at);
+        const streak = BokiProgress.streakOf(at);
         if (streak >= BokiProgress.CLEAR_STREAK) continue;
         out.push({
           id: id, streak: streak, wrong: wrong.length, total: at.length,
@@ -195,18 +197,18 @@
 
   /* ---------- テーマ切替 ---------- */
   function initTheme() {
-    var saved = LS.get('boki2:theme', null);
+    const saved = LS.get('boki2:theme', null);
     if (saved) document.documentElement.setAttribute('data-theme', saved);
-    var btn = document.querySelector('.theme-btn');
+    const btn = document.querySelector('.theme-btn');
     if (!btn) return;
     function label() {
-      var t = document.documentElement.getAttribute('data-theme');
+      const t = document.documentElement.getAttribute('data-theme');
       btn.textContent = t === 'dark' ? '☾ ダーク' : (t === 'light' ? '☀ ライト' : '◐ 自動');
     }
     label();
     btn.addEventListener('click', function () {
-      var cur = document.documentElement.getAttribute('data-theme');
-      var next = cur === 'light' ? 'dark' : (cur === 'dark' ? '' : 'light');
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'light' ? 'dark' : (cur === 'dark' ? '' : 'light');
       if (next) { document.documentElement.setAttribute('data-theme', next); LS.set('boki2:theme', next); }
       else { document.documentElement.removeAttribute('data-theme'); LS.set('boki2:theme', ''); }
       label();
@@ -216,9 +218,9 @@
   /* ---------- チェックリストの進捗保存 ---------- */
   function initChecklists() {
     BokiProgress.migrateLegacy();
-    var boxes = document.querySelectorAll('input[type="checkbox"][data-key]');
+    const boxes = document.querySelectorAll('input[type="checkbox"][data-key]');
     if (!boxes.length) return;
-    var store = (BokiProgress.dump().checks || {})[PAGE] || {};
+    const store = (BokiProgress.dump().checks || {})[PAGE] || {};
 
     Array.prototype.forEach.call(boxes, function (b) {
       if (store[b.dataset.key]) b.checked = true;
@@ -230,20 +232,20 @@
 
     function updateBars() {
       document.querySelectorAll('[data-progress-for]').forEach(function (bar) {
-        var scope = document.querySelector(bar.dataset.progressFor);
+        const scope = document.querySelector(bar.dataset.progressFor);
         if (!scope) return;
-        var all = scope.querySelectorAll('input[type="checkbox"][data-key]');
-        var done = scope.querySelectorAll('input[type="checkbox"][data-key]:checked');
-        var pct = all.length ? Math.round(done.length / all.length * 100) : 0;
-        var fill = bar.querySelector('i');
+        const all = scope.querySelectorAll('input[type="checkbox"][data-key]');
+        const done = scope.querySelectorAll('input[type="checkbox"][data-key]:checked');
+        const pct = all.length ? Math.round(done.length / all.length * 100) : 0;
+        const fill = bar.querySelector('i');
         if (fill) fill.style.width = pct + '%';
-        var txt = document.querySelector('[data-progress-text-for="' + bar.dataset.progressFor + '"]');
+        const txt = document.querySelector('[data-progress-text-for="' + bar.dataset.progressFor + '"]');
         if (txt) txt.textContent = done.length + ' / ' + all.length + ' 完了（' + pct + '%）';
       });
     }
     updateBars();
 
-    var unfinished = Array.prototype.find.call(document.querySelectorAll('details.week'), function (d) {
+    const unfinished = Array.prototype.find.call(document.querySelectorAll('details.week'), function (d) {
       return d.querySelector('input[type="checkbox"][data-key]:not(:checked)');
     });
     if (unfinished) unfinished.open = true;
@@ -264,23 +266,23 @@
   // 単元ページのその場で書けるようにする。
   function initNotes() {
     document.querySelectorAll('[data-note]').forEach(function (host) {
-      var wrap = el('div', 'note');
+      const wrap = el('div', 'note');
       wrap.appendChild(el('div', 'note__label', 'わからなかったこと・気づいたこと'));
-      var ta = el('textarea', 'note__input');
+      const ta = el('textarea', 'note__input');
       ta.rows = 3;
       ta.placeholder = '例：連結のアップストリームで非支配株主持分への按分が分からない';
-      var row = el('div', 'btn-row');
-      var save = el('button', 'btn btn--sm', '記録する');
-      var msg = el('span', 'small muted', '');
+      const row = el('div', 'btn-row');
+      const save = el('button', 'btn btn--sm', '記録する');
+      const msg = el('span', 'small muted', '');
       row.appendChild(save); row.appendChild(msg);
       wrap.appendChild(ta); wrap.appendChild(row);
 
-      var list = el('div', 'note__list');
+      const list = el('div', 'note__list');
       function render() {
         list.innerHTML = '';
-        var notes = BokiProgress.dump().notes.filter(function (n) { return n.unit === PAGE; });
+        const notes = BokiProgress.dump().notes.filter(function (n) { return n.unit === PAGE; });
         notes.slice().reverse().forEach(function (n) {
-          var item = el('div', 'note__item');
+          const item = el('div', 'note__item');
           item.appendChild(el('span', 'note__at', String(n.at).slice(0, 10)));
           item.appendChild(el('span', 'note__text', n.text));
           list.appendChild(item);
@@ -306,14 +308,14 @@
   // 経過時間ではなく能動時間を測る。タブを開いたまま離席した時間が
   // 学習時間に入ると、計画の週23時間を満たしているように見えて実際は
   // 足りていない、という最も避けたい壊れ方をする。
-  var IDLE_MS = 5 * 60 * 1000;
+  const IDLE_MS = 5 * 60 * 1000;
 
   function initSession() {
-    var startedAt = Date.now();
-    var startISO = nowISO();
-    var lastActive = Date.now();
-    var accrued = 0;
-    var running = true;
+    let startedAt = Date.now();
+    let startISO = nowISO();
+    let lastActive = Date.now();
+    let accrued = 0;
+    let running = true;
 
     function touch() { lastActive = Date.now(); }
     ['keydown', 'click', 'scroll', 'pointerdown'].forEach(function (ev) {
@@ -323,8 +325,8 @@
     // 直近の操作から IDLE_MS を超えた分は加算しない。
     function slice() {
       if (!running) return;
-      var now = Date.now();
-      var cut = Math.min(now, lastActive + IDLE_MS);
+      const now = Date.now();
+      const cut = Math.min(now, lastActive + IDLE_MS);
       if (cut > startedAt) accrued += (cut - startedAt) / 1000;
       startedAt = now;
     }
@@ -373,7 +375,7 @@
 
   /* ---------- 共通ヘルパ ---------- */
   function el(tag, cls, text) {
-    var n = document.createElement(tag);
+    const n = document.createElement(tag);
     if (cls) n.className = cls;
     if (text !== undefined) n.textContent = text;
     return n;
@@ -381,7 +383,7 @@
   function fmt(n) { return Number(n).toLocaleString('ja-JP'); }
   // 日本語入力のまま「-」を打つと「ー」「－」になり、会計では「▲」「△」も負の数を表す。
   // 先頭のこれらを ASCII の - に寄せないと、符号だけが黙って落ちて誤答になる。
-  var NEG_MARK = /^\s*[-－−ー‐▲△]/;
+  const NEG_MARK = /^\s*[-－−ー‐▲△]/;
   function parseAmt(s) {
     if (s === null || s === undefined) return NaN;
     s = String(s).replace(NEG_MARK, '-').replace(/[,\s，]/g, '').replace(/[０-９]/g, function (c) {
@@ -398,7 +400,7 @@
     inp.addEventListener('keydown', function (e) {
       if (e.key !== 'Backspace' && e.key !== 'Delete') return;
       if (inp.selectionStart !== inp.selectionEnd) return;
-      var pos = inp.selectionStart;
+      let pos = inp.selectionStart;
       if (e.key === 'Backspace') {
         while (pos > 0 && inp.value[pos - 1] === ',') pos--;
       } else {
@@ -413,19 +415,19 @@
     });
     inp.addEventListener('compositionend', format);
     function format() {
-      var tail = inp.value.slice(inp.selectionEnd).replace(/\D/g, '').length;
-      var half = inp.value.replace(/[０-９]/g, function (c) {
+      const tail = inp.value.slice(inp.selectionEnd).replace(/\D/g, '').length;
+      const half = inp.value.replace(/[０-９]/g, function (c) {
         return String.fromCharCode(c.charCodeAt(0) - 0xFEE0);
       });
-      var neg = NEG_MARK.test(half);
-      var parts = half.replace(/[^\d.]/g, '').split('.');
-      var intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      const neg = NEG_MARK.test(half);
+      const parts = half.replace(/[^\d.]/g, '').split('.');
+      const intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       // 小数部は3桁区切りにしない。金額に小数が出るのは単価や率の計算だけで、
       // そこに区切りを入れると桁の読み方が変わる。
-      var out = (neg ? '-' : '') + intPart + (parts.length > 1 ? '.' + parts.slice(1).join('') : '');
+      const out = (neg ? '-' : '') + intPart + (parts.length > 1 ? '.' + parts.slice(1).join('') : '');
       inp.value = out;
-      var pos = out.length;
-      for (var seen = 0; pos > 0 && seen < tail; pos--) {
+      let pos = out.length;
+      for (let seen = 0; pos > 0 && seen < tail; pos--) {
         if (/\d/.test(out[pos - 1])) seen++;
       }
       inp.setSelectionRange(pos, pos);
@@ -433,12 +435,12 @@
   }
   function shell(root, cfg, badgeText) {
     root.classList.add('drill');
-    var head = el('div', 'drill__head');
+    const head = el('div', 'drill__head');
     head.appendChild(el('span', 'drill__badge', badgeText));
     head.appendChild(el('span', 'drill__title', cfg.title || '練習問題'));
-    var score = el('span', 'drill__score', '');
+    const score = el('span', 'drill__score', '');
     head.appendChild(score);
-    var body = el('div', 'drill__body');
+    const body = el('div', 'drill__body');
     root.appendChild(head); root.appendChild(body);
     return { body: body, score: score };
   }
@@ -459,11 +461,11 @@
   }
   // 設問の枠と見出し。4種のドリルで同じ形にそろえる。
   function questionBox(root, q, i) {
-    var wrapQ = el('div', 'q');
+    const wrapQ = el('div', 'q');
     tagQuestion(wrapQ, root, i);
-    var head = el('p', 'q__text');
+    const head = el('p', 'q__text');
     head.appendChild(el('span', 'q__no', 'Q' + (i + 1)));
-    var sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
+    const sp = el('span'); sp.innerHTML = q.text; head.appendChild(sp);
     wrapQ.appendChild(head);
     return wrapQ;
   }
@@ -472,15 +474,15 @@
   // 書いた設問はない。innerHTML にすると「A<B」のような比較が要素として
   // 解釈されて文字が消える。
   function controls(wrapQ, q, withAnswer) {
-    var row = el('div', 'btn-row');
-    var check = el('button', 'btn btn--sm', '採点する');
+    const row = el('div', 'btn-row');
+    const check = el('button', 'btn btn--sm', '採点する');
     row.appendChild(check);
-    var ans = withAnswer ? el('button', 'btn btn--ghost btn--sm', '答えを見る') : null;
+    const ans = withAnswer ? el('button', 'btn btn--ghost btn--sm', '答えを見る') : null;
     if (ans) row.appendChild(ans);
     wrapQ.appendChild(row);
     if (q.hint) {
-      var bHint = el('button', 'linkbtn', 'ヒント');
-      var hintBox = el('div', 'small muted', 'ヒント：' + q.hint);
+      const bHint = el('button', 'linkbtn', 'ヒント');
+      const hintBox = el('div', 'small muted', 'ヒント：' + q.hint);
       hintBox.style.display = 'none';
       bHint.addEventListener('click', function () {
         hintBox.style.display = hintBox.style.display === 'none' ? 'block' : 'none';
@@ -488,7 +490,7 @@
       row.appendChild(bHint);
       wrapQ.appendChild(hintBox);
     }
-    var fb = el('div', 'fb');
+    const fb = el('div', 'fb');
     wrapQ.appendChild(fb);
     return { check: check, ans: ans, fb: fb };
   }
@@ -503,16 +505,16 @@
   // 1回しか解いていない設問が復習リストから消える。
   // 答えを見た後の採点は写しても正解にしない。
   function makeScorer(scoreEl, total, drillBase, qNumbers) {
-    var state = {}, lastInput = {}, revealed = {};
+    const state = {}, lastInput = {}, revealed = {};
     function report(id, ok, input) {
       if (id in lastInput && lastInput[id] === input) return;
       lastInput[id] = input;
       ok = ok && !revealed[id];
       state[id] = ok;
-      var qNo = qNumbers ? qNumbers[id] : id + 1;
+      const qNo = qNumbers ? qNumbers[id] : id + 1;
       if (drillBase) BokiProgress.record(drillBase + '/q' + qNo, ok);
-      var done = 0, right = 0;
-      for (var k in state) { done++; if (state[k]) right++; }
+      let done = 0, right = 0;
+      for (const k in state) { done++; if (state[k]) right++; }
       scoreEl.textContent = '正解 ' + right + ' / 解答済 ' + done + '（全' + total + '問）';
     }
     report.reveal = function (id) { revealed[id] = true; };
@@ -522,7 +524,7 @@
   /* ---------- 勘定科目の検索つき選択 ---------- */
   // 読みの表は assets/yomi.js にある。読めなかったときも例外にはしない。
   // 漢字の部分一致で引けるため、選択そのものは壊れない（ゲート11が検出する）。
-  var YOMI = window.BokiYomi || {};
+  const YOMI = window.BokiYomi || {};
 
   // 「うりかけ」「ウリカケ」「売掛」のどれでも同じ結果を返す。
   // 全角英数と長音・濁点の揺れまでは吸収しない。科目名に現れないため。
@@ -537,11 +539,11 @@
   // 連濁は語が結合したときに起きるため、単語ごとに覚えた読みで打つと
   // 「みはらい」「かふそく」のように濁点が落ちる。別読みを併記する形に
   // すると、科目を足すたびに揺れを予測して書き並べることになる。
-  var DAKUTEN = 'がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ';
-  var SEION   = 'かきくけこさしすせそたちつてとはひふへほはひふへほ';
+  const DAKUTEN = 'がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ';
+  const SEION   = 'かきくけこさしすせそたちつてとはひふへほはひふへほ';
   function plain(s) {
     return s.replace(/っ/g, 'つ').replace(/[ぁ-ゖ]/g, function (c) {
-      var i = DAKUTEN.indexOf(c);
+      const i = DAKUTEN.indexOf(c);
       return i < 0 ? c : SEION.charAt(i);
     });
   }
@@ -549,33 +551,33 @@
   // ローマ字をかなに直す。IMEを切り替えずに「urikake」で売掛金を引ける。
   // 読みをローマ字に直して照合しないのは、「shi/si」「tsu/tu」「fu/hu」の
   // どちらで打たれても合うように、読み側に綴りの揺れを全部持たせることになるため。
-  var ROMA = {
+  const ROMA = {
     a: 'あ', i: 'い', u: 'う', e: 'え', o: 'お',
     ya: 'や', yu: 'ゆ', yo: 'よ', wa: 'わ', wo: 'を',
     shi: 'し', chi: 'ち', tsu: 'つ', fu: 'ふ', ji: 'じ',
     sha: 'しゃ', shu: 'しゅ', sho: 'しょ', cha: 'ちゃ', chu: 'ちゅ', cho: 'ちょ',
     ja: 'じゃ', ju: 'じゅ', jo: 'じょ', '-': 'ー'
   };
-  var ROWS = {
+  const ROWS = {
     k: 'かきくけこ', g: 'がぎぐげご', s: 'さしすせそ', z: 'ざじずぜぞ',
     t: 'たちつてと', d: 'だぢづでど', n: 'なにぬねの', h: 'はひふへほ',
     b: 'ばびぶべぼ', p: 'ぱぴぷぺぽ', m: 'まみむめも', r: 'らりるれろ'
   };
   Object.keys(ROWS).forEach(function (c) {
-    var row = ROWS[c];
+    const row = ROWS[c];
     'aiueo'.split('').forEach(function (v, j) { ROMA[c + v] = row.charAt(j); });
     ROMA[c + 'ya'] = row.charAt(1) + 'ゃ';
     ROMA[c + 'yu'] = row.charAt(1) + 'ゅ';
     ROMA[c + 'yo'] = row.charAt(1) + 'ょ';
   });
   function romaToKana(s) {
-    var out = '', i = 0;
+    let out = '', i = 0;
     while (i < s.length) {
-      var c = s.charAt(i), nx = s.charAt(i + 1);
+      const c = s.charAt(i), nx = s.charAt(i + 1);
       if (c === 'n' && (nx === 'n' || nx === "'")) { out += 'ん'; i += 2; continue; }
       if (c === 'n' && nx && !/[aiueoy]/.test(nx)) { out += 'ん'; i++; continue; }
       if (c === nx && /[bcdfghjkmpqrstvwxz]/.test(c)) { out += 'っ'; i++; continue; }
-      var L = 3;
+      let L = 3;
       while (L > 0 && !ROMA[s.substr(i, L)]) L--;
       if (L) { out += ROMA[s.substr(i, L)]; i += L; } else { out += c; i++; }
     }
@@ -585,11 +587,11 @@
 
   function matches(name, query) {
     if (!query) return true;
-    var q = normalize(query);
+    let q = normalize(query);
     if (/[a-z]/.test(q)) q = romaToKana(q);
     if (!q) return true;
     if (normalize(name).indexOf(q) >= 0) return true;
-    var y = YOMI[name];
+    let y = YOMI[name];
     if (!y) return false;
     y = normalize(y);
     return y.indexOf(q) >= 0 || plain(y).indexOf(plain(q)) >= 0;
@@ -598,12 +600,12 @@
   // <select> と同じ責務を持つ入力。value プロパティで読み書きでき、
   // 一覧にない文字列は確定できない。採点は collect() が読む value だけを
   // 見るため、この2点を満たす限り正誤判定は <select> のときと変わらない。
-  var pickerSeq = 0;
+  let pickerSeq = 0;
 
   function accountPicker(accounts, side) {
-    var uid = 'apick' + (++pickerSeq);
-    var wrap = el('div', 'apick');
-    var inp = el('input', 'apick__in');
+    const uid = 'apick' + (++pickerSeq);
+    const wrap = el('div', 'apick');
+    const inp = el('input', 'apick__in');
     inp.type = 'text';
     inp.placeholder = '科目を検索';
     inp.autocomplete = 'off';
@@ -613,7 +615,7 @@
     // placeholder だけだと240個すべてが同じ「科目を検索」と読まれ、
     // いま借方と貸方のどちらを入力しているのか分からない。
     inp.setAttribute('aria-label', (side === 'd' ? '借方' : '貸方') + 'の勘定科目');
-    var list = el('div', 'apick__list');
+    const list = el('div', 'apick__list');
     list.id = uid + '-list';
     list.setAttribute('role', 'listbox');
     // overflow-y:auto はスクロールできる要素として自動でフォーカス対象に
@@ -622,9 +624,9 @@
     inp.setAttribute('aria-controls', list.id);
     wrap.appendChild(inp); wrap.appendChild(list);
 
-    var value = '';
-    var active = -1;
-    var shown = [];
+    let value = '';
+    let active = -1;
+    let shown = [];
 
     // 未確定の入力は捨てて、確定済みの科目名に戻す。空欄のまま閉じたときに
     // 打ちかけの文字列が残ると、選択済みに見えて実際は未選択になる。
@@ -652,15 +654,15 @@
       wrap.dispatchEvent(new CustomEvent('change', { bubbles: true }));
     }
     function render() {
-      var q = inp.value === value ? '' : inp.value;
+      const q = inp.value === value ? '' : inp.value;
       shown = accounts.filter(function (a) { return matches(a, q); });
       list.innerHTML = '';
       if (!shown.length) {
-        var none = el('div', 'apick__none', '該当なし');
+        const none = el('div', 'apick__none', '該当なし');
         list.appendChild(none);
       }
       shown.forEach(function (a, i) {
-        var it = el('div', 'apick__it', a);
+        const it = el('div', 'apick__it', a);
         it.setAttribute('role', 'option');
         it.id = uid + '-o' + i;
         it.setAttribute('aria-selected', a === value ? 'true' : 'false');
@@ -685,7 +687,7 @@
       if (!shown.length) return;
       active = (active + d + shown.length) % shown.length;
       render();
-      var cur = list.querySelector('.is-act');
+      const cur = list.querySelector('.is-act');
       if (cur) cur.scrollIntoView({ block: 'nearest' });
     }
 
@@ -727,7 +729,7 @@
        questions:[{ text, debit:[['仕入',100000]], credit:[['買掛金',100000]], explain, hint }]
      })
      =========================================================== */
-  var BokiJournal = {
+  const BokiJournal = {
     // 読みの登録漏れを品質ゲートから検査するための口。
     // window.BokiYomi を見ないのは、後から差し替えられた別の表を検査しないため。
     // 検索が使うのは app.js が読み込み時に掴んだ表である。
@@ -736,29 +738,29 @@
     // 全角数字や ▲ の扱いがドリルの採点と食い違う。
     __parseAmt: parseAmt,
     mount: function (sel, cfg) {
-      var root = document.querySelector(sel);
+      const root = document.querySelector(sel);
       if (!root) return;
-      var ui = shell(root, cfg, '仕訳ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
+      const ui = shell(root, cfg, '仕訳ドリル');
+      const report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var accounts = q.accounts || cfg.accounts;
-        var wrapQ = questionBox(root, q, i);
+        const accounts = q.accounts || cfg.accounts;
+        const wrapQ = questionBox(root, q, i);
 
         // 解答欄は常に4行。行数から正解の科目数が読めてしまうと本番の第1問と条件が変わる。
         // 未選択・未入力の行は collect() が無視するため、余った行は採点に影響しない。
-        var nRows = Math.max(4, q.debit.length, q.credit.length);
-        var tw = el('div', 'tablewrap');
-        var t = el('table', 'jinput');
+        const nRows = Math.max(4, q.debit.length, q.credit.length);
+        const tw = el('div', 'tablewrap');
+        const t = el('table', 'jinput');
         t.innerHTML = '<thead><tr><th class="dh" colspan="2">借方</th><th class="ch" colspan="2">貸方</th></tr>' +
           '<tr><th class="dh">勘定科目</th><th class="dh">金額</th><th class="ch">勘定科目</th><th class="ch">金額</th></tr></thead>';
-        var tb = el('tbody');
-        for (var r = 0; r < nRows; r++) {
-          var tr = el('tr');
+        const tb = el('tbody');
+        for (let r = 0; r < nRows; r++) {
+          const tr = el('tr');
           ['d', 'c'].forEach(function (side) {
-            var td1 = el('td'), td2 = el('td');
+            const td1 = el('td'), td2 = el('td');
             td1.appendChild(accountPicker(accounts, side));
-            var inp = el('input', 'amt');
+            const inp = el('input', 'amt');
             inp.type = 'text'; inp.inputMode = 'numeric'; inp.placeholder = '0';
             groupAmt(inp);
             inp.dataset.side = side;
@@ -769,25 +771,25 @@
         }
         t.appendChild(tb); tw.appendChild(t); wrapQ.appendChild(tw);
 
-        var ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
+        const ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function collect(side) {
-          var out = [];
+          const out = [];
           Array.prototype.forEach.call(tb.querySelectorAll('tr'), function (tr) {
-            var s = tr.querySelector('.apick[data-side="' + side + '"]');
-            var a = tr.querySelector('input[data-side="' + side + '"]');
-            var v = parseAmt(a.value);
+            const s = tr.querySelector('.apick[data-side="' + side + '"]');
+            const a = tr.querySelector('input[data-side="' + side + '"]');
+            const v = parseAmt(a.value);
             if (s.value && !isNaN(v)) out.push([s.value, v]);
           });
           return out;
         }
         function same(got, want) {
           if (got.length !== want.length) return false;
-          var pool = want.slice();
-          for (var i2 = 0; i2 < got.length; i2++) {
-            var hit = -1;
-            for (var j = 0; j < pool.length; j++) {
+          const pool = want.slice();
+          for (let i2 = 0; i2 < got.length; i2++) {
+            let hit = -1;
+            for (let j = 0; j < pool.length; j++) {
               if (pool[j][0] === got[i2][0] && Number(pool[j][1]) === Number(got[i2][1])) { hit = j; break; }
             }
             if (hit < 0) return false;
@@ -796,9 +798,10 @@
           return true;
         }
         function answerHTML() {
-          var n = Math.max(q.debit.length, q.credit.length), rows = '';
-          for (var k = 0; k < n; k++) {
-            var d = q.debit[k], c = q.credit[k];
+          const n = Math.max(q.debit.length, q.credit.length);
+          let rows = '';
+          for (let k = 0; k < n; k++) {
+            const d = q.debit[k], c = q.credit[k];
             rows += '<tr>' +
               '<td class="d">' + (d ? d[0] : '') + '</td><td class="d amt">' + (d ? fmt(d[1]) : '') + '</td>' +
               '<td class="c">' + (c ? c[0] : '') + '</td><td class="c amt">' + (c ? fmt(c[1]) : '') + '</td></tr>';
@@ -809,7 +812,7 @@
         }
 
         bCheck.addEventListener('click', function () {
-          var ok = same(collect('d'), q.debit) && same(collect('c'), q.credit);
+          const ok = same(collect('d'), q.debit) && same(collect('c'), q.credit);
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
           fb.innerHTML = '<div class="fb__head ' + (ok ? 'ok' : 'ng') + '">' +
             (ok ? '正解' : '不正解 — 正しい仕訳はこちら') + '</div>' + (ok ? answerHTML() : answerHTML());
@@ -828,38 +831,38 @@
      2. 選択式クイズ
      BokiQuiz.mount('#id', { title, questions:[{ text, choices:[], answer:0, explain }] })
      =========================================================== */
-  var BokiQuiz = {
+  const BokiQuiz = {
     mount: function (sel, cfg) {
-      var root = document.querySelector(sel);
+      const root = document.querySelector(sel);
       if (!root) return;
-      var ui = shell(root, cfg, '確認テスト');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
+      const ui = shell(root, cfg, '確認テスト');
+      const report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var wrapQ = questionBox(root, q, i);
+        const wrapQ = questionBox(root, q, i);
 
-        var box = el('div', 'choices');
-        var name = 'q_' + Math.random().toString(36).slice(2) + '_' + i;
+        const box = el('div', 'choices');
+        const name = 'q_' + Math.random().toString(36).slice(2) + '_' + i;
         q.choices.forEach(function (c, ci) {
-          var lab = el('label', 'choice');
-          var r = el('input'); r.type = 'radio'; r.name = name; r.value = ci;
-          var s = el('span'); s.innerHTML = c;
+          const lab = el('label', 'choice');
+          const r = el('input'); r.type = 'radio'; r.name = name; r.value = ci;
+          const s = el('span'); s.innerHTML = c;
           lab.appendChild(r); lab.appendChild(s);
           box.appendChild(lab);
         });
         wrapQ.appendChild(box);
 
-        var ctl = controls(wrapQ, q, false), fb = ctl.fb, b = ctl.check;
+        const ctl = controls(wrapQ, q, false), fb = ctl.fb, b = ctl.check;
         ui.body.appendChild(wrapQ);
 
         b.addEventListener('click', function () {
-          var picked = box.querySelector('input:checked');
+          const picked = box.querySelector('input:checked');
           if (!picked) {
             fb.className = 'fb show fb--ng';
             fb.innerHTML = '<div class="fb__head ng">選択肢を選んでください</div>';
             return;
           }
-          var ok = Number(picked.value) === q.answer;
+          const ok = Number(picked.value) === q.answer;
           Array.prototype.forEach.call(box.children, function (lab, ci) {
             lab.classList.remove('is-correct', 'is-wrong');
             if (ci === q.answer) lab.classList.add('is-correct');
@@ -879,23 +882,23 @@
      BokiNum.mount('#id', { title, badge, questions:[{ text, answer, unit, hint, explain, tolerance }] })
      answer は数値、または [数値, 数値, ...]（複数欄）
      =========================================================== */
-  var BokiNum = {
+  const BokiNum = {
     mount: function (sel, cfg) {
-      var root = document.querySelector(sel);
+      const root = document.querySelector(sel);
       if (!root) return;
-      var ui = shell(root, cfg, cfg.badge || '計算ドリル');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
+      const ui = shell(root, cfg, cfg.badge || '計算ドリル');
+      const report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-        var labels = q.labels || [];
-        var wrapQ = questionBox(root, q, i);
+        const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+        const labels = q.labels || [];
+        const wrapQ = questionBox(root, q, i);
 
-        var inputs = [];
+        const inputs = [];
         answers.forEach(function (a, ai) {
-          var line = el('div', 'numq');
+          const line = el('div', 'numq');
           if (labels[ai]) line.appendChild(el('span', 'small', labels[ai]));
-          var inp = el('input', 'amt'); inp.type = 'text'; inp.inputMode = 'decimal'; inp.placeholder = '0';
+          const inp = el('input', 'amt'); inp.type = 'text'; inp.inputMode = 'decimal'; inp.placeholder = '0';
           groupAmt(inp);
           line.appendChild(inp);
           if (q.unit) line.appendChild(el('span', 'unit', q.unit));
@@ -903,21 +906,21 @@
           wrapQ.appendChild(line);
         });
 
-        var ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
+        const ctl = controls(wrapQ, q, true), fb = ctl.fb, bCheck = ctl.check, bAns = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function ansHTML() {
-          var list = answers.map(function (a, ai) {
+          const list = answers.map(function (a, ai) {
             return '<li>' + (labels[ai] ? labels[ai] + ' ' : '') + '<strong>' + fmt(a) + (q.unit || '') + '</strong></li>';
           }).join('');
           return '<ul>' + list + '</ul>' + (q.explain ? '<div>' + q.explain + '</div>' : '');
         }
 
         bCheck.addEventListener('click', function () {
-          var tol = q.tolerance === undefined ? 0 : q.tolerance;
-          var ok = true;
+          const tol = q.tolerance === undefined ? 0 : q.tolerance;
+          let ok = true;
           inputs.forEach(function (inp, ai) {
-            var v = parseAmt(inp.value);
+            const v = parseAmt(inp.value);
             if (isNaN(v) || Math.abs(v - answers[ai]) > tol) ok = false;
           });
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
@@ -939,23 +942,23 @@
      BokiFill.mount('#id', { title, questions:[{ text, answer:['..','..'], explain }] })
      answer は許容表記の配列（どれか一致でOK）
      =========================================================== */
-  var BokiFill = {
+  const BokiFill = {
     mount: function (sel, cfg) {
-      var root = document.querySelector(sel);
+      const root = document.querySelector(sel);
       if (!root) return;
-      var ui = shell(root, cfg, '穴埋め');
-      var report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
+      const ui = shell(root, cfg, '穴埋め');
+      const report = makeScorer(ui.score, cfg.questions.length, drillBaseOf(root, cfg), cfg.qNumbers);
 
       cfg.questions.forEach(function (q, i) {
-        var wrapQ = questionBox(root, q, i);
+        const wrapQ = questionBox(root, q, i);
 
-        var line = el('div', 'numq');
-        var inp = el('input'); inp.type = 'text'; inp.style.width = '240px'; inp.style.textAlign = 'left';
+        const line = el('div', 'numq');
+        const inp = el('input'); inp.type = 'text'; inp.style.width = '240px'; inp.style.textAlign = 'left';
         inp.style.fontFamily = 'inherit';
         line.appendChild(inp);
         wrapQ.appendChild(line);
 
-        var ctl = controls(wrapQ, q, true), fb = ctl.fb, b = ctl.check, b2 = ctl.ans;
+        const ctl = controls(wrapQ, q, true), fb = ctl.fb, b = ctl.check, b2 = ctl.ans;
         ui.body.appendChild(wrapQ);
 
         function norm(s) { return String(s).replace(/[\s　]/g, ''); }
@@ -963,8 +966,8 @@
           return '<div><strong>' + q.answer[0] + '</strong></div>' + (q.explain ? '<div>' + q.explain + '</div>' : '');
         }
         b.addEventListener('click', function () {
-          var v = norm(inp.value);
-          var ok = q.answer.some(function (a) { return norm(a) === v; });
+          const v = norm(inp.value);
+          const ok = q.answer.some(function (a) { return norm(a) === v; });
           fb.className = 'fb show ' + (ok ? 'fb--ok' : 'fb--ng');
           fb.innerHTML = '<div class="fb__head ' + (ok ? 'ok' : 'ng') + '">' + (ok ? '正解' : '不正解') + '</div>' + ansHTML();
           report(i, ok, v);
@@ -979,24 +982,24 @@
   };
 
   /* ---------- 設問バンクからの再出題（review.html / practice.html） ---------- */
-  var KINDS = { journal: BokiJournal, quiz: BokiQuiz, num: BokiNum, fill: BokiFill };
+  const KINDS = { journal: BokiJournal, quiz: BokiQuiz, num: BokiNum, fill: BokiFill };
 
   // 読めなかったときの案内は msgHost に出す。
   function loadBank(msgHost, onLoad) {
     function fail() {
-      var page = location.pathname.split('/').pop();
+      const page = location.pathname.split('/').pop();
       msgHost.appendChild(el('p', 'small muted',
         '設問データ（assets/drills.json）を読み込めませんでした。' +
         'file:// で開いている場合は、教材のフォルダで次を実行し、' +
         'http://localhost:8000/' + page + ' を開いてください：  python3 -m http.server'));
     }
-    var req = new XMLHttpRequest();
+    const req = new XMLHttpRequest();
     req.open('GET', 'assets/drills.json', true);
     req.onload = function () {
       // onload は 404 でも発火する。status を見ないと、サーバの返した
       // エラーページを設問として読もうとする。
       if (req.status !== 200 && req.status !== 0) return fail();
-      var bank;
+      let bank;
       try { bank = JSON.parse(req.responseText); }
       catch (e) { bank = null; }
       if (!bank || !bank.units) return fail();
@@ -1014,8 +1017,8 @@
   // 記録は元の単元の設問IDに向ける。開いているページのURLから決めると、
   // やり直した正解が元の設問に届かず、いつまでも要復習から消えない。
   function mountFromBank(sel, unit, drill, nums) {
-    var cfg = {};
-    for (var k in drill.cfg) cfg[k] = drill.cfg[k];
+    const cfg = {};
+    for (const k in drill.cfg) cfg[k] = drill.cfg[k];
     cfg.questions = nums.map(function (n) { return drill.cfg.questions[n - 1]; });
     cfg.recordAs = unit + '#' + drill.root;
     cfg.qNumbers = nums;

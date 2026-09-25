@@ -1,14 +1,14 @@
 /* review.html のスクリプト。assets/app.js の後に読み込む。 */
 (function () {
   'use strict';
-  var P = window.BokiProgress;
-  var B = window.BokiBank;
-  var el = B.el;
-  var CLEAR_STREAK = P.CLEAR_STREAK;
+  const P = window.BokiProgress;
+  const B = window.BokiBank;
+  const el = B.el;
+  const CLEAR_STREAK = P.CLEAR_STREAK;
 
-  var summary = document.getElementById('summary');
-  var filterBar = document.getElementById('filter');
-  var host = document.getElementById('drills');
+  const summary = document.getElementById('summary');
+  const filterBar = document.getElementById('filter');
+  const host = document.getElementById('drills');
 
   function say(msg) {
     summary.appendChild(el('p', 'small muted', msg));
@@ -19,12 +19,12 @@
   //
   // 壊れた記録でもページは開けなければならない。ここで例外が出ると、
   // 復習の入口ごと失われる。
-  var due;
+  let due;
   try { due = P.due(); }
   catch (e) { due = []; }
 
   due = due.map(function (r) {
-    var ref = P.parseId(r.id);
+    const ref = P.parseId(r.id);
     if (!ref) return null;
     ref.id = r.id;
     ref.streak = r.streak;
@@ -41,7 +41,7 @@
 
   // 外した設問。due() は既に除いて返すが、このページを開いたまま
   // 外したものを描き直しの対象から落とすため、手元にも持つ。
-  var dismissed = {};
+  const dismissed = {};
 
   // 間違いが古い順。直近の誤答が新しい順にすると、さっき間違えた問題が
   // 毎回先頭に来て、放置された問題がいつまでも後ろに残る。
@@ -50,7 +50,7 @@
   B.load(summary, render);
 
   // 表示する単元。null はすべて。
-  var unitFilter = null;
+  let unitFilter = null;
 
   // 単元で絞り込むボタン。単元キー（phase0/01_... ）がそのまま
   // カテゴリの単位になる。設問IDに含まれているため、別の対応表を
@@ -58,11 +58,11 @@
   function renderFilter(bank, counts, units) {
     filterBar.innerHTML = '';
     if (units.length < 2) return;
-    var bar = el('div', 'rvfilter');
-    var total = units.reduce(function (n, u) { return n + counts[u]; }, 0);
+    const bar = el('div', 'rvfilter');
+    const total = units.reduce(function (n, u) { return n + counts[u]; }, 0);
 
     function btn(key, label, n) {
-      var b = el('button', 'rvfilter__btn', label + '（' + n + '）');
+      const b = el('button', 'rvfilter__btn', label + '（' + n + '）');
       b.type = 'button';
       if (unitFilter === key) b.classList.add('is-on');
       b.setAttribute('aria-pressed', unitFilter === key ? 'true' : 'false');
@@ -87,11 +87,11 @@
 
     // 復習から外した設問は due() が返さない。押した直後にこの場から
     // 消すため、残っているものだけを数え直す。
-    var live = due.filter(function (r) { return !dismissed[r.id]; });
+    const live = due.filter(function (r) { return !dismissed[r.id]; });
 
     // 単元ごとの残り件数。絞り込みボタンの数字と、絞り込みを外した
     // ときの全体像の両方に要る。
-    var counts = {}, units = [];
+    const counts = {}, units = [];
     live.forEach(function (r) {
       if (counts[r.unit] === undefined) { counts[r.unit] = 0; units.push(r.unit); }
       counts[r.unit]++;
@@ -107,16 +107,16 @@
       return;
     }
 
-    var target = unitFilter === null ? live
+    const target = unitFilter === null ? live
       : live.filter(function (r) { return r.unit === unitFilter; });
 
     // 同じドリルの設問はまとめて出す。1問ずつ別の枠にすると、同じ
     // 見出しと勘定科目プールが何度も現れて、どこまで進んだか読めない。
     // 並び順は「そのドリルで最も古い誤答」で決める。
-    var groups = [];
-    var byKey = {};
+    const groups = [];
+    const byKey = {};
     target.forEach(function (r) {
-      var key = r.unit + '#' + r.root;
+      const key = r.unit + '#' + r.root;
       if (!byKey[key]) {
         byKey[key] = { unit: r.unit, root: r.root, items: [] };
         groups.push(byKey[key]);
@@ -124,18 +124,18 @@
       byKey[key].items.push(r);
     });
 
-    var shown = 0, missing = 0, mounted = 0;
+    let shown = 0, missing = 0, mounted = 0;
 
     groups.forEach(function (g, gi) {
-      var unit = bank.units[g.unit];
-      var src = unit && unit.drills[g.root];
+      const unit = bank.units[g.unit];
+      const src = unit && unit.drills[g.root];
       // 設問が見つからないのは、教材から削除・改名された設問の記録が
       // 残っているとき。飛ばして続ける。1件のために復習全体を止めない。
       if (!src) { missing += g.items.length; return; }
 
       // 設問は q番号（1始まり）で引く。並び順ではなく番号で引かないと、
       // 設問を1つ挿しただけで別の問題が出る。
-      var numbers = [], meta = [];
+      const numbers = [], meta = [];
       g.items.forEach(function (r) {
         if (!(src.cfg.questions || [])[r.q - 1]) { missing++; return; }
         numbers.push(r.q);
@@ -150,8 +150,8 @@
       shown += numbers.length;
       mounted++;
 
-      var head = el('div', 'reviewgroup');
-      var a = el('a', 'reviewgroup__unit', g.unit);
+      const head = el('div', 'reviewgroup');
+      const a = el('a', 'reviewgroup__unit', g.unit);
       a.href = unit.href + '#' + g.root;
       head.appendChild(a);
       head.appendChild(el('span', 'reviewgroup__meta', numbers.length + '問'));
@@ -159,9 +159,9 @@
 
       // 設問ごとに復習から外す。覚えた設問を3回解き直させる理由はない。
       // 外しても解答の記録は残るため、progress.html の正解率は動かない。
-      var chips = el('div', 'rvdrop');
+      const chips = el('div', 'rvdrop');
       meta.forEach(function (r) {
-        var b = el('button', 'rvdrop__btn');
+        const b = el('button', 'rvdrop__btn');
         b.type = 'button';
         b.textContent = '第' + r.q + '問（' +
           (r.streak ? '連続正解 ' + r.streak + '/' + CLEAR_STREAK : '未正解') + '） ✕';
@@ -177,15 +177,15 @@
       });
       host.appendChild(chips);
 
-      var mountId = 'rv' + gi;
-      var box = el('div');
+      const mountId = 'rv' + gi;
+      const box = el('div');
       box.id = mountId;
       host.appendChild(box);
 
       B.mount('#' + mountId, g.unit, src, numbers);
     });
 
-    var s = el('p', 'lead');
+    const s = el('p', 'lead');
     s.appendChild(el('strong', null, shown + '問'));
     s.appendChild(document.createTextNode(' が復習待ちです（' + mounted + 'ドリル）' +
       (unitFilter === null ? '。' : '。単元 ' + unitFilter + ' で絞り込み中。')));
