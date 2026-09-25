@@ -102,6 +102,38 @@ try {
     await page.setViewportSize(WIDE);
     await page.waitForFunction(() => !document.documentElement.classList.contains('is-paged'));
     eq((await state(page)).vis.length, 9, '幅が広がったら全節に戻す');
+
+    // 狭い画面で #s2 を開いたあと、広い画面で s3 まで読み進めてから戻す（端末の回転）。
+    await page.evaluate(() => document.getElementById('s3').scrollIntoView({ behavior: 'instant' }));
+    await page.setViewportSize(NARROW);
+    await page.waitForFunction(() => document.documentElement.classList.contains('is-paged'));
+    eq((await state(page)).bar, '4 / 4 最後の節', 'URLに残った節より、読み進めた節のページを開く');
+    await ctx.close();
+  }
+
+  {
+    const ctx = await browser.newContext({ viewport: NARROW });
+    const page = await open(ctx, '#s1');
+    await page.evaluate(() => window.scrollTo({ top: 600, behavior: 'instant' }));
+    await page.click('.pager__btn >> text=次へ');
+    eq(await page.evaluate(() => scrollY), 0, 'めくった直後にページの先頭にいる（流れて見えない）');
+
+    await page.emulateMedia({ media: 'print' });
+    eq(await page.evaluate(() => [getComputedStyle(document.querySelector('.pager')).display,
+      [...document.querySelectorAll('.wrap > *')].every((e) => getComputedStyle(e).display !== 'none')]),
+      ['none', true], '印刷では全ページを出し、バーを出さない');
+    await ctx.close();
+  }
+
+  {
+    // 他のタブや古い版が書いた値でもページ送りを止めない。
+    const ctx = await browser.newContext({ viewport: NARROW });
+    const page = await open(ctx);
+    for (const bad of ['"str"', '5', 'true', '{"pos":3}', '{broken']) {
+      await page.evaluate((v) => localStorage.setItem('boki2:pager', v), bad);
+      await page.reload();
+      eq((await state(page)).bar, '1 / 4 表紙・目次', '壊れた保存値 ' + bad + ' でも動く');
+    }
     await ctx.close();
   }
 

@@ -404,8 +404,15 @@
     });
     const count = n + 1;
 
-    const prefs = LS.get(PAGER_KEY, null) || {};
-    if (!prefs.pos || typeof prefs.pos !== 'object') prefs.pos = {};
+    // 書くたびに読み直す。読み込み時の写しを書き戻すと、別のタブで
+    // 切り替えた表示や別単元の位置を消してしまう。
+    function prefs() {
+      const v = LS.get(PAGER_KEY, null);
+      const p = v && typeof v === 'object' ? v : {};
+      if (!p.pos || typeof p.pos !== 'object') p.pos = {};
+      return p;
+    }
+    function savePrefs(fn) { const p = prefs(); fn(p); LS.set(PAGER_KEY, p); }
     const mq = window.matchMedia ? window.matchMedia(NARROW) : null;
     let on = false;
     let cur = 0;
@@ -431,8 +438,7 @@
     const theme = document.querySelector('.theme-btn');
     if (theme) theme.parentNode.insertBefore(mode, theme);
     mode.addEventListener('click', function () {
-      prefs.all = !prefs.all;
-      LS.set(PAGER_KEY, prefs);
+      savePrefs(function (p) { p.all = !p.all; });
       sync(false);
     });
 
@@ -443,13 +449,16 @@
       return -1;
     }
 
-    // scroll-behavior: smooth のままだと、隠す前の位置から上へ流れて見える。
-    function jump(fn) {
-      const root = document.documentElement;
-      const was = root.style.scrollBehavior;
-      root.style.scrollBehavior = 'auto';
-      fn();
-      root.style.scrollBehavior = was;
+    // html の scroll-behavior: smooth のままだと、隠す前の位置から流れて見える。
+    // style で一時的に auto にしても smooth のまま動くため、呼び出しごとに
+    // instant を指定する。この値を知らない古いブラウザは例外を投げる。
+    function jump(to) {
+      try {
+        if (to) to.scrollIntoView({ behavior: 'instant', block: 'start' });
+        else window.scrollTo({ top: 0, behavior: 'instant' });
+      } catch (e) {
+        if (to) to.scrollIntoView(); else window.scrollTo(0, 0);
+      }
     }
 
     function show(i) {
@@ -459,8 +468,7 @@
       ttl.textContent = titles[cur];
       prev.disabled = cur === 0;
       next.disabled = cur === count - 1;
-      prefs.pos[PAGE] = cur;
-      LS.set(PAGER_KEY, prefs);
+      savePrefs(function (p) { p.pos[PAGE] = cur; });
       // 再読み込みで同じページに戻れるよう URL にも載せる。pushState に
       // しないのは、戻る操作がページ単位になると単元から出るまでに
       // 何度も戻ることになるため。
@@ -470,10 +478,7 @@
 
     function go(i, target) {
       show(i);
-      jump(function () {
-        if (target && target !== heads[cur - 1]) target.scrollIntoView();
-        else window.scrollTo(0, 0);
-      });
+      jump(target && target !== heads[cur - 1] ? target : null);
     }
 
     function targetOf(hash) {
@@ -492,20 +497,24 @@
     }
 
     function sync(initial) {
-      const want = !!(mq && mq.matches) && !prefs.all;
-      mode.textContent = prefs.all ? 'ページ送り' : '全体表示';
+      const all = !!prefs().all;
+      const want = !!(mq && mq.matches) && !all;
+      mode.textContent = all ? 'ページ送り' : '全体表示';
       if (want === on) return;
       on = want;
       document.documentElement.classList.toggle('is-paged', on);
-      if (on) {
+      if (on && !initial) {
+        // URL の #sN は最後にページ送りしたときのままで、全体表示で読み
+        // 進めた位置を表していない。
+        go(visiblePage());
+      } else if (on) {
         const t = targetOf(location.hash);
         if (t) go(pageOf(t), t);
-        else if (initial) go(Number(prefs.pos[PAGE]) || 0);
-        else go(visiblePage());
+        else go(Number(prefs().pos[PAGE]) || 0);
       } else {
         kids.forEach(function (c) { c.classList.remove('pg-off'); });
         const h = heads[cur - 1];
-        if (h) jump(function () { h.scrollIntoView(); });
+        if (h) jump(h);
       }
     }
 

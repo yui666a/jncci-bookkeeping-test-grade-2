@@ -59,15 +59,21 @@ export async function checkRuntime(page, file, errors) {
   // 420px 幅での横スクロール。.grid2 内の表が典型的な原因。
   // この幅ではページ送りが働き、表示中の1ページしか描画されない。隠れた
   // ページの表を見落とさないよう、利用者と同じく次へを押して全ページを見る。
-  // 幅が変わると見ていた節のページから始まるため、先に先頭へ戻しておく。
-  await page.evaluate(() => window.scrollTo(0, 0));
+  // 幅が変わると見ていた節のページから始まる。スクロール位置や URL に
+  // 頼らず、前へを押し切って先頭のページから見る。
   await page.setViewportSize({ width: 420, height: 900 });
-  const seen = new Set();
+  await page.waitForFunction(() => !document.querySelector('.pager')
+    || document.documentElement.classList.contains('is-paged'));
+  const prev = page.locator('.is-paged .pager__btn:first-child:not([disabled])');
+  while (await prev.count()) await prev.click();
   for (;;) {
     const over = await overflow(page);
-    if (over && !seen.has(over.wide.join(','))) {
-      seen.add(over.wide.join(','));
-      report(file, over.wide.join(',') || '(要素不明)', over.clientWidth, over.scrollWidth,
+    if (over) {
+      const where = await page.evaluate(() => {
+        const c = document.querySelector('.is-paged .pager__count');
+        return c ? '（ページ ' + c.textContent + '）' : '';
+      });
+      report(file, (over.wide.join(',') || '(要素不明)') + where, over.clientWidth, over.scrollWidth,
         '420px幅で横スクロールが出る');
     }
     const next = page.locator('.is-paged .pager__btn:last-child:not([disabled])');
