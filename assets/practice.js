@@ -134,8 +134,8 @@
     go.addEventListener('click', function () {
       const chosen = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
       const kinds = {};
-      Array.prototype.forEach.call(setup.querySelectorAll('input[name="kind"]:checked'),
-        function (b) { kinds[b.value] = true; });
+      setup.querySelectorAll('input[name="kind"]:checked')
+        .forEach(function (b) { kinds[b.value] = true; });
       const random = setup.querySelector('input[name="order"]:checked').value === 'random';
       start(bank, chosen, kinds, random);
     });

@@ -192,6 +192,7 @@
       }
       return out;
     },
+    // 名前は内部用に見えるが、progress.html の全消去ボタンが使うため本番から外せない。
     _reset: function () { saveProgress(emptyProgress()); }
   };
 
@@ -222,7 +223,7 @@
     if (!boxes.length) return;
     const store = (BokiProgress.dump().checks || {})[PAGE] || {};
 
-    Array.prototype.forEach.call(boxes, function (b) {
+    boxes.forEach(function (b) {
       if (store[b.dataset.key]) b.checked = true;
       b.addEventListener('change', function () {
         BokiProgress.check(PAGE, b.dataset.key, b.checked);
@@ -252,7 +253,7 @@
 
     document.querySelectorAll('[data-reset-progress]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        Array.prototype.forEach.call(boxes, function (b) {
+        boxes.forEach(function (b) {
           b.checked = false;
           BokiProgress.check(PAGE, b.dataset.key, false);
         });
@@ -365,7 +366,8 @@
     }, 60 * 1000);
 
     // テストから経過時間を差し込む。実時間の経過を待つ検査は遅いうえ
-    // 不安定になる。
+    // 不安定になる。本番のオブジェクトから外さないのは、テストが本番と同じ
+    // app.js を読み込んで検査しており、テスト専用の読み込み経路を持たないため。
     BokiProgress.__testTick = function (deltaSec, lastActiveDeltaSec) {
       startedAt += deltaSec * 1000;
       lastActive = lastActiveDeltaSec === undefined
@@ -776,7 +778,7 @@
 
         function collect(side) {
           const out = [];
-          Array.prototype.forEach.call(tb.querySelectorAll('tr'), function (tr) {
+          tb.querySelectorAll('tr').forEach(function (tr) {
             const s = tr.querySelector('.apick[data-side="' + side + '"]');
             const a = tr.querySelector('input[data-side="' + side + '"]');
             const v = parseAmt(a.value);
@@ -863,6 +865,7 @@
             return;
           }
           const ok = Number(picked.value) === q.answer;
+          // children は HTMLCollection で forEach を持たないため、NodeList と同じ書き方にしない。
           Array.prototype.forEach.call(box.children, function (lab, ci) {
             lab.classList.remove('is-correct', 'is-wrong');
             if (ci === q.answer) lab.classList.add('is-correct');
@@ -1035,6 +1038,5 @@
   window.BokiNum = BokiNum;
   window.BokiFill = BokiFill;
   window.BokiProgress = BokiProgress;
-  window.BokiLS = LS;
   window.BokiBank = { el: el, kinds: KINDS, load: loadBank, mount: mountFromBank };
 })();
