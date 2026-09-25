@@ -375,6 +375,162 @@
     };
   }
 
+  /* ---------- スマホのページ送り ---------- */
+  // 単元は1枚に20前後の節が並び、狭い画面で縦に流すと残りの量ばかりが
+  // 目に入る。大見出し（.wrap 直下の h2[id]）ごとにページとして見せる。
+  // 要素は動かさず表示だけを切り替える。並べ替えや分割をすると mount 先の
+  // 探索や設問の並び（記録IDの前提）に触れることになる。
+  const PAGER_KEY = 'boki2:pager';
+  const NARROW = '(max-width: 640px)';
+
+  function initPager() {
+    const wrap = document.querySelector('.wrap');
+    if (!wrap || !document.querySelector('.toc')) return;
+    const kids = Array.prototype.slice.call(wrap.children);
+    const heads = kids.filter(function (c) { return c.tagName === 'H2' && c.id; });
+    if (heads.length < 2) return;
+
+    const pageOfKid = new Map();
+    const titles = ['表紙・目次'];
+    let n = 0;
+    kids.forEach(function (c) {
+      if (c.tagName === 'H2' && c.id) {
+        n++;
+        const h = c.cloneNode(true);
+        h.querySelectorAll('.num').forEach(function (x) { x.remove(); });
+        titles.push(h.textContent.trim());
+      }
+      pageOfKid.set(c, n);
+    });
+    const count = n + 1;
+
+    const prefs = LS.get(PAGER_KEY, null) || {};
+    if (!prefs.pos || typeof prefs.pos !== 'object') prefs.pos = {};
+    const mq = window.matchMedia ? window.matchMedia(NARROW) : null;
+    let on = false;
+    let cur = 0;
+
+    const bar = el('nav', 'pager');
+    bar.setAttribute('aria-label', 'ページ送り');
+    const prev = el('button', 'pager__btn', '‹ 前へ');
+    const next = el('button', 'pager__btn', '次へ ›');
+    prev.type = next.type = 'button';
+    const mid = el('div', 'pager__mid');
+    const cnt = el('span', 'pager__count');
+    const ttl = el('span', 'pager__title');
+    mid.appendChild(cnt); mid.appendChild(ttl);
+    bar.appendChild(prev); bar.appendChild(mid); bar.appendChild(next);
+    document.body.appendChild(bar);
+    prev.addEventListener('click', function () { go(cur - 1); });
+    next.addEventListener('click', function () { go(cur + 1); });
+
+    // 全体表示に戻す口。検索したいときや通読したいときに、ページ送りを
+    // 強いると目的の箇所に辿り着けない。
+    const mode = el('button', 'pager-mode');
+    mode.type = 'button';
+    const theme = document.querySelector('.theme-btn');
+    if (theme) theme.parentNode.insertBefore(mode, theme);
+    mode.addEventListener('click', function () {
+      prefs.all = !prefs.all;
+      LS.set(PAGER_KEY, prefs);
+      sync(false);
+    });
+
+    function pageOf(node) {
+      for (let x = node; x && x !== document.body; x = x.parentElement) {
+        if (x.parentElement === wrap) return pageOfKid.get(x);
+      }
+      return -1;
+    }
+
+    // scroll-behavior: smooth のままだと、隠す前の位置から上へ流れて見える。
+    function jump(fn) {
+      const root = document.documentElement;
+      const was = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      fn();
+      root.style.scrollBehavior = was;
+    }
+
+    function show(i) {
+      cur = Math.max(0, Math.min(count - 1, i));
+      kids.forEach(function (c) { c.classList.toggle('pg-off', pageOfKid.get(c) !== cur); });
+      cnt.textContent = (cur + 1) + ' / ' + count;
+      ttl.textContent = titles[cur];
+      prev.disabled = cur === 0;
+      next.disabled = cur === count - 1;
+      prefs.pos[PAGE] = cur;
+      LS.set(PAGER_KEY, prefs);
+      // 再読み込みで同じページに戻れるよう URL にも載せる。pushState に
+      // しないのは、戻る操作がページ単位になると単元から出るまでに
+      // 何度も戻ることになるため。
+      const url = cur ? '#' + heads[cur - 1].id : location.pathname + location.search;
+      try { history.replaceState(history.state, '', url); } catch (e) { /* file:// で拒まれても表示は続ける */ }
+    }
+
+    function go(i, target) {
+      show(i);
+      jump(function () {
+        if (target && target !== heads[cur - 1]) target.scrollIntoView();
+        else window.scrollTo(0, 0);
+      });
+    }
+
+    function targetOf(hash) {
+      if (!hash || hash.length < 2) return null;
+      let id;
+      try { id = decodeURIComponent(hash.slice(1)); } catch (e) { return null; }
+      const t = document.getElementById(id);
+      return t && pageOf(t) >= 0 ? t : null;
+    }
+
+    // 画面幅が変わって切り替わったときは、見ていた節を保つ。
+    function visiblePage() {
+      let p = 0;
+      heads.forEach(function (h, i) { if (h.getBoundingClientRect().top <= 80) p = i + 1; });
+      return p;
+    }
+
+    function sync(initial) {
+      const want = !!(mq && mq.matches) && !prefs.all;
+      mode.textContent = prefs.all ? 'ページ送り' : '全体表示';
+      if (want === on) return;
+      on = want;
+      document.documentElement.classList.toggle('is-paged', on);
+      if (on) {
+        const t = targetOf(location.hash);
+        if (t) go(pageOf(t), t);
+        else if (initial) go(Number(prefs.pos[PAGE]) || 0);
+        else go(visiblePage());
+      } else {
+        kids.forEach(function (c) { c.classList.remove('pg-off'); });
+        const h = heads[cur - 1];
+        if (h) jump(function () { h.scrollIntoView(); });
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      if (!on || e.defaultPrevented) return;
+      const a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const t = targetOf(a.getAttribute('href'));
+      if (!t) return;
+      e.preventDefault();
+      go(pageOf(t), t);
+    });
+    window.addEventListener('hashchange', function () {
+      if (!on) return;
+      const t = targetOf(location.hash);
+      if (t) go(pageOf(t), t);
+    });
+    if (mq) {
+      const onChange = function () { sync(false); };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else mq.addListener(onChange);
+    }
+    sync(true);
+  }
+
   /* ---------- 共通ヘルパ ---------- */
   function el(tag, cls, text) {
     const n = document.createElement(tag);
@@ -1029,7 +1185,7 @@
   }
 
   /* ---------- 初期化 ---------- */
-  function boot() { initTheme(); initChecklists(); initNotes(); initSession(); }
+  function boot() { initTheme(); initChecklists(); initNotes(); initSession(); initPager(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 

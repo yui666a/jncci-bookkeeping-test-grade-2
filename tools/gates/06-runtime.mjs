@@ -57,8 +57,28 @@ export async function checkRuntime(page, file, errors) {
   }
 
   // 420px 幅での横スクロール。.grid2 内の表が典型的な原因。
+  // この幅ではページ送りが働き、表示中の1ページしか描画されない。隠れた
+  // ページの表を見落とさないよう、利用者と同じく次へを押して全ページを見る。
+  // 幅が変わると見ていた節のページから始まるため、先に先頭へ戻しておく。
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.setViewportSize({ width: 420, height: 900 });
-  const over = await page.evaluate(() => {
+  const seen = new Set();
+  for (;;) {
+    const over = await overflow(page);
+    if (over && !seen.has(over.wide.join(','))) {
+      seen.add(over.wide.join(','));
+      report(file, over.wide.join(',') || '(要素不明)', over.clientWidth, over.scrollWidth,
+        '420px幅で横スクロールが出る');
+    }
+    const next = page.locator('.is-paged .pager__btn:last-child:not([disabled])');
+    if (!await next.count()) break;
+    await next.click();
+  }
+  await page.setViewportSize({ width: 1280, height: 900 });
+}
+
+function overflow(page) {
+  return page.evaluate(() => {
     const d = document.documentElement;
     if (d.scrollWidth <= d.clientWidth) return null;
     // 横スクロールする入れ物（表や図を包む overflow-x:auto）の中で幅を
@@ -87,9 +107,4 @@ export async function checkRuntime(page, file, errors) {
       });
     return { scrollWidth: d.scrollWidth, clientWidth: d.clientWidth, wide };
   });
-  if (over) {
-    report(file, over.wide.join(',') || '(要素不明)', over.clientWidth, over.scrollWidth,
-      '420px幅で横スクロールが出る');
-  }
-  await page.setViewportSize({ width: 1280, height: 900 });
 }

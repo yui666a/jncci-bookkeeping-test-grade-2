@@ -111,7 +111,7 @@ HTMLの解析に正規表現を使わない。Playwright で `file://` を開き
   ├─ boki-author（本文）
   └─ boki-drill（問題）        ← 並列
         ↓
-  npm run check               ← ゲート1〜6・9〜13、機械
+  npm run check               ← ゲート1〜6・9〜14、機械
         ↓
   ├─ boki-coverage
   └─ boki-reviewer             ← 並列

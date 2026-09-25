@@ -1,4 +1,4 @@
-// 教材HTMLの品質ゲート1〜6・9〜13と、ゲート7の前提（boki-topics メタ）を検査する。
+// 教材HTMLの品質ゲート1〜6・9〜14と、ゲート7の前提（boki-topics メタ）を検査する。
 // ゲート0（mount が実行されたか）は、他のゲートが設問0件で素通りしないための前提として見る。
 // ゲート7のカバレッジ判定と8の敵対的検証は判断が要るため、ここでは行わない。
 // HTMLの解析に正規表現を使わない。Playwright で file:// を開き、DOM と
@@ -20,12 +20,13 @@ import { checkQuizNumbers } from './gates/10-quiz-numbers.mjs';
 import { checkAccountYomi } from './gates/11-yomi.mjs';
 import { checkDrillBank } from './gates/12-drill-bank.mjs';
 import { checkDrillIds } from './gates/13-drill-ids.mjs';
+import { checkPager } from './gates/14-pager.mjs';
 
 // 番号順に並べない。ゲート9は採点と再読込でページを書き換え、復習ページでは
 // 再出題したドリルの設定が捕捉に加わる。捕捉を読むゲート10・11はその前に置く。
 const CHECKS = [
   checkMounted, checkBalance, checkAccounts, checkNum, checkQuiz, checkToc,
-  checkRuntime, checkTopicsMeta, checkAccountYomi, checkQuizNumbers,
+  checkPager, checkRuntime, checkTopicsMeta, checkAccountYomi, checkQuizNumbers,
   checkProgressWiring, checkDashboardRobust, checkDrillBank, checkDrillIds,
 ];
 
