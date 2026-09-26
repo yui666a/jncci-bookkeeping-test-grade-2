@@ -57,7 +57,7 @@ YAMLは原本のPDFから生成したもので、**手で編集しない。**
 
 ```
 npm run build:drills  # 設問を足す・直す・消したときだけ。assets/drills.json を再生成する
-npm run check         # 品質ゲート1〜6・9〜13（機械的検査）
+npm run check         # 品質ゲート1〜6・9〜14（機械的検査）
 npm run coverage      # 品質ゲート7（論点カバレッジ）
 ```
 
